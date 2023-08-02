@@ -1,0 +1,9 @@
+#pragma once
+
+#define HEATS_VER_MAJOR "@HEATS_VER_MAJOR@"
+#define HEATS_VER_MINOR "@HEATS_VER_MINOR@"
+#define HEATS_VER_BUILD "@HEATS_VER_PATCH@"
+
+#define COPYRIGHT_STR "Copyright (C) @PROJECT_BUILD_YEAR@, All OpenOasis contributors."
+
+#define VERSION_STR "V@HEATS_VER_MAJOR@.@HEATS_VER_MINOR@.@HEATS_VER_PATCH@"

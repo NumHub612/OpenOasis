@@ -1,0 +1,16 @@
+# 忽略的文件  
+VersionInfo.rc
+VersionConfig.h
+*.log
+FluidsLog
+HeatsLog
+
+# 忽略的文件夹
+build/
+.git/
+.vscode/
+Doxygen/
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
