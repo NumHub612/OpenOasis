@@ -38,7 +38,7 @@ enum class ElementType
 {
     IdBased,    // Identifiable based
     Point,      // Points
-    PolyLine,   // Lines / Polylines
+    Polyline,   // Lines / Polylines
     Polygon,    // Polygons
     Polyhedron  // Polyhedrons
 };

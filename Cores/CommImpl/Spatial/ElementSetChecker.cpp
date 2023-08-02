@@ -37,7 +37,7 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 }
             }
             break;
-        case ElementType::PolyLine:
+        case ElementType::Polyline:
             for (int i = 0; i < elementSet->GetElementCount(); ++i)
             {
                 try

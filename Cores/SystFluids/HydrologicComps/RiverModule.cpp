@@ -73,7 +73,7 @@ void RiverModule::InitializeSpace()
     mElements = make_shared<ElementSet>(
         "river network elmentset",
         "river network elmentset",
-        ElementType::PolyLine,
+        ElementType::Polyline,
         vector<Element>{elem});
 }
 

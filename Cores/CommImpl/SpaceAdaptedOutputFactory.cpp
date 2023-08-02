@@ -48,8 +48,8 @@ SpaceAdaptedOutputFactory::StaticConstructor::StaticConstructor()
     // Polyhedron: 100-199
 
     method                         = make_shared<SpatialMethod>();
-    method->mFromElementsShapeType = ElementType::PolyLine;
-    method->mToElementsShapeType   = ElementType::PolyLine;
+    method->mFromElementsShapeType = ElementType::Polyline;
+    method->mToElementsShapeType   = ElementType::Polyline;
     method->mElementMapperMethod   = ElementMapperMethod::None;
     method->mDescription           = "Polyline operation, multiply by line length";
     method->mId                    = mElementOperationPrefix + "200";
@@ -81,17 +81,17 @@ SpaceAdaptedOutputFactory::StaticConstructor::StaticConstructor()
 
     method                         = make_shared<SpatialMethod>();
     method->mFromElementsShapeType = ElementType::Point;
-    method->mToElementsShapeType   = ElementType::PolyLine;
+    method->mToElementsShapeType   = ElementType::Polyline;
     method->mElementMapperMethod   = ElementMapperMethod::Nearest;
-    method->mDescription           = "Point-to-polyline Nearest";
+    method->mDescription           = "Point-to-Polyline Nearest";
     method->mId                    = mElementMapperPrefix + "200";
     mAvailableMethods.push_back(method);
 
     method                         = make_shared<SpatialMethod>();
     method->mFromElementsShapeType = ElementType::Point;
-    method->mToElementsShapeType   = ElementType::PolyLine;
+    method->mToElementsShapeType   = ElementType::Polyline;
     method->mElementMapperMethod   = ElementMapperMethod::Inverse;
-    method->mDescription           = "Point-to-polyline Inverse";
+    method->mDescription           = "Point-to-Polyline Inverse";
     method->mId                    = mElementMapperPrefix + "201";
     mAvailableMethods.push_back(method);
 
@@ -112,7 +112,7 @@ SpaceAdaptedOutputFactory::StaticConstructor::StaticConstructor()
     mAvailableMethods.push_back(method);
 
     method                         = make_shared<SpatialMethod>();
-    method->mFromElementsShapeType = ElementType::PolyLine;
+    method->mFromElementsShapeType = ElementType::Polyline;
     method->mToElementsShapeType   = ElementType::Point;
     method->mElementMapperMethod   = ElementMapperMethod::Nearest;
     method->mDescription           = "Polyline-to-point Nearest";
@@ -120,7 +120,7 @@ SpaceAdaptedOutputFactory::StaticConstructor::StaticConstructor()
     mAvailableMethods.push_back(method);
 
     method                         = make_shared<SpatialMethod>();
-    method->mFromElementsShapeType = ElementType::PolyLine;
+    method->mFromElementsShapeType = ElementType::Polyline;
     method->mToElementsShapeType   = ElementType::Point;
     method->mElementMapperMethod   = ElementMapperMethod::Inverse;
     method->mDescription           = "Polyline-to-point Inverse";
@@ -128,7 +128,7 @@ SpaceAdaptedOutputFactory::StaticConstructor::StaticConstructor()
     mAvailableMethods.push_back(method);
 
     method                         = make_shared<SpatialMethod>();
-    method->mFromElementsShapeType = ElementType::PolyLine;
+    method->mFromElementsShapeType = ElementType::Polyline;
     method->mToElementsShapeType   = ElementType::Polygon;
     method->mElementMapperMethod   = ElementMapperMethod::WeightedMean;
     method->mDescription           = "Polyline-to-polygon Weighted Mean";
@@ -136,7 +136,7 @@ SpaceAdaptedOutputFactory::StaticConstructor::StaticConstructor()
     mAvailableMethods.push_back(method);
 
     method                         = make_shared<SpatialMethod>();
-    method->mFromElementsShapeType = ElementType::PolyLine;
+    method->mFromElementsShapeType = ElementType::Polyline;
     method->mToElementsShapeType   = ElementType::Polygon;
     method->mElementMapperMethod   = ElementMapperMethod::WeightedSum;
     method->mDescription           = "Polyline-to-polygon Weighted Sum";
@@ -153,17 +153,17 @@ SpaceAdaptedOutputFactory::StaticConstructor::StaticConstructor()
 
     method                         = make_shared<SpatialMethod>();
     method->mFromElementsShapeType = ElementType::Polygon;
-    method->mToElementsShapeType   = ElementType::PolyLine;
+    method->mToElementsShapeType   = ElementType::Polyline;
     method->mElementMapperMethod   = ElementMapperMethod::WeightedMean;
-    method->mDescription           = "Polygon-to-polyline Weighted Mean";
+    method->mDescription           = "Polygon-to-Polyline Weighted Mean";
     method->mId                    = mElementMapperPrefix + "700";
     mAvailableMethods.push_back(method);
 
     method                         = make_shared<SpatialMethod>();
     method->mFromElementsShapeType = ElementType::Polygon;
-    method->mToElementsShapeType   = ElementType::PolyLine;
+    method->mToElementsShapeType   = ElementType::Polyline;
     method->mElementMapperMethod   = ElementMapperMethod::WeightedSum;
-    method->mDescription           = "Polygon-to-polyline Weighted Sum";
+    method->mDescription           = "Polygon-to-Polyline Weighted Sum";
     method->mId                    = mElementMapperPrefix + "701";
     mAvailableMethods.push_back(method);
 
