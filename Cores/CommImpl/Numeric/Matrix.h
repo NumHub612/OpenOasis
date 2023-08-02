@@ -18,7 +18,7 @@ namespace OpenOasis
 {
 namespace CommImpl
 {
-namespace DevSupports
+namespace Numeric
 {
 using namespace AdditionalControl;
 
@@ -107,6 +107,6 @@ public:
     void SetValue(int row, int column, double value);
 };
 
-}  // namespace DevSupports
+}  // namespace Numeric
 }  // namespace CommImpl
 }  // namespace OpenOasis

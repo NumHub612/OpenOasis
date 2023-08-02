@@ -6,7 +6,7 @@
 #include "Matrix.h"
 
 
-namespace OpenOasis::CommImpl::DevSupports
+namespace OpenOasis::CommImpl::Numeric
 {
 using namespace std;
 
@@ -103,4 +103,4 @@ void DoubleSparseMatrix::Product(vector<double> &res, const vector<double> &vect
     }
 }
 
-}  // namespace OpenOasis::CommImpl::DevSupports
+}  // namespace OpenOasis::CommImpl::Numeric

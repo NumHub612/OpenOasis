@@ -36,7 +36,7 @@
 #include "Cores/Inc/IIdentifiable.h"
 #include "Cores/Inc/IElementSet.h"
 #include "Cores/Inc/IValueSet.h"
-#include "Cores/CommImpl/DevSupports/Matrix.h"
+#include "Cores/CommImpl/Numeric/Matrix.h"
 #include "Cores/CommImpl/Spatial/XYGeoStructs.h"
 #include <optional>
 
@@ -47,7 +47,7 @@ namespace CommImpl
 {
 namespace Spatial
 {
-using namespace DevSupports;
+using namespace Numeric;
 
 /// @brief Predined element mapping methods.
 enum class ElementMapperMethod
