@@ -8,7 +8,9 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Tensor.h"
 #include <vector>
+#include <array>
 #include <algorithm>
 
 
@@ -18,33 +20,31 @@ namespace CommImpl
 {
 namespace Numeric
 {
-/// @brief Tensor field for 2d and 3d cases.
-template <typename T, size_t N>
+/// @brief Description and manipulation of 2D or 3D tensor data.
+template <typename T, std::size_t N>
 class TensorField
 {
 public:
-    static_assert(N > 0, "Size of static-sized tensor should be greater than zero.");
-    static_assert(
-        std::is_arithmetic<T>::value,
-        "TensorField only can be instantiated with arithmetic types");
-
-    explicit TensorField(int size)
+    virtual ~TensorField() = default;
+    TensorField(std::size_t size)
     {
-        mDefault = {};
-        mData.resize(size);
+        mData.resize(size, Tensor<T, N>());
     }
 
-    /// @brief Initialize the tensor field with a value.
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for the tensor data operation.
+    //
+
+    /// @brief Initialize the tensor field with specified value.
     /// @param value The initial value.
-    void Initialize(std::array<std::array<T, N>, N> value)
+    void Initialize(const Tensor<T, N> &value)
     {
-        mDefault = value;
-        std::fill(data.begin(), data.end(), value);
+        std::fill(mData.begin(), mData.end(), value);
     }
 
     /// @brief Resize the tensor field.
     /// @param size The new size.
-    void Resize(int size)
+    void Resize(std::size_t size)
     {
         mData.resize(size);
         mData.shrink_to_fit();
@@ -53,7 +53,7 @@ public:
     /// @brief Clean the tensor field data to the default value.
     void Clean()
     {
-        std::fill(data.begin(), data.end(), mDefault);
+        std::fill(mData.begin(), mData.end(), Tensor<T, N>());
     }
 
     /// @brief Clear the tensor field.
@@ -62,14 +62,17 @@ public:
         mData.clear();
     }
 
-    std::array<std::array<T, N>, N> &operator[](int i)
+    Tensor<T, N> &operator()(int i)
     {
         return mData.at(i);
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for the tensor field operation.
+    //
+
 private:
-    std::vector<sstd::array<std::array<T, N>, N>> mData;
-    std::array<std::array<T, N>, N>               mDefault;
+    std::vector<Tensor<T, N>> mData;
 };
 
 }  // namespace Numeric

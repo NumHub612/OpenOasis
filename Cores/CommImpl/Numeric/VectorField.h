@@ -8,6 +8,9 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "TensroField.h"
+#include "ScalarField.h"
+#include "Vector.h"
 #include <vector>
 #include <array>
 #include <algorithm>
@@ -19,42 +22,40 @@ namespace CommImpl
 {
 namespace Numeric
 {
-/// @brief Vector field for 2d and 3d cases.
-template <typename T, size_t N>
+/// @brief Description and manipulation of 2D or 3D vector data.
+template <typename T, std::size_t N>
 class VectorField
 {
 public:
-    static_assert(N > 0, "Size of static-sized vector should be greater than zero.");
-    static_assert(
-        std::is_arithmetic<T>::value,
-        "VectorField only can be instantiated with arithmetic types");
-
-    explicit VectorField(int size)
+    virtual ~VectorField() = default;
+    VectorField(std::size_t size)
     {
-        mDefault = {};
-        mData.resize(size);
+        mData.resize(size, Vector<T, N>());
     }
 
-    /// @brief Initialize the vector field with a value.
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for the vector data operation.
+    //
+
+    /// @brief Initialize the vector field with specified value.
     /// @param value The initial value.
-    void Initialize(std::array<T, N> value)
+    void Initialize(const Vector<T, N> &value)
     {
-        mDefault = value;
-        std::fill(data.begin(), data.end(), value);
+        std::fill(mData.begin(), mData.end(), value);
     }
 
     /// @brief Resize the vector field.
     /// @param size The new size.
-    void Resize(int size)
+    void Resize(std::size_t size)
     {
         mData.resize(size);
         mData.shrink_to_fit();
     }
 
-    /// @brief Clean the vector field data to the default value.
+    /// @brief Clean the vector field data to default value.
     void Clean()
     {
-        std::fill(data.begin(), data.end(), mDefault);
+        std::fill(mData.begin(), mData.end(), Vector<T, N>());
     }
 
     /// @brief Clear the vector field.
@@ -63,14 +64,17 @@ public:
         mData.clear();
     }
 
-    std::array<T, N> &operator[](int i)
+    Vector<T, N> &operator()(int i)
     {
         return mData.at(i);
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for the vector field operation.
+    //
+
 private:
-    std::vector<std::array<T, N>> mData;
-    std::array<T, N>              mDefault;
+    std::vector<Vector<T, N>> mData;
 };
 
 }  // namespace Numeric
