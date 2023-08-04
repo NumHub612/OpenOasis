@@ -46,9 +46,9 @@ public:
     // Methods used for mesh query.
     //
 
-    size_t GetNumCells() const;
-    size_t GetNumFaces() const;
-    size_t GetNumNodes() const;
+    std::size_t GetNumCells() const;
+    std::size_t GetNumFaces() const;
+    std::size_t GetNumNodes() const;
 
     const Cell &GetCell(int cellIndex) const;
     const Face &GetFace(int faceIndex) const;
