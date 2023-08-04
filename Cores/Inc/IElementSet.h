@@ -50,7 +50,7 @@ enum class ElementType
 class IElementSet : public ISpatialDefinition
 {
 public:
-    /// @brief Gets `ElementType` of the element set.
+    /// @brief Gets `ElementType` of the elementset.
     virtual ElementType GetElementType() const = 0;
 
     /// @brief Index of element with id 'elementId' in the element set.
@@ -59,7 +59,7 @@ public:
     /// @return Index of the element with the specified id; return -1 if not found.
     virtual int GetElementIndex(const std::string &elementId) = 0;
 
-    /// @brief Gets Id of the index element in the elementset.
+    /// @brief Gets Id of the index element in the element set.
     ///
     /// @param index The element index for which the element `Id` is requested.
     ///
@@ -70,7 +70,7 @@ public:
     /// @throw If the index outside the range, throw an exception.
     virtual std::string GetElementId(int index) = 0;
 
-    /// @brief Gets the number of faces in a 3D element.
+    /// @brief Gets the number of faces in a element.
     ///
     /// @param elementIndex Index for the element.
     ///
