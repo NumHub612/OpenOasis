@@ -322,7 +322,15 @@ int main(int argc, const char *argv[])
 
     std::string dllPath(argv[1]);
 
-    // RoutineFlowTest(dllPath, "gage1", "runoff1");
+    cout << "\n====================================\n";
+    cout << "            RoutineFlowTest";
+    cout << "\n====================================\n";
+
+    RoutineFlowTest(dllPath, "gage1", "runoff1");
+
+    cout << "\n====================================\n";
+    cout << "            IterationTest";
+    cout << "\n====================================\n";
 
     IterationTest(dllPath);
 
