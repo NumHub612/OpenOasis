@@ -54,6 +54,8 @@ public:
     const Face &GetFace(int faceIndex) const;
     const Node &GetNode(int nodeIndex) const;
 
+    std::vector<int> GetBoundaryFaceIdexes() const;
+
 private:
     void CalculateFaceCentroid();
     void CalculateFaceNormal();
