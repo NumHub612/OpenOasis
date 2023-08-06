@@ -24,10 +24,13 @@ namespace Spatial
 /// (Point type).
 struct Node
 {
-    Coordinate coor;               // unit (m).
+    Coordinate coor;  // unit (m).
 
-    std::vector<int> faceIndexes;  // Indexes of mesh faces shared the node.
-    std::vector<int> cellIndexes;  // Indexes of mesh cells shared the node.
+    // Indexes of mesh faces shared the node.
+    std::vector<int> faceIndexes;
+
+    // Indexes of mesh cells shared the node.
+    std::vector<int> cellIndexes;
 };
 
 
@@ -38,8 +41,11 @@ struct Face
 {
     Coordinate centroid;
 
-    double perimeter = NAN;  // Perimeter of the face in (m).
-    double area      = NAN;  // Area of the face in (m^2).
+    // Perimeter of the face in (m).
+    double perimeter = NAN;
+
+    // Area of the face in (m^2).
+    double area = NAN;
 
     // Unit normal vector of the face.
     std::array<double, 3> normal;
@@ -59,13 +65,16 @@ struct Cell
 {
     Coordinate centroid;
 
-    double surface = NAN;  // Surface area in (m^2).
-    double volume  = NAN;  // Volume of the cell in (m^3).
+    // Volume of the cell in (m^3).
+    double volume = NAN;
+
+    // Surface area in (m^2).
+    double surface = NAN;
 
     // Indexes of mesh faces on the cell.
     std::vector<int> faceIndexes;
 
-    /// Indexes of neighboring mesh cells.
+    /// Indexes of neighboring cells.
     std::vector<int> neighbors;
 };
 

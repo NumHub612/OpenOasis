@@ -17,7 +17,7 @@ namespace CommImpl
 {
 namespace Spatial
 {
-/// @brief Grid used for numerical calculation.
+/// @brief Grid encapsulate the mesh data for numerical calculation.
 class Grid
 {
 public:
@@ -54,7 +54,7 @@ public:
     const Face &GetFace(int faceIndex) const;
     const Node &GetNode(int nodeIndex) const;
 
-    std::vector<int> GetBoundaryFaceIdexes() const;
+    std::vector<std::size_t> GetBoundaryFaceIdexes() const;
 
 private:
     void CalculateFaceCentroid();
@@ -68,11 +68,14 @@ private:
 
     void CollectCellsSharedNode();
     void CollectFacesSharedNode();
-    void CollectCellsSharedFace();
     void CollectCellNeighbors();
+
+    bool CheckMeshValid() const;
 
 private:
     Mesh mMesh;
+
+    bool mMeshHasZ;
 };
 
 }  // namespace Spatial
