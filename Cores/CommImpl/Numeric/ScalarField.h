@@ -34,15 +34,11 @@ public:
         mData.resize(size, T(0));
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for the scalar data operation.
-    //
-
     /// @brief Initialize the scalar field with a value.
     /// @param value The initial value.
     void Initialize(T value)
     {
-        std::fill(data.begin(), data.end(), value);
+        std::fill(mData.begin(), mData.end(), value);
     }
 
     /// @brief Resize the scalar field.
@@ -53,10 +49,10 @@ public:
         mData.shrink_to_fit();
     }
 
-    /// @brief Clean the scalar field data to the default value.
+    /// @brief Clean the scalar field data to the default value(0).
     void Clean()
     {
-        std::fill(data.begin(), data.end(), T(0));
+        std::fill(mData.begin(), mData.end(), T(0));
     }
 
     /// @brief Clear the scalar field.
@@ -65,28 +61,56 @@ public:
         mData.clear();
     }
 
+    /// @brief Iterates the field and invoke given @p func for each element.
+    ///
+    /// This function iterates the field elements and invoke
+    /// the callback function @p func. The callback function takes
+    /// field's element as its input.
+    template <typename Callback>
+    void ForEach(Callback func)
+    {
+        for (auto &elem : mData)
+        {
+            func(elem);
+        }
+    }
+
+    std::size_t Size() const
+    {
+        mData.size();
+    }
+
+    void SetAt(std::size_t i, T value)
+    {
+        mData.at(i) = value;
+    }
+
+    void SetAt(
+        std::size_t start, std::size_t end, const ScalarField &other,
+        std::size_t offset = 0)
+    {
+        std::size_t j = offset;
+        for (std::size_t i = start; i < end; ++i)
+            mData.at(i) = other(j++);
+    }
+
     T &operator()(int i)
     {
         return mData.at(i);
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for the scalar field operation.
-    //
-
-    /// @brief Return gradient vector at given position.
-    virtual Vector<T, N> Gradient(std::size_t i) const
+    const T &operator()(int i) const
     {
-        throw std::exception("Not implemented");
+        return mData.at(i);
     }
 
 private:
     std::vector<T> mData;
 };
 
-using ScalarFieldI = ScalarField<int>;
-using ScalarFieldF = ScalarField<float>;
-using ScalarFieldD = ScalarField<double>;
+using ScalarFieldInt   = ScalarField<int>;
+using ScalarFieldFloat = ScalarField<float>;
+using ScalarFieldDbl   = ScalarField<double>;
 
 }  // namespace Numeric
 }  // namespace CommImpl
