@@ -9,7 +9,6 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Cores/Utils/CommMacros.h"
-// #include "Vector.h"
 #include <array>
 
 
@@ -171,7 +170,7 @@ public:
         return ret;
     }
 
-    /// @brief Return the vector's length(magnitude).
+    /// @brief Return the tensor's length(magnitude).
     T Length() const
     {
         return std::sqrt(DDot(*this));
