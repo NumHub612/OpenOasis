@@ -46,15 +46,16 @@ public:
     // Methods used for mesh query.
     //
 
-    std::size_t GetNumCells() const;
-    std::size_t GetNumFaces() const;
-    std::size_t GetNumNodes() const;
+    int GetNumCells() const;
+    int GetNumFaces() const;
+    int GetNumNodes() const;
 
     const Cell &GetCell(int cellIndex) const;
     const Face &GetFace(int faceIndex) const;
     const Node &GetNode(int nodeIndex) const;
 
-    std::vector<std::size_t> GetBoundaryFaceIdexes() const;
+    std::vector<int> GetBoundaryFaceIdexes() const;
+    std::vector<int> GetBoundaryNodeIdexes() const;
 
 private:
     void CalculateFaceCentroid();

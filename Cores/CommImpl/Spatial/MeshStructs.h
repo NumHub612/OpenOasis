@@ -50,10 +50,12 @@ struct Face
     // Unit normal vector of the face.
     std::array<double, 3> normal;
 
-    // Indexes of mesh nodes on the face sorted counterclockwise.
+    // Indexes of mesh nodes on the
+    // face sorted counterclockwise.
     std::vector<int> nodeIndexes;
 
-    /// Indexes of mesh cells shared the face.
+    // Indexes of mesh cells
+    // shared the face.
     std::vector<int> cellIndexes;
 };
 
@@ -71,20 +73,29 @@ struct Cell
     // Surface area in (m^2).
     double surface = NAN;
 
-    // Indexes of mesh faces on the cell.
+    // Indexes of faces on the cell.
     std::vector<int> faceIndexes;
 
-    /// Indexes of neighboring cells.
+    // Indexes of neighboring cells.
     std::vector<int> neighbors;
+
+    // Indexes of sub-cells
+    // after current cell's refined.
+    std::vector<int> subcells;
 };
 
 
-/// @brief Mesh data structure.
+/// @brief Mesh structure.
 struct Mesh
 {
-    std::vector<Node> nodes;  // Mesh nodes set.
-    std::vector<Face> faces;  // Mesh faces set.
-    std::vector<Cell> cells;  // Mesh cells set.
+    // Mesh nodes set.
+    std::unordered_map<int, Node> nodes;
+
+    // Mesh faces set.
+    std::unordered_map<int, Face> faces;
+
+    // Mesh cells set.
+    std::unordered_map<int, Cell> cells;
 };
 
 }  // namespace Spatial
