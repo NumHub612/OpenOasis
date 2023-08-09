@@ -61,17 +61,17 @@ message(STATUS "${PROJECT_LOGO}")
 
 
 # 配置编译选项。
-option(PYLIB "-- If generating python3 packages" OFF)
-if (PYLIB)
+option(ENABLE_PYLIB "-- If generating python3 packages" OFF)
+if (ENABLE_PYLIB)
     set(PYBIND11_PYTHON_VERSION 3)
     set(Python_ADDITIONAL_VERSIONS 3.9 3.8 3.7 3.6)
-    message(STATUS "Generating python3 packages(PYLIB): ${PYLIB}")
+    message(STATUS "Generating python3 packages(ENABLE_PYLIB): ${ENABLE_PYLIB}")
 endif ()
 
-option(TESTS "-- If runing test" OFF)
-if (TESTS)
+option(ENABLE_TESTS "-- If runing test" OFF)
+if (ENABLE_TESTS)
     enable_testing()
-    message(STATUS "Runing test: ${TESTS}")
+    message(STATUS "Runing test: ${ENABLE_TESTS}")
 endif()
 
 
@@ -80,10 +80,11 @@ set(RootDir  ${PROJECT_SOURCE_DIR})
 file(GLOB_RECURSE ToolsSrc ${RootDir}/Tools/*.cpp ${RootDir}/Tools/*.cc ${RootDir}/Tools/*.c) 
 file(GLOB driver "launcher.cpp")
 
-if (NOT TESTS)
+list(FILTER ToolsSrc EXCLUDE REGEX ".*/Libigl/.*")
+if (NOT ENABLE_TESTS)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Catch2/.*")
 endif()
-if(NOT PYLIB)
+if(NOT ENABLE_PYLIB)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Pybind11/.*")
 endif()
 
@@ -111,7 +112,7 @@ set_target_properties(${CommLib} PROPERTIES PREFIX "")
 
 
 # 生成 PYTHON 包（注意顺序，因为pybind11与find_package冲突）。
-if(PYLIB)
+if(ENABLE_PYLIB)
     set(PybindDir  ${PROJECT_SOURCE_DIR}/Tools/Pybind11/share/cmake/pybind11)
     include(${PybindDir}/FindPythonLibsNew.cmake)
     include(${PybindDir}/pybind11Config.cmake)
@@ -135,7 +136,7 @@ add_subdirectory(${CoreDir}/SystHeats)
 
 
 # 生成可执行文件。
-if (PYLIB)
+if (ENABLE_PYLIB)
     find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 endif()
 add_executable(${ProjectName} ${driver})
@@ -143,7 +144,7 @@ add_executable(${ProjectName} ${driver})
 target_link_libraries(${ProjectName} 
     PUBLIC ${CommLib}
     )
-if (PYLIB)
+if (ENABLE_PYLIB)
     target_link_libraries(${ProjectName}  
         PUBLIC ${Python3_LIBRARIES}  
         )    
@@ -159,8 +160,10 @@ endif()
 #-- 添加附加包含目录。
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
+    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"
+    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\" 
     )
-if (PYLIB)
+if (ENABLE_PYLIB)
     target_include_directories(${ProjectName}  
         PUBLIC  ${Python3_INCLUDE_DIRS}
         )
@@ -168,7 +171,7 @@ endif()
 
 
 # 执行测试。
-if (TESTS)
+if (ENABLE_TESTS)
     set(ProjectTestName "OasisTests")
     add_executable(${ProjectTestName} ${TestSrc} ${FluidSrc} ${HeatSrc})
     target_link_libraries(${ProjectTestName} 
@@ -201,6 +204,6 @@ install(DIRECTORY ${RootDir}/Cores/Inc/AdditionalControl
     PATTERN  "*.h"
     )
 
-if(PYLIB)
+if(ENABLE_PYLIB)
     install(TARGETS ${PackageName} DESTINATION ${platform})
 endif()

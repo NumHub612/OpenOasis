@@ -13,21 +13,32 @@
 #include "Cores/SystFluids/export/OasisFluidsModule.h"
 #include "Cores/CommImpl/Time.h"
 #include "Cores/CommImpl/DevSupports/IterationController.h"
-// #include "Cores/SystFluids/HydrologicComps/RiverModule.h"
 #include "Tools/spdlog/spdlog.h"
 #include <string>
 #include <vector>
 #include <iostream>
 #include <thread>
 #include <iomanip>
-
+#include "Tools/Libigl/cotmatrix.h"
+#include "Tools/Eigen/Dense"
+#include "Tools/Eigen/Sparse"
 
 using namespace OpenOasis;
 using namespace CommImpl;
 using namespace DevSupports;
-// using namespace SystFluids::HydrologicComps;
 using namespace Utils;
 using namespace std;
+
+void libigl_test()
+{
+    Eigen::MatrixXd V(4, 2);
+    V << 0, 0, 1, 0, 1, 1, 0, 1;
+    Eigen::MatrixXi F(2, 3);
+    F << 0, 1, 2, 0, 2, 3;
+    Eigen::SparseMatrix<double> L;
+    igl::cotmatrix(V, F, L);
+    std::cout << "Hello, mesh: " << std::endl << L * V << std::endl;
+}
 
 
 void RoutineFlowTest(
@@ -319,6 +330,8 @@ int main(int argc, const char *argv[])
         spdlog::error("No enough({0:d}) inputs.", argc);
         return -1;
     }
+
+    libigl_test();
 
     std::string dllPath(argv[1]);
 
