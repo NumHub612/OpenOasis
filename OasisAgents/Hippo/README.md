@@ -1,4 +1,4 @@
-<img src="../Rsrcs/Logo/logo.png" alt=""> 
+<img src="../../Rsrcs/Logo/logo.png" alt=""> 
 
 **OpenOasis，绿洲，一个物理世界机理模型的开放实验项目。**
 
