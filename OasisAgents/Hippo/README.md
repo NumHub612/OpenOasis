@@ -10,7 +10,7 @@
 
 基于 [PyNet](https://github.com/Kaslanarian/PyNet) 、[MatrixSlow](https://github.com/zc911/MatrixSlow)、[tinynn](https://github.com/borgwang/tinynn) 等项目实现的一套极简的深度强化学习框架，主要用于理解和测试深度学习算法。  
 
-**组件抽象**
+**组件抽象 - 深度学习部分**
 
 首先考虑神经网络运算的流程，神经网络运算主要包含训练 training 和预测 predict （或 inference） 两个阶段，训练的基本流程是：  
 ```
