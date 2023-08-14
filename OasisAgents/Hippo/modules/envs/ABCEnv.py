@@ -17,76 +17,61 @@ class Env(ABCMeta):
 
     @abstractmethod
     def step(self, action):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @abstractmethod
     def reset(self):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @abstractmethod
     def close(self):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @abstractmethod
     def render(self, mode, close):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @abstractmethod
     def seed(self, seed):
-        """设
-        """
+        """设"""
         raise NotImplementedError()
 
     @abstractmethod
     def setup(self, *args, **kwargs):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @abstractmethod
     def load(filepath):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @abstractmethod
     def save(self, filepath, overwrite):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @property
     def states(self):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @property
     def layers(self):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @property
     def configs(self):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     def __del__(self):
         self.close()
 
     def __str__(self):
-        return '<{} instance>'.format(type(self).__name__)
-
-
-
-
+        return "<{} instance>".format(type(self).__name__)

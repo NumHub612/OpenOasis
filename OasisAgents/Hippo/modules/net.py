@@ -15,4 +15,3 @@ class Net:
 
     def __repr__(self):
         return "\n".join([str(layer) for layer in self.layers])
-    

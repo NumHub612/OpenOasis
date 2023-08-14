@@ -12,12 +12,10 @@ class Space(ABCMeta):
 
     @abstractmethod
     def sample(self, seed):
-        """
-        """
+        """ """
         raise NotImplementedError()
 
     @abstractmethod
     def contains(self, x):
-        """
-        """
+        """ """
         raise NotImplementedError()
