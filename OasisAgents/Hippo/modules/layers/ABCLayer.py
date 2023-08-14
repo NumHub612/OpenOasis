@@ -1,6 +1,8 @@
 # -*- encoding: utf-8 -*-
 """
-description
+A layer in a neural net is responsible for receiving the input of the previous layer, 
+performing the operations of the layer, and 
+output the results to the next layer.
 
 __author__ = 'Qin zhaoyu'
 """
@@ -11,7 +13,6 @@ class Layer(ABCMeta):
     """Base class for layers."""
 
     def __init__(self):
-        """ """
         self.params = {p: None for p in self.param_names}
         self.nt_params = {p: None for p in self.nt_param_names}
         self.initializers = {}
@@ -19,7 +20,7 @@ class Layer(ABCMeta):
         self.grads = {}
         self.shapes = {}
 
-        self._is_training = True  # used in BatchNorm/Dropout layers
+        self._is_training = True
         self._is_init = False
 
         self.ctx = {}
@@ -35,17 +36,17 @@ class Layer(ABCMeta):
 
     @abstractmethod
     def forward(self, inputs):
-        """
-        :param inputs:
-        :return:
+        """Network layer forward propagation.
+        :param inputs: The input data of the previous layer.
+        :return: The results of the layer.
         """
         raise NotImplementedError
 
     @abstractmethod
     def backward(self, grad):
-        """
-        :param grad:
-        :return:
+        """Network layer backward propagation.
+        :param grad: The gradient of the previous layer.
+        :return: The gradient of the layer.
         """
         raise NotImplementedError
 
