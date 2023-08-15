@@ -5,8 +5,8 @@ A dense layer operates `outputs = dot(intputs, weight) + bias`.
 __author__ = 'Qin zhaoyu'
 """
 import numpy as np
-from ABCLayer import Layer
-from initializer import Zeros, XavierUniform
+from .ABCLayer import Layer
+from .initializer import Zeros, XavierUniform
 
 
 class Dense(Layer):

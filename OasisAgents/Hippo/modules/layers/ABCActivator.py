@@ -5,8 +5,8 @@ the nonlinear representation of the model.
 
 __author__ = 'Qin zhaoyu'
 """
-from ABCLayer import Layer
 from abc import abstractmethod
+from .ABCLayer import Layer
 
 
 class Activation(Layer):

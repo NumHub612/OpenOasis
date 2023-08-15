@@ -4,8 +4,8 @@ ReLU activation function.
 
 __author__ = 'Qin zhaoyu'
 """
-from ABCActivator import Activation
 import numpy as np
+from .ABCActivator import Activation
 
 
 class ReLU(Activation):

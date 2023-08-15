@@ -5,7 +5,7 @@ Mean Absolute Error loss function.
 __author__ = 'Qin zhaoyu'
 """
 import numpy as np
-from ABCLoss import Loss
+from .ABCLoss import Loss
 
 
 class MAE(Loss):

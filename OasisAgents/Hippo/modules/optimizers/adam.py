@@ -5,7 +5,7 @@ Adam optimizer.
 __author__ = 'borgwang'
 __url__ = https://github.com/borgwang/tinynn
 """
-from ABCOptimizer import Optimizer
+from .ABCOptimizer import Optimizer
 
 
 class Adam(Optimizer):
