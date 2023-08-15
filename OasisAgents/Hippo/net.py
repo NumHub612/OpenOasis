@@ -21,11 +21,16 @@ class Net:
         return "\n".join([str(layer) for layer in self.layers])
 
     def forward(self, inputs):
+        """Forward propagation traverses all layers sequentially,
+        with the output of each layer calculated
+        as the input to the next layer."""
         for layer in self.layers:
             inputs = layer.forward(inputs)
         return inputs
 
     def backward(self, grad):
+        """Back propagation traverses all layers in reverse order,
+        using the gradient of each layer as input to the next."""
         # back propagation
         for layer in reversed(self.layers):
             grad = layer.backward(grad)
