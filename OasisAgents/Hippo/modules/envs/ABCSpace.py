@@ -7,7 +7,7 @@ __author__ = 'Qin zhaoyu'
 from abc import abstractmethod, ABCMeta
 
 
-class Space(ABCMeta):
+class Space(metaclass=ABCMeta):
     """Basic class for all spaces."""
 
     @abstractmethod

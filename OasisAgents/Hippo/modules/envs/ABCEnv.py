@@ -8,7 +8,7 @@ from abc import abstractmethod, ABCMeta
 import numpy as np
 
 
-class Env(ABCMeta):
+class Env(metaclass=ABCMeta):
     """Basic class for all environments."""
 
     reward_range = (-np.inf, np.inf)

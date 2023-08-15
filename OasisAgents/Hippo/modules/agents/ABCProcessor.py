@@ -7,7 +7,7 @@ __author__ = 'Qin zhaoyu'
 from abc import abstractmethod, ABCMeta
 
 
-class Processor(ABCMeta):
+class Processor(metaclass=ABCMeta):
     """Basic class for all processors."""
 
     def process_step(self, observation, reward, done, info):

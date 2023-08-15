@@ -7,7 +7,7 @@ __author__ = 'Qin zhaoyu'
 from abc import abstractmethod, ABCMeta
 
 
-class Agent(ABCMeta):
+class Agent(metaclass=ABCMeta):
     """Basic class for all agents."""
 
     def get_config(self) -> dict:
