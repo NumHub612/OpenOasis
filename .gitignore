@@ -14,3 +14,6 @@ Doxygen/
 [Rr]elease/
 x64/
 [Bb]in/
+reports/
+results/
+__pycache__/
