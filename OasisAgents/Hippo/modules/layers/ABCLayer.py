@@ -9,7 +9,7 @@ __author__ = 'Qin zhaoyu'
 from abc import abstractmethod, ABCMeta
 
 
-class Layer(ABCMeta):
+class Layer(metaclass=ABCMeta):
     """Base class for layers."""
 
     def __init__(self):

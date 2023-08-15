@@ -8,7 +8,7 @@ __author__ = 'Qin zhaoyu'
 from abc import abstractmethod, ABCMeta
 
 
-class Optimizer(ABCMeta):
+class Optimizer(metaclass=ABCMeta):
     """Base class for optimizers."""
 
     def __init__(self, lr, weight_decay):

@@ -8,7 +8,7 @@ __author__ = 'Qin zhaoyu'
 from abc import abstractmethod, ABCMeta
 
 
-class Loss(ABCMeta):
+class Loss(metaclass=ABCMeta):
     """Base class for loss and grads calculation."""
 
     @abstractmethod
