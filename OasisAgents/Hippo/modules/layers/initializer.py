@@ -3,33 +3,43 @@
 Various of network parameter initializers.
 
 __author__ = 'borgwang'
-
 __url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 
 
 class Initializer:
+    """Basic class for network parameter initializers."""
+
     def __call__(self, shape):
         return self.init(shape).astype(np.float32)
 
     def init(self, shape):
+        """Initialize the parameters.
+
+        :param shape: The shape of the parameters.
+        :return: The initialized parameters.
+        """
         raise NotImplementedError
 
 
 class Normal(Initializer):
+    """Normal distribution initializer."""
+
     def __init__(self, mean=0.0, std=1.0):
-        self._mean = mean
-        self._std = std
+        self._mean = mean  # The mean of the distribution
+        self._std = std  # The standard deviation of the distribution
 
     def init(self, shape):
         return np.random.normal(loc=self._mean, scale=self._std, size=shape)
 
 
 class TruncatedNormal(Initializer):
+    """Truncated normal distribution initializer."""
+
     def __init__(self, low, high, mean=0.0, std=1.0):
         self._mean, self._std = mean, std
-        self._low, self._high = low, high
+        self._low, self._high = low, high  #
 
     def init(self, shape):
         data = np.random.normal(loc=self._mean, scale=self._std, size=shape)
@@ -44,6 +54,8 @@ class TruncatedNormal(Initializer):
 
 
 class Uniform(Initializer):
+    """Uniform distribution initializer."""
+
     def __init__(self, a=0.0, b=1.0):
         self._a = a
         self._b = b
@@ -53,6 +65,8 @@ class Uniform(Initializer):
 
 
 class Constant(Initializer):
+    """Constant initializer."""
+
     def __init__(self, val):
         self._val = val
 
@@ -61,11 +75,15 @@ class Constant(Initializer):
 
 
 class Zeros(Constant):
+    """Zeros initializer."""
+
     def __init__(self):
         super(Zeros, self).__init__(0.0)
 
 
 class Ones(Constant):
+    """Ones initializer."""
+
     def __init__(self):
         super(Ones, self).__init__(1.0)
 

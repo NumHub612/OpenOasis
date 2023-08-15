@@ -37,6 +37,7 @@ class Layer(ABCMeta):
     @abstractmethod
     def forward(self, inputs):
         """Network layer forward propagation.
+
         :param inputs: The input data of the previous layer.
         :return: The results of the layer.
         """
@@ -45,6 +46,7 @@ class Layer(ABCMeta):
     @abstractmethod
     def backward(self, grad):
         """Network layer backward propagation.
+
         :param grad: The gradient of the previous layer.
         :return: The gradient of the layer.
         """
