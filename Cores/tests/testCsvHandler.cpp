@@ -50,6 +50,7 @@ TEST_CASE("CsvWriter tests")
         writer.InsertColumn<int>(2, "col2", {1, 2, 3});
         writer.InsertColumn<double>(3, "col3", {1.1, 2.2, 3.3});
 
+        writer.SetRowLabel(-1, "id");
         writer.SetRowLabel(0, "row1");
         writer.SetRowLabel(1, "row2");
         writer.SetRowLabel(2, "row3");
