@@ -36,7 +36,10 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            json = (json.contains(node)) ? json.at(node) : nlohmann::json();
+            if (json.contains(node))
+                json = json.at(node);
+            else
+                return std::nullopt;
         }
 
         if (json.contains(key))
@@ -56,7 +59,10 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            json = (json.contains(node)) ? json.at(node) : nlohmann::json();
+            if (json.contains(node))
+                json = json.at(node);
+            else
+                return std::nullopt;
         }
 
         if (json.contains(key) && json.at(key).is_array())
