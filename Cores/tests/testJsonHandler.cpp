@@ -59,6 +59,10 @@ TEST_CASE("JsonLoader tests")
     auto arr = loader.GetArray<int>({}, "list").value();
     REQUIRE(arr.size() == 3);
     REQUIRE(arr[0] == 1);
+
+    // auto arr2 = loader.GetArray<string>({}, "list").value();
+    // REQUIRE(arr2.size() == 3);
+    // REQUIRE(arr2[0] == "1");
 }
 
 

@@ -47,4 +47,8 @@ TEST_CASE("YamlLoader tests")
     vector<int> arr = loader.GetArray<int>({}, "arr").value();
     REQUIRE(arr.size() == 3);
     REQUIRE(arr[0] == 1);
+
+    auto arr2 = loader.GetArray<string>({}, "arr").value();
+    REQUIRE(arr2.size() == 3);
+    REQUIRE(arr2[0] == "1");
 }
