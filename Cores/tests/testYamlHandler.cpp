@@ -41,7 +41,7 @@ TEST_CASE("YamlLoader tests")
     int value2 = loader.GetValue<int>({"list"}, "integer").value();
     REQUIRE(value2 == 123);
 
-    auto &res = loader.GetArray<int>({}, "arr");
+    auto res = loader.GetArray<int>({}, "arr");
     REQUIRE(res.has_value());
 
     vector<int> arr = loader.GetArray<int>({}, "arr").value();

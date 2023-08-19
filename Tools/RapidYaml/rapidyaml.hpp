@@ -7675,6 +7675,9 @@ fastfloat_really_inline value128 full_multiplication(uint64_t a,
   answer.high = __umulh(a, b);
   answer.low = a * b;
 #elif defined(FASTFLOAT_32BIT) || (defined(_WIN64) && !defined(__clang__))
+  unsigned __int64 _umul128(
+    unsigned __int64 Multiplier, unsigned __int64 Multiplicand,
+    unsigned __int64 *HighProduct);
   answer.low = _umul128(a, b, &answer.high); // _umul128 not available on ARM64
 #elif defined(FASTFLOAT_64BIT)
   __uint128_t r = ((__uint128_t)a) * b;

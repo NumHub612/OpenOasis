@@ -63,7 +63,7 @@ vector<string> YamlLoader::GetKeys(const vector<string> &levels) const
     vector<string> keys;
     for (ryml::ConstNodeRef n : node.children())
     {
-        auto &key = n.key();
+        const auto &key = n.key();
         keys.push_back(string(key.str, key.len));
     }
 

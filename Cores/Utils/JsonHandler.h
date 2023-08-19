@@ -10,6 +10,7 @@
 #pragma once
 #include "Tools/Json/json.hpp"
 #include <optional>
+#include <vector>
 
 
 namespace OpenOasis
@@ -67,7 +68,7 @@ public:
 
         if (json.contains(key) && json.at(key).is_array())
         {
-            vector<T> results;
+            std::vector<T> results;
             for (const auto &val : json.at(key))
                 results.push_back(val);
             return results;
@@ -118,7 +119,10 @@ public:
         const std::vector<T> &values)
     {
         nlohmann::json json;
-        json[key] = (values.empty()) ? nlohmann::json::array() : values;
+        if (values.empty())
+            json[key] = nlohmann::json::array();
+        else
+            json[key] = values;
 
         nlohmann::json parentJson = json;
         for (auto it = levels.rbegin(); it != levels.rend(); ++it)
