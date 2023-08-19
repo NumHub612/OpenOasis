@@ -5,6 +5,12 @@
  *    @License   :  Apache-2.0
  *
  *    @Desc      :  To provide unified csv file read and write function.
+ *    For this' a simple csv parser, it's less fault tolerant for the csv file format
+ *    and has fewer parsing interfaces for csv data. More specifically,
+ *
+ *    1. The empty line is illegal, or at most, allowing the end line to be empty.
+ *    2. Lines of unequal length are allowed and can't be completed, e.g ',', etc.
+ *    3. Spaces around numbers do not affect parsing.
  *
  ** ***********************************************************************************/
 #pragma once
@@ -18,6 +24,7 @@ namespace Utils
 {
 /// @brief CsvLoader class loads data from a specified csv file.
 /// @note Row or column index used in this class is zero-based.
+/// @note Don't attempt to get a reference to the optional object `.value()`.
 class CsvLoader
 {
 private:

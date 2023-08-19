@@ -47,15 +47,15 @@ struct Face
     // Area of the face in (m^2).
     double area = NAN;
 
-    // Unit normal vector of the face.
+    // Unit normal vector.
     std::array<double, 3> normal;
 
     // Indexes of mesh nodes on the
     // face sorted counterclockwise.
     std::vector<int> nodeIndexes;
 
-    // Indexes of mesh cells
-    // shared the face.
+    // Indexes of mesh cells shared
+    // the face (left to right).
     std::vector<int> cellIndexes;
 };
 
@@ -81,7 +81,7 @@ struct Cell
 
     // Indexes of sub-cells
     // after current cell's refined.
-    std::vector<int> subcells;
+    std::vector<int> subCells;
 };
 
 

@@ -9,6 +9,7 @@
  ** ***********************************************************************************/
 #pragma once
 #include "MeshStructs.h"
+#include <string>
 
 
 namespace OpenOasis
@@ -20,10 +21,18 @@ namespace Spatial
 /// @brief Grid encapsulate the mesh data for numerical calculation.
 class Grid
 {
+private:
+    Mesh mMesh;
+    int  mRawNodesNum;
+    int  mRawFacesNum;
+    int  mRawCellsNum;
+
+    std::unordered_map<std::string, std::vector<int>> mPatches;
+    std::unordered_map<std::string, std::vector<int>> mZones;
+
 public:
     virtual ~Grid() = default;
-    Grid(Mesh &&mesh);
-    Grid(const Mesh &mesh);
+    Grid(const std::string &meshDir);
     Grid(const Grid &grid);
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -32,9 +41,9 @@ public:
 
     /// @brief Activate the mesh to extract topological information needed for various
     /// numerical calculations.
-    void ActivateMesh();
+    void Activate();
 
-    /// @brief Refine the cell at the given index for a adaptive grid.
+    /// @brief Refine the cell at the given index for adaptive grid.
     /// @note  The refining wouldn't change the origin nodes.
     void RefineCell(int cellIndex);
 
@@ -57,6 +66,9 @@ public:
     std::vector<int> GetOuterBoundaryFaceIdexes() const;
     std::vector<int> GetInnerBoundaryFaceIdexes() const;
 
+    std::vector<int> GetZoneCellIndexes(int zoneIndex) const;
+    std::vector<int> GetPatchFaceIndexes(int patchIndex) const;
+
 private:
     void CalculateFaceCentroid();
     void CalculateFaceNormal();
@@ -74,9 +86,34 @@ private:
     bool CheckMeshValid() const;
 
 private:
-    Mesh mMesh;
+    /// @brief Helper class to load mesh data from csv files.
+    class MeshLoader
+    {
+    private:
+        std::string       mMeshDir;
+        std::vector<Node> mNodes;
+        std::vector<Face> mFaces;
+        std::vector<Cell> mCells;
 
-    bool mMeshHasZ;
+    public:
+        MeshLoader(const std::string &meshDir);
+
+        friend class Grid;
+
+        void LoadNodes(const std::string &file = "nodes.csv");
+        void LoadFaces(const std::string &file = "faces.csv");
+        void LoadCells(const std::string &file = "cells.csv");
+
+        std::unordered_map<std::string, std::vector<int>>
+        LoadZones(const std::string &file = "zones.csv");
+
+        std::unordered_map<std::string, std::vector<int>>
+        LoadPatches(const std::string &file = "patches.csv");
+
+    private:
+        void
+        CheckValidIds(const std::vector<std::string> &ids, const std::string &meta);
+    };
 };
 
 }  // namespace Spatial

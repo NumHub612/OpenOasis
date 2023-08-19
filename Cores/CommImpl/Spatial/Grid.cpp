@@ -5,23 +5,47 @@
  ** ***********************************************************************************/
 #include "Grid.h"
 #include "Cores/Utils/Exception.h"
+#include "Cores/Utils/FilePathHelper.h"
+#include "Cores/Utils/StringHelper.h"
+#include "Cores/Utils/CsvHandler.h"
+#include <set>
 
 
 namespace OpenOasis::CommImpl::Spatial
 {
-using namespace std;
 using namespace Utils;
+using namespace std;
 
-Grid::Grid(Mesh &&mesh) : mMesh(move(mesh))
-{}
 
-Grid::Grid(const Mesh &mesh) : mMesh(mesh)
-{}
+// ------------------------------------------------------------------------------------
 
-Grid::Grid(const Grid &grid) : mMesh(grid.mMesh)
-{}
+Grid::Grid(const string &meshDir)
+{
+    MeshLoader loader(meshDir);
 
-void Grid::ActivateMesh()
+    loader.LoadNodes();
+    for (int i = 0; i < loader.mNodes.size(); ++i)
+    {
+        mMesh.nodes[i] = move(loader.mNodes[i]);
+    }
+
+    loader.LoadFaces();
+    for (int i = 0; i < loader.mFaces.size(); ++i)
+    {
+        mMesh.faces[i] = move(loader.mFaces[i]);
+    }
+
+    loader.LoadCells();
+    for (int i = 0; i < loader.mCells.size(); ++i)
+    {
+        mMesh.cells[i] = move(loader.mCells[i]);
+    }
+
+    mPatches = loader.LoadPatches();
+    mZones   = loader.LoadZones();
+}
+
+void Grid::Activate()
 {
     // Activate mesh face structures.
     CalculateFaceCentroid();
@@ -192,6 +216,148 @@ void Grid::CollectCellNeighbors()
     //         }
     //     }
     // }
+}
+
+
+// ------------------------------------------------------------------------------------
+
+Grid::MeshLoader::MeshLoader(const string &meshDir)
+{
+    if (!FilePathHelper::DirectoryExists(meshDir))
+    {
+        throw invalid_argument(
+            StringHelper::FormatSimple("Mesh directory {} does not exist.", meshDir));
+    }
+
+    mMeshDir = meshDir;
+}
+
+void Grid::MeshLoader::LoadNodes(const string &nodeFile)
+{
+    CsvLoader loader(FilePathHelper::Combine(mMeshDir, nodeFile));
+    if (loader.GetColumnCount() < 3)
+    {
+        throw InvalidDataException("Invalid Node data, to few columns.");
+    }
+
+    auto ids = loader.GetRowLabels().value();
+    CheckValidIds(ids, "Node");
+
+    mNodes.resize(ids.size());
+    for (int i = 0; i < mNodes.size(); ++i)
+    {
+        auto coor = loader.GetRow<double>(i).value();
+
+        mNodes[i].coor = {coor[0], coor[1], coor[2]};
+    }
+}
+
+void Grid::MeshLoader::LoadFaces(const string &faceFile)
+{
+    CsvLoader loader(FilePathHelper::Combine(mMeshDir, faceFile));
+    if (loader.GetColumnCount() < 2)
+    {
+        throw InvalidDataException("Invalid Face data, to few columns.");
+    }
+
+    auto ids = loader.GetRowLabels().value();
+    CheckValidIds(ids, "Face");
+
+    mFaces.resize(ids.size());
+    for (int i = 0; i < mFaces.size(); ++i)
+    {
+        mFaces[i].nodeIndexes = loader.GetRow<int>(i).value();
+    }
+}
+
+void Grid::MeshLoader::LoadCells(const string &cellFile)
+{
+    CsvLoader loader(FilePathHelper::Combine(mMeshDir, cellFile));
+    if (loader.GetColumnCount() < 3)
+    {
+        throw InvalidDataException("Invalid Cell data, to few columns.");
+    }
+
+    auto ids = loader.GetRowLabels().value();
+    CheckValidIds(ids, "Cell");
+
+    mCells.resize(ids.size());
+    for (int i = 0; i < mCells.size(); ++i)
+    {
+        mCells[i].faceIndexes = loader.GetRow<int>(i).value();
+    }
+}
+
+unordered_map<string, vector<int>>
+Grid::MeshLoader::LoadPatches(const string &patchFile)
+{
+    CsvLoader loader(FilePathHelper::Combine(mMeshDir, patchFile), false, true);
+    if (loader.GetColumnCount() < 2)
+    {
+        throw InvalidDataException("Invalid Patch data, to few columns.");
+    }
+
+    auto ids = loader.GetRowLabels().value();
+
+    unordered_map<string, vector<int>> patches;
+    for (const auto &id : ids)
+    {
+        patches[id] = loader.GetRow<int>(id).value();
+    }
+
+    return patches;
+}
+
+unordered_map<string, vector<int>> Grid::MeshLoader::LoadZones(const string &zoneFile)
+{
+    const auto &file = FilePathHelper::Combine(mMeshDir, zoneFile);
+    if (!FilePathHelper::FileExists(file))
+    {
+        return {};
+    }
+
+    CsvLoader loader(FilePathHelper::Combine(mMeshDir, zoneFile), false, true);
+    if (loader.GetColumnCount() < 3)
+    {
+        throw InvalidDataException("Invalid Zone data, to few columns.");
+    }
+
+    auto ids = loader.GetRowLabels().value();
+
+    unordered_map<string, vector<int>> zones;
+    for (const auto &id : ids)
+    {
+        zones[id] = loader.GetRow<int>(id).value();
+    }
+
+    return zones;
+}
+
+void Grid::MeshLoader::CheckValidIds(const vector<string> &ids, const string &meta)
+{
+    vector<int> ids_int(ids.size());
+    transform(begin(ids), end(ids), begin(ids_int), [](const string &id) {
+        return stoi(id);
+    });
+
+    if (ids_int.front() != 0)
+    {
+        throw InvalidDataException(StringHelper::FormatSimple(
+            "Invalid {} data, ids don't start from 0.", meta));
+    }
+
+    if (ids_int.back() != int(ids_int.size()) - 1)
+    {
+        throw InvalidDataException(
+            StringHelper::FormatSimple("Invalid {} data, discontinuous ids.", meta));
+    }
+
+    set ids2(ids_int.begin(), ids_int.end());
+    if (ids2.size() != ids.size())
+    {
+        throw InvalidDataException(
+            StringHelper::FormatSimple("Invalid {} data, duplicate ids.", meta));
+    }
 }
 
 }  // namespace OpenOasis::CommImpl::Spatial
