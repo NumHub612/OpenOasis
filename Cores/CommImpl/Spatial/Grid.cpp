@@ -4,6 +4,7 @@
  *
  ** ***********************************************************************************/
 #include "Grid.h"
+#include "GeoCalculator.h"
 #include "Cores/Utils/Exception.h"
 #include "Cores/Utils/FilePathHelper.h"
 #include "Cores/Utils/StringHelper.h"
@@ -43,11 +44,25 @@ Grid::Grid(const string &meshDir)
 
     mPatches = loader.LoadPatches();
     mZones   = loader.LoadZones();
+
+    mRawNodesNum = mMesh.nodes.size();
+    mRawFacesNum = mMesh.faces.size();
+    mRawCellsNum = mMesh.cells.size();
+}
+
+Grid::Grid(const Grid &grid)
+{
+    mMesh        = grid.mMesh;
+    mRawCellsNum = grid.mRawCellsNum;
+    mRawFacesNum = grid.mRawFacesNum;
+    mRawNodesNum = grid.mRawNodesNum;
+    mPatches     = grid.mPatches;
+    mZones       = grid.mZones;
 }
 
 void Grid::Activate()
 {
-    // Activate mesh face structures.
+    // Activate mesh face structures in orderly.
     CalculateFaceCentroid();
     CalculateFaceNormal();
     CalculateFaceArea();
@@ -74,123 +89,90 @@ void Grid::CoarsenCell(int cellIndex)
     throw NotImplementedException("Not implemented");
 }
 
-bool Grid::CheckMeshValid() const
-{
-    return true;
-}
-
 void Grid::CalculateFaceCentroid()
 {
-    // for (auto &face : mMesh.faces)
-    // {
-    //     double sumX = 0, sumY = 0, sumZ = 0;
-
-    //     const auto &fNodes = face.nodeIndexes;
-    //     for (const auto &node : fNodes)
-    //     {
-    //         sumX += mMesh.nodes[node].coor.x;
-    //         sumY += mMesh.nodes[node].coor.y;
-    //         sumZ += mMesh.nodes[node].coor.z;
-    //     }
-
-    //     double size   = double(fNodes.size());
-    //     face.centroid = {sumX / size, sumY / size, sumZ / size};
-    // }
+    for (auto &face : mMesh.faces)
+    {
+        face.second.centroid = GeoCalculator::CalculateFaceCentroid(face.first, mMesh);
+    }
 }
 
 void Grid::CalculateFaceNormal()
-{}
+{
+    for (auto &face : mMesh.faces)
+    {
+        face.second.normal = GeoCalculator::CalculateFaceNormal(face.first, mMesh);
+    }
+}
 
 void Grid::CalculateFaceArea()
 {
-    // Assume the nodes are in counter-clockwise order.
-
-    // for (auto &face : mMesh.faces)
-    // {
-    //     if (face.nodeIndexes.size() == 2)
-    //     {
-    //         face.area = 0;
-    //         continue;
-    //     }
-
-    //     // something to do.
-    // }
+    for (auto &face : mMesh.faces)
+    {
+        face.second.area = GeoCalculator::CalculateFaceArea(face.first, mMesh);
+    }
 }
 
 void Grid::CalculateFacePerimeter()
 {
-    // Assume the nodes are in counter-clockwise order.
-
-    // auto CalculateLength = [this](int i, int j) {
-    //     const auto &node1 = mMesh.nodes[i];
-    //     const auto &node2 = mMesh.nodes[j];
-
-    //     double dx = node1.coor.x - node2.coor.x;
-    //     double dy = node1.coor.y - node2.coor.y;
-
-    //     double dz = 0;
-    //     if (mMeshHasZ)
-    //     {
-    //         dz = node1.coor.z - node2.coor.z;
-    //     }
-
-    //     return sqrt(dx * dx + dy * dy + dz * dz);
-    // };
-
-    // for (auto &face : mMesh.faces)
-    // {
-    //     const auto &fNodes = face.nodeIndexes;
-    //     double      size   = fNodes.size();
-    //     double      len    = 0;
-
-    //     for (int i = 0; i < size - 1; i++)
-    //     {
-    //         len += CalculateLength(i, i + 1);
-    //     }
-
-    //     if (size > 2)
-    //     {
-    //         len += CalculateLength(size - 1, 0);
-    //     }
-
-    //     face.perimeter = len;
-    // }
+    for (auto &face : mMesh.faces)
+    {
+        face.second.perimeter =
+            GeoCalculator::CalculateFacePerimeter(face.first, mMesh);
+    }
 }
 
 void Grid::CalculateCellCentroid()
 {
-    // for (auto &cell : mMesh.cells)
-    // {
-    //     double      sumX = 0, sumY = 0, sumZ = 0;
-    //     const auto &cFaces = cell.faceIndexes;
-    //     for (const auto &face : cFaces)
-    //     {
-    //         sumX += mMesh.faces[face].centroid.x;
-    //         sumY += mMesh.faces[face].centroid.y;
-    //         sumZ += mMesh.faces[face].centroid.z;
-    //     }
+    for (auto &cell : mMesh.cells)
+    {
+        const auto &cFaces = cell.second.faceIndexes;
 
-    //     double size   = double(cFaces.size());
-    //     cell.centroid = {sumX / size, sumY / size, sumZ / size};
-    // }
+        double sumX = 0, sumY = 0, sumZ = 0;
+        for (const auto &face : cFaces)
+        {
+            sumX += mMesh.faces[face].centroid.x;
+            sumY += mMesh.faces[face].centroid.y;
+            sumZ += mMesh.faces[face].centroid.z;
+        }
+
+        double size = double(cFaces.size());
+        double x    = sumX / size;
+        double y    = sumY / size;
+        double z    = sumZ / size;
+
+        cell.second.centroid = {x, y, z};
+    }
 }
 
 void Grid::CalculateCellSurface()
 {
-    // for (auto &cell : mMesh.cells)
-    // {
-    //     double surface = 0;
-    //     for (const auto &face : cell.faceIndexes)
-    //     {
-    //         surface += mMesh.faces[face].area;
-    //     }
+    for (auto &cell : mMesh.cells)
+    {
+        double surface = 0;
+        for (const auto &face : cell.second.faceIndexes)
+        {
+            surface += mMesh.faces[face].area;
+        }
 
-    //     cell.surface = surface;
-    // }
+        cell.second.surface = surface;
+    }
 }
 
 void Grid::CalculateCellVolume()
-{}
+{
+    if (mMesh.faces[0].nodeIndexes.size() == 2)
+    {
+        for_each(begin(mMesh.cells), end(mMesh.cells), [](auto &cell) {
+            cell.second.volume = 0.0;
+        });
+        return;
+    }
+    for (auto &cell : mMesh.cells)
+    {
+        cell.second.volume = GeoCalculator::CalculateCellVolume(cell.first, mMesh);
+    }
+}
 
 void Grid::CollectCellsSharedNode()
 {}
@@ -199,23 +181,11 @@ void Grid::CollectFacesSharedNode()
 {}
 
 void Grid::CollectCellNeighbors()
-{
-    // for (size_t i = 0; i < mMesh.cells.size(); i++)
-    // {
-    //     mMesh.cells[i].neighbors.clear();
-    //     int curIdx = int(i);
+{}
 
-    //     for (const auto &face : mMesh.cells[i].faceIndexes)
-    //     {
-    //         for (int idx : mMesh.faces[face].cellIndexes)
-    //         {
-    //             if (idx != curIdx)
-    //             {
-    //                 mMesh.cells[i].neighbors.push_back(idx);
-    //             }
-    //         }
-    //     }
-    // }
+bool Grid::CheckMeshValid() const
+{
+    return true;
 }
 
 

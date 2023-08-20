@@ -13,5 +13,7 @@ TEST_CASE("Grid tests")
     SECTION("mesh loading test")
     {
         Grid grid(meshDir);
+
+        grid.Activate();
     }
 }

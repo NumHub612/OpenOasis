@@ -23,11 +23,18 @@ class Grid
 {
 private:
     Mesh mMesh;
-    int  mRawNodesNum;
-    int  mRawFacesNum;
-    int  mRawCellsNum;
 
+    // The number of original objects in the mesh before
+    // refining or coarsening.
+    int mRawNodesNum;
+    int mRawFacesNum;
+    int mRawCellsNum;
+
+    // The outer or inner boundary patches, each of them
+    // is arranged by Node indexes.
     std::unordered_map<std::string, std::vector<int>> mPatches;
+
+    // The zone arranged byg Face indexes.
     std::unordered_map<std::string, std::vector<int>> mZones;
 
 public:
@@ -63,11 +70,8 @@ public:
     const Face &GetFace(int faceIndex) const;
     const Node &GetNode(int nodeIndex) const;
 
-    std::vector<int> GetOuterBoundaryFaceIdexes() const;
-    std::vector<int> GetInnerBoundaryFaceIdexes() const;
-
-    std::vector<int> GetZoneCellIndexes(int zoneIndex) const;
-    std::vector<int> GetPatchFaceIndexes(int patchIndex) const;
+    std::vector<int> GetZoneCellIndexes(const std::string &zoneId) const;
+    std::vector<int> GetPatchFaceIndexes(const std::string &patchId) const;
 
 private:
     void CalculateFaceCentroid();
