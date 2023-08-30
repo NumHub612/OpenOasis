@@ -40,6 +40,11 @@ public:
         mElement = other.mElement;
     }
 
+    Vector(const std::array<T, N> &other)
+    {
+        mElement = other;
+    }
+
     template <typename... Args>
     Vector(Args... args)
     {
@@ -332,7 +337,7 @@ public:
         return *this;
     }
 
-    /// @brief Override `*` operator to return vector multiplication.
+    /// @brief Override `*` operator for vector multiplication.
     Vector operator*(T v) const
     {
         Vector ret(*this);
@@ -341,7 +346,7 @@ public:
         return ret;
     }
 
-    /// @brief Override `*` operator to return dot product.
+    /// @brief Override `*` operator for dot product.
     T operator*(const Vector &other) const
     {
         return Dot(other);
@@ -365,7 +370,7 @@ public:
         return *this;
     }
 
-    /// @brief Override `^` operator to return dyadic product.
+    /// @brief Override `^` operator for dyadic product.
     Tensor<T> operator^(const Vector &other) const
     {
         return Dyadic(other);

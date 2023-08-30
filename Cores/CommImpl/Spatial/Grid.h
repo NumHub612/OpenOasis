@@ -10,6 +10,7 @@
 #pragma once
 #include "MeshStructs.h"
 #include <string>
+#include <memory>
 
 
 namespace OpenOasis
@@ -21,7 +22,7 @@ namespace Spatial
 /// @brief Grid encapsulate the mesh data for numerical calculation.
 class Grid
 {
-private:
+protected:
     Mesh mMesh;
 
     // The number of original objects in the mesh before
@@ -31,16 +32,19 @@ private:
     int mRawCellsNum;
 
     // The outer or inner boundary patches, each of them
-    // is arranged by Node indexes.
+    // is composed of Node indexes.
     std::unordered_map<std::string, std::vector<int>> mPatches;
 
-    // The zone arranged byg Face indexes.
+    // The zone enclosed by Face indexes.
     std::unordered_map<std::string, std::vector<int>> mZones;
+
+    // The zone composed of Cell indexes.
+    std::unordered_map<std::string, std::vector<int>> mZoneCells;
 
 public:
     virtual ~Grid() = default;
     Grid(const std::string &meshDir);
-    Grid(const Grid &grid);
+    Grid(const std::shared_ptr<Grid> &grid);
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for mesh operations.
@@ -48,19 +52,23 @@ public:
 
     /// @brief Activate the mesh to extract topological information needed for various
     /// numerical calculations.
-    void Activate();
+    virtual void Activate();
 
     /// @brief Refine the cell at the given index for adaptive grid.
     /// @note  The refining wouldn't change the origin nodes.
-    void RefineCell(int cellIndex);
+    virtual void RefineCell(int cellIndex) = 0;
 
-    /// @brief Coarsen the cell at the given index for adaptive grid.
+    /// @brief Relax the cell at the given index for adaptive grid.
     /// @note  The coarsening wouldn't change the origin nodes.
-    void CoarsenCell(int cellIndex);
+    virtual void RelaxCell(int cellIndex) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for mesh query.
     //
+
+    int GetRawNumCells() const;
+    int GetRawNumFaces() const;
+    int GetRawNumNodes() const;
 
     int GetNumCells() const;
     int GetNumFaces() const;
@@ -70,27 +78,41 @@ public:
     const Face &GetFace(int faceIndex) const;
     const Node &GetNode(int nodeIndex) const;
 
-    std::vector<int> GetZoneCellIndexes(const std::string &zoneId) const;
+    int GetNumPatches() const;
+    int GetNumZones() const;
+
     std::vector<int> GetPatchFaceIndexes(const std::string &patchId) const;
+    std::vector<int> GetZoneCellIndexes(const std::string &zoneId) const;
 
-private:
-    void CalculateFaceCentroid();
-    void CalculateFaceNormal();
-    void CalculateFaceArea();
-    void CalculateFacePerimeter();
+protected:
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods used for activating mesh data.
+    //
 
-    void CalculateCellCentroid();
-    void CalculateCellSurface();
-    void CalculateCellVolume();
+    virtual void CollectCellsSharedNode();
+    virtual void CollectFacesSharedNode();
+    virtual void CollectCellsSharedFace();
+    virtual void CollectCellNeighbors();
+    virtual void CollectCellsInZone() = 0;
 
-    void CollectCellsSharedNode();
-    void CollectFacesSharedNode();
-    void CollectCellNeighbors();
+    virtual void SortNodes();
 
-    bool CheckMeshValid() const;
+    virtual void CalculateFaceCentroid();
+    virtual void CalculateFaceNormal()    = 0;
+    virtual void CalculateFaceArea()      = 0;
+    virtual void CalculateFacePerimeter() = 0;
 
-private:
-    /// @brief Helper class to load mesh data from csv files.
+    virtual void CalculateCellCentroid();
+    virtual void CalculateCellSurface() = 0;
+    virtual void CalculateCellVolume()  = 0;
+
+    virtual void CheckMesh() const;
+
+protected:
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Helper class to load mesh data from csv files.
+    //
+
     class MeshLoader
     {
     private:
@@ -115,8 +137,7 @@ private:
         LoadPatches(const std::string &file = "patches.csv");
 
     private:
-        void
-        CheckValidIds(const std::vector<std::string> &ids, const std::string &meta);
+        void CheckIds(const std::vector<std::string> &ids, const std::string &type);
     };
 };
 

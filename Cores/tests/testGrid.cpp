@@ -1,5 +1,5 @@
 #include "Tools/Catch2/catch.hpp"
-#include "Cores/CommImpl/Spatial/Grid.h"
+#include "Cores/CommImpl/Spatial/Grid2D.h"
 
 using namespace std;
 using namespace OpenOasis::CommImpl::Spatial;
@@ -12,7 +12,7 @@ TEST_CASE("Grid tests")
 
     SECTION("mesh loading test")
     {
-        Grid grid(meshDir);
+        Grid2D grid(meshDir);
 
         grid.Activate();
     }
