@@ -4,16 +4,17 @@
  *
  ** ***********************************************************************************/
 #include "Matrix.h"
+#include <stdexcept>
 
 
-namespace OpenOasis::CommImpl::DevSupports
+namespace OpenOasis::CommImpl::Numeric
 {
 using namespace std;
 
 DoubleSparseMatrix::Index::Index(int row, int column)
 {
-    mRow    = row;
-    mColumn = column;
+    mRow = row;
+    mCol = column;
 }
 
 size_t DoubleSparseMatrix::HashFunc::operator()(const Index &key) const
@@ -21,12 +22,12 @@ size_t DoubleSparseMatrix::HashFunc::operator()(const Index &key) const
     using std::hash;
     using std::size_t;
 
-    return ((hash<int>()(key.mRow) ^ (hash<int>()(key.mColumn) << 1)) >> 1);
+    return ((hash<int>()(key.mRow) ^ (hash<int>()(key.mCol) << 1)) >> 1);
 }
 
 bool DoubleSparseMatrix::EqualFunc::operator()(const Index &lhs, const Index &rhs) const
 {
-    return lhs.mRow == rhs.mRow && lhs.mColumn == rhs.mColumn;
+    return lhs.mRow == rhs.mRow && lhs.mCol == rhs.mCol;
 }
 
 DoubleSparseMatrix::DoubleSparseMatrix(int rowCount, int columnCount)
@@ -63,19 +64,21 @@ bool DoubleSparseMatrix::IsCellEmpty(int row, int column)
 
 double DoubleSparseMatrix::operator()(int row, int column)
 {
-    auto   index = Index(row, column);
-    double result;
+    auto index = Index(row, column);
 
     const auto &iterator = mValues.find(index);
+    if (iterator == mValues.end()) throw runtime_error("Matrxi index out of range");
+
     return iterator->second;
 }
 
 double DoubleSparseMatrix::At(int row, int column)
 {
-    auto   index = Index(row, column);
-    double result;
+    auto index = Index(row, column);
 
     const auto &iterator = mValues.find(index);
+    if (iterator == mValues.end()) throw runtime_error("Matrxi index out of range");
+
     return iterator->second;
 }
 
@@ -94,13 +97,12 @@ vector<double> DoubleSparseMatrix::Product(const vector<double> &vector2)
 
 void DoubleSparseMatrix::Product(vector<double> &res, const vector<double> &vector2)
 {
-    if (vector2.empty())
-        return;
+    if (vector2.empty()) return;
 
     for (auto &entry : mValues)
     {
-        res[entry.first.mRow] += entry.second * vector2[entry.first.mColumn];
+        res[entry.first.mRow] += entry.second * vector2[entry.first.mCol];
     }
 }
 
-}  // namespace OpenOasis::CommImpl::DevSupports
+}  // namespace OpenOasis::CommImpl::Numeric

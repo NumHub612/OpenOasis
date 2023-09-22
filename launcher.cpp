@@ -13,7 +13,6 @@
 #include "Cores/SystFluids/export/OasisFluidsModule.h"
 #include "Cores/CommImpl/Time.h"
 #include "Cores/CommImpl/DevSupports/IterationController.h"
-// #include "Cores/SystFluids/HydrologicComps/RiverModule.h"
 #include "Tools/spdlog/spdlog.h"
 #include <string>
 #include <vector>
@@ -21,11 +20,9 @@
 #include <thread>
 #include <iomanip>
 
-
 using namespace OpenOasis;
 using namespace CommImpl;
 using namespace DevSupports;
-// using namespace SystFluids::HydrologicComps;
 using namespace Utils;
 using namespace std;
 
@@ -322,7 +319,15 @@ int main(int argc, const char *argv[])
 
     std::string dllPath(argv[1]);
 
-    // RoutineFlowTest(dllPath, "gage1", "runoff1");
+    cout << "\n====================================\n";
+    cout << "            RoutineFlowTest";
+    cout << "\n====================================\n";
+
+    RoutineFlowTest(dllPath, "gage1", "runoff1");
+
+    cout << "\n====================================\n";
+    cout << "            IterationTest";
+    cout << "\n====================================\n";
 
     IterationTest(dllPath);
 

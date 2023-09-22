@@ -10,22 +10,48 @@
 #pragma once
 
 
-// define WINDOWS.
+// Define WINDOWS.
 #undef WINDOWS
 #ifdef _WIN32
 #define WINDOWS
 #endif
 
-// define LINUX.
+// Define LINUX.
 #undef LINUX
 #ifdef __linux__
 #define LINUX
 #endif
 
-// include platform headers.
+// Include platform headers.
 #ifdef WINDOWS
 #include <windows.h>
 #else
 #include <dlfcn.h>
 #include <stdexcept>
+#endif
+
+// Define dll export macro.
+#ifdef __cplusplus
+#ifndef EXTERNC
+#define EXTERNC extern "C"
+#endif
+#else
+#define EXTERNC
+#endif
+
+#ifdef WINDOWS
+#ifndef EXPORT
+#define EXPORT EXTERNC __declspec(dllexport)
+#endif
+#else
+#define EXPORT EXTERNC
+#endif
+
+// Define OO_ASSERT.
+#if defined(DEBUG) || defined(_DEBUG)
+#define OO_DEBUG_MODE
+#include <cassert>
+#define OO_ASSERT(x) assert(x)
+#else
+#define OO_ASSERT(x)
 #endif

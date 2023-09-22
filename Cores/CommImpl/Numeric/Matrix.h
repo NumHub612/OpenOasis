@@ -18,7 +18,7 @@ namespace OpenOasis
 {
 namespace CommImpl
 {
-namespace DevSupports
+namespace Numeric
 {
 using namespace AdditionalControl;
 
@@ -58,12 +58,10 @@ public:
     {
     public:
         Index(int row, int column);
+        Index() = default;
 
         int mRow = 0;
-
-        int mColumn = 0;
-
-        Index() = default;
+        int mCol = 0;
     };
 
     struct EqualFunc
@@ -107,6 +105,6 @@ public:
     void SetValue(int row, int column, double value);
 };
 
-}  // namespace DevSupports
+}  // namespace Numeric
 }  // namespace CommImpl
 }  // namespace OpenOasis

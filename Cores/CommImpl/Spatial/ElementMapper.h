@@ -18,25 +18,25 @@
  *    number of elements in the ElementSet associated to the providing component
  *    (i.e. the fromElements).
  *
- *   Mapping is possible for any zero-, one- and two-dimensional elemets.
- *   Zero dimensional elements will always be points, one-dimensional elements will
- *   allways be polylines and two-dimensional elements will allways be polygons.
+ *    Mapping is possible for any zero-, one- and two-dimensional elemets.
+ *    Zero dimensional elements will always be points, one-dimensional elements will
+ *    allways be polylines and two-dimensional elements will allways be polygons.
  *
- *   The ElementMapper contains a lot of methods for mapping between the different
- *   element types. As an example polyline to polygon mapping may be done either
- *   as Weighted Mean or as Weighted Sum. Typically the method choice will
- *   depend on the quantity mapped.
+ *    The ElementMapper contains a lot of methods for mapping between the different
+ *    element types. As an example polyline to polygon mapping may be done either
+ *    as Weighted Mean or as Weighted Sum. Typically the method choice will
+ *    depend on the quantity mapped.
  *
- *   Such that state variables such as water level will be mapped using
- *   Weighted Mean whereas flux variable such as seepage from river to groundwater
- *   will be mapped using Weighted Sum.
+ *    Such that state variables such as water level will be mapped using
+ *    Weighted Mean whereas flux variable such as seepage from river to groundwater
+ *    will be mapped using Weighted Sum.
  *
  ** ***********************************************************************************/
 #pragma once
 #include "Cores/Inc/IIdentifiable.h"
 #include "Cores/Inc/IElementSet.h"
 #include "Cores/Inc/IValueSet.h"
-#include "Cores/CommImpl/DevSupports/Matrix.h"
+#include "Cores/CommImpl/Numeric/Matrix.h"
 #include "Cores/CommImpl/Spatial/XYGeoStructs.h"
 #include <optional>
 
@@ -47,7 +47,7 @@ namespace CommImpl
 {
 namespace Spatial
 {
-using namespace DevSupports;
+using namespace Numeric;
 
 /// @brief Predined element mapping methods.
 enum class ElementMapperMethod

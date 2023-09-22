@@ -15,6 +15,7 @@
 #include "Cores/Utils/Exception.h"
 #include "Cores/Utils/StringHelper.h"
 #include "Cores/Utils/MapHelper.h"
+#include <array>
 
 
 namespace OpenOasis::CommImpl
@@ -27,6 +28,17 @@ LinkableComponent::LinkableComponent(const string &id)
 {
     mId        = id;
     mEventArgs = make_shared<LinkableComponentEventArgs>();
+
+    mRequiredArguments = {"ID", "OUTPUTTERS", "INPUTTERS"};
+
+    mArguments["ID"] = make_shared<ArgumentString>("ID", mId);
+
+    // Set the output/input needed,
+    // formated as "object_type, object_id, variable_id".
+    mArguments["OUTPUTTERS"] =
+        make_shared<TArgument<vector<array<string, 3>>>>("OUTPUTTERS");
+    mArguments["INPUTTERS"] =
+        make_shared<TArgument<vector<array<string, 3>>>>("INPUTTERS");
 }
 
 LinkableComponent::LinkableComponent(LinkableComponent &&obj)
@@ -70,10 +82,7 @@ void LinkableComponent::SetDescription(const string &value)
 
 string LinkableComponent::GetId() const
 {
-    if (mId == "")
-    {
-        throw runtime_error("Id not Set");
-    }
+    if (mId == "") { throw runtime_error("Id not Set"); }
     return mId;
 }
 
@@ -87,15 +96,13 @@ void LinkableComponent::SetArguments(const vector<shared_ptr<IArgument>> &values
     for (const auto &arg : values)
     {
         const auto &id = arg->GetId();
-        if (mArguments.count(id) > 0)
-            mArguments[id] = arg;
+        if (mArguments.count(id) > 0) mArguments[id] = arg;
     }
 }
 
 void LinkableComponent::SetStatus(LinkableComponentStatus value, const string &msg)
 {
-    if (value == mStatus)
-        return;
+    if (value == mStatus) return;
 
     LinkableComponentStatus oldStatus = mStatus;
 
@@ -207,14 +214,8 @@ vector<string> LinkableComponent::Validate()
     SetStatus(LinkableComponentStatus::Validating);
 
     const auto &validationResults = OnValidate();
-    if (validationResults.empty())
-    {
-        SetStatus(LinkableComponentStatus::Valid);
-    }
-    else
-    {
-        SetStatus(LinkableComponentStatus::Invalid);
-    }
+    if (validationResults.empty()) { SetStatus(LinkableComponentStatus::Valid); }
+    else { SetStatus(LinkableComponentStatus::Invalid); }
 
     return validationResults;
 }
@@ -239,18 +240,15 @@ void LinkableComponent::Update(const vector<shared_ptr<IOutput>> &requiredOutput
 {
     // No more update.
     if (mStatus == LinkableComponentStatus::Done
-        || mStatus == LinkableComponentStatus::Failed
-        || mStatus == LinkableComponentStatus::Finished)
+        || mStatus == LinkableComponentStatus::Finished
+        || mStatus == LinkableComponentStatus::Failed)
     {
         return;
     }
 
     // Check the output items needed to be updated.
     vector<shared_ptr<IOutput>> outputs = requiredOutputs;
-    if (outputs.empty())
-    {
-        outputs = mOutputs;
-    }
+    if (outputs.empty()) outputs = mOutputs;
 
     // Update with estimates if component is blocked.
     if (mStatus == LinkableComponentStatus::Updating
@@ -285,10 +283,7 @@ void LinkableComponent::Update(const vector<shared_ptr<IOutput>> &requiredOutput
     // start time of all input items, to indicate that we are never going to ask
     // data before this time. Done after the `PerformTimestep` in order to support
     // redoing of time steps.
-    if (!mCascadingUpdateCallsDisabled)
-    {
-        UpdateInputTimesAndValues();
-    }
+    if (!mCascadingUpdateCallsDisabled) UpdateInputTimesAndValues();
 
     // Indicate that Update is done.
     SetStatus(
@@ -301,8 +296,7 @@ void LinkableComponent::UpdateInputs()
 {
     for (const auto &input : mInputs)
     {
-        if (input->GetProviders().empty())
-            continue;
+        if (input->GetProviders().empty()) continue;
 
         const auto &values = input->GetValues(nullptr);
         ApplyInputData(values);
@@ -315,8 +309,7 @@ void LinkableComponent::UpdateInputTimesAndValues()
 
     for (const auto &input : mInputs)
     {
-        if (input->GetProviders().empty())
-            continue;
+        if (input->GetProviders().empty()) continue;
 
         const auto &timeset  = input->GetTimeSet();
         const auto &valueset = input->GetValues(nullptr);
@@ -330,10 +323,7 @@ void LinkableComponent::UpdateInputTimesAndValues()
                 timeset->RemoveTime(0);
                 valueset->RemoveValue({0});
             }
-            else
-            {
-                break;
-            }
+            else { break; }
         }
 
         if (timeset->GetTimes().empty())
@@ -366,15 +356,9 @@ void LinkableComponent::Reset()
     mTimeExtent.reset();
     mCurrentTime.reset();
 
-    for (const auto &input : mInputs)
-    {
-        input->Reset();
-    }
+    for (const auto &input : mInputs) input->Reset();
 
-    for (const auto &output : mOutputs)
-    {
-        output->Reset();
-    }
+    for (const auto &output : mOutputs) output->Reset();
 
     mArguments.clear();
 }
@@ -390,18 +374,6 @@ void LinkableComponent::RestoreState(const shared_ptr<IIdentifiable> &stateId)
 }
 
 void LinkableComponent::ClearState(const shared_ptr<IIdentifiable> &stateId)
-{
-    throw NotImplementedException();
-}
-
-void LinkableComponent::SetAttribute(
-    const string &objType, const string &objID, const string &varType, const any &value)
-{
-    throw NotImplementedException();
-}
-
-optional<any> LinkableComponent::GetAttribute(
-    const string &objType, const string &objID, const string &varType) const
 {
     throw NotImplementedException();
 }

@@ -17,7 +17,6 @@ namespace OpenOasis
 namespace CommImpl
 {
 /// @brief Common implementation of `IValueSet` in two dimension (time-space).
-
 class ValueSet2D : public IValueSet
 {
 protected:

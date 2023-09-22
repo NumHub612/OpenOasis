@@ -31,11 +31,8 @@ private:
     std::vector<std::vector<int>> mFaceVertexIndices;  // faces consisted of vertices.
 
 public:
-    virtual ~Element()
-    {}
+    virtual ~Element() = default;
 
-    // Element()
-    // {}
     Element(const Element &elem);
     Element(
         const std::string &id, const std::string &caption,
@@ -83,13 +80,10 @@ public:
     // Additional methods for the face operations.
     //
 
-    /// @brief Returns the number of faces.
     int GetFaceCount() const;
 
-    /// @brief Adds a face represented of vertexes.
     void AddFace(const std::vector<int> &vertexIndices);
 
-    /// @brief Returns the face vertex indices of the specified face.
     std::vector<int> GetFaceVertexIndices(int faceIndex) const;
 };
 

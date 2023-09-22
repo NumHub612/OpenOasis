@@ -38,7 +38,7 @@ SpaceLengthAdaptor::SpaceLengthAdaptor(
         throw invalid_argument("Adaptee must have an IElementSet as SpatialDefinition");
     }
 
-    if (elementSet->GetElementType() != ElementType::PolyLine)
+    if (elementSet->GetElementType() != ElementType::Polyline)
     {
         throw invalid_argument(
             "Adaptee must have a SpatialDefinition having polyline as elements");

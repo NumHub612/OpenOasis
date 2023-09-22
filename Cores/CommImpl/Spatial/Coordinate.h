@@ -27,8 +27,10 @@ struct Coordinate
     double z = NAN;
     double m = NAN;
 
-    bool Equals(const Coordinate &coor) const;
     bool Equals(double coorX, double coorY, double coorZ) const;
+    bool Equals(const Coordinate &coor) const;
+    bool HasZ() const;
+    bool HasM() const;
 };
 
 }  // namespace Spatial

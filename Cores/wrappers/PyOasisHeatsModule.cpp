@@ -1,8 +1,11 @@
 #include "Tools/Pybind11/include/pybind11/pybind11.h"
-#include "Cores/SystHeats/demo/heats.h"
 
 namespace py = pybind11;
 
+int oasis_plus(int i, int j)
+{
+    return i * j;
+}
 
 PYBIND11_MODULE(PyOasisHeats, m)
 {

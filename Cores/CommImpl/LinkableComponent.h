@@ -13,7 +13,6 @@
 #include "Cores/Inc/IInput.h"
 #include "Cores/Inc/IManageState.h"
 #include "Cores/Inc/LinkableComponentStatusChangeEventArgs.h"
-#include "Cores/Inc/AdditionalControl/IScheduler.h"
 #include "Cores/Utils/EventHandler.h"
 
 
@@ -21,15 +20,13 @@ namespace OpenOasis
 {
 namespace CommImpl
 {
-using namespace AdditionalControl;
-using namespace Utils;
+using Utils::EventHandler;
 
 /// @brief Generic implementation of `ILinkableComponent` with more process details.
 ///
 /// The implementation here predefines a set of methods that are useful in
 /// concrete model engine development.
 class LinkableComponent : public ILinkableComponent,
-                          public IScheduler,
                           public IManageState,
                           public std::enable_shared_from_this<LinkableComponent>
 {
@@ -58,8 +55,8 @@ protected:
 
     bool mCascadingUpdateCallsDisabled = false;
 
-    std::shared_ptr<ITimeSet> mTimeExtent  = nullptr;
-    std::shared_ptr<ITime>    mCurrentTime = nullptr;
+    std::shared_ptr<ITimeSet> mTimeExtent  = nullptr;  // todo: removed.
+    std::shared_ptr<ITime>    mCurrentTime = nullptr;  // todo: removed.
 
     std::unordered_map<std::string, std::shared_ptr<IArgument>> mArguments;
 
@@ -71,8 +68,6 @@ public:
 
     LinkableComponent(LinkableComponent &&obj);
     LinkableComponent(const std::string &id);
-    LinkableComponent(const std::shared_ptr<ILinkableComponent> &obj) = delete;
-    LinkableComponent(const LinkableComponent &obj)                   = delete;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Implement methods inherited from `IDescribable`.
@@ -135,20 +130,6 @@ public:
     virtual void RestoreState(const std::shared_ptr<IIdentifiable> &stateId) override;
 
     virtual void ClearState(const std::shared_ptr<IIdentifiable> &stateId) override;
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Implement methods inherited from `IScheduler`.
-    //
-    // These interfaces are used for real-time control of component attributes.
-    //
-
-    virtual void SetAttribute(
-        const std::string &objType, const std::string &objID,
-        const std::string &varType, const std::any &value) override;
-
-    virtual std::optional<std::any> GetAttribute(
-        const std::string &objType, const std::string &objID,
-        const std::string &varType) const override;
 
 public:
     ///////////////////////////////////////////////////////////////////////////////////
@@ -228,7 +209,7 @@ public:
     /// This methods will not trigger an update of the input and output items,
     /// the `Update()` method does exactly that.
     virtual void
-    PerformTimestep(const std::vector<std::shared_ptr<IOutput>> &requiredOutputs) = 0;
+    PerformTimestep(const std::vector<std::shared_ptr<IOutput>> &outputs) = 0;
 
     virtual void UpdateInputTimesAndValues();
 

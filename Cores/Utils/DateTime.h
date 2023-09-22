@@ -202,11 +202,11 @@ public:
 
     /// @brief Convert the `DateTime` object to string with specified format.
     static std::string
-    ToString(const DateTime &obj, const std::string &fmt = "%Y/%m/%d %H:%M:%S");
+    ToString(const DateTime &obj, const std::string &fmt = "%Y-%m-%d %H:%M:%S");
 
     /// @brief Parses the `DateTime` object from the string format.
     static DateTime
-    FromString(const std::string &str, const std::string &fmt = "%Y/%m/%d %H:%M:%S");
+    FromString(const std::string &str, const std::string &fmt = "%Y-%m-%d %H:%M:%S");
 
     /// @brief Gets a new `DateTime` with current date but time set to 0:0:0.
     static DateTime Today();

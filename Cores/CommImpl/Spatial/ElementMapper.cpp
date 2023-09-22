@@ -133,7 +133,7 @@ void ElementMapper::UpdateMappingMatrix(
         }
         else if (
             fromElements->GetElementType() == ElementType::Point
-            && toElements->GetElementType() == ElementType::PolyLine)
+            && toElements->GetElementType() == ElementType::Polyline)
         {
             MapFromPointToPolyline(fromElements, toElements);
         }
@@ -144,19 +144,19 @@ void ElementMapper::UpdateMappingMatrix(
             MapFromPointToPolygon(fromElements, toElements);
         }
         else if (
-            fromElements->GetElementType() == ElementType::PolyLine
+            fromElements->GetElementType() == ElementType::Polyline
             && toElements->GetElementType() == ElementType::Point)
         {
             MapFromPolylineToPoint(fromElements, toElements);
         }
         else if (
-            fromElements->GetElementType() == ElementType::PolyLine
-            && toElements->GetElementType() == ElementType::PolyLine)
+            fromElements->GetElementType() == ElementType::Polyline
+            && toElements->GetElementType() == ElementType::Polyline)
         {
             MapFromPolylineToPolyline(fromElements, toElements);
         }
         else if (
-            fromElements->GetElementType() == ElementType::PolyLine
+            fromElements->GetElementType() == ElementType::Polyline
             && toElements->GetElementType() == ElementType::Polygon)
         {
             MapFromPolylineToPolygon(fromElements, toElements);
@@ -169,7 +169,7 @@ void ElementMapper::UpdateMappingMatrix(
         }
         else if (
             fromElements->GetElementType() == ElementType::Polygon
-            && toElements->GetElementType() == ElementType::PolyLine)
+            && toElements->GetElementType() == ElementType::Polyline)
         {
             MapFromPolygonToPolyline(fromElements, toElements);
         }
@@ -313,12 +313,12 @@ void ElementMapper::MapFromPointToPolyline(
     {
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPolyline toPolyLine = CreateXYPolyline(toElements, i);
+            XYPolyline toPolyline = CreateXYPolyline(toElements, i);
             for (int j = 0; j < mNumberOfFromColumns; j++)
             {
                 XYPoint fromPoint = CreateXYPoint(fromElements, j);
                 mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] =
-                    XYGeoTools::CalculatePolylineToPointDistance(toPolyLine, fromPoint);
+                    XYGeoTools::CalculatePolylineToPointDistance(toPolyline, fromPoint);
             }
         }
 
@@ -414,12 +414,12 @@ void ElementMapper::MapFromPointToPolyline(
         else
         {
             throw runtime_error(
-                "methodDescription unknown for point to polyline mapping");
+                "methodDescription unknown for point to Polyline mapping");
         }
     }
     catch (const runtime_error &e)
     {
-        throw runtime_error("Point to polyline mapping failed");
+        throw runtime_error("Point to Polyline mapping failed");
     }
 }
 
@@ -483,9 +483,9 @@ void ElementMapper::MapFromPolylineToPoint(
             XYPoint toPoint = CreateXYPoint(toElements, i);
             for (int j = 0; j < mNumberOfFromColumns; j++)
             {
-                XYPolyline fromPolyLine = CreateXYPolyline(fromElements, j);
+                XYPolyline fromPolyline = CreateXYPolyline(fromElements, j);
                 mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] =
-                    XYGeoTools::CalculatePolylineToPointDistance(fromPolyLine, toPoint);
+                    XYGeoTools::CalculatePolylineToPointDistance(fromPolyline, toPoint);
             }
         }
 
@@ -576,7 +576,7 @@ void ElementMapper::MapFromPolylineToPoint(
         else
         {
             throw runtime_error(
-                "methodDescription unknown for polyline to point mapping");
+                "methodDescription unknown for Polyline to point mapping");
         }
     }
     catch (const runtime_error &e)  // For all of the Point to Polyline part
@@ -609,10 +609,10 @@ void ElementMapper::MapFromPolylineToPolygon(
                 double totalLineLengthInPolygon = 0;
                 for (int n = 0; n < mNumberOfFromColumns; n++)
                 {
-                    XYPolyline polyline = CreateXYPolyline(fromElements, n);
+                    XYPolyline Polyline = CreateXYPolyline(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
                         XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
-                            polyline, polygon);
+                            Polyline, polygon);
                     totalLineLengthInPolygon += (*mMappingMatrix)(i, n);
                 }
 
@@ -627,20 +627,20 @@ void ElementMapper::MapFromPolylineToPolygon(
             }
             else if (mMethod == ElementMapperMethod::WeightedSum)
             {
-                // For each line segment in PolyLine
+                // For each line segment in Polyline
                 for (int n = 0; n < mNumberOfFromColumns; n++)
                 {
-                    XYPolyline polyline = CreateXYPolyline(fromElements, n);
+                    XYPolyline Polyline = CreateXYPolyline(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
                         XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
-                            polyline, polygon)
-                        / polyline.GetLength();
+                            Polyline, polygon)
+                        / Polyline.GetLength();
                 }
             }
             else
             {
                 throw runtime_error(
-                    "methodDescription unknown for polyline to polygon mapping");
+                    "methodDescription unknown for Polyline to polygon mapping");
             }
         }
     }
@@ -736,12 +736,12 @@ void ElementMapper::MapFromPolygonToPolyline(
     const shared_ptr<IElementSet> &fromElements,
     const shared_ptr<IElementSet> &toElements)
 {
-    // Polygon to PolyLine
+    // Polygon to Polyline
     try
     {
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPolyline polyline = CreateXYPolyline(toElements, i);
+            XYPolyline Polyline = CreateXYPolyline(toElements, i);
 
             if (mMethod == ElementMapperMethod::WeightedMean)
             {
@@ -750,8 +750,8 @@ void ElementMapper::MapFromPolygonToPolyline(
                     XYPolygon polygon = CreateXYPolygon(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
                         XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
-                            polyline, polygon)
-                        / polyline.GetLength();
+                            Polyline, polygon)
+                        / Polyline.GetLength();
                 }
 
                 double sum = 0;
@@ -773,20 +773,20 @@ void ElementMapper::MapFromPolygonToPolyline(
                     XYPolygon polygon = CreateXYPolygon(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
                         XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
-                            polyline, polygon)
-                        / polyline.GetLength();
+                            Polyline, polygon)
+                        / Polyline.GetLength();
                 }
             }
             else
             {
                 throw runtime_error(
-                    "methodDescription unknown for polygon to polyline mapping");
+                    "methodDescription unknown for polygon to Polyline mapping");
             }
         }
     }
-    catch (const runtime_error &e)  // catch for all of Polygon to PolyLine
+    catch (const runtime_error &e)  // catch for all of Polygon to Polyline
     {
-        throw runtime_error("Polygon to polyline mapping failed");
+        throw runtime_error("Polygon to Polyline mapping failed");
     }
 }
 
@@ -937,7 +937,7 @@ ElementMapper::CreateXYPoint(const shared_ptr<IElementSet> &elementSet, int inde
 XYPolyline
 ElementMapper::CreateXYPolyline(const shared_ptr<IElementSet> &elementSet, int index)
 {
-    if (!(elementSet->GetElementType() == ElementType::PolyLine))
+    if (!(elementSet->GetElementType() == ElementType::Polyline))
     {
         throw runtime_error("Cannot create XYPolyline");
     }
