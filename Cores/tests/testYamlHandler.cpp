@@ -9,7 +9,7 @@ using namespace std;
 TEST_CASE("YamlLoader tests")
 {
     const string path =
-        "D:\\4_resource\\oasis_examples\\heat_conduction_model\\settings.yaml";
+        "D:\\4_resource\\oasis_examples\\heat_conduction_model\\test.yaml";
 
     /*
     scalar: hello world
@@ -19,24 +19,25 @@ TEST_CASE("YamlLoader tests")
       integer: 123
       floating point: 2.75
     arr: [1, 2, 3]
+    dic: {a: 1, b: 2}
     */
 
     YamlLoader loader(path);
 
     vector<string> keys = loader.GetKeys({});
-    REQUIRE(keys.size() == 3);
+    CHECK(keys.size() == 4);
 
     vector<string> keys2 = loader.GetKeys({"list"});
     REQUIRE(keys2.size() == 4);
 
     string value1 = loader.GetValue<string>({}, "scalar").value();
-    REQUIRE(value1 == "hello world");
+    CHECK(value1 == "hello world");
 
     auto res0 = loader.GetValue<bool>({"list"}, "boolean");
     REQUIRE(res0.has_value());
 
     bool state = loader.GetValue<bool>({"list"}, "boolean").value();
-    REQUIRE(state == true);
+    CHECK(state == true);
 
     int value2 = loader.GetValue<int>({"list"}, "integer").value();
     REQUIRE(value2 == 123);
@@ -51,4 +52,7 @@ TEST_CASE("YamlLoader tests")
     auto arr2 = loader.GetArray<string>({}, "arr").value();
     REQUIRE(arr2.size() == 3);
     REQUIRE(arr2[0] == "1");
+
+    auto res3 = loader.GetValue<int>({"dic"}, "a").value();
+    REQUIRE(res3 == 1);
 }

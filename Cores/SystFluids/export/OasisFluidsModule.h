@@ -1,6 +1,8 @@
 #pragma once
 #include "Cores/Utils/CommMacros.h"
 
+EXPORT const char *GetFluidPackageVersion();
+
 /// @brief Get `RainfallModule` object which no external deletion is required.
 /// @param id Rainfall model id.
 /// @param coorFile File contains coordinates of the rainfall model.

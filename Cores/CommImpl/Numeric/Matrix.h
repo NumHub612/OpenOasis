@@ -58,12 +58,10 @@ public:
     {
     public:
         Index(int row, int column);
+        Index() = default;
 
         int mRow = 0;
-
-        int mColumn = 0;
-
-        Index() = default;
+        int mCol = 0;
     };
 
     struct EqualFunc

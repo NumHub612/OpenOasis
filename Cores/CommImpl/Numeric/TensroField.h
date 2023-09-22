@@ -24,6 +24,9 @@ namespace Numeric
 template <typename T>
 class TensorField
 {
+private:
+    std::vector<Tensor<T>> mData;
+
 public:
     virtual ~TensorField() = default;
     TensorField(std::size_t size)
@@ -66,10 +69,7 @@ public:
     template <typename Callback>
     void ForEach(Callback func)
     {
-        for (auto &elem : mData)
-        {
-            func(elem);
-        }
+        for (auto &elem : mData) { func(elem); }
     }
 
     std::size_t Size() const
@@ -87,8 +87,7 @@ public:
         std::size_t offset = 0)
     {
         std::size_t j = offset;
-        for (std::size_t i = start; i < end; ++i)
-            mData.at(i) = other(j++);
+        for (std::size_t i = start; i < end; ++i) mData.at(i) = other(j++);
     }
 
     Tensor<T> &operator()(int i)
@@ -100,9 +99,6 @@ public:
     {
         return mData.at(i);
     }
-
-private:
-    std::vector<Tensor<T>> mData;
 };
 
 }  // namespace Numeric

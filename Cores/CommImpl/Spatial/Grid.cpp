@@ -9,6 +9,7 @@
 #include "Cores/Utils/FilePathHelper.h"
 #include "Cores/Utils/StringHelper.h"
 #include "Cores/Utils/CsvHandler.h"
+#include "Cores/Utils/MapHelper.h"
 #include <set>
 
 
@@ -103,10 +104,7 @@ void Grid::CollectCellsSharedNode()
     for (int i = 0; i < mRawCellsNum; i++)
     {
         const auto &nodeIdxs = GeoCalculator::GetCellNodeIndexes(i, mMesh);
-        for (int nIdx : nodeIdxs)
-        {
-            mMesh.nodes[nIdx].cellIndexes.push_back(i);
-        }
+        for (int nIdx : nodeIdxs) mMesh.nodes[nIdx].cellIndexes.push_back(i);
     }
 }
 
@@ -140,8 +138,7 @@ void Grid::CollectCellNeighbors()
     for (int i = 0; i < mRawFacesNum; i++)
     {
         const auto &cells = mMesh.faces[i].cellIndexes;
-        if (cells.size() != 2)
-            continue;
+        if (cells.size() != 2) continue;
 
         mMesh.cells[cells[0]].neighbors.push_back(cells[1]);
         mMesh.cells[cells[1]].neighbors.push_back(cells[0]);
@@ -150,8 +147,6 @@ void Grid::CollectCellNeighbors()
 
 void Grid::SortNodes()
 {
-    // Sort Face nodes counterclockwise.
-
 #pragma omp parallel for schedule(dynamic)
     for (int i = 0; i < mRawFacesNum; i++)
     {
@@ -225,14 +220,14 @@ const Node &Grid::GetNode(int nodeIndex) const
     return mMesh.nodes.at(nodeIndex);
 }
 
-int Grid::GetNumPatches() const
+vector<string> Grid::GetPatchIds() const
 {
-    return (int)mPatches.size();
+    return MapHelper::GetKeys(mPatches);
 }
 
-int Grid::GetNumZones() const
+vector<string> Grid::GetZoneIds() const
 {
-    return (int)mZones.size();
+    return MapHelper::GetKeys(mZones);
 }
 
 vector<int> Grid::GetPatchFaceIndexes(const string &patchId) const
@@ -242,7 +237,7 @@ vector<int> Grid::GetPatchFaceIndexes(const string &patchId) const
 
 vector<int> Grid::GetZoneCellIndexes(const string &zoneId) const
 {
-    return mZones.at(zoneId);
+    throw NotImplementedException();
 }
 
 // ------------------------------------------------------------------------------------
@@ -260,7 +255,10 @@ Grid::MeshLoader::MeshLoader(const string &meshDir)
 
 void Grid::MeshLoader::LoadNodes(const string &nodeFile)
 {
-    CsvLoader loader(FilePathHelper::Combine(mMeshDir, nodeFile));
+    const auto &file = FilePathHelper::Combine(mMeshDir, nodeFile);
+    if (!FilePathHelper::FileExists(file)) return;
+
+    CsvLoader loader(file, true, true);
     if (loader.GetColumnCount() < 3)
     {
         throw InvalidDataException("Invalid Node data, to few columns.");
@@ -280,7 +278,10 @@ void Grid::MeshLoader::LoadNodes(const string &nodeFile)
 
 void Grid::MeshLoader::LoadFaces(const string &faceFile)
 {
-    CsvLoader loader(FilePathHelper::Combine(mMeshDir, faceFile));
+    const auto &file = FilePathHelper::Combine(mMeshDir, faceFile);
+    if (!FilePathHelper::FileExists(file)) return;
+
+    CsvLoader loader(file, true, true);
     if (loader.GetColumnCount() < 2)
     {
         throw InvalidDataException("Invalid Face data, to few columns.");
@@ -298,7 +299,10 @@ void Grid::MeshLoader::LoadFaces(const string &faceFile)
 
 void Grid::MeshLoader::LoadCells(const string &cellFile)
 {
-    CsvLoader loader(FilePathHelper::Combine(mMeshDir, cellFile));
+    const auto &file = FilePathHelper::Combine(mMeshDir, cellFile);
+    if (!FilePathHelper::FileExists(file)) return;
+
+    CsvLoader loader(file, true, true);
     if (loader.GetColumnCount() < 3)
     {
         throw InvalidDataException("Invalid Cell data, to few columns.");
@@ -318,10 +322,7 @@ unordered_map<string, vector<int>>
 Grid::MeshLoader::LoadPatches(const string &patchFile)
 {
     const auto &file = FilePathHelper::Combine(mMeshDir, patchFile);
-    if (!FilePathHelper::FileExists(file))
-    {
-        return {};
-    }
+    if (!FilePathHelper::FileExists(file)) return {};
 
     CsvLoader loader(file, false, true);
     if (loader.GetColumnCount() < 2)
@@ -332,10 +333,7 @@ Grid::MeshLoader::LoadPatches(const string &patchFile)
     auto ids = loader.GetRowLabels().value();
 
     unordered_map<string, vector<int>> patches;
-    for (const auto &id : ids)
-    {
-        patches[id] = loader.GetRow<int>(id).value();
-    }
+    for (const auto &id : ids) patches[id] = loader.GetRow<int>(id).value();
 
     return patches;
 }
@@ -343,10 +341,7 @@ Grid::MeshLoader::LoadPatches(const string &patchFile)
 unordered_map<string, vector<int>> Grid::MeshLoader::LoadZones(const string &zoneFile)
 {
     const auto &file = FilePathHelper::Combine(mMeshDir, zoneFile);
-    if (!FilePathHelper::FileExists(file))
-    {
-        return {};
-    }
+    if (!FilePathHelper::FileExists(file)) return {};
 
     CsvLoader loader(file, false, true);
     if (loader.GetColumnCount() < 3)
@@ -357,10 +352,7 @@ unordered_map<string, vector<int>> Grid::MeshLoader::LoadZones(const string &zon
     auto ids = loader.GetRowLabels().value();
 
     unordered_map<string, vector<int>> zones;
-    for (const auto &id : ids)
-    {
-        zones[id] = loader.GetRow<int>(id).value();
-    }
+    for (const auto &id : ids) zones[id] = loader.GetRow<int>(id).value();
 
     return zones;
 }
@@ -368,7 +360,7 @@ unordered_map<string, vector<int>> Grid::MeshLoader::LoadZones(const string &zon
 void Grid::MeshLoader::CheckIds(const vector<string> &ids, const string &meta)
 {
     vector<int> ids_int(ids.size());
-    transform(begin(ids), end(ids), begin(ids_int), [](const string &id) {
+    transform(begin(ids), end(ids), begin(ids_int), [&](const string &id) {
         return stoi(id);
     });
 

@@ -70,6 +70,18 @@ vector<string> YamlLoader::GetKeys(const vector<string> &levels) const
     return keys;
 }
 
+bool YamlLoader::HasKeys(const vector<string> &levels, const vector<string> &keys) const
+{
+    const auto &existedKeys = GetKeys(levels);
+    if (existedKeys.empty())
+    {
+        return false;
+    }
+
+    return all_of(begin(keys), end(keys), [&existedKeys](const auto &k) {
+        return find(begin(existedKeys), end(existedKeys), k) != end(existedKeys);
+    });
+}
 
 // ------------------------------------------------------------------------------------
 

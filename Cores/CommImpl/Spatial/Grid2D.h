@@ -24,6 +24,7 @@ public:
     Grid2D(const std::string &meshDir);
     Grid2D(const std::shared_ptr<Grid> &grid);
 
+    int  GridType() const override;
     void RefineCell(int cellIndex) override;
     void RelaxCell(int cellIndex) override;
 

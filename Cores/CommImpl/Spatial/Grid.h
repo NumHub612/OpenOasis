@@ -50,6 +50,10 @@ public:
     // Methods used for mesh operations.
     //
 
+    /// @brief Get the grid type.
+    /// @return Return 1, for 1d grid; 2, for 2d; 3, for 3d; others, for invalid type.
+    virtual int GridType() const = 0;
+
     /// @brief Activate the mesh to extract topological information needed for various
     /// numerical calculations.
     virtual void Activate();
@@ -78,8 +82,8 @@ public:
     const Face &GetFace(int faceIndex) const;
     const Node &GetNode(int nodeIndex) const;
 
-    int GetNumPatches() const;
-    int GetNumZones() const;
+    std::vector<std::string> GetPatchIds() const;
+    std::vector<std::string> GetZoneIds() const;
 
     std::vector<int> GetPatchFaceIndexes(const std::string &patchId) const;
     std::vector<int> GetZoneCellIndexes(const std::string &zoneId) const;

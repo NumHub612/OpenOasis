@@ -28,10 +28,19 @@ public:
         std::is_arithmetic<T>::value,
         "ScalarField only can be instantiated with arithmetic types");
 
+private:
+    std::vector<T> mData;
+
+public:
     virtual ~ScalarField() = default;
-    ScalarField(std::size_t size)
+    ScalarField(std::size_t size, T val = 0)
     {
-        mData.resize(size, T(0));
+        mData.resize(size, val);
+    }
+
+    std::vector<T> Data()
+    {
+        return mData;
     }
 
     /// @brief Initialize the scalar field with a value.
@@ -69,15 +78,12 @@ public:
     template <typename Callback>
     void ForEach(Callback func)
     {
-        for (auto &elem : mData)
-        {
-            func(elem);
-        }
+        for (auto &elem : mData) { func(elem); }
     }
 
     std::size_t Size() const
     {
-        mData.size();
+        return mData.size();
     }
 
     void SetAt(std::size_t i, T value)
@@ -90,8 +96,7 @@ public:
         std::size_t offset = 0)
     {
         std::size_t j = offset;
-        for (std::size_t i = start; i < end; ++i)
-            mData.at(i) = other(j++);
+        for (std::size_t i = start; i < end; ++i) mData.at(i) = other(j++);
     }
 
     T &operator()(int i)
@@ -103,9 +108,6 @@ public:
     {
         return mData.at(i);
     }
-
-private:
-    std::vector<T> mData;
 };
 
 using ScalarFieldInt   = ScalarField<int>;

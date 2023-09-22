@@ -28,6 +28,10 @@ public:
         std::is_arithmetic<T>::value,
         "Vector only can be instantiated with arithmetic types");
 
+private:
+    std::array<T, N> mElement;
+
+public:
     virtual ~Vector() = default;
 
     Vector()
@@ -65,10 +69,7 @@ public:
 
     void Set(const Vector &other)
     {
-        for (std::size_t i = 0; i < N; ++i)
-        {
-            mElement[i] = other(i);
-        }
+        for (std::size_t i = 0; i < N; ++i) { mElement[i] = other(i); }
     }
 
     template <typename... Args>
@@ -90,8 +91,7 @@ public:
         OO_ASSERT(lst.size() >= N);
 
         std::size_t i = 0;
-        for (const auto &val : lst)
-            mElement.at(i++) = static_cast<T>(val);
+        for (const auto &val : lst) mElement.at(i++) = static_cast<T>(val);
     }
 
     constexpr std::size_t Size() const
@@ -116,8 +116,7 @@ public:
     T Sum() const
     {
         T ret = 0;
-        for (T val : mElement)
-            ret += val;
+        for (T val : mElement) ret += val;
 
         return ret;
     }
@@ -130,8 +129,7 @@ public:
     T Min() const
     {
         T ret = mElement.front();
-        for (T val : mElement)
-            ret = std::min(ret, val);
+        for (T val : mElement) ret = std::min(ret, val);
 
         return ret;
     }
@@ -140,8 +138,7 @@ public:
     T AbsMin() const
     {
         T ret = mElement.front();
-        for (T val : mElement)
-            ret = (ret * ret < val * val) ? ret : val;
+        for (T val : mElement) ret = (ret * ret < val * val) ? ret : val;
 
         return ret;
     }
@@ -149,8 +146,7 @@ public:
     T Max() const
     {
         T ret = mElement.front();
-        for (T val : mElement)
-            ret = std::max(ret, val);
+        for (T val : mElement) ret = std::max(ret, val);
 
         return ret;
     }
@@ -159,8 +155,7 @@ public:
     T AbsMax() const
     {
         T ret = mElement.front();
-        for (T val : mElement)
-            ret = (ret * ret > val * val) ? ret : val;
+        for (T val : mElement) ret = (ret * ret > val * val) ? ret : val;
 
         return ret;
     }
@@ -173,13 +168,11 @@ public:
 
     bool IsEqual(const Vector &other) const
     {
-        if (Size() != other.Size())
-            return false;
+        if (Size() != other.Size()) return false;
 
         for (std::size_t i = 0; i < N; ++i)
         {
-            if (abs(mElement[i] - other(i)) > T(1e-10))
-                return false;
+            if (abs(mElement[i] - other(i)) > T(1e-10)) return false;
         }
 
         return true;
@@ -192,52 +185,45 @@ public:
     void Normalize()
     {
         T len = Length();
-        if (len <= T(0))
-            return;
+        if (len <= T(0)) return;
 
         Div(len);
     }
 
     void Add(T v)
     {
-        for (T &val : mElement)
-            val += v;
+        for (T &val : mElement) val += v;
     }
 
     void Add(const Vector &other)
     {
         OO_ASSERT(other.Size() == N);
 
-        for (std::size_t i = 0; i < N; ++i)
-            mElement[i] += other(i);
+        for (std::size_t i = 0; i < N; ++i) mElement[i] += other(i);
     }
 
     void Sub(T v)
     {
-        for (T &val : mElement)
-            val -= v;
+        for (T &val : mElement) val -= v;
     }
 
     void Sub(const Vector &other)
     {
         OO_ASSERT(other.Size() == N);
 
-        for (std::size_t i = 0; i < N; ++i)
-            mElement[i] -= other(i);
+        for (std::size_t i = 0; i < N; ++i) mElement[i] -= other(i);
     }
 
     void Mul(T v)
     {
-        for (T &val : mElement)
-            val *= v;
+        for (T &val : mElement) val *= v;
     }
 
     void Div(T v)
     {
         OO_ASSERT(v != T(0));
 
-        for (T &val : mElement)
-            val /= v;
+        for (T &val : mElement) val /= v;
     }
 
     T Dot(const Vector &other) const
@@ -245,8 +231,7 @@ public:
         OO_ASSERT(other.Size() == N);
 
         T ret = 0;
-        for (std::size_t i = 0; i < N; ++i)
-            ret += mElement[i] * other(i);
+        for (std::size_t i = 0; i < N; ++i) ret += mElement[i] * other(i);
 
         return ret;
     }
@@ -385,9 +370,6 @@ public:
     {
         return !IsEqual(other);
     }
-
-private:
-    std::array<T, N> mElement;
 };
 
 }  // namespace Numeric

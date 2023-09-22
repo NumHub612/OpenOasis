@@ -106,6 +106,7 @@ unsigned int CsvWriter::sTmpFileCount = 0;
 
 CsvWriter::CsvWriter(const string &filePath, char delimiter)
 {
+    mFilePath = filePath;
     if (!FilePathHelper::FileExists(filePath))
     {
         try
@@ -127,6 +128,7 @@ CsvWriter::CsvWriter(const string &filePath, char delimiter)
         }
     }
 
+    FilePathHelper::MakeFile(mFilePath);
     mCsv = rapidcsv::Document(
         mFilePath, rapidcsv::LabelParams(0, 0), rapidcsv::SeparatorParams(delimiter));
 }

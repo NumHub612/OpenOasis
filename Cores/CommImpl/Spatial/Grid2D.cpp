@@ -19,6 +19,11 @@ Grid2D::Grid2D(const string &meshDir) : Grid(meshDir)
 Grid2D::Grid2D(const shared_ptr<Grid> &grid) : Grid(grid)
 {}
 
+int Grid2D::GridType() const
+{
+    return 2;
+}
+
 void Grid2D::RefineCell(int cellIndex)
 {
     throw NotImplementedException("Not implemented");

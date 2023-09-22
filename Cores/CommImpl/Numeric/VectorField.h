@@ -24,6 +24,9 @@ namespace Numeric
 template <typename T, std::size_t N>
 class VectorField
 {
+private:
+    std::vector<Vector<T, N>> mData;
+
 public:
     virtual ~VectorField() = default;
     VectorField(std::size_t size)
@@ -69,10 +72,7 @@ public:
     template <typename Callback>
     void ForEach(Callback func)
     {
-        for (auto &elem : mData)
-        {
-            func(elem);
-        }
+        for (auto &elem : mData) { func(elem); }
     }
 
     std::size_t Size() const
@@ -90,8 +90,7 @@ public:
         std::size_t offset = 0)
     {
         std::size_t j = offset;
-        for (std::size_t i = start; i < end; ++i)
-            mData.at(i) = other(j++);
+        for (std::size_t i = start; i < end; ++i) mData.at(i) = other(j++);
     }
 
     Vector<T, N> &operator()(std::size_t i)
@@ -103,9 +102,6 @@ public:
     {
         return mData.at(i);
     }
-
-private:
-    std::vector<Vector<T, N>> mData;
 };
 
 }  // namespace Numeric

@@ -1,4 +1,5 @@
 #include "OasisFluidsModule.h"
+#include "Cores/SystFluids/property/VersionConfig.h"
 #include "Cores/SystFluids/HydrologicComps/RainfallModule.h"
 #include "Cores/SystFluids/HydrologicComps/RunoffModule.h"
 #include "Cores/SystFluids/HydrologicComps/RiverModule.h"
@@ -9,6 +10,10 @@ using namespace std;
 
 static vector<shared_ptr<OpenOasis::ILinkableComponent>> componenents;
 
+const char *GetFluidPackageVersion()
+{
+    return VERSION_STR;
+}
 
 void *GetRainfallModule(const char *id, const char *coorFile, const char *dataFile)
 {
