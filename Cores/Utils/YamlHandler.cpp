@@ -15,24 +15,29 @@ using namespace std;
 
 // ------------------------------------------------------------------------------------
 
-YamlLoader::YamlLoader(const string &filePath)
+void YamlLoader::LoadByFile(const string &filePath)
 {
     if (!FilePathHelper::FileExists(filePath))
     {
         throw invalid_argument(
-            StringHelper::FormatSimple("File {} does not exist. ", filePath));
+            StringHelper::FormatSimple("File {} doesn't existed.", filePath));
     }
 
     mYaml = ryml::parse_in_arena(ryml::to_csubstr(GetFileContents(filePath)));
 }
 
+void YamlLoader::LoadByContent(const string &content)
+{
+    mYaml = ryml::parse_in_arena(ryml::to_csubstr(content));
+}
+
 string YamlLoader::GetFileContents(const string &filename)
 {
-    string cc;
-    FILE  *fp = fopen(filename.c_str(), "rb");
+    FILE *fp = fopen(filename.c_str(), "rb");
     fseek(fp, 0, SEEK_END);
 
-    long sz = ftell(fp);
+    string cc;
+    long   sz = ftell(fp);
     cc.resize(static_cast<string::size_type>(sz));
     if (sz)
     {
@@ -44,43 +49,114 @@ string YamlLoader::GetFileContents(const string &filename)
     return cc;
 }
 
-vector<string> YamlLoader::GetKeys(const vector<string> &levels) const
+set<string> YamlLoader::MapKeys(const vector<string> &levels) const
 {
     ryml::ConstNodeRef node = mYaml.crootref();
-    for (const auto &k : levels)
+    try
     {
-        ryml::csubstr key{k.c_str(), k.size()};
-        if (node.has_child(key))
-        {
-            node = node[key];
-        }
-        else
-        {
-            return {};
-        }
+        node = GetNode(node, levels);
+    }
+    catch (...)
+    {
+        return {};
     }
 
-    vector<string> keys;
+    set<string> keys;
     for (ryml::ConstNodeRef n : node.children())
     {
         const auto &key = n.key();
-        keys.push_back(string(key.str, key.len));
+        keys.insert(string(key.str, key.len));
     }
 
     return keys;
 }
 
-bool YamlLoader::HasKeys(const vector<string> &levels, const vector<string> &keys) const
+int YamlLoader::SeqSize(const vector<string> &levels) const
 {
-    const auto &existedKeys = GetKeys(levels);
-    if (existedKeys.empty())
+    ryml::ConstNodeRef node = mYaml.crootref();
+    try
     {
-        return false;
+        node = GetNode(node, levels);
+    }
+    catch (...)
+    {
+        return 0;
     }
 
-    return all_of(begin(keys), end(keys), [&existedKeys](const auto &k) {
-        return find(begin(existedKeys), end(existedKeys), k) != end(existedKeys);
-    });
+    return (node.is_seq()) ? node.num_children() : 0;
+}
+
+optional<string> YamlLoader::GetMapValueInStr(
+    const vector<string> &levels, const string &key, int index) const
+{
+    return GetNonDblValue<string>(levels, key, index);
+}
+
+optional<bool> YamlLoader::GetMapValueInBool(
+    const vector<string> &levels, const string &key, int index) const
+{
+    return GetNonDblValue<bool>(levels, key, index);
+}
+
+optional<int> YamlLoader::GetMapValueInInt(
+    const vector<string> &levels, const string &key, int index) const
+{
+    return GetNonDblValue<int>(levels, key, index);
+}
+
+optional<double> YamlLoader::GetMapValueInDbl(
+    const vector<string> &levels, const string &key, int index) const
+{
+    return GetDblValue(levels, key, index);
+}
+
+unordered_map<string, string> YamlLoader::GetMap(const vector<string> &levels) const
+{
+    ryml::ConstNodeRef node = mYaml.rootref();
+    try
+    {
+        node = GetNode(node, levels);
+
+        unordered_map<string, string> map;
+        for (ryml::ConstNodeRef const &n : node.children())
+        {
+            string key, val;
+            key = n.key().str;
+            val = n.val().str;
+
+            map[key] = val;
+        }
+
+        return map;
+    }
+    catch (...)
+    {
+        return {};
+    }
+}
+
+optional<string> YamlLoader::GetSeqValueInStr(
+    const vector<string> &levels, int index, const string &key) const
+{
+    return GetNonDblValue<string>(levels, key, index);
+}
+
+optional<bool> YamlLoader::GetSeqValueInBool(
+    const vector<string> &levels, int index, const string &key) const
+{
+    return GetNonDblValue<bool>(levels, key, index);
+}
+
+optional<int> YamlLoader::GetSeqValueInInt(
+    const vector<string> &levels, int index, const string &key) const
+{
+    return GetNonDblValue<int>(levels, key, index);
+}
+
+optional<double> YamlLoader::GetSeqValueInDbl(
+    const vector<string> &levels, int index, const string &key) const
+{
+    return GetDblValue(levels, key, index);
 }
 
 // ------------------------------------------------------------------------------------

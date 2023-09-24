@@ -45,14 +45,14 @@ HeatConductionModel::HeatConductionModel(const string &id, const string &taskFil
 
 void HeatConductionModel::InitializeArguments()
 {
-    YamlLoader yml(mTaskFile);
-    string     seg;
+    YamlLoader yml;
+    yml.LoadByFile(mTaskFile);
 
     auto   taskDir = FilePathHelper::GetDirectoryName(mTaskFile);
     string ErrMsg  = "HeatConductionModel {} section [{}] lack of configurations.";
 
     // Global options.
-    seg = "OPTION";
+    string seg = "OPTION";
 
     // Mesh.
     seg = "MESH";

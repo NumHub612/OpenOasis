@@ -8,51 +8,67 @@ using namespace std;
 
 TEST_CASE("YamlLoader tests")
 {
-    const string path =
-        "D:\\4_resource\\oasis_examples\\heat_conduction_model\\test.yaml";
+    const char yaml[] = R"(
+actors:
+  - {name: Junior, value: 4.0}
+  - {name: Middle, value: 16.0}
+  - {name: Senior, value: 32.0}
+  - {name: Dark, value: 48.0}
+species: [a, b, c]
+scalar: hello world
+dict:
+  item: "foo bar"
+  boolean: TRUE
+  integer: 123
+  point: 2.75
+arr: [1, 2, 3]
+dic: {a: 1, b: 2}    
+)";
 
-    /*
-    scalar: hello world
-    list:
-      item: "foo bar"
-      boolean: true
-      integer: 123
-      floating point: 2.75
-    arr: [1, 2, 3]
-    dic: {a: 1, b: 2}
-    */
+    YamlLoader loader;
+    loader.LoadByContent(yaml);
 
-    YamlLoader loader(path);
+    set<string> keys = loader.MapKeys({});
+    CHECK(keys.size() == 6);
 
-    vector<string> keys = loader.GetKeys({});
-    CHECK(keys.size() == 4);
+    auto value = loader.GetSeqValueInDbl({"actors"}, 1, "value").value();
+    REQUIRE(value == 16.0);
 
-    vector<string> keys2 = loader.GetKeys({"list"});
+    auto val = loader.GetMapValueInDbl({}, "arr", 1).value();
+    REQUIRE(val == 2.);
+
+    set<string> keys2 = loader.MapKeys({"dict"});
     REQUIRE(keys2.size() == 4);
 
-    string value1 = loader.GetValue<string>({}, "scalar").value();
+    int size1 = loader.SeqSize({"actors"});
+    REQUIRE(size1 == 4);
+
+    string value1 = loader.GetMapValueInStr({}, "scalar").value();
     CHECK(value1 == "hello world");
 
-    auto res0 = loader.GetValue<bool>({"list"}, "boolean");
+    auto res0 = loader.GetMapValueInBool({"dict"}, "boolean");
     REQUIRE(res0.has_value());
 
-    bool state = loader.GetValue<bool>({"list"}, "boolean").value();
+    bool state = loader.GetMapValueInBool({"dict"}, "boolean").value();
     CHECK(state == true);
 
-    int value2 = loader.GetValue<int>({"list"}, "integer").value();
+    auto state2 = loader.GetMapValueInStr({"dict"}, "item").value();
+    CHECK(state2 == "foo bar");
+
+    int value2 = loader.GetMapValueInInt({"dict"}, "integer").value();
     REQUIRE(value2 == 123);
 
-    auto res = loader.GetArray<int>({}, "arr");
-    REQUIRE(res.has_value());
+    double value3 = loader.GetMapValueInDbl({"dict"}, "point").value();
+    REQUIRE(value3 == 2.75);
 
-    vector<int> arr = loader.GetArray<int>({}, "arr").value();
-    REQUIRE(arr.size() == 3);
-    REQUIRE(arr[0] == 1);
+    auto res = loader.GetSeq<int>({"arr"});
+    REQUIRE(!res.empty());
+    REQUIRE(res.size() == 3);
+    REQUIRE(res[0] == 1);
 
-    auto arr2 = loader.GetArray<string>({}, "arr").value();
-    REQUIRE(arr2.size() == 3);
-    REQUIRE(arr2[0] == "1");
-
-    auto res3 = loader.GetValue<int>({"dic"}, "a").value();
+    auto res3 = loader.GetMapValueInInt({"dic"}, "a").value();
     REQUIRE(res3 == 1);
+
+    auto map = loader.GetMap({"dic"});
+    REQUIRE(map["a"] == "1");
 }
