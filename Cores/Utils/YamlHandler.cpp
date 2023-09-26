@@ -120,9 +120,8 @@ unordered_map<string, string> YamlLoader::GetMap(const vector<string> &levels) c
         unordered_map<string, string> map;
         for (ryml::ConstNodeRef const &n : node.children())
         {
-            string key, val;
-            key = n.key().str;
-            val = n.val().str;
+            string key(n.key().str, n.key().size());
+            string val(n.val().str, n.val().size());
 
             map[key] = val;
         }

@@ -31,8 +31,9 @@ dic: {a: 1, b: 2}
     set<string> keys = loader.MapKeys({});
     CHECK(keys.size() == 6);
 
-    auto value = loader.GetSeqValueInDbl({"actors"}, 1, "value").value();
-    REQUIRE(value == 16.0);
+    auto value = loader.GetSeqValueInDbl({"actors"}, 1, "value");
+    REQUIRE(value.has_value());
+    REQUIRE(value.value() == 16.0);
 
     auto val = loader.GetMapValueInDbl({}, "arr", 1).value();
     REQUIRE(val == 2.);

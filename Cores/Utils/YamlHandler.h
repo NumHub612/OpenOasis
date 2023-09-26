@@ -210,22 +210,23 @@ private:
         ryml::csubstr k{key.c_str(), key.size()};
 
         std::string result;
-        if (HasIdxInSeq(node, index)) { node[index] >> result; }
-        else if (HasIdxInSeq(node, index) && HasKeyInMap(node[index], key))
+        if (HasIdxInSeq(node, index))
         {
-            node[index][k] >> result;
+            if (HasKeyInMap(node[index], key))
+                node[index][k] >> result;
+            else
+                node[index] >> result;
         }
-        else if (HasKeyInMap(node, key)) { node[k] >> result; }
-        else if (HasKeyInMap(node, key) && HasIdxInSeq(node[k], index))
+        else if (HasKeyInMap(node, key))
         {
-            node[k][index] >> result;
+            if (HasIdxInSeq(node[k], index))
+                node[k][index] >> result;
+            else
+                node[k] >> result;
         }
         else { throw std::runtime_error("Invalid yaml inquering."); }
 
         std::istringstream iss(result);
-        printf("key: %s, value: %s\n", key.c_str(), result.c_str());
-        if (HasIdxInSeq(node, index)) printf("cond1\n");
-        if (HasKeyInMap(node[index], key)) printf("cond2\n");
 
         T value;
         iss >> value;
@@ -240,15 +241,19 @@ private:
         ryml::csubstr k{key.c_str(), key.size()};
 
         T value;
-        if (HasIdxInSeq(node, index)) { node[index] >> value; }
-        else if (HasIdxInSeq(node, index) && HasKeyInMap(node[index], key))
+        if (HasIdxInSeq(node, index))
         {
-            node[index][k] >> value;
+            if (HasKeyInMap(node[index], key))
+                node[index][k] >> value;
+            else
+                node[index] >> value;
         }
-        else if (HasKeyInMap(node, key)) { node[k] >> value; }
-        else if (HasKeyInMap(node, key) && HasIdxInSeq(node[k], index))
+        else if (HasKeyInMap(node, key))
         {
-            node[k][index] >> value;
+            if (HasIdxInSeq(node[k], index))
+                node[k][index] >> value;
+            else
+                node[k] >> value;
         }
         else { throw std::runtime_error("Invalid yaml inquering."); }
 
