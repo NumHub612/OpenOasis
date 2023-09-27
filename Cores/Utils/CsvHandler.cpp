@@ -15,7 +15,7 @@ using namespace std;
 
 // ------------------------------------------------------------------------------------
 
-CsvLoader::CsvLoader(
+void CsvLoader::LoadByFile(
     const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter)
 {
     if (!FilePathHelper::FileExists(filePath))
@@ -23,6 +23,7 @@ CsvLoader::CsvLoader(
         throw invalid_argument(
             StringHelper::FormatSimple("File {} does not exist.", filePath));
     }
+
     mHasColumnHeader = hasColumnHeader;
     mHasRowHeader    = hasRowHeader;
 
@@ -31,6 +32,23 @@ CsvLoader::CsvLoader(
 
     mCsv = rapidcsv::Document(
         filePath,
+        rapidcsv::LabelParams(colHeaderIdx, rowHeaderIdx),
+        rapidcsv::SeparatorParams(delimiter));
+}
+
+void CsvLoader::LoadByContent(
+    const string &content, bool hasColumnHeader, bool hasRowHeader, char delimiter)
+{
+    mHasColumnHeader = hasColumnHeader;
+    mHasRowHeader    = hasRowHeader;
+
+    int colHeaderIdx = (hasColumnHeader) ? 0 : -1;
+    int rowHeaderIdx = (hasRowHeader) ? 0 : -1;
+
+    stringstream sstream(content);
+
+    mCsv = rapidcsv::Document(
+        sstream,
         rapidcsv::LabelParams(colHeaderIdx, rowHeaderIdx),
         rapidcsv::SeparatorParams(delimiter));
 }

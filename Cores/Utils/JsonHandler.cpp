@@ -16,7 +16,7 @@ using namespace std;
 
 // ------------------------------------------------------------------------------------
 
-JsonLoader::JsonLoader(const string &filePath)
+void JsonLoader::LoadByFile(const string &filePath)
 {
     if (!FilePathHelper::FileExists(filePath))
     {
@@ -25,6 +25,11 @@ JsonLoader::JsonLoader(const string &filePath)
     }
 
     mJson = nlohmann::json::parse(ifstream(filePath));
+}
+
+void JsonLoader::LoadByContent(const string &content)
+{
+    mJson = nlohmann::json::parse(content);
 }
 
 vector<string> JsonLoader::GetKeys(const vector<string> &levels) const
@@ -38,8 +43,7 @@ vector<string> JsonLoader::GetKeys(const vector<string> &levels) const
     vector<string> keys;
     for (const auto &it : json.items())
     {
-        if (it.key() != "")
-            keys.push_back(it.key());
+        if (it.key() != "") keys.push_back(it.key());
     }
 
     return keys;
@@ -53,14 +57,8 @@ bool JsonLoader::IsNull(const vector<string> &levels, const string &key) const
         json = (json.contains(node)) ? json[node] : nlohmann::json();
     }
 
-    if (json.contains(key))
-    {
-        return json[key].is_null();
-    }
-    else
-    {
-        return true;
-    }
+    if (json.contains(key)) { return json[key].is_null(); }
+    else { return true; }
 }
 
 

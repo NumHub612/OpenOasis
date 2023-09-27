@@ -258,7 +258,9 @@ void Grid::MeshLoader::LoadNodes(const string &nodeFile)
     const auto &file = FilePathHelper::Combine(mMeshDir, nodeFile);
     if (!FilePathHelper::FileExists(file)) return;
 
-    CsvLoader loader(file, true, true);
+    CsvLoader loader;
+    loader.LoadByFile(file, true, true);
+
     if (loader.GetColumnCount() < 3)
     {
         throw InvalidDataException("Invalid Node data, to few columns.");
@@ -281,7 +283,9 @@ void Grid::MeshLoader::LoadFaces(const string &faceFile)
     const auto &file = FilePathHelper::Combine(mMeshDir, faceFile);
     if (!FilePathHelper::FileExists(file)) return;
 
-    CsvLoader loader(file, true, true);
+    CsvLoader loader;
+    loader.LoadByFile(file, true, true);
+
     if (loader.GetColumnCount() < 2)
     {
         throw InvalidDataException("Invalid Face data, to few columns.");
@@ -302,7 +306,9 @@ void Grid::MeshLoader::LoadCells(const string &cellFile)
     const auto &file = FilePathHelper::Combine(mMeshDir, cellFile);
     if (!FilePathHelper::FileExists(file)) return;
 
-    CsvLoader loader(file, true, true);
+    CsvLoader loader;
+    loader.LoadByFile(file, true, true);
+
     if (loader.GetColumnCount() < 3)
     {
         throw InvalidDataException("Invalid Cell data, to few columns.");
@@ -324,7 +330,9 @@ Grid::MeshLoader::LoadPatches(const string &patchFile)
     const auto &file = FilePathHelper::Combine(mMeshDir, patchFile);
     if (!FilePathHelper::FileExists(file)) return {};
 
-    CsvLoader loader(file, false, true);
+    CsvLoader loader;
+    loader.LoadByFile(file, false, true);
+
     if (loader.GetColumnCount() < 2)
     {
         throw InvalidDataException("Invalid Patch data, to few columns.");
@@ -343,7 +351,9 @@ unordered_map<string, vector<int>> Grid::MeshLoader::LoadZones(const string &zon
     const auto &file = FilePathHelper::Combine(mMeshDir, zoneFile);
     if (!FilePathHelper::FileExists(file)) return {};
 
-    CsvLoader loader(file, false, true);
+    CsvLoader loader;
+    loader.LoadByFile(file, false, true);
+
     if (loader.GetColumnCount() < 3)
     {
         throw InvalidDataException("Invalid Zone data, to few columns.");

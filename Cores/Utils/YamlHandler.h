@@ -31,7 +31,7 @@ private:
 
 public:
     void LoadByContent(const std::string &content);
-    void LoadByFile(const std::string &filePath);
+    void LoadByFile(const std::string &file);
 
     std::set<std::string> MapKeys(const std::vector<std::string> &levels) const;
 

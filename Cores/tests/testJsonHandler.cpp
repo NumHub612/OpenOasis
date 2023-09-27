@@ -8,9 +8,7 @@ using namespace std;
 
 TEST_CASE("JsonLoader tests")
 {
-    const string path = "D:\\4_resource\\oasis_examples\\configs.json";
-
-    /*
+    const char *json = R"(
     {
     "pi": 3.141,
     "happy": true,
@@ -29,10 +27,10 @@ TEST_CASE("JsonLoader tests")
         "currency": "USD",
         "value": 42.99
     }
-    }
-    */
+    })";
 
-    JsonLoader loader(path);
+    JsonLoader loader;
+    loader.LoadByContent(json);
 
     const auto &keys0 = loader.GetKeys({});  // answer,happy,list,name,nothing,object,pi
     REQUIRE(keys0.size() == 7);
@@ -68,7 +66,7 @@ TEST_CASE("JsonLoader tests")
 
 TEST_CASE("JsonWriter tests")
 {
-    const string path = "D:\\4_resource\\oasis_examples";
+    const string path = "./";
 
     JsonWriter writer(path);
 

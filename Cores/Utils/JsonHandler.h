@@ -24,7 +24,8 @@ private:
     nlohmann::json mJson;
 
 public:
-    JsonLoader(const std::string &filePath);
+    void LoadByContent(const std::string &content);
+    void LoadByFile(const std::string &file);
 
     bool IsNull(const std::vector<std::string> &levels, const std::string &key) const;
 
@@ -37,20 +38,12 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            if (json.contains(node))
-                json = json.at(node);
-            else
-                return std::nullopt;
+            if (json.contains(node)) { json = json.at(node); }
+            else { return std::nullopt; }
         }
 
-        if (json.contains(key))
-        {
-            return json.at(key);
-        }
-        else
-        {
-            return std::nullopt;
-        }
+        if (json.contains(key)) { return json.at(key); }
+        else { return std::nullopt; }
     }
 
     template <typename T>
@@ -60,23 +53,18 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            if (json.contains(node))
-                json = json.at(node);
-            else
-                return std::nullopt;
+            if (json.contains(node)) { json = json.at(node); }
+            else { return std::nullopt; }
         }
 
         if (json.contains(key) && json.at(key).is_array())
         {
             std::vector<T> results;
-            for (const auto &val : json.at(key))
-                results.push_back(val);
+            for (const auto &val : json.at(key)) results.push_back(val);
+
             return results;
         }
-        else
-        {
-            return std::nullopt;
-        }
+        else { return std::nullopt; }
     }
 };
 
@@ -107,10 +95,7 @@ public:
             parentJson = nlohmann::json{{*it, parentJson}};
         }
 
-        for (const auto &[key, value] : parentJson.items())
-        {
-            mJson[key] = value;
-        }
+        for (const auto &[key, value] : parentJson.items()) { mJson[key] = value; }
     }
 
     template <typename T>
@@ -130,10 +115,7 @@ public:
             parentJson = nlohmann::json{{*it, parentJson}};
         }
 
-        for (const auto &[key, value] : parentJson.items())
-        {
-            mJson[key] = value;
-        }
+        for (const auto &[key, value] : parentJson.items()) { mJson[key] = value; }
     }
 };
 
