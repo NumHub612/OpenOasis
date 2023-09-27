@@ -24,6 +24,9 @@ private:
     nlohmann::json mJson;
 
 public:
+    JsonLoader(){};
+    JsonLoader(const std::string &file);
+
     void LoadByContent(const std::string &content);
     void LoadByFile(const std::string &file);
 

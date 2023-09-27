@@ -15,6 +15,12 @@ using namespace std;
 
 // ------------------------------------------------------------------------------------
 
+CsvLoader::CsvLoader(
+    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter)
+{
+    LoadByFile(filePath, hasColumnHeader, hasRowHeader, delimiter);
+}
+
 void CsvLoader::LoadByFile(
     const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter)
 {

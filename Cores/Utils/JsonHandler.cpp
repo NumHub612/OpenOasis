@@ -16,6 +16,11 @@ using namespace std;
 
 // ------------------------------------------------------------------------------------
 
+JsonLoader::JsonLoader(const string &filePath)
+{
+    LoadByFile(filePath);
+}
+
 void JsonLoader::LoadByFile(const string &filePath)
 {
     if (!FilePathHelper::FileExists(filePath))

@@ -30,6 +30,9 @@ private:
     ryml::Tree mYaml;
 
 public:
+    YamlLoader(){};
+    YamlLoader(const std::string &file);
+
     void LoadByContent(const std::string &content);
     void LoadByFile(const std::string &file);
 

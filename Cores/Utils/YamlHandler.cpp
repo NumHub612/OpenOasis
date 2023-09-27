@@ -15,6 +15,11 @@ using namespace std;
 
 // ------------------------------------------------------------------------------------
 
+YamlLoader::YamlLoader(const string &filePath)
+{
+    LoadByFile(filePath);
+}
+
 void YamlLoader::LoadByFile(const string &filePath)
 {
     if (!FilePathHelper::FileExists(filePath))

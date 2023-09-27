@@ -33,6 +33,11 @@ private:
     bool               mHasRowHeader;
 
 public:
+    CsvLoader(){};
+    CsvLoader(
+        const std::string &file, bool hasColumnHeader = true, bool hasRowHeader = true,
+        char delimiter = ',');
+
     void LoadByContent(
         const std::string &content, bool hasColumnHeader = true,
         bool hasRowHeader = true, char delimiter = ',');
