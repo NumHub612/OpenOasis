@@ -17,11 +17,7 @@
 #include "Cores/Utils/DateTime.h"
 
 
-namespace OpenOasis
-{
-namespace SystFluids
-{
-namespace HydrologicComps
+namespace OpenOasis::SystFluids
 {
 using namespace CommImpl;
 using namespace Utils;
@@ -95,6 +91,4 @@ public:
     RunoffOutput(const std::string &id, const std::shared_ptr<RunoffModule> &comp);
 };
 
-}  // namespace HydrologicComps
-}  // namespace SystFluids
 }  // namespace OpenOasis

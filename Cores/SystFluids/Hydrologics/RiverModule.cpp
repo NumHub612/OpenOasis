@@ -16,7 +16,7 @@
 #include "Cores/Utils/StreamReader.h"
 
 
-namespace OpenOasis::SystFluids::HydrologicComps
+namespace OpenOasis::SystFluids
 {
 using namespace Spatial;
 using namespace Utils;
@@ -64,10 +64,7 @@ shared_ptr<IQuantity> RiverModule::GetWaterLevelQuantity()
 void RiverModule::InitializeSpace()
 {
     auto rivernet = vector<Coordinate>(mNodeNum);
-    for (int i = 0; i < mNodeNum; i++)
-    {
-        rivernet[i] = Coordinate{i * 10.0, 0, 0};
-    }
+    for (int i = 0; i < mNodeNum; i++) { rivernet[i] = Coordinate{i * 10.0, 0, 0}; }
     Element elem(mId, "river network", "river network", rivernet);
 
     mElements = make_shared<ElementSet>(
@@ -185,15 +182,9 @@ void RiverModule::PrepareOutputs()
         {
             valueset->SetOrAddValue({0, 0}, 10.0);
         }
-        else
-        {
-            valueset->SetOrAddValue({0, 0}, 0.0);
-        }
+        else { valueset->SetOrAddValue({0, 0}, 0.0); }
 
-        for (auto &adaptor : output->GetAdaptedOutputs())
-        {
-            adaptor->Initialize();
-        }
+        for (auto &adaptor : output->GetAdaptedOutputs()) { adaptor->Initialize(); }
     }
 }
 
@@ -201,8 +192,7 @@ void RiverModule::UpdateInputs()
 {
     for (const auto &input : mInputs)
     {
-        if (input->GetProviders().empty())
-            continue;
+        if (input->GetProviders().empty()) continue;
 
         const auto &arr       = StringHelper::Split(input->GetId(), '_');
         int         nodeIndex = stoi(arr.back());
@@ -332,11 +322,8 @@ void RiverModule::ClearState(const shared_ptr<IIdentifiable> &stateId)
         return state->GetId() == stateId->GetId();
     });
 
-    if (iter != end(mStates))
-    {
-        mStates.erase(iter);
-    }
+    if (iter != end(mStates)) { mStates.erase(iter); }
 }
 
 
-}  // namespace OpenOasis::SystFluids::HydrologicComps
+}  // namespace OpenOasis::SystFluids

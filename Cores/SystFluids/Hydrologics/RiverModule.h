@@ -33,11 +33,7 @@
 #include "Cores/Utils/DateTime.h"
 
 
-namespace OpenOasis
-{
-namespace SystFluids
-{
-namespace HydrologicComps
+namespace OpenOasis::SystFluids
 {
 using namespace CommImpl;
 using namespace Utils;
@@ -135,6 +131,4 @@ private:
     }
 };
 
-}  // namespace HydrologicComps
-}  // namespace SystFluids
 }  // namespace OpenOasis

@@ -16,7 +16,7 @@
 #include "Cores/Utils/StreamReader.h"
 
 
-namespace OpenOasis::SystFluids::HydrologicComps
+namespace OpenOasis::SystFluids
 {
 using namespace Spatial;
 using namespace Utils;
@@ -153,10 +153,7 @@ void RunoffModule::PrepareOutputs()
         output->GetTimeSet()->AddTime(mCurrentTime);
         output->GetValues(nullptr)->SetOrAddValue({0, 0}, 0.0);
 
-        for (auto &adaptor : output->GetAdaptedOutputs())
-        {
-            adaptor->Initialize();
-        }
+        for (auto &adaptor : output->GetAdaptedOutputs()) { adaptor->Initialize(); }
     }
 }
 
@@ -218,4 +215,4 @@ RunoffOutput::RunoffOutput(
     Output(id, component)
 {}
 
-}  // namespace OpenOasis::SystFluids::HydrologicComps
+}  // namespace OpenOasis::SystFluids

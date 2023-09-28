@@ -15,11 +15,7 @@
 #include "Cores/CommImpl/TimeSet.h"
 
 
-namespace OpenOasis
-{
-namespace SystFluids
-{
-namespace HydrologicComps
+namespace OpenOasis::SystFluids
 {
 using namespace CommImpl;
 
@@ -88,6 +84,4 @@ public:
     RainfallOutput(const std::string &id, const std::shared_ptr<RainfallModule> &comp);
 };
 
-}  // namespace HydrologicComps
-}  // namespace SystFluids
 }  // namespace OpenOasis

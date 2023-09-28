@@ -16,7 +16,7 @@
 #include "Cores/Utils/StreamReader.h"
 
 
-namespace OpenOasis::SystFluids::HydrologicComps
+namespace OpenOasis::SystFluids
 {
 using namespace Spatial;
 using namespace Utils;
@@ -113,8 +113,7 @@ void RainfallModule::InitializeArguments()
 
 void RainfallModule::InitializeSpace()
 {
-    if (mElements)
-        return;
+    if (mElements) return;
 
     string file = any_cast<string>(mArguments["coordinate_file"]->GetValue());
 
@@ -125,11 +124,9 @@ void RainfallModule::InitializeSpace()
     while (reader.GetLine(line))
     {
         vector<string> arr = StringHelper::Split(line, ',');
-        if (arr.empty() || arr.size() < 3)
-            continue;
+        if (arr.empty() || arr.size() < 3) continue;
 
-        if (arr[0] != mId)
-            continue;
+        if (arr[0] != mId) continue;
 
         double x = stod(arr[1].c_str(), nullptr);
         double y = stod(arr[2].c_str(), nullptr);
@@ -158,8 +155,7 @@ void RainfallModule::InitializeSpace()
 
 void RainfallModule::InitializeTime()
 {
-    if (mValues && mTimes)
-        return;
+    if (mValues && mTimes) return;
 
     mTimes  = make_shared<TimeSet>();
     mValues = make_shared<ValueSet2D>(vector<vector<double>>{}, GetQuantity());
@@ -176,11 +172,9 @@ void RainfallModule::InitializeTime()
     while (reader.GetLine(line))
     {
         vector<string> arr = StringHelper::Split(line, ',');
-        if (arr.empty() || arr.size() < 3)
-            continue;
+        if (arr.empty() || arr.size() < 3) continue;
 
-        if (arr[0] != mId)
-            continue;
+        if (arr[0] != mId) continue;
 
         DateTime datetime(DateTime::FromString(arr[1]));
         double   timestampInDays = datetime.GetTimeStampInDays();
@@ -231,10 +225,7 @@ void RainfallModule::PrepareOutputs()
         output->GetTimeSet()->AddTime(mCurrentTime);
         output->GetValues(nullptr)->SetOrAddValue({0, 0}, mValues->GetValue({0, 0}));
 
-        for (auto &adaptor : output->GetAdaptedOutputs())
-        {
-            adaptor->Initialize();
-        }
+        for (auto &adaptor : output->GetAdaptedOutputs()) { adaptor->Initialize(); }
     }
 }
 
@@ -268,4 +259,4 @@ RainfallOutput::RainfallOutput(
     Output(id, component)
 {}
 
-}  // namespace OpenOasis::SystFluids::HydrologicComps
+}  // namespace OpenOasis::SystFluids
