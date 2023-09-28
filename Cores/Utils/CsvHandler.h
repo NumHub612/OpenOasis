@@ -36,15 +36,16 @@ public:
     CsvLoader(){};
     CsvLoader(
         const std::string &file, bool hasColumnHeader = true, bool hasRowHeader = true,
-        char delimiter = ',');
+        char delimiter = ',', bool skipEmptyLine = true, char skipPrefix = '#');
 
     void LoadByContent(
         const std::string &content, bool hasColumnHeader = true,
-        bool hasRowHeader = true, char delimiter = ',');
+        bool hasRowHeader = true, char delimiter = ',', bool skipEmptyLine = true,
+        char skipPrefix = '#');
 
     void LoadByFile(
         const std::string &file, bool hasColumnHeader = true, bool hasRowHeader = true,
-        char delimiter = ',');
+        char delimiter = ',', bool skipEmptyLine = true, char skipPrefix = '#');
 
     std::optional<std::vector<std::string>> GetColumnLabels() const;
     std::optional<std::vector<std::string>> GetRowLabels() const;

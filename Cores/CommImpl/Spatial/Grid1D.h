@@ -21,8 +21,26 @@ namespace Spatial
 
 class Grid1D : public Grid
 {
+public:
+    virtual ~Grid1D() = default;
+    Grid1D(const std::string &meshDir);
+    Grid1D(const std::shared_ptr<Grid> &grid);
+
+    int  GridType() const override;
+    void RefineCell(int cellIndex) override;
+    void RelaxCell(int cellIndex) override;
+
+private:
+    void CollectCellsInZone() override;
+    void CalculateFaceNormal() override;
+    void CalculateFaceArea() override;
+    void CalculateFacePerimeter() override;
+    void CalculateCellSurface() override;
+    void CalculateCellVolume() override;
+    void CheckMesh() const override;
+
 protected:
-    class MeshReconfigurator
+    class RiverNetConverter
     {
     private:
         std::string mMeshDir;
@@ -34,7 +52,7 @@ protected:
         std::unordered_map<std::string, std::vector<std::array<double, 2>>> mShapes;
 
     public:
-        MeshReconfigurator(const std::string &meshDir);
+        RiverNetConverter(const std::string &meshDir);
 
         friend class Grid1D;
 

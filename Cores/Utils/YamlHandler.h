@@ -66,6 +66,9 @@ public:
     std::unordered_map<std::string, std::string>
     GetMap(const std::vector<std::string> &levels) const;
 
+    std::unordered_map<std::string, std::string>
+    GetMapInSeq(const std::vector<std::string> &level, int idx) const;
+
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for parsing array-fmt yaml data.
     //

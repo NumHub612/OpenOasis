@@ -16,13 +16,16 @@ using namespace std;
 // ------------------------------------------------------------------------------------
 
 CsvLoader::CsvLoader(
-    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter)
+    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter,
+    bool skipEmptyLine, char prefix)
 {
-    LoadByFile(filePath, hasColumnHeader, hasRowHeader, delimiter);
+    LoadByFile(
+        filePath, hasColumnHeader, hasRowHeader, delimiter, skipEmptyLine, prefix);
 }
 
 void CsvLoader::LoadByFile(
-    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter)
+    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter,
+    bool skipEmptyLine, char prefix)
 {
     if (!FilePathHelper::FileExists(filePath))
     {
@@ -39,11 +42,14 @@ void CsvLoader::LoadByFile(
     mCsv = rapidcsv::Document(
         filePath,
         rapidcsv::LabelParams(colHeaderIdx, rowHeaderIdx),
-        rapidcsv::SeparatorParams(delimiter));
+        rapidcsv::SeparatorParams(delimiter),
+        rapidcsv::ConverterParams(),
+        rapidcsv::LineReaderParams(skipEmptyLine, prefix, true));
 }
 
 void CsvLoader::LoadByContent(
-    const string &content, bool hasColumnHeader, bool hasRowHeader, char delimiter)
+    const string &content, bool hasColumnHeader, bool hasRowHeader, char delimiter,
+    bool skipEmptyLine, char prefix)
 {
     mHasColumnHeader = hasColumnHeader;
     mHasRowHeader    = hasRowHeader;
@@ -56,7 +62,9 @@ void CsvLoader::LoadByContent(
     mCsv = rapidcsv::Document(
         sstream,
         rapidcsv::LabelParams(colHeaderIdx, rowHeaderIdx),
-        rapidcsv::SeparatorParams(delimiter));
+        rapidcsv::SeparatorParams(delimiter),
+        rapidcsv::ConverterParams(),
+        rapidcsv::LineReaderParams(skipEmptyLine, prefix, true));
 }
 
 optional<vector<string>> CsvLoader::GetColumnLabels() const

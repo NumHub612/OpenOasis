@@ -32,7 +32,7 @@ protected:
     int mRawCellsNum;
 
     // The outer or inner boundary patches, each of them
-    // is composed of Node indexes.
+    // is composed of Face indexes.
     std::unordered_map<std::string, std::vector<int>> mPatches;
 
     // The zone enclosed by Face indexes.
@@ -97,18 +97,18 @@ protected:
     virtual void CollectFacesSharedNode();
     virtual void CollectCellsSharedFace();
     virtual void CollectCellNeighbors();
-    virtual void CollectCellsInZone() = 0;
+    virtual void CollectCellsInZone(){};
 
     virtual void SortNodes();
 
     virtual void CalculateFaceCentroid();
-    virtual void CalculateFaceNormal()    = 0;
-    virtual void CalculateFaceArea()      = 0;
-    virtual void CalculateFacePerimeter() = 0;
+    virtual void CalculateFaceNormal(){};
+    virtual void CalculateFaceArea(){};
+    virtual void CalculateFacePerimeter(){};
 
     virtual void CalculateCellCentroid();
-    virtual void CalculateCellSurface() = 0;
-    virtual void CalculateCellVolume()  = 0;
+    virtual void CalculateCellSurface(){};
+    virtual void CalculateCellVolume(){};
 
     virtual void CheckMesh() const;
 

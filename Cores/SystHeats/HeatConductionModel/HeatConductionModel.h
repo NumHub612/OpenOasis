@@ -34,13 +34,27 @@ private:
     std::shared_ptr<Grid>           mGrid;
     std::shared_ptr<ScalarFieldDbl> mTempValues;
 
-    double mT0;
+    double      mT0;
+    std::string mT0file;
+
     double mK;
-    double mBoundT1, mBoundT2;
+
+    std::string mStart, mEnd;
+
+    std::string mEigenSolver;
+
+    std::unordered_map<std::string, std::string> mOutputVars;
+
+    // Each variable boundary conditions defined at the pathes.
+    std::unordered_map<std::string, std::unordered_map<std::string, double>>
+        mPatchBounds;
 
     std::vector<std::string> mBoundPatches;
 
     std::unordered_map<std::string, int> mCellOutputs;
+
+    static const std::vector<std::string> sExchangeableStates;
+    static const std::vector<std::string> sExchangeableObj;
 
 public:
     HeatConductionModel(const std::string &id, const std::string &taskFile);

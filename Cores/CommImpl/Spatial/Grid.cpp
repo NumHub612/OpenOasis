@@ -325,7 +325,7 @@ Grid::MeshLoader::LoadPatches(const string &patchFile)
     if (!FilePathHelper::FileExists(file)) return {};
 
     CsvLoader loader(file, false, true);
-    if (loader.GetColumnCount() < 2)
+    if (loader.GetColumnCount() < 1)
     {
         throw InvalidDataException("Invalid Patch data, to few columns.");
     }

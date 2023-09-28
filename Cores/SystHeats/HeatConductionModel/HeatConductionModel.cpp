@@ -31,6 +31,11 @@ using namespace Spatial;
 using namespace Utils;
 using namespace std;
 
+const vector<string> HeatConductionModel::sExchangeableStates = {"temp"};
+
+const vector<string> HeatConductionModel::sExchangeableObj = {"cell"};
+
+
 HeatConductionModel::HeatConductionModel(const string &id, const string &taskFile) :
     LinkableComponent(id)
 {
@@ -45,52 +50,145 @@ HeatConductionModel::HeatConductionModel(const string &id, const string &taskFil
 
 void HeatConductionModel::InitializeArguments()
 {
+    auto taskDir  = FilePathHelper::GetDirectoryName(mTaskFile);
+    auto inputDir = FilePathHelper::Combine(taskDir, "inputs");
+    mOutputDir    = FilePathHelper::Combine(taskDir, "outputs");
+
     YamlLoader yml;
     yml.LoadByFile(mTaskFile);
 
-    auto   taskDir = FilePathHelper::GetDirectoryName(mTaskFile);
-    string ErrMsg  = "HeatConductionModel {} section [{}] lack of configurations.";
+    // Check segments.
+    vector<string> segments = {
+        "OPTION", "MESH", "EQUATION", "INITIALIZATION", "BOUNDARY", "SOLVER", "OUTPUT"};
+    auto sections = yml.MapKeys({});
+    for (const auto &seg : segments)
+    {
+        if (sections.count(seg) == 0)
+        {
+            throw FileLoadException(StringHelper::FormatSimple(
+                "Heat model {} missing section [{}].", mId, seg));
+        }
+    }
 
     // Global options.
     string seg = "OPTION";
 
+    mStart = yml.GetMapValueInStr({seg}, "start_dt").value();
+    mEnd   = yml.GetMapValueInStr({seg}, "end_dt").value();
+
+
     // Mesh.
     seg = "MESH";
 
-    auto meshDir = "D:\\4_resource\\oasis_examples\\heat_conduction_model\\geom";
+    auto meshType = yml.GetMapValueInStr({seg}, "mesh_type").value();
+    auto meshMode = yml.GetMapValueInStr({seg}, "mesh_mode").value();
+    auto meshDir  = FilePathHelper::Combine(inputDir, "mesh");
 
     mGrid = make_shared<Grid2D>(meshDir);
 
+    // Equation.
+    seg = "EQUATION";
+
+    auto cSize = yml.SeqSize({seg, "coefficents"});
+    for (int i = 0; i < cSize; i++)
+    {
+        auto coef = yml.GetMapInSeq({seg, "coefficents"}, i);
+        if (coef["var"] == "k" && coef["mode"] == "uniform")
+        {
+            mK = stod(coef["value"]);
+        }
+    }
+
     // Initialization.
     seg = "INITIALIZATION";
-    mT0 = 0.0;
+
+    int globalInitSize = yml.SeqSize({seg, "global_inits"});
+    for (int i = 0; i < globalInitSize; i++)
+    {
+        auto init = yml.GetMapInSeq({seg, "global_inits"}, i);
+        if (init["var"] == "temp")
+        {
+            mT0 = stod(init["value"]);
+            break;
+        }
+    }
+
+    int localInitSize = yml.SeqSize({seg, "local_inits"});
+    for (int i = 0; i < localInitSize; i++)
+    {
+        auto init = yml.GetMapInSeq({seg, "local_inits"}, i);
+        if (init["var"] == "temp" && init["mode"] == "file")
+        {
+            mT0file = FilePathHelper::Combine(inputDir, init["file"]);
+            break;
+        }
+    }
 
     // Boundaries.
-    seg      = "BOUNDARY";
-    mBoundT1 = 100, mBoundT2 = 20;  // T1 in right and left, T2 in top and bottom.
+    seg = "BOUNDARY";
+
+    int bSize = yml.SeqSize({seg, "boundaries"});
+    for (int i = 0; i < bSize; i++)
+    {
+        auto bound = yml.GetMapInSeq({seg, "boundaries"}, i);
+
+        if (bound["var"] == "temp" && bound["type"] == "first"
+            && bound["mode"] == "constant")
+        {
+            auto patch = bound["patch"];
+            auto value = stod(bound["value"]);
+
+            mPatchBounds["temp"].insert({patch, value});
+        }
+    }
 
     // Sovler.
-    seg = "SOVLER";
-    mK  = 81;  // W / m*K	Conductivity
+    seg = "SOLVER";
+
+    auto solverType = yml.GetMapValueInStr({seg}, "solver").value();
+    mEigenSolver    = yml.GetMapValueInStr({seg, "settings"}, "eigen_solver").value();
 
     // Output.
     seg = "OUTPUT";
 
-    mOutputDir = "D:\\4_resource\\oasis_examples\\heat_conduction_model\\results";
+    int oSize = yml.SeqSize({seg, "outputs"});
+    for (int i = 0; i < oSize; i++)
+    {
+        auto out = yml.GetMapInSeq({seg, "outputs"}, i);
+        if (out["var"] == "temp" && out["fmt"] == "csv")
+        {
+            mOutputVars["temp"] = out["fmt"];
+        }
+    }
 }
 
 void HeatConductionModel::InitializeSpace()
 {
+    // Initialize grid.
     mGrid->Activate();
 
+    // Initialize temperature field.
     auto size   = mGrid->GetNumCells();
     mTempValues = make_shared<ScalarFieldDbl>(size, mT0);
+
+    if (mT0file.empty()) return;
+
+    CsvLoader loader(mT0file);
+
+    auto ids = loader.GetRowLabels().value();
+    for (const auto &id : ids)
+    {
+        auto idx = stoi(id);
+        auto val = loader.GetCell<double>(0, id).value();
+
+        mTempValues->SetAt(idx, val);
+    }
 }
 
 void HeatConductionModel::InitializeTime()
 {
     // To give a time point.
-    mCurrentTime = make_shared<Time>(DateTime::FromString("2023/1/1 00:00:00"));
+    mCurrentTime = make_shared<Time>(DateTime::FromString(mStart));
 
     mTimeExtent = make_shared<TimeSet>();
     mTimeExtent->AddTime(mCurrentTime);
@@ -103,9 +201,6 @@ void HeatConductionModel::InitializeInputs()
 
 void HeatConductionModel::InitializeOutputs()
 {
-    static const vector<string> validType = {"NODE", "FACE", "CELL"};
-    static const vector<string> validVar  = {"T"};
-
     const auto &outputters =
         any_cast<vector<array<string, 3>>>(mArguments["OUTPUTTERS"]->GetValue());
 
@@ -283,23 +378,28 @@ tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatr
             // Boundary conditions.
             if (isBound)
             {
-                if (isEast || isWest)
+                double boundT = 0;
+                for (const auto &bound : mPatchBounds["temp"])
                 {
-                    matrix[i * size + i] -= xCoe;
-                    source[i] -= 2. * xCoe * mBoundT1;
+                    const auto &fIdxs = mGrid->GetPatchFaceIndexes(bound.first);
+                    if (find(fIdxs.begin(), fIdxs.end(), j) != fIdxs.end())
+                    {
+                        boundT = bound.second;
+                        break;
+                    }
                 }
-                else if (isNorth || isSouth)
-                {
-                    matrix[i * size + i] -= yCoe;
-                    source[i] -= 2. * yCoe * mBoundT2;
-                }
+
+                double coe = (isEast || isWest) ? xCoe : yCoe;
+
+                matrix[i * size + i] -= coe;
+                source[i] -= 2. * coe * boundT;
             }
             // interial cell.
             else
             {
-                int cellIdx = (cells[0] == i) ? cells[1] : cells[0];
+                int cIdx = (cells[0] == i) ? cells[1] : cells[0];
 
-                matrix[i * size + cellIdx] = (isEast || isWest) ? xCoe : yCoe;
+                matrix[i * size + cIdx] = (isEast || isWest) ? xCoe : yCoe;
             }
         }
     }

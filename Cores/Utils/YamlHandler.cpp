@@ -139,6 +139,34 @@ unordered_map<string, string> YamlLoader::GetMap(const vector<string> &levels) c
     }
 }
 
+unordered_map<string, string>
+YamlLoader::GetMapInSeq(const vector<string> &levels, int idx) const
+{
+    ryml::ConstNodeRef node = mYaml.rootref();
+    try
+    {
+        node = GetNode(node, levels);
+
+        if (!node.is_seq() || node.num_children() <= idx || !node[idx].is_map())
+            return {};
+
+        unordered_map<string, string> map;
+        for (ryml::ConstNodeRef const &n : node[idx].children())
+        {
+            string key(n.key().str, n.key().size());
+            string val(n.val().str, n.val().size());
+
+            map[key] = val;
+        }
+
+        return map;
+    }
+    catch (...)
+    {
+        return {};
+    }
+}
+
 optional<string> YamlLoader::GetSeqValueInStr(
     const vector<string> &levels, int index, const string &key) const
 {

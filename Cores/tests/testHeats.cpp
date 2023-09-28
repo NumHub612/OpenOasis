@@ -10,14 +10,17 @@ TEST_CASE("Heats dummy test")
     SECTION("function test")
     {
         string path =
-            "D:\\4_resource\\oasis_examples\\heat_conduction_model\\settings.yaml";
+            "D:\\4_resource\\oasis_examples\\heat_conduction_model\\task.yaml";
 
         HeatConductionModel model("heat", path);
         printf("created\n");
+
         model.Initialize();
         printf("inited\n");
+
         model.Validate();
         printf("valied\n");
+
         model.Prepare();
         printf("prepared\n");
 
