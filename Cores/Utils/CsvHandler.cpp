@@ -143,15 +143,19 @@ CsvWriter::CsvWriter(const string &filePath, char delimiter)
     {
         try
         {
-            if (FilePathHelper::DirectoryExists(filePath))
+            auto parent = FilePathHelper::GetDirectoryName(filePath);
+            auto name   = FilePathHelper::GetFileName(filePath);
+            if (!FilePathHelper::DirectoryExists(parent))
             {
-                const auto &newFilePath = FilePathHelper::Combine(
-                    filePath,
-                    StringHelper::FormatSimple("Oasis_temp_{}.csv", sTmpFileCount++));
-
-                FilePathHelper::MakeFile(newFilePath);
-                mFilePath = newFilePath;
+                FilePathHelper::MakeDirectory(parent);
             }
+
+            if (FilePathHelper::DirectoryExists(parent))
+            {
+                mFilePath = FilePathHelper::Combine(parent, name);
+                FilePathHelper::MakeFile(mFilePath);
+            }
+            else { throw exception(); }
         }
         catch (...)
         {

@@ -199,6 +199,9 @@ endif()
 # -------------------------------------------------------------
 if (ENABLE_TESTS)
     set(ProjectTestName "OasisTests")
+
+    configure_file("${CoreDir}/tests/FolderConfig.h.in" "${CoreDir}/tests/FolderConfig.h")
+
     add_executable(${ProjectTestName} ${TestSrc} ${FluidSrc} ${HeatSrc})
     target_link_libraries(${ProjectTestName} 
         PUBLIC ${CommLib}

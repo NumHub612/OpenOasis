@@ -50,9 +50,7 @@ HeatConductionModel::HeatConductionModel(const string &id, const string &taskFil
 
 void HeatConductionModel::InitializeArguments()
 {
-    auto taskDir  = FilePathHelper::GetDirectoryName(mTaskFile);
-    auto inputDir = FilePathHelper::Combine(taskDir, "inputs");
-    mOutputDir    = FilePathHelper::Combine(taskDir, "outputs");
+    auto taskDir = FilePathHelper::GetDirectoryName(mTaskFile);
 
     YamlLoader yml;
     yml.LoadByFile(mTaskFile);
@@ -76,6 +74,13 @@ void HeatConductionModel::InitializeArguments()
     mStart = yml.GetMapValueInStr({seg}, "start_dt").value();
     mEnd   = yml.GetMapValueInStr({seg}, "end_dt").value();
 
+    auto inputDir = FilePathHelper::Combine(taskDir, "inputs");
+    auto input    = yml.GetMapValueInStr({seg}, "input_dir");
+    if (input.has_value()) { inputDir = FilePathHelper::GetFullPath(input.value()); }
+
+    auto outDir = FilePathHelper::Combine(taskDir, "outputs");
+    auto output = yml.GetMapValueInStr({seg}, "output_dir");
+    if (output.has_value()) { outDir = FilePathHelper::GetFullPath(output.value()); }
 
     // Mesh.
     seg = "MESH";
@@ -160,6 +165,8 @@ void HeatConductionModel::InitializeArguments()
             mOutputVars["temp"] = out["fmt"];
         }
     }
+
+    mOutputDir = outDir;
 }
 
 void HeatConductionModel::InitializeSpace()
