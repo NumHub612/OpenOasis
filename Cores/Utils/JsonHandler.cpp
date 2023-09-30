@@ -66,6 +66,33 @@ bool JsonLoader::IsNull(const vector<string> &levels, const string &key) const
     else { return true; }
 }
 
+int JsonLoader::GetArraySize(const vector<string> &levels) const
+{
+    nlohmann::json json = mJson;
+    for (const auto &node : levels)
+    {
+        if (json.contains(node)) { json = json[node]; }
+        else { return 0; }
+    }
+
+    if (json.is_array()) { return json.size(); }
+    else { return 0; }
+}
+
+unordered_map<string, string> JsonLoader::GetMap(const vector<string> &levels) const
+{
+    nlohmann::json json = mJson;
+    for (const auto &node : levels)
+    {
+        if (json.contains(node)) { json = json[node]; }
+        else { return {}; }
+    }
+
+    unordered_map<string, string> map;
+    for (const auto &it : json.items()) { map.insert(make_pair(it.key(), it.value())); }
+
+    return map;
+}
 
 // ------------------------------------------------------------------------------------
 

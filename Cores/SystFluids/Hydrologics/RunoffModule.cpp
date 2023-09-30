@@ -94,7 +94,7 @@ void RunoffModule::InitializeTime()
 {
     mTimes = make_shared<TimeSet>();
 
-    mCurrent     = DateTime::FromString("2023/1/1 00:00:00");
+    mCurrent     = DateTime::FromString("2023-1-1 00:00:00");
     mRunningStep = TimeSpan::FromString("01:00:00");
     mCurrentTime = make_shared<Time>(mCurrent.GetTimeStampInDays());
 
@@ -153,7 +153,10 @@ void RunoffModule::PrepareOutputs()
         output->GetTimeSet()->AddTime(mCurrentTime);
         output->GetValues(nullptr)->SetOrAddValue({0, 0}, 0.0);
 
-        for (auto &adaptor : output->GetAdaptedOutputs()) { adaptor->Initialize(); }
+        for (auto &adaptor : output->GetAdaptedOutputs())
+        {
+            adaptor->Initialize();
+        }
     }
 }
 

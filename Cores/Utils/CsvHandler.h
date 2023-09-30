@@ -24,7 +24,6 @@ namespace Utils
 {
 /// @brief CsvLoader class loads data from a specified csv file.
 /// @note Row or column index used in this class is zero-based.
-/// @note Don't attempt to get a reference to the optional object `.value()`.
 class CsvLoader
 {
 private:

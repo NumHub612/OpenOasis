@@ -18,6 +18,7 @@ namespace OpenOasis
 namespace Utils
 {
 /// @brief JsonLoader class loads and parses the configurations from a json file.
+/// @note  JsonLoader reads the configurations with type.
 class JsonLoader
 {
 private:
@@ -48,6 +49,33 @@ public:
         if (json.contains(key)) { return json.at(key); }
         else { return std::nullopt; }
     }
+
+    template <typename T>
+    std::optional<T> GetValue(
+        const std::vector<std::string> &levels, unsigned int index,
+        const std::string &key) const
+    {
+        nlohmann::json json = mJson;
+        for (const auto &node : levels)
+        {
+            if (json.contains(node)) { json = json.at(node); }
+            else { return std::nullopt; }
+        }
+
+        if (json.is_array() && json.size() > index)
+        {
+            json = json[index];
+
+            if (json.contains(key)) { return json.at(key); }
+            else { return std::nullopt; }
+        }
+        else { return std::nullopt; }
+    }
+
+    int GetArraySize(const std::vector<std::string> &levels) const;
+
+    std::unordered_map<std::string, std::string>
+    GetMap(const std::vector<std::string> &levels) const;
 
     template <typename T>
     std::optional<std::vector<T>>

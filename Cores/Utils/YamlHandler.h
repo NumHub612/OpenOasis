@@ -23,7 +23,7 @@ namespace OpenOasis
 namespace Utils
 {
 /// @brief YamlLoader class loads and parses the configurations from a yaml file.
-/// @todo Not support `double` value.
+/// @note  YamlLoader reads the configurations without type, all is string_view.
 class YamlLoader
 {
 private:
