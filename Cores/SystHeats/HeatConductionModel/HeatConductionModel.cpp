@@ -262,7 +262,8 @@ vector<Coordinate> HeatConductionModel::NodesInCell(int idx)
     }
 
     vector<Coordinate> nodes;
-    for (int i : nodeIdxs) nodes.push_back(mGrid->GetNode(i).coor);
+    for (int i : nodeIdxs)
+        nodes.push_back(mGrid->GetNode(i).coor);
 
     return nodes;
 }
@@ -282,8 +283,8 @@ void HeatConductionModel::PrepareOutputs()
 {
     for (auto &output : mOutputs)
     {
-        output->SetValues(
-            make_shared<ValueSet2D>(vector<vector<double>>{{mT0}}, GetTempQuantity()));
+        output->SetValues(make_shared<DblValueSet2D>(
+            vector<vector<double>>{{mT0}}, GetTempQuantity()));
     }
 }
 
@@ -345,7 +346,8 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
     }
 
     vector<double> solution(&x[0], x.data() + x.cols() * x.rows());
-    for (int i = 0; i < size; i++) mTempValues->SetAt(i, solution[i]);
+    for (int i = 0; i < size; i++)
+        mTempValues->SetAt(i, solution[i]);
 
     SaveResult();
 }
@@ -448,7 +450,8 @@ void HeatConductionModel::SaveResult()
     writer.InsertColumn<double>(0, "temp", mTempValues->Data());
 
     writer.SetRowLabel(-1, "id");
-    for (int i = 0; i < mTempValues->Size(); i++) writer.SetRowLabel(i, to_string(i));
+    for (int i = 0; i < mTempValues->Size(); i++)
+        writer.SetRowLabel(i, to_string(i));
 
     writer.Save();
 }

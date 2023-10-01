@@ -158,7 +158,7 @@ void RainfallModule::InitializeTime()
     if (mValues && mTimes) return;
 
     mTimes  = make_shared<TimeSet>();
-    mValues = make_shared<ValueSet2D>(vector<vector<double>>{}, GetQuantity());
+    mValues = make_shared<DblValueSet2D>(vector<vector<double>>{}, GetQuantity());
 
     string file = any_cast<string>(mArguments["rainfall_file"]->GetValue());
 
@@ -225,7 +225,10 @@ void RainfallModule::PrepareOutputs()
         output->GetTimeSet()->AddTime(mCurrentTime);
         output->GetValues(nullptr)->SetOrAddValue({0, 0}, mValues->GetValue({0, 0}));
 
-        for (auto &adaptor : output->GetAdaptedOutputs()) { adaptor->Initialize(); }
+        for (auto &adaptor : output->GetAdaptedOutputs())
+        {
+            adaptor->Initialize();
+        }
     }
 }
 

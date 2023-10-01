@@ -89,7 +89,7 @@ shared_ptr<IValueSet> ElementMapper::CreateResultValueSet(int numtimes, int numE
         outValues.push_back(vector<double>(numElements));
     }
 
-    return make_shared<ValueSet2D>(outValues, nullptr);
+    return make_shared<DblValueSet2D>(outValues, nullptr);
 }
 
 void ElementMapper::MapValues(
@@ -229,10 +229,7 @@ void ElementMapper::MapFromPointToPoint(
                         mMappingMatrix->SetValue(i, j, 1);
                         denominator++;
                     }
-                    else
-                    {
-                        mMappingMatrix->SetValue(i, j, 0);
-                    }
+                    else { mMappingMatrix->SetValue(i, j, 0); }
                 }
 
                 for (int j = 0; j < mNumberOfFromColumns; j++)
@@ -265,10 +262,7 @@ void ElementMapper::MapFromPointToPoint(
                             mMappingMatrix->SetValue(i, j, 1);
                             denominator++;
                         }
-                        else
-                        {
-                            mMappingMatrix->SetValue(i, j, 0);
-                        }
+                        else { mMappingMatrix->SetValue(i, j, 0); }
                     }
 
                     for (int j = 0; j < mNumberOfFromColumns; j++)
@@ -439,14 +433,8 @@ void ElementMapper::MapFromPointToPolygon(
                 point = CreateXYPoint(fromElements, n);
                 if (XYGeoTools::IsPointInPolygon(point, polygon))
                 {
-                    if (mMethod == ElementMapperMethod::Mean)
-                    {
-                        count = count + 1;
-                    }
-                    else if (mMethod == ElementMapperMethod::Sum)
-                    {
-                        count = 1;
-                    }
+                    if (mMethod == ElementMapperMethod::Mean) { count = count + 1; }
+                    else if (mMethod == ElementMapperMethod::Sum) { count = 1; }
                     else
                     {
                         throw runtime_error(

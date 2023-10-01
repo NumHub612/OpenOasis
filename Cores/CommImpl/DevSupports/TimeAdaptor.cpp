@@ -122,7 +122,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
         ExchangeItemHelper::GetEarliestConsumerTime(GetInstance());
     if (earliestConsumerTime != nullptr) { mBuffers.ClearBefore(earliestConsumerTime); }
 
-    return make_shared<ValueSet2D>(
+    return make_shared<DblValueSet2D>(
         resultValues, dynamic_pointer_cast<IQuantity>(GetValueDefinition()));
 }
 

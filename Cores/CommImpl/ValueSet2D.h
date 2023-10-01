@@ -20,24 +20,25 @@ namespace CommImpl
 class ValueSet2D : public IValueSet
 {
 protected:
-    std::vector<std::vector<std::any>> mValues2D;  // 2d array, `any` maybe a strunct.
+    std::vector<std::vector<std::any>> mValues2D;
     std::shared_ptr<IQuantity>         mValueDef;
 
 public:
     virtual ~ValueSet2D()
     {}
-
     ValueSet2D()
     {}
+
     ValueSet2D(std::shared_ptr<IQuantity> valueDef);
     ValueSet2D(const std::shared_ptr<IValueSet> &valueSet);
     ValueSet2D(ValueSet2D &&obj);
-    ValueSet2D(
-        const std::vector<std::vector<std::any>> &values2D,
-        std::shared_ptr<IQuantity>                valueDef);
-    ValueSet2D(
-        const std::vector<std::vector<double>> &values2D,
-        std::shared_ptr<IQuantity>              valueDef);
+
+    // ValueSet2D(
+    //     const std::vector<std::vector<std::any>> &values2D,
+    //     std::shared_ptr<IQuantity>                valueDef);
+    // ValueSet2D(
+    //     const std::vector<std::vector<double>> &values2D,
+    //     std::shared_ptr<IQuantity>              valueDef);
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Implement methods inherited from `IValueSet`.
@@ -119,6 +120,12 @@ private:
 /// @brief Two-dimensional value set contains double data.
 class DblValueSet2D : public ValueSet2D
 {
+public:
+    virtual ~DblValueSet2D() = default;
+    DblValueSet2D(
+        const std::vector<std::vector<double>> &values2D,
+        std::shared_ptr<IQuantity>              valueDef);
+
 private:
     bool IsValidValueType(const std::any &value) const override;
 };

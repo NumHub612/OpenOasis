@@ -38,29 +38,29 @@ ValueSet2D::ValueSet2D(ValueSet2D &&obj)
     mValues2D = move(obj.mValues2D);
 }
 
-ValueSet2D::ValueSet2D(
-    const vector<vector<any>> &values2D, shared_ptr<IQuantity> valueDef)
-{
-    mValues2D = values2D;
-    mValueDef = move(valueDef);
-}
+// ValueSet2D::ValueSet2D(
+//     const vector<vector<any>> &values2D, shared_ptr<IQuantity> valueDef)
+// {
+//     mValues2D = values2D;
+//     mValueDef = move(valueDef);
+// }
 
-ValueSet2D::ValueSet2D(
-    const vector<vector<double>> &values2D, shared_ptr<IQuantity> valueDef)
-{
-    for (const auto &arr : values2D)
-    {
-        vector<any> tmp;
-        for (const auto &val : arr)
-        {
-            tmp.emplace_back(val);
-        }
+// ValueSet2D::ValueSet2D(
+//     const vector<vector<double>> &values2D, shared_ptr<IQuantity> valueDef)
+// {
+//     for (const auto &arr : values2D)
+//     {
+//         vector<any> tmp;
+//         for (const auto &val : arr)
+//         {
+//             tmp.emplace_back(val);
+//         }
 
-        mValues2D.emplace_back(tmp);
-    }
+//         mValues2D.emplace_back(tmp);
+//     }
 
-    mValueDef = move(valueDef);
-}
+//     mValueDef = move(valueDef);
+// }
 
 shared_ptr<IValueDefinition> ValueSet2D::GetValueDefinition() const
 {
@@ -110,10 +110,7 @@ void ValueSet2D::SetOrAddValue(const std::vector<int> &indices, const any &value
 
         mValues2D[timeIndex][elemIndex] = value;
     }
-    else
-    {
-        AddValue(indices, value);
-    }
+    else { AddValue(indices, value); }
 }
 
 int ValueSet2D::GetNumberOfIndices() const
@@ -127,10 +124,7 @@ int ValueSet2D::GetIndexCount(const std::vector<int> &indices) const
     // Check parameter validity.
     CheckIndicesOutOfDimension(indices);
 
-    if (indices.size() == 1)
-    {
-        return mValues2D.size();
-    }
+    if (indices.size() == 1) { return mValues2D.size(); }
 
     // Query the length of first dimension.
     if (indices[0] >= GetTimesCount())
@@ -160,10 +154,7 @@ void ValueSet2D::AddValue(const vector<int> &indices, const any &value)
                 "The added value type doesn't match the value set.");
         }
 
-        if (timeIndex >= GetTimesCount())
-        {
-            mValues2D.push_back(vector<any>());
-        }
+        if (timeIndex >= GetTimesCount()) { mValues2D.push_back(vector<any>()); }
 
         auto &values = mValues2D[timeIndex];
         values.insert(values.begin() + elemIndex, value);
@@ -177,8 +168,7 @@ void ValueSet2D::AddValue(const vector<int> &indices, const any &value)
 
 void ValueSet2D::RemoveValue(const vector<int> &indices)
 {
-    if (mValues2D.empty())
-        return;
+    if (mValues2D.empty()) return;
 
     // Check paramter validity.
     CheckIndicesOutOfDimension(indices);
@@ -278,21 +268,16 @@ void ValueSet2D::SetElementValuesForTime(int timeIndex, const vector<any> &value
 
 int ValueSet2D::GetTimesCount() const
 {
-    if (mValues2D.empty())
-        return 0;
+    if (mValues2D.empty()) return 0;
 
     return mValues2D.size();
 }
 
 int ValueSet2D::GetElementsCount(int timeIndex) const
 {
-    if (timeIndex < 0 || timeIndex >= GetTimesCount())
-    {
-        return 0;
-    }
+    if (timeIndex < 0 || timeIndex >= GetTimesCount()) { return 0; }
 
-    if (mValues2D[timeIndex].empty())
-        return 0;
+    if (mValues2D[timeIndex].empty()) return 0;
 
     return mValues2D[timeIndex].size();
 }
@@ -304,10 +289,7 @@ void ValueSet2D::SetValueDefinition(shared_ptr<IValueDefinition> value)
 
 vector<vector<any>> ValueSet2D::GetValues(const shared_ptr<IValueSet> &valueSet) const
 {
-    if (!valueSet->IsValues2D())
-    {
-        return {};
-    }
+    if (!valueSet->IsValues2D()) { return {}; }
 
     int sizeOfTimes    = valueSet->GetIndexCount({0});
     int sizeOfElements = valueSet->GetIndexCount({0, 0});
@@ -334,10 +316,7 @@ bool ValueSet2D::IsValidValueType(const any &value) const
 
 void ValueSet2D::CheckIndicesOutOfDimension(const vector<int> &indices) const
 {
-    if (indices.empty())
-    {
-        throw IllegalArgumentException("Empty indices specified.");
-    }
+    if (indices.empty()) { throw IllegalArgumentException("Empty indices specified."); }
 
     if (indices.size() > 2)
     {
@@ -425,6 +404,23 @@ bool StrValueSet2D::IsValidValueType(const any &value) const
 
 
 // class DblValueSet2D-----------------------------------------------------------------
+
+DblValueSet2D::DblValueSet2D(
+    const vector<vector<double>> &values2D, shared_ptr<IQuantity> valueDef)
+{
+    for (const auto &arr : values2D)
+    {
+        vector<any> tmp;
+        for (const auto &val : arr)
+        {
+            tmp.emplace_back(val);
+        }
+
+        mValues2D.emplace_back(tmp);
+    }
+
+    mValueDef = move(valueDef);
+}
 
 bool DblValueSet2D::IsValidValueType(const any &value) const
 {

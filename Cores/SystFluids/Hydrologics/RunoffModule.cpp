@@ -34,7 +34,7 @@ RunoffModule::RunoffModule(const RunoffModule &obj) : LinkableComponent(obj.GetI
     mArguments["ID"]   = make_shared<ArgumentString>("ID", mId);
 
     mTimeExtent = make_shared<TimeSet>();
-    mValues     = make_shared<ValueSet2D>(vector<vector<double>>{{0.0}}, GetQuantity());
+    mValues = make_shared<DblValueSet2D>(vector<vector<double>>{{0.0}}, GetQuantity());
 }
 
 RunoffModule::RunoffModule(const string &id, const string &taskFile) :
@@ -43,7 +43,7 @@ RunoffModule::RunoffModule(const string &id, const string &taskFile) :
     mArguments["task_file"] = make_shared<ArgumentString>("task_file", taskFile);
 
     mTimeExtent = make_shared<TimeSet>();
-    mValues     = make_shared<ValueSet2D>(vector<vector<double>>{{0.0}}, GetQuantity());
+    mValues = make_shared<DblValueSet2D>(vector<vector<double>>{{0.0}}, GetQuantity());
 }
 
 shared_ptr<IQuantity> RunoffModule::GetQuantity()
