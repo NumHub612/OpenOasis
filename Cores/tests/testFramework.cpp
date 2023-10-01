@@ -5,6 +5,7 @@
 #include "Cores/Utils/JsonHandler.h"
 #include "Cores/CommImpl/Time.h"
 #include "Tools/spdlog/spdlog.h"
+#include "Cores/CommImpl/DevSupports/IterationController.h"
 #include "Cores/SystFluids/Hydrologics/RainfallModule.h"
 #include "Cores/SystFluids/Hydrologics/RunoffModule.h"
 #include "Cores/SystFluids/Hydrologics/RiverModule.h"
@@ -14,6 +15,7 @@ using namespace std;
 using namespace OpenOasis;
 using namespace OpenOasis::SystFluids;
 using namespace OpenOasis::Utils;
+using namespace OpenOasis::CommImpl::DevSupports;
 
 
 void run_pull_mode(string configs, string parent);
@@ -34,7 +36,7 @@ TEST_CASE("OpenOasis framework tests")
     {
         string configs = FilePathHelper::Combine(path, "run_modes/loop_configs.json");
 
-        // run_loop_mode(configs);
+        run_loop_mode(configs, path);
     }
 }
 
@@ -71,6 +73,18 @@ create_runoff_model(const string &id, const string &parent, const string &tFile)
     return runoff;
 }
 
+shared_ptr<ILinkableComponent> create_river_model(const string &id)
+{
+    auto river = make_shared<RiverModule>(id);
+    if (!river)
+    {
+        spdlog::error("Create RiverModule failed.");
+        throw exception();
+    }
+
+    spdlog::info("river model {} created.", id);
+    return river;
+}
 
 void run_pull_mode(string configs, string parent)
 {
@@ -314,147 +328,128 @@ void run_pull_mode(string configs, string parent)
     spdlog::info("model {} Finished.", raingage->GetId());
 }
 
+void run_loop_mode(string configs, string parent)
+{
+    JsonLoader jLoader(configs);
 
-// void run_loop_mode(string configs)
-// {
-//     LibraryLoader dll;
-//     if (!dll.Load(dllPath))
-//     {
-//         spdlog::info("dll not loaded, path: {}.", dllPath);
-//         return;
-//     }
+    // build models ----------------------------------------------------
 
-//     cout << "\n----------------------------------------------------\n";
+    auto mIds = jLoader.GetKeys({"models"});
 
-//     auto river_raw = dll.RunFunction<void *(const char *)>("GetRiverModule",
-//     "river1"); auto river     = static_cast<ILinkableComponent *>(river_raw);
+    unordered_map<string, shared_ptr<ILinkableComponent>> models;
+    for (auto &id : mIds)
+    {
+        auto confs = jLoader.GetMap({"models", id});
 
-//     if (!river)
-//     {
-//         spdlog::error("GetriverModule api failed.");
-//         return;
-//     }
-//     spdlog::info("model {} created.", river->GetId());
+        if (confs["model_type"] == "RiverModel")
+        {
+            models[id] = create_river_model(id);
+        }
+    }
 
-//     river->Initialize();
-//     spdlog::info("model {} Initialized.", river->GetId());
+    // ----------------------------------------------------
 
-//     river->Validate();
-//     spdlog::info("model {} Validated.", river->GetId());
+    auto river = models["river1"];
+    river->Initialize();
+    spdlog::info("model {} Initialized.", river->GetId());
 
-//     river->Prepare();
-//     spdlog::info("model {} Prepared.", river->GetId());
+    river->Validate();
+    spdlog::info("model {} Validated.", river->GetId());
 
-//     cout << "\n----------------------------------------------------\n";
+    river->Prepare();
+    spdlog::info("model {} Prepared.", river->GetId());
 
-//     auto river2_raw = dll.RunFunction<void *(const char *)>("GetRiverModule",
-//     "river2"); auto river2     = static_cast<ILinkableComponent *>(river2_raw);
+    cout << "\n----------------------------------------------------\n";
 
-//     if (!river2)
-//     {
-//         spdlog::error("GetriverModule api failed.");
-//         return;
-//     }
-//     spdlog::info("model {} created.", river2->GetId());
+    auto river2 = models["river2"];
+    river2->Initialize();
+    spdlog::info("model {} Initialized.", river2->GetId());
 
-//     river2->Initialize();
-//     spdlog::info("model {} Initialized.", river2->GetId());
+    river2->Validate();
+    spdlog::info("model {} Validated.", river2->GetId());
 
-//     river2->Validate();
-//     spdlog::info("model {} Validated.", river2->GetId());
+    river2->Prepare();
+    spdlog::info("model {} Prepared.", river2->GetId());
 
-//     river2->Prepare();
-//     spdlog::info("model {} Prepared.", river2->GetId());
+    cout << "\n----------------------------------------------------\n";
 
-//     cout << "\n----------------------------------------------------\n";
+    auto river3 = models["river3"];
+    river3->Initialize();
+    spdlog::info("model {} Initialized.", river3->GetId());
 
-//     auto river3_raw = dll.RunFunction<void *(const char *)>("GetRiverModule",
-//     "river3"); auto river3     = static_cast<ILinkableComponent *>(river3_raw);
+    river3->Validate();
+    spdlog::info("model {} Validated.", river3->GetId());
 
-//     if (!river3)
-//     {
-//         spdlog::error("GetriverModule api failed.");
-//         return;
-//     }
-//     spdlog::info("model {} created.", river3->GetId());
+    river3->Prepare();
+    spdlog::info("model {} Prepared.", river3->GetId());
 
-//     river3->Initialize();
-//     spdlog::info("model {} Initialized.", river3->GetId());
+    cout << "\n----------------------------------------------------\n";
 
-//     river3->Validate();
-//     spdlog::info("model {} Validated.", river3->GetId());
+    auto outputs = river->GetOutputs();
+    auto inputs  = river->GetInputs();
 
-//     river3->Prepare();
-//     spdlog::info("model {} Prepared.", river3->GetId());
+    auto outputs2 = river2->GetOutputs();
+    auto inputs2  = river2->GetInputs();
 
-//     cout << "\n----------------------------------------------------\n";
+    auto outputs3 = river3->GetOutputs();
+    auto inputs3  = river3->GetInputs();
 
-//     auto outputs = river->GetOutputs();
-//     auto inputs  = river->GetInputs();
+    inputs[0]->AddProvider(outputs2[0]);   // river_input_q_0 ->river2_output_q_0
+    inputs3[2]->AddProvider(outputs2[2]);  // river3_input_q_1->river2_output_q_1
+    inputs2[5]->AddProvider(outputs3[5]);  // river2_input_z_2->river3_output_z_2
 
-//     auto outputs2 = river2->GetOutputs();
-//     auto inputs2  = river2->GetInputs();
+    spdlog::info("components linked.");
 
-//     auto outputs3 = river3->GetOutputs();
-//     auto inputs3  = river3->GetInputs();
+    cout << "\n----------------------------------------------------\n";
 
-//     inputs[0]->AddProvider(outputs2[0]);   // river_input_q_0 ->
-//     river2_output_q_0 inputs3[2]->AddProvider(outputs2[2]);  // river3_input_q_1
-//     -> river2_output_q_1 inputs2[5]->AddProvider(outputs3[5]);  //
-//     river2_input_z_2 -> river3_output_z_2
+    auto controller = make_shared<IterationController>("iterationer");
+    auto r2         = dynamic_pointer_cast<LinkableComponent>(river2);
+    auto r3         = dynamic_pointer_cast<LinkableComponent>(river2);
 
-//     spdlog::info("components linked.");
+    controller->AddComponent(r2->shared_from_this());
+    controller->AddComponent(r3->shared_from_this());
 
-//     cout << "\n----------------------------------------------------\n";
+    controller->Initialize();
+    spdlog::info("model {} Initialized.", controller->GetId());
 
-//     auto controller = make_shared<IterationController>("iterationer");
-//     auto r2         = dynamic_cast<LinkableComponent *>(river2);
-//     auto r3         = dynamic_cast<LinkableComponent *>(river2);
+    controller->Validate();
+    spdlog::info("model {} Validated.", controller->GetId());
 
-//     controller->AddComponent(r2->shared_from_this());
-//     controller->AddComponent(r3->shared_from_this());
+    controller->Prepare();
+    spdlog::info("model {} Prepared.", controller->GetId());
 
-//     controller->Initialize();
-//     spdlog::info("model {} Initialized.", controller->GetId());
+    cout << "\n----------------------------------------------------\n";
 
-//     controller->Validate();
-//     spdlog::info("model {} Validated.", controller->GetId());
+    while (river->GetStatus() != LinkableComponentStatus::Done
+           && river->GetStatus() != LinkableComponentStatus::Failed)
+    {
+        river->Update({});
 
-//     controller->Prepare();
-//     spdlog::info("model {} Prepared.", controller->GetId());
+        for (auto &output : outputs2)
+        {
+            auto values = output->GetValues({});
+            auto times  = output->GetTimeSet();
 
-//     cout << "\n----------------------------------------------------\n";
+            int tCount = times->GetTimes().size();
+            int vCount = values->GetIndexCount({tCount - 1});
+            cout << "\nid: " << output->GetId() << ", time size: " << tCount;
+            cout << ", -- time: " << setw(20)
+                 << CommImpl::Time::ToString(times->GetTimes().back());
+            cout << "; value size: " << vCount;
+            cout << ", -- value: "
+                 << any_cast<double>(values->GetValue({tCount - 1, 0}));
+        }
+    }
+    cout << endl;
 
-//     while (river->GetStatus() != LinkableComponentStatus::Done
-//            && river->GetStatus() != LinkableComponentStatus::Failed)
-//     {
-//         river->Update({});
+    cout << "\n----------------------------------------------------\n";
 
-//         for (auto &output : outputs2)
-//         {
-//             auto values = output->GetValues({});
-//             auto times  = output->GetTimeSet();
+    river->Finish();
+    spdlog::info("model {} Finished.", river->GetId());
 
-//             int tCount = times->GetTimes().size();
-//             int vCount = values->GetIndexCount({tCount - 1});
-//             cout << "\nid: " << output->GetId() << ", time size: " << tCount;
-//             cout << ", -- time: " << setw(20)
-//                  << CommImpl::Time::ToString(times->GetTimes().back());
-//             cout << "; value size: " << vCount;
-//             cout << ", -- value: "
-//                  << any_cast<double>(values->GetValue({tCount - 1, 0}));
-//         }
-//     }
-//     cout << endl;
+    river2->Finish();
+    spdlog::info("model {} Finished.", river2->GetId());
 
-//     cout << "\n----------------------------------------------------\n";
-
-//     river->Finish();
-//     spdlog::info("model {} Finished.", river->GetId());
-
-//     river2->Finish();
-//     spdlog::info("model {} Finished.", river2->GetId());
-
-//     river3->Finish();
-//     spdlog::info("model {} Finished.", river3->GetId());
-// }
+    river3->Finish();
+    spdlog::info("model {} Finished.", river3->GetId());
+}

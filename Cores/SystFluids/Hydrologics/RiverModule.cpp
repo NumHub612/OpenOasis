@@ -64,7 +64,10 @@ shared_ptr<IQuantity> RiverModule::GetWaterLevelQuantity()
 void RiverModule::InitializeSpace()
 {
     auto rivernet = vector<Coordinate>(mNodeNum);
-    for (int i = 0; i < mNodeNum; i++) { rivernet[i] = Coordinate{i * 10.0, 0, 0}; }
+    for (int i = 0; i < mNodeNum; i++)
+    {
+        rivernet[i] = Coordinate{i * 10.0, 0, 0};
+    }
     Element elem(mId, "river network", "river network", rivernet);
 
     mElements = make_shared<ElementSet>(
@@ -78,7 +81,7 @@ void RiverModule::InitializeTime()
 {
     mTimes = make_shared<TimeSet>();
 
-    mCurrent     = DateTime::FromString("2023/1/1 00:00:00");
+    mCurrent     = DateTime::FromString("2023-1-1 00:00:00");
     mRunningStep = TimeSpan::FromString("01:00:00");
     mCurrentTime = make_shared<Time>(mCurrent.GetTimeStampInDays());
 
@@ -184,7 +187,10 @@ void RiverModule::PrepareOutputs()
         }
         else { valueset->SetOrAddValue({0, 0}, 0.0); }
 
-        for (auto &adaptor : output->GetAdaptedOutputs()) { adaptor->Initialize(); }
+        for (auto &adaptor : output->GetAdaptedOutputs())
+        {
+            adaptor->Initialize();
+        }
     }
 }
 

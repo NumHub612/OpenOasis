@@ -1,19 +1,111 @@
 {
-    "pi": 3.141,
-    "happy": true,
-    "name": "Niels",
-    "nothing": null,
-    "answer": {
-        "everything": 42,
-        "something": 22
+    "models": {
+        "river1": {
+            "description": "river model describe river flow",
+            "model_type": "RiverModel",
+            "task_file": "river_model/task.yaml",
+            "dll_path": "OasisFluids.dll"
+        },
+        "river2": {
+            "description": "river model describe river flow",
+            "model_type": "RiverModel",
+            "task_file": "river_model/task.yaml",
+            "dll_path": "OasisFluids.dll"
+        },
+        "river3": {
+            "description": "river model describe river flow",
+            "model_type": "RiverModel",
+            "task_file": "river_model/task.yaml",
+            "dll_path": "OasisFluids.dll"
+        }
     },
-    "list": [
-        1,
-        0,
-        2
-    ],
-    "object": {
-        "currency": "USD",
-        "value": 42.99
+    "links": {
+        "link_river1_to_river2": {
+            "description": "Link between river models",
+            "source_model": "river1",
+            "source_elementset": [
+                {
+                    "id": "section0",
+                    "type": "point"
+                }
+            ],
+            "target_model": "river2",
+            "target_elementset": [
+                {
+                    "id": "section0",
+                    "type": "point"
+                }
+            ],
+            "data_exchanged": [
+                {
+                    "src_state": "outflow",
+                    "src_elementset": "river1",
+                    "tar_state": "inflow",
+                    "tar_elementset": "river2",
+                    "temporal_ops": "accumulate",
+                    "spatial_ops": "average"
+                }
+            ]
+        },
+        "link_river3_to_river2": {
+            "description": "Link between river models",
+            "source_model": "river3",
+            "source_elementset": [
+                {
+                    "id": "section1",
+                    "type": "point"
+                }
+            ],
+            "target_model": "river2",
+            "target_elementset": [
+                {
+                    "id": "section1",
+                    "type": "point"
+                }
+            ],
+            "data_exchanged": [
+                {
+                    "src_state": "outflow",
+                    "src_elementset": "river3",
+                    "tar_state": "inflow",
+                    "tar_elementset": "river2",
+                    "temporal_ops": "accumulate",
+                    "spatial_ops": "average"
+                }
+            ]
+        },
+        "link_river2_to_river3": {
+            "description": "Link between river models",
+            "source_model": "river2",
+            "source_elementset": [
+                {
+                    "id": "section2",
+                    "type": "point"
+                }
+            ],
+            "target_model": "river3",
+            "target_elementset": [
+                {
+                    "id": "section2",
+                    "type": "point"
+                }
+            ],
+            "data_exchanged": [
+                {
+                    "src_state": "waterlevel",
+                    "src_elementset": "river2",
+                    "tar_state": "waterlevel",
+                    "tar_elementset": "river3",
+                    "temporal_ops": "accumulate",
+                    "spatial_ops": "average"
+                }
+            ]
+        }
+    },
+    "iterations": {
+        "river3_with_river2": [
+            "link_river2_to_river3",
+            "link_river3_to_river2"
+        ]
     }
 }
