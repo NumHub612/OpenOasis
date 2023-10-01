@@ -10,9 +10,9 @@
 #include "Cores/Utils/Exception.h"
 
 
-namespace OpenOasis::CommImpl::Spatial
+namespace OpenOasis::CommImpl::DevSupports
 {
-using namespace DevSupports;
+using namespace Spatial;
 using namespace Utils;
 using namespace std;
 
@@ -86,10 +86,7 @@ shared_ptr<IValueSet>
 SpaceMapAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
 {
     shared_ptr<IBaseExchangeItem> querier = specifiedQuerier;
-    if (!querier)
-    {
-        querier = mConsumers.back().lock();
-    }
+    if (!querier) { querier = mConsumers.back().lock(); }
 
     // Time set of query must be defined and have at least 1 time.
     if (querier->GetTimeSet() == nullptr || querier->GetTimeSet()->GetTimes().empty())
@@ -155,4 +152,4 @@ shared_ptr<SpaceMapAdaptor> SpaceMapAdaptor::GetInstance()
     return dynamic_pointer_cast<SpaceMapAdaptor>(shared_from_this());
 }
 
-}  // namespace OpenOasis::CommImpl::Spatial
+}  // namespace OpenOasis::CommImpl::DevSupports

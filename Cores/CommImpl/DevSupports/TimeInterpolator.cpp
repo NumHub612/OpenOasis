@@ -6,7 +6,7 @@
 #include "TimeInterpolator.h"
 
 
-namespace OpenOasis::CommImpl::Temporal
+namespace OpenOasis::CommImpl::DevSupports
 {
 using namespace std;
 
@@ -21,4 +21,4 @@ TimeInterpolator::TimeInterpolator(const shared_ptr<IOutput> &adaptee) :
     TimeAdaptor(adaptee->GetId() + "->" + mTimeInterpolatorId, adaptee)
 {}
 
-}  // namespace OpenOasis::CommImpl::Temporal
+}  // namespace OpenOasis::CommImpl::DevSupports

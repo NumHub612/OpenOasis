@@ -6,7 +6,7 @@
 #include "TimeExtrapolator.h"
 
 
-namespace OpenOasis::CommImpl::Temporal
+namespace OpenOasis::CommImpl::DevSupports
 {
 using namespace std;
 

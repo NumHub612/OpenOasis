@@ -14,9 +14,9 @@
 #include "Cores/Utils/StringHelper.h"
 
 
-namespace OpenOasis::CommImpl::Temporal
+namespace OpenOasis::CommImpl::DevSupports
 {
-using namespace DevSupports;
+using namespace Temporal;
 using namespace Utils;
 using namespace std;
 
@@ -59,10 +59,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     // Check if we need to update the output component.
 
     shared_ptr<IBaseExchangeItem> querier = specifiedQuerier;
-    if (!querier)
-    {
-        querier = mConsumers.back().lock();
-    }
+    if (!querier) { querier = mConsumers.back().lock(); }
 
     // Time set of query must be defined and have at least 1 time.
     if (querier->GetTimeSet() == nullptr || querier->GetTimeSet()->GetTimes().empty())
@@ -88,10 +85,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     // Check if we need to update.
     // In case the output component is "busy",  this may not actually update values
     // up to queryTime, in which case the mBuffers.GetValues below will extrapolate.
-    if (availableTimestamp < queryTimestamp)
-    {
-        Update(querier);
-    }
+    if (availableTimestamp < queryTimestamp) { Update(querier); }
 
     // Pull data from Output item.
     auto currentValues = mOutput.lock()->GetValues({});
@@ -126,10 +120,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
 
     const auto &earliestConsumerTime =
         ExchangeItemHelper::GetEarliestConsumerTime(GetInstance());
-    if (earliestConsumerTime != nullptr)
-    {
-        mBuffers.ClearBefore(earliestConsumerTime);
-    }
+    if (earliestConsumerTime != nullptr) { mBuffers.ClearBefore(earliestConsumerTime); }
 
     return make_shared<ValueSet2D>(
         resultValues, dynamic_pointer_cast<IQuantity>(GetValueDefinition()));
@@ -260,4 +251,4 @@ shared_ptr<TimeAdaptor> TimeAdaptor::GetInstance()
 }
 
 
-}  // namespace OpenOasis::CommImpl::Temporal
+}  // namespace OpenOasis::CommImpl::DevSupports

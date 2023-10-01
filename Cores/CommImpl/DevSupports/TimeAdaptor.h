@@ -11,16 +11,13 @@
 #include "Cores/Inc/IAdaptedOutput.h"
 #include "Cores/Inc/ILinkableComponent.h"
 #include "Cores/CommImpl/AbstractAdaptedOutput.h"
-#include "TimeBuffer.h"
+#include "Cores/CommImpl/Temporal/TimeBuffer.h"
 #include "Cores/Utils/EventHandler.h"
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::DevSupports
 {
-namespace CommImpl
-{
-namespace Temporal
-{
+using namespace Temporal;
 using namespace Utils;
 
 /// @brief Class contains temporal operations the providing component should carry out
@@ -76,6 +73,4 @@ protected:
     void RefreshAdaptedOutputs();
 };
 
-}  // namespace Temporal
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  

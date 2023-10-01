@@ -1,32 +1,34 @@
 /** ***********************************************************************************
- *    @File      :  SpaceAreaAdaptor.cpp
- *    @Brief     :  AdaptedOutput multiplies the values of the valueset with the area.
+ *    @File      :  SpaceLengthAdaptor.cpp
+ *    @Brief     :  AdaptedOutput multiplies the values of the valueset with the length.
  *
  ** ***********************************************************************************/
-#include "SpaceAreaAdaptor.h"
-#include "ElementMapper.h"
+#include "SpaceLengthAdaptor.h"
+#include "Cores/CommImpl/Spatial/ElementMapper.h"
 #include "Cores/CommImpl/Dimension.h"
 #include "Cores/CommImpl/Unit.h"
 #include "Cores/CommImpl/Quantity.h"
 #include "Cores/CommImpl/DevSupports/ExtensionMethods.h"
 #include "Cores/Utils/Exception.h"
+#include "Cores/Utils/StringHelper.h"
 #include "Tools/MagicEnum/WrapMagicEnum.hpp"
 
 
-namespace OpenOasis::CommImpl::Spatial
+namespace OpenOasis::CommImpl::DevSupports
 {
-using namespace DevSupports;
+using namespace Spatial;
 using namespace Utils;
 using namespace std;
 
-SpaceAreaAdaptor::SpaceAreaAdaptor(
+
+SpaceLengthAdaptor::SpaceLengthAdaptor(
     const string &id, const shared_ptr<IOutput> &adaptee) :
     AbstractAdaptedOutput(id, adaptee)
 {
-    mAreaExponent = 1.0;
-    mAreaArgument = make_shared<ArgumentDouble>("AreaExponent", 1.0);
+    mLengthExponent = 1.0;
+    mLengthArgument = make_shared<ArgumentDouble>("LengthExponent", 1.0);
 
-    mArguments.emplace(make_pair("area", mAreaArgument));
+    mArguments.emplace(make_pair("length", mLengthArgument));
     Initialize();
 
     // Check the adaptee data.
@@ -35,10 +37,11 @@ SpaceAreaAdaptor::SpaceAreaAdaptor(
     {
         throw invalid_argument("Adaptee must have an IElementSet as SpatialDefinition");
     }
-    if (elementSet->GetElementType() != ElementType::Polygon)
+
+    if (elementSet->GetElementType() != ElementType::Polyline)
     {
         throw invalid_argument(
-            "Adaptee must have a SpatialDefinition having polygons as elements");
+            "Adaptee must have a SpatialDefinition having polyline as elements");
     }
 
     if (adaptee->GetValueDefinition()->GetValueType() != typeid(double))
@@ -52,34 +55,34 @@ SpaceAreaAdaptor::SpaceAreaAdaptor(
     }
 }
 
-void SpaceAreaAdaptor::Initialize()
+void SpaceLengthAdaptor::Initialize()
 {
     CalculateFactors(GetElementSet());
     UpdateQuantity();
 }
 
-void SpaceAreaAdaptor::SetValues(shared_ptr<IValueSet> value)
+void SpaceLengthAdaptor::SetValues(shared_ptr<IValueSet> value)
 {}
 
-shared_ptr<IValueDefinition> SpaceAreaAdaptor::GetValueDefinition() const
+shared_ptr<IValueDefinition> SpaceLengthAdaptor::GetValueDefinition() const
 {
     return mOutput.lock()->GetValueDefinition();
 }
 
-shared_ptr<IElementSet> SpaceAreaAdaptor::GetElementSet() const
+shared_ptr<IElementSet> SpaceLengthAdaptor::GetElementSet() const
 {
     return mOutput.lock()->GetElementSet();
 }
 
-void SpaceAreaAdaptor::SetTimeSet(shared_ptr<ITimeSet> times)
+void SpaceLengthAdaptor::SetTimeSet(shared_ptr<ITimeSet> times)
 {}
 
-shared_ptr<ITimeSet> SpaceAreaAdaptor::GetTimeSet() const
+shared_ptr<ITimeSet> SpaceLengthAdaptor::GetTimeSet() const
 {
     return mOutput.lock()->GetTimeSet();
 }
 
-void SpaceAreaAdaptor::Refresh()
+void SpaceLengthAdaptor::Refresh()
 {
     for (auto adaptedOutput : mAdaptedOutputs)
     {
@@ -87,19 +90,19 @@ void SpaceAreaAdaptor::Refresh()
     }
 }
 
-void SpaceAreaAdaptor::SetElementSet(shared_ptr<IElementSet> elements)
+void SpaceLengthAdaptor::SetElementSet(shared_ptr<IElementSet> elements)
 {}
 
-void SpaceAreaAdaptor::Reset()
+void SpaceLengthAdaptor::Reset()
 {
-    mAreaArgument.reset();
+    mLengthArgument.reset();
     mQuantity.reset();
     mOutput.reset();
     mConsumers.clear();
     mAdaptedOutputs.clear();
     mFactors.clear();
 
-    mAreaExponent = 1.0;
+    mLengthExponent = 1.0;
 
     BroadcastEventWithMsg("Output item reseted.");
     mItemChanged.Clear();
@@ -107,46 +110,37 @@ void SpaceAreaAdaptor::Reset()
     Initialize();
 }
 
-shared_ptr<ITimeSet> SpaceAreaAdaptor::GetTimeExtent() const
+shared_ptr<ITimeSet> SpaceLengthAdaptor::GetTimeExtent() const
 {
     return mOutput.lock()->GetTimeSet();
 }
 
-shared_ptr<ITime> SpaceAreaAdaptor::GetCurrentTime() const
+shared_ptr<ITime> SpaceLengthAdaptor::GetCurrentTime() const
 {
     return ExtensionMethods::End(GetTimeExtent()->GetTimeHorizon());
 }
 
-shared_ptr<ISpatialDefinition> SpaceAreaAdaptor::GetSpatialDefinition() const
+shared_ptr<ISpatialDefinition> SpaceLengthAdaptor::GetSpatialDefinition() const
 {
     return GetElementSet();
 }
 
-void SpaceAreaAdaptor::CalculateFactors(const shared_ptr<IElementSet> &elementSet)
+void SpaceLengthAdaptor::CalculateFactors(const shared_ptr<IElementSet> &elementSet)
 {
-    mFactors      = vector<double>(elementSet->GetElementCount());
-    mAreaExponent = any_cast<double>(mAreaArgument->GetValue());
+    mFactors        = vector<double>(elementSet->GetElementCount());
+    mLengthExponent = any_cast<double>(mLengthArgument->GetValue());
 
     for (int i = 0; i < mFactors.size(); i++)
     {
-        XYPolygon element = ElementMapper::CreateXYPolygon(elementSet, i);
-        double    area    = element.GetArea();
-        if (mAreaExponent == 1)
-        {
-            mFactors[i] = area;
-        }
-        else if (mAreaExponent == -1)
-        {
-            mFactors[i] = 1.0 / area;
-        }
-        else
-        {
-            mFactors[i] = pow(area, mAreaExponent);
-        }
+        XYPolyline element = ElementMapper::CreateXYPolyline(elementSet, i);
+        double     length  = element.GetLength();
+        if (mLengthExponent == 1) { mFactors[i] = length; }
+        else if (mLengthExponent == -1) { mFactors[i] = 1.0 / length; }
+        else { mFactors[i] = pow(length, mLengthExponent); }
     }
 }
 
-void SpaceAreaAdaptor::UpdateQuantity()
+void SpaceLengthAdaptor::UpdateQuantity()
 {
     auto sourceQuantity =
         dynamic_pointer_cast<IQuantity>(mOutput.lock()->GetValueDefinition());
@@ -160,10 +154,10 @@ void SpaceAreaAdaptor::UpdateQuantity()
 
     dimension->SetPower(
         DimensionBase::Length,
-        dimension->GetPower(DimensionBase::Length) + mAreaExponent);
+        dimension->GetPower(DimensionBase::Length) + mLengthExponent);
 
-    string pu = StringHelper::FormatSimple(" * m^{}", 2 * mAreaExponent);
-    string pq = StringHelper::FormatSimple(" * area^{}", mAreaExponent);
+    string pu = StringHelper::FormatSimple(" * m^{}", mLengthExponent);
+    string pq = StringHelper::FormatSimple(" * length^{}", mLengthExponent);
 
     auto unit = make_shared<Unit>(
         dimension,
@@ -177,15 +171,15 @@ void SpaceAreaAdaptor::UpdateQuantity()
 }
 
 shared_ptr<IValueSet>
-SpaceAreaAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &querier)
+SpaceLengthAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &querier)
 {
     return ExtensionMethods::MultiplyElementValues(
         mOutput.lock()->GetValues(querier), mFactors);
 }
 
-shared_ptr<SpaceAreaAdaptor> SpaceAreaAdaptor::GetInstance()
+shared_ptr<SpaceLengthAdaptor> SpaceLengthAdaptor::GetInstance()
 {
-    return dynamic_pointer_cast<SpaceAreaAdaptor>(shared_from_this());
+    return dynamic_pointer_cast<SpaceLengthAdaptor>(shared_from_this());
 }
 
-}  // namespace OpenOasis::CommImpl::Spatial
+}  // namespace OpenOasis::CommImpl::DevSupports

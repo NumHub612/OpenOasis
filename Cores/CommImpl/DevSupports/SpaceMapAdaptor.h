@@ -10,15 +10,13 @@
 #pragma once
 #include "Cores/Inc/IInput.h"
 #include "Cores/CommImpl/AbstractAdaptedOutput.h"
-#include "ElementMapper.h"
+#include "Cores/CommImpl/Spatial/ElementMapper.h"
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::DevSupports
 {
-namespace CommImpl
-{
-namespace Spatial
-{
+using namespace Spatial;
+
 /// @brief An adapted output item that does element mapping from one spatial definition
 /// (elementset) to another.
 /// The adapted output retrieves values from the adaptee, and converts them
@@ -83,6 +81,4 @@ protected:
     std::shared_ptr<SpaceMapAdaptor> GetInstance();
 };
 
-}  // namespace Spatial
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  // namespace OpenOasis::CommImpl::DevSupports

@@ -11,11 +11,7 @@
 #include "TimeAdaptor.h"
 
 
-namespace OpenOasis
-{
-namespace CommImpl
-{
-namespace Temporal
+namespace OpenOasis::CommImpl::DevSupports
 {
 /// @brief Time interpolation adaptor.
 class TimeInterpolator : public TimeAdaptor
@@ -31,6 +27,4 @@ public:
     TimeInterpolator(const std::shared_ptr<IOutput> &adaptee);
 };
 
-}  // namespace Temporal
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  

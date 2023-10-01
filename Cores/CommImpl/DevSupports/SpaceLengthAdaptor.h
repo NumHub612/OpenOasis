@@ -1,10 +1,10 @@
 /** ***********************************************************************************
  *    Copyright (C) 2022, The OpenOasis Contributors. Join us in the Oasis!
  *
- *    @File      :  SpaceAreaAdaptor.h
+ *    @File      :  SpaceLengthAdaptor.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  AdaptedOutput multiplies the values of the valueset with the area.
+ *    @Desc      :  AdaptedOutput multiplies the values of the valueset with the length.
  *
  ** ***********************************************************************************/
 #pragma once
@@ -12,31 +12,27 @@
 #include "Cores/CommImpl/Arguments.h"
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::DevSupports
 {
-namespace CommImpl
-{
-namespace Spatial
-{
-/// @brief A IAdaptedOutput that multiplies the values of the valueset with the area
-/// of the element to some power. By default the power is one.
+/// @brief An IAdaptedOutput that multiplies the values of the valueset with the length
+/// of the element line to some power. By default the power is one.
 ///
-/// Assumes that the "IElementSet" has "ElementType::Polygon" as elements in the
+/// Assumes that the "IElementSet" has "ElementType::PolyLine" as elements in the
 /// "SpatialDefinition" and "IValueDefinition.ValueType" as typeof(double).
-class SpaceAreaAdaptor : public AbstractAdaptedOutput
+class SpaceLengthAdaptor : public AbstractAdaptedOutput
 {
 protected:
-    double                          mAreaExponent;
-    std::shared_ptr<ArgumentDouble> mAreaArgument;
+    double                          mLengthExponent;
+    std::shared_ptr<ArgumentDouble> mLengthArgument;
 
     std::vector<double>        mFactors;
     std::shared_ptr<IQuantity> mQuantity;
 
 public:
-    virtual ~SpaceAreaAdaptor()
+    virtual ~SpaceLengthAdaptor()
     {}
 
-    SpaceAreaAdaptor(const std::string &id, const std::shared_ptr<IOutput> &adaptee);
+    SpaceLengthAdaptor(const std::string &id, const std::shared_ptr<IOutput> &adaptee);
 
     void Initialize();
 
@@ -73,9 +69,7 @@ protected:
     void CalculateFactors(const std::shared_ptr<IElementSet> &elementSet);
     void UpdateQuantity();
 
-    std::shared_ptr<SpaceAreaAdaptor> GetInstance();
+    std::shared_ptr<SpaceLengthAdaptor> GetInstance();
 };
 
-}  // namespace Spatial
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  
