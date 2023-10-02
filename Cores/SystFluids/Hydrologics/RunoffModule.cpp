@@ -16,7 +16,7 @@
 #include "Cores/Utils/StreamReader.h"
 
 
-namespace OpenOasis::SystFluids
+namespace OpenOasis::SystFluids::Hydrologics
 {
 using namespace Spatial;
 using namespace Utils;

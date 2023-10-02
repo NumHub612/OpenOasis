@@ -13,7 +13,7 @@
 
 using namespace std;
 using namespace OpenOasis;
-using namespace OpenOasis::SystFluids;
+using namespace OpenOasis::SystFluids::Hydrologics;
 using namespace OpenOasis::Utils;
 using namespace OpenOasis::CommImpl::DevSupports;
 

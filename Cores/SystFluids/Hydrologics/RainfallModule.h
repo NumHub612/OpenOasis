@@ -15,7 +15,7 @@
 #include "Cores/CommImpl/TimeSet.h"
 
 
-namespace OpenOasis::SystFluids
+namespace OpenOasis::SystFluids::Hydrologics
 {
 using namespace CommImpl;
 

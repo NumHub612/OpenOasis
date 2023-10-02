@@ -17,7 +17,7 @@
 #include "Cores/Utils/DateTime.h"
 
 
-namespace OpenOasis::SystFluids
+namespace OpenOasis::SystFluids::Hydrologics
 {
 using namespace CommImpl;
 using namespace Utils;

@@ -16,7 +16,7 @@
 #include "Cores/Utils/StreamReader.h"
 
 
-namespace OpenOasis::SystFluids
+namespace OpenOasis::SystFluids::Hydrologics
 {
 using namespace Spatial;
 using namespace Utils;
@@ -262,4 +262,4 @@ RainfallOutput::RainfallOutput(
     Output(id, component)
 {}
 
-}  // namespace OpenOasis::SystFluids
+}  // namespace OpenOasis::SystFluids::Hydrologics
