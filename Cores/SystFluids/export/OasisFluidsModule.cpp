@@ -5,7 +5,7 @@
 #include "Cores/SystFluids/Hydrologics/RiverModule.h"
 
 
-using namespace OpenOasis::SystFluids;
+using namespace OpenOasis::SystFluids::Hydrologics;
 using namespace std;
 
 static vector<shared_ptr<OpenOasis::ILinkableComponent>> componenents;
