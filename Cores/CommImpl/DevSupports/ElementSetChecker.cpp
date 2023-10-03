@@ -4,12 +4,13 @@
  *
  ** ***********************************************************************************/
 #include "ElementSetChecker.h"
-#include "XYGeoStructs.h"
+#include "Cores/CommImpl/Spatial/XYGeoStructs.h"
 #include "Cores/Utils/StringHelper.h"
 
 
-namespace OpenOasis::CommImpl::Spatial
+namespace OpenOasis::CommImpl::DevSupports
 {
+using namespace Spatial;
 using namespace Utils;
 using namespace std;
 
@@ -97,4 +98,4 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
     }
 }
 
-}  // namespace OpenOasis::CommImpl::Spatial
+}  // namespace OpenOasis::CommImpl::DevSupports

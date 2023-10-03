@@ -8,9 +8,9 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "ElementMapper.h"
 #include "Cores/Inc/IInput.h"
 #include "Cores/CommImpl/AbstractAdaptedOutput.h"
-#include "Cores/CommImpl/Spatial/ElementMapper.h"
 
 
 namespace OpenOasis::CommImpl::DevSupports

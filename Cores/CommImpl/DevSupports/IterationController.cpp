@@ -10,8 +10,6 @@
 #include "Cores/CommImpl/Output.h"
 #include "Cores/CommImpl/Time.h"
 #include "Cores/CommImpl/TimeSet.h"
-// #include "Cores/Utils/MapHelper.h"
-// #include "Cores/CommImpl/IO/logging.h"
 
 
 namespace OpenOasis::CommImpl::DevSupports
@@ -41,28 +39,16 @@ void IterationController::InitializeArguments()
     for (const auto &kid : mRequiredArguments)
     {
         any value = mArguments[kid]->GetValue();
-        if (kid == "MaxIter")
-        {
-            mMaxIter = any_cast<int>(value);
-        }
-        else if (kid == "Eps")
-        {
-            mEps = any_cast<double>(value);
-        }
-        else if (kid == "Relaxation")
-        {
-            mRelaxation = any_cast<double>(value);
-        }
+        if (kid == "MaxIter") { mMaxIter = any_cast<int>(value); }
+        else if (kid == "Eps") { mEps = any_cast<double>(value); }
+        else if (kid == "Relaxation") { mRelaxation = any_cast<double>(value); }
     }
 }
 
 void IterationController::AddComponent(shared_ptr<ILinkableComponent> component)
 {
     auto comp = dynamic_pointer_cast<LinkableComponent>(component);
-    if (!comp)
-    {
-        return;
-    }
+    if (!comp) { return; }
 
     comp->SetCascadingUpdateCallsDisabled(true);
 
@@ -79,8 +65,7 @@ void IterationController::InitializeInputs()
         const auto &component = comPair.second;
         for (const auto &input : component->GetInputs())
         {
-            if (input->GetProviders().empty())
-                continue;
+            if (input->GetProviders().empty()) continue;
 
             // Check if the input is outer. Note that the input is outer if it is not
             // provided by any of the components in the internal set.
@@ -91,14 +76,8 @@ void IterationController::InitializeInputs()
                     return mComponentSet.count(compId) == 0;
                 });
 
-            if (isOuter)
-            {
-                mInputs.push_back(input);
-            }
-            else
-            {
-                mInnerInputSet.push_back(input);
-            }
+            if (isOuter) { mInputs.push_back(input); }
+            else { mInnerInputSet.push_back(input); }
         }
     }
 }
@@ -113,8 +92,7 @@ void IterationController::InitializeOutputs()
         const auto &component = comPair.second;
         for (const auto &output : component->GetOutputs())
         {
-            if (output->GetConsumers().empty())
-                continue;
+            if (output->GetConsumers().empty()) continue;
 
             // Check if the output is outer.
             const auto &consumers = output->GetConsumers();
@@ -124,14 +102,8 @@ void IterationController::InitializeOutputs()
                     return mComponentSet.count(compId) == 0;
                 });
 
-            if (isOuter)
-            {
-                mOutputs.push_back(output);
-            }
-            else
-            {
-                mInnerOutputSet.push_back(output);
-            }
+            if (isOuter) { mOutputs.push_back(output); }
+            else { mInnerOutputSet.push_back(output); }
         }
     }
 }

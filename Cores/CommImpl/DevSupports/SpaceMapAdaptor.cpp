@@ -4,9 +4,9 @@
  *
  ** ***********************************************************************************/
 #include "SpaceMapAdaptor.h"
+#include "ExtensionMethods.h"
 #include "Cores/CommImpl/Input.h"
 #include "Cores/CommImpl/ValueSet2D.h"
-#include "Cores/CommImpl/DevSupports/ExtensionMethods.h"
 #include "Cores/Utils/Exception.h"
 
 

@@ -4,11 +4,11 @@
  *
  ** ***********************************************************************************/
 #include "SpaceAreaAdaptor.h"
-#include "Cores/CommImpl/Spatial/ElementMapper.h"
+#include "ElementMapper.h"
+#include "ExtensionMethods.h"
 #include "Cores/CommImpl/Dimension.h"
 #include "Cores/CommImpl/Unit.h"
 #include "Cores/CommImpl/Quantity.h"
-#include "Cores/CommImpl/DevSupports/ExtensionMethods.h"
 #include "Cores/Utils/Exception.h"
 #include "Tools/MagicEnum/WrapMagicEnum.hpp"
 

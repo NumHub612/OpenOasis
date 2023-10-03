@@ -6,19 +6,19 @@
  *
  ** ***********************************************************************************/
 #include "ElementMapper.h"
+#include "ExtensionMethods.h"
 #include "ElementSetChecker.h"
-#include "XYGeoTools.h"
-#include "XYElementSearchTree.h"
+#include "Cores/CommImpl/Spatial/XYElementSearchTree.h"
+#include "Cores/CommImpl/Spatial/XYGeoTools.h"
 #include "Cores/CommImpl/ValueSet2D.h"
 #include "Cores/CommImpl/SpaceAdaptedOutputFactory.h"
-#include "Cores/CommImpl/DevSupports/ExtensionMethods.h"
 #include "Cores/Utils/Exception.h"
 #include <numeric>
 
 
-namespace OpenOasis::CommImpl::Spatial
+namespace OpenOasis::CommImpl::DevSupports
 {
-using namespace DevSupports;
+using namespace Spatial;
 using namespace Utils;
 using namespace std;
 
@@ -990,4 +990,4 @@ ElementMapper::CreateFromXYPolygon(const shared_ptr<IElementSet> &elementSet, in
 }
 
 
-}  // namespace OpenOasis::CommImpl::Spatial
+}  // namespace OpenOasis::CommImpl::DevSupports

@@ -12,11 +12,7 @@
 #include <memory>
 
 
-namespace OpenOasis
-{
-namespace CommImpl
-{
-namespace Spatial
+namespace OpenOasis::CommImpl::DevSupports
 {
 /// @brief Summary description for ElementSetChecker.
 class ElementSetChecker
@@ -39,6 +35,4 @@ public:
     static void CheckElementSet(const std::shared_ptr<IElementSet> &elementSet);
 };
 
-}  // namespace Spatial
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  

@@ -41,12 +41,9 @@
 #include <optional>
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::DevSupports
 {
-namespace CommImpl
-{
-namespace Spatial
-{
+using namespace Spatial;
 using namespace Numeric;
 
 /// @brief Predined element mapping methods.
@@ -213,6 +210,4 @@ private:
     CreateXYPoint(const std::shared_ptr<IElementSet> &elementSet, int index);
 };
 
-}  // namespace Spatial
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  
