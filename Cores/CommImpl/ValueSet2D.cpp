@@ -38,30 +38,6 @@ ValueSet2D::ValueSet2D(ValueSet2D &&obj)
     mValues2D = move(obj.mValues2D);
 }
 
-// ValueSet2D::ValueSet2D(
-//     const vector<vector<any>> &values2D, shared_ptr<IQuantity> valueDef)
-// {
-//     mValues2D = values2D;
-//     mValueDef = move(valueDef);
-// }
-
-// ValueSet2D::ValueSet2D(
-//     const vector<vector<double>> &values2D, shared_ptr<IQuantity> valueDef)
-// {
-//     for (const auto &arr : values2D)
-//     {
-//         vector<any> tmp;
-//         for (const auto &val : arr)
-//         {
-//             tmp.emplace_back(val);
-//         }
-
-//         mValues2D.emplace_back(tmp);
-//     }
-
-//     mValueDef = move(valueDef);
-// }
-
 shared_ptr<IValueDefinition> ValueSet2D::GetValueDefinition() const
 {
     return mValueDef;
@@ -71,51 +47,50 @@ any ValueSet2D::GetValue(const std::vector<int> &indices) const
 {
     CheckAllDimensionSpecified(indices);
 
-    int timeIndex    = indices[0];
-    int elementIndex = indices[1];
-    CheckTimeIndex(timeIndex);
-    CheckElementIndex(timeIndex, elementIndex);
-    return mValues2D.at(timeIndex).at(elementIndex);
+    int tIndex = indices[0], eIndex = indices[1];
+    CheckTimeIndex(tIndex);
+    CheckElementIndex(tIndex, eIndex);
+
+    return mValues2D.at(tIndex).at(eIndex);
 }
 
 void ValueSet2D::SetOrAddValue(const std::vector<int> &indices, const any &value)
 {
     CheckAllDimensionSpecified(indices);
 
-    int timeIndex = indices[0];
-    int elemIndex = indices[1];
+    int tIndex = indices[0], eIndex = indices[1];
 
-    if (timeIndex < 0 || elemIndex < 0)
+    if (tIndex < 0 || eIndex < 0)
     {
-        throw IllegalArgumentException(
-            "Negative time or element index used to set or add value to set.");
+        throw IllegalArgumentException("Negative time or element index.");
     }
-    if (timeIndex > GetTimesCount())
+
+    if (tIndex > GetTimesCount())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
             "Time index {} far exceed valueset time range {}.",
-            timeIndex,
+            tIndex,
             GetTimesCount()));
     }
 
-    if (timeIndex < GetTimesCount() && elemIndex < GetElementsCount(timeIndex))
+    if (tIndex < GetTimesCount() && eIndex < GetElementsCount(tIndex))
     {
         if (!IsValidValueType(value))
         {
             throw IllegalArgumentException(StringHelper::FormatSimple(
-                "The added value type {} doesn't match the value set {}.",
+                "The set value type {} doesn't match the valueset {}.",
                 value.type().name(),
-                mValues2D[timeIndex][elemIndex].type().name()));
+                mValues2D[tIndex][eIndex].type().name()));
         }
 
-        mValues2D[timeIndex][elemIndex] = value;
+        mValues2D[tIndex][eIndex] = value;
     }
     else { AddValue(indices, value); }
 }
 
 int ValueSet2D::GetNumberOfIndices() const
 {
-    // Two-dimensional value set.
+    // Two-dimensional valueset.
     return 2;
 }
 
@@ -124,40 +99,43 @@ int ValueSet2D::GetIndexCount(const std::vector<int> &indices) const
     // Check parameter validity.
     CheckIndicesOutOfDimension(indices);
 
-    if (indices.size() == 1) { return mValues2D.size(); }
+    if (indices.size() == 1) return mValues2D.size();
 
-    // Query the length of first dimension.
-    if (indices[0] >= GetTimesCount())
+    // Query the length of first time-dimension.
+    int tIndex = indices[0];
+    if (tIndex >= GetTimesCount())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "The first query index {} out of range {}.", indices[0], GetTimesCount()));
+            "The first query index {} out of range {}.", tIndex, GetTimesCount()));
     }
 
-    // Query the length of specified index in second dimension.
-    int elementIndex = indices[1];
-    CheckElementIndex(indices[0], elementIndex);
+    // Query the length of specified index in second element-dimension.
+    int eIndex = indices[1];
+    CheckElementIndex(tIndex, eIndex);
 
-    return mValues2D[indices[0]].size();
+    return mValues2D[tIndex].size();
 }
 
 void ValueSet2D::AddValue(const vector<int> &indices, const any &value)
 {
-    // Add values.
-    int timeIndex = min(indices[0], GetTimesCount());
-    int elemIndex = min(indices[1], GetElementsCount(timeIndex - 1));
+    // Add given value at new time index.
+    int tIndex = GetTimesCount();
+    int eIndex = min(indices[1], GetElementsCount(tIndex - 1));
 
     try
     {
         if (!IsValidValueType(value))
         {
-            throw IllegalArgumentException(
-                "The added value type doesn't match the value set.");
+            throw IllegalArgumentException(StringHelper::FormatSimple(
+                "The added value type {} doesn't match the valueset {}.",
+                value.type().name(),
+                mValues2D[tIndex][eIndex].type().name()));
         }
 
-        if (timeIndex >= GetTimesCount()) { mValues2D.push_back(vector<any>()); }
+        mValues2D.push_back(vector<any>());
 
-        auto &values = mValues2D[timeIndex];
-        values.insert(values.begin() + elemIndex, value);
+        auto &values = mValues2D[tIndex];
+        values.insert(values.begin() + eIndex, value);
     }
     catch (const bad_any_cast &e)
     {
@@ -174,21 +152,21 @@ void ValueSet2D::RemoveValue(const vector<int> &indices)
     CheckIndicesOutOfDimension(indices);
 
     // Remove a time.
-    int timeIndex = indices[0];
-    CheckTimeIndex(timeIndex);
+    int tIndex = indices[0];
+    CheckTimeIndex(tIndex);
 
     if (indices.size() == 1)
     {
-        mValues2D.erase(mValues2D.begin() + timeIndex);
+        mValues2D.erase(mValues2D.begin() + tIndex);
         return;
     }
 
     // Remove a element.
-    int elementIndex = indices[1];
-    CheckElementIndex(timeIndex, elementIndex);
+    int eIndex = indices[1];
+    CheckElementIndex(tIndex, eIndex);
 
-    auto &source = mValues2D[timeIndex];
-    source.erase(source.begin() + elementIndex);
+    auto &source = mValues2D[tIndex];
+    source.erase(source.begin() + eIndex);
 }
 
 bool ValueSet2D::IsValues2D() const
@@ -199,15 +177,10 @@ bool ValueSet2D::IsValues2D() const
 
 vector<any> ValueSet2D::GetTimeSeriesValuesForElement(int elementIndex) const
 {
-    for (int t = 0; t < GetTimesCount(); ++t)
-    {
-        CheckElementIndex(t, elementIndex);
-    }
-
     vector<any> values;
-    for (size_t timeIndex = 0; timeIndex < mValues2D.size(); timeIndex++)
+    for (size_t tIndex = 0; tIndex < mValues2D.size(); tIndex++)
     {
-        values.push_back(mValues2D.at(timeIndex).at(elementIndex));
+        values.push_back(mValues2D.at(tIndex).at(elementIndex));
     }
 
     return values;
@@ -219,12 +192,7 @@ void ValueSet2D::SetTimeSeriesValuesForElement(
     if (values.size() != GetTimesCount())
     {
         throw IllegalArgumentException(
-            "Invalid timeseries values length out of current value set.");
-    }
-
-    for (int t = 0; t < GetTimesCount(); ++t)
-    {
-        CheckElementIndex(t, elementIndex);
+            "Invalid timeseries values length out of current valueset.");
     }
 
     for (int t = 0; t < GetTimesCount(); ++t)
@@ -251,7 +219,7 @@ void ValueSet2D::SetElementValuesForTime(int timeIndex, const vector<any> &value
     if (values.size() != mValues2D[timeIndex].size())
     {
         throw IllegalArgumentException(
-            "Invalid elements values length out of current value set.");
+            "Invalid elements values length out of current valueset.");
     }
 
     if (!all_of(
@@ -260,7 +228,7 @@ void ValueSet2D::SetElementValuesForTime(int timeIndex, const vector<any> &value
             bind(&ValueSet2D::IsValidValueType, this, placeholders::_1)))
     {
         throw IllegalArgumentException(
-            "The added value type doesn't match the value set.");
+            "The set element value type doesn't match the valueset.");
     }
 
     mValues2D[timeIndex] = values;
@@ -275,7 +243,7 @@ int ValueSet2D::GetTimesCount() const
 
 int ValueSet2D::GetElementsCount(int timeIndex) const
 {
-    if (timeIndex < 0 || timeIndex >= GetTimesCount()) { return 0; }
+    if (timeIndex < 0 || timeIndex >= GetTimesCount()) return 0;
 
     if (mValues2D[timeIndex].empty()) return 0;
 
@@ -289,16 +257,16 @@ void ValueSet2D::SetValueDefinition(shared_ptr<IValueDefinition> value)
 
 vector<vector<any>> ValueSet2D::GetValues(const shared_ptr<IValueSet> &valueSet) const
 {
-    if (!valueSet->IsValues2D()) { return {}; }
+    if (!valueSet->IsValues2D()) return {};
 
-    int sizeOfTimes    = valueSet->GetIndexCount({0});
-    int sizeOfElements = valueSet->GetIndexCount({0, 0});
+    int times    = valueSet->GetIndexCount({0});
+    int elements = valueSet->GetIndexCount({0, 0});
 
-    vector<vector<any>> data(sizeOfTimes);
-    for (int t = 0; t < sizeOfTimes; ++t)
+    vector<vector<any>> data(times);
+    for (int t = 0; t < times; ++t)
     {
-        vector<any> ts(sizeOfElements);
-        for (int i = 0; i < sizeOfElements; ++i)
+        vector<any> ts(elements);
+        for (int i = 0; i < elements; ++i)
         {
             ts[i] = valueSet->GetValue({t, i});
         }
@@ -371,7 +339,24 @@ void ValueSet2D::CheckElementIndex(int timeIndex, int elementIndex) const
 }
 
 
-// class IntValueSet2D-----------------------------------------------------------------
+// class ValueSetInt-------------------------------------------------------------------
+
+ValueSetInt::ValueSetInt(
+    const vector<vector<int>> &values2D, shared_ptr<IQuantity> valueDef)
+{
+    for (const auto &arr : values2D)
+    {
+        vector<any> tmp;
+        for (const auto &val : arr)
+        {
+            tmp.emplace_back(val);
+        }
+
+        mValues2D.emplace_back(tmp);
+    }
+
+    mValueDef = move(valueDef);
+}
 
 bool ValueSetInt::IsValidValueType(const any &value) const
 {
@@ -387,23 +372,7 @@ bool ValueSetInt::IsValidValueType(const any &value) const
 }
 
 
-// class StrValueSet2D-----------------------------------------------------------------
-
-bool ValueSetStr::IsValidValueType(const any &value) const
-{
-    try
-    {
-        auto data = any_cast<string>(value);
-        return true;
-    }
-    catch (const std::bad_any_cast &e)
-    {
-        return false;
-    }
-}
-
-
-// class ValueSetDbl-----------------------------------------------------------------
+// class ValueSetDbl-------------------------------------------------------------------
 
 ValueSetDbl::ValueSetDbl(
     const vector<vector<double>> &values2D, shared_ptr<IQuantity> valueDef)

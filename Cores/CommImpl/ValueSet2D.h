@@ -10,6 +10,7 @@
 #pragma once
 #include "Cores/Inc/IValueSet.h"
 #include "Cores/Inc/IQuantity.h"
+#include "Cores/Inc/IQuality.h"
 
 
 namespace OpenOasis
@@ -21,7 +22,7 @@ class ValueSet2D : public IValueSet
 {
 protected:
     std::vector<std::vector<std::any>> mValues2D;
-    std::shared_ptr<IQuantity>         mValueDef;
+    std::shared_ptr<IValueDefinition>  mValueDef;
 
 public:
     virtual ~ValueSet2D()
@@ -32,13 +33,6 @@ public:
     ValueSet2D(std::shared_ptr<IQuantity> valueDef);
     ValueSet2D(const std::shared_ptr<IValueSet> &valueSet);
     ValueSet2D(ValueSet2D &&obj);
-
-    // ValueSet2D(
-    //     const std::vector<std::vector<std::any>> &values2D,
-    //     std::shared_ptr<IQuantity>                valueDef);
-    // ValueSet2D(
-    //     const std::vector<std::vector<double>> &values2D,
-    //     std::shared_ptr<IQuantity>              valueDef);
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Implement methods inherited from `IValueSet`.
@@ -81,7 +75,7 @@ public:
     void SetValueDefinition(std::shared_ptr<IValueDefinition> value);
 
 protected:
-    // To check if given indices out of the value set dimensions.
+    // To check if given indices out of the valueset dimensions.
     void CheckIndicesOutOfDimension(const std::vector<int> &indices) const;
 
     // To check if each dimension were specified.
@@ -92,26 +86,24 @@ protected:
 
     void AddValue(const std::vector<int> &indices, const std::any &value);
 
-    // To check if the value type match the value set while adding/setting value in.
-    virtual bool IsValidValueType(const std::any &value) const;
-
     void CheckTimeIndex(int timeIndex) const;
 
     void CheckElementIndex(int timeIndex, int elementIndex) const;
+
+    // To check if the value type match the value set while adding/setting value in.
+    virtual bool IsValidValueType(const std::any &value) const;
 };
 
 
 /// @brief Two-dimensional value set contains integer data.
 class ValueSetInt : public ValueSet2D
 {
-private:
-    bool IsValidValueType(const std::any &value) const override;
-};
+public:
+    virtual ~ValueSetInt() = default;
+    ValueSetInt(
+        const std::vector<std::vector<int>> &values2D,
+        std::shared_ptr<IQuantity>           valueDef);
 
-
-/// @brief Two-dimensional value set contains string data.
-class ValueSetStr : public ValueSet2D
-{
 private:
     bool IsValidValueType(const std::any &value) const override;
 };
