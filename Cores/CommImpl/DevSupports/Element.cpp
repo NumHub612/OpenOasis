@@ -8,7 +8,7 @@
 #include "Cores/Utils/StringHelper.h"
 
 
-namespace OpenOasis::CommImpl::Spatial
+namespace OpenOasis::CommImpl::DevSupports
 {
 using namespace Utils;
 using namespace std;
@@ -125,4 +125,4 @@ vector<int> Element::GetFaceVertexIndices(int faceIndex) const
     return mFaceVertexIndices.at(faceIndex);
 }
 
-}  // namespace OpenOasis::CommImpl::Spatial
+}  // namespace OpenOasis::CommImpl::DevSupports

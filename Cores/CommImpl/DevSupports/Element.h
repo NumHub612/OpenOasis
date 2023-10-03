@@ -9,16 +9,14 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Cores/Inc/IIdentifiable.h"
-#include "Coordinate.h"
+#include "Cores/CommImpl/Spatial/Coordinate.h"
 #include <vector>
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::DevSupports
 {
-namespace CommImpl
-{
-namespace Spatial
-{
+using namespace Spatial;
+
 /// @brief The Element class contains a spatial element.
 class Element : public IIdentifiable
 {
@@ -87,6 +85,4 @@ public:
     std::vector<int> GetFaceVertexIndices(int faceIndex) const;
 };
 
-}  // namespace Spatial
-}  // namespace CommImpl
-}  // namespace OpenOasis
+} 

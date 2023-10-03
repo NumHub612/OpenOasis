@@ -8,19 +8,17 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "XYGeoStructs.h"
+#include "Cores/CommImpl/Spatial/XYGeoStructs.h"
 #include "Cores/Inc/IElementSet.h"
 #include <memory>
 #include <algorithm>
 #include <stdexcept>
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::DevSupports
 {
-namespace CommImpl
-{
-namespace Spatial
-{
+using namespace Spatial;
+
 /// @brief Leaf in the search tree.
 template <typename T>
 class Leaf
@@ -58,10 +56,7 @@ public:
         bool added = false;
 
         // Check if inside this domain.
-        if (!mExtent.IsContains(point.x, point.y))
-        {
-            return false;
-        }
+        if (!mExtent.IsContains(point.x, point.y)) { return false; }
 
         // If has children, add recursively.
         if (HasChildren())
@@ -86,10 +81,7 @@ public:
             added = true;
 
             // Check if we should subdivide.
-            if (mPoints.size() > MaxPointsPerNode)
-            {
-                SubDivide();
-            }
+            if (mPoints.size() > MaxPointsPerNode) { SubDivide(); }
         }
 
         return added;
@@ -98,10 +90,7 @@ public:
     void Add(Leaf<T> elmtLeaf)
     {
         // If no overlap, do not add it here.
-        if (!mExtent.IsOverlaps(elmtLeaf.mExtent))
-        {
-            return;
-        }
+        if (!mExtent.IsOverlaps(elmtLeaf.mExtent)) { return; }
 
         if (HasChildren())
         {
@@ -110,19 +99,13 @@ public:
                 child.Add(elmtLeaf);
             }
         }
-        else
-        {
-            mElements.push_back(elmtLeaf);
-        }
+        else { mElements.push_back(elmtLeaf); }
     }
 
     void FindElements(const XYExtent &extent, std::vector<T> &elmts)
     {
         // If no overlap, just return.
-        if (!mExtent.IsOverlaps(extent))
-        {
-            return;
-        }
+        if (!mExtent.IsOverlaps(extent)) { return; }
 
         // If has children, ask those.
         if (HasChildren())
@@ -152,10 +135,7 @@ public:
     int Depth(int i)
     {
         int mydepth = i + 1;
-        if (!HasChildren())
-        {
-            return mydepth;
-        }
+        if (!HasChildren()) { return mydepth; }
 
         int depth = mydepth;
         for (auto child : mChildren)
@@ -167,10 +147,7 @@ public:
 
     int Nodes()
     {
-        if (!HasChildren())
-        {
-            return 1;
-        }
+        if (!HasChildren()) { return 1; }
 
         int count = 1;
         for (auto child : mChildren)
@@ -182,10 +159,7 @@ public:
 
     int MaxElementsInNode()
     {
-        if (!HasChildren())
-        {
-            return mElements.size();
-        }
+        if (!HasChildren()) { return mElements.size(); }
 
         int count = 0;
         for (auto child : mChildren)
@@ -235,7 +209,7 @@ private:
 /// The search tree structure is build up by adding a number of coordinates
 /// to the search tree, usually the coordinates of the nodes in the element.
 template <typename T>
-class XYElementSearchTree
+class ElementSearchTree
 {
 private:
     /// @brief Head of the tree.
@@ -248,7 +222,7 @@ private:
     int mNumElmts = 0;
 
 public:
-    XYElementSearchTree(const XYExtent &extent) : mHead(extent)
+    ElementSearchTree(const XYExtent &extent) : mHead(extent)
     {}
 
     /// @brief Adds point to the search tree, thereby building the tree.
@@ -260,10 +234,7 @@ public:
         }
 
         bool added = mHead.Add(point);
-        if (added)
-        {
-            mNumNodes++;
-        }
+        if (added) { mNumNodes++; }
     }
 
     /// @brief Adds element to the search tree.
@@ -311,7 +282,7 @@ public:
     ///
     /// @param elmtSet Element set to build search tree around.
     /// @returns Search tree.
-    static XYElementSearchTree<int>
+    static ElementSearchTree<int>
     BuildSearchTree(const std::shared_ptr<IElementSet> &elmtSet)
     {
         // Calculate start extent.
@@ -330,7 +301,7 @@ public:
         }
 
         // Create and build search tree, based on all vertex coordinates.
-        XYElementSearchTree<int> tree(extent);
+        ElementSearchTree<int> tree(extent);
         for (int ielmt = 0; ielmt < elementCount; ielmt++)
         {
             int vertixCount = elmtSet->GetVertexCount(ielmt);
@@ -367,6 +338,4 @@ private:
     }
 };
 
-}  // namespace Spatial
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  

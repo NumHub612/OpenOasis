@@ -9,7 +9,7 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Cores/Inc/IElementSet.h"
-#include "Cores/CommImpl/Spatial/Element.h"
+#include "Cores/CommImpl/DevSupports/Element.h"
 #include <memory>
 
 
@@ -18,7 +18,7 @@ namespace OpenOasis
 namespace CommImpl
 {
 using Spatial::Coordinate;
-using Spatial::Element;
+using DevSupports::Element;
 
 /// @brief The ElementSet class describes a collection of spatial elements.
 ///

@@ -8,7 +8,7 @@
 #include "ElementMapper.h"
 #include "ExtensionMethods.h"
 #include "ElementSetChecker.h"
-#include "Cores/CommImpl/Spatial/XYElementSearchTree.h"
+#include "ElementSearchTree.h"
 #include "Cores/CommImpl/Spatial/XYGeoTools.h"
 #include "Cores/CommImpl/ValueSet2D.h"
 #include "Cores/CommImpl/SpaceAdaptedOutputFactory.h"
@@ -652,11 +652,11 @@ void ElementMapper::MapFromPolygonToPoint(
 
         // Only create search tree if number of cols/rows is larger than 10/10.
         bool useSearchTree = mNumberOfFromColumns > 10 && mNumberOfToRows > 10;
-        XYElementSearchTree<int> fromSearchTree({});
-        vector<int>              fromCandidateElmts;
+        ElementSearchTree<int> fromSearchTree({});
+        vector<int>            fromCandidateElmts;
         if (useSearchTree)
         {
-            fromSearchTree = XYElementSearchTree<int>::BuildSearchTree(fromElements);
+            fromSearchTree = ElementSearchTree<int>::BuildSearchTree(fromElements);
         }
         else
         {
@@ -787,11 +787,11 @@ void ElementMapper::MapFromPolygonToPolygon(
     {
         // Only create search tree if number of cols/rows is larger than 100/10.
         bool useSearchTree = mNumberOfFromColumns > 10 && mNumberOfToRows > 10;
-        XYElementSearchTree<int> fromSearchTree({});
-        vector<int>              fromCandidateElmts;
+        ElementSearchTree<int> fromSearchTree({});
+        vector<int>            fromCandidateElmts;
         if (useSearchTree)
         {
-            fromSearchTree = XYElementSearchTree<int>::BuildSearchTree(fromElements);
+            fromSearchTree = ElementSearchTree<int>::BuildSearchTree(fromElements);
         }
         else
         {
