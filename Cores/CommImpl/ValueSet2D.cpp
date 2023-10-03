@@ -373,7 +373,7 @@ void ValueSet2D::CheckElementIndex(int timeIndex, int elementIndex) const
 
 // class IntValueSet2D-----------------------------------------------------------------
 
-bool IntValueSet2D::IsValidValueType(const any &value) const
+bool ValueSetInt::IsValidValueType(const any &value) const
 {
     try
     {
@@ -389,7 +389,7 @@ bool IntValueSet2D::IsValidValueType(const any &value) const
 
 // class StrValueSet2D-----------------------------------------------------------------
 
-bool StrValueSet2D::IsValidValueType(const any &value) const
+bool ValueSetStr::IsValidValueType(const any &value) const
 {
     try
     {
@@ -403,9 +403,9 @@ bool StrValueSet2D::IsValidValueType(const any &value) const
 }
 
 
-// class DblValueSet2D-----------------------------------------------------------------
+// class ValueSetDbl-----------------------------------------------------------------
 
-DblValueSet2D::DblValueSet2D(
+ValueSetDbl::ValueSetDbl(
     const vector<vector<double>> &values2D, shared_ptr<IQuantity> valueDef)
 {
     for (const auto &arr : values2D)
@@ -422,7 +422,7 @@ DblValueSet2D::DblValueSet2D(
     mValueDef = move(valueDef);
 }
 
-bool DblValueSet2D::IsValidValueType(const any &value) const
+bool ValueSetDbl::IsValidValueType(const any &value) const
 {
     try
     {

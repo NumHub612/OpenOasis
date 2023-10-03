@@ -89,7 +89,7 @@ shared_ptr<IValueSet> ElementMapper::CreateResultValueSet(int numtimes, int numE
         outValues.push_back(vector<double>(numElements));
     }
 
-    return make_shared<DblValueSet2D>(outValues, nullptr);
+    return make_shared<ValueSetDbl>(outValues, nullptr);
 }
 
 void ElementMapper::MapValues(

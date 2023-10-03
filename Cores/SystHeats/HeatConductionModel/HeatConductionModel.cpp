@@ -283,7 +283,7 @@ void HeatConductionModel::PrepareOutputs()
 {
     for (auto &output : mOutputs)
     {
-        output->SetValues(make_shared<DblValueSet2D>(
+        output->SetValues(make_shared<ValueSetDbl>(
             vector<vector<double>>{{mT0}}, GetTempQuantity()));
     }
 }

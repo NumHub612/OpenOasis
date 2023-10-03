@@ -102,7 +102,7 @@ protected:
 
 
 /// @brief Two-dimensional value set contains integer data.
-class IntValueSet2D : public ValueSet2D
+class ValueSetInt : public ValueSet2D
 {
 private:
     bool IsValidValueType(const std::any &value) const override;
@@ -110,7 +110,7 @@ private:
 
 
 /// @brief Two-dimensional value set contains string data.
-class StrValueSet2D : public ValueSet2D
+class ValueSetStr : public ValueSet2D
 {
 private:
     bool IsValidValueType(const std::any &value) const override;
@@ -118,11 +118,11 @@ private:
 
 
 /// @brief Two-dimensional value set contains double data.
-class DblValueSet2D : public ValueSet2D
+class ValueSetDbl : public ValueSet2D
 {
 public:
-    virtual ~DblValueSet2D() = default;
-    DblValueSet2D(
+    virtual ~ValueSetDbl() = default;
+    ValueSetDbl(
         const std::vector<std::vector<double>> &values2D,
         std::shared_ptr<IQuantity>              valueDef);
 
