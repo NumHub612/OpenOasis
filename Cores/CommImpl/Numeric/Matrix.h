@@ -8,19 +8,76 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Cores/Inc/AdditionalControl/IComparable.h"
-#include <type_traits>
+#include "Tools/Eigen/Sparse"
 #include <vector>
 #include <unordered_map>
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::Numeric
 {
-namespace CommImpl
+
+template <typename T>
+class SparseMatrix
 {
-namespace Numeric
-{
-using namespace AdditionalControl;
+private:
+    int                    mRows;
+    int                    mCols;
+    Eigen::SparseMatrix<T> mData;
+
+public:
+    SparseMatrix(int rows, int cols) : mRows(rows), mCols(cols), mData(rows, cols)
+    {}
+    SparseMatrix(int size) : mRows(size), mCols(size), mData(size, size)
+    {}
+
+    void Insert(int i, int j, const T &value)
+    {
+        mData.insert(i, j) = value;
+    }
+
+    void Reset(int i, int j, const T &value)
+    {
+        mData.coeffRef(i, j) = value;
+    }
+
+    void SetZero()
+    {
+        mData.setZero();
+    }
+
+    int Rows() const
+    {
+        return mRows;
+    }
+
+    int Cols() const
+    {
+        return mCols;
+    }
+
+    const T &operator()(int i, int j) const
+    {
+        return mData(i, j);
+    }
+
+    T &operator()(int i, int j)
+    {
+        return mData(i, j);
+    }
+
+    operator Eigen::SparseMatrix<T>() const
+    {
+        return mData;
+    }
+};
+
+using DblSparseMatrix = SparseMatrix<double>;
+
+
+///////////////////////////////////////////////////////////////////////////////////
+// Legacy code below.
+//
+
 
 /// @brief Base matrix interface.
 class IMatrix
@@ -105,6 +162,4 @@ public:
     void SetValue(int row, int column, double value);
 };
 
-}  // namespace Numeric
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  // namespace OpenOasis::CommImpl::Numeric
