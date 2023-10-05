@@ -8,7 +8,9 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Cores/Utils/CommMacros.h"
 #include <vector>
+#include <algorithm>
 
 
 namespace OpenOasis::CommImpl::Numeric
@@ -28,6 +30,10 @@ public:
 
     Field() = default;
     Field(std::size_t size, T value) : mData(size, value){};
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for field manipulation.
+    //
 
     /// @brief Initializes the vector field with specified value.
     /// @param value The initial value.
@@ -83,23 +89,32 @@ public:
     }
 
     /// @brief Sets the field data from the specified range.
-    /// @param start Start index of the range.
-    /// @param end End index of the range.
+    /// @param startIndex Start index of the range.
+    /// @param endIndex End index of the range.
     /// @param other Source field.
     /// @param offset Index offset of the source field.
     void SetAt(
-        std::size_t start, std::size_t end, const std::shared_ptr<Field> &other,
+        std::size_t startIndex, std::size_t endIndex, const Field<T> &other,
         std::size_t offset = 0)
     {
         std::size_t j = offset;
-        for (std::size_t i = start; i < end; ++i)
-            mData.at(i) = (*other)(j++);
+        for (std::size_t i = startIndex; i < endIndex; ++i)
+            mData.at(i) = other(j++);
     }
 
-    /// @brief Returns the constant refrence to the field data.
+    /// @brief Returns constant refrence to the field data.
     const std::vector<T> &Data() const
     {
         return mData;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Operators overrided for field manipulation.
+    //
+
+    const T &operator()(int i) const
+    {
+        return mData.at(i);
     }
 
     T &operator()(int i)
@@ -107,9 +122,69 @@ public:
         return mData.at(i);
     }
 
-    const T &operator()(int i) const
+    void operator=(const Field<T> &other)
     {
-        return mData.at(i);
+        mData = other.mData;
+    }
+
+    void operator=(const T &value)
+    {
+        Initialize(value);
+    }
+
+    Field<T> operator+(const Field<T> &other) const
+    {
+        OO_ASSERT(other.Size() == Size());
+
+        auto datas = mData;
+        for (int i = 0; i < Size(); ++i)
+        {
+            datas[i] += other(i);
+        }
+
+        return datas;
+    }
+
+    void operator+=(const Field<T> &other)
+    {
+        OO_ASSERT(other.Size() == Size());
+
+        for (int i = 0; i < Size(); ++i)
+            mData[i] += other(i);
+    }
+
+    Field<T> operator-(const Field<T> &other) const
+    {
+        OO_ASSERT(other.Size() == Size());
+
+        auto datas = mData;
+        for (int i = 0; i < Size(); ++i)
+        {
+            datas[i] -= other(i);
+        }
+
+        return datas;
+    }
+
+    void operator-=(const Field<T> &other)
+    {
+        OO_ASSERT(other.Size() == Size());
+
+        for (int i = 0; i < Size(); ++i)
+            mData[i] -= other(i);
+    }
+
+    Field<T> operator*(double k) const
+    {
+        auto datas = mData;
+        std::for_each(datas.begin(), datas.end(), [&k](auto &d) { d *= k; });
+
+        return datas;
+    }
+
+    void operator*=(double k)
+    {
+        std::for_each(mData.begin(), mData.end(), [&k](auto &d) { d *= k; });
     }
 };
 

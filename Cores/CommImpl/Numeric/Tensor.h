@@ -88,7 +88,8 @@ public:
 
     void SetAt(std::size_t i, const Vector<T, 3> &vec)
     {
-        for (std::size_t j = 0; j < 3; ++j) mElement.at(i * 3 + j) = vec(j);
+        for (std::size_t j = 0; j < 3; ++j)
+            mElement.at(i * 3 + j) = vec(j);
     }
 
     template <typename U>
@@ -97,7 +98,8 @@ public:
         OO_ASSERT(lst.size() >= 9);
 
         std::size_t i = 0;
-        for (const auto &v : lst) mElement.at(i++) = static_cast<T>(v);
+        for (const auto &v : lst)
+            mElement.at(i++) = static_cast<T>(v);
     }
 
     constexpr std::size_t Size() const
@@ -122,7 +124,8 @@ public:
     T Sum() const
     {
         T ret = 0;
-        for (T val : mElement) ret += val;
+        for (T val : mElement)
+            ret += val;
 
         return ret;
     }
@@ -135,7 +138,8 @@ public:
     T Min() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = std::min(ret, val);
+        for (T val : mElement)
+            ret = std::min(ret, val);
 
         return ret;
     }
@@ -144,7 +148,8 @@ public:
     T AbsMin() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = (ret * ret < val * val) ? ret : val;
+        for (T val : mElement)
+            ret = (ret * ret < val * val) ? ret : val;
 
         return ret;
     }
@@ -152,7 +157,8 @@ public:
     T Max() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = std::max(ret, val);
+        for (T val : mElement)
+            ret = std::max(ret, val);
 
         return ret;
     }
@@ -161,7 +167,8 @@ public:
     T AbsMax() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = (ret * ret > val * val) ? ret : val;
+        for (T val : mElement)
+            ret = (ret * ret > val * val) ? ret : val;
 
         return ret;
     }
@@ -196,34 +203,40 @@ public:
 
     void Add(T v)
     {
-        for (T &val : mElement) val += v;
+        for (T &val : mElement)
+            val += v;
     }
 
     void Add(const Tensor &other)
     {
-        for (std::size_t i = 0; i < 9; ++i) mElement[i] += other(i / 3, i % 3);
+        for (std::size_t i = 0; i < 9; ++i)
+            mElement[i] += other(i / 3, i % 3);
     }
 
     void Sub(T v)
     {
-        for (T &val : mElement) val -= v;
+        for (T &val : mElement)
+            val -= v;
     }
 
     void Sub(const Tensor &other)
     {
-        for (std::size_t i = 0; i < 9; ++i) mElement[i] -= other(i / 3, i % 3);
+        for (std::size_t i = 0; i < 9; ++i)
+            mElement[i] -= other(i / 3, i % 3);
     }
 
     void Mul(T v)
     {
-        for (T &val : mElement) val *= v;
+        for (T &val : mElement)
+            val *= v;
     }
 
     void Div(T v)
     {
         OO_ASSERT(v != T(0));
 
-        for (T &val : mElement) val /= v;
+        for (T &val : mElement)
+            val /= v;
     }
 
     Vector<T, 3> Dot(const Vector<T, 3> &other) const
@@ -257,6 +270,11 @@ public:
     ///////////////////////////////////////////////////////////////////////////////////
     // Override operators for tensor.
     //
+
+    void operator=(const Tensor &other)
+    {
+        mElement = other.mElement;
+    }
 
     Tensor operator+(const Tensor &other) const
     {
