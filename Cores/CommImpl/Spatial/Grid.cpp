@@ -83,6 +83,9 @@ void Grid::Activate()
     // Sort node counterclockwise.
     SortNodes();
 
+    // Calculate cell orientation.
+    SortCells();
+
     // Activate mesh face structures in orderly.
     CalculateFaceCentroid();
     CalculateFaceNormal();
@@ -104,7 +107,8 @@ void Grid::CollectCellsSharedNode()
     for (int i = 0; i < mRawCellsNum; i++)
     {
         const auto &nodeIdxs = GeoCalculator::GetCellNodeIndexes(i, mMesh);
-        for (int nIdx : nodeIdxs) mMesh.nodes[nIdx].cellIndexes.push_back(i);
+        for (int nIdx : nodeIdxs)
+            mMesh.nodes[nIdx].cellIndexes.push_back(i);
     }
 }
 
@@ -151,6 +155,29 @@ void Grid::SortNodes()
     for (int i = 0; i < mRawFacesNum; i++)
     {
         mMesh.faces[i].nodeIndexes = GeoCalculator::SortFaceNodes(i, mMesh);
+    }
+}
+
+void Grid::SortCells()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (int i = 0; i < mRawFacesNum; i++)
+    {
+        auto       &face   = mMesh.faces[i];
+        const auto &fPoint = face.centroid;
+        const auto &cPoint = mMesh.cells[face.cellIndexes[0]].centroid;
+
+        double x = cPoint.x - fPoint.x;
+        double y = cPoint.y - fPoint.y;
+        double z = (fPoint.HasZ()) ? cPoint.z - fPoint.z : 0;
+
+        auto vec = Vector<double, 3>(x, y, z);
+        auto res = vec * face.normal;
+        auto dir = (res > 0) ? 1 : -1;
+
+        face.cellDirs.push_back(dir);
+
+        if (face.cellIndexes.size() == 2) face.cellDirs.push_back(-dir);
     }
 }
 
@@ -333,7 +360,8 @@ Grid::MeshLoader::LoadPatches(const string &patchFile)
     auto ids = loader.GetRowLabels().value();
 
     unordered_map<string, vector<int>> patches;
-    for (const auto &id : ids) patches[id] = loader.GetRow<int>(id).value();
+    for (const auto &id : ids)
+        patches[id] = loader.GetRow<int>(id).value();
 
     return patches;
 }
@@ -352,7 +380,8 @@ unordered_map<string, vector<int>> Grid::MeshLoader::LoadZones(const string &zon
     auto ids = loader.GetRowLabels().value();
 
     unordered_map<string, vector<int>> zones;
-    for (const auto &id : ids) zones[id] = loader.GetRow<int>(id).value();
+    for (const auto &id : ids)
+        zones[id] = loader.GetRow<int>(id).value();
 
     return zones;
 }

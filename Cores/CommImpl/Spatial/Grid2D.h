@@ -4,7 +4,7 @@
  *    @File      :  Grid2D.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Grid in 2d used for numerical calculation.
+ *    @Desc      :  Grid formed by flat cells in 2d used for numerical calculation.
  *
  ** ***********************************************************************************/
 #pragma once
@@ -17,6 +17,7 @@ namespace CommImpl
 {
 namespace Spatial
 {
+/// @brief Grid formed by flat cells in 2d.
 class Grid2D : public Grid
 {
 public:

@@ -100,6 +100,7 @@ protected:
     virtual void CollectCellsInZone(){};
 
     virtual void SortNodes();
+    virtual void SortCells();
 
     virtual void CalculateFaceCentroid();
     virtual void CalculateFaceNormal(){};
