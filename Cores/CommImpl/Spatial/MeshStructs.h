@@ -20,7 +20,7 @@ namespace CommImpl
 {
 namespace Spatial
 {
-/// @brief The Point data structure.
+/// @brief Mesh node data structure.
 /// (Point type).
 struct Node
 {
