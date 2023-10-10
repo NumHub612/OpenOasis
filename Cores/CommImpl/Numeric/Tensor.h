@@ -18,7 +18,7 @@ namespace CommImpl
 {
 namespace Numeric
 {
-template <typename T, std::size_t N>
+template <typename T, size_t N>
 class Vector;
 
 template <typename T>
@@ -60,35 +60,35 @@ public:
 
     void Set(const Tensor &other)
     {
-        for (std::size_t i = 0; i < 9; ++i)
+        for (size_t i = 0; i < 9; ++i)
         {
-            std::size_t j = i % 3;
+            size_t j = i % 3;
 
             mElement[i] = other(i / 3, j);
         }
     }
 
     template <typename... Args>
-    void SetAt(std::size_t i, T v, Args... args)
+    void SetAt(size_t i, T v, Args... args)
     {
         mElement.at(i) = v;
 
         SetAt(i + 1, args...);
     }
 
-    void SetAt(std::size_t i, T v)
+    void SetAt(size_t i, T v)
     {
         mElement.at(i) = v;
     }
 
-    void SetAt(std::size_t i, std::size_t j, T v)
+    void SetAt(size_t i, size_t j, T v)
     {
         mElement.at(i * 3 + j) = v;
     }
 
-    void SetAt(std::size_t i, const Vector<T, 3> &vec)
+    void SetAt(size_t i, const Vector<T, 3> &vec)
     {
-        for (std::size_t j = 0; j < 3; ++j)
+        for (size_t j = 0; j < 3; ++j)
             mElement.at(i * 3 + j) = vec(j);
     }
 
@@ -97,22 +97,22 @@ public:
     {
         OO_ASSERT(lst.size() >= 9);
 
-        std::size_t i = 0;
+        size_t i = 0;
         for (const auto &v : lst)
             mElement.at(i++) = static_cast<T>(v);
     }
 
-    constexpr std::size_t Size() const
+    constexpr size_t Size() const
     {
         return 3;
     }
 
-    T &operator()(std::size_t i, std::size_t j)
+    T &operator()(size_t i, size_t j)
     {
         return mElement.at(i * 3 + j);
     }
 
-    const T &operator()(std::size_t i, std::size_t j) const
+    const T &operator()(size_t i, size_t j) const
     {
         return mElement.at(i * 3 + j);
     }
@@ -181,7 +181,7 @@ public:
 
     bool IsEqual(const Tensor &other) const
     {
-        for (std::size_t i = 0; i < 9; ++i)
+        for (size_t i = 0; i < 9; ++i)
         {
             if (abs(mElement[i] - other(i / 3, i % 3)) > T(1e-10)) return false;
         }
@@ -209,7 +209,7 @@ public:
 
     void Add(const Tensor &other)
     {
-        for (std::size_t i = 0; i < 9; ++i)
+        for (size_t i = 0; i < 9; ++i)
             mElement[i] += other(i / 3, i % 3);
     }
 
@@ -221,7 +221,7 @@ public:
 
     void Sub(const Tensor &other)
     {
-        for (std::size_t i = 0; i < 9; ++i)
+        for (size_t i = 0; i < 9; ++i)
             mElement[i] -= other(i / 3, i % 3);
     }
 
@@ -243,7 +243,7 @@ public:
     {
         Vector<T, 3> ret;
 
-        for (std::size_t i = 0; i < 3; ++i)
+        for (size_t i = 0; i < 3; ++i)
         {
             ret(i) = mElement[i * 3] * other(0) + mElement[i * 3 + 1] * other(1)
                      + mElement[i * 3 + 2] * other(2);
@@ -256,9 +256,9 @@ public:
     {
         T ret = 0;
 
-        for (std::size_t i = 0; i < 3; ++i)
+        for (size_t i = 0; i < 3; ++i)
         {
-            for (std::size_t j = 0; j < 3; ++j)
+            for (size_t j = 0; j < 3; ++j)
             {
                 ret += mElement[i * 3 + j] * other(j, i);
             }

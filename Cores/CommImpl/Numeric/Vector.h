@@ -19,7 +19,7 @@ namespace CommImpl
 {
 namespace Numeric
 {
-template <typename T, std::size_t N>
+template <typename T, size_t N>
 class Vector
 {
 public:
@@ -67,16 +67,26 @@ public:
     // Methods for vector data setting.
     //
 
+    template <typename U>
+    void Set(const std::initializer_list<U> &lst)
+    {
+        OO_ASSERT(lst.size() >= N);
+
+        size_t i = 0;
+        for (const auto &val : lst)
+            mElement.at(i++) = static_cast<T>(val);
+    }
+
     void Set(const Vector &other)
     {
-        for (std::size_t i = 0; i < N; ++i)
+        for (size_t i = 0; i < N; ++i)
         {
             mElement[i] = other(i);
         }
     }
 
     template <typename... Args>
-    void SetAt(std::size_t i, T v, Args... args)
+    void SetAt(size_t i, T v, Args... args)
     {
         mElement.at(i) = v;
 
@@ -88,27 +98,17 @@ public:
         mElement.at(i) = v;
     }
 
-    template <typename U>
-    void Set(const std::initializer_list<U> &lst)
-    {
-        OO_ASSERT(lst.size() >= N);
-
-        std::size_t i = 0;
-        for (const auto &val : lst)
-            mElement.at(i++) = static_cast<T>(val);
-    }
-
-    constexpr std::size_t Size() const
+    constexpr size_t Size() const
     {
         return N;
     }
 
-    T &operator()(std::size_t i)
+    T &operator()(size_t i)
     {
         return mElement.at(i);
     }
 
-    const T &operator()(std::size_t i) const
+    const T &operator()(size_t i) const
     {
         return mElement.at(i);
     }
@@ -179,7 +179,7 @@ public:
     {
         if (Size() != other.Size()) return false;
 
-        for (std::size_t i = 0; i < N; ++i)
+        for (size_t i = 0; i < N; ++i)
         {
             if (abs(mElement[i] - other(i)) > T(1e-10)) return false;
         }
@@ -209,7 +209,7 @@ public:
     {
         OO_ASSERT(other.Size() == N);
 
-        for (std::size_t i = 0; i < N; ++i)
+        for (size_t i = 0; i < N; ++i)
             mElement[i] += other(i);
     }
 
@@ -223,7 +223,7 @@ public:
     {
         OO_ASSERT(other.Size() == N);
 
-        for (std::size_t i = 0; i < N; ++i)
+        for (size_t i = 0; i < N; ++i)
             mElement[i] -= other(i);
     }
 
@@ -246,7 +246,7 @@ public:
         OO_ASSERT(other.Size() == N);
 
         T ret = 0;
-        for (std::size_t i = 0; i < N; ++i)
+        for (size_t i = 0; i < N; ++i)
             ret += mElement[i] * other(i);
 
         return ret;

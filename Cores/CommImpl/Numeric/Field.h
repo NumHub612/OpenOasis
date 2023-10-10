@@ -29,7 +29,7 @@ public:
     virtual ~Field() = default;
 
     Field() = default;
-    Field(std::size_t size, T value) : mData(size, value){};
+    Field(size_t size, T value) : mData(size, value){};
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods for field manipulation.
@@ -44,7 +44,7 @@ public:
 
     /// @brief Resizes the field.
     /// @param size New size.
-    void Resize(std::size_t size)
+    void Resize(size_t size)
     {
         mData.resize(size);
         mData.shrink_to_fit();
@@ -77,13 +77,13 @@ public:
     }
 
     /// @brief Returns the field size.
-    std::size_t Size() const
+    size_t Size() const
     {
         return mData.size();
     }
 
     /// @brief Sets the field data.
-    void SetAt(std::size_t i, T value)
+    void SetAt(size_t i, T value)
     {
         mData.at(i) = value;
     }
@@ -93,12 +93,11 @@ public:
     /// @param endIndex End index of the range.
     /// @param other Source field.
     /// @param offset Index offset of the source field.
-    void SetAt(
-        std::size_t startIndex, std::size_t endIndex, const Field<T> &other,
-        std::size_t offset = 0)
+    void
+    SetAt(size_t startIndex, size_t endIndex, const Field<T> &other, size_t offset = 0)
     {
-        std::size_t j = offset;
-        for (std::size_t i = startIndex; i < endIndex; ++i)
+        size_t j = offset;
+        for (size_t i = startIndex; i < endIndex; ++i)
             mData.at(i) = other(j++);
     }
 

@@ -26,9 +26,9 @@ public:
         Field<Vector<T, N>>(size, value){};
 };
 
-using VecFieldInt3D = VectorField<int, 3>;
-using VecFieldInt2D = VectorField<int, 2>;
-using VecFieldDbl3D = VectorField<double, 3>;
-using VecFieldDbl2D = VectorField<double, 2>;
+using VectorFieldInt3D = VectorField<int, 3>;
+using VectorFieldInt2D = VectorField<int, 2>;
+using VectorFieldDbl3D = VectorField<double, 3>;
+using VectorFieldDbl2D = VectorField<double, 2>;
 
 }  // namespace OpenOasis::CommImpl::Numeric
