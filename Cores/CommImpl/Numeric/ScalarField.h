@@ -26,7 +26,7 @@ public:
     virtual ~ScalarField() = default;
 
     ScalarField() = default;
-    ScalarField(std::size_t size, T val = 0) : Field<T>(size, val){};
+    ScalarField(std::std::size_t size, T val = 0) : Field<T>(size, val){};
 };
 
 using ScalarFieldDbl = ScalarField<double>;
