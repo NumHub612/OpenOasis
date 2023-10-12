@@ -186,6 +186,16 @@ public:
         return diags;
     }
 
+    Eigen::SparseMatrix<T> &Data()
+    {
+        return mData;
+    }
+
+    const Eigen::SparseMatrix<T> &Data() const
+    {
+        return mData;
+    }
+
     T Max() const
     {
         return mData.maxCoeff();
