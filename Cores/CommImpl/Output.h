@@ -142,7 +142,7 @@ public:
     virtual std::shared_ptr<ITimeSet> GetTimeExtent() const override;
 
     /// @brief Gets the latest time.
-    virtual std::shared_ptr<ITime> GetCurrentTime() const override;
+    virtual std::shared_ptr<ITime> GetCurrTime() const override;
 
     virtual std::shared_ptr<ISpatialDefinition> GetSpatialDefinition() const override;
 

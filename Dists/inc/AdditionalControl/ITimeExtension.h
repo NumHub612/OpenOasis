@@ -25,7 +25,7 @@ public:
     virtual std::shared_ptr<ITimeSet> GetTimeExtent() const = 0;
 
     /// @brief The property describes what time stamp the component is at.
-    virtual std::shared_ptr<ITime> GetCurrentTime() const = 0;
+    virtual std::shared_ptr<ITime> GetCurrTime() const = 0;
 };
 
 }  // namespace AdditionalControl

@@ -189,7 +189,7 @@ shared_ptr<ITime> LinkableComponent::GetEndTime() const
     return ExtensionMethods::End(mTimeExtent->GetTimeHorizon());
 }
 
-shared_ptr<ITime> LinkableComponent::GetCurrentTime() const
+shared_ptr<ITime> LinkableComponent::GetNowTime() const
 {
     return mCurrentTime;
 }

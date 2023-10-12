@@ -157,7 +157,7 @@ public:
     virtual std::shared_ptr<ITime> GetEndTime() const;
 
     /// @brief The current time stamp, where the engine currently has reached.
-    virtual std::shared_ptr<ITime> GetCurrentTime() const;
+    virtual std::shared_ptr<ITime> GetNowTime() const;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Internal methods for component initializing.

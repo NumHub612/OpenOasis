@@ -118,7 +118,7 @@ void IterationController::InitializeTime()
 
     for (const auto &comp : mComponentSet)
     {
-        currents.push_back(comp.second->GetCurrentTime());
+        currents.push_back(comp.second->GetNowTime());
         begins.push_back(comp.second->GetStartTime());
         ends.push_back(comp.second->GetEndTime());
     }
@@ -238,7 +238,7 @@ void IterationController::PerformTimestep(
             {
                 comPair.second->UpdateInputTimesAndValues();
                 comPair.second->SetStatus(
-                    comPair.second->GetCurrentTime()->GetTimeStamp()
+                    comPair.second->GetNowTime()->GetTimeStamp()
                             >= GetEndTime()->GetTimeStamp() ?
                         LinkableComponentStatus::Done :
                         LinkableComponentStatus::Updated);
@@ -253,7 +253,7 @@ void IterationController::PerformTimestep(
     auto currents = vector<shared_ptr<ITime>>();
     for (const auto &comp : mComponentSet)
     {
-        currents.push_back(comp.second->GetCurrentTime());
+        currents.push_back(comp.second->GetNowTime());
     }
 
     auto comp = [](shared_ptr<ITime> a, shared_ptr<ITime> b) {

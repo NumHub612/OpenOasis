@@ -112,7 +112,7 @@ shared_ptr<ITimeSet> SpaceAreaAdaptor::GetTimeExtent() const
     return mOutput.lock()->GetTimeSet();
 }
 
-shared_ptr<ITime> SpaceAreaAdaptor::GetCurrentTime() const
+shared_ptr<ITime> SpaceAreaAdaptor::GetCurrTime() const
 {
     return ExtensionMethods::End(GetTimeExtent()->GetTimeHorizon());
 }

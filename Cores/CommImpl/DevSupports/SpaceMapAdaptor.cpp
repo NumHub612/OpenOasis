@@ -137,7 +137,7 @@ shared_ptr<ITimeSet> SpaceMapAdaptor::GetTimeExtent() const
     return mOutput.lock()->GetTimeSet();
 }
 
-shared_ptr<ITime> SpaceMapAdaptor::GetCurrentTime() const
+shared_ptr<ITime> SpaceMapAdaptor::GetCurrTime() const
 {
     return ExtensionMethods::End(GetTimeExtent()->GetTimeHorizon());
 }

@@ -235,7 +235,7 @@ shared_ptr<ITimeSet> TimeAdaptor::GetTimeExtent() const
     return mTimeSet;
 }
 
-shared_ptr<ITime> TimeAdaptor::GetCurrentTime() const
+shared_ptr<ITime> TimeAdaptor::GetCurrTime() const
 {
     return ExtensionMethods::End(mTimeSet->GetTimeHorizon());
 }
