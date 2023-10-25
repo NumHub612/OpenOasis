@@ -24,6 +24,11 @@ public:
     VectorField() = default;
     VectorField(std::size_t size, const Vector<T, N> &value = {}) :
         Field<Vector<T, N>>(size, value){};
+
+    FieldType Type() const override
+    {
+        return FieldType::VECTOR;
+    }
 };
 
 using VectorFieldInt3D = VectorField<int, 3>;

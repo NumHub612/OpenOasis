@@ -15,6 +15,14 @@
 
 namespace OpenOasis::CommImpl::Numeric
 {
+enum class FieldType
+{
+    SCALAR,
+    VECTOR,
+    TENSOR,
+    NONE
+};
+
 /// @brief The abstract field class used to represent numeric field, such as
 /// scalar, vector or tensor data.
 template <typename T>
@@ -107,6 +115,8 @@ public:
     {
         return mData;
     }
+
+    FieldType Type() const = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Operators overrided for field manipulation.

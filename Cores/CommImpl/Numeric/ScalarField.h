@@ -27,9 +27,14 @@ public:
 
     ScalarField() = default;
     ScalarField(std::size_t size, T val = 0) : Field<T>(size, val){};
+
+    FieldType Type() const override
+    {
+        return FieldType::SCALAR;
+    }
 };
 
 using ScalarFieldDbl = ScalarField<double>;
 using ScalarFieldInt = ScalarField<int>;
 
-} 
+}  // namespace OpenOasis::CommImpl::Numeric

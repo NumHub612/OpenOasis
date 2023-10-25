@@ -25,6 +25,11 @@ public:
     TensorField(std::size_t size, const Tensor<T> &value = {}) :
         Field<Tensor<T>>(size, value)
     {}
+
+    FieldType Type() const override
+    {
+        return FieldType::TENSOR;
+    }
 };
 
 using TensorFieldInt = TensorField<int>;
