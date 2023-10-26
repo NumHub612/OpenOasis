@@ -15,7 +15,7 @@
 namespace OpenOasis::CommImpl::Numeric
 {
 /// @brief Vector field with default zero vector in 2D or 3D space.
-template <typename T, std::size_t N>
+template <typename T, std::size_t N = 3>
 class VectorField : public Field<Vector<T, N>>
 {
 public:

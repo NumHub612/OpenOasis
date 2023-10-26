@@ -8,10 +8,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "ScalarField.h"
-#include "VectorField.h"
-#include "TensorField.h"
-#include "Matrix.h"
+#include "Operator.h"
 
 
 namespace OpenOasis::CommImpl::Numeric
@@ -19,26 +16,16 @@ namespace OpenOasis::CommImpl::Numeric
 class Solver
 {
 public:
-    virtual ~Solver() = default;
-
     ///////////////////////////////////////////////////////////////////////////////////
-    // Time derivative operator.
+    // Equation discretizing.
     //
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Gradient operator.
+    // Step advancing.
     //
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Divergence operator.
-    //
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Curl operator.
-    //
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Laplacian operator.
+    // Matrix solving.
     //
 };
 
