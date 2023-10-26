@@ -25,12 +25,11 @@ public:
 
     virtual ~ScalarField() = default;
 
-    ScalarField() = default;
-    ScalarField(std::size_t size, T val = 0) : Field<T>(size, val){};
-
-    FieldType Type() const override
+    ScalarField() : mType(FieldType::SCALAR)
+    {}
+    ScalarField(std::size_t size, T val = 0) : Field<T>(size, val)
     {
-        return FieldType::SCALAR;
+        mType = FieldType::SCALAR;
     }
 };
 

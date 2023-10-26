@@ -33,6 +33,8 @@ private:
 
     T mDefault;
 
+    FieldType mType = FieldType::NONE;
+
 public:
     virtual ~Field() = default;
 
@@ -116,7 +118,10 @@ public:
         return mData;
     }
 
-    FieldType Type() const = 0;
+    FieldType Type() const
+    {
+        return mType;
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Operators overrided for field manipulation.

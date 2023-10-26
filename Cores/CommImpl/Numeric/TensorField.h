@@ -21,14 +21,12 @@ class TensorField : public Field<Tensor<T>>
 public:
     virtual ~TensorField() = default;
 
-    TensorField() = default;
-    TensorField(std::size_t size, const Tensor<T> &value = {}) :
-        Field<Tensor<T>>(size, value)
+    TensorField() : mType(FieldType::TENSOR)
     {}
-
-    FieldType Type() const override
+    TensorField(std::size_t size, const Tensor<T> &val = {}) :
+        Field<Tensor<T>>(size, val)
     {
-        return FieldType::TENSOR;
+        mType = FieldType::TENSOR;
     }
 };
 

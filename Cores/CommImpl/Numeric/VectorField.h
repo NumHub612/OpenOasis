@@ -21,13 +21,12 @@ class VectorField : public Field<Vector<T, N>>
 public:
     virtual ~VectorField() = default;
 
-    VectorField() = default;
-    VectorField(std::size_t size, const Vector<T, N> &value = {}) :
-        Field<Vector<T, N>>(size, value){};
-
-    FieldType Type() const override
+    VectorField() : mType(FieldType::VECTOR)
+    {}
+    VectorField(std::size_t size, const Vector<T, N> &val = {}) :
+        Field<Vector<T, N>>(size, val)
     {
-        return FieldType::VECTOR;
+        mType = FieldType::VECTOR;
     }
 };
 
