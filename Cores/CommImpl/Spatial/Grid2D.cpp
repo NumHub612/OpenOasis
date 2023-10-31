@@ -13,13 +13,21 @@ namespace OpenOasis::CommImpl::Spatial
 using namespace Utils;
 using namespace std;
 
-Grid2D::Grid2D(const string &meshDir) : Grid(meshDir)
+Grid2D::Grid2D(
+    unordered_map<int, Coordinate>     &nodeCoords,
+    unordered_map<int, Coordinate>     &faceCoords,
+    unordered_map<int, Coordinate>     &cellCoords,
+    unordered_map<int, vector<int>>    &faceNodes,
+    unordered_map<int, vector<int>>    &cellFaces,
+    unordered_map<string, vector<int>> &patches,
+    unordered_map<string, vector<int>> &zones) :
+    Grid(nodeCoords, faceCoords, cellCoords, faceNodes, cellFaces, patches, zones)
 {}
 
 Grid2D::Grid2D(const shared_ptr<Grid> &grid) : Grid(grid)
 {}
 
-int Grid2D::GridType() const
+int Grid2D::Type() const
 {
     return 2;
 }

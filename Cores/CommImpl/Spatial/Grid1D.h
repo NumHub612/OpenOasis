@@ -23,10 +23,17 @@ class Grid1D : public Grid
 {
 public:
     virtual ~Grid1D() = default;
-    Grid1D(const std::string &meshDir);
     Grid1D(const std::shared_ptr<Grid> &grid);
+    Grid1D(
+        std::unordered_map<int, Coordinate>               &nodeCoords,
+        std::unordered_map<int, Coordinate>               &faceCoords,
+        std::unordered_map<int, Coordinate>               &cellCoords,
+        std::unordered_map<int, std::vector<int>>         &faceNodes,
+        std::unordered_map<int, std::vector<int>>         &cellFaces,
+        std::unordered_map<std::string, std::vector<int>> &patches,
+        std::unordered_map<std::string, std::vector<int>> &zones);
 
-    int  GridType() const override;
+    int  Type() const override;
     void RefineCell(int cellIndex) override;
     void RelaxCell(int cellIndex) override;
 
@@ -38,33 +45,6 @@ private:
     void CalculateCellSurface() override;
     void CalculateCellVolume() override;
     void CheckMesh() const override;
-
-protected:
-    class RiverNetConverter
-    {
-    private:
-        std::string mMeshDir;
-
-        std::vector<Coordinate>                 mSectionLoc;
-        std::vector<std::array<std::string, 2>> mReaches;
-
-        std::unordered_map<std::string, std::string> mSectionShapeMap;
-        std::unordered_map<std::string, std::vector<std::array<double, 2>>> mShapes;
-
-    public:
-        RiverNetConverter(const std::string &meshDir);
-
-        friend class Grid1D;
-
-        void LoadSectionLocations(const std::string &file = "sections.csv");
-        void LoadShapes(const std::string &file = "shapes.csv");
-        void LoadReaches(const std::string &file = "reaches.csv");
-        void LoadSectionShapes(const std::string &file = "section_shapes.csv");
-
-        std::vector<Node> GenerateNodes();
-        std::vector<Face> GenerateFaces();
-        std::vector<Cell> GenerateCells();
-    };
 };
 
 }  // namespace Spatial

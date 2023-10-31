@@ -60,6 +60,7 @@ struct Face
 
     // Orientation of cells to face
     // (Same or opposite to normal)
+    // (Corresponds to cellIndexes)
     std::vector<int> cellDirs;
 };
 

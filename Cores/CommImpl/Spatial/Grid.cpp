@@ -6,11 +6,7 @@
 #include "Grid.h"
 #include "GeoCalculator.h"
 #include "Cores/Utils/Exception.h"
-#include "Cores/Utils/FilePathHelper.h"
-#include "Cores/Utils/StringHelper.h"
-#include "Cores/Utils/CsvHandler.h"
 #include "Cores/Utils/MapHelper.h"
-#include <set>
 
 
 namespace OpenOasis::CommImpl::Spatial
@@ -21,40 +17,57 @@ using namespace std;
 
 // ------------------------------------------------------------------------------------
 
-Grid::Grid(const string &meshDir)
+Grid::Grid(
+    unordered_map<int, Coordinate>     &nodeCoords,
+    unordered_map<int, Coordinate>     &faceCoords,
+    unordered_map<int, Coordinate>     &cellCoords,
+    unordered_map<int, vector<int>>    &faceNodes,
+    unordered_map<int, vector<int>>    &cellFaces,
+    unordered_map<string, vector<int>> &patches,
+    unordered_map<string, vector<int>> &zones)
 {
-    MeshLoader loader(meshDir);
-
 #pragma omp parallel sections
     {
 #pragma omp section
         {
-            loader.LoadNodes();
-            for (int i = 0; i < loader.mNodes.size(); ++i)
+            for (auto &node : nodeCoords)
             {
-                mMesh.nodes[i] = move(loader.mNodes[i]);
+                mMesh.nodes[node.first]      = {};
+                mMesh.nodes[node.first].coor = move(node.second);
             }
+
+            nodeCoords.clear();
         }
 #pragma omp section
         {
-            loader.LoadFaces();
-            for (int i = 0; i < loader.mFaces.size(); ++i)
+            for (auto &face : faceCoords)
             {
-                mMesh.faces[i] = move(loader.mFaces[i]);
+                int i                      = face.first;
+                mMesh.faces[i]             = {};
+                mMesh.faces[i].centroid    = move(face.second);
+                mMesh.faces[i].nodeIndexes = move(faceNodes[i]);
             }
+
+            faceCoords.clear();
+            faceNodes.clear();
         }
 #pragma omp section
         {
-            loader.LoadCells();
-            for (int i = 0; i < loader.mCells.size(); ++i)
+            for (auto &cell : cellCoords)
             {
-                mMesh.cells[i] = move(loader.mCells[i]);
+                int i                      = cell.first;
+                mMesh.cells[i]             = {};
+                mMesh.cells[i].centroid    = move(cellCoords[i]);
+                mMesh.cells[i].faceIndexes = move(cellFaces[i]);
             }
+
+            cellCoords.clear();
+            cellFaces.clear();
         }
     }
 
-    mPatches = loader.LoadPatches();
-    mZones   = loader.LoadZones();
+    mPatches = move(patches);
+    mZones   = move(zones);
 
     mRawNodesNum = mMesh.nodes.size();
     mRawFacesNum = mMesh.faces.size();
@@ -83,22 +96,22 @@ void Grid::Activate()
     // Sort node counterclockwise.
     SortNodes();
 
-    // Calculate cell orientation.
-    SortCells();
-
     // Activate mesh face structures in orderly.
-    CalculateFaceCentroid();
+    CalculateFaceDirector();
     CalculateFaceNormal();
     CalculateFaceArea();
     CalculateFacePerimeter();
 
     // Activate mesh cell structures.
-    CalculateCellCentroid();
     CalculateCellSurface();
     CalculateCellVolume();
 
     // Check mesh validation.
     CheckMesh();
+
+    // Analysis mesh structures.
+    CalculateCellDistances();
+    CalculateBoundaryCenterDistances();
 }
 
 void Grid::CollectCellsSharedNode()
@@ -158,7 +171,7 @@ void Grid::SortNodes()
     }
 }
 
-void Grid::SortCells()
+void Grid::CalculateFaceDirector()
 {
 #pragma omp parallel for schedule(dynamic)
     for (int i = 0; i < mRawFacesNum; i++)
@@ -181,21 +194,51 @@ void Grid::SortCells()
     }
 }
 
-void Grid::CalculateFaceCentroid()
+void Grid::CalculateCellDistances()
 {
-#pragma omp parallel for schedule(dynamic)
-    for (int i = 0; i < mRawFacesNum; i++)
+    for (int i = 0; i < mRawCellsNum; i++)
     {
-        mMesh.faces[i].centroid = GeoCalculator::CalculateFaceCentroid(i, mMesh);
+        const auto &cell = mMesh.cells[i];
+        const auto &n1   = cell.centroid;
+
+        for (int j : cell.neighbors)
+        {
+            auto index1 = MultiIndex({i, j});
+            if (mCenterDists.count(index1) > 0) continue;
+
+            const auto &n2 = mMesh.cells[j].centroid;
+
+            mCenterDists[index1] = CalculateDistance(n1, n2);
+
+            auto index2 = MultiIndex({j, i});
+
+            mCenterDists[index2] = mCenterDists[index1];
+        }
     }
 }
 
-void Grid::CalculateCellCentroid()
+void Grid::CalculateBoundaryCenterDistances()
 {
-#pragma omp parallel for schedule(dynamic)
     for (int i = 0; i < mRawCellsNum; i++)
     {
-        mMesh.cells[i].centroid = GeoCalculator::CalculateCellCentroid(i, mMesh);
+        const auto &cell = mMesh.cells[i];
+        const auto &n1   = cell.centroid;
+
+        for (int j : cell.faceIndexes)
+        {
+            auto index1 = MultiIndex({i, j});
+            if (mBoundaryCenterDists.count(index1) > 0) continue;
+
+            const auto &n2 = mMesh.faces[j].centroid;
+
+            double dist = CalculateDistance(n1, n2);
+
+            mBoundaryCenterDists[index1] = dist;
+
+            auto index2 = MultiIndex({j, i});
+
+            mBoundaryCenterDists[index2] = dist;
+        }
     }
 }
 
@@ -267,150 +310,24 @@ vector<int> Grid::GetZoneCellIndexes(const string &zoneId) const
     throw NotImplementedException();
 }
 
-// ------------------------------------------------------------------------------------
-
-Grid::MeshLoader::MeshLoader(const string &meshDir)
+const MultiIndexMap<double> &Grid::GetBoundaryCenterDistances() const
 {
-    if (!FilePathHelper::DirectoryExists(meshDir))
-    {
-        throw invalid_argument(
-            StringHelper::FormatSimple("Mesh directory {} does not exist.", meshDir));
-    }
-
-    mMeshDir = meshDir;
+    return mBoundaryCenterDists;
 }
 
-void Grid::MeshLoader::LoadNodes(const string &nodeFile)
+double Grid::GetBoundaryCenterDistance(int cellIdx, int boundaryFaceIdx) const
 {
-    const auto &file = FilePathHelper::Combine(mMeshDir, nodeFile);
-    if (!FilePathHelper::FileExists(file)) return;
-
-    CsvLoader loader(file, true, true);
-    if (loader.GetColumnCount() < 3)
-    {
-        throw InvalidDataException("Invalid Node data, to few columns.");
-    }
-
-    auto ids = loader.GetRowLabels().value();
-    CheckIds(ids, "Node");
-
-    mNodes.resize(ids.size());
-    for (int i = 0; i < mNodes.size(); ++i)
-    {
-        auto coor = loader.GetRow<double>(i).value();
-
-        mNodes[i].coor = {coor[0], coor[1], coor[2]};
-    }
+    return mBoundaryCenterDists.at(MultiIndex({cellIdx, boundaryFaceIdx}));
 }
 
-void Grid::MeshLoader::LoadFaces(const string &faceFile)
+const MultiIndexMap<double> &Grid::GetCellCenterDistances() const
 {
-    const auto &file = FilePathHelper::Combine(mMeshDir, faceFile);
-    if (!FilePathHelper::FileExists(file)) return;
-
-    CsvLoader loader(file, true, true);
-    if (loader.GetColumnCount() < 2)
-    {
-        throw InvalidDataException("Invalid Face data, to few columns.");
-    }
-
-    auto ids = loader.GetRowLabels().value();
-    CheckIds(ids, "Face");
-
-    mFaces.resize(ids.size());
-    for (int i = 0; i < mFaces.size(); ++i)
-    {
-        mFaces[i].nodeIndexes = loader.GetRow<int>(i).value();
-    }
+    return mCenterDists;
 }
 
-void Grid::MeshLoader::LoadCells(const string &cellFile)
+double Grid::GetCellCenterDistance(int cellIdx, int neighborCellIdx) const
 {
-    const auto &file = FilePathHelper::Combine(mMeshDir, cellFile);
-    if (!FilePathHelper::FileExists(file)) return;
-
-    CsvLoader loader(file, true, true);
-    if (loader.GetColumnCount() < 3)
-    {
-        throw InvalidDataException("Invalid Cell data, to few columns.");
-    }
-
-    auto ids = loader.GetRowLabels().value();
-    CheckIds(ids, "Cell");
-
-    mCells.resize(ids.size());
-    for (int i = 0; i < mCells.size(); ++i)
-    {
-        mCells[i].faceIndexes = loader.GetRow<int>(i).value();
-    }
-}
-
-unordered_map<string, vector<int>>
-Grid::MeshLoader::LoadPatches(const string &patchFile)
-{
-    const auto &file = FilePathHelper::Combine(mMeshDir, patchFile);
-    if (!FilePathHelper::FileExists(file)) return {};
-
-    CsvLoader loader(file, false, true);
-    if (loader.GetColumnCount() < 1)
-    {
-        throw InvalidDataException("Invalid Patch data, to few columns.");
-    }
-
-    auto ids = loader.GetRowLabels().value();
-
-    unordered_map<string, vector<int>> patches;
-    for (const auto &id : ids)
-        patches[id] = loader.GetRow<int>(id).value();
-
-    return patches;
-}
-
-unordered_map<string, vector<int>> Grid::MeshLoader::LoadZones(const string &zoneFile)
-{
-    const auto &file = FilePathHelper::Combine(mMeshDir, zoneFile);
-    if (!FilePathHelper::FileExists(file)) return {};
-
-    CsvLoader loader(file, false, true);
-    if (loader.GetColumnCount() < 3)
-    {
-        throw InvalidDataException("Invalid Zone data, to few columns.");
-    }
-
-    auto ids = loader.GetRowLabels().value();
-
-    unordered_map<string, vector<int>> zones;
-    for (const auto &id : ids)
-        zones[id] = loader.GetRow<int>(id).value();
-
-    return zones;
-}
-
-void Grid::MeshLoader::CheckIds(const vector<string> &ids, const string &meta)
-{
-    vector<int> ids_int(ids.size());
-    transform(begin(ids), end(ids), begin(ids_int), [&](const string &id) {
-        return stoi(id);
-    });
-
-    if (ids_int.front() != 0)
-    {
-        throw InvalidDataException(StringHelper::FormatSimple(
-            "Invalid {} data, ids don't start from 0.", meta));
-    }
-
-    if (ids_int.back() != int(ids_int.size()) - 1)
-    {
-        throw InvalidDataException(
-            StringHelper::FormatSimple("Invalid {} data, discontinuous ids.", meta));
-    }
-
-    set ids2(ids_int.begin(), ids_int.end());
-    if (ids2.size() != ids.size())
-    {
-        throw InvalidDataException(
-            StringHelper::FormatSimple("Invalid {} data, duplicate ids.", meta));
-    }
+    return mCenterDists.at(MultiIndex({cellIdx, neighborCellIdx}));
 }
 
 }  // namespace OpenOasis::CommImpl::Spatial

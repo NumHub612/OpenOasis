@@ -8,7 +8,7 @@
 #include <mutex>
 
 
-namespace OpenOasis::CommImp::IO
+namespace OpenOasis::CommImpl::IO
 {
 using namespace std;
 
@@ -38,4 +38,4 @@ shared_ptr<spdlog::logger> GetLogger(const string &loggerId)
     }
 }
 
-}  // namespace OpenOasis::CommImp::IO
+}  // namespace OpenOasis::CommImpl::IO

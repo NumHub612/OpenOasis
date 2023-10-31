@@ -14,58 +14,50 @@
 
 namespace OpenOasis::Utils
 {
-/// @brief Wrapper for unordered_map using multi-integer indexes as key.
-template <typename T, std::size_t N = 2>
-class MultiIndexMapper
+template <std::size_t N = 2>
+class MultiIndex
 {
 public:
     static_assert(N > 1, "Using std::unordered_map<int, T> instead.");
 
-    class Index
-    {
-    public:
-        Index(const std::initializer_list<int> &lst) : indexes(lst){};
-        Index() = default;
+    MultiIndex() = default;
+    MultiIndex(const std::array<int, N> &lst) : indexes(lst)
+    {}
 
-        std::array<int, N> indexes;
-    };
-
-    struct EqualFunc
-    {
-        bool operator()(const Index &lhs, const Index &rhs) const
-        {
-            for (std::size_t i = 0; i < N; ++i)
-            {
-                if (lhs.indexes[i] != rhs.indexes[i]) return false;
-            }
-            return true;
-        }
-    };
-
-    struct HashFunc
-    {
-        std::size_t operator()(const Index &key) const
-        {
-            std::size_t res = 0;
-            for (std::size_t i = 0; i < N; ++i)
-            {
-                res += std::hash<int>()(key.indexes[i]) / N;
-            }
-            return res;
-        }
-    };
-
-public:
-    using IndexMap = std::unordered_map<Index, T, HashFunc, EqualFunc>;
-
-    static IndexMap GetInstance()
-    {
-        return IndexMap();
-    }
-
-private:
-    MultiIndexMap(const MultiIndexMap &other) = delete;
-    MultiIndexMap()                           = delete;
+    std::array<int, N> indexes;
 };
+
+
+template <std::size_t N = 2>
+struct EqualFunc
+{
+    bool operator()(const MultiIndex<N> &lhs, const MultiIndex<N> &rhs) const
+    {
+        for (std::size_t i = 0; i < N; ++i)
+        {
+            if (lhs.indexes[i] != rhs.indexes[i]) return false;
+        }
+        return true;
+    }
+};
+
+
+template <std::size_t N = 2>
+struct HashFunc
+{
+    std::size_t operator()(const MultiIndex<N> &key) const
+    {
+        std::size_t res = 0;
+        for (std::size_t i = 0; i < N; ++i)
+        {
+            res += std::hash<int>()(key.indexes[i]) / N;
+        }
+        return res;
+    }
+};
+
+template <typename T, std::size_t N = 2>
+using MultiIndexMap = std::unordered_map<MultiIndex<N>, T, HashFunc<N>, EqualFunc<N>>;
+
 
 }  // namespace OpenOasis::Utils
