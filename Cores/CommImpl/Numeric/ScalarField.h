@@ -14,7 +14,7 @@
 
 namespace OpenOasis::CommImpl::Numeric
 {
-/// @brief Scaler field with default value 0.
+/// @brief Scaler field.
 template <typename T>
 class ScalarField : public Field<T>
 {
@@ -25,11 +25,17 @@ public:
 
     virtual ~ScalarField() = default;
 
-    ScalarField() : mType(FieldType::SCALAR)
-    {}
-    ScalarField(std::size_t size, T val = 0) : Field<T>(size, val)
+    ScalarField(std::size_t size, T val = 0, FieldRange range = FieldRange::CELL) :
+        Field<T>(size, val)
     {
-        mType = FieldType::SCALAR;
+        mRange = range;
+        mType  = FieldType::SCALAR;
+    }
+
+    ScalarField(FieldRange range = FieldRange::CELL)
+    {
+        mRange = range;
+        mType  = FieldType::SCALAR;
     }
 };
 

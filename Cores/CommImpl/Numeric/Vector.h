@@ -19,7 +19,7 @@ namespace CommImpl
 {
 namespace Numeric
 {
-template <typename T, size_t N>
+template <typename T, size_t N = 3>
 class Vector
 {
 public:

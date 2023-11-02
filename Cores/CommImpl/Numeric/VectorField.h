@@ -21,12 +21,19 @@ class VectorField : public Field<Vector<T, N>>
 public:
     virtual ~VectorField() = default;
 
-    VectorField() : mType(FieldType::VECTOR)
-    {}
-    VectorField(std::size_t size, const Vector<T, N> &val = {}) :
+    VectorField(FieldRange range = FieldRange::CELL)
+    {
+        mRange = range;
+        mType  = FieldType::VECTOR;
+    }
+
+    VectorField(
+        std::size_t size, const Vector<T, N> &val = {},
+        FieldRange range = FieldRange::CELL) :
         Field<Vector<T, N>>(size, val)
     {
-        mType = FieldType::VECTOR;
+        mRange = range;
+        mType  = FieldType::VECTOR;
     }
 };
 

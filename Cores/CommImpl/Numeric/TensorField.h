@@ -14,19 +14,26 @@
 
 namespace OpenOasis::CommImpl::Numeric
 {
-/// @brief Tensor field with default zero tensor.
+/// @brief Tensor field.
 template <typename T>
 class TensorField : public Field<Tensor<T>>
 {
 public:
     virtual ~TensorField() = default;
 
-    TensorField() : mType(FieldType::TENSOR)
-    {}
-    TensorField(std::size_t size, const Tensor<T> &val = {}) :
+    TensorField(FieldRange range = FieldRange::CELL)
+    {
+        mRange = range;
+        mType  = FieldType::TENSOR;
+    }
+
+    TensorField(
+        std::size_t size, const Tensor<T> &val = {},
+        FieldRange range = FieldRange::CELL) :
         Field<Tensor<T>>(size, val)
     {
-        mType = FieldType::TENSOR;
+        mRange = range;
+        mType  = FieldType::TENSOR;
     }
 };
 

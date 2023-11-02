@@ -23,24 +23,34 @@ enum class FieldType
     NONE
 };
 
+enum class FieldRange
+{
+    NODE,
+    FACE,
+    CELL,
+    NONE
+};
+
 /// @brief The abstract field class used to represent numeric field, such as
 /// scalar, vector or tensor data.
 template <typename T>
 class Field
 {
-private:
+protected:
+    FieldRange mRange = FieldRange::NONE;
+    FieldType  mType  = FieldType::NONE;
+
     std::vector<T> mData;
 
     T mDefault;
 
-    FieldType mType = FieldType::NONE;
-
-public:
+protected:
     virtual ~Field() = default;
 
     Field() = default;
     Field(std::size_t size, T value) : mData(size, value){};
 
+public:
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods for field manipulation.
     //
