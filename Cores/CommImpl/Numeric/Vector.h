@@ -19,7 +19,7 @@ namespace CommImpl
 {
 namespace Numeric
 {
-template <typename T, std::size_t N>
+template <typename T, size_t N = 3>
 class Vector
 {
 public:
@@ -67,13 +67,26 @@ public:
     // Methods for vector data setting.
     //
 
+    template <typename U>
+    void Set(const std::initializer_list<U> &lst)
+    {
+        OO_ASSERT(lst.size() >= N);
+
+        size_t i = 0;
+        for (const auto &val : lst)
+            mElement.at(i++) = static_cast<T>(val);
+    }
+
     void Set(const Vector &other)
     {
-        for (std::size_t i = 0; i < N; ++i) { mElement[i] = other(i); }
+        for (size_t i = 0; i < N; ++i)
+        {
+            mElement[i] = other(i);
+        }
     }
 
     template <typename... Args>
-    void SetAt(std::size_t i, T v, Args... args)
+    void SetAt(size_t i, T v, Args... args)
     {
         mElement.at(i) = v;
 
@@ -85,26 +98,17 @@ public:
         mElement.at(i) = v;
     }
 
-    template <typename U>
-    void Set(const std::initializer_list<U> &lst)
-    {
-        OO_ASSERT(lst.size() >= N);
-
-        std::size_t i = 0;
-        for (const auto &val : lst) mElement.at(i++) = static_cast<T>(val);
-    }
-
-    constexpr std::size_t Size() const
+    constexpr size_t Size() const
     {
         return N;
     }
 
-    T &operator()(std::size_t i)
+    T &operator()(size_t i)
     {
         return mElement.at(i);
     }
 
-    const T &operator()(std::size_t i) const
+    const T &operator()(size_t i) const
     {
         return mElement.at(i);
     }
@@ -116,7 +120,8 @@ public:
     T Sum() const
     {
         T ret = 0;
-        for (T val : mElement) ret += val;
+        for (T val : mElement)
+            ret += val;
 
         return ret;
     }
@@ -129,7 +134,8 @@ public:
     T Min() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = std::min(ret, val);
+        for (T val : mElement)
+            ret = std::min(ret, val);
 
         return ret;
     }
@@ -138,7 +144,8 @@ public:
     T AbsMin() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = (ret * ret < val * val) ? ret : val;
+        for (T val : mElement)
+            ret = (ret * ret < val * val) ? ret : val;
 
         return ret;
     }
@@ -146,7 +153,8 @@ public:
     T Max() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = std::max(ret, val);
+        for (T val : mElement)
+            ret = std::max(ret, val);
 
         return ret;
     }
@@ -155,7 +163,8 @@ public:
     T AbsMax() const
     {
         T ret = mElement.front();
-        for (T val : mElement) ret = (ret * ret > val * val) ? ret : val;
+        for (T val : mElement)
+            ret = (ret * ret > val * val) ? ret : val;
 
         return ret;
     }
@@ -170,7 +179,7 @@ public:
     {
         if (Size() != other.Size()) return false;
 
-        for (std::size_t i = 0; i < N; ++i)
+        for (size_t i = 0; i < N; ++i)
         {
             if (abs(mElement[i] - other(i)) > T(1e-10)) return false;
         }
@@ -192,38 +201,44 @@ public:
 
     void Add(T v)
     {
-        for (T &val : mElement) val += v;
+        for (T &val : mElement)
+            val += v;
     }
 
     void Add(const Vector &other)
     {
         OO_ASSERT(other.Size() == N);
 
-        for (std::size_t i = 0; i < N; ++i) mElement[i] += other(i);
+        for (size_t i = 0; i < N; ++i)
+            mElement[i] += other(i);
     }
 
     void Sub(T v)
     {
-        for (T &val : mElement) val -= v;
+        for (T &val : mElement)
+            val -= v;
     }
 
     void Sub(const Vector &other)
     {
         OO_ASSERT(other.Size() == N);
 
-        for (std::size_t i = 0; i < N; ++i) mElement[i] -= other(i);
+        for (size_t i = 0; i < N; ++i)
+            mElement[i] -= other(i);
     }
 
     void Mul(T v)
     {
-        for (T &val : mElement) val *= v;
+        for (T &val : mElement)
+            val *= v;
     }
 
     void Div(T v)
     {
         OO_ASSERT(v != T(0));
 
-        for (T &val : mElement) val /= v;
+        for (T &val : mElement)
+            val /= v;
     }
 
     T Dot(const Vector &other) const
@@ -231,7 +246,8 @@ public:
         OO_ASSERT(other.Size() == N);
 
         T ret = 0;
-        for (std::size_t i = 0; i < N; ++i) ret += mElement[i] * other(i);
+        for (size_t i = 0; i < N; ++i)
+            ret += mElement[i] * other(i);
 
         return ret;
     }
@@ -265,6 +281,11 @@ public:
     ///////////////////////////////////////////////////////////////////////////////////
     // Override operators for vector.
     //
+
+    void operator=(const Vector &other)
+    {
+        mElement = other.mElement;
+    }
 
     Vector operator+(const Vector &other) const
     {

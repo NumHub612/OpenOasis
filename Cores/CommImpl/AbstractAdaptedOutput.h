@@ -146,7 +146,7 @@ public:
 
     virtual std::shared_ptr<ITimeSet> GetTimeExtent() const override = 0;
 
-    virtual std::shared_ptr<ITime> GetCurrentTime() const override = 0;
+    virtual std::shared_ptr<ITime> GetCurrTime() const override = 0;
 
     virtual std::shared_ptr<ISpatialDefinition>
     GetSpatialDefinition() const override = 0;

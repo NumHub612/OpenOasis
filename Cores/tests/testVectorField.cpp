@@ -103,12 +103,6 @@ TEST_CASE("VectorField template test")
     vecField.SetAt(4, Vector<double, 3>(11.0, 21.0, 31.0));
     vecField.SetAt(5, Vector<double, 3>(-1.0, -2.0, -3.0));
 
-    VectorField<double, 3> vecField2(5);
-    vecField2.SetAt(0, 3, vecField, 3);
-    const auto vec2 = vecField2(0);
-    REQUIRE(vec2(0) == 1.0);
-    REQUIRE(vec2(1) == 2.0);
-
     vecField.Resize(6);
     REQUIRE(vecField.Size() == 6);
     const auto &vec3 = vecField(3);

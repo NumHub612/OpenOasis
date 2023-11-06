@@ -21,32 +21,30 @@ namespace Spatial
 
 class Grid1D : public Grid
 {
-protected:
-    class MeshReconfigurator
-    {
-    private:
-        std::string mMeshDir;
+public:
+    virtual ~Grid1D() = default;
+    Grid1D(const std::shared_ptr<Grid> &grid);
+    Grid1D(
+        std::unordered_map<int, Coordinate>               &nodeCoords,
+        std::unordered_map<int, Coordinate>               &faceCoords,
+        std::unordered_map<int, Coordinate>               &cellCoords,
+        std::unordered_map<int, std::vector<int>>         &faceNodes,
+        std::unordered_map<int, std::vector<int>>         &cellFaces,
+        std::unordered_map<std::string, std::vector<int>> &patches,
+        std::unordered_map<std::string, std::vector<int>> &zones);
 
-        std::vector<Coordinate>                 mSectionLoc;
-        std::vector<std::array<std::string, 2>> mReaches;
+    int  Type() const override;
+    void RefineCell(int cellIndex) override;
+    void RelaxCell(int cellIndex) override;
 
-        std::unordered_map<std::string, std::string> mSectionShapeMap;
-        std::unordered_map<std::string, std::vector<std::array<double, 2>>> mShapes;
-
-    public:
-        MeshReconfigurator(const std::string &meshDir);
-
-        friend class Grid1D;
-
-        void LoadSectionLocations(const std::string &file = "sections.csv");
-        void LoadShapes(const std::string &file = "shapes.csv");
-        void LoadReaches(const std::string &file = "reaches.csv");
-        void LoadSectionShapes(const std::string &file = "section_shapes.csv");
-
-        std::vector<Node> GenerateNodes();
-        std::vector<Face> GenerateFaces();
-        std::vector<Cell> GenerateCells();
-    };
+private:
+    void CollectCellsInZone() override;
+    void CalculateFaceNormal() override;
+    void CalculateFaceArea() override;
+    void CalculateFacePerimeter() override;
+    void CalculateCellSurface() override;
+    void CalculateCellVolume() override;
+    void CheckMesh() const override;
 };
 
 }  // namespace Spatial

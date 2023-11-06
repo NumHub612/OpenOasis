@@ -4,7 +4,7 @@ set(MoudelDir ${FluidDir})
 
 
 # 读取模块版本信息。
-file(STRINGS "${MoudelDir}/property/VERSION" FLUIDS_VERSION)
+file(STRINGS "${MoudelDir}/export/VERSION" FLUIDS_VERSION)
 message(STATUS "${ModuleName} version: ${FLUIDS_VERSION}")
 string(REGEX REPLACE "([0-9]+)\\.[0-9]+\\.[0-9]+.*" "\\1" FLUIDS_VER_MAJOR ${FLUIDS_VERSION})
 string(REGEX REPLACE "[0-9]+\\.([0-9])+\\.[0-9]+.*" "\\1" FLUIDS_VER_MINOR ${FLUIDS_VERSION})
@@ -16,7 +16,7 @@ if (WITH_VER_SUFFIX)
 endif()
 
 # 配置模块信息。
-set(PropertyDir "${MoudelDir}/property")
+set(PropertyDir "${MoudelDir}/export")
 set(VersionInfoRc "${PropertyDir}/VersionConfig.h")
 configure_file("${PropertyDir}/VersionConfig.h.in" "${PropertyDir}/VersionConfig.h")
 if(MSVC)

@@ -26,6 +26,9 @@ using Utils::EventHandler;
 ///
 /// The implementation here predefines a set of methods that are useful in
 /// concrete model engine development.
+///
+/// @todo All the data of the component is divided into properties, status, and data,
+/// which can be viewed and output.
 class LinkableComponent : public ILinkableComponent,
                           public IManageState,
                           public std::enable_shared_from_this<LinkableComponent>
@@ -157,7 +160,7 @@ public:
     virtual std::shared_ptr<ITime> GetEndTime() const;
 
     /// @brief The current time stamp, where the engine currently has reached.
-    virtual std::shared_ptr<ITime> GetCurrentTime() const;
+    virtual std::shared_ptr<ITime> GetNowTime() const;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Internal methods for component initializing.

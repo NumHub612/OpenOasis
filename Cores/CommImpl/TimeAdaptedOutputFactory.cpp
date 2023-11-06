@@ -4,15 +4,15 @@
  *
  ** ***********************************************************************************/
 #include "TimeAdaptedOutputFactory.h"
-#include "Cores/CommImpl/Temporal/TimeExtrapolator.h"
-#include "Cores/CommImpl/Temporal/TimeInterpolator.h"
+#include "Cores/CommImpl/DevSupports/TimeExtrapolator.h"
+#include "Cores/CommImpl/DevSupports/TimeInterpolator.h"
 #include "Cores/Utils/VectorHelper.h"
 #include "Cores/Utils/Exception.h"
 
 
 namespace OpenOasis::CommImpl
 {
-using namespace Temporal;
+using namespace DevSupports;
 using namespace Utils;
 using namespace std;
 
@@ -49,10 +49,7 @@ vector<shared_ptr<IIdentifiable>>
 TimeAdaptedOutputFactory::GetAvailableAdaptedOutputIds(
     const shared_ptr<IOutput> &adaptee, const shared_ptr<IInput> &target)
 {
-    if (!adaptee)
-    {
-        return {};
-    }
+    if (!adaptee) { return {}; }
 
     vector<shared_ptr<IIdentifiable>> ids;
     ids.emplace_back(make_shared<TimeInterpolator>(adaptee));

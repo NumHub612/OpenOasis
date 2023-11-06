@@ -24,7 +24,6 @@ namespace Utils
 {
 /// @brief CsvLoader class loads data from a specified csv file.
 /// @note Row or column index used in this class is zero-based.
-/// @note Don't attempt to get a reference to the optional object `.value()`.
 class CsvLoader
 {
 private:
@@ -33,9 +32,19 @@ private:
     bool               mHasRowHeader;
 
 public:
+    CsvLoader(){};
     CsvLoader(
-        const std::string &filePath, bool hasColumnHeader = true,
-        bool hasRowHeader = true, char delimiter = ',');
+        const std::string &file, bool hasColumnHeader = true, bool hasRowHeader = true,
+        char delimiter = ',', bool skipEmptyLine = true, char skipPrefix = '#');
+
+    void LoadByContent(
+        const std::string &content, bool hasColumnHeader = true,
+        bool hasRowHeader = true, char delimiter = ',', bool skipEmptyLine = true,
+        char skipPrefix = '#');
+
+    void LoadByFile(
+        const std::string &file, bool hasColumnHeader = true, bool hasRowHeader = true,
+        char delimiter = ',', bool skipEmptyLine = true, char skipPrefix = '#');
 
     std::optional<std::vector<std::string>> GetColumnLabels() const;
     std::optional<std::vector<std::string>> GetRowLabels() const;

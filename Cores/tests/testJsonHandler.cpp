@@ -8,9 +8,7 @@ using namespace std;
 
 TEST_CASE("JsonLoader tests")
 {
-    const string path = "D:\\4_resource\\oasis_examples\\configs.json";
-
-    /*
+    const char *json = R"(
     {
     "pi": 3.141,
     "happy": true,
@@ -28,14 +26,22 @@ TEST_CASE("JsonLoader tests")
     "object": {
         "currency": "USD",
         "value": 42.99
+    },
+    "test": [
+        {"val": 1, "var": "temp"},
+        {"val": 0, "var": "flow"}
+    ],
+    "objs": {
+        "obj1": "objs",
+        "obj2": "objs"
     }
-    }
-    */
+    })";
 
-    JsonLoader loader(path);
+    JsonLoader loader;
+    loader.LoadByContent(json);
 
     const auto &keys0 = loader.GetKeys({});  // answer,happy,list,name,nothing,object,pi
-    REQUIRE(keys0.size() == 7);
+    REQUIRE(keys0.size() == 9);
     REQUIRE(keys0[0] == "answer");
 
     const auto &keys1 = loader.GetKeys({keys0[0]});
@@ -60,15 +66,26 @@ TEST_CASE("JsonLoader tests")
     REQUIRE(arr.size() == 3);
     REQUIRE(arr[0] == 1);
 
-    // auto arr2 = loader.GetArray<string>({}, "list").value();
-    // REQUIRE(arr2.size() == 3);
-    // REQUIRE(arr2[0] == "1");
+    auto size2 = loader.GetArraySize({"test"});
+    REQUIRE(size2 == 2);
+
+    auto arr2 = loader.GetValue<double>({"test"}, 1, "val");
+    REQUIRE(arr2.has_value() == true);
+    REQUIRE(arr2.value() == 0);
+
+    auto arr3 = loader.GetValue<string>({"test"}, 0, "var");
+    REQUIRE(arr3.has_value() == true);
+    REQUIRE(arr3.value() == "temp");
+
+    auto map2 = loader.GetMap({"objs"});
+    REQUIRE(map2.size() == 2);
+    REQUIRE(map2["obj1"] == "objs");
 }
 
 
 TEST_CASE("JsonWriter tests")
 {
-    const string path = "D:\\4_resource\\oasis_examples";
+    const string path = "./";
 
     JsonWriter writer(path);
 

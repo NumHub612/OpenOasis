@@ -7,22 +7,19 @@ using namespace std;
 
 TEST_CASE("CsvLoader tests")
 {
-    const string path =
-        "D:\\4_resource\\oasis_examples\\heat_conduction_model\\geom\\test.csv";
-
-    /*
-    Datetime,Open,High,Low,Close,Volume,Adj Close
-    2017-02-24 00:00:00,64.529999,64.800003,64.139999,64.620003,21705200,64.620003
-    2017-02-23 00:00:00,64.419998,64.730003,64.190002,64.620003,20235200,64.620003
-    2017-02-22 00:00:00,64.330002,64.389999,64.050003,64.360001,19259700,64.360001
-    2017-02-21 00:00:00,64.610001,64.949997,64.449997,64.489998,19384900,64.489998
-    2017-02-17 00:00:00,64.470001,64.690002,64.300003,64.620003,21234600,64.620003
-
-    */
+    const std::string &csv =
+        "Date,Open,High,Low,Close,Volume,Adj Close\n"
+        "2017-02-24 00:00:00,64.529999,64.800003,64.139999,64.620003,21705200,64.620003\n"
+        "2017-02-23 00:00:00,64.419998,64.730003,64.190002,64.620003,20235200,64.620003\n"
+        "2017-02-22 00:00:00,64.330002,64.389999,64.050003,64.360001,19259700,64.360001\n"
+        "2017-02-21 00:00:00,64.610001,64.949997,64.449997,64.489998,19384900,64.489998\n"
+        "2017-02-17 00:00:00,64.470001,64.690002,64.300003,64.620003,21234600,64.620003\n";
 
     SECTION("test0")
     {
-        CsvLoader loader(path);
+        CsvLoader loader;
+
+        loader.LoadByContent(csv);
 
         REQUIRE(loader.GetColumnCount() == 6);
         REQUIRE(loader.GetRowCount() == 5);
@@ -38,7 +35,9 @@ TEST_CASE("CsvLoader tests")
 
     SECTION("test1")
     {
-        CsvLoader loader(path, true, false);
+        CsvLoader loader;
+
+        loader.LoadByContent(csv, true, false);
 
         const auto dates = loader.GetColumnAsDateTime(0).value();
         REQUIRE(dates.size() == 5);
@@ -49,7 +48,7 @@ TEST_CASE("CsvLoader tests")
 
 TEST_CASE("CsvWriter tests")
 {
-    const string path = "D:\\4_resource\\oasis_examples\\heat_conduction_model\\geom";
+    const string path = "./test.csv";
 
     SECTION("column write")
     {
@@ -68,7 +67,8 @@ TEST_CASE("CsvWriter tests")
         writer.Save();
 
         const auto file2 = writer.GetOutputFilePath();
-        CsvLoader  loader(file2);
+        CsvLoader  loader;
+        loader.LoadByFile(file2);
         REQUIRE(loader.GetColumnCount() == 4);
 
         const auto labels = loader.GetColumnLabels().value();
@@ -91,7 +91,8 @@ TEST_CASE("CsvWriter tests")
         writer.Save();
 
         const auto file2 = writer.GetOutputFilePath();
-        CsvLoader  loader(file2);
+        CsvLoader  loader;
+        loader.LoadByFile(file2);
         REQUIRE(loader.GetColumnCount() == 3);
 
         const auto labels = loader.GetColumnLabels().value();

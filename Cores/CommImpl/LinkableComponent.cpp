@@ -34,7 +34,7 @@ LinkableComponent::LinkableComponent(const string &id)
     mArguments["ID"] = make_shared<ArgumentString>("ID", mId);
 
     // Set the output/input needed,
-    // formated as "object_type, object_id, variable_id".
+    // formated as "object_type, object_id, state_id".
     mArguments["OUTPUTTERS"] =
         make_shared<TArgument<vector<array<string, 3>>>>("OUTPUTTERS");
     mArguments["INPUTTERS"] =
@@ -189,7 +189,7 @@ shared_ptr<ITime> LinkableComponent::GetEndTime() const
     return ExtensionMethods::End(mTimeExtent->GetTimeHorizon());
 }
 
-shared_ptr<ITime> LinkableComponent::GetCurrentTime() const
+shared_ptr<ITime> LinkableComponent::GetNowTime() const
 {
     return mCurrentTime;
 }
@@ -247,8 +247,8 @@ void LinkableComponent::Update(const vector<shared_ptr<IOutput>> &requiredOutput
     }
 
     // Check the output items needed to be updated.
-    vector<shared_ptr<IOutput>> outputs = requiredOutputs;
-    if (outputs.empty()) outputs = mOutputs;
+    vector<shared_ptr<IOutput>> outputs = mOutputs;
+    if (!requiredOutputs.empty()) outputs = requiredOutputs;
 
     // Update with estimates if component is blocked.
     if (mStatus == LinkableComponentStatus::Updating
@@ -356,9 +356,11 @@ void LinkableComponent::Reset()
     mTimeExtent.reset();
     mCurrentTime.reset();
 
-    for (const auto &input : mInputs) input->Reset();
+    for (const auto &input : mInputs)
+        input->Reset();
 
-    for (const auto &output : mOutputs) output->Reset();
+    for (const auto &output : mOutputs)
+        output->Reset();
 
     mArguments.clear();
 }

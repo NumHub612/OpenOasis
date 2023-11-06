@@ -16,13 +16,23 @@ using namespace std;
 // ------------------------------------------------------------------------------------
 
 CsvLoader::CsvLoader(
-    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter)
+    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter,
+    bool skipEmptyLine, char prefix)
+{
+    LoadByFile(
+        filePath, hasColumnHeader, hasRowHeader, delimiter, skipEmptyLine, prefix);
+}
+
+void CsvLoader::LoadByFile(
+    const string &filePath, bool hasColumnHeader, bool hasRowHeader, char delimiter,
+    bool skipEmptyLine, char prefix)
 {
     if (!FilePathHelper::FileExists(filePath))
     {
         throw invalid_argument(
             StringHelper::FormatSimple("File {} does not exist.", filePath));
     }
+
     mHasColumnHeader = hasColumnHeader;
     mHasRowHeader    = hasRowHeader;
 
@@ -32,7 +42,29 @@ CsvLoader::CsvLoader(
     mCsv = rapidcsv::Document(
         filePath,
         rapidcsv::LabelParams(colHeaderIdx, rowHeaderIdx),
-        rapidcsv::SeparatorParams(delimiter));
+        rapidcsv::SeparatorParams(delimiter),
+        rapidcsv::ConverterParams(),
+        rapidcsv::LineReaderParams(skipEmptyLine, prefix, true));
+}
+
+void CsvLoader::LoadByContent(
+    const string &content, bool hasColumnHeader, bool hasRowHeader, char delimiter,
+    bool skipEmptyLine, char prefix)
+{
+    mHasColumnHeader = hasColumnHeader;
+    mHasRowHeader    = hasRowHeader;
+
+    int colHeaderIdx = (hasColumnHeader) ? 0 : -1;
+    int rowHeaderIdx = (hasRowHeader) ? 0 : -1;
+
+    stringstream sstream(content);
+
+    mCsv = rapidcsv::Document(
+        sstream,
+        rapidcsv::LabelParams(colHeaderIdx, rowHeaderIdx),
+        rapidcsv::SeparatorParams(delimiter),
+        rapidcsv::ConverterParams(),
+        rapidcsv::LineReaderParams(skipEmptyLine, prefix, true));
 }
 
 optional<vector<string>> CsvLoader::GetColumnLabels() const
@@ -111,15 +143,19 @@ CsvWriter::CsvWriter(const string &filePath, char delimiter)
     {
         try
         {
-            if (FilePathHelper::DirectoryExists(filePath))
+            auto parent = FilePathHelper::GetDirectoryName(filePath);
+            auto name   = FilePathHelper::GetFileName(filePath);
+            if (!FilePathHelper::DirectoryExists(parent))
             {
-                const auto &newFilePath = FilePathHelper::Combine(
-                    filePath,
-                    StringHelper::FormatSimple("Oasis_temp_{}.csv", sTmpFileCount++));
-
-                FilePathHelper::MakeFile(newFilePath);
-                mFilePath = newFilePath;
+                FilePathHelper::MakeDirectory(parent);
             }
+
+            if (FilePathHelper::DirectoryExists(parent))
+            {
+                mFilePath = FilePathHelper::Combine(parent, name);
+                FilePathHelper::MakeFile(mFilePath);
+            }
+            else { throw exception(); }
         }
         catch (...)
         {

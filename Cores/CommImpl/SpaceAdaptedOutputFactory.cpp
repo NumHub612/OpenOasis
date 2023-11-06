@@ -9,9 +9,9 @@
 #include "Arguments.h"
 #include "Identifier.h"
 #include "Describer.h"
-#include "Cores/CommImpl/Spatial/SpaceMapAdaptor.h"
-#include "Cores/CommImpl/Spatial/SpaceLengthAdaptor.h"
-#include "Cores/CommImpl/Spatial/SpaceAreaAdaptor.h"
+#include "Cores/CommImpl/DevSupports/SpaceMapAdaptor.h"
+#include "Cores/CommImpl/DevSupports/SpaceLengthAdaptor.h"
+#include "Cores/CommImpl/DevSupports/SpaceAreaAdaptor.h"
 #include "Cores/Utils/Exception.h"
 #include "Cores/Utils/VectorHelper.h"
 #include "Cores/Utils/StringHelper.h"
@@ -19,7 +19,7 @@
 
 namespace OpenOasis::CommImpl
 {
-using namespace Spatial;
+using namespace DevSupports;
 using namespace Utils;
 using namespace std;
 
@@ -232,20 +232,14 @@ SpaceAdaptedOutputFactory::GetAvailableAdaptedOutputIds(
     shared_ptr<Output> tsAdaptee = dynamic_pointer_cast<Output>(adaptee);
 
     // Only works with element set as spatial definition.
-    if (!tsAdaptee || !tsAdaptee->GetElementSet())
-    {
-        return {};
-    }
+    if (!tsAdaptee || !tsAdaptee->GetElementSet()) { return {}; }
 
     vector<shared_ptr<IIdentifiable>> methods;
     GetAvailableOperationMethods(methods, tsAdaptee->GetElementSet()->GetElementType());
 
     // Check if the target is there and is a timespace input.
     shared_ptr<Input> tsTarget = dynamic_pointer_cast<Input>(target);
-    if (!tsTarget || !tsTarget->GetElementSet())
-    {
-        return methods;
-    }
+    if (!tsTarget || !tsTarget->GetElementSet()) { return methods; }
 
     GetAvailableMappingMethods(
         methods,
@@ -359,10 +353,7 @@ SpaceAdaptedOutputFactory::FindMethod(shared_ptr<IIdentifiable> identifiable)
 {
     for (auto availableMethod : mAvailableMethods)
     {
-        if (availableMethod->mId == identifiable->GetId())
-        {
-            return availableMethod;
-        }
+        if (availableMethod->mId == identifiable->GetId()) { return availableMethod; }
     }
     throw invalid_argument(StringHelper::FormatSimple(
         "Invalid indentifier {}, identifier does not belong to this factory.",
@@ -389,10 +380,7 @@ bool SpaceAdaptedOutputFactory::HasId(shared_ptr<IIdentifiable> identifiable)
 {
     for (auto availableMethod : mAvailableMethods)
     {
-        if (availableMethod->mId == identifiable->GetId())
-        {
-            return true;
-        }
+        if (availableMethod->mId == identifiable->GetId()) { return true; }
     }
     return false;
 }

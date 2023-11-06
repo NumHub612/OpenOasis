@@ -246,7 +246,7 @@ shared_ptr<ITimeSet> Output::GetTimeExtent() const
     return mTimeSet;
 }
 
-shared_ptr<ITime> Output::GetCurrentTime() const
+shared_ptr<ITime> Output::GetCurrTime() const
 {
     return ExtensionMethods::End(mTimeSet->GetTimeHorizon());
 }

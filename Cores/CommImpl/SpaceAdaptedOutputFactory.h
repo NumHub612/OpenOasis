@@ -10,14 +10,14 @@
 #pragma once
 #include "Cores/Inc/IAdaptedOutputFactory.h"
 #include "Cores/Inc/IElementSet.h"
-#include "Cores/CommImpl/Spatial/ElementMapper.h"
+#include "Cores/CommImpl/DevSupports/ElementMapper.h"
 
 
 namespace OpenOasis
 {
 namespace CommImpl
 {
-using namespace Spatial;
+using namespace DevSupports;
 
 /// @brief Space adapted output factory of `IAdaptedOutputFactory` implementation.
 class SpaceAdaptedOutputFactory : public IAdaptedOutputFactory

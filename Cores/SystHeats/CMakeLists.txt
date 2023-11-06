@@ -4,7 +4,7 @@ set(MoudelDir ${HeatDir})
 
 
 # 读取模块版本信息。
-file(STRINGS "${MoudelDir}/property/VERSION" HEATS_VERSION)
+file(STRINGS "${MoudelDir}/export/VERSION" HEATS_VERSION)
 message(STATUS "${ModuleName}  version: ${HEATS_VERSION}")
 string(REGEX REPLACE "([0-9]+)\\.[0-9]+\\.[0-9]+.*" "\\1" HEATS_VER_MAJOR ${HEATS_VERSION})
 string(REGEX REPLACE "[0-9]+\\.([0-9])+\\.[0-9]+.*" "\\1" HEATS_VER_MINOR ${HEATS_VERSION})
@@ -16,7 +16,7 @@ if (WITH_VER_SUFFIX)
 endif()
 
 # 配置模块信息。
-set(PropertyDir "${MoudelDir}/property")
+set(PropertyDir "${MoudelDir}/export")
 set(VersionInfoRc "${PropertyDir}/VersionConfig.h")
 configure_file("${PropertyDir}/VersionConfig.h.in" "${PropertyDir}/VersionConfig.h")
 if(MSVC)

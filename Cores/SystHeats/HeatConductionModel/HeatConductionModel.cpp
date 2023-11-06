@@ -13,7 +13,10 @@
 #include "Cores/CommImpl/ElementSet.h"
 #include "Cores/CommImpl/ValueSet2D.h"
 #include "Cores/CommImpl/IO/logging.h"
+#include "Cores/CommImpl/IO/MeshLoader.h"
 #include "Cores/CommImpl/Spatial/Grid2D.h"
+#include "Cores/CommImpl/Numeric/FvmSolver.h"
+#include "Cores/CommImpl/Numeric/DirichletBoundary.h"
 #include "Cores/Utils/YamlHandler.h"
 #include "Cores/Utils/Exception.h"
 #include "Cores/Utils/StringHelper.h"
@@ -28,8 +31,15 @@ namespace OpenOasis::SystHeats
 {
 using namespace CommImpl;
 using namespace Spatial;
+using namespace Numeric;
 using namespace Utils;
+using namespace IO;
 using namespace std;
+
+const vector<string> HeatConductionModel::sExchangeableStates = {"temp"};
+
+const vector<string> HeatConductionModel::sExchangeableObj = {"cell"};
+
 
 HeatConductionModel::HeatConductionModel(const string &id, const string &taskFile) :
     LinkableComponent(id)
@@ -45,52 +55,164 @@ HeatConductionModel::HeatConductionModel(const string &id, const string &taskFil
 
 void HeatConductionModel::InitializeArguments()
 {
-    YamlLoader yml(mTaskFile);
-    string     seg;
+    auto taskDir = FilePathHelper::GetDirectoryName(mTaskFile);
 
-    auto   taskDir = FilePathHelper::GetDirectoryName(mTaskFile);
-    string ErrMsg  = "HeatConductionModel {} section [{}] lack of configurations.";
+    YamlLoader yml;
+    yml.LoadByFile(mTaskFile);
+
+    // Check segments.
+    vector<string> segments = {
+        "OPTION", "MESH", "EQUATION", "INITIALIZATION", "BOUNDARY", "SOLVER", "OUTPUT"};
+    auto sections = yml.MapKeys({});
+    for (const auto &seg : segments)
+    {
+        if (sections.count(seg) == 0)
+        {
+            throw FileLoadException(StringHelper::FormatSimple(
+                "Heat model {} missing section [{}].", mId, seg));
+        }
+    }
 
     // Global options.
-    seg = "OPTION";
+    string seg = "OPTION";
+
+    mStart = yml.GetMapValueInStr({seg}, "start_dt").value();
+    mEnd   = yml.GetMapValueInStr({seg}, "end_dt").value();
+
+    auto inputDir = FilePathHelper::Combine(taskDir, "inputs");
+    auto input    = yml.GetMapValueInStr({seg}, "input_dir");
+    if (input.has_value()) { inputDir = FilePathHelper::GetFullPath(input.value()); }
+
+    auto outDir = FilePathHelper::Combine(taskDir, "outputs");
+    auto output = yml.GetMapValueInStr({seg}, "output_dir");
+    if (output.has_value()) { outDir = FilePathHelper::GetFullPath(output.value()); }
 
     // Mesh.
     seg = "MESH";
 
-    auto meshDir = "D:\\4_resource\\oasis_examples\\heat_conduction_model\\geom";
+    auto meshType = yml.GetMapValueInStr({seg}, "mesh_type").value();
+    auto meshMode = yml.GetMapValueInStr({seg}, "mesh_mode").value();
+    auto meshDir  = FilePathHelper::Combine(inputDir, "mesh");
 
-    mGrid = make_shared<Grid2D>(meshDir);
+    MeshLoader loader(meshDir);
+    loader.Load();
+
+    mGrid = make_shared<Grid2D>(
+        loader.GetNodeCoordinates(),
+        loader.GetFaceCoordinates(),
+        loader.GetCellCoordinates(),
+        loader.GetFaceNodes(),
+        loader.GetCellFaces(),
+        loader.GetPatches(),
+        loader.GetZones());
+
+    mSolver = make_shared<FvmSolver>(mGrid);
+
+    // Equation.
+    seg = "EQUATION";
+
+    auto cSize = yml.SeqSize({seg, "coefficents"});
+    for (int i = 0; i < cSize; i++)
+    {
+        auto coef = yml.GetMapInSeq({seg, "coefficents"}, i);
+        if (coef["var"] == "k" && coef["mode"] == "uniform")
+        {
+            mK = stod(coef["value"]);
+        }
+    }
 
     // Initialization.
     seg = "INITIALIZATION";
-    mT0 = 0.0;
+
+    int globalInitSize = yml.SeqSize({seg, "global_inits"});
+    for (int i = 0; i < globalInitSize; i++)
+    {
+        auto init = yml.GetMapInSeq({seg, "global_inits"}, i);
+        if (init["var"] == "temp")
+        {
+            mT0 = stod(init["value"]);
+            break;
+        }
+    }
+
+    int localInitSize = yml.SeqSize({seg, "local_inits"});
+    for (int i = 0; i < localInitSize; i++)
+    {
+        auto init = yml.GetMapInSeq({seg, "local_inits"}, i);
+        if (init["var"] == "temp" && init["mode"] == "file")
+        {
+            mT0file = FilePathHelper::Combine(inputDir, init["file"]);
+            break;
+        }
+    }
 
     // Boundaries.
-    seg      = "BOUNDARY";
-    mBoundT1 = 100, mBoundT2 = 20;  // T1 in right and left, T2 in top and bottom.
+    seg = "BOUNDARY";
+
+    int bSize = yml.SeqSize({seg, "boundaries"});
+    for (int i = 0; i < bSize; i++)
+    {
+        auto bound = yml.GetMapInSeq({seg, "boundaries"}, i);
+
+        if (bound["var"] == "temp" && bound["type"] == "first"
+            && bound["mode"] == "constant")
+        {
+            auto patch = bound["patch"];
+            auto value = stod(bound["value"]);
+
+            mPatchBounds["temp"].insert({patch, value});
+        }
+    }
 
     // Sovler.
-    seg = "SOVLER";
-    mK  = 81;  // W / m*K	Conductivity
+    seg = "SOLVER";
+
+    auto solverType = yml.GetMapValueInStr({seg}, "solver").value();
+    mEigenSolver    = yml.GetMapValueInStr({seg, "settings"}, "eigen_solver").value();
 
     // Output.
     seg = "OUTPUT";
 
-    mOutputDir = "D:\\4_resource\\oasis_examples\\heat_conduction_model\\results";
+    int oSize = yml.SeqSize({seg, "outputs"});
+    for (int i = 0; i < oSize; i++)
+    {
+        auto out = yml.GetMapInSeq({seg, "outputs"}, i);
+        if (out["var"] == "temp" && out["fmt"] == "csv")
+        {
+            mOutputVars["temp"] = out["fmt"];
+        }
+    }
+
+    mOutputDir = outDir;
 }
 
 void HeatConductionModel::InitializeSpace()
 {
+    // Initialize grid.
     mGrid->Activate();
 
+    // Initialize temperature field.
     auto size   = mGrid->GetNumCells();
     mTempValues = make_shared<ScalarFieldDbl>(size, mT0);
+
+    if (mT0file.empty()) return;
+
+    CsvLoader loader(mT0file);
+
+    auto ids = loader.GetRowLabels().value();
+    for (const auto &id : ids)
+    {
+        auto idx = stoi(id);
+        auto val = loader.GetCell<double>(0, id).value();
+
+        mTempValues->SetAt(idx, val);
+    }
 }
 
 void HeatConductionModel::InitializeTime()
 {
     // To give a time point.
-    mCurrentTime = make_shared<Time>(DateTime::FromString("2023/1/1 00:00:00"));
+    mCurrentTime = make_shared<Time>(DateTime::FromString(mStart));
 
     mTimeExtent = make_shared<TimeSet>();
     mTimeExtent->AddTime(mCurrentTime);
@@ -103,9 +225,6 @@ void HeatConductionModel::InitializeInputs()
 
 void HeatConductionModel::InitializeOutputs()
 {
-    static const vector<string> validType = {"NODE", "FACE", "CELL"};
-    static const vector<string> validVar  = {"T"};
-
     const auto &outputters =
         any_cast<vector<array<string, 3>>>(mArguments["OUTPUTTERS"]->GetValue());
 
@@ -160,7 +279,8 @@ vector<Coordinate> HeatConductionModel::NodesInCell(int idx)
     }
 
     vector<Coordinate> nodes;
-    for (int i : nodeIdxs) nodes.push_back(mGrid->GetNode(i).coor);
+    for (int i : nodeIdxs)
+        nodes.push_back(mGrid->GetNode(i).coor);
 
     return nodes;
 }
@@ -181,7 +301,7 @@ void HeatConductionModel::PrepareOutputs()
     for (auto &output : mOutputs)
     {
         output->SetValues(
-            make_shared<ValueSet2D>(vector<vector<double>>{{mT0}}, GetTempQuantity()));
+            make_shared<ValueSetDbl>(vector<vector<double>>{{mT0}}, GetTempQuantity()));
     }
 }
 
@@ -218,35 +338,73 @@ void HeatConductionModel::UpdateOutputs(const vector<shared_ptr<IOutput>> &outpu
 
 void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &outputs)
 {
-    vector<double> matrix, source;
-    tie(matrix, source) = GenerateCoeAndSrcMatrix();
-
-    int size = sqrt(matrix.size());
-
-    // Solve Ax=b by Eigen.
-    Eigen::Map<Eigen::MatrixXd> A(matrix.data(), size, size);
-    // 填充A
-    Eigen::Map<Eigen::VectorXd> b(source.data(), size);
-    // // 填充b
-    Eigen::ConjugateGradient<Eigen::MatrixXd> solver;
-    solver.compute(A);
-    if (solver.info() != Eigen::Success)
+    const auto &tempBounds = mPatchBounds["temp"];
+    for (const auto &b : tempBounds)
     {
-        // 分解失败
-        throw runtime_error("compute failed.");
-    }
-    Eigen::VectorXd x = solver.solve(b);
-    if (solver.info() != Eigen::Success)
-    {
-        // 解决失败
-        throw runtime_error("Solve failed.");
+        double value = b.second;
+
+        const auto &bound = make_shared<DirichletBoundary>(value);
+
+        for (int fIdx : mGrid->GetPatchFaceIndexes(b.first))
+        {
+            mSolver->SetBoundary(fIdx, bound);
+        }
     }
 
-    vector<double> solution(&x[0], x.data() + x.cols() * x.rows());
-    for (int i = 0; i < size; i++) mTempValues->SetAt(i, solution[i]);
+    mSolver->SetInitialValue(
+        "temp", variant<double, Vector<double>, Tensor<double>>(mT0));
+    mSolver->SetCoefficient(
+        "temp", variant<double, Vector<double>, Tensor<double>>(-mK));
+
+    mSolver->ParseDiffusionTerm();
+
+    mSolver->ParseSourceTerm();
+
+    mSolver->Scheme();
+
+    mSolver->Solve();
+
+    const auto &solution = mSolver->GetScalarSolutions();
+
+    for (int i = 0; i < solution.Size(); i++)
+        mTempValues->SetAt(i, solution(i));
 
     SaveResult();
 }
+
+
+// void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &outputs)
+// {
+//     vector<double> matrix, source;
+//     tie(matrix, source) = GenerateCoeAndSrcMatrix();
+//
+//     int size = sqrt(matrix.size());
+//
+//     // Solve Ax=b by Eigen.
+//     Eigen::Map<Eigen::MatrixXd> A(matrix.data(), size, size);
+//     // 填充A
+//     Eigen::Map<Eigen::VectorXd> b(source.data(), size);
+//     // // 填充b
+//     Eigen::ConjugateGradient<Eigen::MatrixXd> solver;
+//     solver.compute(A);
+//     if (solver.info() != Eigen::Success)
+//     {
+//         // 分解失败
+//         throw runtime_error("compute failed.");
+//     }
+//     Eigen::VectorXd x = solver.solve(b);
+//     if (solver.info() != Eigen::Success)
+//     {
+//         // 解决失败
+//         throw runtime_error("Solve failed.");
+//     }
+//
+//     vector<double> solution(&x[0], x.data() + x.cols() * x.rows());
+//     for (int i = 0; i < size; i++)
+//         mTempValues->SetAt(i, solution[i]);
+//
+//     SaveResult();
+// }
 
 tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatrix()
 {
@@ -283,23 +441,28 @@ tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatr
             // Boundary conditions.
             if (isBound)
             {
-                if (isEast || isWest)
+                double boundT = 0;
+                for (const auto &bound : mPatchBounds["temp"])
                 {
-                    matrix[i * size + i] -= xCoe;
-                    source[i] -= 2. * xCoe * mBoundT1;
+                    const auto &fIdxs = mGrid->GetPatchFaceIndexes(bound.first);
+                    if (find(fIdxs.begin(), fIdxs.end(), j) != fIdxs.end())
+                    {
+                        boundT = bound.second;
+                        break;
+                    }
                 }
-                else if (isNorth || isSouth)
-                {
-                    matrix[i * size + i] -= yCoe;
-                    source[i] -= 2. * yCoe * mBoundT2;
-                }
+
+                double coe = (isEast || isWest) ? xCoe : yCoe;
+
+                matrix[i * size + i] -= coe;
+                source[i] -= 2. * coe * boundT;
             }
             // interial cell.
             else
             {
-                int cellIdx = (cells[0] == i) ? cells[1] : cells[0];
+                int cIdx = (cells[0] == i) ? cells[1] : cells[0];
 
-                matrix[i * size + cellIdx] = (isEast || isWest) ? xCoe : yCoe;
+                matrix[i * size + cIdx] = (isEast || isWest) ? xCoe : yCoe;
             }
         }
     }
@@ -341,7 +504,8 @@ void HeatConductionModel::SaveResult()
     writer.InsertColumn<double>(0, "temp", mTempValues->Data());
 
     writer.SetRowLabel(-1, "id");
-    for (int i = 0; i < mTempValues->Size(); i++) writer.SetRowLabel(i, to_string(i));
+    for (int i = 0; i < mTempValues->Size(); i++)
+        writer.SetRowLabel(i, to_string(i));
 
     writer.Save();
 }

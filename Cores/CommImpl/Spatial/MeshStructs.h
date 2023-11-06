@@ -20,7 +20,7 @@ namespace CommImpl
 {
 namespace Spatial
 {
-/// @brief The Point data structure.
+/// @brief Mesh node data structure.
 /// (Point type).
 struct Node
 {
@@ -55,8 +55,13 @@ struct Face
     std::vector<int> nodeIndexes;
 
     // Indexes of mesh cells shared
-    // the face (left to right).
+    // the face.
     std::vector<int> cellIndexes;
+
+    // Orientation of cells to face
+    // (Same or opposite to normal)
+    // (Corresponds to cellIndexes)
+    std::vector<int> cellDirs;
 };
 
 
@@ -89,7 +94,7 @@ struct Cell
 struct Mesh
 {
     // Mesh nodes set.
-    std::unordered_map<int, Node> nodes;   
+    std::unordered_map<int, Node> nodes;
 
     // Mesh faces set.
     std::unordered_map<int, Face> faces;

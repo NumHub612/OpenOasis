@@ -18,13 +18,18 @@ namespace OpenOasis
 namespace Utils
 {
 /// @brief JsonLoader class loads and parses the configurations from a json file.
+/// @note  JsonLoader reads the configurations with type.
 class JsonLoader
 {
 private:
     nlohmann::json mJson;
 
 public:
-    JsonLoader(const std::string &filePath);
+    JsonLoader(){};
+    JsonLoader(const std::string &file);
+
+    void LoadByContent(const std::string &content);
+    void LoadByFile(const std::string &file);
 
     bool IsNull(const std::vector<std::string> &levels, const std::string &key) const;
 
@@ -37,21 +42,40 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            if (json.contains(node))
-                json = json.at(node);
-            else
-                return std::nullopt;
+            if (json.contains(node)) { json = json.at(node); }
+            else { return std::nullopt; }
         }
 
-        if (json.contains(key))
-        {
-            return json.at(key);
-        }
-        else
-        {
-            return std::nullopt;
-        }
+        if (json.contains(key)) { return json.at(key); }
+        else { return std::nullopt; }
     }
+
+    template <typename T>
+    std::optional<T> GetValue(
+        const std::vector<std::string> &levels, unsigned int index,
+        const std::string &key) const
+    {
+        nlohmann::json json = mJson;
+        for (const auto &node : levels)
+        {
+            if (json.contains(node)) { json = json.at(node); }
+            else { return std::nullopt; }
+        }
+
+        if (json.is_array() && json.size() > index)
+        {
+            json = json[index];
+
+            if (json.contains(key)) { return json.at(key); }
+            else { return std::nullopt; }
+        }
+        else { return std::nullopt; }
+    }
+
+    int GetArraySize(const std::vector<std::string> &levels) const;
+
+    std::unordered_map<std::string, std::string>
+    GetMap(const std::vector<std::string> &levels) const;
 
     template <typename T>
     std::optional<std::vector<T>>
@@ -60,23 +84,18 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            if (json.contains(node))
-                json = json.at(node);
-            else
-                return std::nullopt;
+            if (json.contains(node)) { json = json.at(node); }
+            else { return std::nullopt; }
         }
 
         if (json.contains(key) && json.at(key).is_array())
         {
             std::vector<T> results;
-            for (const auto &val : json.at(key))
-                results.push_back(val);
+            for (const auto &val : json.at(key)) results.push_back(val);
+
             return results;
         }
-        else
-        {
-            return std::nullopt;
-        }
+        else { return std::nullopt; }
     }
 };
 
@@ -107,10 +126,7 @@ public:
             parentJson = nlohmann::json{{*it, parentJson}};
         }
 
-        for (const auto &[key, value] : parentJson.items())
-        {
-            mJson[key] = value;
-        }
+        for (const auto &[key, value] : parentJson.items()) { mJson[key] = value; }
     }
 
     template <typename T>
@@ -130,10 +146,7 @@ public:
             parentJson = nlohmann::json{{*it, parentJson}};
         }
 
-        for (const auto &[key, value] : parentJson.items())
-        {
-            mJson[key] = value;
-        }
+        for (const auto &[key, value] : parentJson.items()) { mJson[key] = value; }
     }
 };
 

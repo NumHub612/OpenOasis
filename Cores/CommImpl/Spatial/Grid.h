@@ -9,16 +9,18 @@
  ** ***********************************************************************************/
 #pragma once
 #include "MeshStructs.h"
+#include "Cores/CommImpl/Numeric/Vector.h"
+#include "Cores/Utils/MultiIndexMapper.h"
 #include <string>
 #include <memory>
 
 
-namespace OpenOasis
+namespace OpenOasis::CommImpl::Spatial
 {
-namespace CommImpl
-{
-namespace Spatial
-{
+using Numeric::Vector;
+using Utils::MultiIndexMap;
+
+
 /// @brief Grid encapsulate the mesh data for numerical calculation.
 class Grid
 {
@@ -27,12 +29,14 @@ protected:
 
     // The number of original objects in the mesh before
     // refining or coarsening.
-    int mRawNodesNum;
-    int mRawFacesNum;
-    int mRawCellsNum;
+    int mRawNodesNum, mRawCellsNum, mRawFacesNum;
+
+    // The boundary cells and faces.
+    std::vector<int> mBoundaryCells;
+    std::vector<int> mBoundaryFaces;
 
     // The outer or inner boundary patches, each of them
-    // is composed of Node indexes.
+    // is composed of Face indexes.
     std::unordered_map<std::string, std::vector<int>> mPatches;
 
     // The zone enclosed by Face indexes.
@@ -41,10 +45,33 @@ protected:
     // The zone composed of Cell indexes.
     std::unordered_map<std::string, std::vector<int>> mZoneCells;
 
+    // The distances between cell centroids.
+    MultiIndexMap<double> mCenterDists;
+
+    // The distances between cell centroid and boundary face.
+    MultiIndexMap<double> mBoundaryCenterDists;
+
+    // The interfacial intersection point with line of cell centers.
+    std::unordered_map<int, Coordinate> mFaceIntersection;
+
+    // The weight of each cell at face.
+    MultiIndexMap<double> mCellFaceWeight;
+
+    // The distance between face centroid and intersection.
+    std::unordered_map<int, Vector<double>> mFaceCorrVecs;
+
 public:
     virtual ~Grid() = default;
-    Grid(const std::string &meshDir);
     Grid(const std::shared_ptr<Grid> &grid);
+    Grid(
+        std::unordered_map<int, Coordinate>               &nodeCoords,
+        std::unordered_map<int, Coordinate>               &faceCoords,
+        std::unordered_map<int, Coordinate>               &cellCoords,
+        std::unordered_map<int, std::vector<int>>         &faceNodes,
+        std::unordered_map<int, std::vector<int>>         &cellFaces,
+        std::unordered_map<std::string, std::vector<int>> &patches,
+        std::unordered_map<std::string, std::vector<int>> &zones);
+
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for mesh operations.
@@ -52,7 +79,7 @@ public:
 
     /// @brief Get the grid type.
     /// @return Return 1, for 1d grid; 2, for 2d; 3, for 3d; others, for invalid type.
-    virtual int GridType() const = 0;
+    virtual int Type() const = 0;
 
     /// @brief Activate the mesh to extract topological information needed for various
     /// numerical calculations.
@@ -88,6 +115,30 @@ public:
     std::vector<int> GetPatchFaceIndexes(const std::string &patchId) const;
     std::vector<int> GetZoneCellIndexes(const std::string &zoneId) const;
 
+    const std::vector<int> &GetBoundaryFaceIndexes() const;
+
+    const std::vector<int> &GetBoundaryCellIndexes() const;
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods used for mesh analysis.
+    //
+
+    const MultiIndexMap<double> &GetBoundaryCenterDistances() const;
+
+    double GetBoundaryCenterDistance(int cellIdx, int boundaryFaceIdx) const;
+
+    const MultiIndexMap<double> &GetCellCenterDistances() const;
+
+    double GetCellCenterDistance(int cellIdx, int neighborCellIdx) const;
+
+    const MultiIndexMap<double> &GetCellWeightAtFace() const;
+
+    double GetCellWeightAtFace(int cellIdx, int faceIdx) const;
+
+    const std::unordered_map<int, Vector<double>> &GetFaceCorrectionVector() const;
+
+    const Vector<double> &GetFaceCorrectionVector(int faceIdx) const;
+
 protected:
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for activating mesh data.
@@ -97,54 +148,37 @@ protected:
     virtual void CollectFacesSharedNode();
     virtual void CollectCellsSharedFace();
     virtual void CollectCellNeighbors();
-    virtual void CollectCellsInZone() = 0;
+    virtual void CollectCellsInZone(){};
 
     virtual void SortNodes();
 
-    virtual void CalculateFaceCentroid();
-    virtual void CalculateFaceNormal()    = 0;
-    virtual void CalculateFaceArea()      = 0;
-    virtual void CalculateFacePerimeter() = 0;
+    virtual void CalculateFaceDirector();
+    virtual void CalculateFaceNormal(){};
+    virtual void CalculateFaceArea(){};
+    virtual void CalculateFacePerimeter(){};
 
-    virtual void CalculateCellCentroid();
-    virtual void CalculateCellSurface() = 0;
-    virtual void CalculateCellVolume()  = 0;
+    virtual void CalculateCellSurface(){};
+    virtual void CalculateCellVolume(){};
 
     virtual void CheckMesh() const;
 
-protected:
     ///////////////////////////////////////////////////////////////////////////////////
-    // Helper class to load mesh data from csv files.
+    // Methods used for analysing mesh data.
     //
 
-    class MeshLoader
+    virtual void CalculateCellDistances();
+    virtual void CalculateBoundaryCenterDistances();
+
+    virtual void CollectBoundaryFacesAndCells();
+
+    virtual void CalculateFaceIntersections();
+    virtual void CalculateFaceWeights();
+    virtual void CalculateFaceCorrectionVector();
+
+    inline double CalculateDistance(const Coordinate &n1, const Coordinate &n2) const
     {
-    private:
-        std::string       mMeshDir;
-        std::vector<Node> mNodes;
-        std::vector<Face> mFaces;
-        std::vector<Cell> mCells;
-
-    public:
-        MeshLoader(const std::string &meshDir);
-
-        friend class Grid;
-
-        void LoadNodes(const std::string &file = "nodes.csv");
-        void LoadFaces(const std::string &file = "faces.csv");
-        void LoadCells(const std::string &file = "cells.csv");
-
-        std::unordered_map<std::string, std::vector<int>>
-        LoadZones(const std::string &file = "zones.csv");
-
-        std::unordered_map<std::string, std::vector<int>>
-        LoadPatches(const std::string &file = "patches.csv");
-
-    private:
-        void CheckIds(const std::vector<std::string> &ids, const std::string &type);
-    };
+        return sqrt(pow(n1.x - n2.x, 2) + pow(n1.y - n2.y, 2) + pow(n1.z - n2.z, 2));
+    }
 };
 
-}  // namespace Spatial
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  // namespace OpenOasis::CommImpl::Spatial

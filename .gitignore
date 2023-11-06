@@ -1,6 +1,7 @@
 # 忽略的文件  
 VersionInfo.rc
 VersionConfig.h
+FolderConfig.h
 *.log
 FluidsLog
 HeatsLog
