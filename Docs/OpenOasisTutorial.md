@@ -19,7 +19,7 @@ OpenOasis Project Structure:
 |   +-- setup.py              : python 打包脚本
 |   +-- launcher.cpp          : 模块功能加载入口
 |   +-- Cores/                : 数值算法模型集
-|   |   +-- CommImpl/         : 接口的通用实现(算法开发sdk和接口开发sdk)
+|   |   +-- CommImpl/         : 接口的通用实现(算法开发sdk和集成开发sdk)
 |   |   +-- Inc/              : 接口约定
 |   |   +-- SystFluids/       : 流体流动模型集
 |   |   +-- SystHeats/        : 热量流动模型集
