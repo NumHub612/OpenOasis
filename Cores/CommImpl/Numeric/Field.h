@@ -133,6 +133,11 @@ public:
         return mType;
     }
 
+    FieldRange Range() const
+    {
+        return mRange;
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////
     // Operators overrided for field manipulation.
     //

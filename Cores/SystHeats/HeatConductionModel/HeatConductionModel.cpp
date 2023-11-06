@@ -13,7 +13,10 @@
 #include "Cores/CommImpl/ElementSet.h"
 #include "Cores/CommImpl/ValueSet2D.h"
 #include "Cores/CommImpl/IO/logging.h"
+#include "Cores/CommImpl/IO/MeshLoader.h"
 #include "Cores/CommImpl/Spatial/Grid2D.h"
+#include "Cores/CommImpl/Numeric/FvmSolver.h"
+#include "Cores/CommImpl/Numeric/DirichletBoundary.h"
 #include "Cores/Utils/YamlHandler.h"
 #include "Cores/Utils/Exception.h"
 #include "Cores/Utils/StringHelper.h"
@@ -28,7 +31,9 @@ namespace OpenOasis::SystHeats
 {
 using namespace CommImpl;
 using namespace Spatial;
+using namespace Numeric;
 using namespace Utils;
+using namespace IO;
 using namespace std;
 
 const vector<string> HeatConductionModel::sExchangeableStates = {"temp"};
@@ -89,7 +94,19 @@ void HeatConductionModel::InitializeArguments()
     auto meshMode = yml.GetMapValueInStr({seg}, "mesh_mode").value();
     auto meshDir  = FilePathHelper::Combine(inputDir, "mesh");
 
-    mGrid = make_shared<Grid2D>(meshDir);
+    MeshLoader loader(meshDir);
+    loader.Load();
+
+    mGrid = make_shared<Grid2D>(
+        loader.GetNodeCoordinates(),
+        loader.GetFaceCoordinates(),
+        loader.GetCellCoordinates(),
+        loader.GetFaceNodes(),
+        loader.GetCellFaces(),
+        loader.GetPatches(),
+        loader.GetZones());
+
+    mSolver = make_shared<FvmSolver>(mGrid);
 
     // Equation.
     seg = "EQUATION";
@@ -283,8 +300,8 @@ void HeatConductionModel::PrepareOutputs()
 {
     for (auto &output : mOutputs)
     {
-        output->SetValues(make_shared<ValueSetDbl>(
-            vector<vector<double>>{{mT0}}, GetTempQuantity()));
+        output->SetValues(
+            make_shared<ValueSetDbl>(vector<vector<double>>{{mT0}}, GetTempQuantity()));
     }
 }
 
@@ -321,36 +338,73 @@ void HeatConductionModel::UpdateOutputs(const vector<shared_ptr<IOutput>> &outpu
 
 void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &outputs)
 {
-    vector<double> matrix, source;
-    tie(matrix, source) = GenerateCoeAndSrcMatrix();
-
-    int size = sqrt(matrix.size());
-
-    // Solve Ax=b by Eigen.
-    Eigen::Map<Eigen::MatrixXd> A(matrix.data(), size, size);
-    // 填充A
-    Eigen::Map<Eigen::VectorXd> b(source.data(), size);
-    // // 填充b
-    Eigen::ConjugateGradient<Eigen::MatrixXd> solver;
-    solver.compute(A);
-    if (solver.info() != Eigen::Success)
+    const auto &tempBounds = mPatchBounds["temp"];
+    for (const auto &b : tempBounds)
     {
-        // 分解失败
-        throw runtime_error("compute failed.");
-    }
-    Eigen::VectorXd x = solver.solve(b);
-    if (solver.info() != Eigen::Success)
-    {
-        // 解决失败
-        throw runtime_error("Solve failed.");
+        double value = b.second;
+
+        const auto &bound = make_shared<DirichletBoundary>(value);
+
+        for (int fIdx : mGrid->GetPatchFaceIndexes(b.first))
+        {
+            mSolver->SetBoundary(fIdx, bound);
+        }
     }
 
-    vector<double> solution(&x[0], x.data() + x.cols() * x.rows());
-    for (int i = 0; i < size; i++)
-        mTempValues->SetAt(i, solution[i]);
+    mSolver->SetInitialValue(
+        "temp", variant<double, Vector<double>, Tensor<double>>(mT0));
+    mSolver->SetCoefficient(
+        "temp", variant<double, Vector<double>, Tensor<double>>(-mK));
+
+    mSolver->ParseDiffusionTerm();
+
+    mSolver->ParseSourceTerm();
+
+    mSolver->Scheme();
+
+    mSolver->Solve();
+
+    const auto &solution = mSolver->GetScalarSolutions();
+
+    for (int i = 0; i < solution.Size(); i++)
+        mTempValues->SetAt(i, solution(i));
 
     SaveResult();
 }
+
+
+// void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &outputs)
+// {
+//     vector<double> matrix, source;
+//     tie(matrix, source) = GenerateCoeAndSrcMatrix();
+//
+//     int size = sqrt(matrix.size());
+//
+//     // Solve Ax=b by Eigen.
+//     Eigen::Map<Eigen::MatrixXd> A(matrix.data(), size, size);
+//     // 填充A
+//     Eigen::Map<Eigen::VectorXd> b(source.data(), size);
+//     // // 填充b
+//     Eigen::ConjugateGradient<Eigen::MatrixXd> solver;
+//     solver.compute(A);
+//     if (solver.info() != Eigen::Success)
+//     {
+//         // 分解失败
+//         throw runtime_error("compute failed.");
+//     }
+//     Eigen::VectorXd x = solver.solve(b);
+//     if (solver.info() != Eigen::Success)
+//     {
+//         // 解决失败
+//         throw runtime_error("Solve failed.");
+//     }
+//
+//     vector<double> solution(&x[0], x.data() + x.cols() * x.rows());
+//     for (int i = 0; i < size; i++)
+//         mTempValues->SetAt(i, solution[i]);
+//
+//     SaveResult();
+// }
 
 tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatrix()
 {

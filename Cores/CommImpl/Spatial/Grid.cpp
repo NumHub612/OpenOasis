@@ -5,6 +5,7 @@
  ** ***********************************************************************************/
 #include "Grid.h"
 #include "GeoCalculator.h"
+#include "XYGeoTools.h"
 #include "Cores/Utils/Exception.h"
 #include "Cores/Utils/MapHelper.h"
 
@@ -110,8 +111,27 @@ void Grid::Activate()
     CheckMesh();
 
     // Analysis mesh structures.
-    CalculateCellDistances();
-    CalculateBoundaryCenterDistances();
+#pragma omp parallel sections
+    {
+#pragma omp section
+        {
+            CalculateCellDistances();
+        }
+#pragma omp section
+        {
+            CalculateBoundaryCenterDistances();
+        }
+#pragma omp section
+        {
+            CollectBoundaryFacesAndCells();
+        }
+#pragma omp section
+        {
+            CalculateFaceIntersections();
+            CalculateFaceWeights();
+            CalculateFaceCorrectionVector();
+        }
+    }
 }
 
 void Grid::CollectCellsSharedNode()
@@ -194,6 +214,9 @@ void Grid::CalculateFaceDirector()
     }
 }
 
+void Grid::CheckMesh() const
+{}
+
 void Grid::CalculateCellDistances()
 {
     for (int i = 0; i < mRawCellsNum; i++)
@@ -242,8 +265,95 @@ void Grid::CalculateBoundaryCenterDistances()
     }
 }
 
-void Grid::CheckMesh() const
-{}
+void Grid::CollectBoundaryFacesAndCells()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (const auto &face : mMesh.faces)
+    {
+        if (face.second.cellIndexes.size() == 1)
+        {
+            mBoundaryFaces.push_back(face.first);
+            mBoundaryCells.push_back(face.second.cellIndexes[0]);
+        }
+    }
+}
+
+void Grid::CalculateFaceIntersections()
+{
+    // only supported on 2d mesh now.
+#pragma omp parallel for schedule(dynamic)
+    for (int i = 0; i < mRawCellsNum; i++)
+    {
+        const auto &cell = mMesh.cells[i];
+
+        for (int j : cell.faceIndexes)
+        {
+            if (mFaceIntersection.count(j) > 0) continue;
+
+            const auto &face = mMesh.faces[j];
+
+            if (face.cellIndexes.size() != 2)
+            {
+                mFaceIntersection[j] = face.centroid;
+                continue;
+            }
+
+            int cIdx =
+                (face.cellIndexes[0] == i) ? face.cellIndexes[1] : face.cellIndexes[0];
+
+            const auto &c = mMesh.cells[cIdx];
+
+            XYLine l1(cell.centroid.x, cell.centroid.y, c.centroid.x, c.centroid.y);
+
+            Node    n1 = mMesh.nodes[face.nodeIndexes[0]];
+            Node    n2 = mMesh.nodes[face.nodeIndexes[1]];
+            XYPoint p1(n1.coor.x, n1.coor.y);
+            XYPoint p2(n2.coor.x, n2.coor.y);
+            XYLine  l2(p1, p2);
+
+            auto point           = XYGeoTools::CalculateIntersectionPoint(l1, l2);
+            mFaceIntersection[j] = {point.x, point.y, face.centroid.z};
+        }
+    }
+}
+
+void Grid::CalculateFaceWeights()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (int i = 0; i < mRawFacesNum; ++i)
+    {
+        const auto &cellIdxs = mMesh.faces[i].cellIndexes;
+        if (cellIdxs.size() != 2) continue;
+
+        int cIdx1 = cellIdxs[0];
+        int cIdx2 = cellIdxs[1];
+
+        const auto &fPoint  = mFaceIntersection[i];
+        const auto &cPoint1 = mMesh.cells[cIdx1].centroid;
+        const auto &cPoint2 = mMesh.cells[cIdx2].centroid;
+
+        double distCf1 = CalculateDistance(fPoint, cPoint1);
+        double distCf2 = CalculateDistance(fPoint, cPoint2);
+
+        auto index1             = MultiIndex({cIdx1, i});
+        mCellFaceWeight[index1] = distCf1 / (distCf1 + distCf2);
+
+        auto index2             = MultiIndex({cIdx2, i});
+        mCellFaceWeight[index2] = distCf2 / (distCf1 + distCf2);
+    }
+}
+
+void Grid::CalculateFaceCorrectionVector()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (int i = 0; i < mRawFacesNum; ++i)
+    {
+        const auto &p1 = mMesh.faces[i].centroid;
+        const auto &p2 = mFaceIntersection[i];
+
+        mFaceCorrVecs[i] = Vector<double>{p2.x - p1.x, p2.y - p1.y, p2.z - p1.z};
+    }
+}
 
 int Grid::GetRawNumCells() const
 {
@@ -329,5 +439,36 @@ double Grid::GetCellCenterDistance(int cellIdx, int neighborCellIdx) const
 {
     return mCenterDists.at(MultiIndex({cellIdx, neighborCellIdx}));
 }
+
+const vector<int> &Grid::GetBoundaryFaceIndexes() const
+{
+    return mBoundaryFaces;
+}
+
+const vector<int> &Grid::GetBoundaryCellIndexes() const
+{
+    return mBoundaryCells;
+}
+
+const MultiIndexMap<double> &Grid::GetCellWeightAtFace() const
+{
+    return mCellFaceWeight;
+}
+
+double Grid::GetCellWeightAtFace(int cellIdx, int faceIdx) const
+{
+    return mCellFaceWeight.at(MultiIndex({cellIdx, faceIdx}));
+}
+
+const unordered_map<int, Vector<double>> &Grid::GetFaceCorrectionVector() const
+{
+    return mFaceCorrVecs;
+}
+
+const Vector<double> &Grid::GetFaceCorrectionVector(int faceIdx) const
+{
+    return mFaceCorrVecs.at(faceIdx);
+}
+
 
 }  // namespace OpenOasis::CommImpl::Spatial

@@ -18,22 +18,25 @@ vector<int> GeoCalculator::SortNodes(
 {
     vector<int> sortedIdxs(nodeIdxs);
 
-    auto centroid    = CalculateCentroid(nodeIdxs, nodes);
-    int  ignoredAxis = ChooseFoldedAxis(nodeIdxs, nodes);
+    // has error.
 
-    for (int i = 0; i < sortedIdxs.size() - 1; i++)
-    {
-        int curr = sortedIdxs[i];
-        for (int j = 0; j < sortedIdxs.size() - i - 1; j++)
-        {
-            double next = sortedIdxs[j];
-            if (CompareNodeOrder(nodes.at(j), nodes.at(j + 1), centroid, ignoredAxis))
-            {
-                sortedIdxs[j]     = next;
-                sortedIdxs[j + 1] = curr;
-            }
-        }
-    }
+    // auto centroid    = CalculateCentroid(nodeIdxs, nodes);
+    // int  ignoredAxis = ChooseFoldedAxis(nodeIdxs, nodes);
+
+    // for (int i = 0; i < sortedIdxs.size() - 1; i++)
+    // {
+    //     int curr = sortedIdxs[i];
+    //     for (int j = 0; j < sortedIdxs.size() - i - 1; j++)
+    //     {
+    //         double next = sortedIdxs[j];
+    //         if (CompareNodeOrder(nodes.at(j), nodes.at(j + 1), centroid,
+    //         ignoredAxis))
+    //         {
+    //             sortedIdxs[j]     = next;
+    //             sortedIdxs[j + 1] = curr;
+    //         }
+    //     }
+    // }
 
     return sortedIdxs;
 }
@@ -62,19 +65,14 @@ int GeoCalculator::ChooseFoldedAxis(
     {
         for (int j = i; j < num; ++j)
         {
-            if (abs(Xs[i] - Xs[j]) <= EPSILON)
-                axisX += 1;
-            if (abs(Ys[i] - Ys[j]) <= EPSILON)
-                axisY += 1;
-            if (abs(Zs[i] - Zs[j]) <= EPSILON)
-                axisZ += 1;
+            if (abs(Xs[i] - Xs[j]) <= EPSILON) axisX += 1;
+            if (abs(Ys[i] - Ys[j]) <= EPSILON) axisY += 1;
+            if (abs(Zs[i] - Zs[j]) <= EPSILON) axisZ += 1;
         }
     }
 
-    if (axisX > axisY && axisX > axisZ)
-        return 0;
-    if (axisY > axisX && axisY > axisZ)
-        return 1;
+    if (axisX > axisY && axisX > axisZ) return 0;
+    if (axisY > axisX && axisY > axisZ) return 1;
     return 2;
 }
 
@@ -101,19 +99,15 @@ bool GeoCalculator::CompareNodeOrder(
         o  = {centroid.y, centroid.z, 0};
     }
 
-    if (n0.x >= 0 && n1.x < 0)
-        return true;
+    if (n0.x >= 0 && n1.x < 0) return true;
 
-    if (n0.x == 0 && n1.x == 0)
-        return n0.y > n1.y;
+    if (n0.x == 0 && n1.x == 0) return n0.y > n1.y;
 
     double dx0 = n0.x - o.x, dx1 = n1.x - o.x;
     double dy1 = n0.y - o.y, dy0 = n1.y - o.y;
     int    det = dx0 * dy1 - dx1 * dy0;
-    if (det < 0)
-        return true;
-    if (det > 0)
-        return false;
+    if (det < 0) return true;
+    if (det > 0) return false;
 
     int dist0 = dx0 * dx0 + dy0 * dy0;
     int dist1 = dx1 * dx1 + dy1 * dy1;
@@ -123,8 +117,7 @@ bool GeoCalculator::CompareNodeOrder(
 Coordinate GeoCalculator::CalculateCentroid(
     const vector<int> &nodeIdxs, const unordered_map<int, Node> &nodes)
 {
-    if (nodeIdxs.empty())
-        return {};
+    if (nodeIdxs.empty()) return {};
 
     double sumX = 0., sumY = 0., sumZ = 0.;
     for (int idx : nodeIdxs)
@@ -201,10 +194,7 @@ double GeoCalculator::CalculateArea(
     int size = nodeIdxs.size();
 
     // 2D mesh.
-    if (size == 2)
-    {
-        return 0.;
-    }
+    if (size == 2) { return 0.; }
 
     // 3D mesh, calculate face area by Shoelace Theorem in 3d.
     // area = 1/2 * {
@@ -256,10 +246,7 @@ double GeoCalculator::CalculateFacePerimeter(int faceIdx, const Mesh &mesh)
         len += CalculateLength(nodes.at(fNodes[i]), nodes.at(fNodes[i + 1]));
     }
 
-    if (n > 2)
-    {
-        len += CalculateLength(nodes.at(fNodes[n - 1]), nodes.at(fNodes[0]));
-    }
+    if (n > 2) { len += CalculateLength(nodes.at(fNodes[n - 1]), nodes.at(fNodes[0])); }
 
     return len;
 }
@@ -281,10 +268,7 @@ double GeoCalculator::CalculateVolume(
         double vol = ((v1 & v2) * v3) / 6.0;
         return vol;
     }
-    else
-    {
-        throw NotImplementedException();
-    }
+    else { throw NotImplementedException(); }
 }
 
 double GeoCalculator::CalculateCellVolume(int cellIdx, const Mesh &mesh)

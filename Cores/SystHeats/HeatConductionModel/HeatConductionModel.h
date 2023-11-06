@@ -13,6 +13,7 @@
 #include "Cores/CommImpl/Input.h"
 #include "Cores/CommImpl/Spatial/Grid.h"
 #include "Cores/CommImpl/Numeric/ScalarField.h"
+#include "Cores/CommImpl/Numeric/Solver.h"
 
 
 namespace OpenOasis
@@ -21,6 +22,7 @@ namespace SystHeats
 {
 using CommImpl::LinkableComponent;
 using CommImpl::Numeric::ScalarFieldDbl;
+using CommImpl::Numeric::Solver;
 using CommImpl::Spatial::Grid;
 using CommImpl::Spatial::Coordinate;
 
@@ -33,6 +35,7 @@ private:
 
     std::shared_ptr<Grid>           mGrid;
     std::shared_ptr<ScalarFieldDbl> mTempValues;
+    std::shared_ptr<Solver>         mSolver;
 
     double      mT0;
     std::string mT0file;

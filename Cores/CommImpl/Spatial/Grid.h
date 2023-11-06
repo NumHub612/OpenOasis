@@ -9,7 +9,7 @@
  ** ***********************************************************************************/
 #pragma once
 #include "MeshStructs.h"
-#include "Cores/CommImpl/Numeric/ScalarField.h"
+#include "Cores/CommImpl/Numeric/Vector.h"
 #include "Cores/Utils/MultiIndexMapper.h"
 #include <string>
 #include <memory>
@@ -17,7 +17,7 @@
 
 namespace OpenOasis::CommImpl::Spatial
 {
-using Numeric::ScalarFieldDbl;
+using Numeric::Vector;
 using Utils::MultiIndexMap;
 
 
@@ -30,6 +30,10 @@ protected:
     // The number of original objects in the mesh before
     // refining or coarsening.
     int mRawNodesNum, mRawCellsNum, mRawFacesNum;
+
+    // The boundary cells and faces.
+    std::vector<int> mBoundaryCells;
+    std::vector<int> mBoundaryFaces;
 
     // The outer or inner boundary patches, each of them
     // is composed of Face indexes.
@@ -46,6 +50,15 @@ protected:
 
     // The distances between cell centroid and boundary face.
     MultiIndexMap<double> mBoundaryCenterDists;
+
+    // The interfacial intersection point with line of cell centers.
+    std::unordered_map<int, Coordinate> mFaceIntersection;
+
+    // The weight of each cell at face.
+    MultiIndexMap<double> mCellFaceWeight;
+
+    // The distance between face centroid and intersection.
+    std::unordered_map<int, Vector<double>> mFaceCorrVecs;
 
 public:
     virtual ~Grid() = default;
@@ -102,6 +115,10 @@ public:
     std::vector<int> GetPatchFaceIndexes(const std::string &patchId) const;
     std::vector<int> GetZoneCellIndexes(const std::string &zoneId) const;
 
+    const std::vector<int> &GetBoundaryFaceIndexes() const;
+
+    const std::vector<int> &GetBoundaryCellIndexes() const;
+
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for mesh analysis.
     //
@@ -113,6 +130,14 @@ public:
     const MultiIndexMap<double> &GetCellCenterDistances() const;
 
     double GetCellCenterDistance(int cellIdx, int neighborCellIdx) const;
+
+    const MultiIndexMap<double> &GetCellWeightAtFace() const;
+
+    double GetCellWeightAtFace(int cellIdx, int faceIdx) const;
+
+    const std::unordered_map<int, Vector<double>> &GetFaceCorrectionVector() const;
+
+    const Vector<double> &GetFaceCorrectionVector(int faceIdx) const;
 
 protected:
     ///////////////////////////////////////////////////////////////////////////////////
@@ -143,6 +168,12 @@ protected:
 
     virtual void CalculateCellDistances();
     virtual void CalculateBoundaryCenterDistances();
+
+    virtual void CollectBoundaryFacesAndCells();
+
+    virtual void CalculateFaceIntersections();
+    virtual void CalculateFaceWeights();
+    virtual void CalculateFaceCorrectionVector();
 
     inline double CalculateDistance(const Coordinate &n1, const Coordinate &n2) const
     {

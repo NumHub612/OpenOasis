@@ -61,7 +61,7 @@ void Grid2D::CalculateFaceArea()
 #pragma omp parallel for schedule(dynamic)
     for (int i = 0; i < mRawFacesNum; i++)
     {
-        mMesh.faces[i].area = 0.0;
+        mMesh.faces[i].area = GeoCalculator::CalculateFacePerimeter(i, mMesh);
     }
 }
 
