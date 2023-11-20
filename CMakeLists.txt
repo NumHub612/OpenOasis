@@ -21,9 +21,9 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 # -------------------------------------------------------------
 # 设置平台类型
 # -------------------------------------------------------------
-set(platform "win")
 if (CMAKE_HOST_WIN32)
     set(WINDOWS 1)
+    set(platform "win")
 elseif (CMAKE_HOST_APPLE)
     set(MACOS 1)
     set(platform "mac")
@@ -38,7 +38,6 @@ endif ()
 # -------------------------------------------------------------
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
-find_package(OpenMP)
 
 
 # -------------------------------------------------------------
@@ -77,9 +76,12 @@ message(STATUS "${PROJECT_LOGO}")
 # -------------------------------------------------------------
 option(ENABLE_PYLIB "-- If generating python3 packages" OFF)
 if (ENABLE_PYLIB)
+    find_package(Pybind11 REQUIRED 2.11)
+    find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+
     set(PYBIND11_PYTHON_VERSION 3)
     set(Python_ADDITIONAL_VERSIONS 3.9 3.8 3.7 3.6)
-    message(STATUS "Generating python3 packages(ENABLE_PYLIB): ${ENABLE_PYLIB}")
+    message(STATUS "Generating python3 packages: ${ENABLE_PYLIB}")
 endif ()
 
 option(ENABLE_TESTS "-- If runing test" OFF)
@@ -87,6 +89,7 @@ if (ENABLE_TESTS)
     enable_testing()
     message(STATUS "Runing test: ${ENABLE_TESTS}")
 endif()
+find_package(OpenMP REQUIRED)
 
 
 # -------------------------------------------------------------
@@ -96,12 +99,8 @@ set(RootDir  ${PROJECT_SOURCE_DIR})
 file(GLOB_RECURSE ToolsSrc ${RootDir}/Tools/*.cpp ${RootDir}/Tools/*.cc ${RootDir}/Tools/*.c) 
 file(GLOB driver "launcher.cpp")
 
-list(FILTER ToolsSrc EXCLUDE REGEX ".*/Libigl/.*")
 if (NOT ENABLE_TESTS)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Catch2/.*")
-endif()
-if(NOT ENABLE_PYLIB)
-    list(FILTER ToolsSrc EXCLUDE REGEX ".*/Pybind11/.*")
 endif()
 
 set(CoreDir ${RootDir}/Cores)
@@ -118,7 +117,7 @@ file(GLOB_RECURSE HeatSrc ${HeatDir}/*.cpp ${HeatDir}/*.c)
 
 
 # -------------------------------------------------------------
-# 公共模块静态库编译（用于各子系统链接）
+# 公共模块静态库编译
 # -------------------------------------------------------------
 set(CommLib "CommLib")
 add_library(${CommLib}  STATIC  ${ToolsSrc} ${CommSrc} ${UtilSrc})
@@ -130,17 +129,9 @@ set_target_properties(${CommLib} PROPERTIES PREFIX "")
 
 
 # -------------------------------------------------------------
-# 生成 PYTHON 包（注意顺序，因为pybind11与find_package冲突）
+# 生成 PYTHON 包
 # -------------------------------------------------------------
-if(ENABLE_PYLIB)
-    set(PybindDir  ${PROJECT_SOURCE_DIR}/Tools/Pybind11/share/cmake/pybind11)
-    include(${PybindDir}/FindPythonLibsNew.cmake)
-    include(${PybindDir}/pybind11Config.cmake)
-    include(${PybindDir}/pybind11ConfigVersion.cmake)
-    include(${PybindDir}/pybind11Targets.cmake)
-    include(${PybindDir}/pybind11Tools.cmake)
-
-    #-- 生成模块（模块名必须与代码中设置的模块名一致）。       
+if(ENABLE_PYLIB)       
     set(PackageName "PyOasis")  
     pybind11_add_module(${PackageName} ${FluidSrc} ${HeatSrc} ${WrapperSrc})
     target_include_directories(${PackageName} 
@@ -160,9 +151,6 @@ add_subdirectory(${CoreDir}/SystHeats)
 # -------------------------------------------------------------
 # 生成可执行文件
 # -------------------------------------------------------------
-if (ENABLE_PYLIB)
-    find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
-endif()
 add_executable(${ProjectName} ${driver})
 #-- 链接库。
 target_link_libraries(${ProjectName} 
@@ -185,11 +173,12 @@ endif()
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
     PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"
-    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\" 
+    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
     )
 if (ENABLE_PYLIB)
     target_include_directories(${ProjectName}  
         PUBLIC  ${Python3_INCLUDE_DIRS}
+        PUBLIC  ${Pybind11_INCLUDE_DIR}
         )
 endif()
 

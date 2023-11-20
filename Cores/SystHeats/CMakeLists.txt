@@ -32,7 +32,6 @@ target_link_libraries(${ModuleName} PUBLIC ${CommLib})
 if (LINUX)
     target_link_libraries(${ModuleName} PUBLIC dl)
 endif()
-# find_package(OpenMP)
 if (OpenMP_CXX_FOUND)
     target_link_libraries(${ModuleName} 
 	PUBLIC OpenMP::OpenMP_CXX
