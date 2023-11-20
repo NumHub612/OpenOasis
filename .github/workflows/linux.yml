@@ -40,7 +40,7 @@ jobs:
       - name: CMake Build and Install
         run: |
           export Pybind11_DIR=/usr/local/share/cmake/pybind11/
-          ls
+          ls $Pybind11_DIR
           cd ${{ github.workspace }}
           mkdir build
           cd build
