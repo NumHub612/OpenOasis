@@ -36,7 +36,7 @@ jobs:
           cd build
           cmake ..
           sudo make install
-          export PATH=/usr/local/share/cmake/:$PATH
+          export PATH=/usr/local/share/cmake/pybind11/:$PATH
         shell: bash
       - name: CMake Build and Install
         run: |
