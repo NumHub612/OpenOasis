@@ -30,8 +30,6 @@ jobs:
         shell: bash
       - name: Install Third party library
         run: |
-          echo cd ${{ github.workspace }}
-          cd ${{ github.workspace }}
           git clone https://github.com/pybind/pybind11.git
           cd  pybind11
           mkdir build
