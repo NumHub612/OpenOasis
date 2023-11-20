@@ -28,15 +28,17 @@ jobs:
           g++ --version
           ls /usr/bin/gcc*
         shell: bash
-      # - name: Install Third party library
-      #   run: |
-      #     echo cd ${{ github.workspace }}
-      #     cd ${{ github.workspace }}
-      #     echo ls
-      #     ls
-      #     sudo apt-get update
-      #     sudo apt-get install libhdf5-dev libcgns-dev libmetis-dev libmpich-dev -y
-      #   shell: bash
+      - name: Install Third party library
+        run: |
+          echo cd ${{ github.workspace }}
+          cd ${{ github.workspace }}
+          git clone https://github.com/pybind/pybind11.git
+          cd  pybind11
+          mkdir build
+          cd build
+          cmake ..
+          sudo make install
+        shell: bash
       - name: CMake Build and Install
         run: |
           cd ${{ github.workspace }}
