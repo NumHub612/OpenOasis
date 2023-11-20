@@ -39,10 +39,11 @@ jobs:
         shell: bash
       - name: CMake Build and Install
         run: |
+          export Pybind11_DIR=/usr/local/share/cmake/pybind11/
+          ls
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          export Pybind11_DIR=/usr/local/share/cmake/pybind11/
           cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
           cmake --build . --config Release
           ctest -C Release -VV
