@@ -17,8 +17,8 @@ endif()
 
 # 配置模块信息。
 set(PropertyDir "${MoudelDir}/export")
-set(VersionInfoRc "${PropertyDir}/VersionConfig.h")
-configure_file("${PropertyDir}/VersionConfig.h.in" "${PropertyDir}/VersionConfig.h")
+set(VersionInfoRc "${PropertyDir}/OasisHeatsVersion.h")
+configure_file("${PropertyDir}/OasisHeatsVersion.h.in" "${PropertyDir}/OasisHeatsVersion.h")
 if(MSVC)
     list(APPEND VersionInfoRc "${PropertyDir}/VersionInfo.rc")
     configure_file("${PropertyDir}/VersionInfo.rc.in" "${PropertyDir}/VersionInfo.rc")
