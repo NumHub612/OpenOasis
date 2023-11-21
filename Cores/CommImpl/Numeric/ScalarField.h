@@ -28,14 +28,14 @@ public:
     ScalarField(std::size_t size, T val = 0, FieldRange range = FieldRange::CELL) :
         Field<T>(size, val)
     {
-        mRange = range;
-        mType  = FieldType::SCALAR;
+        this->mRange = range;
+        this->mType  = FieldType::SCALAR;
     }
 
     ScalarField(FieldRange range = FieldRange::CELL)
     {
-        mRange = range;
-        mType  = FieldType::SCALAR;
+        this->mRange = range;
+        this->mType  = FieldType::SCALAR;
     }
 };
 

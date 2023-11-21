@@ -23,8 +23,8 @@ public:
 
     VectorField(FieldRange range = FieldRange::CELL)
     {
-        mRange = range;
-        mType  = FieldType::VECTOR;
+        this->mRange = range;
+        this->mType  = FieldType::VECTOR;
     }
 
     VectorField(
@@ -32,8 +32,8 @@ public:
         FieldRange range = FieldRange::CELL) :
         Field<Vector<T, N>>(size, val)
     {
-        mRange = range;
-        mType  = FieldType::VECTOR;
+        this->mRange = range;
+        this->mType  = FieldType::VECTOR;
     }
 };
 
