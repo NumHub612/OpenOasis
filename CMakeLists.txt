@@ -76,7 +76,7 @@ message(STATUS "${PROJECT_LOGO}")
 # -------------------------------------------------------------
 option(ENABLE_PYLIB "-- If generating python3 packages" OFF)
 if (ENABLE_PYLIB)
-    find_package(Pybind11 REQUIRED 2.12.0)
+    find_package(pybind11 REQUIRED)
     find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 
     set(PYBIND11_PYTHON_VERSION 3)
@@ -178,7 +178,7 @@ target_include_directories(${ProjectName}
 if (ENABLE_PYLIB)
     target_include_directories(${ProjectName}  
         PUBLIC  ${Python3_INCLUDE_DIRS}
-        PUBLIC  ${Pybind11_INCLUDE_DIR}
+        PUBLIC  ${pybind11_INCLUDE_DIR}
         )
 endif()
 
