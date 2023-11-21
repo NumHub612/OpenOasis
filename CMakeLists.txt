@@ -200,7 +200,7 @@ if (ENABLE_TESTS)
         ) 
     add_test(  
         NAME ${ProjectTestName}
-        COMMAND ${ProjectTestName} -s -r console -o oasis_test_report.txt 
+        COMMAND ${ProjectTestName} -v -s -r console -o oasis_test_report.txt 
         )
 endif()
 
