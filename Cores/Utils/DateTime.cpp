@@ -166,18 +166,9 @@ TimeSpan TimeSpan::Duration() const
 
 int TimeSpan::Compare(const TimeSpan &ts1, const TimeSpan &ts2)
 {
-    if (ts1.mDuration < ts2.mDuration)
-    {
-        return -1;
-    }
-    else if (ts1.mDuration > ts2.mDuration)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    if (ts1.mDuration < ts2.mDuration) { return -1; }
+    else if (ts1.mDuration > ts2.mDuration) { return 1; }
+    else { return 0; }
 }
 
 TimeSpan TimeSpan::FromString(const string &str)
@@ -214,8 +205,7 @@ string TimeSpan::ToString(const TimeSpan &ts)
     double seconds = dur;
 
     stringstream buff;
-    if (isNegative)
-        buff << "-";
+    if (isNegative) buff << "-";
 
     buff << setw(2) << setfill('0') << hours << ":" << setw(2) << setfill('0')
          << minutes << ":" << fixed << setprecision(6) << seconds;
@@ -416,28 +406,16 @@ int DateTime::DaysInMonth(int year, int month)
     {
         d = (((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) ? 29 : 28);
     }
-    else
-    {
-        d = days[month - 1];
-    }
+    else { d = days[month - 1]; }
 
     return d;
 }
 
 int DateTime::Compare(const DateTime &t1, const DateTime &t2)
 {
-    if (t2.GetTimeStampInMicroSecs() > t1.GetTimeStampInMicroSecs())
-    {
-        return -1;
-    }
-    else if (t2.GetTimeStampInMicroSecs() < t1.GetTimeStampInMicroSecs())
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    if (t2.GetTimeStampInMicroSecs() > t1.GetTimeStampInMicroSecs()) { return -1; }
+    else if (t2.GetTimeStampInMicroSecs() < t1.GetTimeStampInMicroSecs()) { return 1; }
+    else { return 0; }
 }
 
 string DateTime::ToString(const DateTime &obj, const string &fmt)
@@ -449,8 +427,7 @@ string DateTime::ToString(const DateTime &obj, const string &fmt)
     time_t tt(SysClock::to_time_t(SysClock::time_point(seconds_diff)));
 
     char temp[30];
-    if (!strftime(temp, 30, fmt.c_str(), localtime(&tt)))
-        return "null";
+    if (!strftime(temp, 30, fmt.c_str(), localtime(&tt))) return "null";
 
     double subseconds = (tp.time_since_epoch() - seconds_diff).count();
     return string(temp) + "." + to_string((int)subseconds);
@@ -462,7 +439,9 @@ DateTime DateTime::FromString(const string &str, const string &fmt)
     tm           t;
     ss >> get_time(&t, fmt.c_str());
 
-    time_t tt = mktime(&t);
+    t.tm_isdst = -1;
+    time_t tt  = mktime(&t);
+    if (tt == -1) { throw runtime_error("DateTime transform error."); }
     return SysClock::from_time_t(tt);
 }
 

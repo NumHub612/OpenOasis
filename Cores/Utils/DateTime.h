@@ -186,7 +186,7 @@ public:
     /// @brief Gets the time point.
     TimePoint GetTimePoint() const;
 
-    /// @brief Gets the time stamp calculated since 1970/01/01 08:00:00.
+    /// @brief Gets the time stamp calculated since 1970-01-01 00:00:00.
     int64_t GetTimeStampInMicroSecs() const;
     double  GetTimeStampInDays() const;
 
@@ -214,7 +214,7 @@ public:
     /// @brief Gets a new `DateTime` with current date and time.
     static DateTime Now();
 
-    /// @brief Gets a new `DateTime` with origin date time(1970/01/01 8:0:0).
+    /// @brief Gets a new `DateTime` with origin date time(1970-01-01 0:0:0).
     static DateTime Zero();
 
     /// @brief Returns the days in the specified year and month.

@@ -47,7 +47,11 @@ string YamlLoader::GetFileContents(const string &filename)
     if (sz)
     {
         rewind(fp);
-        fread(&(cc)[0], 1, cc.size(), fp);
+        if (fread(&(cc)[0], 1, cc.size(), fp) != cc.size())
+        {
+            throw runtime_error(
+                StringHelper::FormatSimple("File {} loading failure.", filename));
+        }
     }
     fclose(fp);
 

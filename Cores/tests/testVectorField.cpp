@@ -110,12 +110,12 @@ TEST_CASE("VectorField template test")
     REQUIRE(vec3(1) == 2.0);
 
     auto func1 = [](Vector<double, 3> &elem) { elem += 1.0; };
-    auto func2 = [](const Vector<double, 3> &elem) { printf("%f\n", elem(0)); };
+    // auto func2 = [](const Vector<double, 3> &elem) { printf("%f\n", elem(0)); };
 
     vecField.ForEach(func1);
     const auto &vec4 = vecField(3);
     REQUIRE(vec4(0) == 2.0);
     REQUIRE(vec4(1) == 3.0);
 
-    vecField.ForEach(func2);
+    // vecField.ForEach(func2);
 }

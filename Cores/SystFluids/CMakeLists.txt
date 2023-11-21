@@ -17,8 +17,8 @@ endif()
 
 # 配置模块信息。
 set(PropertyDir "${MoudelDir}/export")
-set(VersionInfoRc "${PropertyDir}/VersionConfig.h")
-configure_file("${PropertyDir}/VersionConfig.h.in" "${PropertyDir}/VersionConfig.h")
+set(VersionInfoRc "${PropertyDir}/OasisFluidsVersion.h")
+configure_file("${PropertyDir}/OasisFluidsVersion.h.in" "${PropertyDir}/OasisFluidsVersion.h")
 if(MSVC)
     list(APPEND VersionInfoRc "${PropertyDir}/VersionInfo.rc")
     configure_file("${PropertyDir}/VersionInfo.rc.in" "${PropertyDir}/VersionInfo.rc")
@@ -32,7 +32,6 @@ target_link_libraries(${ModuleName} PUBLIC ${CommLib})
 if (LINUX)
     target_link_libraries(${ModuleName} PUBLIC dl)
 endif()
-# find_package(OpenMP)
 if (OpenMP_CXX_FOUND)
     target_link_libraries(${ModuleName} 
 	PUBLIC OpenMP::OpenMP_CXX

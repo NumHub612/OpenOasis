@@ -70,14 +70,18 @@ TEST_CASE("DateTime tests")
 {
     SECTION("test member functions")
     {
+        int timeZoneOffset = 0;
+
         DateTime dt;
         REQUIRE(dt.Year() == 1970);
         REQUIRE(dt.Month() == 1);
         REQUIRE(dt.Day() == 1);
-        REQUIRE(dt.Hour() == 8);
         REQUIRE(dt.Minute() == 0);
         REQUIRE(dt.Second() == 0);
         REQUIRE(dt.Millisecond() == 0);
+
+        timeZoneOffset = 8 - dt.Hour();
+        dt.AddSeconds(timeZoneOffset * 3600);
         REQUIRE_THAT(DateTime::ToString(dt), Catch::Contains("1970-01-01 08:00:00.0"));
 
         DateTime dt2(2023, 2, 15, 7);
@@ -88,24 +92,24 @@ TEST_CASE("DateTime tests")
         REQUIRE(dt2.Minute() == 0);
         REQUIRE(dt2.Second() == 0);
         REQUIRE(dt2.Millisecond() == 0);
-        REQUIRE_THAT(DateTime::ToString(dt2), Catch::Contains("2023/02/15 07:00:00.0"));
+        REQUIRE_THAT(DateTime::ToString(dt2), Catch::Contains("2023-02-15 07:00:00.0"));
 
         dt.AddDays(1.5);
-        REQUIRE_THAT(DateTime::ToString(dt), Catch::Contains("1970/01/02 20:00:00.0"));
+        REQUIRE_THAT(DateTime::ToString(dt), Catch::Contains("1970-01-02 20:00:00.0"));
         REQUIRE(dt.Day() == 2);
 
         dt.AddSeconds(12.2);
         REQUIRE_THAT(
-            DateTime::ToString(dt), Catch::Contains("1970/01/02 20:00:12.200"));
+            DateTime::ToString(dt), Catch::Contains("1970-01-02 20:00:12.200"));
         REQUIRE(dt.Second() == 12);
 
         dt.AddSeconds(3600.0);
         REQUIRE_THAT(
-            DateTime::ToString(dt), Catch::Contains("1970/01/02 21:00:12.200"));
+            DateTime::ToString(dt), Catch::Contains("1970-01-02 21:00:12.200"));
         REQUIRE(dt.Second() == 12);
 
         int64_t timestamp = (dt.Day() - 1) * 24. * 3600. * 1e6
-                            + (dt.Hour() - 8) * 3600. * 1.e6 + dt.Minute() * 60. * 1e6
+                            + (dt.Hour() - 8 + timeZoneOffset) * 3600. * 1.e6 + dt.Minute() * 60. * 1e6
                             + dt.Second() * 1e6 + dt.Millisecond() * 1e3
                             + dt.Microsecond();
         REQUIRE(dt.GetTimeStampInMicroSecs() == timestamp);
@@ -138,10 +142,6 @@ TEST_CASE("DateTime tests")
         REQUIRE(dt3.Year() == 1970);
         REQUIRE(dt3.Month() == 1);
         REQUIRE(dt3.Day() == 1);
-        REQUIRE(dt3.Hour() == 8);
-        REQUIRE(dt3.Minute() == 0);
-        REQUIRE(dt3.Second() == 0);
-        REQUIRE(dt3.Millisecond() == 0);
 
         DateTime dt4 = DateTime::FromString(dtStr, "%m-%d-%Y %H:%M:%S");
         REQUIRE(DateTime::Compare(dt1, dt4) == 0);

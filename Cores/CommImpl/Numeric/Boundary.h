@@ -9,6 +9,7 @@
  ** ***********************************************************************************/
 #pragma once
 #include <string>
+#include <cmath>
 
 
 namespace OpenOasis::CommImpl::Numeric

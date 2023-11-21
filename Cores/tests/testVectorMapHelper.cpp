@@ -67,8 +67,16 @@ TEST_CASE("MapHelper tests")
     REQUIRE(MapHelper::GetValues(map1) != vector<string>{"a", "b", "c", "d"});
 
     unordered_map<int, string> map2{{1, "a"}, {2, "b"}, {3, "c"}};
-    REQUIRE(MapHelper::GetKeys(map2) == vector<int>{1, 2, 3});
-    REQUIRE(MapHelper::GetKeys(map2) != vector<int>{1, 2, 3, 4});
-    REQUIRE(MapHelper::GetValues(map2) == vector<string>{"a", "b", "c"});
-    REQUIRE(MapHelper::GetValues(map2) != vector<string>{"a", "b", "c", "d"});
+
+    const vector<int> keys = {1, 2, 3};
+    REQUIRE(MapHelper::GetKeys(map2).size() == keys.size());
+    for(int val: MapHelper::GetKeys(map2))
+        REQUIRE(VectorHelper::IsContained(keys, val));
+    // REQUIRE(MapHelper::GetKeys(map2) == vector<int>{1, 2, 3});
+
+    const vector<string> values = {"a", "b", "c"};
+    REQUIRE(MapHelper::GetValues(map2).size() == values.size());
+    for(const auto& val: MapHelper::GetValues(map2))
+        REQUIRE(VectorHelper::IsContained(values, val));
+    // REQUIRE(MapHelper::GetValues(map2) == vector<string>{"a", "b", "c"});
 }

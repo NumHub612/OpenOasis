@@ -23,8 +23,8 @@ public:
 
     TensorField(FieldRange range = FieldRange::CELL)
     {
-        mRange = range;
-        mType  = FieldType::TENSOR;
+        this->mRange = range;
+        this->mType  = FieldType::TENSOR;
     }
 
     TensorField(
@@ -32,8 +32,8 @@ public:
         FieldRange range = FieldRange::CELL) :
         Field<Tensor<T>>(size, val)
     {
-        mRange = range;
-        mType  = FieldType::TENSOR;
+        this->mRange = range;
+        this->mType  = FieldType::TENSOR;
     }
 };
 
