@@ -30,12 +30,13 @@ jobs:
         shell: bash
       - name: Install Third party library
         run: |
-          git clone -b v2.11.0 --depth=1 https://github.com/pybind/pybind11.git
+          git clone -b v2.12.0 --depth=1 https://github.com/pybind/pybind11.git
           cd  pybind11
           mkdir build
           cd build
           cmake ..
-          sudo make install
+          cmake --build . --config Release
+          sudo cmake --install .
         shell: bash
       - name: CMake Build and Install
         run: |
