@@ -109,7 +109,7 @@ TEST_CASE("DateTime tests")
         REQUIRE(dt.Second() == 12);
 
         int64_t timestamp = (dt.Day() - 1) * 24. * 3600. * 1e6
-                            + (dt.Hour() - 8) * 3600. * 1.e6 + dt.Minute() * 60. * 1e6
+                            + (dt.Hour() - 8 + timeZoneOffset) * 3600. * 1.e6 + dt.Minute() * 60. * 1e6
                             + dt.Second() * 1e6 + dt.Millisecond() * 1e3
                             + dt.Microsecond();
         REQUIRE(dt.GetTimeStampInMicroSecs() == timestamp);
