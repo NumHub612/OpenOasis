@@ -200,7 +200,7 @@ if (ENABLE_TESTS)
         ) 
     add_test(  
         NAME ${ProjectTestName}
-        COMMAND ${ProjectTestName} -v --reporter compact --success
+        COMMAND ${ProjectTestName} -v --reporter compact
         )
 endif()
 
