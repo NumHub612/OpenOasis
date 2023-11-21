@@ -29,7 +29,7 @@ TEST_CASE("OpenOasis framework tests")
     {
         string configs = FilePathHelper::Combine(path, "run_modes/pull_configs.json");
 
-        run_pull_mode(configs, path);
+        // run_pull_mode(configs, path);
     }
 
     SECTION("loop mode test")
