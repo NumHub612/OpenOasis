@@ -76,8 +76,8 @@ message(STATUS "${PROJECT_LOGO}")
 # -------------------------------------------------------------
 option(ENABLE_PYLIB "-- If generating python3 packages" OFF)
 if (ENABLE_PYLIB)
-    find_package(pybind11 REQUIRED)
     find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+    find_package(pybind11 REQUIRED)
 
     set(PYBIND11_PYTHON_VERSION 3)
     set(Python_ADDITIONAL_VERSIONS 3.9 3.8 3.7 3.6)

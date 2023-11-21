@@ -50,7 +50,7 @@ jobs:
       - name: Ctest
         run: |
           cd ${{ github.workspace }}/build
-          ctest -C Release -VV
+          ctest --output-on-failure -C Release -VV
         shell: bash 
       - name: CMake Install
         run: |
