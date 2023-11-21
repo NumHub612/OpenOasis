@@ -8,8 +8,8 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Tools/Spdlog/spdlog.h"
-#include "Tools/Spdlog/sinks/rotating_file_sink.h"
+#include "Tools/spdlog/spdlog.h"
+#include "Tools/spdlog/sinks/rotating_file_sink.h"
 
 
 namespace OpenOasis
