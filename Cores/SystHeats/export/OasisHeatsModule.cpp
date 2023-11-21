@@ -1,5 +1,5 @@
 #include "OasisHeatsModule.h"
-#include "VersionConfig.h"
+#include "OasisHeatsVersion.h"
 #include "Cores/SystHeats/HeatConductionModel/HeatConductionModel.h"
 
 

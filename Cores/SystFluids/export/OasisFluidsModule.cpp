@@ -1,5 +1,5 @@
 #include "OasisFluidsModule.h"
-#include "VersionConfig.h"
+#include "OasisFluidsVersion.h"
 #include "Cores/SystFluids/Hydrologics/RainfallModule.h"
 #include "Cores/SystFluids/Hydrologics/RunoffModule.h"
 #include "Cores/SystFluids/Hydrologics/RiverModule.h"
