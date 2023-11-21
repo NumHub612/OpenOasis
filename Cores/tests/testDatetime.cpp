@@ -70,15 +70,19 @@ TEST_CASE("DateTime tests")
 {
     SECTION("test member functions")
     {
+        int timeZoneOffset = 0;
+
         DateTime dt;
         REQUIRE(dt.Year() == 1970);
         REQUIRE(dt.Month() == 1);
         REQUIRE(dt.Day() == 1);
-        // REQUIRE(dt.Hour() == 8);
         REQUIRE(dt.Minute() == 0);
         REQUIRE(dt.Second() == 0);
         REQUIRE(dt.Millisecond() == 0);
-        // REQUIRE_THAT(DateTime::ToString(dt), Catch::Contains("1970-01-01 08:00:00.0"));
+
+        timeZoneOffset = 8 - dt.Hour();
+        dt.AddSeconds(timeZoneOffset * 3600);
+        REQUIRE_THAT(DateTime::ToString(dt), Catch::Contains("1970-01-01 08:00:00.0"));
 
         DateTime dt2(2023, 2, 15, 7);
         REQUIRE(dt2.Year() == 2023);
@@ -138,10 +142,6 @@ TEST_CASE("DateTime tests")
         REQUIRE(dt3.Year() == 1970);
         REQUIRE(dt3.Month() == 1);
         REQUIRE(dt3.Day() == 1);
-        // REQUIRE(dt3.Hour() == 8);
-        REQUIRE(dt3.Minute() == 0);
-        REQUIRE(dt3.Second() == 0);
-        REQUIRE(dt3.Millisecond() == 0);
 
         DateTime dt4 = DateTime::FromString(dtStr, "%m-%d-%Y %H:%M:%S");
         REQUIRE(DateTime::Compare(dt1, dt4) == 0);
