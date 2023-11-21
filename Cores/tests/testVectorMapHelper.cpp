@@ -68,13 +68,13 @@ TEST_CASE("MapHelper tests")
 
     unordered_map<int, string> map2{{1, "a"}, {2, "b"}, {3, "c"}};
 
-    const vector<int> keys = {1, 2, 3, 4};
+    const vector<int> keys = {1, 2, 3};
     REQUIRE(MapHelper::GetKeys(map2).size() == keys.size());
     for(int val: MapHelper::GetKeys(map2))
         REQUIRE(VectorHelper::IsContained(keys, val));
     // REQUIRE(MapHelper::GetKeys(map2) == vector<int>{1, 2, 3});
 
-    const vector<string> values = {"a", "b", "c", "d"};
+    const vector<string> values = {"a", "b", "c"};
     REQUIRE(MapHelper::GetValues(map2).size() == values.size());
     for(const auto& val: MapHelper::GetValues(map2))
         REQUIRE(VectorHelper::IsContained(values, val));
