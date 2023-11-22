@@ -36,7 +36,9 @@ jobs:
         shell: bash
       - name: CMake Build
         run: |   
-          echo "D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/" >> $GITHUB_PATH    
+          echo $GITHUB_PATH 
+          echo "D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/" >> $GITHUB_PATH  
+          echo $GITHUB_PATH   
           cd ${{ github.workspace }}
           mkdir build
           cd build
