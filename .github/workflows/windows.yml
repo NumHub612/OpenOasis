@@ -36,7 +36,7 @@ jobs:
         shell: bash
       - name: CMake Build
         run: |
-          export pybind11_DIR=
+          $Env:pybind11_DIR = D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/         
           cd ${{ github.workspace }}
           mkdir build
           cd build
@@ -54,30 +54,3 @@ jobs:
           cmake --install .
         shell: bash 
         
-        
-      - name: Download and Install MPI HDF5 CGNS METIS
-        run: |
-          cd ${{ github.workspace }}
-          ls
-          $psfile = "${{ github.workspace }}/.github/workflows/oneflow_windows_actions.ps1"
-          & $psfile
-        shell: pwsh
-      - name: Run OneFLOW CFD Tests
-        env:
-          prefix: ${{ github.workspace }}
-        run: |
-          cd ${{ github.workspace }}
-          python --version
-          ls "${{env.prefix}}"
-          Write-Host "path 1..........................."
-          $Env:path
-          $Env:path = [environment]::GetEnvironmentvariable("path", [System.EnvironmentVariableTarget]::Machine)
-          $Env:path = $Env:Path + ";C:OneFLOW/bin"
-          Write-Host "path 2..........................."
-          $Env:path
-          Write-Host "cd test"
-          cd test
-          ls
-          python --version
-          python test.py "mpiexec -n 1" "OneFLOW"
-        shell: pwsh
