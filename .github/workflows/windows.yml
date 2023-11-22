@@ -35,11 +35,8 @@ jobs:
           cmake --install .
         shell: bash
       - name: CMake Build
-        run: |
-          $Env:path
-          $Env:path = [environment]::GetEnvironmentvariable("path", [System.EnvironmentVariableTarget]::Machine)
-          $Env:path = $Env:Path + ";D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/"    
-              
+        run: |   
+          echo "D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/" >> $GITHUB_PATH    
           cd ${{ github.workspace }}
           mkdir build
           cd build
