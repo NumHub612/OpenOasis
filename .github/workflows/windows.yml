@@ -39,6 +39,7 @@ jobs:
           pybind11_DIR: D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/
         run: |
           cd ${{ github.workspace }}
+          ls
           mkdir build
           cd build
           cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
