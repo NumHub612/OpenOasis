@@ -35,11 +35,12 @@ jobs:
           cmake --install .
         shell: bash
       - name: CMake Build
-        env:
-          pybind11_DIR: D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/
         run: |
+          $Env:path
+          $Env:path = [environment]::GetEnvironmentvariable("path", [System.EnvironmentVariableTarget]::Machine)
+          $Env:path = $Env:Path + ";D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/"    
+              
           cd ${{ github.workspace }}
-          ls
           mkdir build
           cd build
           cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
