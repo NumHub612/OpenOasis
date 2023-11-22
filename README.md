@@ -2,6 +2,8 @@
 
 ---------------------------------------------------------------------------------
 
+[![Linux_CI](https://github.com/NumHub612/OpenOasis/actions/workflows/linux.yml/badge.svg?branch=main&event=push)](https://github.com/NumHub612/OpenOasis/actions/workflows/linux.yml)
+
 ## 什么是绿洲？
 
 [简体中文](ReadMe.md) | [English](ReadMe_en.md)
