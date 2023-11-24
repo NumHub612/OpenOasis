@@ -36,7 +36,8 @@ jobs:
         shell: bash
       - name: CMake Build
         run: |   
-          echo "D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append    
+          set pybind11_DIR=D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/
+          set path=%path%;D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/    
           cd ${{ github.workspace }}
           mkdir build
           cd build
@@ -47,10 +48,5 @@ jobs:
         run: |
           cd ${{ github.workspace }}/build
           ctest --output-on-failure -C Release -VV
-        shell: bash 
-      - name: CMake Install
-        run: |
-          cd ${{ github.workspace }}/build
-          cmake --install .
-        shell: bash 
+        shell: bash
         

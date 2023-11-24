@@ -40,7 +40,7 @@ jobs:
         shell: bash
       - name: CMake Build
         run: |
-          export Pybind11_DIR=/usr/local/share/cmake/pybind11/
+          export pybind11_DIR=/usr/local/share/cmake/pybind11/
           cd ${{ github.workspace }}
           mkdir build
           cd build
@@ -51,9 +51,4 @@ jobs:
         run: |
           cd ${{ github.workspace }}/build
           ctest --output-on-failure -C Release -VV
-        shell: bash 
-      - name: CMake Install
-        run: |
-          cd ${{ github.workspace }}/build
-          cmake --install .
         shell: bash 
