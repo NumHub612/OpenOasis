@@ -34,11 +34,10 @@ jobs:
           cmake .. -DCMAKE_INSTALL_PREFIX=install
           cmake --build . --config Release
           cmake --install .
+          echo "${{ env }}"
+          echo "pybind11_DIR=D:/a/pybind11/build/install/share/cmake/" | Out-File -FilePath $env:GITHUB_ENV -Append
       - name: CMake Build
-        run: |   
-          cd "D:/a/pybind11/build/install/share/cmake/"
-          ls
-          echo "pybind11_DIR=hhh" | Out-File -FilePath $env:GITHUB_ENV -Append  
+        run: |     
           echo "${{ env.pybind11_DIR }}" 
           cd D:/a/OpenOasis/OpenOasis
           ls
