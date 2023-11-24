@@ -1,7 +1,7 @@
 ﻿# -------------------------------------------------------------
 # 设置cmake版本要求
 # -------------------------------------------------------------
-cmake_minimum_required(VERSION 3.16  FATAL_ERROR)
+cmake_minimum_required(VERSION 3.23)
 set(ProjectName OpenOasis)
 
 
@@ -49,10 +49,6 @@ if (MSVC)
 else()
     add_compile_options(-fPIC)
     add_compile_options(-pthread)
-endif()
-
-if (MACOS)
-    set(OpenMP_C_FLAGS "-fopenmp=libomp")
 endif()
 
 if (NOT CMAKE_BUILD_TYPE)
