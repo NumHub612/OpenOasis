@@ -20,13 +20,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install GCC-10
-        run: |
-          brew install libomp        
-          brew install gcc@10
-          gcc --version
-          g++ --version
-          ls /usr/bin/gcc*
+      - name: Install Compiler
+        run: |    
+          brew install llvm    
+          ln -s /usr/local/opt/llvm/bin/clang /usr/local/bin/clang-omp
+          ln -s /usr/local/opt/llvm/bin/clang++ /usr/local/bin/clang-omp++
         shell: bash
       - name: Install Third party library
         run: |
