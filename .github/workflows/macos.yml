@@ -21,21 +21,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Compiler
-        run: |    
+        run: |
+          brew install libomp
           brew install gcc@10 
           gcc --version
           g++ --version  
         shell: bash
-      - name: Install Third party library
-        run: |
-          git clone https://github.com/pybind/pybind11.git
-          cd  pybind11
-          mkdir build
-          cd build
-          cmake ..
-          cmake --build . --config Release
-          sudo cmake --install .
-        shell: bash
+      # - name: Install Third party library
+      #   run: |
+      #     git clone https://github.com/pybind/pybind11.git
+      #     cd  pybind11
+      #     mkdir build
+      #     cd build
+      #     cmake ..
+      #     cmake --build . --config Release
+      #     sudo cmake --install .
+      #   shell: bash
       - name: CMake Build
         run: |
           export pybind11_DIR=/usr/local/share/cmake/pybind11/

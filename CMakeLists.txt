@@ -74,6 +74,7 @@ message(STATUS "${PROJECT_LOGO}")
 # -------------------------------------------------------------
 # 配置编译选项
 # -------------------------------------------------------------
+find_package(OpenMP REQUIRED)
 option(ENABLE_PYLIB "-- If generating python3 packages" OFF)
 if (ENABLE_PYLIB)
     find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
@@ -89,7 +90,6 @@ if (ENABLE_TESTS)
     enable_testing()
     message(STATUS "Runing test: ${ENABLE_TESTS}")
 endif()
-find_package(OpenMP REQUIRED)
 
 
 # -------------------------------------------------------------
