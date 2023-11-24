@@ -23,8 +23,10 @@ jobs:
       - name: Install Compiler
         run: |    
           brew install llvm    
-          ln -s /usr/local/opt/llvm/bin/clang /usr/local/bin/clang-omp
-          ln -s /usr/local/opt/llvm/bin/clang++ /usr/local/bin/clang-omp++
+          export CC=/usr/local/opt/llvm/bin/clang
+          export CXX=/usr/local/opt/llvm/bin/clang++
+          export LDFLAGS="-L/usr/local/opt/llvm/lib"
+          export CPPFLAGS="-I/usr/local/opt/llvm/include"
         shell: bash
       - name: Install Third party library
         run: |
