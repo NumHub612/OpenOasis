@@ -36,15 +36,17 @@ jobs:
           cmake --install .
       - name: CMake Build
         run: |   
-          echo "D:/a/pybind11/build/install/share/cmake/"
+          cd "D:/a/pybind11/build/install/share/cmake/"
+          ls
           echo "pybind11_DIR=D:/a/pybind11/build/install/share/cmake/" | Out-File -FilePath $env:GITHUB_ENV -Append  
+          echo "${{ env.pybind11_DIR }}" 
           cd D:/a/OpenOasis/OpenOasis
-          mkdir build
-          cd build
-          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
-          cmake --build . --config Release
-      - name: Ctest
+          ls
+      - name: Set the value
+        id: step_one
         run: |
-          cd D:/a/OpenOasis/OpenOasis/build
-          ctest --output-on-failure -C Release -VV
-        
+          echo "action_state=yellow" | Out-File -FilePath $env:GITHUB_ENV -Append
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}"        
