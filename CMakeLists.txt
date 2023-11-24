@@ -51,6 +51,10 @@ else()
     add_compile_options(-pthread)
 endif()
 
+if (MACOS)
+    set(OpenMP_C_FLAGS "-fopenmp=libomp")
+endif()
+
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
