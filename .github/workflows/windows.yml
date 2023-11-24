@@ -34,18 +34,16 @@ jobs:
           cmake .. -DCMAKE_INSTALL_PREFIX=install
           cmake --build . --config Release
           cmake --install .
-          echo "${{ env }}"
           echo "pybind11_DIR=D:/a/pybind11/build/install/share/cmake/" | Out-File -FilePath $env:GITHUB_ENV -Append
       - name: CMake Build
-        run: |     
-          echo "${{ env.pybind11_DIR }}" 
+        run: |
           cd D:/a/OpenOasis/OpenOasis
-          ls
-      - name: Set the value
-        id: step_one
+          mkdir build
+          cd build
+          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
+          cmake --build . --config Release
+      - name: Ctest
         run: |
-          echo "action_state=yellow" | Out-File -FilePath $env:GITHUB_ENV -Append
-      - name: Use the value
-        id: step_two
-        run: |
-          echo "${{ env.action_state }}"        
+          cd D:/a/OpenOasis/OpenOasis/build
+          ctest --output-on-failure -C Release -VV
+        shell: bash                  
