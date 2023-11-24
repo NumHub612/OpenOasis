@@ -24,29 +24,24 @@ jobs:
         run: |    
           brew install llvm   
           echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile 
-          export CC=/usr/local/opt/llvm/bin/clang
-          export CXX=/usr/local/opt/llvm/bin/clang++
-          export LDFLAGS="-L/usr/local/opt/llvm/lib"
-          export CPPFLAGS="-I/usr/local/opt/llvm/include"
         shell: bash
-      # - name: Install Third party library
-      #   run: |
-      #     git clone https://github.com/pybind/pybind11.git
-      #     cd  pybind11
-      #     mkdir build
-      #     cd build
-      #     cmake ..
-      #     cmake --build . --config Release
-      #     sudo cmake --install .
-      #   shell: bash
+      - name: Install Third party library
+        run: |
+          git clone https://github.com/pybind/pybind11.git
+          cd  pybind11
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build . --config Release
+          sudo cmake --install .
+        shell: bash
       - name: CMake Build
         run: |
-          echo $CC
           export pybind11_DIR=/usr/local/share/cmake/pybind11/
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
+          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on -DCC=/usr/local/opt/llvm/bin/clang -DCXX=/usr/local/opt/llvm/bin/clang++ -DLDFLAGS="-L/usr/local/opt/llvm/lib" -DCPPFLAGS="-I/usr/local/opt/llvm/include"
           cmake --build . --config Release
         shell: bash 
       - name: Ctest
