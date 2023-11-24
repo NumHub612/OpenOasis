@@ -36,8 +36,7 @@ jobs:
         shell: bash
       - name: CMake Build
         run: |   
-          set pybind11_DIR=D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/
-          set path=%path%;D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/    
+          set pybind11_DIR=D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/    
           cd ${{ github.workspace }}
           mkdir build
           cd build
