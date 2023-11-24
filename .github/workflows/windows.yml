@@ -36,8 +36,8 @@ jobs:
           cmake --install .
       - name: CMake Build
         run: |   
-          echo "pybind11_DIR=D:/a/pybind11/build/install/share/cmake/" | Out-File -FilePath $env:GITHUB_ENV -Append    
-          echo "${{ env.pybind11_DIR }}"   
+          echo "D:/a/pybind11/build/install/share/cmake/"
+          echo "pybind11_DIR=D:/a/pybind11/build/install/share/cmake/" | Out-File -FilePath $env:GITHUB_ENV -Append  
           cd D:/a/OpenOasis/OpenOasis
           mkdir build
           cd build
