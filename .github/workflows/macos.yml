@@ -1,0 +1,70 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Macos_CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    name: "Macos OpenOasis Actions"
+    strategy:
+      matrix:
+        os: [macos-latest]
+        include:
+          - name: "macOS 10.15 + Xcode 12.4"
+            os: macos-10.15
+            compiler: xcode
+            version: "11.2.1"
+          - name: "macOS 10.15 + gcc-10"
+            os: macos-10.15
+            compiler: gcc
+            version: "10"
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure Compiler
+        run: |
+          if [ "${{ matrix.compiler }}" = "gcc" ]; then
+            echo "CC=gcc-${{ matrix.version }}" >> $GITHUB_ENV
+            echo "CXX=g++-${{ matrix.version }}" >> $GITHUB_ENV
+          else
+            ls -ls /Applications/
+            sudo xcode-select -switch /Applications/Xcode_${{ matrix.version }}.app
+            echo "CC=clang" >> $GITHUB_ENV
+            echo "CXX=clang++" >> $GITHUB_ENV
+          fi
+      - name: Install Third party library
+        run: |
+          git clone https://github.com/pybind/pybind11.git
+          cd  pybind11
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build . --config Release
+          sudo cmake --install .
+        shell: bash
+      - name: CMake Build
+        run: |
+          export pybind11_DIR=/usr/local/share/cmake/pybind11/
+          cd ${{ github.workspace }}
+          mkdir build
+          cd build
+          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
+          cmake --build . --config Release
+        shell: bash 
+      - name: Ctest
+        run: |
+          cd ${{ github.workspace }}/build
+          ctest --output-on-failure -C Release -VV
+        shell: bash 
