@@ -38,7 +38,7 @@ jobs:
         run: |   
           cd "D:/a/pybind11/build/install/share/cmake/"
           ls
-          echo "pybind11_DIR=D:/a/pybind11/build/install/share/cmake/" | Out-File -FilePath $env:GITHUB_ENV -Append  
+          echo "pybind11_DIR=hhh" | Out-File -FilePath $env:GITHUB_ENV -Append  
           echo "${{ env.pybind11_DIR }}" 
           cd D:/a/OpenOasis/OpenOasis
           ls
