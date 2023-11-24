@@ -22,8 +22,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Compiler
         run: |    
-          brew install llvm   
-          echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile 
+          brew install gcc@10  
+          echo 'export PATH="/usr/bin/gcc/bin:$PATH"' >> /Users/runner/.bash_profile 
         shell: bash
       - name: Install Third party library
         run: |
@@ -41,7 +41,7 @@ jobs:
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on -DCC=/usr/local/opt/llvm/bin/clang -DCXX=/usr/local/opt/llvm/bin/clang++ -DLDFLAGS="-L/usr/local/opt/llvm/lib" -DCPPFLAGS="-I/usr/local/opt/llvm/include"
+          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on 
           cmake --build . --config Release
         shell: bash 
       - name: Ctest
