@@ -17,33 +17,16 @@ on:
 jobs:
   build:
     name: "Macos OpenOasis Actions"
-    strategy:
-      matrix:
-        os: [macos-latest]
-        include:
-          - name: "macOS 10.15 + Xcode 12.4"
-            os: macos-10.15
-            compiler: xcode
-            version: "11.2.1"
-          - name: "macOS 10.15 + gcc-10"
-            os: macos-10.15
-            compiler: gcc
-            version: "10"
-    runs-on: ${{ matrix.os }}
-
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Configure Compiler
+      - name: Install GCC-10
         run: |
-          if [ "${{ matrix.compiler }}" = "gcc" ]; then
-            echo "CC=gcc-${{ matrix.version }}" >> $GITHUB_ENV
-            echo "CXX=g++-${{ matrix.version }}" >> $GITHUB_ENV
-          else
-            ls -ls /Applications/
-            sudo xcode-select -switch /Applications/Xcode_${{ matrix.version }}.app
-            echo "CC=clang" >> $GITHUB_ENV
-            echo "CXX=clang++" >> $GITHUB_ENV
-          fi
+          brew install gcc-10 g++-10
+          gcc --version
+          g++ --version
+          ls /usr/bin/gcc*
+        shell: bash
       - name: Install Third party library
         run: |
           git clone https://github.com/pybind/pybind11.git
