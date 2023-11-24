@@ -37,7 +37,7 @@ jobs:
       - name: CMake Build
         run: |   
           set pybind11_DIR=D:/a/OpenOasis/OpenOasis/pybind11/build/install/share/cmake/    
-          cd ${{ github.workspace }}
+          cd D:/a/OpenOasis/OpenOasis
           mkdir build
           cd build
           cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
@@ -45,7 +45,7 @@ jobs:
         shell: bash 
       - name: Ctest
         run: |
-          cd ${{ github.workspace }}/build
+          cd D:/a/OpenOasis/OpenOasis/build
           ctest --output-on-failure -C Release -VV
         shell: bash
         
