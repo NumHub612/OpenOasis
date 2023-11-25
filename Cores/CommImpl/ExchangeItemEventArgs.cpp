@@ -16,7 +16,7 @@ ExchangeItemEventArgs::ExchangeItemEventArgs()
 ExchangeItemEventArgs::ExchangeItemEventArgs(
     shared_ptr<IBaseExchangeItem> exchangeItem, const string &message)
 {
-    mExchangeItem = move(exchangeItem);
+    mExchangeItem = exchangeItem;
     mMessage      = message;
 }
 
