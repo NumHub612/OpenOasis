@@ -39,8 +39,8 @@ TimeSet::TimeSet(TimeSet &&timeSet)
 {
     mOffsetFromUtcInHours = timeSet.mOffsetFromUtcInHours;
     mHasDuration          = timeSet.mHasDuration;
-    mTimes                = move(timeSet.mTimes);
-    mTimeHorizon          = move(timeSet.mTimeHorizon);
+    mTimes                = timeSet.mTimes;
+    mTimeHorizon          = timeSet.mTimeHorizon;
 }
 
 TimeSet::TimeSet(const vector<shared_ptr<ITime>> &times, double hourOffset)
@@ -78,22 +78,16 @@ shared_ptr<ITime> TimeSet::GetTimeHorizon() const
 
 void TimeSet::AddTime(shared_ptr<ITime> time)
 {
-    if (!time)
-    {
-        return;
-    }
+    if (!time) { return; }
 
     auto isOverlapped = any_of(begin(mTimes), end(mTimes), [&time](const auto &t) {
         return abs(t->GetTimeStamp() - time->GetTimeStamp())
                <= Time::EpsilonForTimeCompare;
     });
-    if (isOverlapped)
-    {
-        return;
-    }
+    if (isOverlapped) { return; }
 
     mHasDuration = HasDuration(time);
-    mTimes.emplace_back(move(time));
+    mTimes.push_back(time);
 
     Sort();
     SetTimeHorizonFromTimes();

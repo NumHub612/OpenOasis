@@ -34,7 +34,7 @@ public:
 
     SpaceAreaAdaptor(const std::string &id, const std::shared_ptr<IOutput> &adaptee);
 
-    void Initialize();
+    void Initialize() override;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Override methods.
@@ -72,4 +72,4 @@ protected:
     std::shared_ptr<SpaceAreaAdaptor> GetInstance();
 };
 
-} 
+}  // namespace OpenOasis::CommImpl::DevSupports

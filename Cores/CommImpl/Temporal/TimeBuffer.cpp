@@ -119,10 +119,7 @@ void TimeBuffer::SetRelaxationFactor(double value)
 
 shared_ptr<ITime> TimeBuffer::GetTimeAt(int timeStep) const
 {
-    if (mDoExtendedDataVerification)
-    {
-        CheckBuffer();
-    }
+    if (mDoExtendedDataVerification) { CheckBuffer(); }
     return (*mTimes)[timeStep];
 }
 
@@ -133,18 +130,12 @@ void TimeBuffer::CheckBuffer() const
         throw runtime_error("Different numbers of values and times in buffer");
     }
 
-    if (mTimes->GetCount() == 0)
-    {
-        throw runtime_error("Buffer is empty");
-    }
+    if (mTimes->GetCount() == 0) { throw runtime_error("Buffer is empty"); }
 }
 
 vector<double> TimeBuffer::GetValuesAt(int timeStep) const
 {
-    if (mDoExtendedDataVerification)
-    {
-        CheckBuffer();
-    }
+    if (mDoExtendedDataVerification) { CheckBuffer(); }
 
     vector<double> values;
     for (const auto &val : mValues->GetElementValuesForTime(timeStep))
@@ -157,10 +148,7 @@ vector<double> TimeBuffer::GetValuesAt(int timeStep) const
 
 vector<double> TimeBuffer::GetValues(const shared_ptr<ITime> &requestedTime)
 {
-    if (mDoExtendedDataVerification)
-    {
-        CheckBuffer();
-    }
+    if (mDoExtendedDataVerification) { CheckBuffer(); }
 
     if (!mDoExtrapolate)
     {
@@ -321,10 +309,7 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
 
         const auto &times = mTimes->GetTimes();
         int         size  = (int)times.size();
-        if (times.empty())
-        {
-            throw runtime_error("No times in buffer");
-        }
+        if (times.empty()) { throw runtime_error("No times in buffer"); }
 
         double tbb0 = times[0]->GetTimeStamp();
 
@@ -977,10 +962,7 @@ void TimeBuffer::ClearBefore(shared_ptr<ITime> time)
             mTimes->RemoveTime(0);
             mValues->RemoveValue({0});
         }
-        else
-        {
-            break;
-        }
+        else { break; }
     }
 }
 
@@ -1006,7 +988,7 @@ vector<vector<double>> TimeBuffer::GetAllValues()
             values.push_back(any_cast<double>(mValues->GetValue({i, j})));
         }
 
-        returnValues.emplace_back(move(values));
+        returnValues.push_back(values);
     }
     return returnValues;
 }

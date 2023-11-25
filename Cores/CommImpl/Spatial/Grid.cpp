@@ -34,7 +34,7 @@ Grid::Grid(
             for (auto &node : nodeCoords)
             {
                 mMesh.nodes[node.first]      = {};
-                mMesh.nodes[node.first].coor = move(node.second);
+                mMesh.nodes[node.first].coor = node.second;
             }
 
             nodeCoords.clear();
@@ -45,8 +45,8 @@ Grid::Grid(
             {
                 int i                      = face.first;
                 mMesh.faces[i]             = {};
-                mMesh.faces[i].centroid    = move(face.second);
-                mMesh.faces[i].nodeIndexes = move(faceNodes[i]);
+                mMesh.faces[i].centroid    = face.second;
+                mMesh.faces[i].nodeIndexes = faceNodes[i];
             }
 
             faceCoords.clear();
@@ -58,8 +58,8 @@ Grid::Grid(
             {
                 int i                      = cell.first;
                 mMesh.cells[i]             = {};
-                mMesh.cells[i].centroid    = move(cellCoords[i]);
-                mMesh.cells[i].faceIndexes = move(cellFaces[i]);
+                mMesh.cells[i].centroid    = cellCoords[i];
+                mMesh.cells[i].faceIndexes = cellFaces[i];
             }
 
             cellCoords.clear();
@@ -67,8 +67,8 @@ Grid::Grid(
         }
     }
 
-    mPatches = move(patches);
-    mZones   = move(zones);
+    mPatches = patches;
+    mZones   = zones;
 
     mRawNodesNum = mMesh.nodes.size();
     mRawFacesNum = mMesh.faces.size();

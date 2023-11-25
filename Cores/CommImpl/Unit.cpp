@@ -23,9 +23,9 @@ Unit::Unit(const shared_ptr<IUnit> &source)
 
 Unit::Unit(Unit &&obj)
 {
-    mDescription      = move(obj.mDescription);
-    mCaption          = move(obj.mCaption);
-    mDimension        = move(obj.mDimension);
+    mDescription      = obj.mDescription;
+    mCaption          = obj.mCaption;
+    mDimension        = obj.mDimension;
     mConversionFactor = obj.mConversionFactor;
     mConversionOffset = obj.mConversionOffset;
 }
@@ -69,7 +69,7 @@ Unit::Unit(
     shared_ptr<IDimension> dim, const string &caption, const string &description,
     double conversionFactor, double conversionOffset)
 {
-    mDimension        = move(dim);
+    mDimension        = dim;
     mCaption          = caption;
     mDescription      = description;
     mConversionFactor = conversionFactor;
@@ -113,31 +113,13 @@ double Unit::GetOffSetToSI() const
 
 bool Unit::EqualTo(const std::shared_ptr<IUnit> &obj) const
 {
-    if (!obj)
-    {
-        return false;
-    }
+    if (!obj) { return false; }
 
-    if (mCaption != obj->GetCaption())
-    {
-        return false;
-    }
-    if (mDescription != obj->GetDescription())
-    {
-        return false;
-    }
-    if (mDimension != obj->GetDimension())
-    {
-        return false;
-    }
-    if (mConversionFactor != obj->GetConversionFactorToSI())
-    {
-        return false;
-    }
-    if (mConversionOffset != obj->GetOffSetToSI())
-    {
-        return false;
-    }
+    if (mCaption != obj->GetCaption()) { return false; }
+    if (mDescription != obj->GetDescription()) { return false; }
+    if (mDimension != obj->GetDimension()) { return false; }
+    if (mConversionFactor != obj->GetConversionFactorToSI()) { return false; }
+    if (mConversionOffset != obj->GetOffSetToSI()) { return false; }
 
     return true;
 }

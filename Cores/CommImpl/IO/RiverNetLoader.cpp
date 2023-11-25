@@ -8,5 +8,5 @@
 
 namespace OpenOasis::CommImpl::IO
 {
-using namespace std;
+// using namespace std;
 }

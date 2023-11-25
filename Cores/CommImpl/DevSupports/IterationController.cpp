@@ -151,7 +151,7 @@ vector<string> IterationController::OnValidate()
                 "LinkableComponent {} in InterationController {} has no inner inputs.",
                 comPair.first,
                 mId);
-            errors.emplace_back(move(msg));
+            errors.push_back(msg);
         }
 
         const auto &innerOutputIter = find_if(
@@ -164,7 +164,7 @@ vector<string> IterationController::OnValidate()
                 "LinkableComponent {} in InterationController {} has no inner outputs.",
                 comPair.first,
                 mId);
-            errors.emplace_back(move(msg));
+            errors.push_back(msg);
         }
     }
 
@@ -172,19 +172,19 @@ vector<string> IterationController::OnValidate()
     {
         string msg = StringHelper::FormatSimple(
             "MaxIter for IterationController {} must be greater than 1.", mId);
-        errors.emplace_back(move(msg));
+        errors.push_back(msg);
     }
     if (mEps < 0)
     {
         string msg = StringHelper::FormatSimple(
             "Eps for IterationController {} must be greater than 0.", mId);
-        errors.emplace_back(move(msg));
+        errors.push_back(msg);
     }
     if (mRelaxation < 0 || mRelaxation > 1)
     {
         string msg = StringHelper::FormatSimple(
             "Relaxation for IterationController {} must be in [0, 1].", mId);
-        errors.emplace_back(move(msg));
+        errors.push_back(msg);
     }
 
     return errors;

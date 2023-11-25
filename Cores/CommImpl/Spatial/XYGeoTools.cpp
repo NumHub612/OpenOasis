@@ -124,18 +124,12 @@ XYGeoTools::CalculateLineToPointDistance(const XYLine &line, const XYPoint &poin
     // Point projected on line before P1, use distance to P1.
     double p2p1dotpp1 =
         (p2.x - p1.x) * (point.x - p1.x) + (p2.y - p1.y) * (point.y - p1.y);
-    if (p2p1dotpp1 <= EPSILON)
-    {
-        return CalculatePointToPointDistance(point, p1);
-    }
+    if (p2p1dotpp1 <= EPSILON) { return CalculatePointToPointDistance(point, p1); }
 
     // Point projected on line after P2, use distance to P2.
     double p2p1dotpp2 =
         (p2.x - p1.x) * (point.x - p2.x) + (p2.y - p1.y) * (point.y - p2.y);
-    if (p2p1dotpp2 >= EPSILON)
-    {
-        return CalculatePointToPointDistance(point, p2);
-    }
+    if (p2p1dotpp2 >= EPSILON) { return CalculatePointToPointDistance(point, p2); }
 
     // Point projected between P1 and P2, calculate distance to projection point.
     double p2p1crosspp1 =
@@ -146,10 +140,7 @@ XYGeoTools::CalculateLineToPointDistance(const XYLine &line, const XYPoint &poin
 double XYGeoTools::CalculatePolylineToPointDistance(
     const XYPolyline &polyline, const XYPoint &point)
 {
-    if (polyline.points.empty())
-    {
-        return 0;
-    }
+    if (polyline.points.empty()) { return 0; }
 
     int    i    = 1;
     double dist = CalculateLineToPointDistance(polyline.GetLine(0), point);
@@ -191,10 +182,7 @@ bool XYGeoTools::IsPointInPolygon(const XYPoint &point, const XYPolygon &polygon
     // If it's odd, the point is inside the polygon, otherwise it's outside polygon.
     //
 
-    if (!polygon.Validate())
-    {
-        return false;
-    }
+    if (!polygon.Validate()) { return false; }
 
     bool isInside = false;
     auto size     = polygon.points.size();
@@ -410,10 +398,7 @@ double XYGeoTools::CalculateTriangleSharedArea(
 
 vector<XYPolygon> XYGeoTools::GetTriangulations(const XYPolygon &polygon)
 {
-    if (!polygon.Validate())
-    {
-        throw runtime_error("Invalid Polygon object.");
-    }
+    if (!polygon.Validate()) { throw runtime_error("Invalid Polygon object."); }
 
     XYPolygon         localPolygon(polygon);
     vector<XYPolygon> triangleList;
@@ -430,11 +415,11 @@ vector<XYPolygon> XYGeoTools::GetTriangulations(const XYPolygon &polygon)
         triangle.points.push_back(localPolygon.points[i]);
         triangle.points.push_back(localPolygon.points[next]);
 
-        triangleList.emplace_back(move(triangle));
+        triangleList.push_back(triangle);
         localPolygon.points.erase(localPolygon.points.begin() + i);
     }
 
-    triangleList.emplace_back(move(localPolygon));
+    triangleList.push_back(localPolygon);
     return triangleList;
 }
 
@@ -445,14 +430,8 @@ int XYGeoTools::FindTrianglePoints(const XYPolygon &polygon)
 
     while (i < polygon.points.size() && !found)
     {
-        if (polygon.IsConvex(i) && !IsTriangleIntersected(polygon, i))
-        {
-            found = true;
-        }
-        else
-        {
-            i++;
-        }
+        if (polygon.IsConvex(i) && !IsTriangleIntersected(polygon, i)) { found = true; }
+        else { i++; }
     }
 
     return i;
@@ -476,14 +455,8 @@ bool XYGeoTools::IsTriangleIntersected(const XYPolygon &polygon, int index)
     while (i < points.size() - 1 && !insertected)
     {
         bool skip = (i == index || i == prevIndex || i == nextIndex);
-        if (!skip && IsPointInPolygon(points[i], triangulation))
-        {
-            return true;
-        }
-        else
-        {
-            i++;
-        }
+        if (!skip && IsPointInPolygon(points[i], triangulation)) { return true; }
+        else { i++; }
     }
 
     return insertected;
@@ -502,14 +475,8 @@ double XYGeoTools::CalculateSharedLength(const XYLine &lineA, const XYLine &line
 
         double YP1 = max(YP1A, YP1B);
         double YP2 = min(YP2A, YP2B);
-        if (YP1 < YP2)
-        {
-            return YP2 - YP1;
-        }
-        else
-        {
-            return 0;
-        }
+        if (YP1 < YP2) { return YP2 - YP1; }
+        else { return 0; }
     }
     else if (
         abs(lineA.point2.x - lineA.point1.x) < EPSILON
@@ -556,15 +523,9 @@ double XYGeoTools::CalculateSharedLength(const XYLine &lineA, const XYLine &line
 
                 return line.GetLength();
             }
-            else
-            {
-                return 0;
-            }
+            else { return 0; }
         }
-        else
-        {
-            return 0;
-        }
+        else { return 0; }
     }
 }
 
@@ -624,10 +585,7 @@ double XYGeoTools::CalculateLengthOfLineInsidePolygon(
         {
             sharedLength += CalculateSharedLength(lineList[i], polygon.GetLine(j));
         }
-        if (sharedLength > EPSILON)
-        {
-            lengthInside += sharedLength / 2;
-        }
+        if (sharedLength > EPSILON) { lengthInside += sharedLength / 2; }
         else if (IsPointInPolygon(CalculateMidpoint(lineList[i]), polygon))
         {
             lengthInside += lineList[i].GetLength();
@@ -729,10 +687,7 @@ void XYGeoTools::Intersect(
             lineB       = triangleB.GetLine(jm1);
             found       = IntersectionPoint(lineA, lineB, p);
             double Dist = CalculatePointToPointDistance(lineA.point1, p);
-            if (Dist < EPSILON)
-            {
-                found = false;
-            }
+            if (Dist < EPSILON) { found = false; }
             if (found)
             {
                 if ((MinDist < 0) || (Dist < MinDist))
@@ -793,10 +748,7 @@ int XYGeoTools::IncrementModula(int i, int n)
 int XYGeoTools::DecrementModula(int i, int n)
 {
     i--;
-    if (i < 0)
-    {
-        i = n - 1;
-    }
+    if (i < 0) { i = n - 1; }
     return i;
 }
 
