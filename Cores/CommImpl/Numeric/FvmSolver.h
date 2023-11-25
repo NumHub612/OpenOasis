@@ -40,7 +40,7 @@ public:
     void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &bound) override;
     void SetInitialValue(
         const std::string                                          &var,
-        const std::variant<double, Vector<double>, Tensor<double>> &value);
+        const std::variant<double, Vector<double>, Tensor<double>> &value) override;
     void SetCoefficient(
         const std::string                                          &var,
         const std::variant<double, Vector<double>, Tensor<double>> &coeff) override;
@@ -58,7 +58,7 @@ public:
     void Solve() override;
     void AfterSolve() override;
 
-    ScalarField<double> GetScalarSolutions() const;
+    ScalarField<double> GetScalarSolutions() const override;
 };
 
 }  // namespace OpenOasis::CommImpl::Numeric

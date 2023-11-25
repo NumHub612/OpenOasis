@@ -30,7 +30,7 @@ shared_ptr<ILinkableComponent> LinkableComponentEventArgs::GetLinkableComponent(
 void LinkableComponentEventArgs::SetLinkableComponent(
     shared_ptr<ILinkableComponent> value)
 {
-    mLinkableComponent = move(value);
+    mLinkableComponent = value;
 }
 
 LinkableComponentStatus LinkableComponentEventArgs::GetOldStatus() const

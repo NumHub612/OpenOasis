@@ -34,8 +34,8 @@ ValueSet2D::ValueSet2D(const shared_ptr<IValueSet> &valueSet)
 
 ValueSet2D::ValueSet2D(ValueSet2D &&obj)
 {
-    mValueDef = move(obj.mValueDef);
-    mValues2D = move(obj.mValues2D);
+    mValueDef = obj.mValueDef;
+    mValues2D = obj.mValues2D;
 }
 
 shared_ptr<IValueDefinition> ValueSet2D::GetValueDefinition() const
@@ -355,7 +355,7 @@ ValueSetInt::ValueSetInt(
         mValues2D.emplace_back(tmp);
     }
 
-    mValueDef = move(valueDef);
+    mValueDef = valueDef;
 }
 
 bool ValueSetInt::IsValidValueType(const any &value) const
@@ -388,7 +388,7 @@ ValueSetDbl::ValueSetDbl(
         mValues2D.emplace_back(tmp);
     }
 
-    mValueDef = move(valueDef);
+    mValueDef = valueDef;
 }
 
 bool ValueSetDbl::IsValidValueType(const any &value) const

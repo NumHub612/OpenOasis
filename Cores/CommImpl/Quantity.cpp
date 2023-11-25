@@ -22,9 +22,9 @@ Quantity::Quantity(const shared_ptr<IQuantity> &source)
 
 Quantity::Quantity(Quantity &&obj)
 {
-    mDescription      = move(obj.mDescription);
-    mCaption          = move(obj.mCaption);
-    mUnit             = move(obj.mUnit);
+    mDescription      = obj.mDescription;
+    mCaption          = obj.mCaption;
+    mUnit             = obj.mUnit;
     mMissingDataValue = obj.mMissingDataValue;
 }
 
@@ -32,7 +32,7 @@ Quantity::Quantity(
     shared_ptr<IUnit> unit, const string &caption, const string &description,
     const any &miss)
 {
-    mUnit             = move(unit);
+    mUnit             = unit;
     mDescription      = description;
     mCaption          = caption;
     mMissingDataValue = miss;
@@ -75,23 +75,11 @@ shared_ptr<IUnit> Quantity::GetUnit() const
 
 bool Quantity::EqualTo(const shared_ptr<IQuantity> &obj) const
 {
-    if (!obj)
-    {
-        return false;
-    }
+    if (!obj) { return false; }
 
-    if (mCaption != obj->GetCaption())
-    {
-        return false;
-    }
-    if (mUnit != obj->GetUnit())
-    {
-        return false;
-    }
-    if (mDescription != obj->GetDescription())
-    {
-        return false;
-    }
+    if (mCaption != obj->GetCaption()) { return false; }
+    if (mUnit != obj->GetUnit()) { return false; }
+    if (mDescription != obj->GetDescription()) { return false; }
 
     return true;
 }

@@ -12,6 +12,7 @@
 #include "Cores/Inc/IAdaptedOutput.h"
 #include "Cores/Inc/ISpatialDefinition.h"
 #include "Cores/CommImpl/Output.h"
+#include <unordered_map>
 
 
 namespace OpenOasis

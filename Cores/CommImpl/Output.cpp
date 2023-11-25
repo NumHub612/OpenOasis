@@ -29,16 +29,16 @@ Output::Output(const string &id, const shared_ptr<ILinkableComponent> &comp)
 
 Output::Output(Output &&obj)
 {
-    mId             = move(obj.mId);
-    mCaption        = move(obj.mCaption);
-    mDescription    = move(obj.mDescription);
-    mValues         = move(obj.mValues);
-    mTimeSet        = move(obj.mTimeSet);
-    mElementSet     = move(obj.mElementSet);
-    mEventArg       = move(obj.mEventArg);
-    mItemListeners  = move(obj.mItemListeners);
-    mConsumers      = move(obj.mConsumers);
-    mAdaptedOutputs = move(obj.mAdaptedOutputs);
+    mId             = obj.mId;
+    mCaption        = obj.mCaption;
+    mDescription    = obj.mDescription;
+    mValues         = obj.mValues;
+    mTimeSet        = obj.mTimeSet;
+    mElementSet     = obj.mElementSet;
+    mEventArg       = obj.mEventArg;
+    mItemListeners  = obj.mItemListeners;
+    mConsumers      = obj.mConsumers;
+    mAdaptedOutputs = obj.mAdaptedOutputs;
 
     mComponent = obj.mComponent;
 }
@@ -106,10 +106,7 @@ void Output::AddConsumer(shared_ptr<IInput> consumer)
                    && consumer->GetComponent().lock()->GetId()
                           == elem.lock()->GetComponent().lock()->GetId();
         });
-    if (iter != mConsumers.end())
-    {
-        return;
-    }
+    if (iter != mConsumers.end()) { return; }
 
     // Check value definition compatibility.
     if (!ExchangeItemHelper::OutputAndInputValueDefinitionFit(GetInstance(), consumer))
@@ -141,10 +138,7 @@ void Output::RemoveConsumer(const shared_ptr<IInput> &consumer)
                    && consumer->GetComponent().lock()->GetId()
                           == elem.lock()->GetComponent().lock()->GetId();
         });
-    if (iter == mConsumers.end())
-    {
-        return;
-    }
+    if (iter == mConsumers.end()) { return; }
 
     // Detach consumer.
     consumer->RemoveProvider(GetInstance());
@@ -165,15 +159,9 @@ void Output::AddAdaptedOutput(shared_ptr<IAdaptedOutput> adaptedOutput)
     for (const auto &elem : mAdaptedOutputs)
     {
         const auto &elemComp = elem->GetComponent().lock();
-        if (!elemComp)
-        {
-            continue;
-        }
+        if (!elemComp) { continue; }
 
-        if (adaptedOutputId == elem->GetId() && compId == elemComp->GetId())
-        {
-            return;
-        }
+        if (adaptedOutputId == elem->GetId() && compId == elemComp->GetId()) { return; }
     }
 
     // Check compatibility.
@@ -218,10 +206,7 @@ void Output::RemoveAdaptedOutput(const shared_ptr<IAdaptedOutput> &adaptedOutput
         {
             it = mAdaptedOutputs.erase(it);
         }
-        else
-        {
-            it++;
-        }
+        else { it++; }
     }
 
     // Dettach adapted output.
@@ -268,14 +253,8 @@ void Output::RemoveListener(const ListenFuncType &func)
 
 shared_ptr<IValueDefinition> Output::GetValueDefinition() const
 {
-    if (mValues)
-    {
-        return mValues->GetValueDefinition();
-    }
-    else
-    {
-        return nullptr;
-    }
+    if (mValues) { return mValues->GetValueDefinition(); }
+    else { return nullptr; }
 }
 
 shared_ptr<IValueSet>
@@ -284,14 +263,8 @@ Output::GetValues(const shared_ptr<IBaseExchangeItem> &querySpecifier)
     // No updating action while querier specified.
     if (querySpecifier)
     {
-        if (IsValidQuerySpecifier(querySpecifier))
-        {
-            return mValues;
-        }
-        else
-        {
-            return nullptr;
-        }
+        if (IsValidQuerySpecifier(querySpecifier)) { return mValues; }
+        else { return nullptr; }
     }
 
     // Get the earlist time which no value request will be made earlier than.
@@ -307,21 +280,14 @@ Output::GetValues(const shared_ptr<IBaseExchangeItem> &querySpecifier)
 
 bool Output::IsValidQuerySpecifier(const shared_ptr<IBaseExchangeItem> &querier) const
 {
-    if (!querier)
-        return false;
+    if (!querier) return false;
 
     try
     {
         auto queryValueDef = ExtensionMethods::Quantity(querier);
         auto valueDef = dynamic_pointer_cast<Quantity>(mValues->GetValueDefinition());
-        if (!valueDef->EqualTo(queryValueDef))
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        if (!valueDef->EqualTo(queryValueDef)) { return false; }
+        else { return true; }
     }
     catch (...)
     {
@@ -332,8 +298,7 @@ bool Output::IsValidQuerySpecifier(const shared_ptr<IBaseExchangeItem> &querier)
 void Output::Update()
 {
     const auto &latestTime = ExchangeItemHelper::GetLatestConsumerTime(GetInstance());
-    if (!latestTime)
-        return;
+    if (!latestTime) return;
 
     double availableTimestamp =
         ExtensionMethods::End(mTimeSet->GetTimeHorizon())->GetTimeStamp();
@@ -361,14 +326,10 @@ void Output::Update()
 
 void Output::ReduceValuesAndTimes(const shared_ptr<ITime> &lastTime)
 {
-    if (mTimeSet->GetTimes().empty())
-        return;
+    if (mTimeSet->GetTimes().empty()) return;
 
     double lastTimestamp = mTimeSet->GetTimes().back()->GetTimeStamp();
-    if (lastTime)
-    {
-        lastTimestamp = lastTime->GetTimeStamp();
-    }
+    if (lastTime) { lastTimestamp = lastTime->GetTimeStamp(); }
 
     while (!mTimeSet->GetTimes().empty())
     {
@@ -378,10 +339,7 @@ void Output::ReduceValuesAndTimes(const shared_ptr<ITime> &lastTime)
             mTimeSet->RemoveTime(0);
             mValues->RemoveValue({0});
         }
-        else
-        {
-            break;
-        }
+        else { break; }
     }
 }
 

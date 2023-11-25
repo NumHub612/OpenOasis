@@ -43,18 +43,18 @@ LinkableComponent::LinkableComponent(const string &id)
 
 LinkableComponent::LinkableComponent(LinkableComponent &&obj)
 {
-    mId                     = move(obj.mId);
-    mCaption                = move(obj.mCaption);
-    mDescription            = move(obj.mDescription);
-    mStatusListeners        = move(obj.mStatusListeners);
-    mEventArgs              = move(obj.mEventArgs);
-    mRequiredArguments      = move(obj.mRequiredArguments);
-    mAdaptedOutputFactories = move(obj.mAdaptedOutputFactories);
-    mTimeExtent             = move(obj.mTimeExtent);
-    mCurrentTime            = move(obj.mCurrentTime);
-    mArguments              = move(obj.mArguments);
-    mInputs                 = move(obj.mInputs);
-    mOutputs                = move(obj.mOutputs);
+    mId                     = obj.mId;
+    mCaption                = obj.mCaption;
+    mDescription            = obj.mDescription;
+    mStatusListeners        = obj.mStatusListeners;
+    mEventArgs              = obj.mEventArgs;
+    mRequiredArguments      = obj.mRequiredArguments;
+    mAdaptedOutputFactories = obj.mAdaptedOutputFactories;
+    mTimeExtent             = obj.mTimeExtent;
+    mCurrentTime            = obj.mCurrentTime;
+    mArguments              = obj.mArguments;
+    mInputs                 = obj.mInputs;
+    mOutputs                = obj.mOutputs;
 
     mStatus                       = obj.mStatus;
     mCascadingUpdateCallsDisabled = obj.mCascadingUpdateCallsDisabled;
@@ -137,10 +137,10 @@ void LinkableComponent::SetAdaptedOutputFactories()
     if (mAdaptedOutputFactories.empty())
     {
         auto timeFactory = make_shared<TimeAdaptedOutputFactory>(GetId() + "-Time");
-        mAdaptedOutputFactories.emplace_back(move(timeFactory));
+        mAdaptedOutputFactories.push_back(timeFactory);
 
         auto spaceFactory = make_shared<SpaceAdaptedOutputFactory>(GetId() + "-Space");
-        mAdaptedOutputFactories.emplace_back(move(spaceFactory));
+        mAdaptedOutputFactories.push_back(spaceFactory);
     }
 }
 

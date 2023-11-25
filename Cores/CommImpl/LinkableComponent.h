@@ -14,6 +14,7 @@
 #include "Cores/Inc/IManageState.h"
 #include "Cores/Inc/LinkableComponentStatusChangeEventArgs.h"
 #include "Cores/Utils/EventHandler.h"
+#include <unordered_map>
 
 
 namespace OpenOasis
