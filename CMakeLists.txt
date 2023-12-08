@@ -56,9 +56,9 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -g -O0")
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -g -O0")
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Wall -O3")
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall -O3")
 else()
     message(FATAL_ERROR "Invalid build type: ${CMAKE_BUILD_TYPE}")
 endif()
@@ -152,9 +152,11 @@ add_subdirectory(${CoreDir}/SystHeats)
 # 生成可执行文件
 # -------------------------------------------------------------
 add_executable(${ProjectName} ${driver})
-#-- 链接库。
+
+#-- 链接库
 target_link_libraries(${ProjectName} 
     PUBLIC ${CommLib}
+    PUBLIC OpenMP::OpenMP_CXX
     )
 if (ENABLE_PYLIB)
     target_link_libraries(${ProjectName}  
@@ -164,12 +166,8 @@ endif ()
 if (LINUX)
     target_link_libraries(${ProjectName} PUBLIC dl)
 endif()
-if (OpenMP_CXX_FOUND)
-    target_link_libraries(${ProjectName} 
-	PUBLIC OpenMP::OpenMP_CXX
-	)
-endif()
-#-- 添加附加包含目录。
+
+#-- 添加附加包含目录
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
     PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"

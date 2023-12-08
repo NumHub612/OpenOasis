@@ -44,8 +44,8 @@ jobs:
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          CC=clang-omp CXX=clang-omp++  cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
-          cmake --build . --config Release
+          CC=clang-omp CXX=clang-omp++  cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on -DCMAKE_BUILD_TYPE:STRING=Release
+          cmake --build .
         shell: bash 
       - name: Ctest
         run: |
