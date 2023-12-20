@@ -173,13 +173,7 @@ target_include_directories(${ProjectName}
     PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"
     PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
     )
-if (ENABLE_PYLIB)
-    target_include_directories(${ProjectName}  
-        PUBLIC  ${Python3_INCLUDE_DIRS}
-        PUBLIC  ${pybind11_INCLUDE_DIR}
-        )
-endif()
-
+    
 
 # -------------------------------------------------------------
 # 执行测试
