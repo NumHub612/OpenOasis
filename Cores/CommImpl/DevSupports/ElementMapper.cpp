@@ -1,7 +1,7 @@
 /** ***********************************************************************************
  *    @File      :  ElementMapper.cpp
- *    @Brief     :  To converts one ValueSet (inputValues) associated one ElementSet
- *    (fromElements)to a new ValuesSet that corresponds to another ElementSet
+ *    @Brief     :  To converts one ValueSet(inputValues) associated one ElementSet
+ *    (fromElements) to a new ValuesSet that corresponds to another ElementSet
  *    (toElements).
  *
  ** ***********************************************************************************/
@@ -73,7 +73,7 @@ shared_ptr<IValueSet> ElementMapper::MapValues(const shared_ptr<IValueSet> &inpu
             "Dimension mismatch between inputValues and mapping matrix");
     }
 
-    // Make a time-space value set of the correct size
+    // Make a time-space valueset of the correct size
     auto result = CreateResultValueSet(
         ExtensionMethods::TimesCount(inputValues), mNumberOfToRows);
 
@@ -179,7 +179,7 @@ void ElementMapper::UpdateMappingMatrix(
         {
             MapFromPolygonToPolygon(fromElements, toElements);
         }
-        else  // if the fromElementType, toElementType combination is no implemented.
+        else
         {
             throw runtime_error(
                 "Mapping of specified ElementTypes not included in ElementMapper");

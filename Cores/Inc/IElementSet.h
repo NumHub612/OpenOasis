@@ -12,10 +12,10 @@
  *    Possible element types are defined in `ElementType`.
  *
  *    For 3D elements (i.e. polyhedron) the shape can be queried by face. When the
- *    elementset is geo-referenced coordinates (X,Y,Z, M) can be obtained for each
+ *    elementset is geo-referenced, coordinates (X,Y,Z,M) can be obtained for each
  *    vertex of an element.
  *
- *    A geo-referenced element set needs to have a valid "SpatialReferenceSystem"
+ *    A geo-referenced elementset needs to have a valid "SpatialReferenceSystem"
  *    property set in a `ISpatialDefinition`. This is a string that specifies the OGC
  *    WKT representation of a spatial reference. An empty string indicates that there
  *    in no spatial reference, which is only valid if the `ElementType` is `IdBased`.
@@ -28,7 +28,6 @@
 #pragma once
 #include "ISpatialDefinition.h"
 #include <vector>
-#include <any>
 
 
 namespace OpenOasis
