@@ -918,8 +918,8 @@ ElementMapper::CreateXYPoint(const shared_ptr<IElementSet> &elementSet, int inde
     }
 
     return XYPoint(
-        elementSet->GetVertexXCoordinate(index, 0),
-        elementSet->GetVertexYCoordinate(index, 0));
+        elementSet->GetNodeXCoordinate(index, 0),
+        elementSet->GetNodeYCoordinate(index, 0));
 }
 
 XYPolyline
@@ -931,11 +931,11 @@ ElementMapper::CreateXYPolyline(const shared_ptr<IElementSet> &elementSet, int i
     }
 
     XYPolyline xyPolyline;
-    for (int i = 0; i < elementSet->GetVertexCount(index); i++)
+    for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
         XYPoint tempVar(
-            elementSet->GetVertexXCoordinate(index, i),
-            elementSet->GetVertexYCoordinate(index, i));
+            elementSet->GetNodeXCoordinate(index, i),
+            elementSet->GetNodeYCoordinate(index, i));
         xyPolyline.points.push_back(tempVar);
     }
 
@@ -952,11 +952,11 @@ ElementMapper::CreateXYPolygon(const shared_ptr<IElementSet> &elementSet, int in
 
     XYPolygon xyPolygon;
 
-    for (int i = 0; i < elementSet->GetVertexCount(index); i++)
+    for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
         XYPoint tempVar(
-            elementSet->GetVertexXCoordinate(index, i),
-            elementSet->GetVertexYCoordinate(index, i));
+            elementSet->GetNodeXCoordinate(index, i),
+            elementSet->GetNodeYCoordinate(index, i));
         xyPolygon.points.push_back(tempVar);
     }
 
@@ -978,11 +978,11 @@ ElementMapper::CreateFromXYPolygon(const shared_ptr<IElementSet> &elementSet, in
 
     XYPolygon xyPolygon;
 
-    for (int i = 0; i < elementSet->GetVertexCount(index); i++)
+    for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
         XYPoint tempVar(
-            elementSet->GetVertexXCoordinate(index, i),
-            elementSet->GetVertexYCoordinate(index, i));
+            elementSet->GetNodeXCoordinate(index, i),
+            elementSet->GetNodeYCoordinate(index, i));
         xyPolygon.points.push_back(tempVar);
     }
 

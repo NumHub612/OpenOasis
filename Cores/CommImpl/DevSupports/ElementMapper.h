@@ -65,6 +65,7 @@ enum class ElementMapperMethod
 /// @brief ElementMapper class converts one ValueSet(inputValues) associated one
 /// ElementSet(fromElements) to a new ValueSet that corresponds to another
 /// ElementSet(toElements).
+/// @note  Coupling to 3d elements is not currently supported.
 class ElementMapper
 {
 private:

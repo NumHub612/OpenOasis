@@ -21,10 +21,9 @@ using namespace Spatial;
 class Element : public IIdentifiable
 {
 private:
-    std::string mId          = "";
-    std::string mCaption     = "";
-    std::string mDescription = "";
-
+    std::string                   mId          = "";
+    std::string                   mCaption     = "";
+    std::string                   mDescription = "";
     std::vector<Coordinate>       mVertices;           // points.
     std::vector<std::vector<int>> mFaceVertexIndices;  // faces consisted of vertices.
 
@@ -78,7 +77,7 @@ public:
 
     void AddFace(const std::vector<int> &vertexIndices);
 
-    std::vector<int> GetFaceVertexIndices(int faceIndex) const;
+    std::vector<int> GetFaceNodeIndices(int faceIndex) const;
 };
 
 }  // namespace OpenOasis::CommImpl::DevSupports

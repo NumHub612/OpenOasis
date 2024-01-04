@@ -31,14 +31,12 @@ using DevSupports::Element;
 class ElementSet : public IElementSet
 {
 private:
-    std::string mSpatialReference;
-    std::string mCaption;
-    std::string mDescription;
-
+    std::string          mSpatialReference;
+    std::string          mCaption;
+    std::string          mDescription;
     std::vector<Element> mElements;
-
-    ElementType mElementType = ElementType::IdBased;
-    int         mVersion     = 0;
+    ElementType          mElementType = ElementType::IdBased;
+    int                  mVersion     = 0;
 
 public:
     virtual ~ElementSet()
@@ -84,15 +82,15 @@ public:
 
     int GetFaceCount(int elementIndex) override;
 
-    int GetVertexCount(int elementIndex) override;
+    int GetNodeCount(int elementIndex) override;
 
-    std::vector<int> GetFaceVertexIndices(int elementIndex, int faceIndex) override;
+    std::vector<int> GetFaceNodeIndices(int elementIndex, int faceIndex) override;
 
-    double GetVertexXCoordinate(int elementIndex, int vertexIndex) override;
+    double GetNodeXCoordinate(int elementIndex, int vertexIndex) override;
 
-    double GetVertexYCoordinate(int elementIndex, int vertexIndex) override;
+    double GetNodeYCoordinate(int elementIndex, int vertexIndex) override;
 
-    double GetVertexZCoordinate(int elementIndex, int vertexIndex) override;
+    double GetNodeZCoordinate(int elementIndex, int vertexIndex) override;
 
 protected:
     void CheckElementIndex(int elemIndex) const;

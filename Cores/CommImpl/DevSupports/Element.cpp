@@ -106,7 +106,7 @@ void Element::AddFace(const vector<int> &vertexIndices)
     mFaceVertexIndices.push_back(vertexIndices);
 }
 
-vector<int> Element::GetFaceVertexIndices(int faceIndex) const
+vector<int> Element::GetFaceNodeIndices(int faceIndex) const
 {
     return mFaceVertexIndices.at(faceIndex);
 }

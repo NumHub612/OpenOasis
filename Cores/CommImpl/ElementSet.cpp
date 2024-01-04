@@ -24,12 +24,12 @@ ElementSet::ElementSet(const shared_ptr<IElementSet> &source)
     for (int i = 0; i < source->GetElementCount(); i++)
     {
         Element element(source->GetElementId(i));
-        for (int j = 0; j < source->GetVertexCount(i); j++)
+        for (int j = 0; j < source->GetNodeCount(i); j++)
         {
             Coordinate vertex{
-                source->GetVertexXCoordinate(i, j),
-                source->GetVertexYCoordinate(i, j),
-                source->GetVertexZCoordinate(i, j)};
+                source->GetNodeXCoordinate(i, j),
+                source->GetNodeYCoordinate(i, j),
+                source->GetNodeZCoordinate(i, j)};
             element.AddVertex(vertex);
         }
 
@@ -117,7 +117,7 @@ int ElementSet::GetFaceCount(int index)
     return mElements[index].GetFaceCount();
 }
 
-int ElementSet::GetVertexCount(int index)
+int ElementSet::GetNodeCount(int index)
 {
     if (mElementType == ElementType::IdBased)
         throw IllegalArgumentException("Get vertex count from IdBased element set.");
@@ -127,28 +127,28 @@ int ElementSet::GetVertexCount(int index)
     return mElements[index].GetVertexCount();
 }
 
-vector<int> ElementSet::GetFaceVertexIndices(int elementIndex, int faceIndex)
+vector<int> ElementSet::GetFaceNodeIndices(int elementIndex, int faceIndex)
 {
     CheckFaceIndex(elementIndex, faceIndex);
 
-    return mElements[elementIndex].GetFaceVertexIndices(faceIndex);
+    return mElements[elementIndex].GetFaceNodeIndices(faceIndex);
 }
 
-double ElementSet::GetVertexXCoordinate(int elementIndex, int vertexIndex)
+double ElementSet::GetNodeXCoordinate(int elementIndex, int vertexIndex)
 {
     CheckVertexIndex(elementIndex, vertexIndex);
 
     return mElements[elementIndex].GetVertex(vertexIndex).x;
 }
 
-double ElementSet::GetVertexYCoordinate(int elementIndex, int vertexIndex)
+double ElementSet::GetNodeYCoordinate(int elementIndex, int vertexIndex)
 {
     CheckVertexIndex(elementIndex, vertexIndex);
 
     return mElements[elementIndex].GetVertex(vertexIndex).y;
 }
 
-double ElementSet::GetVertexZCoordinate(int elementIndex, int vertexIndex)
+double ElementSet::GetNodeZCoordinate(int elementIndex, int vertexIndex)
 {
     CheckVertexIndex(elementIndex, vertexIndex);
 

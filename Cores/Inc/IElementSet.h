@@ -13,7 +13,7 @@
  *
  *    For 3D elements (i.e. polyhedron) the shape can be queried by face. When the
  *    elementset is geo-referenced, coordinates (X,Y,Z,M) can be obtained for each
- *    vertex of an element.
+ *    node of an element.
  *
  *    A geo-referenced elementset needs to have a valid "SpatialReferenceSystem"
  *    property set in a `ISpatialDefinition`. This is a string that specifies the OGC
@@ -44,8 +44,6 @@ enum class ElementType
 
 
 /// @brief An list of elements having a common type.
-/// Geometry of each element is described by an ordered list of vertices. There are
-/// no restrictions to how elements are ordered.
 class IElementSet : public ISpatialDefinition
 {
 public:
@@ -78,51 +76,51 @@ public:
     /// @throw If the index outside the range, throw an exception.
     virtual int GetFaceCount(int elementIndex) = 0;
 
-    /// @brief Gets number of vertices for the element specified by the index.
+    /// @brief Gets number of nodes for the element specified by the index.
     ///
     /// @param elementIndex The element index for the element.
     ///
-    /// @return Number of vertices in element defined by the elementIndex.
+    /// @return Number of nodes in element defined by the elementIndex.
     ///
     /// @throw If the index outside the range, throw an exception.
-    /// @throw If the method is invoked for element sets of type `IdBased`, throw
-    /// an exception.
-    virtual int GetVertexCount(int elementIndex) = 0;
+    /// @throw If the method is invoked for element sets of type `IdBased`,
+    /// throw an exception.
+    virtual int GetNodeCount(int elementIndex) = 0;
 
-    /// @brief Gets an array with the vertex indices for a face.
+    /// @brief Gets an array with the node indices for a face.
     ///
     /// @param elementIndex Element index.
     /// @param faceIndex Face index.
     ///
-    /// @return The vertex indices for this face.
-    virtual std::vector<int> GetFaceVertexIndices(int elementIndex, int faceIndex) = 0;
+    /// @return The node indices for this face.
+    virtual std::vector<int> GetFaceNodeIndices(int elementIndex, int faceIndex) = 0;
 
-    /// @brief X coordinate for the vertex with vertexIndex of the element with
+    /// @brief X coordinate for the node with nodeIndex of the element with
     /// elementIndex.
     ///
     /// @param elementIndex Element index.
-    /// @param vertexIndex Vertex index in the element with index elementIndex.
+    /// @param nodeIndex Node index in the element with index elementIndex.
     ///
-    /// @return X coordinate for the vertex.
-    virtual double GetVertexXCoordinate(int elementIndex, int vertexIndex) = 0;
+    /// @return X coordinate for the node.
+    virtual double GetNodeXCoordinate(int elementIndex, int nodeIndex) = 0;
 
-    /// @brief Y coordinate for the vertex with vertexIndex of the element with
+    /// @brief Y coordinate for the node with nodeIndex of the element with
     /// elementIndex.
     ///
     /// @param elementIndex  Element index.
-    /// @param vertexIndex  Vertex index in the element with index elementIndex.
+    /// @param nodeIndex  Node index in the element with index elementIndex.
     ///
-    /// @return Y coordinate for the vertex.
-    virtual double GetVertexYCoordinate(int elementIndex, int vertexIndex) = 0;
+    /// @return Y coordinate for the node.
+    virtual double GetNodeYCoordinate(int elementIndex, int nodeIndex) = 0;
 
-    /// @brief Z coordinate for the vertex with vertexIndex of the element with
+    /// @brief Z coordinate for the node with nodeIndex of the element with
     /// elementIndex.
     ///
     /// @param elementIndex Element index.
-    /// @param vertexIndex Vertex index in the element with index elementIndex.
+    /// @param nodeIndex Node index in the element with index elementIndex.
     ///
-    /// @return Z coordinate for the vertex.
-    virtual double GetVertexZCoordinate(int elementIndex, int vertexIndex) = 0;
+    /// @return Z coordinate for the node.
+    virtual double GetNodeZCoordinate(int elementIndex, int nodeIndex) = 0;
 };
 
 }  // namespace OpenOasis
