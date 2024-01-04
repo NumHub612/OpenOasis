@@ -29,19 +29,12 @@ ElementSet::ElementSet(const shared_ptr<IElementSet> &source)
             Coordinate vertex{
                 source->GetVertexXCoordinate(i, j),
                 source->GetVertexYCoordinate(i, j),
-                source->GetVertexZCoordinate(i, j),
-                source->GetVertexMCoordinate(i, j)};
+                source->GetVertexZCoordinate(i, j)};
             element.AddVertex(vertex);
         }
 
         mElements.emplace_back(element);
     }
-
-    mHasZ = all_of(
-        begin(mElements), end(mElements), [](const Element &e) { return e.HasZ(); });
-
-    mHasM = all_of(
-        begin(mElements), end(mElements), [](const Element &e) { return e.HasM(); });
 }
 
 ElementSet::ElementSet(
@@ -54,12 +47,6 @@ ElementSet::ElementSet(
     mElements         = elements;
     mSpatialReference = spatialRef;
     mVersion          = version;
-
-    mHasZ = all_of(
-        begin(mElements), end(mElements), [](const Element &e) { return e.HasZ(); });
-
-    mHasM = all_of(
-        begin(mElements), end(mElements), [](const Element &e) { return e.HasM(); });
 }
 
 string ElementSet::GetDescription() const
@@ -104,15 +91,11 @@ ElementType ElementSet::GetElementType() const
 
 int ElementSet::GetElementIndex(const string &elementId)
 {
-    if (mElements.empty())
-        return -1;
+    if (mElements.empty()) return -1;
 
     for (auto i = 0; i < mElements.size(); i++)
     {
-        if (mElements[i].GetId() == elementId)
-        {
-            return i;
-        }
+        if (mElements[i].GetId() == elementId) { return i; }
     }
 
     return -1;
@@ -120,8 +103,7 @@ int ElementSet::GetElementIndex(const string &elementId)
 
 string ElementSet::GetElementId(int index)
 {
-    if (mElementType != ElementType::IdBased)
-        return "";
+    if (mElementType != ElementType::IdBased) return "";
 
     CheckElementIndex(index);
 
@@ -152,16 +134,6 @@ vector<int> ElementSet::GetFaceVertexIndices(int elementIndex, int faceIndex)
     return mElements[elementIndex].GetFaceVertexIndices(faceIndex);
 }
 
-bool ElementSet::HasZ() const
-{
-    return mHasZ;
-}
-
-bool ElementSet::HasM() const
-{
-    return mHasM;
-}
-
 double ElementSet::GetVertexXCoordinate(int elementIndex, int vertexIndex)
 {
     CheckVertexIndex(elementIndex, vertexIndex);
@@ -182,14 +154,6 @@ double ElementSet::GetVertexZCoordinate(int elementIndex, int vertexIndex)
 
     return mElements[elementIndex].GetVertex(vertexIndex).z;
 }
-
-double ElementSet::GetVertexMCoordinate(int elementIndex, int vertexIndex)
-{
-    CheckVertexIndex(elementIndex, vertexIndex);
-
-    return mElements[elementIndex].GetVertex(vertexIndex).m;
-}
-
 
 void ElementSet::CheckElementIndex(int elemIndex) const
 {

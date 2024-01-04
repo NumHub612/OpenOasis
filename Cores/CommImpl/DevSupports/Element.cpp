@@ -96,20 +96,6 @@ void Element::AddVertex(const Coordinate &vertex)
     mVertices.push_back(vertex);
 }
 
-bool Element::HasZ() const
-{
-    return all_of(begin(mVertices), end(mVertices), [](const Coordinate &vert) {
-        return !isnan(vert.z);
-    });
-}
-
-bool Element::HasM() const
-{
-    return all_of(begin(mVertices), end(mVertices), [](const Coordinate &vert) {
-        return !isnan(vert.m);
-    });
-}
-
 int Element::GetFaceCount() const
 {
     return mFaceVertexIndices.size();

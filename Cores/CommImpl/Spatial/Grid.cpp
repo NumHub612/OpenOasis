@@ -202,7 +202,7 @@ void Grid::CalculateFaceDirector()
 
         double x = cPoint.x - fPoint.x;
         double y = cPoint.y - fPoint.y;
-        double z = (fPoint.HasZ()) ? cPoint.z - fPoint.z : 0;
+        double z = cPoint.z - fPoint.z;
 
         auto vec = Vector<double, 3>(x, y, z);
         auto res = vec * face.normal;

@@ -70,10 +70,6 @@ public:
 
     void AddVertex(const Coordinate &vertex);
 
-    bool HasZ() const;
-
-    bool HasM() const;
-
     ///////////////////////////////////////////////////////////////////////////////////
     // Additional methods for the face operations.
     //
@@ -85,4 +81,4 @@ public:
     std::vector<int> GetFaceVertexIndices(int faceIndex) const;
 };
 
-} 
+}  // namespace OpenOasis::CommImpl::DevSupports

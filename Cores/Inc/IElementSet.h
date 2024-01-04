@@ -97,12 +97,6 @@ public:
     /// @return The vertex indices for this face.
     virtual std::vector<int> GetFaceVertexIndices(int elementIndex, int faceIndex) = 0;
 
-    /// @brief True if the element set supports Z coordinates.
-    virtual bool HasZ() const = 0;
-
-    /// @brief True if the element set supports M coordinates.
-    virtual bool HasM() const = 0;
-
     /// @brief X coordinate for the vertex with vertexIndex of the element with
     /// elementIndex.
     ///
@@ -129,15 +123,6 @@ public:
     ///
     /// @return Z coordinate for the vertex.
     virtual double GetVertexZCoordinate(int elementIndex, int vertexIndex) = 0;
-
-    /// @brief M coordinate for the vertex with VertexIndex of the element with
-    /// elementIndex.
-    ///
-    /// @param elementIndex Element index.
-    /// @param vertexIndex Vertex index in the element with index elementIndex.
-    ///
-    /// @return M coordinate for the vertex.
-    virtual double GetVertexMCoordinate(int elementIndex, int vertexIndex) = 0;
 };
 
 }  // namespace OpenOasis

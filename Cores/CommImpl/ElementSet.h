@@ -39,8 +39,6 @@ private:
 
     ElementType mElementType = ElementType::IdBased;
     int         mVersion     = 0;
-    bool        mHasZ        = true;  // all element vertices has z.
-    bool        mHasM        = true;  // all element vertices has m.
 
 public:
     virtual ~ElementSet()
@@ -90,17 +88,11 @@ public:
 
     std::vector<int> GetFaceVertexIndices(int elementIndex, int faceIndex) override;
 
-    bool HasZ() const override;
-
-    bool HasM() const override;
-
     double GetVertexXCoordinate(int elementIndex, int vertexIndex) override;
 
     double GetVertexYCoordinate(int elementIndex, int vertexIndex) override;
 
     double GetVertexZCoordinate(int elementIndex, int vertexIndex) override;
-
-    double GetVertexMCoordinate(int elementIndex, int vertexIndex) override;
 
 protected:
     void CheckElementIndex(int elemIndex) const;
