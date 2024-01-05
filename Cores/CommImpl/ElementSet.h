@@ -86,16 +86,16 @@ public:
 
     std::vector<int> GetFaceNodeIndices(int elementIndex, int faceIndex) override;
 
-    double GetNodeXCoordinate(int elementIndex, int vertexIndex) override;
+    double GetNodeXCoordinate(int elementIndex, int nodeIndex) override;
 
-    double GetNodeYCoordinate(int elementIndex, int vertexIndex) override;
+    double GetNodeYCoordinate(int elementIndex, int nodeIndex) override;
 
-    double GetNodeZCoordinate(int elementIndex, int vertexIndex) override;
+    double GetNodeZCoordinate(int elementIndex, int nodeIndex) override;
 
 protected:
-    void CheckElementIndex(int elemIndex) const;
-    void CheckVertexIndex(int elemIndex, int vertIndex) const;
-    void CheckFaceIndex(int elemIndex, int faceIndex) const;
+    void CheckElementIndex(int elementIndex) const;
+    void CheckVertexIndex(int elementIndex, int nodeIndex) const;
+    void CheckFaceIndex(int elementIndex, int faceIndex) const;
 };
 
 }  // namespace CommImpl

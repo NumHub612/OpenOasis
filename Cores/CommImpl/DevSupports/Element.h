@@ -17,15 +17,15 @@ namespace OpenOasis::CommImpl::DevSupports
 {
 using namespace Spatial;
 
-/// @brief The Element class contains a spatial element.
+/// @brief The Element class contains an individual spatial element.
 class Element : public IIdentifiable
 {
 private:
     std::string                   mId          = "";
     std::string                   mCaption     = "";
     std::string                   mDescription = "";
-    std::vector<Coordinate>       mVertices;           // points.
-    std::vector<std::vector<int>> mFaceVertexIndices;  // faces consisted of vertices.
+    std::vector<Coordinate>       mVertices;           // vertexes.
+    std::vector<std::vector<int>> mFaceVertexIndices;  // faces.
 
 public:
     virtual ~Element() = default;
@@ -56,7 +56,7 @@ public:
     std::string GetId() const override;
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Additional methods for the vertex operations.
+    // Additional methods for the vertex and face operations.
     //
 
     std::vector<Coordinate> GetVertices() const;
@@ -68,10 +68,6 @@ public:
     Coordinate GetVertex(int Index) const;
 
     void AddVertex(const Coordinate &vertex);
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Additional methods for the face operations.
-    //
 
     int GetFaceCount() const;
 

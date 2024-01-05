@@ -208,9 +208,9 @@ void Grid::CalculateFaceDirector()
         auto res = vec * face.normal;
         auto dir = (res > 0) ? 1 : -1;
 
-        face.cellDirs.push_back(dir);
+        face.cellSides.push_back(dir);
 
-        if (face.cellIndexes.size() == 2) face.cellDirs.push_back(-dir);
+        if (face.cellIndexes.size() == 2) face.cellSides.push_back(-dir);
     }
 }
 
