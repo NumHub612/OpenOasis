@@ -30,7 +30,7 @@ void CsvLoader::LoadByFile(
     if (!FilePathHelper::FileExists(filePath))
     {
         throw invalid_argument(
-            StringHelper::FormatSimple("File {} does not exist.", filePath));
+            StringHelper::FormatSimple("File [{}] does not exist.", filePath));
     }
 
     mHasColumnHeader = hasColumnHeader;
@@ -160,7 +160,7 @@ CsvWriter::CsvWriter(const string &filePath, char delimiter)
         catch (...)
         {
             throw invalid_argument(StringHelper::FormatSimple(
-                "File or directory {} does not exist.", filePath));
+                "File or directory [{}] does not exist.", filePath));
         }
     }
 

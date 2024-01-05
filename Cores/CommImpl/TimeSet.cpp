@@ -98,7 +98,7 @@ void TimeSet::RemoveTime(int index)
     if (index < 0 || index >= mTimes.size())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "Index {} of time to remove out of range {}.", index, mTimes.size()));
+            "Index [{}] of time to remove out of range [{}] .", index, mTimes.size()));
     }
 
     mTimes.erase(mTimes.begin() + index);

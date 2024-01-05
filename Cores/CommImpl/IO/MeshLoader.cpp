@@ -21,7 +21,7 @@ MeshLoader::MeshLoader(const string &meshDir)
     if (!FilePathHelper::DirectoryExists(meshDir))
     {
         throw IllegalArgumentException(
-            StringHelper::FormatSimple("Mesh directory {} does not exist.", meshDir));
+            StringHelper::FormatSimple("Mesh directory [{}] does not exist.", meshDir));
     }
 
     mMeshDir = meshDir;
@@ -201,13 +201,13 @@ void MeshLoader::CheckIds(const vector<string> &ids, const string &meta)
     if (ids_int.front() != 0)
     {
         throw InvalidDataException(StringHelper::FormatSimple(
-            "Invalid {} data, ids don't start from 0.", meta));
+            "Invalid [{}] data, ids don't start from 0.", meta));
     }
 
     if (ids_int.back() != int(ids_int.size()) - 1)
     {
-        throw InvalidDataException(
-            StringHelper::FormatSimple("Invalid {} data, non-incremental ids.", meta));
+        throw InvalidDataException(StringHelper::FormatSimple(
+            "Invalid [{}] data, non-incremental ids.", meta));
     }
 }
 

@@ -69,7 +69,7 @@ void HeatConductionModel::InitializeArguments()
         if (sections.count(seg) == 0)
         {
             throw FileLoadException(StringHelper::FormatSimple(
-                "Heat model {} missing section [{}].", mId, seg));
+                "Heat model [{}] missing section [{}].", mId, seg));
         }
     }
 

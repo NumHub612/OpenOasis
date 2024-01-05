@@ -86,7 +86,9 @@ Coordinate Element::GetVertex(int index) const
     if (index < 0 || index >= mVertices.size())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "Invalid vertex query index {} out of range {}.", index, mVertices.size()));
+            "Invalid vertex query index [{}] out of range [{}] .",
+            index,
+            mVertices.size()));
     }
     return mVertices.at(index);
 }

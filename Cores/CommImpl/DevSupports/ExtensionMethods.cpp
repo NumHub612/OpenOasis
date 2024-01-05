@@ -24,14 +24,14 @@ ExtensionMethods::Quantity(const shared_ptr<IBaseExchangeItem> &item)
     if (!valueDef)
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "Null value definition of exchange tiem {}.", item->GetId()));
+            "Null value definition of exchange tiem [{}] .", item->GetId()));
     }
 
     auto qualDef = dynamic_pointer_cast<CommImpl::Quantity>(valueDef);
     if (!qualDef)
     {
         throw InvalidOperationException(StringHelper::FormatSimple(
-            "Can't get quantity from exchange item {}.", item->GetId()));
+            "Can't get quantity from exchange item [{}] .", item->GetId()));
     }
 
     return qualDef;
@@ -76,18 +76,9 @@ void ExtensionMethods::SetSingleTime(
             "Can not set single time SPAN in a time set without duration");
     }
 
-    if (timeSet->GetTimes().size() > 1)
-    {
-        timeSet->GetTimes().clear();
-    }
-    if (timeSet->GetTimes().empty())
-    {
-        timeSet->GetTimes().push_back(timeStamp);
-    }
-    else
-    {
-        timeSet->GetTimes()[0] = timeStamp;
-    }
+    if (timeSet->GetTimes().size() > 1) { timeSet->GetTimes().clear(); }
+    if (timeSet->GetTimes().empty()) { timeSet->GetTimes().push_back(timeStamp); }
+    else { timeSet->GetTimes()[0] = timeStamp; }
 }
 
 void ExtensionMethods::SetSingleTimeStamp(

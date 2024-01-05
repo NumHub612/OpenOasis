@@ -68,7 +68,7 @@ void ValueSet2D::SetOrAddValue(const std::vector<int> &indices, const any &value
     if (tIndex > GetTimesCount())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "Time index {} far exceed valueset time range {}.",
+            "Time index [{}] far exceed valueset time range [{}] .",
             tIndex,
             GetTimesCount()));
     }
@@ -78,7 +78,7 @@ void ValueSet2D::SetOrAddValue(const std::vector<int> &indices, const any &value
         if (!IsValidValueType(value))
         {
             throw IllegalArgumentException(StringHelper::FormatSimple(
-                "The set value type {} doesn't match the valueset {}.",
+                "The set value type [{}] doesn't match the valueset [{}] .",
                 value.type().name(),
                 mValues2D[tIndex][eIndex].type().name()));
         }
@@ -106,7 +106,7 @@ int ValueSet2D::GetIndexCount(const std::vector<int> &indices) const
     if (tIndex >= GetTimesCount())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "The first query index {} out of range {}.", tIndex, GetTimesCount()));
+            "The first query index [{}] out of range [{}] .", tIndex, GetTimesCount()));
     }
 
     // Query the length of specified index in second element-dimension.
@@ -127,7 +127,7 @@ void ValueSet2D::AddValue(const vector<int> &indices, const any &value)
         if (!IsValidValueType(value))
         {
             throw IllegalArgumentException(StringHelper::FormatSimple(
-                "The added value type {} doesn't match the valueset {}.",
+                "The added value type [{}] doesn't match the valueset [{}] .",
                 value.type().name(),
                 mValues2D[tIndex][eIndex].type().name()));
         }

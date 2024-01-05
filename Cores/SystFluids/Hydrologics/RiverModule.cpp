@@ -309,7 +309,7 @@ void RiverModule::RestoreState(const shared_ptr<IIdentifiable> &stateId)
     if (iter == end(mStates))
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "River model {} state with id {} not found.", mId, stateId->GetId()));
+            "River model [{}] state with id [{}] not found.", mId, stateId->GetId()));
     }
 
     auto state        = *iter;
@@ -332,4 +332,4 @@ void RiverModule::ClearState(const shared_ptr<IIdentifiable> &stateId)
 }
 
 
-}  // namespace OpenOasis::SystFluids
+}  // namespace OpenOasis::SystFluids::Hydrologics

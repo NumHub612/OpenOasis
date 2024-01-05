@@ -72,7 +72,7 @@ void RunoffModule::InitializeArguments()
             if (!FilePathHelper::FileExists(file))
             {
                 throw FileLoadException(StringHelper::FormatSimple(
-                    "RunoffModule ({}) task file unexistent: {}.", mId, file));
+                    "RunoffModule ({}) task file unexistent: [{}] .", mId, file));
             }
         }
     }
@@ -218,4 +218,4 @@ RunoffOutput::RunoffOutput(
     Output(id, component)
 {}
 
-}  // namespace OpenOasis::SystFluids
+}  // namespace OpenOasis::SystFluids::Hydrologics

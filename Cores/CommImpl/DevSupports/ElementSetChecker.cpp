@@ -34,7 +34,9 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 catch (const runtime_error &e)
                 {
                     throw runtime_error(StringHelper::FormatSimple(
-                        "{} ElementID = {}.", e.what(), elementSet->GetElementId(i)));
+                        "{} ElementID = [{}] .",
+                        e.what(),
+                        elementSet->GetElementId(i)));
                 }
             }
             break;
@@ -59,7 +61,9 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 catch (const runtime_error &e)
                 {
                     throw runtime_error(StringHelper::FormatSimple(
-                        "{} ElementID = {}.", e.what(), elementSet->GetElementId(i)));
+                        "{} ElementID = [{}] .",
+                        e.what(),
+                        elementSet->GetElementId(i)));
                 }
             }
             break;
@@ -84,7 +88,9 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 catch (const runtime_error &e)
                 {
                     throw runtime_error(StringHelper::FormatSimple(
-                        "{} ElementID = {}.", e.what(), elementSet->GetElementId(i)));
+                        "{} ElementID = [{}] .",
+                        e.what(),
+                        elementSet->GetElementId(i)));
                 }
             }
             break;
@@ -94,7 +100,7 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
     catch (const runtime_error &)
     {
         throw runtime_error(StringHelper::FormatSimple(
-            "ElementSet with Caption = {} is invalid.", elementSet->GetCaption()));
+            "ElementSet with Caption = [{}] is invalid.", elementSet->GetCaption()));
     }
 }
 

@@ -159,7 +159,7 @@ void ElementSet::CheckElementIndex(int elemIndex) const
 {
     if (elemIndex < 0 || mElements.empty() || elemIndex >= mElements.size())
         throw ArgumentOutOfRangeException(StringHelper::FormatSimple(
-            "Element index {} out of range {}.", elemIndex, mElements.size()));
+            "Element index [{}] out of range [{}] .", elemIndex, mElements.size()));
 }
 
 void ElementSet::CheckVertexIndex(int elemIndex, int vertIndex) const
@@ -169,7 +169,7 @@ void ElementSet::CheckVertexIndex(int elemIndex, int vertIndex) const
     int vertCount = mElements.at(elemIndex).GetVertexCount();
     if (vertIndex < 0 || vertIndex >= vertCount)
         throw ArgumentOutOfRangeException(StringHelper::FormatSimple(
-            "Vertex index {} out of range {}.", vertIndex, vertCount));
+            "Vertex index [{}] out of range [{}] .", vertIndex, vertCount));
 }
 
 void ElementSet::CheckFaceIndex(int elemIndex, int faceIndex) const
@@ -179,7 +179,7 @@ void ElementSet::CheckFaceIndex(int elemIndex, int faceIndex) const
     int faceCount = mElements.at(elemIndex).GetFaceCount();
     if (faceIndex < 0 || faceIndex >= faceCount)
         throw ArgumentOutOfRangeException(StringHelper::FormatSimple(
-            "Face index {} out of range {}.", faceIndex, faceCount));
+            "Face index [{}] out of range [{}] .", faceIndex, faceCount));
 }
 
 }  // namespace OpenOasis::CommImpl
