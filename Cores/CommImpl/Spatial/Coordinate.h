@@ -4,7 +4,7 @@
  *    @File      :  Coordinate.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  The Coordinate struct contains a (x,y,z,m) coordinate.
+ *    @Desc      :  The Coordinate struct contains a (x, y, z) coordinate.
  *
  ** ***********************************************************************************/
 #pragma once

@@ -12,7 +12,7 @@
  *    Possible element types are defined in `ElementType`.
  *
  *    For 3D elements (i.e. polyhedron) the shape can be queried by face. When the
- *    elementset is geo-referenced, coordinates (X,Y,Z,M) can be obtained for each
+ *    elementset is geo-referenced, coordinates (X, Y, Z) can be obtained for each
  *    node of an element.
  *
  *    A geo-referenced elementset needs to have a valid "SpatialReferenceSystem"
@@ -70,9 +70,7 @@ public:
     /// @brief Gets the number of faces in a element.
     ///
     /// @param elementIndex Index for the element.
-    ///
     /// @return Number of faces.
-    ///
     /// @throw If the index outside the range, throw an exception.
     virtual int GetFaceCount(int elementIndex) = 0;
 
@@ -83,7 +81,7 @@ public:
     /// @return Number of nodes in element defined by the elementIndex.
     ///
     /// @throw If the index outside the range, throw an exception.
-    /// @throw If the method is invoked for element sets of type `IdBased`,
+    /// @throw If the method is invoked with type `IdBased`,
     /// throw an exception.
     virtual int GetNodeCount(int elementIndex) = 0;
 
@@ -91,7 +89,6 @@ public:
     ///
     /// @param elementIndex Element index.
     /// @param faceIndex Face index.
-    ///
     /// @return The node indices for this face.
     virtual std::vector<int> GetFaceNodeIndices(int elementIndex, int faceIndex) = 0;
 
