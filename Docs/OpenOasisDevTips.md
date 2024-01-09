@@ -132,6 +132,7 @@
 * 提交频率
 
 每个提交应该只包含一个逻辑上的更改或修复，这样可以更容易追踪和理解每个提交的意图。
+建议将每个commit用时控制在 3 小时内，鼓励提高提交频率。
 避免将多个不相关的更改混合在一个提交中，以免给代码审查和版本控制带来困扰。
 
 * 提交信息格式
@@ -145,6 +146,26 @@
 提交信息应该描述清楚修改的内容，不要使用模糊的词汇。
 尽量提供一些上下文信息，例如为什么做出这个更改、解决了什么问题、有什么影响等。
 如果有关联的问题（如GitHub Issue等）或任务，可以在提交信息中引用相关的编号。
+
+**Github原生开发**
+
+* Actions 和 Security
+
+通过 github actions 和 security（code scanning）实现linux、windows、macos平台下的 ci 方案。
+
+* Issues
+
+通过 github issues 登记开发工作（保留feat、bug等历史足迹）。
+
+* Discussions
+
+通过 github discussions 进行团队沟通交流。
+通过 issues 当然也可以讨论，不过更多是已确定的 feat 或 bug。
+
+* Projects
+
+通过 github projects 进行开发计划和进度管理，控制版本发布 。
+
 
 [<i class="fa fa-home"></i>](#绿洲开发小贴士)
 
