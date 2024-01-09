@@ -22,6 +22,12 @@
 #define LINUX
 #endif
 
+// Define MACOS.
+#undef MACOS
+#ifdef __APPLE__
+#define MACOS
+#endif
+
 // Include platform headers.
 #ifdef WINDOWS
 #include <windows.h>

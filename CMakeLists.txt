@@ -22,13 +22,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 # 设置平台类型
 # -------------------------------------------------------------
 if (CMAKE_HOST_WIN32)
-    set(WINDOWS 1)
     set(platform "win")
 elseif (CMAKE_HOST_APPLE)
-    set(MACOS 1)
     set(platform "mac")
 elseif (CMAKE_HOST_UNIX)
-    set(LINUX 1)
     set(platform "linux")
 endif ()
 
