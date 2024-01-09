@@ -6,9 +6,9 @@ name: Linux_CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,8 +44,8 @@ jobs:
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on
-          cmake --build . --config Release
+          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on -DCMAKE_BUILD_TYPE:STRING=Release
+          cmake --build .
         shell: bash 
       - name: Ctest
         run: |

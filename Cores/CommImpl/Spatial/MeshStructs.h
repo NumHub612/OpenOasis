@@ -12,6 +12,7 @@
 #include <vector>
 #include <array>
 #include <unordered_map>
+#include <cmath>
 
 
 namespace OpenOasis
@@ -61,7 +62,7 @@ struct Face
     // Orientation of cells to face
     // (Same or opposite to normal)
     // (Corresponds to cellIndexes)
-    std::vector<int> cellDirs;
+    std::vector<int> cellSides;
 };
 
 

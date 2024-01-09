@@ -405,7 +405,7 @@ vector<shared_ptr<IArgument>> SpaceAdaptedOutputFactory::GetAdaptedOutputArgumen
               methodIdentifier->GetId(), mElementOperationPrefix)))
     {
         throw runtime_error(StringHelper::FormatSimple(
-            "Unknown method identifier: {}.", methodIdentifier));
+            "Unknown method identifier: [{}] .", methodIdentifier));
     }
 
     for (int i = 0; i < mAvailableMethods.size(); i++)
@@ -471,8 +471,8 @@ vector<shared_ptr<IArgument>> SpaceAdaptedOutputFactory::GetAdaptedOutputArgumen
             }
         }
     }
-    throw runtime_error(
-        StringHelper::FormatSimple("Unknown methodID: {}.", methodIdentifier->GetId()));
+    throw runtime_error(StringHelper::FormatSimple(
+        "Unknown methodID: [{}] .", methodIdentifier->GetId()));
 }
 
 

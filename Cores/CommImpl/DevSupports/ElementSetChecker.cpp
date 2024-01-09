@@ -25,7 +25,7 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
             {
                 try
                 {
-                    if (elementSet->GetVertexCount(i) != 1)
+                    if (elementSet->GetNodeCount(i) != 1)
                     {
                         throw runtime_error(
                             "Number of vertices in point element is different from 1.");
@@ -34,7 +34,9 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 catch (const runtime_error &e)
                 {
                     throw runtime_error(StringHelper::FormatSimple(
-                        "{} ElementID = {}.", e.what(), elementSet->GetElementId(i)));
+                        "{} ElementID = [{}] .",
+                        e.what(),
+                        elementSet->GetElementId(i)));
                 }
             }
             break;
@@ -44,11 +46,11 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 try
                 {
                     XYPolyline polyline;
-                    for (int j = 0; j < elementSet->GetVertexCount(i); j++)
+                    for (int j = 0; j < elementSet->GetNodeCount(i); j++)
                     {
                         polyline.points.emplace_back(XYPoint(
-                            elementSet->GetVertexXCoordinate(i, j),
-                            elementSet->GetVertexYCoordinate(i, j)));
+                            elementSet->GetNodeXCoordinate(i, j),
+                            elementSet->GetNodeYCoordinate(i, j)));
                     }
 
                     if (!polyline.Validate())
@@ -59,7 +61,9 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 catch (const runtime_error &e)
                 {
                     throw runtime_error(StringHelper::FormatSimple(
-                        "{} ElementID = {}.", e.what(), elementSet->GetElementId(i)));
+                        "{} ElementID = [{}] .",
+                        e.what(),
+                        elementSet->GetElementId(i)));
                 }
             }
             break;
@@ -69,11 +73,11 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 try
                 {
                     XYPolygon polygon;
-                    for (int j = 0; j < elementSet->GetVertexCount(i); j++)
+                    for (int j = 0; j < elementSet->GetNodeCount(i); j++)
                     {
                         polygon.points.emplace_back(
-                            elementSet->GetVertexXCoordinate(i, j),
-                            elementSet->GetVertexYCoordinate(i, j));
+                            elementSet->GetNodeXCoordinate(i, j),
+                            elementSet->GetNodeYCoordinate(i, j));
                     }
 
                     if (!polygon.Validate())
@@ -84,7 +88,9 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
                 catch (const runtime_error &e)
                 {
                     throw runtime_error(StringHelper::FormatSimple(
-                        "{} ElementID = {}.", e.what(), elementSet->GetElementId(i)));
+                        "{} ElementID = [{}] .",
+                        e.what(),
+                        elementSet->GetElementId(i)));
                 }
             }
             break;
@@ -94,7 +100,7 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
     catch (const runtime_error &)
     {
         throw runtime_error(StringHelper::FormatSimple(
-            "ElementSet with Caption = {} is invalid.", elementSet->GetCaption()));
+            "ElementSet with Caption = [{}] is invalid.", elementSet->GetCaption()));
     }
 }
 

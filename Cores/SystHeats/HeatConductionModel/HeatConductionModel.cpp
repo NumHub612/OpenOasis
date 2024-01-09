@@ -69,7 +69,7 @@ void HeatConductionModel::InitializeArguments()
         if (sections.count(seg) == 0)
         {
             throw FileLoadException(StringHelper::FormatSimple(
-                "Heat model {} missing section [{}].", mId, seg));
+                "Heat model [{}] missing section [{}].", mId, seg));
         }
     }
 
@@ -417,7 +417,7 @@ tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatr
 
     int size = mGrid->GetNumCells();
 
-    vector<double> matrix(size * size, 0);
+    vector<double> matrix(static_cast<long>(size) * size, 0);
     vector<double> source(size, 0);
 
     for (int i = 0; i < size; i++)

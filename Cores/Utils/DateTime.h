@@ -160,7 +160,7 @@ public:
     DateTime(int year, int month, int day, int hour = 0, int minute = 0, int sec = 0);
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Member methods used for getting part portion of the date time.
+    // Member methods used for getting portion of the datetime.
     //
 
     int Microsecond() const;
@@ -214,7 +214,7 @@ public:
     /// @brief Gets a new `DateTime` with current date and time.
     static DateTime Now();
 
-    /// @brief Gets a new `DateTime` with origin date time(1970-01-01 0:0:0).
+    /// @brief Gets a new `DateTime` with origin date time(1970-01-01).
     static DateTime Zero();
 
     /// @brief Returns the days in the specified year and month.

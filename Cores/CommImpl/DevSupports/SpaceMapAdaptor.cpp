@@ -92,7 +92,7 @@ SpaceMapAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier
     if (querier->GetTimeSet() == nullptr || querier->GetTimeSet()->GetTimes().empty())
     {
         throw runtime_error(StringHelper::FormatSimple(
-            "Invalid query specifier {} for in GetValues() call to space adaptor {}.",
+            "Invalid query specifier [{}] for in GetValues() call to space adaptor [{}] .",
             querier->GetId(),
             mId));
     }

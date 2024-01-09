@@ -26,7 +26,7 @@ void JsonLoader::LoadByFile(const string &filePath)
     if (!FilePathHelper::FileExists(filePath))
     {
         throw invalid_argument(
-            StringHelper::FormatSimple("File {} does not exist.", filePath));
+            StringHelper::FormatSimple("File [{}] does not exist.", filePath));
     }
 
     mJson = nlohmann::json::parse(ifstream(filePath));
@@ -89,7 +89,10 @@ unordered_map<string, string> JsonLoader::GetMap(const vector<string> &levels) c
     }
 
     unordered_map<string, string> map;
-    for (const auto &it : json.items()) { map.insert(make_pair(it.key(), it.value())); }
+    for (const auto &it : json.items())
+    {
+        map.insert(make_pair(it.key(), it.value()));
+    }
 
     return map;
 }
@@ -117,7 +120,7 @@ JsonWriter::JsonWriter(const string &filePath)
         catch (...)
         {
             throw invalid_argument(StringHelper::FormatSimple(
-                "File or directory {} does not exist.", filePath));
+                "File or directory [{}] does not exist.", filePath));
         }
     }
 }

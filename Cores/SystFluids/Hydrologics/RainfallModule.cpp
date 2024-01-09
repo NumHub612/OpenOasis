@@ -90,7 +90,7 @@ void RainfallModule::InitializeArguments()
             if (!FilePathHelper::FileExists(file))
             {
                 throw FileLoadException(StringHelper::FormatSimple(
-                    "RainfallModule ({}) rainfall file unexistent: {}.", mId, file));
+                    "RainfallModule ({}) rainfall file unexistent: [{}] .", mId, file));
             }
         }
         else if (kid == "coordinate_file" && !mElements)
@@ -98,14 +98,16 @@ void RainfallModule::InitializeArguments()
             if (mArguments.count(kid) == 0)
             {
                 throw runtime_error(StringHelper::FormatSimple(
-                    "RainfallModule {} has not set coordinate file argument.", mId));
+                    "RainfallModule [{}] has not set coordinate file argument.", mId));
             }
 
             string file = any_cast<string>(mArguments[kid]->GetValue());
             if (!FilePathHelper::FileExists(file))
             {
                 throw FileLoadException(StringHelper::FormatSimple(
-                    "RainfallModule {} coordinate file unexistent: {}.", mId, file));
+                    "RainfallModule [{}] coordinate file unexistent: [{}] .",
+                    mId,
+                    file));
             }
         }
     }
@@ -149,7 +151,7 @@ void RainfallModule::InitializeSpace()
     if (!mElements)
     {
         throw InvalidDataException(StringHelper::FormatSimple(
-            "RainfallModule {} coordinate load failed.", mId));
+            "RainfallModule [{}] coordinate load failed.", mId));
     }
 }
 

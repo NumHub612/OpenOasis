@@ -96,7 +96,7 @@ public:
     /// @param faceIndex Face index.
     ///
     /// @return The vertex indices for this face.
-    virtual std::vector<int> GetFaceVertexIndices(int elementIndex, int faceIndex) = 0;
+    virtual std::vector<int> GetFaceNodeIndices(int elementIndex, int faceIndex) = 0;
 
     /// @brief True if the element set supports Z coordinates.
     virtual bool HasZ() const = 0;
@@ -111,7 +111,7 @@ public:
     /// @param vertexIndex Vertex index in the element with index elementIndex.
     ///
     /// @return X coordinate for the vertex.
-    virtual double GetVertexXCoordinate(int elementIndex, int vertexIndex) = 0;
+    virtual double GetNodeXCoordinate(int elementIndex, int vertexIndex) = 0;
 
     /// @brief Y coordinate for the vertex with vertexIndex of the element with
     /// elementIndex.
@@ -120,7 +120,7 @@ public:
     /// @param vertexIndex  Vertex index in the element with index elementIndex.
     ///
     /// @return Y coordinate for the vertex.
-    virtual double GetVertexYCoordinate(int elementIndex, int vertexIndex) = 0;
+    virtual double GetNodeYCoordinate(int elementIndex, int vertexIndex) = 0;
 
     /// @brief Z coordinate for the vertex with vertexIndex of the element with
     /// elementIndex.
@@ -129,7 +129,7 @@ public:
     /// @param vertexIndex Vertex index in the element with index elementIndex.
     ///
     /// @return Z coordinate for the vertex.
-    virtual double GetVertexZCoordinate(int elementIndex, int vertexIndex) = 0;
+    virtual double GetNodeZCoordinate(int elementIndex, int vertexIndex) = 0;
 
     /// @brief M coordinate for the vertex with VertexIndex of the element with
     /// elementIndex.

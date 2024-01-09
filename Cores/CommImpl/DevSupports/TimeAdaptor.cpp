@@ -65,7 +65,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     if (querier->GetTimeSet() == nullptr || querier->GetTimeSet()->GetTimes().empty())
     {
         throw runtime_error(StringHelper::FormatSimple(
-            "Invalid query specifier {} for in GetValues() call to time adaptor {}.",
+            "Invalid query specifier [{}] for in GetValues() call to time adaptor [{}] .",
             querier->GetId(),
             mId));
     }
@@ -133,7 +133,7 @@ bool TimeAdaptor::Update(const shared_ptr<IBaseExchangeItem> &specifier)
         || specifier->GetTimeSet()->GetTimes().empty())
     {
         throw runtime_error(StringHelper::FormatSimple(
-            "Given TimeSet of output item {} can't produce one set of values for {}.",
+            "Given TimeSet of output item [{}] can't produce one set of values for [{}] .",
             mOutput.lock()->GetId(),
             specifier->GetId()));
     }
@@ -143,7 +143,7 @@ bool TimeAdaptor::Update(const shared_ptr<IBaseExchangeItem> &specifier)
     if (output->GetTimeSet() == nullptr || output->GetTimeSet()->GetTimes().empty())
     {
         throw runtime_error(StringHelper::FormatSimple(
-            "Invalid specifier {} in output item {} for updating according to time.",
+            "Invalid specifier [{}] in output item [{}] for updating according to time.",
             output->GetId(),
             specifier->GetId()));
     }

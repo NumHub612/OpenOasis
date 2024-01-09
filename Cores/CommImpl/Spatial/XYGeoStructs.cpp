@@ -89,7 +89,7 @@ bool XYPolyline::Validate() const
         if (GetLine(i).GetLength() <= 0.0)
         {
             throw runtime_error(StringHelper::FormatSimple(
-                "Length of line segment no: {} (0-based) of XYPolyline is zero.", i));
+                "Length of line segment no: [{}] (0-based) of XYPolyline is zero.", i));
         }
     }
 
@@ -108,8 +108,7 @@ XYLine XYPolyline::GetLine(int lineNumber) const
 
 double XYPolyline::GetLength() const
 {
-    if (points.empty())
-        return 0.0;
+    if (points.empty()) return 0.0;
 
     double len = 0.0;
     for (int i = 0; i < points.size() - 1; ++i)
@@ -150,7 +149,7 @@ bool XYPolygon::Validate() const
         if (GetLine(i).GetLength() <= 0.0)
         {
             throw runtime_error(StringHelper::FormatSimple(
-                "Length of line segment no: {} (0-based) of XYPolyon is zero.", i));
+                "Length of line segment no: [{}] (0-based) of XYPolyon is zero.", i));
         }
 
         for (int j = 0; j < i; ++j)
@@ -158,7 +157,7 @@ bool XYPolygon::Validate() const
             if (XYGeoTools::IsLinesIntersected(GetLine(j), GetLine(i)))
             {
                 throw runtime_error(StringHelper::FormatSimple(
-                    "Line no: {} and line no: {} of XYPolygon crosses.", j, i));
+                    "Line no: [{}] and line no: [{}] of XYPolygon crosses.", j, i));
             }
         }
     }
@@ -177,8 +176,7 @@ double XYPolygon::GetArea() const
     // Among them, x_n+1 = x_1, y_n+1 = y_1.
     //
 
-    if (points.empty() || points.size() < 3)
-        return 0.0;
+    if (points.empty() || points.size() < 3) return 0.0;
 
     auto   size = points.size();
     double area = 0.0;
@@ -207,10 +205,7 @@ bool XYPolygon::IsConvex(int index) const
 {
     // Acute angles are convex.
 
-    if (points.empty())
-    {
-        return false;
-    }
+    if (points.empty()) { return false; }
 
     auto prevIndex = (index - 1 < 0) ? points.size() - 1 : index - 1;
     auto nextIndex = (index + 1 > points.size() - 1) ? 0 : index + 1;
@@ -274,42 +269,18 @@ XYExtent::XYExtent(double xmin, double xmax, double ymin, double ymax)
 
 void XYExtent::Include(const XYExtent &other)
 {
-    if (other.xMin < xMin)
-    {
-        xMin = other.xMin;
-    }
-    if (other.xMax > xMax)
-    {
-        xMax = other.xMax;
-    }
-    if (other.yMin < yMin)
-    {
-        yMin = other.yMin;
-    }
-    if (other.yMax > yMax)
-    {
-        yMax = other.yMax;
-    }
+    if (other.xMin < xMin) { xMin = other.xMin; }
+    if (other.xMax > xMax) { xMax = other.xMax; }
+    if (other.yMin < yMin) { yMin = other.yMin; }
+    if (other.yMax > yMax) { yMax = other.yMax; }
 }
 
 void XYExtent::Include(double x, double y)
 {
-    if (x < xMin)
-    {
-        xMin = x;
-    }
-    if (x > xMax)
-    {
-        xMax = x;
-    }
-    if (y < yMin)
-    {
-        yMin = y;
-    }
-    if (y > yMax)
-    {
-        yMax = y;
-    }
+    if (x < xMin) { xMin = x; }
+    if (x > xMax) { xMax = x; }
+    if (y < yMin) { yMin = y; }
+    if (y > yMax) { yMax = y; }
 }
 
 bool XYExtent::IsContains(double x, double y) const

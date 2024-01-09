@@ -148,7 +148,7 @@ vector<string> IterationController::OnValidate()
         if (innerInputIter == end(mInnerInputSet))
         {
             string msg = StringHelper::FormatSimple(
-                "LinkableComponent {} in InterationController {} has no inner inputs.",
+                "LinkableComponent [{}] in InterationController [{}] has no inner inputs.",
                 comPair.first,
                 mId);
             errors.push_back(msg);
@@ -161,7 +161,7 @@ vector<string> IterationController::OnValidate()
         if (innerOutputIter == end(mInnerOutputSet))
         {
             string msg = StringHelper::FormatSimple(
-                "LinkableComponent {} in InterationController {} has no inner outputs.",
+                "LinkableComponent [{}] in InterationController [{}] has no inner outputs.",
                 comPair.first,
                 mId);
             errors.push_back(msg);
@@ -171,19 +171,19 @@ vector<string> IterationController::OnValidate()
     if (mMaxIter < 1)
     {
         string msg = StringHelper::FormatSimple(
-            "MaxIter for IterationController {} must be greater than 1.", mId);
+            "MaxIter for IterationController [{}] must be greater than 1.", mId);
         errors.push_back(msg);
     }
     if (mEps < 0)
     {
         string msg = StringHelper::FormatSimple(
-            "Eps for IterationController {} must be greater than 0.", mId);
+            "Eps for IterationController [{}] must be greater than 0.", mId);
         errors.push_back(msg);
     }
     if (mRelaxation < 0 || mRelaxation > 1)
     {
         string msg = StringHelper::FormatSimple(
-            "Relaxation for IterationController {} must be in [0, 1].", mId);
+            "Relaxation for IterationController [{}] must be in [0, 1].", mId);
         errors.push_back(msg);
     }
 
@@ -204,7 +204,7 @@ void IterationController::PrepareOutputs()
         if (!item)
         {
             throw NotSupportedException(StringHelper::FormatSimple(
-                "Unsupported output type in component {} in IterationController {}, \
+                "Unsupported output type in component [{}] in IterationController {}, \
                 only `OpenOasis::CommImpl::Output` is supported.",
                 output->GetComponent().lock()->GetId(),
                 mId));

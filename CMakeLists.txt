@@ -22,13 +22,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 # 设置平台类型
 # -------------------------------------------------------------
 if (CMAKE_HOST_WIN32)
-    set(WINDOWS 1)
     set(platform "win")
 elseif (CMAKE_HOST_APPLE)
-    set(MACOS 1)
     set(platform "mac")
 elseif (CMAKE_HOST_UNIX)
-    set(LINUX 1)
     set(platform "linux")
 endif ()
 
@@ -152,9 +149,11 @@ add_subdirectory(${CoreDir}/SystHeats)
 # 生成可执行文件
 # -------------------------------------------------------------
 add_executable(${ProjectName} ${driver})
-#-- 链接库。
+
+#-- 链接库
 target_link_libraries(${ProjectName} 
     PUBLIC ${CommLib}
+    PUBLIC OpenMP::OpenMP_CXX
     )
 if (ENABLE_PYLIB)
     target_link_libraries(${ProjectName}  
@@ -164,24 +163,14 @@ endif ()
 if (LINUX)
     target_link_libraries(${ProjectName} PUBLIC dl)
 endif()
-if (OpenMP_CXX_FOUND)
-    target_link_libraries(${ProjectName} 
-	PUBLIC OpenMP::OpenMP_CXX
-	)
-endif()
-#-- 添加附加包含目录。
+
+#-- 添加附加包含目录
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
     PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"
     PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
     )
-if (ENABLE_PYLIB)
-    target_include_directories(${ProjectName}  
-        PUBLIC  ${Python3_INCLUDE_DIRS}
-        PUBLIC  ${pybind11_INCLUDE_DIR}
-        )
-endif()
-
+    
 
 # -------------------------------------------------------------
 # 执行测试

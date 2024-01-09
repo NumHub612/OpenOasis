@@ -25,7 +25,7 @@ void YamlLoader::LoadByFile(const string &filePath)
     if (!FilePathHelper::FileExists(filePath))
     {
         throw invalid_argument(
-            StringHelper::FormatSimple("File {} doesn't existed.", filePath));
+            StringHelper::FormatSimple("File [{}] doesn't existed.", filePath));
     }
 
     mYaml = ryml::parse_in_arena(ryml::to_csubstr(GetFileContents(filePath)));
@@ -50,7 +50,7 @@ string YamlLoader::GetFileContents(const string &filename)
         if (fread(&(cc)[0], 1, cc.size(), fp) != cc.size())
         {
             throw runtime_error(
-                StringHelper::FormatSimple("File {} loading failure.", filename));
+                StringHelper::FormatSimple("File [{}] loading failure.", filename));
         }
     }
     fclose(fp);

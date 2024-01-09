@@ -1,7 +1,7 @@
 /** ***********************************************************************************
  *    @File      :  ElementMapper.cpp
- *    @Brief     :  To converts one ValueSet (inputValues) associated one ElementSet
- *    (fromElements)to a new ValuesSet that corresponds to another ElementSet
+ *    @Brief     :  To converts one ValueSet(inputValues) associated one ElementSet
+ *    (fromElements) to a new ValuesSet that corresponds to another ElementSet
  *    (toElements).
  *
  ** ***********************************************************************************/
@@ -73,7 +73,7 @@ shared_ptr<IValueSet> ElementMapper::MapValues(const shared_ptr<IValueSet> &inpu
             "Dimension mismatch between inputValues and mapping matrix");
     }
 
-    // Make a time-space value set of the correct size
+    // Make a time-space valueset of the correct size
     auto result = CreateResultValueSet(
         ExtensionMethods::TimesCount(inputValues), mNumberOfToRows);
 
@@ -179,7 +179,7 @@ void ElementMapper::UpdateMappingMatrix(
         {
             MapFromPolygonToPolygon(fromElements, toElements);
         }
-        else  // if the fromElementType, toElementType combination is no implemented.
+        else
         {
             throw runtime_error(
                 "Mapping of specified ElementTypes not included in ElementMapper");
@@ -918,8 +918,8 @@ ElementMapper::CreateXYPoint(const shared_ptr<IElementSet> &elementSet, int inde
     }
 
     return XYPoint(
-        elementSet->GetVertexXCoordinate(index, 0),
-        elementSet->GetVertexYCoordinate(index, 0));
+        elementSet->GetNodeXCoordinate(index, 0),
+        elementSet->GetNodeYCoordinate(index, 0));
 }
 
 XYPolyline
@@ -931,11 +931,11 @@ ElementMapper::CreateXYPolyline(const shared_ptr<IElementSet> &elementSet, int i
     }
 
     XYPolyline xyPolyline;
-    for (int i = 0; i < elementSet->GetVertexCount(index); i++)
+    for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
         XYPoint tempVar(
-            elementSet->GetVertexXCoordinate(index, i),
-            elementSet->GetVertexYCoordinate(index, i));
+            elementSet->GetNodeXCoordinate(index, i),
+            elementSet->GetNodeYCoordinate(index, i));
         xyPolyline.points.push_back(tempVar);
     }
 
@@ -952,11 +952,11 @@ ElementMapper::CreateXYPolygon(const shared_ptr<IElementSet> &elementSet, int in
 
     XYPolygon xyPolygon;
 
-    for (int i = 0; i < elementSet->GetVertexCount(index); i++)
+    for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
         XYPoint tempVar(
-            elementSet->GetVertexXCoordinate(index, i),
-            elementSet->GetVertexYCoordinate(index, i));
+            elementSet->GetNodeXCoordinate(index, i),
+            elementSet->GetNodeYCoordinate(index, i));
         xyPolygon.points.push_back(tempVar);
     }
 
@@ -978,11 +978,11 @@ ElementMapper::CreateFromXYPolygon(const shared_ptr<IElementSet> &elementSet, in
 
     XYPolygon xyPolygon;
 
-    for (int i = 0; i < elementSet->GetVertexCount(index); i++)
+    for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
         XYPoint tempVar(
-            elementSet->GetVertexXCoordinate(index, i),
-            elementSet->GetVertexYCoordinate(index, i));
+            elementSet->GetNodeXCoordinate(index, i),
+            elementSet->GetNodeYCoordinate(index, i));
         xyPolygon.points.push_back(tempVar);
     }
 

@@ -4,11 +4,11 @@
  *    @File      :  ElementMapper.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  To converts one ValueSet (inputValues) associated one ElementSet
- *    (fromElements)to a new ValueSet that corresponds to another ElementSet
+ *    @Desc      :  To convert one ValueSet (inputValues) associated one ElementSet
+ *    (fromElements) to a new ValueSet that corresponds to another ElementSet
  *    (toElements).
  *
- *    The conversion is a two step procedure where the first step (Initialize) is
+ *    The conversion is a two step procedure where the first step(Initialize) is
  *    executed at initialisation time only, whereas the MapValues
  *    is executed during time stepping.
  *
@@ -19,11 +19,11 @@
  *    (i.e. the fromElements).
  *
  *    Mapping is possible for any zero-, one- and two-dimensional elemets.
- *    Zero dimensional elements will always be points, one-dimensional elements will
+ *    Zero dimensional elements will always be points,one-dimensional elements will
  *    allways be polylines and two-dimensional elements will allways be polygons.
  *
- *    The ElementMapper contains a lot of methods for mapping between the different
- *    element types. As an example polyline to polygon mapping may be done either
+ *    The ElementMapper contains lots of methods for mapping between the different
+ *    element types. As an example, polyline to polygon mapping may be done either
  *    as Weighted Mean or as Weighted Sum. Typically the method choice will
  *    depend on the quantity mapped.
  *
@@ -46,6 +46,7 @@ namespace OpenOasis::CommImpl::DevSupports
 using namespace Spatial;
 using namespace Numeric;
 
+
 /// @brief Predined element mapping methods.
 enum class ElementMapperMethod
 {
@@ -61,9 +62,10 @@ enum class ElementMapperMethod
 };
 
 
-/// @brief ElementMapper class converts one ValueSet (inputValues) associated one
+/// @brief ElementMapper class converts one ValueSet(inputValues) associated one
 /// ElementSet(fromElements) to a new ValueSet that corresponds to another
 /// ElementSet(toElements).
+/// @note  Coupling to 3d elements is not currently supported.
 class ElementMapper
 {
 private:
@@ -91,11 +93,11 @@ public:
 
     ElementType GetTargetElementType();
 
-    /// @brief Calculates for each set of timestep data a resulting IValueSet through
-    /// multiplication of an inputValues IValueSet vector with the mapping matrix.
+    /// @brief Calculates for each set of timestep data.
+    /// A resulting IValueSet through multiplication of an IValueSet(inputValues) vector
+    /// with the mapping matrix.
     ///
     /// @param inputValues IValueSet of values to be mapped.
-    ///
     /// @return A valueset found by mapping of the inputValues on to the toElementSet.
     std::shared_ptr<IValueSet> MapValues(const std::shared_ptr<IValueSet> &inputValues);
 
@@ -111,16 +113,16 @@ public:
         const std::shared_ptr<IElementSet>   &fromElements,
         const std::shared_ptr<IElementSet>   &toElements);
 
-    /// @brief Creates a result value set of the size specified
-    ///
+    /// @brief Creates a result valueset of the size specified.
     /// @returns An IValueSet of the correct size.
     static std::shared_ptr<IValueSet>
     CreateResultValueSet(int numtimes, int numElements);
 
-    /// @brief Calculates for each set of timestep data a resulting IValueSet through
-    /// multiplication of an inputValues IValueSet vector with the mapping matrix.
+    /// @brief Calculates for each set of timestep data.
+    /// A resulting IValueSet through multiplication of an IValueSet(inputValues) vector
+    /// with the mapping matrix.
     ///
-    /// This version can be used if the output value set is to be reused
+    /// This version can be used if the output valueset is to be reused,e.g.
     /// (performance or for adding up)
     ///
     /// @param outputValues IValueset of mapped values, of the correct size.
@@ -129,36 +131,27 @@ public:
         const std::shared_ptr<IValueSet> &outputValues,
         const std::shared_ptr<IValueSet> &inputValues);
 
-    /// @brief Extracts the (row, column) element from the MappingMatrix.
+    /// @brief Extracts the (row, col) element from the MappingMatrix.
     ///
     /// @param row Zero based row index.
-    /// @param column Zero based column index.
-    /// @returns Element(row, column) from the mapping matrix.
-    double GetValueFromMappingMatrix(int row, int column);
+    /// @param col Zero based column index.
+    /// @returns Element (row, column) from the mapping matrix.
+    double GetValueFromMappingMatrix(int row, int col);
 
-    /// @brief Sets individual (row, column)element in the MappingMatrix.
+    /// @brief Sets individual (row,col) element in the MappingMatrix.
     ///
     /// @param value Element value to set.
     /// @param row Zero based row index.
-    /// @param column Zero based column index.
-    void SetValueInMappingMatrix(double value, int row, int column);
-
-    static XYPolygon
-    CreateFromXYPolygon(const std::shared_ptr<IElementSet> &elementSet, int index);
-
-    static XYPolygon
-    CreateXYPolygon(const std::shared_ptr<IElementSet> &elementSet, int index);
-
-    static XYPolyline
-    CreateXYPolyline(const std::shared_ptr<IElementSet> &elementSet, int index);
+    /// @param col Zero based column index.
+    void SetValueInMappingMatrix(double value, int row, int col);
 
 private:
     /// @brief Calculates the mapping matrix between fromElements and toElements.
     /// The mapping method is decided from the combination of methodIdentifier,
     /// fromElements.ElementType and toElements.ElementType.
     ///
-    /// UpdateMappingMatrix() is called during initialisation must be called prior
-    /// to MapValues().
+    /// UpdateMappingMatrix method is called during initialisation,
+    /// it must be called prior to MapValues().
     ///
     /// @param methodIdentifier String identification of mapping method.
     /// @param fromElements The IElementset to map from.
@@ -167,6 +160,10 @@ private:
         const std::shared_ptr<IIdentifiable> &methodIdentifier,
         const std::shared_ptr<IElementSet>   &fromElements,
         const std::shared_ptr<IElementSet>   &toElements);
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Mapping methods.
+    //
 
     void MapFromPointToPoint(
         const std::shared_ptr<IElementSet> &fromElements,
@@ -204,10 +201,24 @@ private:
         const std::shared_ptr<IElementSet> &fromElements,
         const std::shared_ptr<IElementSet> &toElements);
 
+public:
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Static methods.
+    //
+
     void ValidateIndicies(int row, int column);
 
     static XYPoint
     CreateXYPoint(const std::shared_ptr<IElementSet> &elementSet, int index);
+
+    static XYPolygon
+    CreateFromXYPolygon(const std::shared_ptr<IElementSet> &elementSet, int index);
+
+    static XYPolygon
+    CreateXYPolygon(const std::shared_ptr<IElementSet> &elementSet, int index);
+
+    static XYPolyline
+    CreateXYPolyline(const std::shared_ptr<IElementSet> &elementSet, int index);
 };
 
-}  
+}  // namespace OpenOasis::CommImpl::DevSupports

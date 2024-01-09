@@ -291,11 +291,11 @@ public:
         int elementCount = elmtSet->GetElementCount();
         for (int ielmt = 0; ielmt < elementCount; ielmt++)
         {
-            int vertixCount = elmtSet->GetVertexCount(ielmt);
+            int vertixCount = elmtSet->GetNodeCount(ielmt);
             for (int ivert = 0; ivert < vertixCount; ivert++)
             {
-                double x = elmtSet->GetVertexXCoordinate(ielmt, ivert);
-                double y = elmtSet->GetVertexYCoordinate(ielmt, ivert);
+                double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);
+                double y = elmtSet->GetNodeYCoordinate(ielmt, ivert);
                 extent.Include(x, y);
             }
         }
@@ -304,11 +304,11 @@ public:
         ElementSearchTree<int> tree(extent);
         for (int ielmt = 0; ielmt < elementCount; ielmt++)
         {
-            int vertixCount = elmtSet->GetVertexCount(ielmt);
+            int vertixCount = elmtSet->GetNodeCount(ielmt);
             for (int ivert = 0; ivert < vertixCount; ivert++)
             {
-                double x = elmtSet->GetVertexXCoordinate(ielmt, ivert);
-                double y = elmtSet->GetVertexYCoordinate(ielmt, ivert);
+                double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);
+                double y = elmtSet->GetNodeYCoordinate(ielmt, ivert);
                 tree.Add(XYPoint(x, y));
             }
         }
@@ -316,12 +316,12 @@ public:
         // Add elements to the search tree.
         for (int ielmt = 0; ielmt < elementCount; ielmt++)
         {
-            int      vertixCount = elmtSet->GetVertexCount(ielmt);
+            int      vertixCount = elmtSet->GetNodeCount(ielmt);
             XYExtent elmtExtent;
             for (int ivert = 0; ivert < vertixCount; ivert++)
             {
-                double x = elmtSet->GetVertexXCoordinate(ielmt, ivert);
-                double y = elmtSet->GetVertexYCoordinate(ielmt, ivert);
+                double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);
+                double y = elmtSet->GetNodeYCoordinate(ielmt, ivert);
                 elmtExtent.Include(x, y);
             }
 
@@ -338,4 +338,4 @@ private:
     }
 };
 
-}  
+}  // namespace OpenOasis::CommImpl::DevSupports

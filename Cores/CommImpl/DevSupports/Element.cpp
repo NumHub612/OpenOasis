@@ -86,7 +86,9 @@ Coordinate Element::GetVertex(int index) const
     if (index < 0 || index >= mVertices.size())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
-            "Invalid vertex query index {} out of range {}.", index, mVertices.size()));
+            "Invalid vertex query index [{}] out of range [{}] .",
+            index,
+            mVertices.size()));
     }
     return mVertices.at(index);
 }
@@ -94,20 +96,6 @@ Coordinate Element::GetVertex(int index) const
 void Element::AddVertex(const Coordinate &vertex)
 {
     mVertices.push_back(vertex);
-}
-
-bool Element::HasZ() const
-{
-    return all_of(begin(mVertices), end(mVertices), [](const Coordinate &vert) {
-        return !isnan(vert.z);
-    });
-}
-
-bool Element::HasM() const
-{
-    return all_of(begin(mVertices), end(mVertices), [](const Coordinate &vert) {
-        return !isnan(vert.m);
-    });
 }
 
 int Element::GetFaceCount() const
@@ -120,7 +108,7 @@ void Element::AddFace(const vector<int> &vertexIndices)
     mFaceVertexIndices.push_back(vertexIndices);
 }
 
-vector<int> Element::GetFaceVertexIndices(int faceIndex) const
+vector<int> Element::GetFaceNodeIndices(int faceIndex) const
 {
     return mFaceVertexIndices.at(faceIndex);
 }

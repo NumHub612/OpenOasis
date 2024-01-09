@@ -31,16 +31,12 @@ using DevSupports::Element;
 class ElementSet : public IElementSet
 {
 private:
-    std::string mSpatialReference;
-    std::string mCaption;
-    std::string mDescription;
-
+    std::string          mSpatialReference;
+    std::string          mCaption;
+    std::string          mDescription;
     std::vector<Element> mElements;
-
-    ElementType mElementType = ElementType::IdBased;
-    int         mVersion     = 0;
-    bool        mHasZ        = true;  // all element vertices has z.
-    bool        mHasM        = true;  // all element vertices has m.
+    ElementType          mElementType = ElementType::IdBased;
+    int                  mVersion     = 0;
 
 public:
     virtual ~ElementSet()
@@ -86,26 +82,20 @@ public:
 
     int GetFaceCount(int elementIndex) override;
 
-    int GetVertexCount(int elementIndex) override;
+    int GetNodeCount(int elementIndex) override;
 
-    std::vector<int> GetFaceVertexIndices(int elementIndex, int faceIndex) override;
+    std::vector<int> GetFaceNodeIndices(int elementIndex, int faceIndex) override;
 
-    bool HasZ() const override;
+    double GetNodeXCoordinate(int elementIndex, int nodeIndex) override;
 
-    bool HasM() const override;
+    double GetNodeYCoordinate(int elementIndex, int nodeIndex) override;
 
-    double GetVertexXCoordinate(int elementIndex, int vertexIndex) override;
-
-    double GetVertexYCoordinate(int elementIndex, int vertexIndex) override;
-
-    double GetVertexZCoordinate(int elementIndex, int vertexIndex) override;
-
-    double GetVertexMCoordinate(int elementIndex, int vertexIndex) override;
+    double GetNodeZCoordinate(int elementIndex, int nodeIndex) override;
 
 protected:
-    void CheckElementIndex(int elemIndex) const;
-    void CheckVertexIndex(int elemIndex, int vertIndex) const;
-    void CheckFaceIndex(int elemIndex, int faceIndex) const;
+    void CheckElementIndex(int elementIndex) const;
+    void CheckVertexIndex(int elementIndex, int nodeIndex) const;
+    void CheckFaceIndex(int elementIndex, int faceIndex) const;
 };
 
 }  // namespace CommImpl

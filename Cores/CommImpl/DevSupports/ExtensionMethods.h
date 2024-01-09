@@ -4,7 +4,7 @@
  *    @File      :  ExtensionMethods.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Extensional static methods for spatial and temporal operation.
+ *    @Desc      :  Extensional methods for spatial and temporal operation.
  *
  ** ***********************************************************************************/
 #pragma once
@@ -24,11 +24,7 @@
 #include <unordered_map>
 
 
-namespace OpenOasis
-{
-namespace CommImpl
-{
-namespace DevSupports
+namespace OpenOasis::CommImpl::DevSupports
 {
 using namespace Utils;
 
@@ -176,10 +172,7 @@ public:
         const auto &elmtValues = values->GetElementValuesForTime(timeIndex);
 
         // Check if it's already an array.
-        if (elmtValues.empty())
-        {
-            return {};
-        }
+        if (elmtValues.empty()) { return {}; }
 
         // Do a manual copy.
         std::vector<T> tArray(elmtValues.size());
@@ -386,6 +379,4 @@ public:
         const std::shared_ptr<IOutput> &output, const std::shared_ptr<IInput> &input);
 };
 
-}  // namespace DevSupports
-}  // namespace CommImpl
-}  // namespace OpenOasis
+}  // namespace OpenOasis::CommImpl::DevSupports

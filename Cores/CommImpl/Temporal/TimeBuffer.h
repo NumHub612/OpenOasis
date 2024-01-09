@@ -84,8 +84,13 @@ public:
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods for getting and setting the relaxation factor(must be in [0, 1]).
     //
-    // Relaxation parameter is used when doing extrapolation. A value of 1 results in
-    // nearest extrapolation whereas a value 0 results in linear extrapolation.
+    // Relaxation parameter is used when doing extrapolation.
+    // A value of 1 results in nearest extrapolation whereas
+    // a value 0 results in linear extrapolation.
+
+    /// @brief Returns the values that corresponds to the requestedTime. The values
+    /// may be found by interpolation, extrapolation and/or aggregation.
+    std::vector<double> GetValues(const std::shared_ptr<ITime> &requestedTime);
 
     void SetRelaxationFactor(double value);
 
@@ -94,10 +99,6 @@ public:
     std::shared_ptr<ITime> GetTimeAt(int timeStep) const;
 
     std::vector<double> GetValuesAt(int timeStep) const;
-
-    /// @brief Returns the values that corresponds to the requestedTime. The values
-    /// may be found by interpolation, extrapolation and/or aggregation.
-    std::vector<double> GetValues(const std::shared_ptr<ITime> &requestedTime);
 
     std::shared_ptr<TimeSet> GetTimeSet() const;
 
