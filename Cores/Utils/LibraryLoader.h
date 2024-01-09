@@ -125,8 +125,10 @@ public:
 class LibraryLoader final
 {
 public:
-    LibraryLoader();
-    ~LibraryLoader();
+    LibraryLoader()
+    {}
+    ~LibraryLoader()
+    {}
 
     bool Load(const std::string &libraryPath)
     {
