@@ -38,19 +38,13 @@ public:
     template <typename T>
     std::function<T> GetFunction(const std::string &funcName)
     {
-        if (mHMod == nullptr)
-        {
-            return nullptr;
-        }
+        if (mHMod == nullptr) { return nullptr; }
 
         auto it = mFuncAddrMap.find(funcName);
         if (it == mFuncAddrMap.end())
         {
             auto addr = GetProcAddress(mHMod, funcName.c_str());
-            if (!addr)
-            {
-                return nullptr;
-            }
+            if (!addr) { return nullptr; }
 
             mFuncAddrMap.insert(std::make_pair(funcName, addr));
             it = mFuncAddrMap.find(funcName);
@@ -95,19 +89,13 @@ public:
     template <typename T>
     std::function<T> GetFunction(const std::string &funcName)
     {
-        if (mHMod == nullptr)
-        {
-            return nullptr;
-        }
+        if (mHMod == nullptr) { return nullptr; }
 
         auto it = mFuncAddrMap.find(funcName);
         if (it == mFuncAddrMap.end())
         {
             auto addr = dlsym(mHMod, funcName.c_str());
-            if (!addr)
-            {
-                return nullptr;
-            }
+            if (!addr) { return nullptr; }
 
             mFuncAddrMap.insert(std::make_pair(funcName, addr));
             it = mFuncAddrMap.find(funcName);
@@ -128,6 +116,38 @@ public:
         }
 
         return f(std::forward<Args>(args)...);
+    }
+};
+
+#elif defined(MACOS)
+
+/// @brief Library loading and calling methods.
+class LibraryLoader final
+{
+public:
+    LibraryLoader();
+    ~LibraryLoader();
+
+    bool Load(const std::string &libraryPath)
+    {
+        return false;
+    }
+    bool UnLoad()
+    {
+        return false;
+    };
+
+    template <typename T>
+    std::function<T> GetFunction(const std::string &funcName)
+    {
+        throw std::runtime_error("Not implemented.");
+    }
+
+    template <typename T, typename... Args>
+    typename std::result_of<std::function<T>(Args...)>::type
+    RunFunction(const std::string &funcName, Args &&...args)
+    {
+        throw std::runtime_error("Not implemented.");
     }
 };
 
