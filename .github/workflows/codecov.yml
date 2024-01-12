@@ -39,9 +39,7 @@ jobs:
           sudo apt-get --assume-yes install lcov > /dev/null
         shell: bash
       - name: run test
-        run:  |
-          cd ${{ github.workspace }}/build/bin
-          OasisTests
+        run:  cd ${{ github.workspace }}/build/bin/OasisTests
         shell: bash        
       - name: lcov collection
         shell: bash
