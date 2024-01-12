@@ -2,8 +2,7 @@
 
 ---------------------------------------------------------------------------------
 
-[![linux](https://github.com/NumHub612/OpenOasis/actions/workflows/linux.yml/badge.svg?branch=main&event=push)](https://github.com/NumHub612/OpenOasis/actions/workflows/linux.yml)[![windows](https://github.com/NumHub612/OpenOasis/actions/workflows/windows.yml/badge.svg)](https://github.com/NumHub612/OpenOasis/actions/workflows/windows.yml)[![macos](https://github.com/NumHub612/OpenOasis/actions/workflows/macos.yml/badge.svg)](https://github.com/NumHub612/OpenOasis/actions/workflows/macos.yml)[![codecov](https://codecov.io/gh/NumHub612/OpenOasis/graph/badge.svg?token=MP9A5GAI9Z)](https://codecov.io/gh/NumHub612/OpenOasis)
-
+[![Linux_CI](https://github.com/NumHub612/OpenOasis/actions/workflows/linux.yml/badge.svg?branch=main&event=push)](https://github.com/NumHub612/OpenOasis/actions/workflows/linux.yml)[![Windows_CI](https://github.com/NumHub612/OpenOasis/actions/workflows/windows.yml/badge.svg)](https://github.com/NumHub612/OpenOasis/actions/workflows/windows.yml)[![Macos_CI](https://github.com/NumHub612/OpenOasis/actions/workflows/macos.yml/badge.svg)](https://github.com/NumHub612/OpenOasis/actions/workflows/macos.yml)
 
 ## 什么是绿洲？
 
