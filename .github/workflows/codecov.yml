@@ -25,7 +25,7 @@ jobs:
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          cmake .. -DENABLE_TESTS=on -DCMAKE_BUILD_TYPE=Debug -Dfprofile-arcs -Dftest-coverage
+          cmake .. -DENABLE_TESTS=on -DCMAKE_BUILD_TYPE=Debug -DENABLE_CODECOV=on
           cmake --build .
         shell: bash 
       - name: Ctest
@@ -33,21 +33,11 @@ jobs:
           cd ${{ github.workspace }}/build
           ctest --output-on-failure -C Release -VV
         shell: bash     
-      - name: Install LCOV
-        run: |
-          sudo apt-get --assume-yes install lcov > /dev/null
-        shell: bash
       - name: run test
         run:  ${{ github.workspace }}/build/bin/OasisTests
         shell: bash        
-      - name: lcov collection
-        run: |
-          cd build
-          lcov -c -d ./ -o cover.info
-        shell: bash
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
             gcov: true 
-            gcov_include: ${{ github.workspace }}/Cores/*
-            token: ${{ secrets.OPENOASIS_TOKEN }}
+            # gcov_include: ${{ github.workspace }}/Cores/*
