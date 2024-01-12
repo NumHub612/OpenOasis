@@ -41,3 +41,4 @@ jobs:
         with:
             gcov: true 
             gcov_include: ${{ github.workspace }}/Cores/*
+            gcov_ignore: ${{ github.workspace }}/Tools/*            
