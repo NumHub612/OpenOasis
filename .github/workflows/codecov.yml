@@ -39,13 +39,13 @@ jobs:
           sudo apt-get --assume-yes install lcov > /dev/null
         shell: bash
       - name: run test
-        run:  cd ${{ github.workspace }}/build/bin/OasisTests
+        run:  ${{ github.workspace }}/build/bin/OasisTests
         shell: bash        
       - name: lcov collection
-        shell: bash
         run: |
           cd build
           lcov -c -d ./ -o cover.info
+        shell: bash
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
