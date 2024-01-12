@@ -22,11 +22,10 @@ jobs:
         shell: bash
       - name: CMake Build
         run: |
-          export pybind11_DIR=/usr/local/share/cmake/pybind11/
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          cmake .. -DENABLE_TESTS=on -DCMAKE_BUILD_TYPE=Debug
+          cmake .. -DENABLE_TESTS=on -DCMAKE_BUILD_TYPE=Debug -Dfprofile-arcs -Dftest-coverage
           cmake --build .
         shell: bash 
       - name: Ctest
