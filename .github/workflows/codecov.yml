@@ -20,23 +20,13 @@ jobs:
           g++ --version
           ls /usr/bin/gcc*
         shell: bash
-      - name: Install Third party library
-        run: |
-          git clone https://github.com/pybind/pybind11.git
-          cd  pybind11
-          mkdir build
-          cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Debug -fprofile-arcs -ftest-coverage
-          cmake --build . --config Release
-          sudo cmake --install .
-        shell: bash
       - name: CMake Build
         run: |
           export pybind11_DIR=/usr/local/share/cmake/pybind11/
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on -DCMAKE_BUILD_TYPE:STRING=Release
+          cmake .. -DENABLE_TESTS=on -DCMAKE_BUILD_TYPE=Debug -fprofile-arcs -ftest-coverage
           cmake --build .
         shell: bash 
       - name: Ctest
