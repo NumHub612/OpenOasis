@@ -41,5 +41,5 @@ jobs:
         with:
             token: ${{ secrets.OPENOASIS_TOKEN }}
             gcov: true 
-            # gcov_include: ${{ github.workspace }}/Cores/*
+            gcov_include: ${{ github.workspace }}/Cores/*
             gcov_ignore: ${{ github.workspace }}/Tools/*            
