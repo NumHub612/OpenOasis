@@ -127,7 +127,7 @@ void SpaceAreaAdaptor::CalculateFactors(const shared_ptr<IElementSet> &elementSe
     mFactors      = vector<double>(elementSet->GetElementCount());
     mAreaExponent = any_cast<double>(mAreaArgument->GetValue());
 
-    for (int i = 0; i < mFactors.size(); i++)
+    for (std::size_t i = 0; i < mFactors.size(); i++)
     {
         XYPolygon element = ElementMapper::CreateXYPolygon(elementSet, i);
         double    area    = element.GetArea();

@@ -106,7 +106,7 @@ void MeshLoader::LoadNodes(const string &nodeFile)
     auto ids = loader.GetRowLabels().value();
     CheckIds(ids, "Node");
 
-    for (int i = 0; i < ids.size(); ++i)
+    for (std::size_t i = 0; i < ids.size(); ++i)
     {
         auto coor = loader.GetRow<double>(i).value();
 
@@ -128,7 +128,7 @@ void MeshLoader::LoadFaces(const string &faceFile)
     auto ids = loader.GetRowLabels().value();
     CheckIds(ids, "Face");
 
-    for (int i = 0; i < ids.size(); ++i)
+    for (std::size_t i = 0; i < ids.size(); ++i)
     {
         mFaceNodes[i] = loader.GetRow<int>(i).value();
     }
@@ -148,7 +148,7 @@ void MeshLoader::LoadCells(const string &cellFile)
     auto ids = loader.GetRowLabels().value();
     CheckIds(ids, "Cell");
 
-    for (int i = 0; i < ids.size(); ++i)
+    for (std::size_t i = 0; i < ids.size(); ++i)
     {
         mCellFaces[i] = loader.GetRow<int>(i).value();
     }

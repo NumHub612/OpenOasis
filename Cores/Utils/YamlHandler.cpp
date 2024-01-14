@@ -147,15 +147,16 @@ unordered_map<string, string>
 YamlLoader::GetMapInSeq(const vector<string> &levels, int idx) const
 {
     ryml::ConstNodeRef node = mYaml.rootref();
+    std::size_t        idx2 = idx;
     try
     {
         node = GetNode(node, levels);
 
-        if (!node.is_seq() || node.num_children() <= idx || !node[idx].is_map())
+        if (!node.is_seq() || node.num_children() <= idx2 || !node[idx2].is_map())
             return {};
 
         unordered_map<string, string> map;
-        for (ryml::ConstNodeRef const &n : node[idx].children())
+        for (ryml::ConstNodeRef const &n : node[idx2].children())
         {
             string key(n.key().str, n.key().size());
             string val(n.val().str, n.val().size());

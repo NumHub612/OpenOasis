@@ -145,7 +145,7 @@ double XYGeoTools::CalculatePolylineToPointDistance(
     int    i    = 1;
     double dist = CalculateLineToPointDistance(polyline.GetLine(0), point);
 
-    while (i < polyline.points.size() - 1)
+    while (i < (int)polyline.points.size() - 1)
     {
         dist = min(dist, CalculateLineToPointDistance(polyline.GetLine(i++), point));
     }
@@ -185,7 +185,7 @@ bool XYGeoTools::IsPointInPolygon(const XYPoint &point, const XYPolygon &polygon
     if (!polygon.Validate()) { return false; }
 
     bool isInside = false;
-    auto size     = polygon.points.size();
+    auto size     = (int)polygon.points.size();
 
     double x1, y1, x2, y2;
     for (int i = 0; i < size; i++)
@@ -234,11 +234,11 @@ XYGeoTools::CalculateSharedArea(const XYPolygon &polygonA, const XYPolygon &poly
     const auto &triangleListB = GetTriangulations(polygonB);
 
     double area = 0;
-    for (int ia = 0; ia < triangleListA.size(); ia++)
+    for (int ia = 0; ia < (int)triangleListA.size(); ia++)
     {
         const auto &triangleA = triangleListA[ia];
 
-        for (int ib = 0; ib < triangleListB.size(); ib++)
+        for (int ib = 0; ib < (int)triangleListB.size(); ib++)
         {
             const auto &triangleB = triangleListB[ib];
             area = area + CalculateTriangleSharedArea(triangleA, triangleB);
@@ -276,7 +276,7 @@ double XYGeoTools::CalculateTriangleSharedArea(
 
         if (j != -1)
         {
-            int  jStop    = IncrementModula(j, 3);
+            // int  jStop    = IncrementModula(j, 3);
             bool complete = false;
             int  count    = 0;
             while (!complete)
@@ -406,7 +406,7 @@ vector<XYPolygon> XYGeoTools::GetTriangulations(const XYPolygon &polygon)
     while (localPolygon.points.size() > 3)
     {
         int  i    = FindTrianglePoints(localPolygon);
-        auto n    = localPolygon.points.size();
+        auto n    = (int)localPolygon.points.size();
         auto prev = (i == 0) ? n - 1 : i - 1;
         auto next = (i == n - 1) ? 0 : i + 1;
 
@@ -428,7 +428,7 @@ int XYGeoTools::FindTrianglePoints(const XYPolygon &polygon)
     bool found = false;
     int  i     = 0;
 
-    while (i < polygon.points.size() && !found)
+    while (i < (int)polygon.points.size() && !found)
     {
         if (polygon.IsConvex(i) && !IsTriangleIntersected(polygon, i)) { found = true; }
         else { i++; }
@@ -440,8 +440,8 @@ int XYGeoTools::FindTrianglePoints(const XYPolygon &polygon)
 bool XYGeoTools::IsTriangleIntersected(const XYPolygon &polygon, int index)
 {
     const auto &points    = polygon.points;
-    auto        prevIndex = (index - 1 < 0) ? points.size() - 1 : index - 1;
-    auto        nextIndex = (index + 1 > points.size() - 1) ? 0 : index + 1;
+    auto        prevIndex = (index - 1 < 0) ? (int)points.size() - 1 : index - 1;
+    auto        nextIndex = (index + 1 > (int)points.size() - 1) ? 0 : index + 1;
 
     const XYPoint &p1 = points[prevIndex], &p = points[index], &p2 = points[nextIndex];
 
@@ -452,7 +452,7 @@ bool XYGeoTools::IsTriangleIntersected(const XYPolygon &polygon, int index)
 
     int  i           = 0;
     bool insertected = false;
-    while (i < points.size() - 1 && !insertected)
+    while (i < (int)points.size() - 1 && !insertected)
     {
         bool skip = (i == index || i == prevIndex || i == nextIndex);
         if (!skip && IsPointInPolygon(points[i], triangulation)) { return true; }
@@ -534,9 +534,9 @@ double XYGeoTools::CalculateLengthOfLineInsidePolygon(
 {
     vector<XYLine> lineList{line};
 
-    for (int i = 0; i < polygon.points.size(); i++)  // For all lines in the polygon
+    for (int i = 0; i < (int)polygon.points.size(); i++)  // All lines in the polygon
     {
-        for (int n = 0; n < lineList.size(); n++)
+        for (int n = 0; n < (int)lineList.size(); n++)
         {
             if (lineList.size() > 1000)
             {
@@ -559,13 +559,13 @@ double XYGeoTools::CalculateLengthOfLineInsidePolygon(
         }
     }
 
-    for (int i = 0; i < lineList.size(); i++)
+    for (int i = 0; i < (int)lineList.size(); i++)
     {
         if (lineList.size() > 1000)
         {
             throw runtime_error("Line has been cuttes in more than 100 pieces.");
         }
-        for (int j = 0; j < polygon.points.size(); j++)
+        for (int j = 0; j < (int)polygon.points.size(); j++)
         {
             if (IsPointInLineInterior(polygon.GetLine(j).point1, lineList[i]))
             {
@@ -578,10 +578,10 @@ double XYGeoTools::CalculateLengthOfLineInsidePolygon(
     }
 
     double lengthInside = 0;
-    for (int i = 0; i < lineList.size(); i++)
+    for (int i = 0; i < (int)lineList.size(); i++)
     {
         double sharedLength = 0;
-        for (int j = 0; j < polygon.points.size(); j++)
+        for (int j = 0; j < (int)polygon.points.size(); j++)
         {
             sharedLength += CalculateSharedLength(lineList[i], polygon.GetLine(j));
         }

@@ -32,10 +32,7 @@ void ExchangeItemHelper::CheckProviderConsumerConnectable(
 bool ExchangeItemHelper::ProviderConsumerConnectable(
     const shared_ptr<IOutput> &provider, const shared_ptr<IInput> &consumer)
 {
-    if (!OutputAndInputValueDefinitionFit(provider, consumer))
-    {
-        return false;
-    }
+    if (!OutputAndInputValueDefinitionFit(provider, consumer)) { return false; }
 
     return ProviderConsumerConnectableForTimeAndOrElementSet(
         provider, consumer, true, true);
@@ -77,10 +74,7 @@ void ExchangeItemHelper::CheckConsumersCompatible(
 bool ExchangeItemHelper::ConsumersCompatible(
     const shared_ptr<IOutput> &outputItem, const shared_ptr<IInput> &newConsumer)
 {
-    if (!OutputAndInputValueDefinitionFit(outputItem, newConsumer))
-    {
-        return false;
-    }
+    if (!OutputAndInputValueDefinitionFit(outputItem, newConsumer)) { return false; }
 
     return ConsumersCompatibleForTimeAndOrElementSet(
         outputItem, newConsumer, true, true);
@@ -113,31 +107,19 @@ bool ExchangeItemHelper::OutputAndInputValueDefinitionFit(
 {
     auto pValueDef = provider->GetValueDefinition();
     auto cValueDef = consumer->GetValueDefinition();
-    if (!pValueDef || !cValueDef)
-    {
-        return false;
-    }
+    if (!pValueDef || !cValueDef) { return false; }
 
     auto pQuantity = dynamic_pointer_cast<IQuantity>(pValueDef);
     auto cQuantity = dynamic_pointer_cast<IQuantity>(cValueDef);
-    if (!pQuantity || !cQuantity)
-    {
-        return false;
-    }
+    if (!pQuantity || !cQuantity) { return false; }
 
     auto pUnit = pQuantity->GetUnit();
     auto cUnit = cQuantity->GetUnit();
-    if (!pUnit || !cUnit)
-    {
-        return false;
-    }
+    if (!pUnit || !cUnit) { return false; }
 
     auto pDimension = pUnit->GetDimension();
     auto cDimension = cUnit->GetDimension();
-    if (!pDimension || !cDimension)
-    {
-        return false;
-    }
+    if (!pDimension || !cDimension) { return false; }
 
     for (auto dimBase : magic_enum::enum_values<DimensionBase>())
     {
@@ -166,10 +148,7 @@ bool ExchangeItemHelper::OutputAndInputTimeSetsFit(
     const shared_ptr<IBaseExchangeItem> &provider,
     const shared_ptr<IBaseExchangeItem> &consumer)
 {
-    if (!provider || !consumer)
-    {
-        return false;
-    }
+    if (!provider || !consumer) { return false; }
 
     bool timeFits = true;
 
@@ -200,10 +179,7 @@ bool ExchangeItemHelper::OutputAndInputTimeSetsFit(
                 // source's time horizon.
 
                 auto sourceTimeHorizon = sourceTimeSet->GetTimeHorizon();
-                if (!sourceTimeHorizon)
-                {
-                    return false;
-                }
+                if (!sourceTimeHorizon) { return false; }
                 double startOfSourceTimeHorizon =
                     ExtensionMethods::Start(sourceTimeHorizon)->GetTimeStamp();
                 double endOfSourceTimeHorizon =
@@ -220,10 +196,7 @@ bool ExchangeItemHelper::OutputAndInputTimeSetsFit(
                 {
                     timeFits = true;
                 }
-                else
-                {
-                    timeFits = false;
-                }
+                else { timeFits = false; }
             }
             else
             {
@@ -237,7 +210,7 @@ bool ExchangeItemHelper::OutputAndInputTimeSetsFit(
                 {
                     timeFits = true;
 
-                    for (int idx = 0; idx < sourceTimes.size(); ++idx)
+                    for (std::size_t idx = 0; idx < sourceTimes.size(); ++idx)
                     {
                         if (!ExtensionMethods::TimeEquals(
                                 sourceTimes[idx], targetTimes[idx]))
@@ -275,22 +248,13 @@ ExchangeItemHelper::GetEarliestConsumerTime(const shared_ptr<IOutput> &output)
     for (auto &input : output->GetConsumers())
     {
         const auto &elem = input.lock();
-        if (!elem)
-        {
-            continue;
-        }
+        if (!elem) { continue; }
 
         const auto &times = elem->GetTimeSet();
-        if (!times)
-        {
-            continue;
-        }
+        if (!times) { continue; }
 
         const auto &time = times->GetTimeHorizon();
-        if (!earliestRequiredTime)
-        {
-            earliestRequiredTime = time;
-        }
+        if (!earliestRequiredTime) { earliestRequiredTime = time; }
         else if (earliestRequiredTime->GetTimeStamp() < time->GetTimeStamp())
         {
             earliestRequiredTime = time;
@@ -308,22 +272,13 @@ ExchangeItemHelper::GetLatestConsumerTime(const shared_ptr<IOutput> &output)
     for (auto &input : output->GetConsumers())
     {
         const auto &elem = input.lock();
-        if (!elem)
-        {
-            continue;
-        }
+        if (!elem) { continue; }
 
         const auto &times = elem->GetTimeSet();
-        if (!times)
-        {
-            continue;
-        }
+        if (!times) { continue; }
 
         const auto &time = ExtensionMethods::End(times->GetTimeHorizon());
-        if (!latestRequiredTime)
-        {
-            latestRequiredTime = time;
-        }
+        if (!latestRequiredTime) { latestRequiredTime = time; }
         else if (latestRequiredTime->GetTimeStamp() < time->GetTimeStamp())
         {
             latestRequiredTime = time;

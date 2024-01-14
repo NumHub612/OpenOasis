@@ -135,7 +135,7 @@ public:
         if (!node.is_seq() || !node[0].is_val()) return {};
 
         std::vector<T> results;
-        for (int i = 0; i < node.num_children(); ++i)
+        for (int i = 0; i < (int)node.num_children(); ++i)
         {
             T value = GetValueByNode<T>(node, i, "");
             results.push_back(value);
@@ -203,7 +203,8 @@ private:
 
     inline bool HasIdxInSeq(ryml::ConstNodeRef node, int idx) const
     {
-        if (node.is_seq() && idx >= 0 && node.num_children() > idx)
+        std::size_t idx2 = idx;
+        if (node.is_seq() && idx2 >= 0 && node.num_children() > idx2)
             return true;
         else
             return false;

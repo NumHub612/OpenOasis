@@ -268,12 +268,14 @@ void Grid::CalculateBoundaryCenterDistances()
 void Grid::CollectBoundaryFacesAndCells()
 {
 #pragma omp parallel for schedule(dynamic)
-    for (const auto &face : mMesh.faces)
+    for (std::size_t i = 0; i < mMesh.faces.size(); ++i)
+    // for (const auto &face : mMesh.faces)
     {
-        if (face.second.cellIndexes.size() == 1)
+        const auto &face = mMesh.faces[i];
+        if (face.cellIndexes.size() == 1)
         {
-            mBoundaryFaces.push_back(face.first);
-            mBoundaryCells.push_back(face.second.cellIndexes[0]);
+            mBoundaryFaces.push_back(i);
+            mBoundaryCells.push_back(face.cellIndexes[0]);
         }
     }
 }

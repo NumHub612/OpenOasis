@@ -366,7 +366,7 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
 
     const auto &solution = mSolver->GetScalarSolutions();
 
-    for (int i = 0; i < solution.Size(); i++)
+    for (int i = 0; i < (int)solution.Size(); i++)
         mTempValues->SetAt(i, solution(i));
 
     SaveResult();
@@ -432,10 +432,10 @@ tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatr
             const auto &cells  = face.cellIndexes;
 
             // Face location.
-            bool isEast  = (abs(normal[0] - 1.0) < 1.e-9) ? true : false;
-            bool isWest  = (abs(normal[0] + 1.0) < 1.e-9) ? true : false;
-            bool isNorth = (abs(normal[1] - 1.0) < 1.e-9) ? true : false;
-            bool isSouth = (abs(normal[1] + 1.0) < 1.e-9) ? true : false;
+            bool isEast = (abs(normal[0] - 1.0) < 1.e-9) ? true : false;
+            bool isWest = (abs(normal[0] + 1.0) < 1.e-9) ? true : false;
+            // bool isNorth = (abs(normal[1] - 1.0) < 1.e-9) ? true : false;
+            // bool isSouth = (abs(normal[1] + 1.0) < 1.e-9) ? true : false;
             bool isBound = (cells.size() == 1) ? true : false;
 
             // Boundary conditions.
@@ -504,7 +504,7 @@ void HeatConductionModel::SaveResult()
     writer.InsertColumn<double>(0, "temp", mTempValues->Data());
 
     writer.SetRowLabel(-1, "id");
-    for (int i = 0; i < mTempValues->Size(); i++)
+    for (int i = 0; i < (int)mTempValues->Size(); i++)
         writer.SetRowLabel(i, to_string(i));
 
     writer.Save();

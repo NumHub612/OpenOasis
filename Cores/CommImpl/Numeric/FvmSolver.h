@@ -20,15 +20,13 @@ using Spatial::Grid;
 class FvmSolver : public Solver
 {
 private:
-    Matrix<double>      mCoeffMat;
-    std::vector<double> mRhs;
-
     std::shared_ptr<Grid> mGrid;
+    Matrix<double>        mCoeffMat;
+    std::vector<double>   mRhs;
 
     std::unordered_map<int, std::shared_ptr<Boundary>> mBoundaries;
 
     double mCoeffHeat;
-
     double mInitValue;
 
     ScalarField<double> mTemps;

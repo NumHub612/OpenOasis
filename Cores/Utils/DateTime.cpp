@@ -404,7 +404,9 @@ int DateTime::DaysInMonth(int year, int month)
 
     if (2 == month)
     {
-        d = (((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) ? 29 : 28);
+        bool cond1 = (0 == year % 4) && (0 != year % 100);
+        bool cond2 = (0 == year % 400);
+        d          = (cond1 || cond2) ? 29 : 28;
     }
     else { d = days[month - 1]; }
 

@@ -189,7 +189,7 @@ vector<any> ValueSet2D::GetTimeSeriesValuesForElement(int elementIndex) const
 void ValueSet2D::SetTimeSeriesValuesForElement(
     int elementIndex, const vector<any> &values)
 {
-    if (values.size() != GetTimesCount())
+    if ((int)values.size() != GetTimesCount())
     {
         throw IllegalArgumentException(
             "Invalid timeseries values length out of current valueset.");
@@ -360,15 +360,7 @@ ValueSetInt::ValueSetInt(
 
 bool ValueSetInt::IsValidValueType(const any &value) const
 {
-    try
-    {
-        auto data = any_cast<int>(value);
-        return true;
-    }
-    catch (const std::bad_any_cast &e)
-    {
-        return false;
-    }
+    return value.type() == typeid(int);
 }
 
 
@@ -393,15 +385,7 @@ ValueSetDbl::ValueSetDbl(
 
 bool ValueSetDbl::IsValidValueType(const any &value) const
 {
-    try
-    {
-        auto data = any_cast<double>(value);
-        return true;
-    }
-    catch (const std::bad_any_cast &e)
-    {
-        return false;
-    }
+    return value.type() == typeid(double);
 }
 
 
