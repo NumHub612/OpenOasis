@@ -39,6 +39,7 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
+            token: ${{ secrets.OPENOASIS_TOKEN }}
             gcov: true 
             # gcov_include: ${{ github.workspace }}/Cores/*
-            # gcov_ignore: ${{ github.workspace }}/Tools/*            
+            gcov_ignore: ${{ github.workspace }}/Tools/*            
