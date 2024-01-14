@@ -137,7 +137,7 @@ shared_ptr<IValueSet> ExtensionMethods::MultiplyElementValues(
     }
 
     int elemSize = sourceValueset->GetIndexCount({0, 0});
-    if (elemSize != factors.size())
+    if (elemSize != (int)factors.size())
     {
         throw invalid_argument(StringHelper::FormatSimple(
             "ValueSet element size({}) doesn't match factors size({}) \

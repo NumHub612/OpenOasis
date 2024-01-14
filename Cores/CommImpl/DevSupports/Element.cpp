@@ -83,7 +83,7 @@ int Element::GetVertexCount() const
 
 Coordinate Element::GetVertex(int index) const
 {
-    if (index < 0 || index >= mVertices.size())
+    if (index < 0 || index >= (int)mVertices.size())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
             "Invalid vertex query index [{}] out of range [{}] .",

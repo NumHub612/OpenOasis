@@ -81,7 +81,7 @@ public:
             added = true;
 
             // Check if we should subdivide.
-            if (mPoints.size() > MaxPointsPerNode) { SubDivide(); }
+            if ((int)mPoints.size() > MaxPointsPerNode) { SubDivide(); }
         }
 
         return added;

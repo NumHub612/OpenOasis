@@ -123,9 +123,9 @@ void IterationController::InitializeTime()
         ends.push_back(comp.second->GetEndTime());
     }
 
-    auto comp = [](shared_ptr<ITime> a, shared_ptr<ITime> b) {
-        return a->GetTimeStamp() < b->GetTimeStamp();
-    };
+    // auto comp = [](shared_ptr<ITime> a, shared_ptr<ITime> b) {
+    //     return a->GetTimeStamp() < b->GetTimeStamp();
+    // };
     sort(begin(currents), end(currents));
     sort(begin(begins), end(begins));
     sort(begin(ends), end(ends));
@@ -256,9 +256,9 @@ void IterationController::PerformTimestep(
         currents.push_back(comp.second->GetNowTime());
     }
 
-    auto comp = [](shared_ptr<ITime> a, shared_ptr<ITime> b) {
-        return a->GetTimeStamp() < b->GetTimeStamp();
-    };
+    // auto comp = [](shared_ptr<ITime> a, shared_ptr<ITime> b) {
+    //     return a->GetTimeStamp() < b->GetTimeStamp();
+    // };
     sort(begin(currents), end(currents));
     mCurrentTime = make_shared<Time>(currents.front()->GetTimeStamp());
 }

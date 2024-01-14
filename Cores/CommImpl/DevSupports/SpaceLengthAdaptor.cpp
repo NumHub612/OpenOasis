@@ -130,7 +130,7 @@ void SpaceLengthAdaptor::CalculateFactors(const shared_ptr<IElementSet> &element
     mFactors        = vector<double>(elementSet->GetElementCount());
     mLengthExponent = any_cast<double>(mLengthArgument->GetValue());
 
-    for (int i = 0; i < mFactors.size(); i++)
+    for (std::size_t i = 0; i < mFactors.size(); i++)
     {
         XYPolyline element = ElementMapper::CreateXYPolyline(elementSet, i);
         double     length  = element.GetLength();

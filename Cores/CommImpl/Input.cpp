@@ -209,7 +209,7 @@ bool Input::IsValidQuerySpecifier(const shared_ptr<IBaseExchangeItem> &querier) 
 
 void Input::AcceptValues(const vector<shared_ptr<IValueSet>> &values)
 {
-    for (int t = 0; t < mTimeSet->GetTimes().size(); ++t)
+    for (int t = 0; t < (int)mTimeSet->GetTimes().size(); ++t)
     {
         for (int e = 0; e < mElementSet->GetElementCount(); ++e)
         {

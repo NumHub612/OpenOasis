@@ -97,7 +97,7 @@ void TimeBuffer::AddValuesToBuffer(
 
     mTimes->AddTime(make_shared<Time>(time));  // save a copy of time
 
-    for (int i = 0; i < values.size(); ++i)
+    for (int i = 0; i < (int)values.size(); ++i)
     {
         mValues->SetOrAddValue({mTimes->GetCount() - 1, i}, values[i]);
     }
@@ -330,7 +330,7 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
                 {
                     // Linear interpolation
                     double tbe0 = ExtensionMethods::End(times[0])->GetTimeStamp();
-                    double tbb1 = times[1]->GetTimeStamp();
+                    // double tbb1 = times[1]->GetTimeStamp();
                     double tbe1 = ExtensionMethods::End(times[1])->GetTimeStamp();
 
                     for (int i = 0; i < elementCount; i++)
@@ -572,7 +572,7 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
         // End time in requester time interval
         double tre = requestedTime->GetTimeStamp() + requestedTime->GetDurationInDays();
         // length of requested time interval
-        double trl = tre - trb;
+        // double trl = tre - trb;
 
         const auto &times = mTimes->GetTimes();
         int         size  = (int)times.size();

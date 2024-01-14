@@ -84,7 +84,7 @@ bool XYPolyline::Validate() const
         throw runtime_error("Number of vertices in polyline element is less than 2.");
     }
 
-    for (int i = 0; i < points.size() - 1; i++)
+    for (int i = 0; i < (int)points.size() - 1; i++)
     {
         if (GetLine(i).GetLength() <= 0.0)
         {
@@ -98,7 +98,7 @@ bool XYPolyline::Validate() const
 
 XYLine XYPolyline::GetLine(int lineNumber) const
 {
-    if (points.empty() || lineNumber >= points.size())
+    if (points.empty() || lineNumber >= (int)points.size())
     {
         throw runtime_error("The line segment index exceeds the XYPolyLine size.");
     }
@@ -111,7 +111,7 @@ double XYPolyline::GetLength() const
     if (points.empty()) return 0.0;
 
     double len = 0.0;
-    for (int i = 0; i < points.size() - 1; ++i)
+    for (int i = 0; i < (int)points.size() - 1; ++i)
     {
         len += GetLine(i).GetLength();
     }
@@ -144,7 +144,7 @@ bool XYPolygon::Validate() const
         throw runtime_error("Area of polygon is negative or zero.");
     }
 
-    for (int i = 0; i < points.size() - 1; i++)
+    for (int i = 0; i < (int)points.size() - 1; i++)
     {
         if (GetLine(i).GetLength() <= 0.0)
         {
@@ -178,7 +178,7 @@ double XYPolygon::GetArea() const
 
     if (points.empty() || points.size() < 3) return 0.0;
 
-    auto   size = points.size();
+    auto   size = (int)points.size();
     double area = 0.0;
     for (int i = 0; i < size - 1; ++i)
     {
@@ -192,12 +192,12 @@ double XYPolygon::GetArea() const
 
 XYLine XYPolygon::GetLine(int lineNumber) const
 {
-    if (points.empty() || lineNumber >= points.size())
+    if (points.empty() || lineNumber >= (int)points.size())
     {
         throw runtime_error("The line segment index exceeds the XYPolygon size.");
     }
 
-    int index2 = (lineNumber == points.size() - 1) ? 0 : lineNumber + 1;
+    int index2 = (lineNumber == (int)points.size() - 1) ? 0 : lineNumber + 1;
     return XYLine(points[lineNumber], points[index2]);
 }
 
@@ -207,8 +207,8 @@ bool XYPolygon::IsConvex(int index) const
 
     if (points.empty()) { return false; }
 
-    auto prevIndex = (index - 1 < 0) ? points.size() - 1 : index - 1;
-    auto nextIndex = (index + 1 > points.size() - 1) ? 0 : index + 1;
+    auto prevIndex = (index - 1 < 0) ? (int)points.size() - 1 : index - 1;
+    auto nextIndex = (index + 1 > (int)points.size() - 1) ? 0 : index + 1;
 
     const XYPoint &p1 = points[prevIndex], &p2 = points[nextIndex], &p = points[index];
     double         dot = (p1.x - p.x) * (p2.x - p.x) + (p1.y - p.y) * (p2.y - p.y);

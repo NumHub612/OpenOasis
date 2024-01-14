@@ -176,7 +176,7 @@ public:
 
         // Do a manual copy.
         std::vector<T> tArray(elmtValues.size());
-        for (int i = 0; i < elmtValues.size(); i++)
+        for (std::size_t i = 0; i < elmtValues.size(); i++)
         {
             tArray[i] = std::any_cast<T>(elmtValues[i]);
         }

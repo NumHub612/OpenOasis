@@ -55,7 +55,7 @@ TimeAdaptedOutputFactory::GetAvailableAdaptedOutputIds(
     ids.emplace_back(make_shared<TimeInterpolator>(adaptee));
     ids.emplace_back(make_shared<TimeExtrapolator>(adaptee));
 
-    for (int i = 0; i < ids.size(); i++)
+    for (int i = 0; i < (int)ids.size(); i++)
     {
         const auto &item = dynamic_pointer_cast<IAdaptedOutput>(ids[i]);
         const auto &iter = find_if(

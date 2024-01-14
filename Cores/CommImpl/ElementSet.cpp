@@ -93,7 +93,7 @@ int ElementSet::GetElementIndex(const string &elementId)
 {
     if (mElements.empty()) return -1;
 
-    for (auto i = 0; i < mElements.size(); i++)
+    for (std::size_t i = 0; i < mElements.size(); i++)
     {
         if (mElements[i].GetId() == elementId) { return i; }
     }
@@ -157,7 +157,7 @@ double ElementSet::GetNodeZCoordinate(int elementIndex, int vertexIndex)
 
 void ElementSet::CheckElementIndex(int elemIndex) const
 {
-    if (elemIndex < 0 || mElements.empty() || elemIndex >= mElements.size())
+    if (elemIndex < 0 || mElements.empty() || elemIndex >= (int)mElements.size())
         throw ArgumentOutOfRangeException(StringHelper::FormatSimple(
             "Element index [{}] out of range [{}] .", elemIndex, mElements.size()));
 }

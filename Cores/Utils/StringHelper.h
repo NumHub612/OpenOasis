@@ -119,10 +119,7 @@ public:
     static std::string
     FormatSimple(const std::string &input, const std::vector<T> &args)
     {
-        if (args.empty())
-        {
-            return input;
-        }
+        if (args.empty()) { return input; }
 
         std::ostringstream ss;
 
@@ -148,7 +145,7 @@ public:
                     ss << args[vecIndex];
 
                     lastCloseBrace = closeBrace;
-                    vecIndex       = std::min(++vecIndex, vecSize - 1);
+                    vecIndex       = std::min(vecIndex + 1, vecSize - 1);
                 }
             }
         }

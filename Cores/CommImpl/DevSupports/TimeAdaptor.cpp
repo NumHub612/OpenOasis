@@ -90,7 +90,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     // Pull data from Output item.
     auto currentValues = mOutput.lock()->GetValues({});
     currentTimes       = mOutput.lock()->GetTimeSet()->GetTimes();
-    for (int t = 0; t < currentTimes.size(); ++t)
+    for (std::size_t t = 0; t < currentTimes.size(); ++t)
     {
         const auto    &data = currentValues->GetElementValuesForTime(t);
         vector<double> dataInDbl;
@@ -109,7 +109,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     vector<vector<double>> resultValues;
     if (querier->GetTimeSet() != nullptr && !currentTimes.empty())
     {
-        for (int t = 0; t < currentTimes.size(); t++)
+        for (std::size_t t = 0; t < currentTimes.size(); t++)
         {
             const auto &queryTime         = querier->GetTimeSet()->GetTimeHorizon();
             const auto &valuesForTimeStep = mBuffers.GetValues(queryTime);
@@ -193,7 +193,7 @@ void TimeAdaptor::Refresh()
     const auto &values = mOutput.lock()->GetValues({});
     const auto &times  = mOutput.lock()->GetTimeSet()->GetTimes();
 
-    for (int t = 0; t < times.size(); ++t)
+    for (std::size_t t = 0; t < times.size(); ++t)
     {
         vector<double> data;
         for (const auto &val : values->GetTimeSeriesValuesForElement(t))

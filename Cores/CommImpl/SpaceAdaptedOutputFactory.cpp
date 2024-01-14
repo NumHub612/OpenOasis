@@ -252,7 +252,7 @@ SpaceAdaptedOutputFactory::GetAvailableAdaptedOutputIds(
 void SpaceAdaptedOutputFactory::GetAvailableOperationMethods(
     vector<shared_ptr<IIdentifiable>> &methods, ElementType sourceElementType)
 {
-    for (int i = 0; i < mAvailableMethods.size(); i++)
+    for (int i = 0; i < (int)mAvailableMethods.size(); i++)
     {
         const auto &availableMethod = mAvailableMethods[i];
 
@@ -274,7 +274,7 @@ void SpaceAdaptedOutputFactory::GetAvailableMappingMethods(
     vector<shared_ptr<IIdentifiable>> &methods, ElementType sourceElementType,
     ElementType targetElementType)
 {
-    for (int i = 0; i < mAvailableMethods.size(); i++)
+    for (int i = 0; i < (int)mAvailableMethods.size(); i++)
     {
         auto availableMethod = mAvailableMethods[i];
 
@@ -408,7 +408,7 @@ vector<shared_ptr<IArgument>> SpaceAdaptedOutputFactory::GetAdaptedOutputArgumen
             "Unknown method identifier: [{}] .", methodIdentifier));
     }
 
-    for (int i = 0; i < mAvailableMethods.size(); i++)
+    for (int i = 0; i < (int)mAvailableMethods.size(); i++)
     {
         auto method = mAvailableMethods[i];
 

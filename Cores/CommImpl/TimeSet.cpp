@@ -95,7 +95,7 @@ void TimeSet::AddTime(shared_ptr<ITime> time)
 
 void TimeSet::RemoveTime(int index)
 {
-    if (index < 0 || index >= mTimes.size())
+    if (index < 0 || index >= (int)mTimes.size())
     {
         throw IllegalArgumentException(StringHelper::FormatSimple(
             "Index [{}] of time to remove out of range [{}] .", index, mTimes.size()));

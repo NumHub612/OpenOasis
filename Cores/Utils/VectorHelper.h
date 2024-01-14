@@ -40,7 +40,7 @@ public:
     template <typename T>
     static int IndexOf(const std::vector<T> &list, T item, int offset)
     {
-        if (offset <= list.size())
+        if (offset <= (int)list.size())
         {
             auto it = std::find(list.begin() + offset, list.end(), item);
             if (it != list.end())
@@ -73,7 +73,7 @@ public:
     template <typename T>
     static int LastIndexOf(const std::vector<T> &list, T item, int offset)
     {
-        if (offset <= list.size())
+        if (offset <= (int)list.size())
         {
             auto it = std::find(list.rbegin() + offset, list.rend(), item);
             if (it != list.rend())
@@ -94,8 +94,7 @@ public:
     {
         for (auto &elem : subVec)
         {
-            if (std::find(vec.begin(), vec.end(), elem) == vec.end())
-                return false;
+            if (std::find(vec.begin(), vec.end(), elem) == vec.end()) return false;
         }
         return true;
     }
