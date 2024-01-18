@@ -97,14 +97,16 @@ endif()
 # 加载项目文件
 # -------------------------------------------------------------
 set(RootDir  ${PROJECT_SOURCE_DIR})
-file(GLOB_RECURSE ToolsSrc ${RootDir}/Tools/*.cpp ${RootDir}/Tools/*.cc ${RootDir}/Tools/*.c) 
-file(GLOB driver "${PROJECT_SOURCE_DIR}/Cores/launcher.cpp")
+set(CoreDir ${RootDir}/Model)
+
+file(GLOB_RECURSE ToolsSrc ${CoreDir}/ThirdPart/*.cpp ${CoreDir}/ThirdPart/*.cc ${CoreDir}/ThirdPart/*.c) 
+file(GLOB driver "${PROJECT_SOURCE_DIR}/Model/launcher.cpp")
 
 if (NOT ENABLE_TESTS)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Catch2/.*")
 endif()
 
-set(CoreDir ${RootDir}/Cores)
+
 file(GLOB_RECURSE CommSrc ${CoreDir}/CommImpl/*.cpp ${CoreDir}/CommImpl/*.c)
 file(GLOB_RECURSE UtilSrc ${CoreDir}/Utils/*.cpp ${CoreDir}/Utils/CommImpl/*.c)
 file(GLOB_RECURSE TestSrc ${CoreDir}/tests/*.cpp ${CoreDir}/tests/*.c)
@@ -125,7 +127,8 @@ set(CommLib "CommLib")
 add_library(${CommLib}  STATIC  ${ToolsSrc} ${CommSrc} ${UtilSrc})
 target_include_directories(${CommLib}  
     PUBLIC  ${PROJECT_SOURCE_DIR}
-    PUBLIC  ${PROJECT_SOURCE_DIR}/Tools
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Model
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Model/ThirdPart
     )
 set_target_properties(${CommLib} PROPERTIES PREFIX "")
 
@@ -160,7 +163,7 @@ endif()
 
 ##-- 增加包含目录
 target_include_directories(${ModuleName}
-    PUBLIC "${PROJECT_SOURCE_DIR}"
+    PUBLIC ${PROJECT_SOURCE_DIR}
     )
 
 ##-- 设置动态库属性
@@ -187,8 +190,8 @@ endif()
 ##-- 添加附加包含目录
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
-    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"
-    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Model/ThirdPart
+    # PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
     )
     
 
@@ -223,12 +226,12 @@ file(GLOB apis ${CoreDir}/wrappers/*.h)
 install(FILES ${apis} DESTINATION exports/${platform})
 
 ##-- 安装项目
-install(TARGETS  ${PROJECT_NAME}  DESTINATION  exports/${platform})
+install(TARGETS ${PROJECT_NAME} DESTINATION exports/${platform})
 install(FILES "${PROJECT_SOURCE_DIR}/LICENSE"
-    DESTINATION  ${CMAKE_INSTALL_PREFIX}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}
     )
 install(FILES "${PROJECT_SOURCE_DIR}/README.md"
-    DESTINATION  ${CMAKE_INSTALL_PREFIX}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}
     )    
 
 file(GLOB CommInc ${RootDir}/Cores/Inc/*.h)
