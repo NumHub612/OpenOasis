@@ -68,7 +68,7 @@ endif()
 # -------------------------------------------------------------
 # 输出项目logo
 # -------------------------------------------------------------
-file(STRINGS "${PROJECT_SOURCE_DIR}/Rsrcs/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
+file(STRINGS "${PROJECT_SOURCE_DIR}/Rsrc/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
 message(STATUS "${PROJECT_LOGO}")
 
 
@@ -110,8 +110,8 @@ endif()
 file(GLOB_RECURSE CommSrc ${CoreDir}/CommImpl/*.cpp ${CoreDir}/CommImpl/*.c)
 file(GLOB_RECURSE UtilSrc ${CoreDir}/Utils/*.cpp ${CoreDir}/Utils/CommImpl/*.c)
 file(GLOB_RECURSE TestSrc ${CoreDir}/tests/*.cpp ${CoreDir}/tests/*.c)
-file(GLOB_RECURSE PyBindSrc "${CoreDir}/wrappers/PyOasisFlows.cpp")
-file(GLOB_RECURSE ExportSrc "${CoreDir}/wrappers/OasisFlows.cpp")
+file(GLOB_RECURSE PyBindSrc "${CoreDir}/Wrappers/PyOasisFlows.cpp")
+file(GLOB_RECURSE ExportSrc "${CoreDir}/Wrappers/OasisFlows.cpp")
 
 set(FluidDir ${CoreDir}/SystFluids)
 file(GLOB_RECURSE FluidSrc ${FluidDir}/*.cpp ${FluidDir}/*.c)

@@ -14,7 +14,7 @@ TEST_CASE("Heats dummy test")
     SECTION("function test")
     {
         string file = FilePathHelper::Combine(
-            PROJECT_SRC_DIR, "Rsrcs/Benchmarks/heat_conduction_model/task.yaml");
+            PROJECT_SRC_DIR, "Rsrc/Benchmarks/heat_conduction_model/task.yaml");
 
         HeatConductionModel model("heat", file);
 
@@ -32,7 +32,7 @@ TEST_CASE("Heats dummy test")
 
         string ref_file = FilePathHelper::Combine(
             PROJECT_SRC_DIR,
-            "Rsrcs/Benchmarks/heat_conduction_model/assets/validation.csv");
+            "Rsrc/Benchmarks/heat_conduction_model/assets/validation.csv");
 
         string simu_file =
             FilePathHelper::GetFullPath("./outputs/heat_conduction_result.csv");

@@ -1,4 +1,4 @@
-<img src="../Rsrcs/Logo/logo_doc.png" alt="">
+<img src="../Rsrc/Logo/logo_doc.png" alt="">
 
 ---------------------------------------------------------------------------------
 
@@ -290,7 +290,7 @@ OpenOasis Project Structure:
 |   +-- Dists/                : 项目编译发布包
 |   +-- Docs/                 : 项目文档
 |   +-- OasisAgents/          : 深度学习与强化学习解决方案
-|   +-- Rsrcs/                : 相关资源
+|   +-- Rsrc/                : 相关资源
 |   +-- Tools/                : 第三方工具箱
 ```
 

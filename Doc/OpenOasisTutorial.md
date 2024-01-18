@@ -1,4 +1,4 @@
-<img src="../Rsrcs/Logo/logo_doc.png" alt="">
+<img src="../Rsrc/Logo/logo_doc.png" alt="">
 
 ---------------------------------------------------------------------------------
 
