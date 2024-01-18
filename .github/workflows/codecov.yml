@@ -31,7 +31,7 @@ jobs:
       - name: Ctest
         run: |
           cd ${{ github.workspace }}/build
-          ctest --output-on-failure -C Release -VV
+          ctest --output-on-failure -C Debug -VV
         shell: bash     
       - name: run test
         run:  ${{ github.workspace }}/build/bin/OasisTests
