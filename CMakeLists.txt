@@ -52,6 +52,10 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+if(ENABLE_CODECOV)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+endif()
+
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp -Wall -g -O0") 
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -60,15 +64,11 @@ else()
     message(FATAL_ERROR "Invalid build type: ${CMAKE_BUILD_TYPE}")
 endif()
 
-if(ENABLE_CODECOV)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
-endif()
-
 
 # -------------------------------------------------------------
 # 输出项目logo
 # -------------------------------------------------------------
-file(STRINGS "${PROJECT_SOURCE_DIR}/Rsrcs/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
+file(STRINGS "${PROJECT_SOURCE_DIR}/Rsrc/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
 message(STATUS "${PROJECT_LOGO}")
 
 
@@ -97,18 +97,20 @@ endif()
 # 加载项目文件
 # -------------------------------------------------------------
 set(RootDir  ${PROJECT_SOURCE_DIR})
-file(GLOB_RECURSE ToolsSrc ${RootDir}/Tools/*.cpp ${RootDir}/Tools/*.cc ${RootDir}/Tools/*.c) 
-file(GLOB driver "launcher.cpp")
+set(CoreDir ${RootDir}/Model)
+
+file(GLOB_RECURSE ToolsSrc ${CoreDir}/ThirdPart/*.cpp ${CoreDir}/ThirdPart/*.cc ${CoreDir}/ThirdPart/*.c) 
+file(GLOB driver "${PROJECT_SOURCE_DIR}/Model/Launcher.cpp")
 
 if (NOT ENABLE_TESTS)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Catch2/.*")
 endif()
 
-set(CoreDir ${RootDir}/Cores)
 file(GLOB_RECURSE CommSrc ${CoreDir}/CommImpl/*.cpp ${CoreDir}/CommImpl/*.c)
 file(GLOB_RECURSE UtilSrc ${CoreDir}/Utils/*.cpp ${CoreDir}/Utils/CommImpl/*.c)
 file(GLOB_RECURSE TestSrc ${CoreDir}/tests/*.cpp ${CoreDir}/tests/*.c)
-file(GLOB_RECURSE WrapperSrc ${CoreDir}/wrappers/*.cpp)
+file(GLOB_RECURSE PyBindSrc "${CoreDir}/wrappers/PyOasisFlows.cpp")
+file(GLOB_RECURSE ExportSrc "${CoreDir}/wrappers/OasisFlows.cpp")
 
 set(FluidDir ${CoreDir}/SystFluids)
 file(GLOB_RECURSE FluidSrc ${FluidDir}/*.cpp ${FluidDir}/*.c)
@@ -124,7 +126,8 @@ set(CommLib "CommLib")
 add_library(${CommLib}  STATIC  ${ToolsSrc} ${CommSrc} ${UtilSrc})
 target_include_directories(${CommLib}  
     PUBLIC  ${PROJECT_SOURCE_DIR}
-    PUBLIC  ${PROJECT_SOURCE_DIR}/Tools
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Model
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Model/ThirdPart
     )
 set_target_properties(${CommLib} PROPERTIES PREFIX "")
 
@@ -133,8 +136,8 @@ set_target_properties(${CommLib} PROPERTIES PREFIX "")
 # 生成 PYTHON 包
 # -------------------------------------------------------------
 if(ENABLE_PYLIB)       
-    set(PackageName "PyOasis")  
-    pybind11_add_module(${PackageName} ${FluidSrc} ${HeatSrc} ${WrapperSrc})
+    set(PackageName "PyOasisFlows")  
+    pybind11_add_module(${PackageName} ${FluidSrc} ${HeatSrc} ${PyBindSrc})
     target_include_directories(${PackageName} 
         PUBLIC ${PROJECT_SOURCE_DIR}
         )
@@ -145,8 +148,28 @@ endif()
 # -------------------------------------------------------------
 # 子模块动态库编译
 # -------------------------------------------------------------
-add_subdirectory(${CoreDir}/SystFluids)
-add_subdirectory(${CoreDir}/SystHeats)
+set(ModuleName "OasisFlows") 
+add_library(${ModuleName} SHARED ${FluidSrc} ${HeatSrc} ${ExportSrc})
+
+##-- 连接库
+target_link_libraries(${ModuleName} 
+    PUBLIC ${CommLib}
+    PUBLIC OpenMP::OpenMP_CXX
+    )
+if (LINUX)
+    target_link_libraries(${ModuleName} PUBLIC dl)
+endif()
+
+##-- 增加包含目录
+target_include_directories(${ModuleName}
+    PUBLIC ${PROJECT_SOURCE_DIR}
+    )
+
+##-- 设置动态库属性
+set_target_properties(${ModuleName} PROPERTIES 
+    PREFIX ""
+    OUTPUT_NAME  ${ModuleName}
+    )
 
 
 # -------------------------------------------------------------
@@ -154,25 +177,20 @@ add_subdirectory(${CoreDir}/SystHeats)
 # -------------------------------------------------------------
 add_executable(${ProjectName} ${driver})
 
-#-- 链接库
+##-- 链接库
 target_link_libraries(${ProjectName} 
     PUBLIC ${CommLib}
     PUBLIC OpenMP::OpenMP_CXX
     )
-if (ENABLE_PYLIB)
-    target_link_libraries(${ProjectName}  
-        PUBLIC ${Python3_LIBRARIES}  
-        )    
-endif ()
 if (LINUX)
     target_link_libraries(${ProjectName} PUBLIC dl)
 endif()
 
-#-- 添加附加包含目录
+##-- 添加附加包含目录
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
-    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"
-    PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Model/ThirdPart
+    # PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
     )
     
 
@@ -201,12 +219,18 @@ endif()
 # -------------------------------------------------------------
 # 安装文件
 # -------------------------------------------------------------
-install(TARGETS  ${PROJECT_NAME}  DESTINATION  ${platform})
+##-- 安装动态库
+install(TARGETS ${ModuleName}  DESTINATION exports/${platform})
+file(GLOB apis ${CoreDir}/wrappers/*.h)
+install(FILES ${apis} DESTINATION exports/${platform})
+
+##-- 安装项目
+install(TARGETS ${PROJECT_NAME} DESTINATION exports/${platform})
 install(FILES "${PROJECT_SOURCE_DIR}/LICENSE"
-    DESTINATION  ${CMAKE_INSTALL_PREFIX}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}
     )
 install(FILES "${PROJECT_SOURCE_DIR}/README.md"
-    DESTINATION  ${CMAKE_INSTALL_PREFIX}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}
     )    
 
 file(GLOB CommInc ${RootDir}/Cores/Inc/*.h)
@@ -217,6 +241,7 @@ install(DIRECTORY ${RootDir}/Cores/Inc/AdditionalControl
     PATTERN  "*.h"
     )
 
+##-- 安装ptyhon包
 if(ENABLE_PYLIB)
-    install(TARGETS ${PackageName} DESTINATION ${platform})
+    install(TARGETS ${PackageName} DESTINATION exports/${platform})
 endif()

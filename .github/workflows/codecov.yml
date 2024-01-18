@@ -9,7 +9,7 @@ jobs:
     name: "OpenOasis code coverage actions"
     runs-on: ubuntu-latest
     env:
-        COVERAGE_DATA_PATH: coverage-data/coverage.info    
+      COVERAGE_DATA_PATH: coverage-data/coverage.info    
     steps:
       - uses: actions/checkout@v2
       - name: Install GCC-10
@@ -31,7 +31,7 @@ jobs:
       - name: Ctest
         run: |
           cd ${{ github.workspace }}/build
-          ctest --output-on-failure -C Release -VV
+          ctest --output-on-failure -C Debug -VV
         shell: bash     
       - name: run test
         run:  ${{ github.workspace }}/build/bin/OasisTests
@@ -39,7 +39,5 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
-            token: ${{ secrets.OPENOASIS_TOKEN }}
-            gcov: true 
-            gcov_include: ${{ github.workspace }}/Cores/*
-            gcov_ignore: ${{ github.workspace }}/Tools/*            
+          gcov: true 
+          gcov_ignore: ${{ github.workspace }}/Model/tests,${{ github.workspace }}/Model/ThirdPart
