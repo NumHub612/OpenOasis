@@ -100,7 +100,7 @@ set(RootDir  ${PROJECT_SOURCE_DIR})
 set(CoreDir ${RootDir}/Model)
 
 file(GLOB_RECURSE ToolsSrc ${CoreDir}/ThirdPart/*.cpp ${CoreDir}/ThirdPart/*.cc ${CoreDir}/ThirdPart/*.c) 
-file(GLOB driver "${PROJECT_SOURCE_DIR}/Model/launcher.cpp")
+file(GLOB driver "${PROJECT_SOURCE_DIR}/Model/Launcher.cpp")
 
 if (NOT ENABLE_TESTS)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Catch2/.*")
