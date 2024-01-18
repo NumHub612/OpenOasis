@@ -53,7 +53,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 if(ENABLE_CODECOV)
-    set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
