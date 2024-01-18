@@ -9,7 +9,7 @@ jobs:
     name: "OpenOasis code coverage actions"
     runs-on: ubuntu-latest
     env:
-        COVERAGE_DATA_PATH: coverage-data/coverage.info    
+      COVERAGE_DATA_PATH: coverage-data/coverage.info    
     steps:
       - uses: actions/checkout@v2
       - name: Install GCC-10
@@ -39,5 +39,5 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
-            gcov: true 
-            # gcov_ignore: ${{ github.workspace }}/Model/ThirdPart/*           
+          gcov: true 
+          gcov_ignore: ${{ github.workspace }}/Model/ThirdPart/*           
