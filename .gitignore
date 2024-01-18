@@ -1,5 +1,4 @@
 # 忽略的文件  
-*Version.h
 FolderConfig.h
 *.log
 
