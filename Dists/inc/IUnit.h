@@ -4,7 +4,7 @@
  *    @File      :  IUnit.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  TO describe the physical unit of `IQuantity`.
+ *    @Desc      :  To describe the physical unit of `IQuantity`.
  *
  ** ***********************************************************************************/
 #pragma once

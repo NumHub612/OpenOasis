@@ -1,19 +1,16 @@
-#include "OasisFluidsModule.h"
-#include "OasisFluidsVersion.h"
+#include "OasisFlows.h"
 #include "Cores/SystFluids/Hydrologics/RainfallModule.h"
 #include "Cores/SystFluids/Hydrologics/RunoffModule.h"
 #include "Cores/SystFluids/Hydrologics/RiverModule.h"
+#include "Cores/SystHeats/HeatConductionModel/HeatConductionModel.h"
 
 
 using namespace OpenOasis::SystFluids::Hydrologics;
+using namespace OpenOasis::SystHeats;
 using namespace std;
 
 static vector<shared_ptr<OpenOasis::ILinkableComponent>> componenents;
 
-const char *GetFluidPackageVersion()
-{
-    return VERSION_STR;
-}
 
 void *GetRainfallModule(const char *id, const char *coorFile, const char *dataFile)
 {
@@ -34,6 +31,14 @@ void *GetRunoffModule(const char *id, const char *taskFile)
 void *GetRiverModule(const char *id)
 {
     auto comp = make_shared<RiverModule>(id);
+    componenents.push_back(comp);
+
+    return comp.get();
+}
+
+void *GetHeatConductionModule(const char *id, const char *taskFile)
+{
+    auto comp = make_shared<HeatConductionModel>(id, taskFile);
     componenents.push_back(comp);
 
     return comp.get();

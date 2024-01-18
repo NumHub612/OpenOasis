@@ -1,7 +1,7 @@
 /** ***********************************************************************************
  *    Copyright (C) 2022, The OpenOasis Contributors. Join us in the Oasis!
  *
- *    @File      :  IScheduler.h
+ *    @File      :  IRegulator.h
  *    @License   :  Apache-2.0
  *
  *    @Desc      :  To provide runtime interactive interface for attribute scheduling.
@@ -19,7 +19,8 @@ namespace OpenOasis
 {
 namespace AdditionalControl
 {
-class IScheduler
+// Todo: abandoned(function implemented by input/output).
+class IRegulator
 {
 public:
     /// @brief Sets the state of the specified variable for the specified ID of

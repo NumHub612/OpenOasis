@@ -285,7 +285,7 @@ OpenOasis Project Structure:
 |   |   +-- SystHeats/        : 热量流动模型集
 |   |   +-- Utils/            : 通用功能模块
 |   |   +-- tests/            : 测试集
-|   |   +-- wrappers/         : python 接口封装
+|   |   +-- wrappers/         : c++ 和 python 接口封装
 |   +-- DataAnalysis/         : 数据分析、处理和可视化工具包
 |   +-- Dists/                : 项目编译发布包
 |   +-- Docs/                 : 项目文档

@@ -1,4 +1,6 @@
 #pragma once
+
+// Macros of platform.
 #undef WINDOWS
 #ifdef _WIN32
 #define WINDOWS
@@ -32,7 +34,9 @@
 #define EXPORT EXTERNC
 #endif
 
-EXPORT const char *GetFluidPackageVersion();
+// ------------------------------------------------------------------------------
+// Exports of fluid components.
+// ------------------------------------------------------------------------------
 
 /// @brief Get `RainfallModule` object which no external deletion is required.
 /// @param id Rainfall model id.
@@ -54,3 +58,14 @@ EXPORT void *GetRunoffModule(const char *id, const char *taskFile);
 /// @param id River model id.
 /// @return `RiverModule` object raw pointer.
 EXPORT void *GetRiverModule(const char *id);
+
+
+// ------------------------------------------------------------------------------
+// Exports of heat components.
+// ------------------------------------------------------------------------------
+
+/// @brief Get `HeatConduction` object which no external deletion is required.
+/// @param id model id.
+/// @param taskFile File contains task configurations.
+/// @return `HeatConductionModule` object raw pointer.
+EXPORT void *GetHeatConductionModule(const char *id, const char *taskFile);

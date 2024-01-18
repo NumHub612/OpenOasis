@@ -98,7 +98,7 @@ endif()
 # -------------------------------------------------------------
 set(RootDir  ${PROJECT_SOURCE_DIR})
 file(GLOB_RECURSE ToolsSrc ${RootDir}/Tools/*.cpp ${RootDir}/Tools/*.cc ${RootDir}/Tools/*.c) 
-file(GLOB driver "launcher.cpp")
+file(GLOB driver "${PROJECT_SOURCE_DIR}/Cores/launcher.cpp")
 
 if (NOT ENABLE_TESTS)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Catch2/.*")
@@ -108,7 +108,8 @@ set(CoreDir ${RootDir}/Cores)
 file(GLOB_RECURSE CommSrc ${CoreDir}/CommImpl/*.cpp ${CoreDir}/CommImpl/*.c)
 file(GLOB_RECURSE UtilSrc ${CoreDir}/Utils/*.cpp ${CoreDir}/Utils/CommImpl/*.c)
 file(GLOB_RECURSE TestSrc ${CoreDir}/tests/*.cpp ${CoreDir}/tests/*.c)
-file(GLOB_RECURSE WrapperSrc ${CoreDir}/wrappers/*.cpp)
+file(GLOB_RECURSE PyBindSrc "${CoreDir}/wrappers/PyOasisFlows.cpp")
+file(GLOB_RECURSE ExportSrc "${CoreDir}/wrappers/OasisFlows.cpp")
 
 set(FluidDir ${CoreDir}/SystFluids)
 file(GLOB_RECURSE FluidSrc ${FluidDir}/*.cpp ${FluidDir}/*.c)
@@ -133,8 +134,8 @@ set_target_properties(${CommLib} PROPERTIES PREFIX "")
 # 生成 PYTHON 包
 # -------------------------------------------------------------
 if(ENABLE_PYLIB)       
-    set(PackageName "PyOasis")  
-    pybind11_add_module(${PackageName} ${FluidSrc} ${HeatSrc} ${WrapperSrc})
+    set(PackageName "PyOasisFlows")  
+    pybind11_add_module(${PackageName} ${FluidSrc} ${HeatSrc} ${PyBindSrc})
     target_include_directories(${PackageName} 
         PUBLIC ${PROJECT_SOURCE_DIR}
         )
@@ -145,8 +146,28 @@ endif()
 # -------------------------------------------------------------
 # 子模块动态库编译
 # -------------------------------------------------------------
-add_subdirectory(${CoreDir}/SystFluids)
-add_subdirectory(${CoreDir}/SystHeats)
+set(ModuleName "OasisFlows") 
+add_library(${ModuleName} SHARED ${FluidSrc} ${HeatSrc} ${ExportSrc})
+
+##-- 连接库
+target_link_libraries(${ModuleName} 
+    PUBLIC ${CommLib}
+    PUBLIC OpenMP::OpenMP_CXX
+    )
+if (LINUX)
+    target_link_libraries(${ModuleName} PUBLIC dl)
+endif()
+
+##-- 增加包含目录
+target_include_directories(${ModuleName}
+    PUBLIC "${PROJECT_SOURCE_DIR}"
+    )
+
+##-- 设置动态库属性
+set_target_properties(${ModuleName} PROPERTIES 
+    PREFIX ""
+    OUTPUT_NAME  ${ModuleName}
+    )
 
 
 # -------------------------------------------------------------
@@ -154,21 +175,16 @@ add_subdirectory(${CoreDir}/SystHeats)
 # -------------------------------------------------------------
 add_executable(${ProjectName} ${driver})
 
-#-- 链接库
+##-- 链接库
 target_link_libraries(${ProjectName} 
     PUBLIC ${CommLib}
     PUBLIC OpenMP::OpenMP_CXX
     )
-if (ENABLE_PYLIB)
-    target_link_libraries(${ProjectName}  
-        PUBLIC ${Python3_LIBRARIES}  
-        )    
-endif ()
 if (LINUX)
     target_link_libraries(${ProjectName} PUBLIC dl)
 endif()
 
-#-- 添加附加包含目录
+##-- 添加附加包含目录
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
     PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools"
@@ -201,7 +217,13 @@ endif()
 # -------------------------------------------------------------
 # 安装文件
 # -------------------------------------------------------------
-install(TARGETS  ${PROJECT_NAME}  DESTINATION  ${platform})
+##-- 安装动态库
+install(TARGETS ${ModuleName}  DESTINATION exports/${platform})
+file(GLOB apis ${CoreDir}/wrappers/*.h)
+install(FILES ${apis} DESTINATION exports/${platform})
+
+##-- 安装项目
+install(TARGETS  ${PROJECT_NAME}  DESTINATION  exports/${platform})
 install(FILES "${PROJECT_SOURCE_DIR}/LICENSE"
     DESTINATION  ${CMAKE_INSTALL_PREFIX}
     )
@@ -217,6 +239,7 @@ install(DIRECTORY ${RootDir}/Cores/Inc/AdditionalControl
     PATTERN  "*.h"
     )
 
+##-- 安装ptyhon包
 if(ENABLE_PYLIB)
-    install(TARGETS ${PackageName} DESTINATION ${platform})
+    install(TARGETS ${PackageName} DESTINATION exports/${platform})
 endif()

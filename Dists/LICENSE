@@ -199,15 +199,3 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
-
-OpenOasis includes a number of components and libraries with separate 
-copyright notices and license terms. Your use of those components are 
-subject to the terms and conditions of the following licenses: 
-
-- Tools/Catch2/catch.hpp:2.13.7
-    A modern, C++-native, test framework for unit-tests, TDD and BDD
-    Project URL: https://github.com/catchorg/Catch2/
-    License: Boost Software License - Version 1.0  (Tools/Catch2/license)
-
-
