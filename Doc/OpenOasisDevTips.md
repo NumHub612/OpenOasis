@@ -276,22 +276,21 @@
 OpenOasis Project Structure:
 
 +-- /
-|   +-- setup.py              : python 打包脚本
-|   +-- launcher.cpp          : 模块功能加载入口
-|   +-- Cores/                : 数值算法模型集
+|   +-- Agents/               : 深度学习与强化学习解决方案
+|   +-- Dists/                : 项目编译发布包
+|   +-- Doc/                  : 项目文档
+|   +-- Model/                : 数值算法模型集
 |   |   +-- CommImpl/         : 接口的通用实现(算法开发sdk和集成开发sdk)
 |   |   +-- Inc/              : 接口约定
 |   |   +-- SystFluids/       : 流体流动模型集
 |   |   +-- SystHeats/        : 热量流动模型集
 |   |   +-- Utils/            : 通用功能模块
 |   |   +-- tests/            : 测试集
+|   |   +-- ThirdPart/        : 第三方工具箱
 |   |   +-- wrappers/         : c++ 和 python 接口封装
-|   +-- DataAnalysis/         : 数据分析、处理和可视化工具包
-|   +-- Dists/                : 项目编译发布包
-|   +-- Docs/                 : 项目文档
-|   +-- OasisAgents/          : 深度学习与强化学习解决方案
-|   +-- Rsrc/                : 相关资源
-|   +-- Tools/                : 第三方工具箱
+|   |   +-- Launcher.cpp      : 模块动态加载器
+|   +-- Rsrc/                 : 相关资源
+|   +-- Uengrs/               : 数据处理、分析和可视化工具包
 ```
 
 [<i class="fa fa-home"></i>](#绿洲开发小贴士)

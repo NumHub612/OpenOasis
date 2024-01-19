@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 import os, sys
 
-sys.path.append(os.path.abspath(r"./OasisAgents"))
+sys.path.append(os.path.abspath(r"./Agents"))
 
 import time
 import unittest
@@ -95,7 +95,7 @@ class TestHippo(unittest.TestCase):
 
 if __name__ == "__main__":
     with open(
-        "./OasisAgents/tests/reports/hippo-report.txt", "w", encoding="utf8"
+        "./Agents/tests/reports/hippo-report.txt", "w", encoding="utf8"
     ) as reporter:
         # 方式一：一次加载整个测试类
         # suit = unittest.makeSuite(TestHippo)
