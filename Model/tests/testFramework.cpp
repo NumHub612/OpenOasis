@@ -36,7 +36,7 @@ TEST_CASE("OpenOasis framework tests")
     {
         string configs = FilePathHelper::Combine(path, "run_modes/loop_configs.json");
 
-        // run_loop_mode(configs, path);
+        run_loop_mode(configs, path);
     }
 }
 
@@ -351,37 +351,37 @@ void run_loop_mode(string configs, string parent)
 
     auto river = models["river1"];
     river->Initialize();
-    // spdlog::info("model {} Initialized.", river->GetId());
+    spdlog::info("model {} Initialized.", river->GetId());
 
     river->Validate();
-    // spdlog::info("model {} Validated.", river->GetId());
+    spdlog::info("model {} Validated.", river->GetId());
 
     river->Prepare();
-    // spdlog::info("model {} Prepared.", river->GetId());
+    spdlog::info("model {} Prepared.", river->GetId());
 
     cout << "\n----------------------------------------------------\n";
 
     auto river2 = models["river2"];
     river2->Initialize();
-    // spdlog::info("model {} Initialized.", river2->GetId());
+    spdlog::info("model {} Initialized.", river2->GetId());
 
     river2->Validate();
-    // spdlog::info("model {} Validated.", river2->GetId());
+    spdlog::info("model {} Validated.", river2->GetId());
 
     river2->Prepare();
-    // spdlog::info("model {} Prepared.", river2->GetId());
+    spdlog::info("model {} Prepared.", river2->GetId());
 
     cout << "\n----------------------------------------------------\n";
 
     auto river3 = models["river3"];
     river3->Initialize();
-    // spdlog::info("model {} Initialized.", river3->GetId());
+    spdlog::info("model {} Initialized.", river3->GetId());
 
     river3->Validate();
-    // spdlog::info("model {} Validated.", river3->GetId());
+    spdlog::info("model {} Validated.", river3->GetId());
 
     river3->Prepare();
-    // spdlog::info("model {} Prepared.", river3->GetId());
+    spdlog::info("model {} Prepared.", river3->GetId());
 
     cout << "\n----------------------------------------------------\n";
 
@@ -398,7 +398,7 @@ void run_loop_mode(string configs, string parent)
     inputs3[2]->AddProvider(outputs2[2]);  // river3_input_q_1->river2_output_q_1
     inputs2[5]->AddProvider(outputs3[5]);  // river2_input_z_2->river3_output_z_2
 
-    // spdlog::info("components linked.");
+    spdlog::info("components linked.");
 
     cout << "\n----------------------------------------------------\n";
 
@@ -410,16 +410,16 @@ void run_loop_mode(string configs, string parent)
     controller->AddComponent(r3->shared_from_this());
 
     controller->Initialize();
-    // spdlog::info("model {} Initialized.", controller->GetId());
+    spdlog::info("model {} Initialized.", controller->GetId());
 
     controller->Validate();
-    // spdlog::info("model {} Validated.", controller->GetId());
+    spdlog::info("model {} Validated.", controller->GetId());
 
     controller->Prepare();
-    // spdlog::info("model {} Prepared.", controller->GetId());
+    spdlog::info("model {} Prepared.", controller->GetId());
 
     cout << "\n----------------------------------------------------\n";
-
+    int i = 0;
     while (river->GetStatus() != LinkableComponentStatus::Done
            && river->GetStatus() != LinkableComponentStatus::Failed)
     {
@@ -445,11 +445,11 @@ void run_loop_mode(string configs, string parent)
     cout << "\n----------------------------------------------------\n";
 
     river->Finish();
-    // spdlog::info("model {} Finished.", river->GetId());
+    spdlog::info("model {} Finished.", river->GetId());
 
     river2->Finish();
-    // spdlog::info("model {} Finished.", river2->GetId());
+    spdlog::info("model {} Finished.", river2->GetId());
 
     river3->Finish();
-    // spdlog::info("model {} Finished.", river3->GetId());
+    spdlog::info("model {} Finished.", river3->GetId());
 }
