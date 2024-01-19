@@ -185,7 +185,10 @@ void RiverModule::PrepareOutputs()
         {
             valueset->SetOrAddValue({0, 0}, 10.0);
         }
-        else { valueset->SetOrAddValue({0, 0}, 0.0); }
+        else
+        {
+            valueset->SetOrAddValue({0, 0}, 0.0);
+        }
 
         for (auto &adaptor : output->GetAdaptedOutputs())
         {
@@ -198,7 +201,8 @@ void RiverModule::UpdateInputs()
 {
     for (const auto &input : mInputs)
     {
-        if (input->GetProviders().empty()) continue;
+        if (input->GetProviders().empty())
+            continue;
 
         const auto &arr       = StringHelper::Split(input->GetId(), '_');
         int         nodeIndex = stoi(arr.back());
@@ -267,7 +271,6 @@ void RiverModule::UpdateOutputs(const vector<shared_ptr<IOutput>> &requiredOutpu
         {
             const auto &values = mFlowValues->GetElementValuesForTime(mTimeCount - 1);
             double      flow   = any_cast<double>(values.at(nodeIndex));
-
             valueset->SetOrAddValue({tCount, 0}, flow);
         }
         else
@@ -328,7 +331,10 @@ void RiverModule::ClearState(const shared_ptr<IIdentifiable> &stateId)
         return state->GetId() == stateId->GetId();
     });
 
-    if (iter != end(mStates)) { mStates.erase(iter); }
+    if (iter != end(mStates))
+    {
+        mStates.erase(iter);
+    }
 }
 
 

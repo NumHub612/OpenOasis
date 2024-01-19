@@ -73,7 +73,7 @@ void ValueSet2D::SetOrAddValue(const std::vector<int> &indices, const any &value
             GetTimesCount()));
     }
 
-    if (tIndex < GetTimesCount() && eIndex < GetElementsCount(tIndex))
+    if (tIndex < GetTimesCount())
     {
         if (!IsValidValueType(value))
         {
@@ -83,9 +83,20 @@ void ValueSet2D::SetOrAddValue(const std::vector<int> &indices, const any &value
                 mValues2D[tIndex][eIndex].type().name()));
         }
 
-        mValues2D[tIndex][eIndex] = value;
+        if (eIndex < GetElementsCount(tIndex))
+        {
+            mValues2D[tIndex][eIndex] = value;
+        }
+        else
+        {
+            while (eIndex >= GetElementsCount(tIndex))
+                mValues2D[tIndex].push_back(value);
+        }
     }
-    else { AddValue(indices, value); }
+    else
+    {
+        AddValue(indices, value);
+    }
 }
 
 int ValueSet2D::GetNumberOfIndices() const
@@ -99,7 +110,8 @@ int ValueSet2D::GetIndexCount(const std::vector<int> &indices) const
     // Check parameter validity.
     CheckIndicesOutOfDimension(indices);
 
-    if (indices.size() == 1) return mValues2D.size();
+    if (indices.size() == 1)
+        return mValues2D.size();
 
     // Query the length of first time-dimension.
     int tIndex = indices[0];
@@ -120,7 +132,7 @@ void ValueSet2D::AddValue(const vector<int> &indices, const any &value)
 {
     // Add given value at new time index.
     int tIndex = GetTimesCount();
-    int eIndex = min(indices[1], GetElementsCount(tIndex - 1));
+    int eIndex = indices[1];
 
     try
     {
@@ -132,10 +144,10 @@ void ValueSet2D::AddValue(const vector<int> &indices, const any &value)
                 mValues2D[tIndex][eIndex].type().name()));
         }
 
-        mValues2D.push_back(vector<any>());
+        mValues2D.push_back(vector<any>(eIndex + 1));
 
-        auto &values = mValues2D[tIndex];
-        values.insert(values.begin() + eIndex, value);
+        auto &values   = mValues2D[tIndex];
+        values[eIndex] = value;
     }
     catch (const bad_any_cast &e)
     {
@@ -146,7 +158,8 @@ void ValueSet2D::AddValue(const vector<int> &indices, const any &value)
 
 void ValueSet2D::RemoveValue(const vector<int> &indices)
 {
-    if (mValues2D.empty()) return;
+    if (mValues2D.empty())
+        return;
 
     // Check paramter validity.
     CheckIndicesOutOfDimension(indices);
@@ -236,16 +249,19 @@ void ValueSet2D::SetElementValuesForTime(int timeIndex, const vector<any> &value
 
 int ValueSet2D::GetTimesCount() const
 {
-    if (mValues2D.empty()) return 0;
+    if (mValues2D.empty())
+        return 0;
 
     return mValues2D.size();
 }
 
 int ValueSet2D::GetElementsCount(int timeIndex) const
 {
-    if (timeIndex < 0 || timeIndex >= GetTimesCount()) return 0;
+    if (timeIndex < 0 || timeIndex >= GetTimesCount())
+        return 0;
 
-    if (mValues2D[timeIndex].empty()) return 0;
+    if (mValues2D[timeIndex].empty())
+        return 0;
 
     return mValues2D[timeIndex].size();
 }
@@ -257,7 +273,8 @@ void ValueSet2D::SetValueDefinition(shared_ptr<IValueDefinition> value)
 
 vector<vector<any>> ValueSet2D::GetValues(const shared_ptr<IValueSet> &valueSet) const
 {
-    if (!valueSet->IsValues2D()) return {};
+    if (!valueSet->IsValues2D())
+        return {};
 
     int times    = valueSet->GetIndexCount({0});
     int elements = valueSet->GetIndexCount({0, 0});
@@ -284,7 +301,10 @@ bool ValueSet2D::IsValidValueType(const any &value) const
 
 void ValueSet2D::CheckIndicesOutOfDimension(const vector<int> &indices) const
 {
-    if (indices.empty()) { throw IllegalArgumentException("Empty indices specified."); }
+    if (indices.empty())
+    {
+        throw IllegalArgumentException("Empty indices specified.");
+    }
 
     if (indices.size() > 2)
     {
