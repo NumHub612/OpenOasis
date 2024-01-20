@@ -34,13 +34,12 @@ RiverModule::RiverModule(const string &id) : LinkableComponent(id)
 
     mTimeExtent = make_shared<TimeSet>();
 
-    auto q0 = vector<double>(mNodeNum, 10.0);
-    mFlowValues =
-        make_shared<ValueSetDbl>(vector<vector<double>>{q0}, GetFlowQuantity());
+    auto q0     = vector<real>(mNodeNum, 10.0);
+    mFlowValues = make_shared<ValueSetFP>(vector<vector<real>>{q0}, GetFlowQuantity());
 
-    auto z0 = vector<double>(mNodeNum, 0.0);
+    auto z0 = vector<real>(mNodeNum, 0.0);
     mWaterLevelValues =
-        make_shared<ValueSetDbl>(vector<vector<double>>{z0}, GetWaterLevelQuantity());
+        make_shared<ValueSetFP>(vector<vector<real>>{z0}, GetWaterLevelQuantity());
 
     mTimeCount = 1;
 }

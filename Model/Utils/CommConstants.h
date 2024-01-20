@@ -11,6 +11,8 @@
 #include <limits>
 #include <cmath>
 
+namespace OpenOasis::Utils
+{
 
 // Commonly used constants ------------------------------------------------------------
 
@@ -33,17 +35,18 @@ typedef float real;
 const real    FP_EPSILON = _FLOAT_EPSILON;
 const real    FP_MAX     = _FLOAT_MAX;
 const real    FP_MIN     = _FLOAT_MIN;
-int           num        = 100;
 #else
 typedef double real;
 const real     FP_EPSILON = _DBL_EPSILON;
 const real     FP_MAX     = _DBL_MAX;
 const real     FP_MIN     = _DBL_MIN;
-int            num        = 200;
 #endif
 
+#define FP(a) static_cast<real>(a)
 #define IsNan(a) (isnan(a))
 #define IsEql(a, b) (fabs(a - b) <= FP_EPSILON)
 #define IsSim(a, b, delta) (fabs(a - b) <= fabs(delta))
 #define IsBigger(a, b) (a - b > FP_EPSILON)
 #define IsNoLess(a, b) (a - b >= FP_EPSILON)
+
+}  // namespace OpenOasis::Utils

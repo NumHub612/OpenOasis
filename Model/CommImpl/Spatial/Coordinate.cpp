@@ -9,6 +9,7 @@
 
 namespace OpenOasis::CommImpl::Spatial
 {
+using namespace Utils;
 using namespace std;
 
 bool Coordinate::Equals(double coorX, double coorY, double coorZ) const

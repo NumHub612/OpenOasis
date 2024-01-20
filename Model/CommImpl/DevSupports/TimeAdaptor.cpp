@@ -59,7 +59,10 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     // Check if we need to update the output component.
 
     shared_ptr<IBaseExchangeItem> querier = specifiedQuerier;
-    if (!querier) { querier = mConsumers.back().lock(); }
+    if (!querier)
+    {
+        querier = mConsumers.back().lock();
+    }
 
     // Time set of query must be defined and have at least 1 time.
     if (querier->GetTimeSet() == nullptr || querier->GetTimeSet()->GetTimes().empty())
@@ -71,12 +74,12 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     }
 
     // Determine query time.
-    double queryTimestamp =
+    real queryTimestamp =
         ExtensionMethods::End(querier->GetTimeSet()->GetTimeHorizon())->GetTimeStamp();
 
     // Determine the times available in the buffer.
-    auto   currentTimes       = mOutput.lock()->GetTimeSet()->GetTimes();
-    double availableTimestamp = -numeric_limits<double>::infinity();
+    auto currentTimes       = mOutput.lock()->GetTimeSet()->GetTimes();
+    real availableTimestamp = -numeric_limits<real>::infinity();
     if (currentTimes.size() > 0)
     {
         availableTimestamp = ExtensionMethods::End(currentTimes.back())->GetTimeStamp();
@@ -85,18 +88,21 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     // Check if we need to update.
     // In case the output component is "busy",  this may not actually update values
     // up to queryTime, in which case the mBuffers.GetValues below will extrapolate.
-    if (availableTimestamp < queryTimestamp) { Update(querier); }
+    if (availableTimestamp < queryTimestamp)
+    {
+        Update(querier);
+    }
 
     // Pull data from Output item.
     auto currentValues = mOutput.lock()->GetValues({});
     currentTimes       = mOutput.lock()->GetTimeSet()->GetTimes();
     for (std::size_t t = 0; t < currentTimes.size(); ++t)
     {
-        const auto    &data = currentValues->GetElementValuesForTime(t);
-        vector<double> dataInDbl;
+        const auto  &data = currentValues->GetElementValuesForTime(t);
+        vector<real> dataInDbl;
         for (const auto &val : data)
         {
-            dataInDbl.push_back(any_cast<double>(val));
+            dataInDbl.push_back(any_cast<real>(val));
         }
 
         mBuffers.AddValues(currentTimes[t], dataInDbl);
@@ -106,7 +112,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     // Retrieve values from the buffer.
 
     // Return the values for the required time(s).
-    vector<vector<double>> resultValues;
+    vector<vector<real>> resultValues;
     if (querier->GetTimeSet() != nullptr && !currentTimes.empty())
     {
         for (std::size_t t = 0; t < currentTimes.size(); t++)
@@ -120,9 +126,12 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
 
     const auto &earliestConsumerTime =
         ExchangeItemHelper::GetEarliestConsumerTime(GetInstance());
-    if (earliestConsumerTime != nullptr) { mBuffers.ClearBefore(earliestConsumerTime); }
+    if (earliestConsumerTime != nullptr)
+    {
+        mBuffers.ClearBefore(earliestConsumerTime);
+    }
 
-    return make_shared<ValueSetDbl>(
+    return make_shared<ValueSetFP>(
         resultValues, dynamic_pointer_cast<IQuantity>(GetValueDefinition()));
 }
 
@@ -149,12 +158,12 @@ bool TimeAdaptor::Update(const shared_ptr<IBaseExchangeItem> &specifier)
     }
 
     // Compute until this time is available.
-    double queryTimestamp =
+    real queryTimestamp =
         ExtensionMethods::End(specifier->GetTimeSet()->GetTimeHorizon())
             ->GetTimeStamp();
 
     // The current available time from the output item.
-    double      availableTimestamp = -numeric_limits<double>::infinity();
+    real        availableTimestamp = -numeric_limits<real>::infinity();
     const auto &times              = output->GetTimeSet()->GetTimes();
     if (times.size() > 0)
     {
@@ -195,10 +204,10 @@ void TimeAdaptor::Refresh()
 
     for (std::size_t t = 0; t < times.size(); ++t)
     {
-        vector<double> data;
+        vector<real> data;
         for (const auto &val : values->GetTimeSeriesValuesForElement(t))
         {
-            data.push_back(any_cast<double>(val));
+            data.push_back(any_cast<real>(val));
         }
 
         mBuffers.SetOrAddValues(times[t], data);

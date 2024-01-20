@@ -384,10 +384,10 @@ bool ValueSetInt::IsValidValueType(const any &value) const
 }
 
 
-// class ValueSetDbl-------------------------------------------------------------------
+// class ValueSetFP-------------------------------------------------------------------
 
-ValueSetDbl::ValueSetDbl(
-    const vector<vector<double>> &values2D, shared_ptr<IQuantity> valueDef)
+ValueSetFP::ValueSetFP(
+    const vector<vector<real>> &values2D, shared_ptr<IQuantity> valueDef)
 {
     for (const auto &arr : values2D)
     {
@@ -403,9 +403,9 @@ ValueSetDbl::ValueSetDbl(
     mValueDef = valueDef;
 }
 
-bool ValueSetDbl::IsValidValueType(const any &value) const
+bool ValueSetFP::IsValidValueType(const any &value) const
 {
-    return value.type() == typeid(double);
+    return value.type() == typeid(real);
 }
 
 

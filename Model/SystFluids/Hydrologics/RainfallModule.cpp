@@ -115,7 +115,8 @@ void RainfallModule::InitializeArguments()
 
 void RainfallModule::InitializeSpace()
 {
-    if (mElements) return;
+    if (mElements)
+        return;
 
     string file = any_cast<string>(mArguments["coordinate_file"]->GetValue());
 
@@ -126,9 +127,11 @@ void RainfallModule::InitializeSpace()
     while (reader.GetLine(line))
     {
         vector<string> arr = StringHelper::Split(line, ',');
-        if (arr.empty() || arr.size() < 3) continue;
+        if (arr.empty() || arr.size() < 3)
+            continue;
 
-        if (arr[0] != mId) continue;
+        if (arr[0] != mId)
+            continue;
 
         double x = stod(arr[1].c_str(), nullptr);
         double y = stod(arr[2].c_str(), nullptr);
@@ -157,10 +160,11 @@ void RainfallModule::InitializeSpace()
 
 void RainfallModule::InitializeTime()
 {
-    if (mValues && mTimes) return;
+    if (mValues && mTimes)
+        return;
 
     mTimes  = make_shared<TimeSet>();
-    mValues = make_shared<ValueSetDbl>(vector<vector<double>>{}, GetQuantity());
+    mValues = make_shared<ValueSetFP>(vector<vector<real>>{}, GetQuantity());
 
     string file = any_cast<string>(mArguments["rainfall_file"]->GetValue());
 
@@ -174,9 +178,11 @@ void RainfallModule::InitializeTime()
     while (reader.GetLine(line))
     {
         vector<string> arr = StringHelper::Split(line, ',');
-        if (arr.empty() || arr.size() < 3) continue;
+        if (arr.empty() || arr.size() < 3)
+            continue;
 
-        if (arr[0] != mId) continue;
+        if (arr[0] != mId)
+            continue;
 
         DateTime datetime(DateTime::FromString(arr[1]));
         double   timestampInDays = datetime.GetTimeStampInDays();

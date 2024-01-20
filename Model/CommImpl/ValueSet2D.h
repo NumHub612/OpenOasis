@@ -11,12 +11,15 @@
 #include "Model/Inc/IValueSet.h"
 #include "Model/Inc/IQuantity.h"
 #include "Model/Inc/IQuality.h"
+#include "Model/Utils/CommConstants.h"
 
 
 namespace OpenOasis
 {
 namespace CommImpl
 {
+using namespace Utils;
+
 /// @brief Common implementation of `IValueSet` in two dimension (time-space).
 class ValueSet2D : public IValueSet
 {
@@ -109,14 +112,14 @@ private:
 };
 
 
-/// @brief Two-dimensional value set contains double data.
-class ValueSetDbl : public ValueSet2D
+/// @brief Two-dimensional value set contains float-point data.
+class ValueSetFP : public ValueSet2D
 {
 public:
-    virtual ~ValueSetDbl() = default;
-    ValueSetDbl(
-        const std::vector<std::vector<double>> &values2D,
-        std::shared_ptr<IQuantity>              valueDef);
+    virtual ~ValueSetFP() = default;
+    ValueSetFP(
+        const std::vector<std::vector<real>> &values2D,
+        std::shared_ptr<IQuantity>            valueDef);
 
 private:
     bool IsValidValueType(const std::any &value) const override;

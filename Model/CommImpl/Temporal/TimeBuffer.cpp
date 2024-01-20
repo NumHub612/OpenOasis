@@ -47,13 +47,13 @@ void TimeBuffer::Create()
     mValues = make_shared<ValueSet2D>();
 }
 
-void TimeBuffer::AddValues(const shared_ptr<ITime> &time, const vector<double> &values)
+void TimeBuffer::AddValues(const shared_ptr<ITime> &time, const vector<real> &values)
 {
     AddValuesToBuffer(time, values);
 }
 
 void TimeBuffer::AddValuesToBuffer(
-    const shared_ptr<ITime> &time, const vector<double> &values)
+    const shared_ptr<ITime> &time, const vector<real> &values)
 {
     // Check if we can add the values
     if (mTimes->HasDurations())
@@ -103,12 +103,12 @@ void TimeBuffer::AddValuesToBuffer(
     }
 }
 
-double TimeBuffer::GetRelaxationFactor() const
+real TimeBuffer::GetRelaxationFactor() const
 {
     return mRelaxationFactor;
 }
 
-void TimeBuffer::SetRelaxationFactor(double value)
+void TimeBuffer::SetRelaxationFactor(real value)
 {
     mRelaxationFactor = value;
     if (mRelaxationFactor < 0 || mRelaxationFactor > 1)
@@ -119,7 +119,10 @@ void TimeBuffer::SetRelaxationFactor(double value)
 
 shared_ptr<ITime> TimeBuffer::GetTimeAt(int timeStep) const
 {
-    if (mDoExtendedDataVerification) { CheckBuffer(); }
+    if (mDoExtendedDataVerification)
+    {
+        CheckBuffer();
+    }
     return (*mTimes)[timeStep];
 }
 
@@ -130,25 +133,34 @@ void TimeBuffer::CheckBuffer() const
         throw runtime_error("Different numbers of values and times in buffer");
     }
 
-    if (mTimes->GetCount() == 0) { throw runtime_error("Buffer is empty"); }
+    if (mTimes->GetCount() == 0)
+    {
+        throw runtime_error("Buffer is empty");
+    }
 }
 
-vector<double> TimeBuffer::GetValuesAt(int timeStep) const
+vector<real> TimeBuffer::GetValuesAt(int timeStep) const
 {
-    if (mDoExtendedDataVerification) { CheckBuffer(); }
+    if (mDoExtendedDataVerification)
+    {
+        CheckBuffer();
+    }
 
-    vector<double> values;
+    vector<real> values;
     for (const auto &val : mValues->GetElementValuesForTime(timeStep))
     {
-        values.push_back(any_cast<double>(val));
+        values.push_back(any_cast<real>(val));
     }
 
     return values;
 }
 
-vector<double> TimeBuffer::GetValues(const shared_ptr<ITime> &requestedTime)
+vector<real> TimeBuffer::GetValues(const shared_ptr<ITime> &requestedTime)
 {
-    if (mDoExtendedDataVerification) { CheckBuffer(); }
+    if (mDoExtendedDataVerification)
+    {
+        CheckBuffer();
+    }
 
     if (!mDoExtrapolate)
     {
@@ -163,7 +175,7 @@ vector<double> TimeBuffer::GetValues(const shared_ptr<ITime> &requestedTime)
         }
     }
 
-    vector<double> returnValues;
+    vector<real> returnValues;
     if (mValues->GetIndexCount({0}) != 0)
     {
         if (mTimes->HasDurations() && requestedTime->GetDurationInDays() > 0)
@@ -189,15 +201,15 @@ vector<double> TimeBuffer::GetValues(const shared_ptr<ITime> &requestedTime)
     return returnValues;
 }
 
-vector<double>
+vector<real>
 TimeBuffer::MapFromTimeStampsToTimeStamp(const shared_ptr<ITime> &requestedTimeStamp)
 {
     try
     {
-        int    elementCount = mValues->GetIndexCount({0, 0});
-        double tr = requestedTimeStamp->GetTimeStamp();  // Requested TimeStamp
+        int  elementCount = mValues->GetIndexCount({0, 0});
+        real tr           = requestedTimeStamp->GetTimeStamp();  // Requested TimeStamp
 
-        vector<double> vr(elementCount);  // Values to return
+        vector<real> vr(elementCount);  // Values to return
 
         const auto &times = mTimes->GetTimes();
         if (times.size() == 1)
@@ -217,7 +229,7 @@ TimeBuffer::MapFromTimeStampsToTimeStamp(const shared_ptr<ITime> &requestedTimeS
 
             for (int i = 0; i < elementCount; i++)
             {
-                vr[i] = any_cast<double>(mValues->GetValue({0, i}));
+                vr[i] = any_cast<real>(mValues->GetValue({0, i}));
             }
         }
         else if (tr <= times.front()->GetTimeStamp())
@@ -227,13 +239,13 @@ TimeBuffer::MapFromTimeStampsToTimeStamp(const shared_ptr<ITime> &requestedTimeS
             //  Requested TimeStamp:  |    >tr<
             //                         ---------------------------------------------> t
             // ------------------------------------------------------------------------
-            double tb0 = times[0]->GetTimeStamp();
-            double tb1 = times[1]->GetTimeStamp();
+            real tb0 = times[0]->GetTimeStamp();
+            real tb1 = times[1]->GetTimeStamp();
 
             for (int i = 0; i < elementCount; i++)
             {
-                double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                double sbi1 = any_cast<double>(mValues->GetValue({i, i}));
+                real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                real sbi1 = any_cast<real>(mValues->GetValue({i, i}));
                 vr[i] =
                     ((sbi0 - sbi1) / (tb0 - tb1)) * (tr - tb0) * (1 - mRelaxationFactor)
                     + sbi0;
@@ -246,15 +258,15 @@ TimeBuffer::MapFromTimeStampsToTimeStamp(const shared_ptr<ITime> &requestedTimeS
             //  Requested TimeStamp:  |                                         >tr<
             //                         ---------------------------------------------> t
             // ------------------------------------------------------------------------
-            int    size  = times.size();
-            double tbN_2 = times[size - 2]->GetTimeStamp();
-            double tbN_1 = times[size - 1]->GetTimeStamp();
+            int  size  = times.size();
+            real tbN_2 = times[size - 2]->GetTimeStamp();
+            real tbN_1 = times[size - 1]->GetTimeStamp();
 
             for (int i = 0; i < elementCount; i++)
             {
-                double sbiN_2 = any_cast<double>(mValues->GetValue({size - 2, i}));
-                double sbiN_1 = any_cast<double>(mValues->GetValue({size - 1, i}));
-                vr[i]         = ((sbiN_1 - sbiN_2) / (tbN_1 - tbN_2)) * (tr - tbN_1)
+                real sbiN_2 = any_cast<real>(mValues->GetValue({size - 2, i}));
+                real sbiN_1 = any_cast<real>(mValues->GetValue({size - 1, i}));
+                vr[i]       = ((sbiN_1 - sbiN_2) / (tbN_1 - tbN_2)) * (tr - tbN_1)
                             * (1 - mRelaxationFactor)
                         + sbiN_1;
             }
@@ -272,15 +284,15 @@ TimeBuffer::MapFromTimeStampsToTimeStamp(const shared_ptr<ITime> &requestedTimeS
 
             int iHigh = distance(begin(times), iter);
 
-            double fraction =
+            real fraction =
                 (tr - times[iHigh - 1]->GetTimeStamp())
                 / (times[iHigh]->GetTimeStamp() - times[iHigh - 1]->GetTimeStamp());
 
             for (int i = 0; i < elementCount; i++)
             {
-                double sbinA = any_cast<double>(mValues->GetValue({iHigh - 1, i}));
-                double sbinB = any_cast<double>(mValues->GetValue({iHigh, i}));
-                vr[i]        = sbinA + fraction * (sbinB - sbinA);
+                real sbinA = any_cast<real>(mValues->GetValue({iHigh - 1, i}));
+                real sbinB = any_cast<real>(mValues->GetValue({iHigh, i}));
+                vr[i]      = sbinA + fraction * (sbinB - sbinA);
             }
         }
 
@@ -292,26 +304,29 @@ TimeBuffer::MapFromTimeStampsToTimeStamp(const shared_ptr<ITime> &requestedTimeS
     }
 }
 
-vector<double>
+vector<real>
 TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
 {
     try
     {
-        int            elementCount = mValues->GetIndexCount({0, 0});
-        vector<double> vr(elementCount);  // Values to return
+        int          elementCount = mValues->GetIndexCount({0, 0});
+        vector<real> vr(elementCount);  // Values to return
 
         // Begin time in requester time interval
-        double trb = requestedTime->GetTimeStamp();
+        real trb = requestedTime->GetTimeStamp();
         // End time in requester time interval
-        double tre = requestedTime->GetTimeStamp() + requestedTime->GetDurationInDays();
+        real tre = requestedTime->GetTimeStamp() + requestedTime->GetDurationInDays();
         // length of requested time interval
-        double trl = tre - trb;
+        real trl = tre - trb;
 
         const auto &times = mTimes->GetTimes();
         int         size  = (int)times.size();
-        if (times.empty()) { throw runtime_error("No times in buffer"); }
+        if (times.empty())
+        {
+            throw runtime_error("No times in buffer");
+        }
 
-        double tbb0 = times[0]->GetTimeStamp();
+        real tbb0 = times[0]->GetTimeStamp();
 
         // In the following the current abbreviations are used:
         // B: Buffer time
@@ -329,15 +344,15 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
                 if (size >= 2 && mRelaxationFactor != 1)
                 {
                     // Linear interpolation
-                    double tbe0 = ExtensionMethods::End(times[0])->GetTimeStamp();
-                    // double tbb1 = times[1]->GetTimeStamp();
-                    double tbe1 = ExtensionMethods::End(times[1])->GetTimeStamp();
+                    real tbe0 = ExtensionMethods::End(times[0])->GetTimeStamp();
+                    // real tbb1 = times[1]->GetTimeStamp();
+                    real tbe1 = ExtensionMethods::End(times[1])->GetTimeStamp();
 
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                        double sbi1 = any_cast<double>(mValues->GetValue({1, i}));
-                        vr[i]       = sbi0
+                        real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                        real sbi1 = any_cast<real>(mValues->GetValue({1, i}));
+                        vr[i]     = sbi0
                                 - (1 - mRelaxationFactor) * (sbi1 - sbi0)
                                       * (tbe0 + tbb0 - tre - trb) / (tbe1 - tbb0);
                     }
@@ -347,8 +362,8 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
                     // Nearest value interpolation
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                        vr[i]       = sbi0;
+                        real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                        vr[i]     = sbi0;
                     }
                 }
 
@@ -362,16 +377,16 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
             //-------------------------------------------------------------------------
             if (trb < tbb0)  // && tre > tbb0
             {
-                double tbe0 = ExtensionMethods::End(times[0])->GetTimeStamp();
+                real tbe0 = ExtensionMethods::End(times[0])->GetTimeStamp();
                 if (size >= 2 && mRelaxationFactor != 1)
                 {
-                    double tbe1 = ExtensionMethods::End(times[1])->GetTimeStamp();
+                    real tbe1 = ExtensionMethods::End(times[1])->GetTimeStamp();
 
                     // Linear interpolation, use tbb0 as "endpoint" of interval
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                        double sbi1 = any_cast<double>(mValues->GetValue({1, i}));
+                        real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                        real sbi1 = any_cast<real>(mValues->GetValue({1, i}));
                         vr[i] += ((tbb0 - trb) / trl)
                                  * (sbi0
                                     - (1 - mRelaxationFactor) * (sbi1 - sbi0)
@@ -383,13 +398,13 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
                     // Nearest value interpolation
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
+                        real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
                         vr[i] += sbi0 * (tbb0 - trb) / trl;
                     }
                 }
             }
 
-            double tbeN0 = ExtensionMethods::End(times.back())->GetTimeStamp();
+            real tbeN0 = ExtensionMethods::End(times.back())->GetTimeStamp();
 
             //--------------------------------------------------------------------------
             // B     tbb0|---?----|-------|tbeN0
@@ -400,16 +415,13 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
                 if (size >= 2 && mRelaxationFactor != 1)
                 {
                     // Linear interpolation
-                    double tbeN1 =
-                        ExtensionMethods::End(times[size - 2])->GetTimeStamp();
-                    double tbbN1 = times[size - 2]->GetTimeStamp();
+                    real tbeN1 = ExtensionMethods::End(times[size - 2])->GetTimeStamp();
+                    real tbbN1 = times[size - 2]->GetTimeStamp();
 
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbiN0 =
-                            any_cast<double>(mValues->GetValue({size - 1, i}));
-                        double sbiN1 =
-                            any_cast<double>(mValues->GetValue({size - 2, i}));
+                        real sbiN0 = any_cast<real>(mValues->GetValue({size - 1, i}));
+                        real sbiN1 = any_cast<real>(mValues->GetValue({size - 2, i}));
                         ;
                         vr[i] = sbiN0
                                 + (1 - mRelaxationFactor) * (sbiN0 - sbiN1)
@@ -421,9 +433,8 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
                     // Nearest value interpolation
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbiN0 =
-                            any_cast<double>(mValues->GetValue({size - 1, i}));
-                        vr[i] = sbiN0;
+                        real sbiN0 = any_cast<real>(mValues->GetValue({size - 1, i}));
+                        vr[i]      = sbiN0;
                     }
                 }
 
@@ -439,15 +450,12 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
             {
                 if (size >= 2 && mRelaxationFactor != 1)
                 {
-                    double tbeN1 =
-                        ExtensionMethods::End(times[size - 2])->GetTimeStamp();
-                    double tbbN1 = times[size - 2]->GetTimeStamp();
+                    real tbeN1 = ExtensionMethods::End(times[size - 2])->GetTimeStamp();
+                    real tbbN1 = times[size - 2]->GetTimeStamp();
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbiN0 =
-                            any_cast<double>(mValues->GetValue({size - 1, i}));
-                        double sbiN1 =
-                            any_cast<double>(mValues->GetValue({size - 2, i}));
+                        real sbiN0 = any_cast<real>(mValues->GetValue({size - 1, i}));
+                        real sbiN1 = any_cast<real>(mValues->GetValue({size - 2, i}));
                         vr[i] += ((tre - tbeN0) / (tre - trb))
                                  * (sbiN0
                                     + (1 - mRelaxationFactor) * (sbiN0 - sbiN1)
@@ -458,8 +466,7 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
                 {
                     for (int i = 0; i < elementCount; i++)
                     {
-                        double sbiN0 =
-                            any_cast<double>(mValues->GetValue({size - 1, i}));
+                        real sbiN0 = any_cast<real>(mValues->GetValue({size - 1, i}));
                         vr[i] += sbiN0 * ((tre - tbeN0) / (tre - trb));
                     }
                 }
@@ -493,8 +500,8 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
 
         for (int n = nstart; n <= nend; n++)
         {
-            double tbbn = times[n]->GetTimeStamp();
-            double tben = ExtensionMethods::End(times[n])->GetTimeStamp();
+            real tbbn = times[n]->GetTimeStamp();
+            real tben = ExtensionMethods::End(times[n])->GetTimeStamp();
 
             //---------------------------------------------------------------------------
             // B:       tbbn|--------------------------|tben
@@ -505,7 +512,7 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
             {
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbin = any_cast<double>(mValues->GetValue({n, i}));
+                    real sbin = any_cast<real>(mValues->GetValue({n, i}));
                     vr[i] += sbin * (tben - tbbn) / (tre - trb);
                 }
             }
@@ -518,7 +525,7 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
             {
                 for (int i = 0; i < elementCount; i++)
                 {
-                    vr[i] += any_cast<double>(mValues->GetValue({n, i}));
+                    vr[i] += any_cast<real>(mValues->GetValue({n, i}));
                 }
             }
 
@@ -531,7 +538,7 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
             {
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbin = any_cast<double>(mValues->GetValue({n, i}));
+                    real sbin = any_cast<real>(mValues->GetValue({n, i}));
                     vr[i] += sbin * (tben - trb) / (tre - trb);
                 }
             }
@@ -545,7 +552,7 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
             {
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbin = any_cast<double>(mValues->GetValue({n, i}));
+                    real sbin = any_cast<real>(mValues->GetValue({n, i}));
                     vr[i] += sbin * (tre - tbbn) / (tre - trb);
                 }
             }
@@ -559,20 +566,20 @@ TimeBuffer::MapFromTimeSpansToTimeSpan(const shared_ptr<ITime> &requestedTime)
     }
 }
 
-vector<double>
+vector<real>
 TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
 {
     try
     {
-        int            elementCount = mValues->GetIndexCount({0, 0});
-        vector<double> vr(elementCount);  // Values to return
+        int          elementCount = mValues->GetIndexCount({0, 0});
+        vector<real> vr(elementCount);  // Values to return
 
         // Begin time in requester time interval
-        double trb = requestedTime->GetTimeStamp();
+        real trb = requestedTime->GetTimeStamp();
         // End time in requester time interval
-        double tre = requestedTime->GetTimeStamp() + requestedTime->GetDurationInDays();
+        real tre = requestedTime->GetTimeStamp() + requestedTime->GetDurationInDays();
         // length of requested time interval
-        // double trl = tre - trb;
+        // real trl = tre - trb;
 
         const auto &times = mTimes->GetTimes();
         int         size  = (int)times.size();
@@ -606,8 +613,8 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
         // n corresponds to the n'th interval between the time stamps.
         for (int n = nstart; n <= nend; n++)
         {
-            double tbn   = times[n - 1]->GetTimeStamp();
-            double tbnp1 = times[n]->GetTimeStamp();
+            real tbn   = times[n - 1]->GetTimeStamp();
+            real tbnp1 = times[n]->GetTimeStamp();
 
             //-------------------------------------------------------------------------
             //    B:        tbn|--------------------------|tbnp1
@@ -616,11 +623,11 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             // ------------------------------------------------------------------------
             if (trb <= tbn && tre >= tbnp1)
             {
-                double factor = (tbnp1 - tbn) / (tre - trb);
+                real factor = (tbnp1 - tbn) / (tre - trb);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbin   = any_cast<double>(mValues->GetValue({n - 1, i}));
-                    double sbinp1 = any_cast<double>(mValues->GetValue({n, i}));
+                    real sbin   = any_cast<real>(mValues->GetValue({n - 1, i}));
+                    real sbinp1 = any_cast<real>(mValues->GetValue({n, i}));
                     vr[i] += 0.5 * (sbin + sbinp1) * factor;
                 }
             }
@@ -631,11 +638,11 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             // ------------------------------------------------------------------------
             else if (tbn <= trb && tre <= tbnp1)  // cover all
             {
-                double fraction = ((tre + trb) / 2 - tbn) / (tbnp1 - tbn);
+                real fraction = ((tre + trb) / 2 - tbn) / (tbnp1 - tbn);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbin   = any_cast<double>(mValues->GetValue({n - 1, i}));
-                    double sbinp1 = any_cast<double>(mValues->GetValue({n, i}));
+                    real sbin   = any_cast<real>(mValues->GetValue({n - 1, i}));
+                    real sbinp1 = any_cast<real>(mValues->GetValue({n, i}));
                     vr[i] += sbin + (sbinp1 - sbin) * fraction;
                 }
             }
@@ -647,12 +654,12 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             // ------------------------------------------------------------------------
             else if (tbn < trb && trb < tbnp1 && tre > tbnp1)
             {
-                double fraction = ((tbnp1 - trb) / 2) / (tbnp1 - tbn);
-                double factor   = (tbnp1 - trb) / (tre - trb);
+                real fraction = ((tbnp1 - trb) / 2) / (tbnp1 - tbn);
+                real factor   = (tbnp1 - trb) / (tre - trb);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbin   = any_cast<double>(mValues->GetValue({n - 1, i}));
-                    double sbinp1 = any_cast<double>(mValues->GetValue({n, i}));
+                    real sbin   = any_cast<real>(mValues->GetValue({n - 1, i}));
+                    real sbinp1 = any_cast<real>(mValues->GetValue({n, i}));
                     vr[i] += (sbinp1 - (sbinp1 - sbin) * fraction) * factor;
                 }
             }
@@ -664,12 +671,12 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             // ------------------------------------------------------------------------
             else if (trb < tbn && tre > tbn && tre < tbnp1)
             {
-                double fraction = ((tre - tbn) / 2) / (tbnp1 - tbn);
-                double factor   = (tre - tbn) / (tre - trb);
+                real fraction = ((tre - tbn) / 2) / (tbnp1 - tbn);
+                real factor   = (tre - tbn) / (tre - trb);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbin   = any_cast<double>(mValues->GetValue({n - 1, i}));
-                    double sbinp1 = any_cast<double>(mValues->GetValue({n, i}));
+                    real sbin   = any_cast<real>(mValues->GetValue({n - 1, i}));
+                    real sbinp1 = any_cast<real>(mValues->GetValue({n, i}));
                     vr[i] += (sbin + (sbinp1 - sbin) * fraction) * factor;
                 }
             }
@@ -689,8 +696,8 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             // TODO: Test if extrapolation is ok.
             for (int i = 0; i < elementCount; i++)
             {
-                double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                vr[i]       = sbi0;
+                real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                vr[i]     = sbi0;
             }
         }
         else
@@ -701,20 +708,20 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             //  R: trb|----------------|tre
             //  I:    |-----|
             //-------------------------------------------------------------------------
-            double tb0   = times[0]->GetTimeStamp();
-            double tb1   = times[1]->GetTimeStamp();
-            double tbN_1 = times[size - 1]->GetTimeStamp();
-            double tbN_2 = times[size - 2]->GetTimeStamp();
+            real tb0   = times[0]->GetTimeStamp();
+            real tb1   = times[1]->GetTimeStamp();
+            real tbN_1 = times[size - 1]->GetTimeStamp();
+            real tbN_2 = times[size - 2]->GetTimeStamp();
 
             if (trb < tb0 && tre > tb0)
             {
-                double fraction =
+                real fraction =
                     (1 - mRelaxationFactor) * 0.5 * (tb0 - trb) / (tb1 - tb0);
-                double factor = ((tb0 - trb) / (tre - trb));
+                real factor = ((tb0 - trb) / (tre - trb));
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                    double sbi1 = any_cast<double>(mValues->GetValue({1, i}));
+                    real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                    real sbi1 = any_cast<real>(mValues->GetValue({1, i}));
                     vr[i] += factor * (sbi0 - fraction * (sbi1 - sbi0));
                 }
             }
@@ -726,13 +733,13 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             //-------------------------------------------------------------------------
             if (tre > tbN_1 && trb < tbN_1)
             {
-                double factor = ((tre - tbN_1) / (tre - trb));
-                double fraction =
+                real factor = ((tre - tbN_1) / (tre - trb));
+                real fraction =
                     (1 - mRelaxationFactor) * 0.5 * (tre - tbN_1) / (tbN_1 - tbN_2);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbiN_1 = any_cast<double>(mValues->GetValue({size - 1, i}));
-                    double sbiN_2 = any_cast<double>(mValues->GetValue({size - 2, i}));
+                    real sbiN_1 = any_cast<real>(mValues->GetValue({size - 1, i}));
+                    real sbiN_2 = any_cast<real>(mValues->GetValue({size - 2, i}));
                     vr[i] += factor * (sbiN_1 + fraction * (sbiN_1 - sbiN_2));
                 }
             }
@@ -743,12 +750,12 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             //-------------------------------------------------------------------------
             if (trb >= tbN_1)
             {
-                double fraction = (1 - mRelaxationFactor) * (0.5 * (trb + tre) - tbN_1)
-                                  / (tbN_1 - tbN_2);
+                real fraction = (1 - mRelaxationFactor) * (0.5 * (trb + tre) - tbN_1)
+                                / (tbN_1 - tbN_2);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbiN_1 = any_cast<double>(mValues->GetValue({size - 1, i}));
-                    double sbiN_2 = any_cast<double>(mValues->GetValue({size - 2, i}));
+                    real sbiN_1 = any_cast<real>(mValues->GetValue({size - 1, i}));
+                    real sbiN_2 = any_cast<real>(mValues->GetValue({size - 2, i}));
 
                     vr[i] = sbiN_1 + (sbiN_1 - sbiN_2) * fraction;
                 }
@@ -760,13 +767,13 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
             //-------------------------------------------------------------------------
             if (tre <= tb0)
             {
-                double fraction =
+                real fraction =
                     (1 - mRelaxationFactor) / (tb1 - tb0) * (tb0 - 0.5 * (trb + tre));
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                    double sbi1 = any_cast<double>(mValues->GetValue({1, i}));
-                    vr[i]       = sbi0 - (sbi1 - sbi0) * fraction;
+                    real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                    real sbi1 = any_cast<real>(mValues->GetValue({1, i}));
+                    vr[i]     = sbi0 - (sbi1 - sbi0) * fraction;
                 }
             }
         }
@@ -779,18 +786,18 @@ TimeBuffer::MapFromTimeStampsToTimeSpan(const shared_ptr<ITime> &requestedTime)
     }
 }
 
-vector<double>
+vector<real>
 TimeBuffer::MapFromTimeSpansToTimeStamp(const shared_ptr<ITime> &requestedTimeStamp)
 {
     try
     {
-        int            elementCount = mValues->GetIndexCount({0, 0});
-        vector<double> vr(elementCount);  // Values to return
+        int          elementCount = mValues->GetIndexCount({0, 0});
+        vector<real> vr(elementCount);  // Values to return
 
         const auto &times = mTimes->GetTimes();
         int         size  = (int)times.size();
 
-        double tr = requestedTimeStamp->GetTimeStamp();  // Requested TimeStamp
+        real tr = requestedTimeStamp->GetTimeStamp();  // Requested TimeStamp
 
         if (size == 1)
         {
@@ -815,7 +822,7 @@ TimeBuffer::MapFromTimeSpansToTimeStamp(const shared_ptr<ITime> &requestedTimeSt
 
             for (int i = 0; i < elementCount; i++)  // For each element
             {
-                vr[i] = any_cast<double>(mValues->GetValue({0, i}));
+                vr[i] = any_cast<real>(mValues->GetValue({0, i}));
             }
         }
 
@@ -837,20 +844,20 @@ TimeBuffer::MapFromTimeSpansToTimeStamp(const shared_ptr<ITime> &requestedTimeSt
                 // Very close to the first point, just provide that value
                 for (int i = 0; i < elementCount; i++)  // For each element
                 {
-                    vr[i] = any_cast<double>(mValues->GetValue({0, i}));
+                    vr[i] = any_cast<real>(mValues->GetValue({0, i}));
                 }
             }
             else
             {
                 // Extrapolate from the first two values
-                double tbb0     = times[0]->GetTimeStamp();
-                double tbb1     = times[1]->GetTimeStamp();
-                double fraction = (tr - tbb0) / (tbb0 - tbb1) * (1 - mRelaxationFactor);
+                real tbb0     = times[0]->GetTimeStamp();
+                real tbb1     = times[1]->GetTimeStamp();
+                real fraction = (tr - tbb0) / (tbb0 - tbb1) * (1 - mRelaxationFactor);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbi0 = any_cast<double>(mValues->GetValue({0, i}));
-                    double sbi1 = any_cast<double>(mValues->GetValue({1, i}));
-                    vr[i]       = (sbi0 - sbi1) * fraction + sbi0;
+                    real sbi0 = any_cast<real>(mValues->GetValue({0, i}));
+                    real sbi1 = any_cast<real>(mValues->GetValue({1, i}));
+                    vr[i]     = (sbi0 - sbi1) * fraction + sbi0;
                 }
             }
         }
@@ -873,21 +880,21 @@ TimeBuffer::MapFromTimeSpansToTimeStamp(const shared_ptr<ITime> &requestedTimeSt
                 // Very close to the last point, just provide that value
                 for (int i = 0; i < elementCount; i++)
                 {
-                    vr[i] = any_cast<double>(mValues->GetValue({size - 1, i}));
+                    vr[i] = any_cast<real>(mValues->GetValue({size - 1, i}));
                 }
             }
             else
             {
                 // Extrapolate from the last two values
-                double tbeN_2 = ExtensionMethods::End(times[size - 2])->GetTimeStamp();
-                double tbeN_1 = ExtensionMethods::End(times[size - 1])->GetTimeStamp();
-                double fraction =
+                real tbeN_2 = ExtensionMethods::End(times[size - 2])->GetTimeStamp();
+                real tbeN_1 = ExtensionMethods::End(times[size - 1])->GetTimeStamp();
+                real fraction =
                     (tr - tbeN_1) / (tbeN_1 - tbeN_2) * (1 - mRelaxationFactor);
                 for (int i = 0; i < elementCount; i++)
                 {
-                    double sbiN_2 = any_cast<double>(mValues->GetValue({size - 2, i}));
-                    double sbiN_1 = any_cast<double>(mValues->GetValue({size - 1, i}));
-                    vr[i]         = (sbiN_1 - sbiN_2) * fraction + sbiN_1;
+                    real sbiN_2 = any_cast<real>(mValues->GetValue({size - 2, i}));
+                    real sbiN_1 = any_cast<real>(mValues->GetValue({size - 1, i}));
+                    vr[i]       = (sbiN_1 - sbiN_2) * fraction + sbiN_1;
                 }
             }
         }
@@ -911,7 +918,7 @@ TimeBuffer::MapFromTimeSpansToTimeStamp(const shared_ptr<ITime> &requestedTimeSt
 
             for (int i = 0; i < elementCount; i++)
             {
-                vr[i] = any_cast<double>(mValues->GetValue({interval, i}));
+                vr[i] = any_cast<real>(mValues->GetValue({interval, i}));
             }
         }
 
@@ -935,7 +942,7 @@ int TimeBuffer::GetValuesCount() const
 
 void TimeBuffer::ClearAfter(shared_ptr<ITime> time)
 {
-    double clearTimestamp = ExtensionMethods::Start(time)->GetTimeStamp();
+    real clearTimestamp = ExtensionMethods::Start(time)->GetTimeStamp();
     for (int i = 0; i < mTimes->GetCount(); i++)
     {
         if (clearTimestamp <= (*mTimes)[i]->GetTimeStamp())
@@ -952,7 +959,7 @@ void TimeBuffer::ClearAfter(shared_ptr<ITime> time)
 
 void TimeBuffer::ClearBefore(shared_ptr<ITime> time)
 {
-    double clearTimestamp = ExtensionMethods::Start(time)->GetTimeStamp();
+    real clearTimestamp = ExtensionMethods::Start(time)->GetTimeStamp();
 
     while (!mTimes->GetTimes().empty())
     {
@@ -962,7 +969,10 @@ void TimeBuffer::ClearBefore(shared_ptr<ITime> time)
             mTimes->RemoveTime(0);
             mValues->RemoveValue({0});
         }
-        else { break; }
+        else
+        {
+            break;
+        }
     }
 }
 
@@ -977,15 +987,15 @@ void TimeBuffer::Reset()
     mTimes.reset();
 }
 
-vector<vector<double>> TimeBuffer::GetAllValues()
+vector<vector<real>> TimeBuffer::GetAllValues()
 {
-    vector<vector<double>> returnValues;
+    vector<vector<real>> returnValues;
     for (int i = 0; i < mValues->GetIndexCount({0}); ++i)
     {
-        vector<double> values;
+        vector<real> values;
         for (int j = 0; j < mValues->GetIndexCount({0, i}); ++j)
         {
-            values.push_back(any_cast<double>(mValues->GetValue({i, j})));
+            values.push_back(any_cast<real>(mValues->GetValue({i, j})));
         }
 
         returnValues.push_back(values);
@@ -993,7 +1003,7 @@ vector<vector<double>> TimeBuffer::GetAllValues()
     return returnValues;
 }
 
-void TimeBuffer::SetOrAddValues(shared_ptr<ITime> time, vector<double> values)
+void TimeBuffer::SetOrAddValues(shared_ptr<ITime> time, vector<real> values)
 {
     const auto &times = mTimes->GetTimes();
     const auto &iter  = find_if(begin(times), end(times), [&time](const auto &t) {

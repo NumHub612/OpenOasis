@@ -49,6 +49,10 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+if(ENABLE_CODECOV)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+endif()
+
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp -Wall -g -O0") 
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -89,10 +93,6 @@ option(ENABLE_SP "-- If using single precision" OFF)
 if (ENABLE_SP)
     add_definitions(-DUSE_SP)
     message(STATUS "Using sp: ${ENABLE_SP}")
-endif()
-
-if(ENABLE_CODECOV)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
 
 
