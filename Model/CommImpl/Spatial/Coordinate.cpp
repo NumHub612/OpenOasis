@@ -18,7 +18,8 @@ bool Coordinate::Equals(double coorX, double coorY, double coorZ) const
 
 bool Coordinate::Equals(const Coordinate &coor) const
 {
-    if (!IsEqual(x, coor.x) || !IsEqual(y, coor.y) || !IsEqual(z, coor.z)) return false;
+    if (!IsEql(x, coor.x) || !IsEql(y, coor.y) || !IsEql(z, coor.z))
+        return false;
 
     return true;
 }

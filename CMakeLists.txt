@@ -11,9 +11,6 @@ set(ProjectName OpenOasis)
 project(${ProjectName})
 set(CMAKE_INSTALL_PREFIX  ${PROJECT_SOURCE_DIR}/Dists)
 
-string(TIMESTAMP COMPILE_TIME 20%y) 
-set(PROJECT_BUILD_YEAR ${COMPILE_TIME})
-
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
@@ -52,10 +49,6 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-if(ENABLE_CODECOV)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
-endif()
-
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp -Wall -g -O0") 
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -90,6 +83,16 @@ option(ENABLE_TESTS "-- If runing test" OFF)
 if (ENABLE_TESTS)
     enable_testing()
     message(STATUS "Runing test: ${ENABLE_TESTS}")
+endif()
+
+option(ENABLE_SP "-- If using single precision" OFF)
+if (ENABLE_SP)
+    add_definitions(-DUSE_SP)
+    message(STATUS "Using sp: ${ENABLE_SP}")
+endif()
+
+if(ENABLE_CODECOV)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
 
 

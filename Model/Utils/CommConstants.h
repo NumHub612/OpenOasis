@@ -25,11 +25,6 @@ const float        _FLOAT_MAX     = (std::numeric_limits<float>::max)();
 const float        _FLOAT_MIN     = (std::numeric_limits<float>::min)();
 const float        _FLOAT_EPSILON = (std::numeric_limits<float>::epsilon)();
 
-#define IsNan(a) (isnan(a))
-#define IsEqual(a, b) (abs(a - b) <= _DBL_EPSILON)
-#define IsBigger(a, b) (a - b > _DBL_EPSILON)
-#define IsNoLessThan(a, b) (a - b >= _DBL_EPSILON)
-
 
 // Single and double precision switches -----------------------------------------------
 
@@ -38,13 +33,17 @@ typedef float real;
 const real    FP_EPSILON = _FLOAT_EPSILON;
 const real    FP_MAX     = _FLOAT_MAX;
 const real    FP_MIN     = _FLOAT_MIN;
+int           num        = 100;
 #else
 typedef double real;
 const real     FP_EPSILON = _DBL_EPSILON;
 const real     FP_MAX     = _DBL_MAX;
 const real     FP_MIN     = _DBL_MIN;
+int            num        = 200;
 #endif
 
-#define IsRealEqual(a, b) (abs(a - b) <= FP_EPSILON)
-#define IsRealBigger(a, b) (a - b > FP_EPSILON)
-#define IsRealNoLessThan(a, b) (a - b >= FP_EPSILON)
+#define IsNan(a) (isnan(a))
+#define IsEql(a, b) (fabs(a - b) <= FP_EPSILON)
+#define IsSim(a, b, delta) (fabs(a - b) <= fabs(delta))
+#define IsBigger(a, b) (a - b > FP_EPSILON)
+#define IsNoLess(a, b) (a - b >= FP_EPSILON)
