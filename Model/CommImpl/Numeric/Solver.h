@@ -22,6 +22,8 @@
 
 namespace OpenOasis::CommImpl::Numeric
 {
+using Utils::real;
+
 /// @brief Abstract solver class.
 /// @todo Each solver can customize the algorithm and register automatically.
 /// @todo Each step of the solver calculation can be debugged.
@@ -35,30 +37,30 @@ public:
     virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &bound) = 0;
 
     virtual void SetInitialValue(
-        const std::string                                          &var,
-        const std::variant<double, Vector<double>, Tensor<double>> &value) = 0;
+        const std::string                                    &var,
+        const std::variant<real, Vector<real>, Tensor<real>> &value) = 0;
 
     // virtual void
-    // SetInitialValue(const std::string &var, const ScalarField<double> &values);
+    // SetInitialValue(const std::string &var, const ScalarField<real> &values);
 
     // virtual void
-    // SetInitialValue(const std::string &var, const VectorField<double> &values);
+    // SetInitialValue(const std::string &var, const VectorField<real> &values);
 
     // virtual void
-    // SetInitialValue(const std::string &var, const TensorField<double> &values);
+    // SetInitialValue(const std::string &var, const TensorField<real> &values);
 
     virtual void SetCoefficient(
-        const std::string                                          &var,
-        const std::variant<double, Vector<double>, Tensor<double>> &coeff) = 0;
+        const std::string                                    &var,
+        const std::variant<real, Vector<real>, Tensor<real>> &coeff) = 0;
 
     // virtual void
-    // SetCoefficient(const std::string &var, const ScalarField<double> &coefficients);
+    // SetCoefficient(const std::string &var, const ScalarField<real> &coefficients);
 
     // virtual void
-    // SetCoefficient(const std::string &var, const VectorField<double> &coefficients);
+    // SetCoefficient(const std::string &var, const VectorField<real> &coefficients);
 
     // virtual void
-    // SetCoefficient(const std::string &var, const TensorField<double> &coefficients);
+    // SetCoefficient(const std::string &var, const TensorField<real> &coefficients);
 
     // virtual void Reset();
 
@@ -87,7 +89,7 @@ public:
     virtual void Solve()       = 0;
     virtual void AfterSolve()  = 0;
 
-    virtual ScalarField<double> GetScalarSolutions() const = 0;
+    virtual ScalarField<real> GetScalarSolutions() const = 0;
 };
 
 }  // namespace OpenOasis::CommImpl::Numeric

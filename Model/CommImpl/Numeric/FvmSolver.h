@@ -16,20 +16,21 @@
 namespace OpenOasis::CommImpl::Numeric
 {
 using Spatial::Grid;
+using Utils::real;
 
 class FvmSolver : public Solver
 {
 private:
     std::shared_ptr<Grid> mGrid;
-    Matrix<double>        mCoeffMat;
-    std::vector<double>   mRhs;
+    Matrix<real>          mCoeffMat;
+    std::vector<real>     mRhs;
 
     std::unordered_map<int, std::shared_ptr<Boundary>> mBoundaries;
 
-    double mCoeffHeat;
-    double mInitValue;
+    real mCoeffHeat;
+    real mInitValue;
 
-    ScalarField<double> mTemps;
+    ScalarField<real> mTemps;
 
 public:
     ~FvmSolver() = default;
@@ -37,11 +38,11 @@ public:
 
     void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &bound) override;
     void SetInitialValue(
-        const std::string                                          &var,
-        const std::variant<double, Vector<double>, Tensor<double>> &value) override;
+        const std::string                                    &var,
+        const std::variant<real, Vector<real>, Tensor<real>> &value) override;
     void SetCoefficient(
-        const std::string                                          &var,
-        const std::variant<double, Vector<double>, Tensor<double>> &coeff) override;
+        const std::string                                    &var,
+        const std::variant<real, Vector<real>, Tensor<real>> &coeff) override;
 
     void ParseTimeDerivativeTerm() override;
     void ParseConvectiveTerm() override;
@@ -56,7 +57,7 @@ public:
     void Solve() override;
     void AfterSolve() override;
 
-    ScalarField<double> GetScalarSolutions() const override;
+    ScalarField<real> GetScalarSolutions() const override;
 };
 
 }  // namespace OpenOasis::CommImpl::Numeric

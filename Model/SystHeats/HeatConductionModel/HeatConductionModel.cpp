@@ -349,7 +349,7 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
     const auto &tempBounds = mPatchBounds["temp"];
     for (const auto &b : tempBounds)
     {
-        double value = b.second;
+        real value = FP(b.second);
 
         const auto &bound = make_shared<DirichletBoundary>(value);
 
@@ -360,9 +360,8 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
     }
 
     mSolver->SetInitialValue(
-        "temp", variant<double, Vector<double>, Tensor<double>>(mT0));
-    mSolver->SetCoefficient(
-        "temp", variant<double, Vector<double>, Tensor<double>>(-mK));
+        "temp", variant<real, Vector<real>, Tensor<real>>(FP(mT0)));
+    mSolver->SetCoefficient("temp", variant<real, Vector<real>, Tensor<real>>(FP(-mK)));
 
     mSolver->ParseDiffusionTerm();
 
