@@ -43,13 +43,13 @@ struct Face
     Coordinate centroid;
 
     // Perimeter of the face in (m).
-    double perimeter = NAN;
+    real perimeter = NAN;
 
     // Area of the face in (m^2).
-    double area = NAN;
+    real area = NAN;
 
     // Unit normal vector.
-    std::array<double, 3> normal;
+    std::array<real, 3> normal;
 
     // Indexes of mesh nodes on the
     // face sorted counterclockwise.
@@ -74,10 +74,10 @@ struct Cell
     Coordinate centroid;
 
     // Volume of the cell in (m^3).
-    double volume = NAN;
+    real volume = NAN;
 
     // Surface area in (m^2).
-    double surface = NAN;
+    real surface = NAN;
 
     // Indexes of faces on the cell.
     std::vector<int> faceIndexes;

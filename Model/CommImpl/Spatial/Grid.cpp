@@ -175,7 +175,8 @@ void Grid::CollectCellNeighbors()
     for (int i = 0; i < mRawFacesNum; i++)
     {
         const auto &cells = mMesh.faces[i].cellIndexes;
-        if (cells.size() != 2) continue;
+        if (cells.size() != 2)
+            continue;
 
         mMesh.cells[cells[0]].neighbors.push_back(cells[1]);
         mMesh.cells[cells[1]].neighbors.push_back(cells[0]);
@@ -204,13 +205,14 @@ void Grid::CalculateFaceDirector()
         double y = cPoint.y - fPoint.y;
         double z = cPoint.z - fPoint.z;
 
-        auto vec = Vector<double, 3>(x, y, z);
+        auto vec = Vector<real, 3>(x, y, z);
         auto res = vec * face.normal;
         auto dir = (res > 0) ? 1 : -1;
 
         face.cellSides.push_back(dir);
 
-        if (face.cellIndexes.size() == 2) face.cellSides.push_back(-dir);
+        if (face.cellIndexes.size() == 2)
+            face.cellSides.push_back(-dir);
     }
 }
 
@@ -227,7 +229,8 @@ void Grid::CalculateCellDistances()
         for (int j : cell.neighbors)
         {
             auto index1 = MultiIndex({i, j});
-            if (mCenterDists.count(index1) > 0) continue;
+            if (mCenterDists.count(index1) > 0)
+                continue;
 
             const auto &n2 = mMesh.cells[j].centroid;
 
@@ -250,7 +253,8 @@ void Grid::CalculateBoundaryCenterDistances()
         for (int j : cell.faceIndexes)
         {
             auto index1 = MultiIndex({i, j});
-            if (mBoundaryCenterDists.count(index1) > 0) continue;
+            if (mBoundaryCenterDists.count(index1) > 0)
+                continue;
 
             const auto &n2 = mMesh.faces[j].centroid;
 
@@ -290,7 +294,8 @@ void Grid::CalculateFaceIntersections()
 
         for (int j : cell.faceIndexes)
         {
-            if (mFaceIntersection.count(j) > 0) continue;
+            if (mFaceIntersection.count(j) > 0)
+                continue;
 
             const auto &face = mMesh.faces[j];
 
@@ -314,7 +319,7 @@ void Grid::CalculateFaceIntersections()
             XYLine  l2(p1, p2);
 
             auto point           = XYGeoTools::CalculateIntersectionPoint(l1, l2);
-            mFaceIntersection[j] = {point.x, point.y, face.centroid.z};
+            mFaceIntersection[j] = {FP(point.x), FP(point.y), FP(face.centroid.z)};
         }
     }
 }
@@ -325,7 +330,8 @@ void Grid::CalculateFaceWeights()
     for (int i = 0; i < mRawFacesNum; ++i)
     {
         const auto &cellIdxs = mMesh.faces[i].cellIndexes;
-        if (cellIdxs.size() != 2) continue;
+        if (cellIdxs.size() != 2)
+            continue;
 
         int cIdx1 = cellIdxs[0];
         int cIdx2 = cellIdxs[1];

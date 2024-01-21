@@ -133,9 +133,9 @@ void RainfallModule::InitializeSpace()
         if (arr[0] != mId)
             continue;
 
-        double x = stod(arr[1].c_str(), nullptr);
-        double y = stod(arr[2].c_str(), nullptr);
-        double z = (arr.size() > 3) ? stod(arr[3].c_str(), nullptr) : NAN;
+        real x = stod(arr[1].c_str(), nullptr);
+        real y = stod(arr[2].c_str(), nullptr);
+        real z = (arr.size() > 3) ? stod(arr[3].c_str(), nullptr) : NAN;
 
         Element elem(
             mId,

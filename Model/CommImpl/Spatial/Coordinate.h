@@ -8,18 +8,21 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Model/Utils/CommConstants.h"
 
 
 namespace OpenOasis::CommImpl::Spatial
 {
+using Utils::real;
+
 /// @brief The Coordinate struct contains a (x, y, z) coordinate.
 struct Coordinate
 {
-    double x = 0.;
-    double y = 0.;
-    double z = 0.;
+    real x = 0.;
+    real y = 0.;
+    real z = 0.;
 
-    bool Equals(double coorX, double coorY, double coorZ) const;
+    bool Equals(real coorX, real coorY, real coorZ) const;
     bool Equals(const Coordinate &coor) const;
 };
 

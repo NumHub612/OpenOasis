@@ -65,7 +65,7 @@ void RiverModule::InitializeSpace()
     auto rivernet = vector<Coordinate>(mNodeNum);
     for (int i = 0; i < mNodeNum; i++)
     {
-        rivernet[i] = Coordinate{i * 10.0, 0, 0};
+        rivernet[i] = Coordinate{i * FP(10.), 0, 0};
     }
     Element elem(mId, "river network", "river network", rivernet);
 
@@ -97,7 +97,7 @@ void RiverModule::InitializeInputs()
 
         auto    nodeId = mId + "_node_" + to_string(i);
         Element node(
-            nodeId, "rivernet node", "rivernet node", {Coordinate{i * 10.0, 0, 0}});
+            nodeId, "rivernet node", "rivernet node", {Coordinate{i * FP(10.), 0, 0}});
 
         auto element = make_shared<ElementSet>(
             "river network node",
@@ -131,7 +131,7 @@ void RiverModule::InitializeOutputs()
 
         auto    nodeId = mId + "_node_" + to_string(i);
         Element node(
-            nodeId, "rivernet node", "rivernet node", {Coordinate{i * 10.0, 0, 0}});
+            nodeId, "rivernet node", "rivernet node", {Coordinate{i * FP(10.), 0, 0}});
 
         auto element = make_shared<ElementSet>(
             "river network node",
