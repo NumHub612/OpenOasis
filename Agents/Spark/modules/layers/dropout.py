@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-Dropput layer.
+Dropout layer.
 
 __author__ = 'borgwang'
 __url__ = https://github.com/borgwang/tinynn
