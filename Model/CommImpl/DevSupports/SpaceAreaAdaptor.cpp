@@ -41,9 +41,9 @@ SpaceAreaAdaptor::SpaceAreaAdaptor(
             "Adaptee must have a SpatialDefinition having polygons as elements");
     }
 
-    if (adaptee->GetValueDefinition()->GetValueType() != typeid(double))
+    if (adaptee->GetValueDefinition()->GetValueType() != typeid(real))
     {
-        throw invalid_argument("Adaptee valuetype must be typeof(double)");
+        throw invalid_argument("Adaptee valuetype must be typeof(float point)");
     }
 
     if (!dynamic_pointer_cast<IQuantity>(adaptee->GetValueDefinition()))
@@ -124,16 +124,25 @@ shared_ptr<ISpatialDefinition> SpaceAreaAdaptor::GetSpatialDefinition() const
 
 void SpaceAreaAdaptor::CalculateFactors(const shared_ptr<IElementSet> &elementSet)
 {
-    mFactors      = vector<double>(elementSet->GetElementCount());
-    mAreaExponent = any_cast<double>(mAreaArgument->GetValue());
+    mFactors      = vector<real>(elementSet->GetElementCount());
+    mAreaExponent = any_cast<real>(mAreaArgument->GetValue());
 
     for (std::size_t i = 0; i < mFactors.size(); i++)
     {
         XYPolygon element = ElementMapper::CreateXYPolygon(elementSet, i);
-        double    area    = element.GetArea();
-        if (mAreaExponent == 1) { mFactors[i] = area; }
-        else if (mAreaExponent == -1) { mFactors[i] = 1.0 / area; }
-        else { mFactors[i] = pow(area, mAreaExponent); }
+        real      area    = element.GetArea();
+        if (mAreaExponent == 1)
+        {
+            mFactors[i] = area;
+        }
+        else if (mAreaExponent == -1)
+        {
+            mFactors[i] = 1.0 / area;
+        }
+        else
+        {
+            mFactors[i] = pow(area, mAreaExponent);
+        }
     }
 }
 

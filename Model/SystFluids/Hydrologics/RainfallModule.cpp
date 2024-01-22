@@ -68,7 +68,8 @@ shared_ptr<IQuantity> RainfallModule::GetQuantity()
     auto unit = make_shared<Unit>(
         dim, "Rainfall intensity", "Rainfall intensity (mm/s)", 1.e-3, 0.0);
 
-    auto quant = make_unique<Quantity>(unit, "Rainfall data", "Rainfall data", -9999.);
+    auto quant =
+        make_unique<Quantity>(unit, "Rainfall data", "Rainfall data", FP(-9999.));
     return quant;
 }
 
@@ -115,7 +116,8 @@ void RainfallModule::InitializeArguments()
 
 void RainfallModule::InitializeSpace()
 {
-    if (mElements) return;
+    if (mElements)
+        return;
 
     string file = any_cast<string>(mArguments["coordinate_file"]->GetValue());
 
@@ -126,13 +128,15 @@ void RainfallModule::InitializeSpace()
     while (reader.GetLine(line))
     {
         vector<string> arr = StringHelper::Split(line, ',');
-        if (arr.empty() || arr.size() < 3) continue;
+        if (arr.empty() || arr.size() < 3)
+            continue;
 
-        if (arr[0] != mId) continue;
+        if (arr[0] != mId)
+            continue;
 
-        double x = stod(arr[1].c_str(), nullptr);
-        double y = stod(arr[2].c_str(), nullptr);
-        double z = (arr.size() > 3) ? stod(arr[3].c_str(), nullptr) : NAN;
+        real x = stod(arr[1].c_str(), nullptr);
+        real y = stod(arr[2].c_str(), nullptr);
+        real z = (arr.size() > 3) ? stod(arr[3].c_str(), nullptr) : NAN;
 
         Element elem(
             mId,
@@ -157,10 +161,11 @@ void RainfallModule::InitializeSpace()
 
 void RainfallModule::InitializeTime()
 {
-    if (mValues && mTimes) return;
+    if (mValues && mTimes)
+        return;
 
     mTimes  = make_shared<TimeSet>();
-    mValues = make_shared<ValueSetDbl>(vector<vector<double>>{}, GetQuantity());
+    mValues = make_shared<ValueSetFP>(vector<vector<real>>{}, GetQuantity());
 
     string file = any_cast<string>(mArguments["rainfall_file"]->GetValue());
 
@@ -174,9 +179,11 @@ void RainfallModule::InitializeTime()
     while (reader.GetLine(line))
     {
         vector<string> arr = StringHelper::Split(line, ',');
-        if (arr.empty() || arr.size() < 3) continue;
+        if (arr.empty() || arr.size() < 3)
+            continue;
 
-        if (arr[0] != mId) continue;
+        if (arr[0] != mId)
+            continue;
 
         DateTime datetime(DateTime::FromString(arr[1]));
         double   timestampInDays = datetime.GetTimeStampInDays();
@@ -193,7 +200,7 @@ void RainfallModule::InitializeTime()
         preTime = curTime;
 
         double rain = stod(arr[2].c_str(), nullptr);
-        mValues->SetOrAddValue({timeCount++, 0}, rain);
+        mValues->SetOrAddValue({timeCount++, 0}, FP(rain));
     }
 
     mCurrentTime = mTimes->GetTimes().at(0);

@@ -303,20 +303,20 @@ void run_pull_mode(string configs, string parent)
     {
         runoff->Update({});
 
-        for (auto &output : runoff->GetOutputs())
-        {
-            auto values = output->GetValues({});
-            auto times  = output->GetTimeSet();
+        // for (auto &output : runoff->GetOutputs())
+        // {
+        //     auto values = output->GetValues({});
+        //     auto times  = output->GetTimeSet();
 
-            cout << "\ntime size: " << times->GetTimes().size();
-            cout << ", -- time: " << setw(20)
-                 << CommImpl::Time::ToString(times->GetTimes().back());
-            cout << "; value size: " << values->GetIndexCount({0});
-            cout << ", -- value: " << any_cast<double>(values->GetValue({0, 0}));
-        }
+        //     cout << "\ntime size: " << times->GetTimes().size();
+        //     cout << ", -- time: " << setw(20)
+        //          << CommImpl::Time::ToString(times->GetTimes().back());
+        //     cout << "; value size: " << values->GetIndexCount({0});
+        //     cout << ", -- value: " << any_cast<real>(values->GetValue({0, 0}));
+        // }
     }
 
-    cout << endl;
+    // cout << endl;
     // spdlog::info("model {} done.", runoff->GetId());
 
     // finish models ---------------------------------------------------
@@ -351,39 +351,39 @@ void run_loop_mode(string configs, string parent)
 
     auto river = models["river1"];
     river->Initialize();
-    spdlog::info("model {} Initialized.", river->GetId());
+    // spdlog::info("model {} Initialized.", river->GetId());
 
     river->Validate();
-    spdlog::info("model {} Validated.", river->GetId());
+    // spdlog::info("model {} Validated.", river->GetId());
 
     river->Prepare();
-    spdlog::info("model {} Prepared.", river->GetId());
+    // spdlog::info("model {} Prepared.", river->GetId());
 
-    cout << "\n----------------------------------------------------\n";
+    // cout << "\n----------------------------------------------------\n";
 
     auto river2 = models["river2"];
     river2->Initialize();
-    spdlog::info("model {} Initialized.", river2->GetId());
+    // spdlog::info("model {} Initialized.", river2->GetId());
 
     river2->Validate();
-    spdlog::info("model {} Validated.", river2->GetId());
+    // spdlog::info("model {} Validated.", river2->GetId());
 
     river2->Prepare();
-    spdlog::info("model {} Prepared.", river2->GetId());
+    // spdlog::info("model {} Prepared.", river2->GetId());
 
-    cout << "\n----------------------------------------------------\n";
+    // cout << "\n----------------------------------------------------\n";
 
     auto river3 = models["river3"];
     river3->Initialize();
-    spdlog::info("model {} Initialized.", river3->GetId());
+    // spdlog::info("model {} Initialized.", river3->GetId());
 
     river3->Validate();
-    spdlog::info("model {} Validated.", river3->GetId());
+    // spdlog::info("model {} Validated.", river3->GetId());
 
     river3->Prepare();
-    spdlog::info("model {} Prepared.", river3->GetId());
+    // spdlog::info("model {} Prepared.", river3->GetId());
 
-    cout << "\n----------------------------------------------------\n";
+    // cout << "\n----------------------------------------------------\n";
 
     auto outputs = river->GetOutputs();
     auto inputs  = river->GetInputs();
@@ -398,9 +398,9 @@ void run_loop_mode(string configs, string parent)
     inputs3[2]->AddProvider(outputs2[2]);  // river3_input_q_1->river2_output_q_1
     inputs2[5]->AddProvider(outputs3[5]);  // river2_input_z_2->river3_output_z_2
 
-    spdlog::info("components linked.");
+    // spdlog::info("components linked.");
 
-    cout << "\n----------------------------------------------------\n";
+    // cout << "\n----------------------------------------------------\n";
 
     auto controller = make_shared<IterationController>("iterationer");
     auto r2         = dynamic_pointer_cast<LinkableComponent>(river2);
@@ -410,46 +410,46 @@ void run_loop_mode(string configs, string parent)
     controller->AddComponent(r3->shared_from_this());
 
     controller->Initialize();
-    spdlog::info("model {} Initialized.", controller->GetId());
+    // spdlog::info("model {} Initialized.", controller->GetId());
 
     controller->Validate();
-    spdlog::info("model {} Validated.", controller->GetId());
+    // spdlog::info("model {} Validated.", controller->GetId());
 
     controller->Prepare();
-    spdlog::info("model {} Prepared.", controller->GetId());
+    // spdlog::info("model {} Prepared.", controller->GetId());
 
-    cout << "\n----------------------------------------------------\n";
+    // cout << "\n----------------------------------------------------\n";
     int i = 0;
     while (river->GetStatus() != LinkableComponentStatus::Done
            && river->GetStatus() != LinkableComponentStatus::Failed)
     {
         river->Update({});
 
-        for (auto &output : outputs2)
-        {
-            auto values = output->GetValues({});
-            auto times  = output->GetTimeSet();
+        // for (auto &output : outputs2)
+        // {
+        //     auto values = output->GetValues({});
+        //     auto times  = output->GetTimeSet();
 
-            int tCount = times->GetTimes().size();
-            int vCount = values->GetIndexCount({tCount - 1});
-            cout << "\nid: " << output->GetId() << ", time size: " << tCount;
-            cout << ", -- time: " << setw(20)
-                 << CommImpl::Time::ToString(times->GetTimes().back());
-            cout << "; value size: " << vCount;
-            cout << ", -- value: "
-                 << any_cast<double>(values->GetValue({tCount - 1, 0}));
-        }
+        //     int tCount = times->GetTimes().size();
+        //     int vCount = values->GetIndexCount({tCount - 1});
+        //     cout << "\nid: " << output->GetId() << ", time size: " << tCount;
+        //     cout << ", -- time: " << setw(20)
+        //          << CommImpl::Time::ToString(times->GetTimes().back());
+        //     cout << "; value size: " << vCount;
+        //     cout << ", -- value: " << any_cast<real>(values->GetValue({tCount - 1,
+        //     0}));
+        // }
     }
-    cout << endl;
+    // cout << endl;
 
-    cout << "\n----------------------------------------------------\n";
+    // cout << "\n----------------------------------------------------\n";
 
     river->Finish();
-    spdlog::info("model {} Finished.", river->GetId());
+    // spdlog::info("model {} Finished.", river->GetId());
 
     river2->Finish();
-    spdlog::info("model {} Finished.", river2->GetId());
+    // spdlog::info("model {} Finished.", river2->GetId());
 
     river3->Finish();
-    spdlog::info("model {} Finished.", river3->GetId());
+    // spdlog::info("model {} Finished.", river3->GetId());
 }

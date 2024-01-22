@@ -17,6 +17,7 @@
 namespace OpenOasis::CommImpl
 {
 using namespace DevSupports;
+using namespace Utils;
 using namespace std;
 
 
@@ -110,8 +111,14 @@ shared_ptr<ISpatialDefinition> Input::GetSpatialDefinition() const
 
 shared_ptr<IValueDefinition> Input::GetValueDefinition() const
 {
-    if (mValues) { return mValues->GetValueDefinition(); }
-    else { return nullptr; }
+    if (mValues)
+    {
+        return mValues->GetValueDefinition();
+    }
+    else
+    {
+        return nullptr;
+    }
 }
 
 vector<weak_ptr<IOutput>> Input::GetProviders() const
@@ -128,7 +135,10 @@ void Input::AddProvider(shared_ptr<IOutput> provider)
                    && provider->GetComponent().lock()->GetId()
                           == elem.lock()->GetComponent().lock()->GetId();
         });
-    if (iter != mProviders.end()) { return; }
+    if (iter != mProviders.end())
+    {
+        return;
+    }
 
     // Check value definition compatibility.
     if (!ExchangeItemHelper::OutputAndInputValueDefinitionFit(provider, GetInstance()))
@@ -152,7 +162,10 @@ void Input::RemoveProvider(const shared_ptr<IOutput> &provider)
                    && provider->GetComponent().lock()->GetId()
                           == elem.lock()->GetComponent().lock()->GetId();
         });
-    if (iter == mProviders.end()) { return; }
+    if (iter == mProviders.end())
+    {
+        return;
+    }
 
     // Detach provider.
     provider->RemoveConsumer(GetInstance());
@@ -183,8 +196,8 @@ void Input::Update()
         // Here we hasn't specified the querier, because the AdaptedOutputs
         // are used to adapt this input item.
         const auto &valueset = provider.lock()->GetValues(nullptr);
-        if (valueset->GetIndexCount({0}) == 0) continue;
-
+        if (valueset->GetIndexCount({0}) == 0)
+            continue;
         acceptedValues.emplace_back(valueset);
     }
     AcceptValues(acceptedValues);
@@ -192,14 +205,21 @@ void Input::Update()
 
 bool Input::IsValidQuerySpecifier(const shared_ptr<IBaseExchangeItem> &querier) const
 {
-    if (!querier) return false;
+    if (!querier)
+        return false;
 
     try
     {
         auto queryValueDef = ExtensionMethods::Quantity(querier);
         auto valueDef = dynamic_pointer_cast<Quantity>(mValues->GetValueDefinition());
-        if (!valueDef->EqualTo(queryValueDef)) { return false; }
-        else { return true; }
+        if (!valueDef->EqualTo(queryValueDef))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
     catch (...)
     {
@@ -213,17 +233,18 @@ void Input::AcceptValues(const vector<shared_ptr<IValueSet>> &values)
     {
         for (int e = 0; e < mElementSet->GetElementCount(); ++e)
         {
-            double value = 0.0;
+            real value = 0.0;
             for (const auto &valueset : values)
             {
                 if (t >= valueset->GetIndexCount({0})
                     || e >= valueset->GetIndexCount({0, 0}))
                     continue;
 
-                double data = any_cast<double>(valueset->GetValue({t, e}));
-                any    miss = valueset->GetValueDefinition()->GetMissingDataValue();
+                real data = any_cast<real>(valueset->GetValue({t, e}));
+                any  miss = valueset->GetValueDefinition()->GetMissingDataValue();
 
-                if (data == any_cast<double>(miss)) continue;
+                if (data == any_cast<real>(miss))
+                    continue;
 
                 value += data;
             }

@@ -81,11 +81,17 @@ void HeatConductionModel::InitializeArguments()
 
     auto inputDir = FilePathHelper::Combine(taskDir, "inputs");
     auto input    = yml.GetMapValueInStr({seg}, "input_dir");
-    if (input.has_value()) { inputDir = FilePathHelper::GetFullPath(input.value()); }
+    if (input.has_value())
+    {
+        inputDir = FilePathHelper::GetFullPath(input.value());
+    }
 
     auto outDir = FilePathHelper::Combine(taskDir, "outputs");
     auto output = yml.GetMapValueInStr({seg}, "output_dir");
-    if (output.has_value()) { outDir = FilePathHelper::GetFullPath(output.value()); }
+    if (output.has_value())
+    {
+        outDir = FilePathHelper::GetFullPath(output.value());
+    }
 
     // Mesh.
     seg = "MESH";
@@ -195,7 +201,8 @@ void HeatConductionModel::InitializeSpace()
     auto size   = mGrid->GetNumCells();
     mTempValues = make_shared<ScalarFieldDbl>(size, mT0);
 
-    if (mT0file.empty()) return;
+    if (mT0file.empty())
+        return;
 
     CsvLoader loader(mT0file);
 
@@ -230,7 +237,8 @@ void HeatConductionModel::InitializeOutputs()
 
     for (const auto &output : outputters)
     {
-        if (output[0] != "CELL" || output[2] != "T") continue;
+        if (output[0] != "CELL" || output[2] != "T")
+            continue;
 
         mOutputs.push_back(CreateCellOutput(stoi(output[1]), "T"));
     }
@@ -300,8 +308,8 @@ void HeatConductionModel::PrepareOutputs()
 {
     for (auto &output : mOutputs)
     {
-        output->SetValues(
-            make_shared<ValueSetDbl>(vector<vector<double>>{{mT0}}, GetTempQuantity()));
+        output->SetValues(make_shared<ValueSetFP>(
+            vector<vector<real>>{{FP(mT0)}}, GetTempQuantity()));
     }
 }
 
@@ -341,7 +349,7 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
     const auto &tempBounds = mPatchBounds["temp"];
     for (const auto &b : tempBounds)
     {
-        double value = b.second;
+        real value = FP(b.second);
 
         const auto &bound = make_shared<DirichletBoundary>(value);
 
@@ -352,9 +360,8 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
     }
 
     mSolver->SetInitialValue(
-        "temp", variant<double, Vector<double>, Tensor<double>>(mT0));
-    mSolver->SetCoefficient(
-        "temp", variant<double, Vector<double>, Tensor<double>>(-mK));
+        "temp", variant<real, Vector<real>, Tensor<real>>(FP(mT0)));
+    mSolver->SetCoefficient("temp", variant<real, Vector<real>, Tensor<real>>(FP(-mK)));
 
     mSolver->ParseDiffusionTerm();
 
@@ -488,7 +495,8 @@ tuple<double, double> HeatConductionModel::CalculateUniformCoef()
         dx = max(dx, _dx);
         dy = max(dy, _dy);
 
-        if (dx > 1.e-10 && dy > 1.e-10) break;
+        if (dx > 1.e-10 && dy > 1.e-10)
+            break;
     }
 
     double xCoe = -mK * dy / dx;

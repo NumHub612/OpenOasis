@@ -76,9 +76,18 @@ void ExtensionMethods::SetSingleTime(
             "Can not set single time SPAN in a time set without duration");
     }
 
-    if (timeSet->GetTimes().size() > 1) { timeSet->GetTimes().clear(); }
-    if (timeSet->GetTimes().empty()) { timeSet->GetTimes().push_back(timeStamp); }
-    else { timeSet->GetTimes()[0] = timeStamp; }
+    if (timeSet->GetTimes().size() > 1)
+    {
+        timeSet->GetTimes().clear();
+    }
+    if (timeSet->GetTimes().empty())
+    {
+        timeSet->GetTimes().push_back(timeStamp);
+    }
+    else
+    {
+        timeSet->GetTimes()[0] = timeStamp;
+    }
 }
 
 void ExtensionMethods::SetSingleTimeStamp(
@@ -128,12 +137,12 @@ int ExtensionMethods::TimesCount(const shared_ptr<IValueSet> &values)
 }
 
 shared_ptr<IValueSet> ExtensionMethods::MultiplyElementValues(
-    const shared_ptr<IValueSet> &sourceValueset, const vector<double> &factors)
+    const shared_ptr<IValueSet> &sourceValueset, const vector<real> &factors)
 {
-    if (sourceValueset->GetValueDefinition()->GetValueType() != typeid(double))
+    if (sourceValueset->GetValueDefinition()->GetValueType() != typeid(real))
     {
         throw invalid_argument(
-            "Not support to multiply non-double element values with factors.");
+            "Not support to multiply non float point element values with factors.");
     }
 
     int elemSize = sourceValueset->GetIndexCount({0, 0});
@@ -151,8 +160,8 @@ shared_ptr<IValueSet> ExtensionMethods::MultiplyElementValues(
     {
         for (int i = 0; i < elemSize; ++i)
         {
-            double value = any_cast<double>(sourceValueset->GetValue({t, i}));
-            double res   = value * factors[i];
+            real value = any_cast<real>(sourceValueset->GetValue({t, i}));
+            real res   = value * factors[i];
 
             values->SetOrAddValue({t, i}, res);
         }

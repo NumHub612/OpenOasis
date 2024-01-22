@@ -51,7 +51,7 @@ int GeoCalculator::ChooseFoldedAxis(
 {
     int num = nodeIdxs.size();
 
-    vector<double> Xs(num), Ys(num), Zs(num);
+    vector<real> Xs(num), Ys(num), Zs(num);
     for (int idx : nodeIdxs)
     {
         const auto &coor = nodes.at(idx).coor;
@@ -65,14 +65,19 @@ int GeoCalculator::ChooseFoldedAxis(
     {
         for (int j = i; j < num; ++j)
         {
-            if (abs(Xs[i] - Xs[j]) <= EPSILON) axisX += 1;
-            if (abs(Ys[i] - Ys[j]) <= EPSILON) axisY += 1;
-            if (abs(Zs[i] - Zs[j]) <= EPSILON) axisZ += 1;
+            if (IsSim(Xs[i], Xs[j], EPSILON))
+                axisX += 1;
+            if (IsSim(Ys[i], Ys[j], EPSILON))
+                axisY += 1;
+            if (IsSim(Zs[i], Zs[j], EPSILON))
+                axisZ += 1;
         }
     }
 
-    if (axisX > axisY && axisX > axisZ) return 0;
-    if (axisY > axisX && axisY > axisZ) return 1;
+    if (axisX > axisY && axisX > axisZ)
+        return 0;
+    if (axisY > axisX && axisY > axisZ)
+        return 1;
     return 2;
 }
 
@@ -99,15 +104,19 @@ bool GeoCalculator::CompareNodeOrder(
         o  = {centroid.y, centroid.z, 0};
     }
 
-    if (n0.x >= 0 && n1.x < 0) return true;
+    if (n0.x >= 0 && n1.x < 0)
+        return true;
 
-    if (n0.x == 0 && n1.x == 0) return n0.y > n1.y;
+    if (n0.x == 0 && n1.x == 0)
+        return n0.y > n1.y;
 
-    double dx0 = n0.x - o.x, dx1 = n1.x - o.x;
-    double dy1 = n0.y - o.y, dy0 = n1.y - o.y;
-    int    det = dx0 * dy1 - dx1 * dy0;
-    if (det < 0) return true;
-    if (det > 0) return false;
+    real dx0 = n0.x - o.x, dx1 = n1.x - o.x;
+    real dy1 = n0.y - o.y, dy0 = n1.y - o.y;
+    int  det = dx0 * dy1 - dx1 * dy0;
+    if (det < 0)
+        return true;
+    if (det > 0)
+        return false;
 
     int dist0 = dx0 * dx0 + dy0 * dy0;
     int dist1 = dx1 * dx1 + dy1 * dy1;
@@ -117,9 +126,10 @@ bool GeoCalculator::CompareNodeOrder(
 Coordinate GeoCalculator::CalculateCentroid(
     const vector<int> &nodeIdxs, const unordered_map<int, Node> &nodes)
 {
-    if (nodeIdxs.empty()) return {};
+    if (nodeIdxs.empty())
+        return {};
 
-    double sumX = 0., sumY = 0., sumZ = 0.;
+    real sumX = 0., sumY = 0., sumZ = 0.;
     for (int idx : nodeIdxs)
     {
         sumX += nodes.at(idx).coor.x;
@@ -127,7 +137,7 @@ Coordinate GeoCalculator::CalculateCentroid(
         sumZ += nodes.at(idx).coor.z;
     }
 
-    double size = double(nodeIdxs.size());
+    int size = int(nodeIdxs.size());
     return {sumX / size, sumY / size, sumZ / size};
 }
 
@@ -157,7 +167,7 @@ vector<int> GeoCalculator::GetCellNodeIndexes(int cellIdx, const Mesh &mesh)
     return idxs;
 }
 
-array<double, 3> GeoCalculator::CalculateNormal(
+array<real, 3> GeoCalculator::CalculateNormal(
     const vector<int> &nodeIdxs, const unordered_map<int, Node> &nodes)
 {
     int size = nodeIdxs.size();
@@ -182,19 +192,22 @@ array<double, 3> GeoCalculator::CalculateNormal(
     }
 }
 
-array<double, 3> GeoCalculator::CalculateFaceNormal(int faceIdx, const Mesh &mesh)
+array<real, 3> GeoCalculator::CalculateFaceNormal(int faceIdx, const Mesh &mesh)
 {
     return CalculateNormal(mesh.faces.at(faceIdx).nodeIndexes, mesh.nodes);
 }
 
-double GeoCalculator::CalculateArea(
-    const Vector<double, 3> &normal, const vector<int> &nodeIdxs,
+real GeoCalculator::CalculateArea(
+    const Vector<real, 3> &normal, const vector<int> &nodeIdxs,
     const unordered_map<int, Node> &nodes)
 {
     int size = nodeIdxs.size();
 
     // 2D mesh.
-    if (size == 2) { return 0.; }
+    if (size == 2)
+    {
+        return 0.;
+    }
 
     // 3D mesh, calculate face area by Shoelace Theorem in 3d.
     // area = 1/2 * {
@@ -202,13 +215,13 @@ double GeoCalculator::CalculateArea(
     //        cos(n, x) * sum(y_i * z_i+1 - y_i+1 * z_i) +
     //        cos(n, y) * sum(z_i * x_i+1 - z_i+1 * x_i)
     // }
-    Vector<double, 3> x = {1., 0., 0.}, y = {0., 1., 0.}, z = {0., 0., 1.};
+    Vector<real, 3> x = {1., 0., 0.}, y = {0., 1., 0.}, z = {0., 0., 1.};
 
-    double zCos = normal * z;
-    double xCos = normal * x;
-    double yCos = normal * y;
+    real zCos = normal * z;
+    real xCos = normal * x;
+    real yCos = normal * y;
 
-    double area = 0.0;
+    real area = 0.0;
     for (int i = 0; i < size - 1; ++i)
     {
         const auto &node0 = nodes.at(nodeIdxs[i]).coor;
@@ -222,19 +235,19 @@ double GeoCalculator::CalculateArea(
     return abs(area) / 2.0;
 }
 
-double GeoCalculator::CalculateFaceArea(int faceIdx, const Mesh &mesh)
+real GeoCalculator::CalculateFaceArea(int faceIdx, const Mesh &mesh)
 {
     const auto &face = mesh.faces.at(faceIdx);
     return CalculateArea(face.normal, face.nodeIndexes, mesh.nodes);
 }
 
-double GeoCalculator::CalculateLength(const Node &node0, const Node &node1)
+real GeoCalculator::CalculateLength(const Node &node0, const Node &node1)
 {
     const auto &vec = ToVector(node0, node1);
     return vec.Length();
 }
 
-double GeoCalculator::CalculateFacePerimeter(int faceIdx, const Mesh &mesh)
+real GeoCalculator::CalculateFacePerimeter(int faceIdx, const Mesh &mesh)
 {
     const auto &fNodes = mesh.faces.at(faceIdx).nodeIndexes;
     int         n      = fNodes.size();
@@ -246,12 +259,15 @@ double GeoCalculator::CalculateFacePerimeter(int faceIdx, const Mesh &mesh)
         len += CalculateLength(nodes.at(fNodes[i]), nodes.at(fNodes[i + 1]));
     }
 
-    if (n > 2) { len += CalculateLength(nodes.at(fNodes[n - 1]), nodes.at(fNodes[0])); }
+    if (n > 2)
+    {
+        len += CalculateLength(nodes.at(fNodes[n - 1]), nodes.at(fNodes[0]));
+    }
 
     return len;
 }
 
-double GeoCalculator::CalculateVolume(
+real GeoCalculator::CalculateVolume(
     const std::vector<int> &nodeIdxs, const std::unordered_map<int, Node> &nodes)
 {
     // Only tetrahedral and prismatic volume calculations are supported.
@@ -265,19 +281,22 @@ double GeoCalculator::CalculateVolume(
         const auto &v2 = ToVector(nodes.at(nodeIdxs[0]), nodes.at(nodeIdxs[2]));
         const auto &v3 = ToVector(nodes.at(nodeIdxs[0]), nodes.at(nodeIdxs[3]));
 
-        double vol = ((v1 & v2) * v3) / 6.0;
+        real vol = ((v1 & v2) * v3) / 6.0;
         return vol;
     }
-    else { throw NotImplementedException(); }
+    else
+    {
+        throw NotImplementedException();
+    }
 }
 
-double GeoCalculator::CalculateCellVolume(int cellIdx, const Mesh &mesh)
+real GeoCalculator::CalculateCellVolume(int cellIdx, const Mesh &mesh)
 {
     const auto &nodeIdxs = GetCellNodeIndexes(cellIdx, mesh);
     return CalculateVolume(nodeIdxs, mesh.nodes);
 }
 
-Vector<double, 3> GeoCalculator::ToVector(const Node &start, const Node &end)
+Vector<real, 3> GeoCalculator::ToVector(const Node &start, const Node &end)
 {
     const auto &node0 = start.coor;
     const auto &node1 = end.coor;

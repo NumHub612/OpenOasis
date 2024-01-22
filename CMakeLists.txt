@@ -11,9 +11,6 @@ set(ProjectName OpenOasis)
 project(${ProjectName})
 set(CMAKE_INSTALL_PREFIX  ${PROJECT_SOURCE_DIR}/Dists)
 
-string(TIMESTAMP COMPILE_TIME 20%y) 
-set(PROJECT_BUILD_YEAR ${COMPILE_TIME})
-
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
@@ -90,6 +87,12 @@ option(ENABLE_TESTS "-- If runing test" OFF)
 if (ENABLE_TESTS)
     enable_testing()
     message(STATUS "Runing test: ${ENABLE_TESTS}")
+endif()
+
+option(ENABLE_SP "-- If using single precision" OFF)
+if (ENABLE_SP)
+    add_definitions(-DUSE_SP)
+    message(STATUS "Using sp: ${ENABLE_SP}")
 endif()
 
 

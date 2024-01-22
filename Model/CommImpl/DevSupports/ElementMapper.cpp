@@ -30,7 +30,7 @@ ElementMapper::ElementMapper()
     mIsInitialised       = false;
 }
 
-shared_ptr<IMatrix> ElementMapper::GetMappingMatrix() const
+shared_ptr<DoubleSparseMatrix> ElementMapper::GetMappingMatrix() const
 {
     return mMappingMatrix;
 }
@@ -83,13 +83,13 @@ shared_ptr<IValueSet> ElementMapper::MapValues(const shared_ptr<IValueSet> &inpu
 
 shared_ptr<IValueSet> ElementMapper::CreateResultValueSet(int numtimes, int numElements)
 {
-    vector<vector<double>> outValues;
+    vector<vector<real>> outValues;
     for (int i = 0; i < numtimes; i++)
     {
-        outValues.push_back(vector<double>(numElements));
+        outValues.push_back(vector<real>(numElements));
     }
 
-    return make_shared<ValueSetDbl>(outValues, nullptr);
+    return make_shared<ValueSetFP>(outValues, nullptr);
 }
 
 void ElementMapper::MapValues(
@@ -97,12 +97,11 @@ void ElementMapper::MapValues(
 {
     for (int i = 0; i < ExtensionMethods::TimesCount(inputValues); i++)
     {
-        int            elemCount = outputValues->GetIndexCount({i});
-        vector<double> resultDbl(elemCount);
+        int          elemCount = outputValues->GetIndexCount({i});
+        vector<real> resultDbl(elemCount);
 
         mMappingMatrix->Product(
-            resultDbl,
-            ExtensionMethods::GetElementValuesForTime<double>(inputValues, i));
+            resultDbl, ExtensionMethods::GetElementValuesForTime<real>(inputValues, i));
 
         vector<any> result(resultDbl.begin(), resultDbl.end());
         outputValues->SetElementValuesForTime(i, result);
@@ -229,7 +228,10 @@ void ElementMapper::MapFromPointToPoint(
                         mMappingMatrix->SetValue(i, j, 1);
                         denominator++;
                     }
-                    else { mMappingMatrix->SetValue(i, j, 0); }
+                    else
+                    {
+                        mMappingMatrix->SetValue(i, j, 0);
+                    }
                 }
 
                 for (int j = 0; j < mNumberOfFromColumns; j++)
@@ -262,7 +264,10 @@ void ElementMapper::MapFromPointToPoint(
                             mMappingMatrix->SetValue(i, j, 1);
                             denominator++;
                         }
-                        else { mMappingMatrix->SetValue(i, j, 0); }
+                        else
+                        {
+                            mMappingMatrix->SetValue(i, j, 0);
+                        }
                     }
 
                     for (int j = 0; j < mNumberOfFromColumns; j++)
@@ -433,8 +438,14 @@ void ElementMapper::MapFromPointToPolygon(
                 point = CreateXYPoint(fromElements, n);
                 if (XYGeoTools::IsPointInPolygon(point, polygon))
                 {
-                    if (mMethod == ElementMapperMethod::Mean) { count = count + 1; }
-                    else if (mMethod == ElementMapperMethod::Sum) { count = 1; }
+                    if (mMethod == ElementMapperMethod::Mean)
+                    {
+                        count = count + 1;
+                    }
+                    else if (mMethod == ElementMapperMethod::Sum)
+                    {
+                        count = 1;
+                    }
                     else
                     {
                         throw runtime_error(

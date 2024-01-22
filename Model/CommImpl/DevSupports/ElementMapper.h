@@ -83,7 +83,7 @@ public:
 
     ElementMapper();
 
-    std::shared_ptr<IMatrix> GetMappingMatrix() const;
+    std::shared_ptr<DoubleSparseMatrix> GetMappingMatrix() const;
 
     void SetUseSearchTree(bool value);
 

@@ -95,7 +95,8 @@ unordered_map<int, vector<int>> &MeshLoader::GetCellFaces()
 void MeshLoader::LoadNodes(const string &nodeFile)
 {
     const auto &file = FilePathHelper::Combine(mMeshDir, nodeFile);
-    if (!FilePathHelper::FileExists(file)) return;
+    if (!FilePathHelper::FileExists(file))
+        return;
 
     CsvLoader loader(file, true, true);
     if (loader.GetColumnCount() < 3)
@@ -108,7 +109,7 @@ void MeshLoader::LoadNodes(const string &nodeFile)
 
     for (std::size_t i = 0; i < ids.size(); ++i)
     {
-        auto coor = loader.GetRow<double>(i).value();
+        auto coor = loader.GetRow<real>(i).value();
 
         mNodeCoords[i] = {coor[0], coor[1], coor[2]};
     }
@@ -117,7 +118,8 @@ void MeshLoader::LoadNodes(const string &nodeFile)
 void MeshLoader::LoadFaces(const string &faceFile)
 {
     const auto &file = FilePathHelper::Combine(mMeshDir, faceFile);
-    if (!FilePathHelper::FileExists(file)) return;
+    if (!FilePathHelper::FileExists(file))
+        return;
 
     CsvLoader loader(file, true, true);
     if (loader.GetColumnCount() < 2)
@@ -137,7 +139,8 @@ void MeshLoader::LoadFaces(const string &faceFile)
 void MeshLoader::LoadCells(const string &cellFile)
 {
     const auto &file = FilePathHelper::Combine(mMeshDir, cellFile);
-    if (!FilePathHelper::FileExists(file)) return;
+    if (!FilePathHelper::FileExists(file))
+        return;
 
     CsvLoader loader(file, true, true);
     if (loader.GetColumnCount() < 3)
@@ -157,7 +160,8 @@ void MeshLoader::LoadCells(const string &cellFile)
 void MeshLoader::LoadPatches(const string &patchFile)
 {
     const auto &file = FilePathHelper::Combine(mMeshDir, patchFile);
-    if (!FilePathHelper::FileExists(file)) return;
+    if (!FilePathHelper::FileExists(file))
+        return;
 
     CsvLoader loader(file, false, true);
     if (loader.GetColumnCount() < 1)
@@ -176,7 +180,8 @@ void MeshLoader::LoadPatches(const string &patchFile)
 void MeshLoader::LoadZones(const string &zoneFile)
 {
     const auto &file = FilePathHelper::Combine(mMeshDir, zoneFile);
-    if (!FilePathHelper::FileExists(file)) return;
+    if (!FilePathHelper::FileExists(file))
+        return;
 
     CsvLoader loader(file, false, true);
     if (loader.GetColumnCount() < 3)
@@ -217,7 +222,7 @@ void MeshLoader::GenerateFaceCoordinates()
     {
         int id = face.first;
 
-        double x = 0, y = 0, z = 0;
+        real x = 0, y = 0, z = 0;
         for (int nId : face.second)
         {
             x += mNodeCoords[nId].x;
@@ -240,7 +245,7 @@ void MeshLoader::GenerateCellCoordinates()
     {
         int id = cell.first;
 
-        double x = 0, y = 0, z = 0;
+        real x = 0, y = 0, z = 0;
         for (int fId : cell.second)
         {
             x += mFaceCoords[fId].x;

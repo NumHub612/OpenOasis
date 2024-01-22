@@ -8,28 +8,31 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Model/Utils/CommConstants.h"
 #include <string>
 #include <cmath>
 
 
 namespace OpenOasis::CommImpl::Numeric
 {
+using Utils::real;
+
 /// @brief Boundary condition struct.
 struct BoundaryCondition
 {
     std::string type;
 
-    double value = NAN;
-    double flux  = NAN;
+    real value = NAN;
+    real flux  = NAN;
 };
 
 /// @brief Abstract boundary class.
 class Boundary
 {
 public:
-    virtual void SetBoundaryValue(double value) = 0;
+    virtual void SetBoundaryValue(real value) = 0;
 
-    virtual void SetBoundaryFlux(double flux) = 0;
+    virtual void SetBoundaryFlux(real flux) = 0;
 
     virtual std::string GetType() const = 0;
 

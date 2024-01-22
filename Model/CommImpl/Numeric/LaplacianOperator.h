@@ -17,6 +17,7 @@
 namespace OpenOasis::CommImpl::Numeric
 {
 using Spatial::Grid;
+using Utils::real;
 
 /// @brief Laplacian operator for the divergence of the gradient of a scalar field.
 /// @details First, calculate the gradient of the scalar field. Then, calculate
@@ -38,8 +39,8 @@ public:
     //     const std::function<void(void)> &boundFluxFunc);
 
     LinearEqs Discretize(
-        const ScalarField<double> &phiCellField,
-        const ScalarField<double> &phiFaceField) override;
+        const ScalarField<real> &phiCellField,
+        const ScalarField<real> &phiFaceField) override;
 };
 
 

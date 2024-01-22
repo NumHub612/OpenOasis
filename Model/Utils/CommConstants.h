@@ -11,6 +11,8 @@
 #include <limits>
 #include <cmath>
 
+namespace OpenOasis::Utils
+{
 
 // Commonly used constants ------------------------------------------------------------
 
@@ -24,11 +26,6 @@ const double       _DBL_EPSILON   = (std::numeric_limits<double>::epsilon)();
 const float        _FLOAT_MAX     = (std::numeric_limits<float>::max)();
 const float        _FLOAT_MIN     = (std::numeric_limits<float>::min)();
 const float        _FLOAT_EPSILON = (std::numeric_limits<float>::epsilon)();
-
-#define IsNan(a) (isnan(a))
-#define IsEqual(a, b) (abs(a - b) <= _DBL_EPSILON)
-#define IsBigger(a, b) (a - b > _DBL_EPSILON)
-#define IsNoLessThan(a, b) (a - b >= _DBL_EPSILON)
 
 
 // Single and double precision switches -----------------------------------------------
@@ -45,6 +42,11 @@ const real     FP_MAX     = _DBL_MAX;
 const real     FP_MIN     = _DBL_MIN;
 #endif
 
-#define IsRealEqual(a, b) (abs(a - b) <= FP_EPSILON)
-#define IsRealBigger(a, b) (a - b > FP_EPSILON)
-#define IsRealNoLessThan(a, b) (a - b >= FP_EPSILON)
+#define FP(a) static_cast<real>(a)
+#define IsNan(a) (isnan(a))
+#define IsEql(a, b) (fabs(a - b) <= FP_EPSILON)
+#define IsSim(a, b, delta) (fabs(a - b) <= fabs(delta))
+#define IsBigger(a, b) (a - b > FP_EPSILON)
+#define IsNoLess(a, b) (a - b >= FP_EPSILON)
+
+}  // namespace OpenOasis::Utils

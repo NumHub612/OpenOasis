@@ -27,9 +27,9 @@ ElementSet::ElementSet(const shared_ptr<IElementSet> &source)
         for (int j = 0; j < source->GetNodeCount(i); j++)
         {
             Coordinate vertex{
-                source->GetNodeXCoordinate(i, j),
-                source->GetNodeYCoordinate(i, j),
-                source->GetNodeZCoordinate(i, j)};
+                FP(source->GetNodeXCoordinate(i, j)),
+                FP(source->GetNodeYCoordinate(i, j)),
+                FP(source->GetNodeZCoordinate(i, j))};
             element.AddVertex(vertex);
         }
 
@@ -91,11 +91,15 @@ ElementType ElementSet::GetElementType() const
 
 int ElementSet::GetElementIndex(const string &elementId)
 {
-    if (mElements.empty()) return -1;
+    if (mElements.empty())
+        return -1;
 
     for (std::size_t i = 0; i < mElements.size(); i++)
     {
-        if (mElements[i].GetId() == elementId) { return i; }
+        if (mElements[i].GetId() == elementId)
+        {
+            return i;
+        }
     }
 
     return -1;
@@ -103,7 +107,8 @@ int ElementSet::GetElementIndex(const string &elementId)
 
 string ElementSet::GetElementId(int index)
 {
-    if (mElementType != ElementType::IdBased) return "";
+    if (mElementType != ElementType::IdBased)
+        return "";
 
     CheckElementIndex(index);
 

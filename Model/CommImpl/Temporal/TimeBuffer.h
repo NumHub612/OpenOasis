@@ -38,6 +38,8 @@ namespace CommImpl
 {
 namespace Temporal
 {
+using Utils::real;
+
 /// @brief The TimeBuffer class provides temporal buffering functionality.
 class TimeBuffer
 {
@@ -48,7 +50,7 @@ protected:
 
     std::shared_ptr<TimeSet> mTimes = nullptr;
 
-    double mRelaxationFactor = 0;
+    real mRelaxationFactor = 0;
 
     int mLastBufferSizeMessageCounter = 0;
 
@@ -78,8 +80,7 @@ public:
     ///
     /// @param time Description of the time parameter.
     /// @param valueSet Description of the values parameter.
-    void
-    AddValues(const std::shared_ptr<ITime> &time, const std::vector<double> &values);
+    void AddValues(const std::shared_ptr<ITime> &time, const std::vector<real> &values);
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods for getting and setting the relaxation factor(must be in [0, 1]).
@@ -90,15 +91,15 @@ public:
 
     /// @brief Returns the values that corresponds to the requestedTime. The values
     /// may be found by interpolation, extrapolation and/or aggregation.
-    std::vector<double> GetValues(const std::shared_ptr<ITime> &requestedTime);
+    std::vector<real> GetValues(const std::shared_ptr<ITime> &requestedTime);
 
-    void SetRelaxationFactor(double value);
+    void SetRelaxationFactor(real value);
 
-    double GetRelaxationFactor() const;
+    real GetRelaxationFactor() const;
 
     std::shared_ptr<ITime> GetTimeAt(int timeStep) const;
 
-    std::vector<double> GetValuesAt(int timeStep) const;
+    std::vector<real> GetValuesAt(int timeStep) const;
 
     std::shared_ptr<TimeSet> GetTimeSet() const;
 
@@ -126,9 +127,9 @@ public:
 
     void Reset();
 
-    std::vector<std::vector<double>> GetAllValues();
+    std::vector<std::vector<real>> GetAllValues();
 
-    void SetOrAddValues(std::shared_ptr<ITime> time, std::vector<double> values);
+    void SetOrAddValues(std::shared_ptr<ITime> time, std::vector<real> values);
 
     /// @brief Number of time streps in the buffer.
     int GetTimesCount() const;
@@ -140,28 +141,28 @@ protected:
     /// @brief Adds values to the buffer, check the time is increasing,
     /// not overlapping(spans), and has durations matching the TimeSet.
     void AddValuesToBuffer(
-        const std::shared_ptr<ITime> &time, const std::vector<double> &values);
+        const std::shared_ptr<ITime> &time, const std::vector<real> &values);
 
     void Create();
 
     /// @brief A ValueSet corresponding to a TimeSpan is calculated using interpolation
     /// or extrapolation in corresponding lists of ValueSets and TimeStamps.
-    std::vector<double>
+    std::vector<real>
     MapFromTimeStampsToTimeSpan(const std::shared_ptr<ITime> &requestedTime);
 
     /// @brief A ValueSet for a time stamp is calculated using interpolation
     /// or extrapolation in corresponding lists of ValueSets and TimeSpans.
-    std::vector<double>
+    std::vector<real>
     MapFromTimeSpansToTimeStamp(const std::shared_ptr<ITime> &requestedTimeStamp);
 
     /// @brief A ValueSet corresponding to a TimeSpan is calculated using interpolation
     /// or extrapolation in corresponding lists of ValueSets and TimeSpans.
-    std::vector<double>
+    std::vector<real>
     MapFromTimeSpansToTimeSpan(const std::shared_ptr<ITime> &requestedTime);
 
     /// @brief A ValueSet corresponding to Time Stamp is calculated using interpolation
     /// or extrapolation in corresponding lists of ValueSets and TimeStamps.
-    std::vector<double>
+    std::vector<real>
     MapFromTimeStampsToTimeStamp(const std::shared_ptr<ITime> &requestedTimeStamp);
 };
 

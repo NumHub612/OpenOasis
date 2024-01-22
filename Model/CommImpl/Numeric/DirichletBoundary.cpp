@@ -9,14 +9,14 @@
 namespace OpenOasis::CommImpl::Numeric
 {
 using namespace std;
-
+using namespace Utils;
 
 DirichletBoundary::DirichletBoundary()
 {
     mData.type = "DIRICHLET";
 }
 
-DirichletBoundary::DirichletBoundary(double value)
+DirichletBoundary::DirichletBoundary(real value)
 {
     mData = {"DIRICHLET", value};
 }
@@ -26,12 +26,12 @@ DirichletBoundary::DirichletBoundary(const DirichletBoundary &other)
     mData = other.mData;
 }
 
-void DirichletBoundary::SetBoundaryValue(double value)
+void DirichletBoundary::SetBoundaryValue(real value)
 {
     mData.value = value;
 }
 
-void DirichletBoundary::SetBoundaryFlux(double flux)
+void DirichletBoundary::SetBoundaryFlux(real flux)
 {
     mData.flux = flux;
 }

@@ -10,6 +10,7 @@
 #pragma once
 #include "Model/CommImpl/AbstractAdaptedOutput.h"
 #include "Model/CommImpl/Arguments.h"
+#include "Model/Utils/CommConstants.h"
 
 
 namespace OpenOasis::CommImpl::DevSupports
@@ -22,10 +23,10 @@ namespace OpenOasis::CommImpl::DevSupports
 class SpaceAreaAdaptor : public AbstractAdaptedOutput
 {
 protected:
-    double                          mAreaExponent;
+    Utils::real                     mAreaExponent;
     std::shared_ptr<ArgumentDouble> mAreaArgument;
 
-    std::vector<double>        mFactors;
+    std::vector<Utils::real>   mFactors;
     std::shared_ptr<IQuantity> mQuantity;
 
 public:

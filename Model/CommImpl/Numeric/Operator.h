@@ -8,6 +8,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Model/Utils/CommConstants.h"
 #include "Model/Utils/Exception.h"
 #include "ScalarField.h"
 #include "VectorField.h"
@@ -21,8 +22,10 @@
 
 namespace OpenOasis::CommImpl::Numeric
 {
+using Utils::real;
+
 /// @brief Linear equations consisting of coefficient matrix and source term vector.
-using LinearEqs = std::tuple<Matrix<double>, std::vector<double>>;
+using LinearEqs = std::tuple<Matrix<real>, std::vector<real>>;
 
 /// @brief Abstract operator class.
 /// @details Each numerical operator can discretize specific equation terms, or say
@@ -32,11 +35,11 @@ using LinearEqs = std::tuple<Matrix<double>, std::vector<double>>;
 class Operator
 {
 protected:
-    std::optional<std::variant<double, Vector<double>, Tensor<double>>> mCoefficient;
+    std::optional<std::variant<real, Vector<real>, Tensor<real>>> mCoefficient;
 
-    std::optional<ScalarField<double>> mScalarCoeffs;
-    std::optional<VectorField<double>> mVectorCoeffs;
-    std::optional<TensorField<double>> mTensorCoeffs;
+    std::optional<ScalarField<real>> mScalarCoeffs;
+    std::optional<VectorField<real>> mVectorCoeffs;
+    std::optional<TensorField<real>> mTensorCoeffs;
 
     std::unordered_map<int, BoundaryCondition> mboundaries;
 
@@ -48,22 +51,22 @@ public:
     //
 
     virtual void
-    SetCoefficient(const std::variant<double, Vector<double>, Tensor<double>> &coeff)
+    SetCoefficient(const std::variant<real, Vector<real>, Tensor<real>> &coeff)
     {
         mCoefficient = coeff;
     }
 
-    virtual void SetCoefficient(const ScalarField<double> &coefficients)
+    virtual void SetCoefficient(const ScalarField<real> &coefficients)
     {
         mScalarCoeffs = coefficients;
     }
 
-    virtual void SetCoefficient(const VectorField<double> &coefficients)
+    virtual void SetCoefficient(const VectorField<real> &coefficients)
     {
         mVectorCoeffs = coefficients;
     }
 
-    virtual void SetCoefficient(const TensorField<double> &coefficients)
+    virtual void SetCoefficient(const TensorField<real> &coefficients)
     {
         mTensorCoeffs = coefficients;
     }
@@ -82,22 +85,19 @@ public:
     //
 
     virtual LinearEqs Discretize(
-        const ScalarField<double> &phiCellField,
-        const ScalarField<double> &phiFaceField)
+        const ScalarField<real> &phiCellField, const ScalarField<real> &phiFaceField)
     {
         throw Utils::NotImplementedException();
     }
 
     virtual LinearEqs Discretize(
-        const VectorField<double> &phiCellField,
-        const VectorField<double> &phiFaceField)
+        const VectorField<real> &phiCellField, const VectorField<real> &phiFaceField)
     {
         throw Utils::NotImplementedException();
     }
 
     virtual LinearEqs Discretize(
-        const TensorField<double> &phiCellField,
-        const TensorField<double> &phiFaceField)
+        const TensorField<real> &phiCellField, const TensorField<real> &phiFaceField)
     {
         throw Utils::NotImplementedException();
     }

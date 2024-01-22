@@ -13,6 +13,8 @@
 
 namespace OpenOasis::CommImpl::Numeric
 {
+using Utils::real;
+
 /// @brief Dirichlet boundary.
 class DirichletBoundary : public Boundary
 {
@@ -21,12 +23,12 @@ private:
 
 public:
     DirichletBoundary();
-    DirichletBoundary(double value);
+    DirichletBoundary(real value);
     DirichletBoundary(const DirichletBoundary &other);
 
-    void SetBoundaryValue(double value) override;
+    void SetBoundaryValue(real value) override;
 
-    void SetBoundaryFlux(double flux) override;
+    void SetBoundaryFlux(real flux) override;
 
     std::string GetType() const override;
 

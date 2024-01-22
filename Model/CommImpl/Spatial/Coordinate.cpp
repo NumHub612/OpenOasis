@@ -4,21 +4,22 @@
  *
  ** ***********************************************************************************/
 #include "Coordinate.h"
-#include "Model/Utils/CommConstants.h"
 
 
 namespace OpenOasis::CommImpl::Spatial
 {
+using namespace Utils;
 using namespace std;
 
-bool Coordinate::Equals(double coorX, double coorY, double coorZ) const
+bool Coordinate::Equals(real coorX, real coorY, real coorZ) const
 {
     return Equals({coorX, coorY, coorZ});
 }
 
 bool Coordinate::Equals(const Coordinate &coor) const
 {
-    if (!IsEqual(x, coor.x) || !IsEqual(y, coor.y) || !IsEqual(z, coor.z)) return false;
+    if (!IsEql(x, coor.x) || !IsEql(y, coor.y) || !IsEql(z, coor.z))
+        return false;
 
     return true;
 }
