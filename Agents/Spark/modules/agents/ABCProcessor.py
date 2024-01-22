@@ -1,6 +1,14 @@
 # -*- encoding: utf-8 -*-
 """
-description
+Abstract base class for implementing processors.
+
+A processor acts as a coupling mechanism between an `Agent` and its `Env`. This can be
+necessary if your agent has different requirements with respect to the form of 
+the observations, actions, and rewards of the environment. 
+
+By implementing a custom processor,
+it can effectively translate between the two without having to change the underlaying
+implementation of the agent or environment.
 
 __author__ = 'Qin zhaoyu'
 """
