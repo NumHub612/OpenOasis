@@ -48,7 +48,7 @@ shared_ptr<IQuantity> RiverModule::GetFlowQuantity()
 {
     auto dime = make_shared<Dimension>(PredefinedDimensions::VolumePerTime);
     auto unit = make_shared<Unit>(dime, "flow", "flow (m^3/s)", 1., 0.);
-    auto quan = make_unique<Quantity>(unit, "flow", "flow(m^3/s)", -9999.);
+    auto quan = make_unique<Quantity>(unit, "flow", "flow(m^3/s)", FP(-999.));
     return quan;
 }
 
@@ -56,7 +56,7 @@ shared_ptr<IQuantity> RiverModule::GetWaterLevelQuantity()
 {
     auto dime = make_shared<Dimension>(PredefinedDimensions::Length);
     auto unit = make_shared<Unit>(dime, "water level", "waterlevel(m)", 1., 0.);
-    auto quan = make_unique<Quantity>(unit, "water level", "water level(m)", -9999.);
+    auto quan = make_unique<Quantity>(unit, "water level", "water level(m)", FP(-999.));
     return quan;
 }
 
@@ -169,7 +169,7 @@ void RiverModule::PrepareInputs()
     for (auto &input : mInputs)
     {
         input->SetTimeSet(make_shared<TimeSet>(mTimes));
-        input->GetValues(nullptr)->SetOrAddValue({0, 0}, 0.0);
+        input->GetValues(nullptr)->SetOrAddValue({0, 0}, FP(0.0));
     }
 }
 
@@ -182,11 +182,11 @@ void RiverModule::PrepareOutputs()
 
         if (output->GetId().find("q") != string::npos)
         {
-            valueset->SetOrAddValue({0, 0}, 10.0);
+            valueset->SetOrAddValue({0, 0}, FP(10.0));
         }
         else
         {
-            valueset->SetOrAddValue({0, 0}, 0.0);
+            valueset->SetOrAddValue({0, 0}, FP(0.0));
         }
 
         for (auto &adaptor : output->GetAdaptedOutputs())
@@ -213,20 +213,20 @@ void RiverModule::UpdateInputs()
         double k = unit->GetConversionFactorToSI();
         double b = unit->GetOffSetToSI();
 
-        double value  = any_cast<double>(values->GetValue({0, 0}));
-        int    tCount = mTimes->GetCount();
+        real value  = any_cast<real>(values->GetValue({0, 0}));
+        int  tCount = mTimes->GetCount();
         if (input->GetId().find("q") != string::npos)
         {
-            double inflow = k * value + b;
-            double flow   = any_cast<double>(mFlowValues->GetValue({0, nodeIndex}));
-            double z      = TurnFlowToStage(flow + inflow);
+            real inflow = FP(k * value + b);
+            real flow   = any_cast<real>(mFlowValues->GetValue({0, nodeIndex}));
+            real z      = FP(TurnFlowToStage(flow + inflow));
             mFlowValues->SetOrAddValue({tCount - 1, nodeIndex}, flow + inflow);
             mWaterLevelValues->SetOrAddValue({tCount - 1, nodeIndex}, z);
         }
         else
         {
-            double stage = k * value + b;
-            double flow  = TurnStageToFlow(stage);
+            real stage = FP(k * value + b);
+            real flow  = FP(TurnStageToFlow(stage));
             mWaterLevelValues->SetOrAddValue({tCount - 1, nodeIndex}, stage);
             mFlowValues->SetOrAddValue({tCount - 1, nodeIndex}, flow);
         }
@@ -240,9 +240,11 @@ void RiverModule::PerformTimestep(const vector<shared_ptr<IOutput>> &requiredOut
 
     for (int i = 0; i < mNodeNum; i++)
     {
-        double flow = any_cast<double>(mFlowValues->GetValue({mTimeCount - 1, i}));
-        mFlowValues->SetOrAddValue({mTimeCount, i}, flow / 2.);
-        mWaterLevelValues->SetOrAddValue({mTimeCount, i}, TurnFlowToStage(flow / 2.));
+        real flow = any_cast<real>(mFlowValues->GetValue({mTimeCount - 1, i}));
+        mFlowValues->SetOrAddValue({mTimeCount, i}, FP(flow / 2.));
+
+        real z = FP(TurnFlowToStage(flow / 2.));
+        mWaterLevelValues->SetOrAddValue({mTimeCount, i}, z);
 
         // for (int j = i + 1; j < mNodeNum; j++)
         // {
@@ -269,14 +271,14 @@ void RiverModule::UpdateOutputs(const vector<shared_ptr<IOutput>> &requiredOutpu
         if (output->GetId().find("q") != string::npos)
         {
             const auto &values = mFlowValues->GetElementValuesForTime(mTimeCount - 1);
-            double      flow   = any_cast<double>(values.at(nodeIndex));
+            real        flow   = any_cast<real>(values.at(nodeIndex));
             valueset->SetOrAddValue({tCount, 0}, flow);
         }
         else
         {
             const auto &values =
                 mWaterLevelValues->GetElementValuesForTime(mTimeCount - 1);
-            double stage = any_cast<double>(values.at(nodeIndex));
+            real stage = any_cast<real>(values.at(nodeIndex));
 
             valueset->SetOrAddValue({tCount, 0}, stage);
         }
