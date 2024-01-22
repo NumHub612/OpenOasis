@@ -19,7 +19,7 @@ LinearEqs Laplacian::Discretize(
     int nCells = mGrid->GetNumCells();
     int nFaces = mGrid->GetNumFaces();
 
-    OO_ASSERT(nCells == phiCellField.Size() && nFaces == phiFaceField.Size());
+    OO_ASSERT(nCells == phiCellField.Size());
 
     Matrix<real> coeffs(nCells);
     vector<real> rhs(nCells);
