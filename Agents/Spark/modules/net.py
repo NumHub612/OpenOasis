@@ -7,7 +7,7 @@ setting parameters, and obtaining gradients.
 __author__ = 'Qin zhaoyu'
 """
 import copy
-from .utils.StructuredParam import StructuredParam
+from ..utils.StructuredParam import StructuredParam
 
 
 class Net:

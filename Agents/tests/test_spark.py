@@ -12,8 +12,8 @@ import time
 import unittest
 import numpy as np
 
-from Spark import Net, Model
-from Spark.modules import Dense, ReLU, Adam, SoftmaxCrossEntropy
+from Spark.pipeline import Model
+from Spark.modules import Net, Dense, ReLU, Adam, SoftmaxCrossEntropy
 from Spark.utils import random_seed, MNIST, BatchIterator, accuracy
 
 
