@@ -10,7 +10,6 @@ jobs:
     windows_sp_test:
       name: "Windows Single Precision OpenOasis Actions"
       runs-on: windows-latest
-  
       steps:
         - uses: actions/checkout@v2
         - name: CMake Build
@@ -41,11 +40,10 @@ jobs:
           shell: bash
         - name: CMake Build
           run: |
-            export pybind11_DIR=/usr/local/share/cmake/pybind11/
             cd ${{ github.workspace }}
             mkdir build
             cd build
-            cmake .. -DENABLE_TESTS=on -DENABLE_SP=on -DCMAKE_BUILD_TYPE:STRING=Release
+            cmake .. -DENABLE_TESTS=on -DENABLE_SP=on -DCMAKE_BUILD_TYPE=Release
             cmake --build .
           shell: bash 
         - name: Ctest
@@ -69,11 +67,10 @@ jobs:
           shell: bash
         - name: CMake Build
           run: |
-            export pybind11_DIR=/usr/local/share/cmake/pybind11/
             cd ${{ github.workspace }}
             mkdir build
             cd build
-            CC=clang-omp CXX=clang-omp++  cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on -DCMAKE_BUILD_TYPE:STRING=Release
+            CC=clang-omp CXX=clang-omp++  cmake .. -DENABLE_TESTS=on -DENABLE_SP=on -DCMAKE_BUILD_TYPE=Release
             cmake --build .
           shell: bash 
         - name: Ctest
