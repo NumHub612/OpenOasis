@@ -1,18 +1,23 @@
 # -*- encoding: utf-8 -*-
-import os, sys
+import os
+import sys
+from pathlib import Path
 
-sys.path.append(os.path.abspath(r"./Agents"))
+current_folder = Path(__file__).absolute().parent
+os.chdir(str(current_folder))
+father_folder = str(current_folder.parent)
+sys.path.append(father_folder)
 
 import time
 import unittest
 import numpy as np
 
-from Hippo import Net, Model
-from Hippo.modules import Dense, ReLU, Adam, SoftmaxCrossEntropy
-from Hippo.utils import random_seed, MNIST, BatchIterator, accuracy
+from Spark.pipeline import Model
+from Spark.modules import Net, Dense, ReLU, Adam, SoftmaxCrossEntropy
+from Spark.utils import random_seed, MNIST, BatchIterator, accuracy
 
 
-class TestHippo(unittest.TestCase):
+class TestSpark(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("\n---------- Test start \n")
@@ -94,15 +99,13 @@ class TestHippo(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    with open(
-        "./Agents/tests/reports/hippo-report.txt", "w", encoding="utf8"
-    ) as reporter:
+    with open("./reports/spark-report.txt", "w", encoding="utf8") as reporter:
         # 方式一：一次加载整个测试类
-        # suit = unittest.makeSuite(TestHippo)
+        # suit = unittest.makeSuite(TestSpark)
 
         # 方式二：逐次加载测试用例
         suit = unittest.TestSuite()
-        suit.addTest(TestHippo("testWorkFlow"))
+        suit.addTest(TestSpark("testWorkFlow"))
 
         # 执行测试
         runner = unittest.TextTestRunner(stream=reporter, verbosity=2)

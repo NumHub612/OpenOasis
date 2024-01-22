@@ -9,10 +9,15 @@ from abc import abstractmethod, ABCMeta
 
 
 class Optimizer(metaclass=ABCMeta):
-    """Base class for optimizers."""
+    """Base class for optimizers.
+
+    :param lr: The learning rate.
+    :param weight_decay: The weight decay.
+    """
 
     def __init__(self, lr, weight_decay):
         super().__init__()
+
         # learning rate and weight decay
         self.lr = lr
         self.weight_decay = weight_decay
@@ -27,19 +32,21 @@ class Optimizer(metaclass=ABCMeta):
         """
         # compute the gradient step
         grads = self._compute_step(grads)
+
         # apply weight_decay if specified
         if self.weight_decay:
             grads -= self.lr * self.weight_decay * params
+
         # take a step
         params += grads
 
     @abstractmethod
     def _compute_step(self, grads):
         """Calculate the step size of each parameter change when
-        returning the actual optimization,
+        returning  the actual optimization,
         based on the current gradient.
 
-        :param grads: The current gradient
+        :param grads: The current gradient.
         :return: The step size of each parameter change.
         """
         raise NotImplementedError

@@ -1,6 +1,19 @@
 # -*- encoding: utf-8 -*-
 """
-description
+The abstract environment class that is used by all agents. 
+
+Each `env` is a simulation of the agent's interaction with the outside world. It defines
+the state space, action space, reward function, and transition probability. 
+It provides feedback on every action of the agent.
+
+To implement your own environment, you need to define the following methods:
+
+- `step`
+- `reset`
+- `render`
+- `close`
+
+Refer to the [Gym documentation](https://gym.openai.com/docs/#environments).
 
 __author__ = 'Qin zhaoyu'
 """

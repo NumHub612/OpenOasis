@@ -25,3 +25,7 @@ def log_softmax(x, t=1.0, axis=-1):
 
 def sigmoid(x):
     return 1.0 / (1.0 + np.exp(-x))
+
+
+def empty(shape, dtype=np.float32):
+    return np.empty(shape, dtype=dtype)

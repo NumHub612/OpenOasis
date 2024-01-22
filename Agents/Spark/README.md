@@ -2,11 +2,11 @@
 
 ---------------------------------------------------------------------------------
 
-# 海马体深度学习框架
+# 绿洲星火深度学习框架
 
-*Hippo(short for hippocampus) model*  
+*Spark model*  
 
-基于 [PyNet](https://github.com/Kaslanarian/PyNet) 、[MatrixSlow](https://github.com/zc911/MatrixSlow)、[tinynn](https://github.com/borgwang/tinynn) 等项目实现的一套极简的深度强化学习框架，主要用于理解和测试深度学习算法。  
+基于 [tinynn](https://github.com/borgwang/tinynn) 等项目实现的一套极简的深度强化学习框架，主要用于理解和测试深度学习算法。  
 
 **组件抽象 - 深度学习部分**
 
