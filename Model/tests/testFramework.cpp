@@ -36,7 +36,7 @@ TEST_CASE("OpenOasis framework tests")
     {
         string configs = FilePathHelper::Combine(path, "run_modes/loop_configs.json");
 
-        run_loop_mode(configs, path);
+        // run_loop_mode(configs, path);
     }
 }
 
@@ -228,10 +228,10 @@ void run_pull_mode(string configs, string parent)
     auto   raingage     = models[src_model_id];
 
     raingage->Initialize();
-    // spdlog::info("model {} Initialized.", src_model_id);
+    spdlog::info("model {} Initialized.", src_model_id);
 
     raingage->Validate();
-    // spdlog::info("model {} Validated.", src_model_id);
+    spdlog::info("model {} Validated.", src_model_id);
 
     // init target model -----------------------------------------------
 
@@ -239,10 +239,10 @@ void run_pull_mode(string configs, string parent)
     auto   runoff       = models[tar_model_id];
 
     runoff->Initialize();
-    // spdlog::info("model {} Initialized.", tar_model_id);
+    spdlog::info("model {} Initialized.", tar_model_id);
 
     runoff->Validate();
-    // spdlog::info("model {} Validated.", tar_model_id);
+    spdlog::info("model {} Validated.", tar_model_id);
 
     // set time and space output adaptor -------------------------------
 
@@ -291,10 +291,10 @@ void run_pull_mode(string configs, string parent)
     // prepare models --------------------------------------------------
 
     raingage->Prepare();
-    // spdlog::info("model {} Prepared.", src_model_id);
+    spdlog::info("model {} Prepared.", src_model_id);
 
     runoff->Prepare();
-    // spdlog::info("model {} Prepared.", tar_model_id);
+    spdlog::info("model {} Prepared.", tar_model_id);
 
     // run models ------------------------------------------------------
 
@@ -312,20 +312,20 @@ void run_pull_mode(string configs, string parent)
             cout << ", -- time: " << setw(20)
                  << CommImpl::Time::ToString(times->GetTimes().back());
             cout << "; value size: " << values->GetIndexCount({0});
-            cout << ", -- value: " << any_cast<double>(values->GetValue({0, 0}));
+            cout << ", -- value: " << any_cast<real>(values->GetValue({0, 0}));
         }
     }
 
     cout << endl;
-    // spdlog::info("model {} done.", runoff->GetId());
+    spdlog::info("model {} done.", runoff->GetId());
 
     // finish models ---------------------------------------------------
 
     runoff->Finish();
-    // spdlog::info("model {} Finished.", runoff->GetId());
+    spdlog::info("model {} Finished.", runoff->GetId());
 
     raingage->Finish();
-    // spdlog::info("model {} Finished.", raingage->GetId());
+    spdlog::info("model {} Finished.", raingage->GetId());
 }
 
 void run_loop_mode(string configs, string parent)

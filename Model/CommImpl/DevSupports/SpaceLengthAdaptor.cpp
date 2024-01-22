@@ -44,9 +44,9 @@ SpaceLengthAdaptor::SpaceLengthAdaptor(
             "Adaptee must have a SpatialDefinition having polyline as elements");
     }
 
-    if (adaptee->GetValueDefinition()->GetValueType() != typeid(double))
+    if (adaptee->GetValueDefinition()->GetValueType() != typeid(real))
     {
-        throw invalid_argument("Adaptee valuetype must be typeof(double)");
+        throw invalid_argument("Adaptee valuetype must be typeof(float point)");
     }
 
     if (!dynamic_pointer_cast<IQuantity>(adaptee->GetValueDefinition()))
@@ -127,16 +127,25 @@ shared_ptr<ISpatialDefinition> SpaceLengthAdaptor::GetSpatialDefinition() const
 
 void SpaceLengthAdaptor::CalculateFactors(const shared_ptr<IElementSet> &elementSet)
 {
-    mFactors        = vector<double>(elementSet->GetElementCount());
-    mLengthExponent = any_cast<double>(mLengthArgument->GetValue());
+    mFactors        = vector<real>(elementSet->GetElementCount());
+    mLengthExponent = any_cast<real>(mLengthArgument->GetValue());
 
     for (std::size_t i = 0; i < mFactors.size(); i++)
     {
         XYPolyline element = ElementMapper::CreateXYPolyline(elementSet, i);
-        double     length  = element.GetLength();
-        if (mLengthExponent == 1) { mFactors[i] = length; }
-        else if (mLengthExponent == -1) { mFactors[i] = 1.0 / length; }
-        else { mFactors[i] = pow(length, mLengthExponent); }
+        real       length  = element.GetLength();
+        if (mLengthExponent == 1)
+        {
+            mFactors[i] = length;
+        }
+        else if (mLengthExponent == -1)
+        {
+            mFactors[i] = 1.0 / length;
+        }
+        else
+        {
+            mFactors[i] = pow(length, mLengthExponent);
+        }
     }
 }
 

@@ -68,7 +68,8 @@ shared_ptr<IQuantity> RainfallModule::GetQuantity()
     auto unit = make_shared<Unit>(
         dim, "Rainfall intensity", "Rainfall intensity (mm/s)", 1.e-3, 0.0);
 
-    auto quant = make_unique<Quantity>(unit, "Rainfall data", "Rainfall data", -9999.);
+    auto quant =
+        make_unique<Quantity>(unit, "Rainfall data", "Rainfall data", FP(-9999.));
     return quant;
 }
 
@@ -199,7 +200,7 @@ void RainfallModule::InitializeTime()
         preTime = curTime;
 
         double rain = stod(arr[2].c_str(), nullptr);
-        mValues->SetOrAddValue({timeCount++, 0}, rain);
+        mValues->SetOrAddValue({timeCount++, 0}, FP(rain));
     }
 
     mCurrentTime = mTimes->GetTimes().at(0);

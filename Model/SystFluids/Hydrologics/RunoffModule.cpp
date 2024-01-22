@@ -113,7 +113,7 @@ void RunoffModule::InitializeInputs()
 
     auto dime = make_shared<Dimension>(PredefinedDimensions::LengthPerTime);
     auto unit = make_shared<Unit>(dime, "Rainfall intensity", "(mm/s)", 1.e-3, 0.0);
-    auto quan = make_shared<Quantity>(unit, "Rainfall", "", -9999.);
+    auto quan = make_shared<Quantity>(unit, "Rainfall", "", FP(-9999.));
     input->SetValues(make_shared<ValueSet2D>(quan));
 
     mInputs.push_back(input);
@@ -141,7 +141,7 @@ void RunoffModule::PrepareInputs()
 {
     for (auto &input : mInputs)
     {
-        input->SetTimeSet(mTimes);
+        input->SetTimeSet(make_shared<TimeSet>(mTimes));
         input->GetValues(nullptr)->SetOrAddValue({0, 0}, 0.0);
     }
 }
@@ -168,7 +168,7 @@ void RunoffModule::ApplyInputData(const std::shared_ptr<IValueSet> &values)
     double k = unit->GetConversionFactorToSI();
     double b = unit->GetOffSetToSI();
 
-    double rawRainfall = any_cast<double>(values->GetValue({0, 0}));
+    double rawRainfall = any_cast<real>(values->GetValue({0, 0}));
     double rainfall    = k * rawRainfall + b;
     double inflow      = rainfall * 1000.0;
 
@@ -184,7 +184,7 @@ void RunoffModule::PerformTimestep(const vector<shared_ptr<IOutput>> &requiredOu
     mCurrentTime = make_shared<Time>(mCurrent);
 
     mTimes->AddTime(mCurrentTime);
-    mValues->SetOrAddValue({tCount, 0}, runoff);
+    mValues->SetOrAddValue({tCount, 0}, FP(runoff));
 
     mInflow = 0.0;
 }

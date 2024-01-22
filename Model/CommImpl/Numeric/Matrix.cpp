@@ -62,42 +62,46 @@ bool DoubleSparseMatrix::IsCellEmpty(int row, int column)
     return mValues.find(index) == mValues.end();
 }
 
-double DoubleSparseMatrix::operator()(int row, int column)
+Utils::real DoubleSparseMatrix::operator()(int row, int column)
 {
     auto index = Index(row, column);
 
     const auto &iterator = mValues.find(index);
-    if (iterator == mValues.end()) throw runtime_error("Matrxi index out of range");
+    if (iterator == mValues.end())
+        throw runtime_error("Matrxi index out of range");
 
     return iterator->second;
 }
 
-double DoubleSparseMatrix::At(int row, int column)
+Utils::real DoubleSparseMatrix::At(int row, int column)
 {
     auto index = Index(row, column);
 
     const auto &iterator = mValues.find(index);
-    if (iterator == mValues.end()) throw runtime_error("Matrxi index out of range");
+    if (iterator == mValues.end())
+        throw runtime_error("Matrxi index out of range");
 
     return iterator->second;
 }
 
-void DoubleSparseMatrix::SetValue(int row, int column, double value)
+void DoubleSparseMatrix::SetValue(int row, int column, Utils::real value)
 {
     auto index     = Index(row, column);
     mValues[index] = value;
 }
 
-vector<double> DoubleSparseMatrix::Product(const vector<double> &vector2)
+vector<Utils::real> DoubleSparseMatrix::Product(const vector<Utils::real> &vector2)
 {
-    auto outputValues = vector<double>(mRowCount);
+    auto outputValues = vector<Utils::real>(mRowCount);
     Product(outputValues, vector2);
     return outputValues;
 }
 
-void DoubleSparseMatrix::Product(vector<double> &res, const vector<double> &vector2)
+void DoubleSparseMatrix::Product(
+    vector<Utils::real> &res, const vector<Utils::real> &vector2)
 {
-    if (vector2.empty()) return;
+    if (vector2.empty())
+        return;
 
     for (auto &entry : mValues)
     {

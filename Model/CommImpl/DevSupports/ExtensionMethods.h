@@ -21,6 +21,7 @@
 #include "Model/Inc/ILinkableComponent.h"
 #include "Model/Utils/DateTime.h"
 #include "Model/Utils/StringHelper.h"
+#include "Model/Utils/CommConstants.h"
 #include <unordered_map>
 
 
@@ -172,7 +173,10 @@ public:
         const auto &elmtValues = values->GetElementValuesForTime(timeIndex);
 
         // Check if it's already an array.
-        if (elmtValues.empty()) { return {}; }
+        if (elmtValues.empty())
+        {
+            return {};
+        }
 
         // Do a manual copy.
         std::vector<T> tArray(elmtValues.size());
@@ -195,7 +199,7 @@ public:
     /// @return A new value set where values have been multiplied.
     static std::shared_ptr<IValueSet> MultiplyElementValues(
         const std::shared_ptr<IValueSet> &sourceValueset,
-        const std::vector<double>        &factors);
+        const std::vector<real>          &factors);
 
 
     ///////////////////////////////////////////////////////////////////////////////////

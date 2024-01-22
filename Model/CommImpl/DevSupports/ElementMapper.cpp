@@ -30,7 +30,7 @@ ElementMapper::ElementMapper()
     mIsInitialised       = false;
 }
 
-shared_ptr<IMatrix> ElementMapper::GetMappingMatrix() const
+shared_ptr<DoubleSparseMatrix> ElementMapper::GetMappingMatrix() const
 {
     return mMappingMatrix;
 }
@@ -97,12 +97,11 @@ void ElementMapper::MapValues(
 {
     for (int i = 0; i < ExtensionMethods::TimesCount(inputValues); i++)
     {
-        int            elemCount = outputValues->GetIndexCount({i});
-        vector<double> resultDbl(elemCount);
+        int          elemCount = outputValues->GetIndexCount({i});
+        vector<real> resultDbl(elemCount);
 
         mMappingMatrix->Product(
-            resultDbl,
-            ExtensionMethods::GetElementValuesForTime<double>(inputValues, i));
+            resultDbl, ExtensionMethods::GetElementValuesForTime<real>(inputValues, i));
 
         vector<any> result(resultDbl.begin(), resultDbl.end());
         outputValues->SetElementValuesForTime(i, result);

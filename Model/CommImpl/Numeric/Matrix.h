@@ -12,6 +12,7 @@
 #include "Vector.h"
 #include <vector>
 #include <unordered_map>
+#include "Model/Utils/CommConstants.h"
 
 
 namespace OpenOasis::CommImpl::Numeric
@@ -362,33 +363,8 @@ public:
 // Legacy code below.
 //
 
-
-/// @brief Base matrix interface.
-class IMatrix
-{
-public:
-    virtual int  GetRowCount() const       = 0;
-    virtual void SetRowCount(int value)    = 0;
-    virtual int  GetColumnCount() const    = 0;
-    virtual void SetColumnCount(int value) = 0;
-
-    /// @brief Does a matrix-vector product.
-    ///
-    /// @param vector Vector b in res = A*b.
-    /// @return Vector res in res = A*b.
-    virtual std::vector<double> Product(const std::vector<double> &vector2) = 0;
-
-    /// @brief Does a matrix-vector product.
-    ///
-    /// @param[out] res Vector res in res = A*b.
-    /// @param vector Vector b in res = A*b.
-    virtual void
-    Product(std::vector<double> &res, const std::vector<double> &vector2) = 0;
-};
-
-
 /// @brief Sparse matrix having double elements.
-class DoubleSparseMatrix : public IMatrix
+class DoubleSparseMatrix
 {
 private:
     int mRowCount    = 0;
@@ -415,23 +391,20 @@ public:
         size_t operator()(const Index &key) const;
     };
 
-    std::unordered_map<Index, double, HashFunc, EqualFunc> mValues;
+    std::unordered_map<Index, Utils::real, HashFunc, EqualFunc> mValues;
 
 public:
     DoubleSparseMatrix(int rowCount, int columnCount);
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Implement methods inherited from `IMatrix`.
-    //
+    int  GetRowCount() const;
+    void SetRowCount(int value);
+    int  GetColumnCount() const;
+    void SetColumnCount(int value);
 
-    int  GetRowCount() const override;
-    void SetRowCount(int value) override;
-    int  GetColumnCount() const override;
-    void SetColumnCount(int value) override;
+    std::vector<Utils::real> Product(const std::vector<Utils::real> &vector2);
 
-    std::vector<double> Product(const std::vector<double> &vector2) override;
-
-    void Product(std::vector<double> &res, const std::vector<double> &vector2) override;
+    void
+    Product(std::vector<Utils::real> &res, const std::vector<Utils::real> &vector2);
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Local methods.
@@ -439,11 +412,11 @@ public:
 
     bool IsCellEmpty(int row, int column);
 
-    double operator()(int row, int column);
+    Utils::real operator()(int row, int column);
 
-    double At(int row, int column);
+    Utils::real At(int row, int column);
 
-    void SetValue(int row, int column, double value);
+    void SetValue(int row, int column, Utils::real value);
 };
 
 }  // namespace OpenOasis::CommImpl::Numeric
