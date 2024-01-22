@@ -21,9 +21,10 @@ class Model:
         return self.net.forward(inputs)
 
     def backward(self, predictions, targets):
-        """Drive losses component to calculate the losses and gradients,
+        """Drive losses component to calculate the losses and gradient,
         and then drives the net component
-        to back propagate the gradients."""
+        to back propagate the gradients.
+        """
         loss = self.loss.loss(predictions, targets)
         grad_from_loss = self.loss.grad(predictions, targets)
         struct_grad = self.net.backward(grad_from_loss)
@@ -31,7 +32,8 @@ class Model:
 
     def update(self, grads):
         """Drive optimizer component to update the net parameters
-        with the gradients."""
+        with the gradients.
+        """
         params = self.net.params
         self.optimizer.step(grads, params)
 
