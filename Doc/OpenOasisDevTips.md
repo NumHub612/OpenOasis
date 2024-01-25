@@ -168,8 +168,6 @@
 通过 github projects 进行开发计划和进度管理，控制版本发布 。
 
 
-
-
 [<i class="fa fa-home"></i>](#绿洲开发小贴士)
 
 ---------------------------------------------------------------------------------
@@ -276,21 +274,28 @@
 OpenOasis Project Structure:
 
 +-- /
-|   +-- Agents/               : 深度学习与强化学习解决方案
+|   +-- Agents/               : 深度学习与强化学习解决方案库
+|   |   +-- Spark/            : 星火原生人工智能工具
+|   |   +-- tests/            : 测试集
 |   +-- Dists/                : 项目编译发布包
+|   |   +-- exports/          : 项目各平台下的库、包导出成果
+|   |   +-- inc/              : 项目接口标准
 |   +-- Doc/                  : 项目文档
-|   +-- Model/                : 数值算法模型集
-|   |   +-- CommImpl/         : 接口的通用实现(算法开发sdk和集成开发sdk)
-|   |   +-- Inc/              : 接口约定
+|   +-- Model/                : 组件集以及数值算法集
+|   |   +-- CommImpl/         : 接口的通用实现
+|   |   +-- Inc/              : 接口标准
 |   |   +-- SystFluids/       : 流体流动模型集
 |   |   +-- SystHeats/        : 热量流动模型集
 |   |   +-- Utils/            : 通用功能模块
 |   |   +-- tests/            : 测试集
 |   |   +-- ThirdPart/        : 第三方工具箱
-|   |   +-- wrappers/         : c++ 和 python 接口封装
+|   |   +-- wrappers/         : c++/python接口封装
 |   |   +-- Launcher.cpp      : 模块动态加载器
 |   +-- Rsrc/                 : 相关资源
-|   +-- Uengrs/               : 数据处理、分析和可视化工具包
+|   |   +-- Benchmarks/       : 项目案例数据集
+|   |   +-- Logo/             : 项目标识等
+|   |   +-- TheoryBriefs/     : 相关理论/技术/概念简介
+|   +-- Uengrs/               : 数据处理分析和可视化工具包
 ```
 
 [<i class="fa fa-home"></i>](#绿洲开发小贴士)
