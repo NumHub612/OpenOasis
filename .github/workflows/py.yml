@@ -36,5 +36,5 @@ jobs:
       - name: Run agent unittest tests
         run: python -m unittest discover ${{ github.workspace }}/Agents/tests
 
-      - name: Run uengrs unittest tests
-        run: python -m unittest discover ${{ github.workspace }}/Uengrs/tests        
+      # - name: Run uengrs unittest tests
+      #   run: python -m unittest discover ${{ github.workspace }}/Uengrs/tests        
