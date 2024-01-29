@@ -34,38 +34,10 @@
 #define EXPORT EXTERNC
 #endif
 
-// ------------------------------------------------------------------------------
-// Exports of fluid components.
-// ------------------------------------------------------------------------------
 
-/// @brief Get `RainfallModule` object which no external deletion is required.
-/// @param id Rainfall model id.
-/// @param coorFile File contains coordinates of the rainfall model.
-/// @param dataFile File contains rainfall data of the component.
-/// @return `RainfallModule` object raw pointer.
-EXPORT void *
-GetRainfallModule(const char *id, const char *coorFile, const char *dataFile);
-
-
-/// @brief Get `RunoffModule` object which no external deletion is required.
-/// @param id Runoff model id.
-/// @param taskFile File contains task settings for the model.
-/// @return `RunoffModule` object raw pointer.
-EXPORT void *GetRunoffModule(const char *id, const char *taskFile);
-
-
-/// @brief Get `RiverModule` object which no external deletion is required.
-/// @param id River model id.
-/// @return `RiverModule` object raw pointer.
-EXPORT void *GetRiverModule(const char *id);
-
-
-// ------------------------------------------------------------------------------
-// Exports of heat components.
-// ------------------------------------------------------------------------------
-
-/// @brief Get `HeatConduction` object which no external deletion is required.
-/// @param id model id.
-/// @param taskFile File contains task configurations.
-/// @return `HeatConductionModule` object raw pointer.
-EXPORT void *GetHeatConductionModule(const char *id, const char *taskFile);
+/// @brief Get OpenOasis component.
+/// @param id Id.
+/// @param task Task yaml/yml file contains configurations of the component.
+/// @return Component.
+/// @note No deletion is required.
+EXPORT void *GetComponent(const char *id, const char *task);
