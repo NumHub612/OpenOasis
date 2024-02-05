@@ -282,7 +282,7 @@ OpenOasis Project Structure:
 |   |   +-- inc/              : 项目接口标准
 |   +-- Doc/                  : 项目文档
 |   +-- Model/                : 组件集以及数值算法集
-|   |   +-- CommImpl/         : 接口的通用实现
+|   |   +-- CommImp/          : 接口的通用实现
 |   |   +-- Inc/              : 接口标准
 |   |   +-- SystFluids/       : 流体流动模型集
 |   |   +-- SystHeats/        : 热量流动模型集

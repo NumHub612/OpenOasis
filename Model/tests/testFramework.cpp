@@ -3,9 +3,9 @@
 #include "Model/Utils/FilePathHelper.h"
 #include "Model/Utils/CsvHandler.h"
 #include "Model/Utils/JsonHandler.h"
-#include "Model/CommImpl/Time.h"
+#include "Model/CommImp/Time.h"
 #include "ThirdPart/spdlog/spdlog.h"
-#include "Model/CommImpl/DevSupports/IterationController.h"
+#include "Model/CommImp/DevSupports/IterationController.h"
 #include "Model/SystFluids/Hydrologics/RainfallModule.h"
 #include "Model/SystFluids/Hydrologics/RunoffModule.h"
 #include "Model/SystFluids/Hydrologics/RiverModule.h"
@@ -15,7 +15,7 @@ using namespace std;
 using namespace OpenOasis;
 using namespace OpenOasis::SystFluids::Hydrologics;
 using namespace OpenOasis::Utils;
-using namespace OpenOasis::CommImpl::DevSupports;
+using namespace OpenOasis::CommImp::DevSupports;
 
 
 void run_pull_mode(string configs, string parent);
@@ -310,7 +310,7 @@ void run_pull_mode(string configs, string parent)
 
         //     cout << "\ntime size: " << times->GetTimes().size();
         //     cout << ", -- time: " << setw(20)
-        //          << CommImpl::Time::ToString(times->GetTimes().back());
+        //          << CommImp::Time::ToString(times->GetTimes().back());
         //     cout << "; value size: " << values->GetIndexCount({0});
         //     cout << ", -- value: " << any_cast<real>(values->GetValue({0, 0}));
         // }
@@ -434,7 +434,7 @@ void run_loop_mode(string configs, string parent)
         //     int vCount = values->GetIndexCount({tCount - 1});
         //     cout << "\nid: " << output->GetId() << ", time size: " << tCount;
         //     cout << ", -- time: " << setw(20)
-        //          << CommImpl::Time::ToString(times->GetTimes().back());
+        //          << CommImp::Time::ToString(times->GetTimes().back());
         //     cout << "; value size: " << vCount;
         //     cout << ", -- value: " << any_cast<real>(values->GetValue({tCount - 1,
         //     0}));

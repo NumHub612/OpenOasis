@@ -8,8 +8,8 @@
  *
  ** ***********************************************************************************/
 #include "Model/Utils/LibraryLoader.h"
-#include "Model/CommImpl/DevSupports/OptimizationController.h"
-#include "Model/CommImpl/DevSupports/IterationController.h"
+#include "Model/CommImp/DevSupports/OptimizationController.h"
+#include "Model/CommImp/DevSupports/IterationController.h"
 #include "ThirdPart/spdlog/spdlog.h"
 #include "ThirdPart/Args/args.hxx"
 #include <iostream>
@@ -18,7 +18,7 @@
 
 
 using namespace OpenOasis;
-using namespace CommImpl;
+using namespace CommImp;
 using namespace DevSupports;
 using namespace Utils;
 using namespace std;
