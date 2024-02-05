@@ -8,3 +8,14 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Model/Utils/JsonHandler.h"
+
+namespace OpenOasis::CommImpl::IO
+{
+using Utils::JsonLoader;
+
+/// @brief Loading components coupling configurations json file.
+class LinkLoader
+{};
+
+}  // namespace OpenOasis::CommImpl::IO
