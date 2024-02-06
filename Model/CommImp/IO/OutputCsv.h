@@ -1,22 +1,17 @@
 /** ***********************************************************************************
  *    Copyright (C) 2024, The OpenOasis Contributors. Join us in the Oasis!
  *
- *    @File      :  TaskLoader.h
+ *    @File      :  OutputCsv.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  To provide a unified interface for loading model tasks.
+ *    @Desc      :  To provide unified output interface for the csv format.
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Model/Utils/YamlHandler.h"
-
+#include "Model/Utils/CsvHandler.h"
 
 namespace OpenOasis::CommImp::IO
 {
-using Utils::YamlLoader;
-
-/// @brief Loading components task configurations yaml file.
-class TaskLoader
-{};
+using Utils::CsvWriter;
 
 }  // namespace OpenOasis::CommImp::IO
