@@ -294,8 +294,8 @@ OpenOasis Project Structure:
 |   +-- Rsrc/                 : 相关资源
 |   |   +-- Benchmarks/       : 项目案例数据集
 |   |   +-- Logo/             : 项目标识等
-|   |   +-- TheoryBriefs/     : 相关理论/技术/概念简介
-|   +-- Uengrs/               : 数据处理分析和可视化工具包
+|   |   +-- TheoryBriefs/     : 理论/技术/概念简介
+|   +-- VizNex/               : 数据提取分析和可视化工具包
 ```
 
 [<i class="fa fa-home"></i>](#绿洲开发小贴士)
