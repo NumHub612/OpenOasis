@@ -1,9 +1,9 @@
 /** ***********************************************************************************
- *    @File      :  logging.cpp
+ *    @File      :  Logger.cpp
  *    @Brief     :  Provide logger.
  *
  ** ***********************************************************************************/
-#include "logging.h"
+#include "Logger.h"
 #include <unordered_map>
 #include <mutex>
 

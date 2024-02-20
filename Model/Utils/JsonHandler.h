@@ -42,12 +42,17 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            if (json.contains(node)) { json = json.at(node); }
-            else { return std::nullopt; }
+            if (json.contains(node))
+            {
+                json = json.at(node);
+            }
+            else
+            {
+                return std::nullopt;
+            }
         }
 
-        if (json.contains(key)) { return json.at(key); }
-        else { return std::nullopt; }
+        return json.contains(key) ? json.at(key) : std::nullopt;
     }
 
     template <typename T>
@@ -58,18 +63,26 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            if (json.contains(node)) { json = json.at(node); }
-            else { return std::nullopt; }
+            if (json.contains(node))
+            {
+                json = json.at(node);
+            }
+            else
+            {
+                return std::nullopt;
+            }
         }
 
         if (json.is_array() && json.size() > index)
         {
             json = json[index];
 
-            if (json.contains(key)) { return json.at(key); }
-            else { return std::nullopt; }
+            return json.contains(key) ? json.at(key) : std::nullopt;
         }
-        else { return std::nullopt; }
+        else
+        {
+            return std::nullopt;
+        }
     }
 
     int GetArraySize(const std::vector<std::string> &levels) const;
@@ -84,18 +97,28 @@ public:
         nlohmann::json json = mJson;
         for (const auto &node : levels)
         {
-            if (json.contains(node)) { json = json.at(node); }
-            else { return std::nullopt; }
+            if (json.contains(node))
+            {
+                json = json.at(node);
+            }
+            else
+            {
+                return std::nullopt;
+            }
         }
 
         if (json.contains(key) && json.at(key).is_array())
         {
             std::vector<T> results;
-            for (const auto &val : json.at(key)) results.push_back(val);
+            for (const auto &val : json.at(key))
+                results.push_back(val);
 
             return results;
         }
-        else { return std::nullopt; }
+        else
+        {
+            return std::nullopt;
+        }
     }
 };
 
@@ -126,7 +149,10 @@ public:
             parentJson = nlohmann::json{{*it, parentJson}};
         }
 
-        for (const auto &[key, value] : parentJson.items()) { mJson[key] = value; }
+        for (const auto &[key, value] : parentJson.items())
+        {
+            mJson[key] = value;
+        }
     }
 
     template <typename T>
@@ -146,7 +172,10 @@ public:
             parentJson = nlohmann::json{{*it, parentJson}};
         }
 
-        for (const auto &[key, value] : parentJson.items()) { mJson[key] = value; }
+        for (const auto &[key, value] : parentJson.items())
+        {
+            mJson[key] = value;
+        }
     }
 };
 
