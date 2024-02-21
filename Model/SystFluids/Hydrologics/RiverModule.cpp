@@ -9,7 +9,6 @@
 #include "Model/CommImp/Dimension.h"
 #include "Model/CommImp/Unit.h"
 #include "Model/CommImp/Quantity.h"
-#include "Model/CommImp/IO/logging.h"
 #include "Model/Utils/StringHelper.h"
 #include "Model/Utils/FilePathHelper.h"
 #include "Model/Utils/Exception.h"

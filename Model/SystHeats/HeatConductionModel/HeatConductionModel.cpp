@@ -12,7 +12,6 @@
 #include "Model/CommImp/Quantity.h"
 #include "Model/CommImp/ElementSet.h"
 #include "Model/CommImp/ValueSet2D.h"
-#include "Model/CommImp/IO/logging.h"
 #include "Model/CommImp/IO/MeshLoader.h"
 #include "Model/CommImp/Spatial/Grid2D.h"
 #include "Model/CommImp/Numeric/FvmSolver.h"
