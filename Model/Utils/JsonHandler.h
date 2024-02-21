@@ -11,73 +11,56 @@
 #include "ThirdPart/Json/json.hpp"
 #include <optional>
 #include <vector>
+#include <type_traits>
+#include <stdexcept>
 
-
+#include <iostream>
 namespace OpenOasis
 {
 namespace Utils
 {
-/// @brief JsonLoader class loads and parses the configurations from a json file.
+/// @brief JsonLoader loads and parses the configurations from specified json file.
 /// @note  JsonLoader reads the configurations with type.
 class JsonLoader
 {
 private:
+    std::string    mFile;
     nlohmann::json mJson;
 
 public:
-    JsonLoader(){};
     JsonLoader(const std::string &file);
 
-    void LoadByContent(const std::string &content);
-    void LoadByFile(const std::string &file);
+    nlohmann::json GetJson() const;
 
-    bool IsNull(const std::vector<std::string> &levels, const std::string &key) const;
+    std::string GetFile() const;
 
-    std::vector<std::string> GetKeys(const std::vector<std::string> &levels) const;
+    std::vector<std::string> GetKeys(const nlohmann::json &json) const;
 
-    template <typename T>
-    std::optional<T>
-    GetValue(const std::vector<std::string> &levels, const std::string &key) const
+    int GetArraySize(const nlohmann::json &json) const;
+
+    template <typename Arg>
+    bool IsNull(const nlohmann::json &json, const Arg &arg) const
     {
-        nlohmann::json json = mJson;
-        for (const auto &node : levels)
+        auto jsonCopy = GetJson(json, arg);
+        if (jsonCopy.has_value() && jsonCopy.value().is_null())
         {
-            if (json.contains(node))
-            {
-                json = json.at(node);
-            }
-            else
-            {
-                return std::nullopt;
-            }
+            return true;
         }
 
-        return json.contains(key) ? json.at(key) : std::nullopt;
+        return false;
     }
 
-    template <typename T>
-    std::optional<T> GetValue(
-        const std::vector<std::string> &levels, unsigned int index,
-        const std::string &key) const
+    std::optional<nlohmann::json> GetJson(const nlohmann::json &json, int index) const
     {
-        nlohmann::json json = mJson;
-        for (const auto &node : levels)
+        nlohmann::json jsonCopy = json;
+        if (jsonCopy.empty() || jsonCopy.is_null())
         {
-            if (json.contains(node))
-            {
-                json = json.at(node);
-            }
-            else
-            {
-                return std::nullopt;
-            }
+            return std::nullopt;
         }
 
-        if (json.is_array() && json.size() > index)
+        if (jsonCopy.is_array() && jsonCopy.size() > index)
         {
-            json = json[index];
-
-            return json.contains(key) ? json.at(key) : std::nullopt;
+            return jsonCopy[index];
         }
         else
         {
@@ -85,40 +68,98 @@ public:
         }
     }
 
-    int GetArraySize(const std::vector<std::string> &levels) const;
+    std::optional<nlohmann::json>
+    GetJson(const nlohmann::json &json, std::string key) const
+    {
+        nlohmann::json jsonCopy = json;
+        if (jsonCopy.empty() || jsonCopy.is_null())
+        {
+            return std::nullopt;
+        }
 
+        if (jsonCopy.contains(key))
+        {
+            return jsonCopy.at(key);
+        }
+        else
+        {
+            return std::nullopt;
+        }
+    }
+
+    std::optional<nlohmann::json>
+    GetJson(const nlohmann::json &json, const char *key) const
+    {
+        return GetJson(json, std::string(key));
+    }
+
+    template <typename T, class... Args>
+    std::optional<nlohmann::json>
+    GetJson(const nlohmann::json &json, T arg, Args... rest) const
+    {
+        auto jsonCopy = GetJson(json, arg);
+        if (!jsonCopy.has_value() || jsonCopy.value().is_null())
+        {
+            return std::nullopt;
+        }
+
+        return GetJson(jsonCopy, rest...);
+    }
+
+    template <typename T, typename Arg>
+    std::optional<T> GetValue(const nlohmann::json &json, const Arg &arg) const
+    {
+        auto jsonCopy = GetJson(json, arg);
+
+        if (!jsonCopy.has_value() || jsonCopy.value().is_null())
+        {
+            return std::nullopt;
+        }
+        return jsonCopy.value();
+    }
+
+    template <typename Arg>
     std::unordered_map<std::string, std::string>
-    GetMap(const std::vector<std::string> &levels) const;
-
-    template <typename T>
-    std::optional<std::vector<T>>
-    GetArray(const std::vector<std::string> &levels, const std::string &key) const
+    GetMap(const nlohmann::json &json, const Arg &arg) const
     {
-        nlohmann::json json = mJson;
-        for (const auto &node : levels)
+        std::unordered_map<std::string, std::string> map;
+
+        auto jsonCopy = GetJson(json, arg);
+        if (!jsonCopy.has_value() || jsonCopy.value().is_null())
         {
-            if (json.contains(node))
-            {
-                json = json.at(node);
-            }
-            else
-            {
-                return std::nullopt;
-            }
+            return map;
         }
 
-        if (json.contains(key) && json.at(key).is_array())
+        for (const auto &it : jsonCopy.value().items())
         {
-            std::vector<T> results;
-            for (const auto &val : json.at(key))
-                results.push_back(val);
+            map.insert(make_pair(it.key(), it.value()));
+        }
 
-            return results;
-        }
-        else
+        return map;
+    }
+
+    template <typename T, typename Arg>
+    std::vector<T> GetList(const nlohmann::json &json, const Arg &arg) const
+    {
+        std::vector<T> list;
+
+        auto jsonCopy = GetJson(json, arg);
+        if (!jsonCopy.has_value() || jsonCopy.value().is_null())
         {
-            return std::nullopt;
+            return list;
         }
+
+        if (jsonCopy.value().is_null() || !jsonCopy.value().is_array())
+        {
+            return list;
+        }
+
+        for (const auto &val : jsonCopy.value().at(arg))
+        {
+            list.push_back(val);
+        }
+
+        return list;
     }
 };
 
