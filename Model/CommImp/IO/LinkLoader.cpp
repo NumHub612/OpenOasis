@@ -93,6 +93,11 @@ void LinkLoader::LoadLinks()
 vector<LinkLoader::ElementInfo>
 LinkLoader::GetComponentOutputs(const string &compId) const
 {
+    if (mOuts.count(compId) == 0)
+    {
+        return {};
+    }
+
     return mOuts.at(compId);
 }
 
@@ -130,6 +135,11 @@ LinkLoader::GetOutputConsumers(const string &compId, const ElementInfo &output) 
 vector<LinkLoader::ElementInfo>
 LinkLoader::GetComponentInputs(const string &compId) const
 {
+    if (mInps.count(compId) == 0)
+    {
+        return {};
+    }
+
     return mInps.at(compId);
 }
 
@@ -171,6 +181,11 @@ unordered_map<string, vector<string>> LinkLoader::GetIteratorGroups() const
 
 multimap<string, string> LinkLoader::GetIteratorConfigs(const string &iterId) const
 {
+    if (mIterConfigs.count(iterId) == 0)
+    {
+        return {};
+    }
+
     return mIterConfigs.at(iterId);
 }
 
