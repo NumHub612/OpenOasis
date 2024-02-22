@@ -107,7 +107,6 @@
 一旦测试完成，就合并到 master 或 develop 分支（仅能通过 Pull Request 的方式），然后删除。
 对于长期支持版本(LTS)，保留其release分支，并在维护期内提供bug修复支持。
 
-
 ![](./assets/gitflow1.png)
 
 负责某个功能的开发人员创建一个对应的本地 feature 分支，并做一些初始化工作之后就推送创建远程分支。功能开发完并自测之后，先切换到 develop 分支将最新的代码拉取下来，再切换回自己负责的 feature 分支把 develop 分支的代码合并进来。如果有冲突，解决合并冲突。然后，到 GitHub 上的项目创建合并请求（merge request）。
