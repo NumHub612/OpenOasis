@@ -1,30 +1,12 @@
 ﻿# -------------------------------------------------------------
-# 设置cmake版本要求
+# 设置项目
 # -------------------------------------------------------------
 cmake_minimum_required(VERSION 3.16)
 set(ProjectName OpenOasis)
 
-
-# -------------------------------------------------------------
-# 设置项目
-# -------------------------------------------------------------
 project(${ProjectName})
-set(CMAKE_INSTALL_PREFIX  ${PROJECT_SOURCE_DIR}/Dists)
-
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
-
-
-# -------------------------------------------------------------
-# 设置平台类型
-# -------------------------------------------------------------
-if (CMAKE_HOST_WIN32)
-    set(platform "win")
-elseif (CMAKE_HOST_APPLE)
-    set(platform "mac")
-elseif (CMAKE_HOST_UNIX)
-    set(platform "linux")
-endif ()
 
 
 # -------------------------------------------------------------
@@ -218,33 +200,3 @@ if (ENABLE_TESTS)
         )
 endif()
 
-
-# -------------------------------------------------------------
-# 安装文件
-# -------------------------------------------------------------
-##-- 安装动态库
-install(TARGETS ${ModuleName}  DESTINATION exports/${platform})
-file(GLOB apis ${CoreDir}/wrappers/*.h)
-install(FILES ${apis} DESTINATION exports/${platform})
-
-##-- 安装项目
-install(TARGETS ${PROJECT_NAME} DESTINATION exports/${platform})
-install(FILES "${PROJECT_SOURCE_DIR}/LICENSE"
-    DESTINATION ${CMAKE_INSTALL_PREFIX}
-    )
-install(FILES "${PROJECT_SOURCE_DIR}/README.md"
-    DESTINATION ${CMAKE_INSTALL_PREFIX}
-    )    
-
-file(GLOB CommInc ${RootDir}/Cores/Inc/*.h)
-install(FILES ${CommInc} DESTINATION inc)
-install(DIRECTORY ${RootDir}/Cores/Inc/AdditionalControl
-    DESTINATION inc
-    FILES_MATCHING 
-    PATTERN  "*.h"
-    )
-
-##-- 安装ptyhon包
-if(ENABLE_PYLIB)
-    install(TARGETS ${PackageName} DESTINATION exports/${platform})
-endif()
