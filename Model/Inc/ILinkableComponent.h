@@ -25,7 +25,7 @@ namespace OpenOasis
 class ILinkableComponent : public IIdentifiable
 {
 public:
-    using ListenFuncType =
+    using ListenFunc =
         std::function<void(std::shared_ptr<LinkableComponentStatusChangeEventArgs>)>;
 
 public:
@@ -42,7 +42,6 @@ public:
     virtual LinkableComponentStatus GetStatus() const = 0;
 
     /// @brief Gets the input items for recieving values.
-    ///
     /// @throw The method must be accessible after `Initialize()` method has
     /// been called and until the `Validate()` method has been invoked.
     /// Otherwise,
@@ -50,11 +49,7 @@ public:
     virtual std::vector<std::shared_ptr<IInput>> GetInputs() const = 0;
 
     /// @brief Gets the output items for producing results.
-    ///
-    /// The list only contains the core `IOutput` of the component,
-    /// not `IAdaptedOutput` derived from each `IOutput` (etc).
-    ///
-    /// @throw The method must be accessible after the `Initialize()` method has
+    /// @throw The method must be accessible after `Initialize()` method has
     /// been invoked and until `Validate()` method has been invoked.
     /// Otherwise,
     /// `LinkableComponent` cant handle this, an exception must be thrown.
@@ -72,20 +67,19 @@ public:
     /// in the `ILinkableComponent` interface is invoked
     /// or accessed, except for the `GetArguments`.
     ///
-    /// Immediatly after this method is been invoked, it changes the linkable
+    /// Immediatly after the method is been invoked, it changes the linkable
     /// component's status to `Initializing`. If component initializes
     /// succesfully, the status is changed to `Initialized`.
     ///
     /// The method will typically populate the component based on values
     /// specified in its arguments. Settings can be used to read input
-    /// files, allocate memory, and organize input and output exchange items.
+    /// files, allocate memory, and organize input and output items.
     ///
     /// @throw When the method is executed and an error occurs, the status
     /// will change to `Failed`, and an exception will be thrown.
-    ///
-    /// @throw It is only required that `Initialize()` can be invoked once.
+    /// @throw It's only required that `Initialize()` can be invoked once.
     /// If the `Initialize()` method is invoked more than once,
-    /// `ILinkableComponent` can't handle this, an exception must be thrown.
+    /// `ILinkableComponent` can't handle this, thrown an exception.
     virtual void Initialize() = 0;
 
     /// @brief Validates the populated instance of the component.
@@ -99,11 +93,11 @@ public:
     /// of the component has changed to either `Valid` or `Invalid`.
     ///
     /// If there are messages while components status is `Valid`, the messages
-    /// are purely informative. If there're messages while components status
-    /// is `Invalid`, at least one of the messages
+    /// are purely informative. If there're messages while components
+    /// status is `Invalid`, at least one of the messages
     /// indicates a fatal error.
     ///
-    /// @throw The method must be accessible after the `Initialize()` method
+    /// @throw The method must be accessible after the `Initialize()`
     /// has been called and until the `Finish()` method has been invoked.
     /// Otherwise, the linkable component can not handle this,
     /// an exception must be thrown.
@@ -123,7 +117,6 @@ public:
     /// has been called and until the `Finish()` method has been invoked.
     /// Otherwise, the linkable component can't handle it,
     /// an exception must be thrown.
-    ///
     /// @throw It's required the `Prepare()` method can be invoked once.
     /// Otherwise, the linkable component can't handle this,
     /// an exception must be thrown.
@@ -149,16 +142,9 @@ public:
     /// output items, and perform one or more queries to be able
     /// to provide the values that the consumers required.
     ///
-    /// @param requiredOutput optional parameter lets the caller specify
-    /// the specific output items that should be updated. If it is
-    /// omitted or if the size is 0, the component will
-    /// at least update its output items that have consumers, or all its
-    /// output items, depending on the component's implementation.
-    ///
     /// @throw If during the `Update()` method problem arises,
     /// the component sets its state to `Failed` and throws an exception.
-    virtual void
-    Update(const std::vector<std::shared_ptr<IOutput>> &requiredOutputs) = 0;
+    virtual void Update() = 0;
 
     /// @brief Finishes the component computation, and then restart it if needed.
     ///
@@ -175,11 +161,8 @@ public:
     /// an exception must be thrown.
     virtual void Finish() = 0;
 
-    /// @brief Adds a listener to the linkable component.
-    virtual void AddListener(const ListenFuncType &func) = 0;
-
-    /// @brief Removes the listener if it is no more interested at current item.
-    virtual void RemoveListener(const ListenFuncType &func) = 0;
+    virtual void RemoveListener(const ListenFunc &func) = 0;
+    virtual void AddListener(const ListenFunc &func)    = 0;
 };
 
 }  // namespace OpenOasis

@@ -28,20 +28,19 @@ using Utils::EventHandler;
 /// The implementation here predefines a set of methods that are useful in
 /// concrete model engine development.
 ///
-/// @todo All the data of the component is divided into properties, status, and data,
-/// which can be viewed and output.
+/// @todo All assets of a component is divided into properties, states, and data.
 class LinkableComponent : public ILinkableComponent,
                           public IManageState,
                           public std::enable_shared_from_this<LinkableComponent>
 {
 protected:
-    // --- Object Identity.
+    // --- Object Identity information.
 
     std::string mId          = "";
     std::string mCaption     = "";
     std::string mDescription = "";
 
-    // --- Object Attributes.
+    // --- Object properties.
 
     /// The `mStatusChanged` event is fired when Status of this component changes.
     EventHandler<void, std::shared_ptr<LinkableComponentStatusChangeEventArgs>>
@@ -66,6 +65,9 @@ protected:
 
     std::vector<std::shared_ptr<IInput>>  mInputs;
     std::vector<std::shared_ptr<IOutput>> mOutputs;
+
+    // --- Object Data.
+
 
 public:
     virtual ~LinkableComponent() = default;
@@ -112,14 +114,13 @@ public:
 
     virtual void Prepare() override;
 
-    virtual void
-    Update(const std::vector<std::shared_ptr<IOutput>> &requiredOutputs) override;
+    virtual void Update() override;
 
     virtual void Finish() override;
 
-    virtual void AddListener(const ListenFuncType &func) override;
+    virtual void AddListener(const ListenFunc &func) override;
 
-    virtual void RemoveListener(const ListenFuncType &func) override;
+    virtual void RemoveListener(const ListenFunc &func) override;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Implement methods inherited from `IManageState`.

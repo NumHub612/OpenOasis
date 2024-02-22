@@ -149,12 +149,12 @@ void LinkableComponent::SetAdaptedOutputFactories()
     }
 }
 
-void LinkableComponent::AddListener(const ListenFuncType &func)
+void LinkableComponent::AddListener(const ListenFunc &func)
 {
     mStatusListeners += func;
 }
 
-void LinkableComponent::RemoveListener(const ListenFuncType &func)
+void LinkableComponent::RemoveListener(const ListenFunc &func)
 {
     mStatusListeners -= func;
 }
@@ -247,7 +247,7 @@ void LinkableComponent::OnPrepare()
     PrepareOutputs();
 }
 
-void LinkableComponent::Update(const vector<shared_ptr<IOutput>> &requiredOutputs)
+void LinkableComponent::Update()
 {
     // No more update.
     if (mStatus == LinkableComponentStatus::Done
@@ -257,16 +257,11 @@ void LinkableComponent::Update(const vector<shared_ptr<IOutput>> &requiredOutput
         return;
     }
 
-    // Check the output items needed to be updated.
-    vector<shared_ptr<IOutput>> outputs = mOutputs;
-    if (!requiredOutputs.empty())
-        outputs = requiredOutputs;
-
     // Update with estimates if component is blocked.
     if (mStatus == LinkableComponentStatus::Updating
         || mStatus == LinkableComponentStatus::WaitingForData)
     {
-        UpdateOutputs(outputs);
+        UpdateOutputs(mOutputs);
         return;
     }
 
@@ -280,7 +275,7 @@ void LinkableComponent::Update(const vector<shared_ptr<IOutput>> &requiredOutput
     SetStatus(LinkableComponentStatus::Updating);
 
     // Compute.
-    PerformTimestep(outputs);
+    PerformTimestep(mOutputs);
 
     if (mStatus == LinkableComponentStatus::Failed)
     {
@@ -289,7 +284,7 @@ void LinkableComponent::Update(const vector<shared_ptr<IOutput>> &requiredOutput
     }
 
     // Update active output items.
-    UpdateOutputs(outputs);
+    UpdateOutputs(mOutputs);
 
     // Assuming the time step was successfull, then we can update the time horizon
     // start time of all input items, to indicate that we are never going to ask

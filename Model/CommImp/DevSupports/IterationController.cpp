@@ -253,7 +253,7 @@ void IterationController::PerformTimestep(
 
         try
         {
-            mComponentSet.begin()->second->Update({});
+            mComponentSet.begin()->second->Update();
         }
         catch (...)
         {}

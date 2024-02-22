@@ -206,7 +206,7 @@ int main(int argc, const char *argv[])
         while (compPtr->GetStatus() != LinkableComponentStatus::Done
                && compPtr->GetStatus() != LinkableComponentStatus::Failed)
         {
-            compPtr->Update({});
+            compPtr->Update();
             steps++;
         }
         spdlog::info("Component {} updated for {} steps.", compId, steps);
