@@ -4,12 +4,11 @@
  *
  ** ***********************************************************************************/
 #include "RainfallModule.h"
-#include "Model/CommImpl/Arguments.h"
-#include "Model/CommImpl/Time.h"
-#include "Model/CommImpl/Dimension.h"
-#include "Model/CommImpl/Unit.h"
-#include "Model/CommImpl/Quantity.h"
-#include "Model/CommImpl/IO/logging.h"
+#include "Model/CommImp/Arguments.h"
+#include "Model/CommImp/Time.h"
+#include "Model/CommImp/Dimension.h"
+#include "Model/CommImp/Unit.h"
+#include "Model/CommImp/Quantity.h"
 #include "Model/Utils/StringHelper.h"
 #include "Model/Utils/FilePathHelper.h"
 #include "Model/Utils/Exception.h"

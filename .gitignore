@@ -1,6 +1,7 @@
 # 忽略的文件  
 FolderConfig.h
 *.log
+OasisLog
 
 # 忽略的文件夹
 build/

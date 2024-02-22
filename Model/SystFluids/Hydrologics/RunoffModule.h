@@ -8,18 +8,18 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Model/CommImpl/LinkableComponent.h"
-#include "Model/CommImpl/Output.h"
-#include "Model/CommImpl/Input.h"
-#include "Model/CommImpl/ElementSet.h"
-#include "Model/CommImpl/ValueSet2D.h"
-#include "Model/CommImpl/TimeSet.h"
+#include "Model/CommImp/LinkableComponent.h"
+#include "Model/CommImp/Output.h"
+#include "Model/CommImp/Input.h"
+#include "Model/CommImp/ElementSet.h"
+#include "Model/CommImp/ValueSet2D.h"
+#include "Model/CommImp/TimeSet.h"
 #include "Model/Utils/DateTime.h"
 
 
 namespace OpenOasis::SystFluids::Hydrologics
 {
-using namespace CommImpl;
+using namespace CommImp;
 using namespace Utils;
 
 /// @brief Runoff module accepts rainfall and provides runoff data.

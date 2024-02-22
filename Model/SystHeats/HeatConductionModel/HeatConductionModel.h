@@ -8,23 +8,23 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Model/CommImpl/LinkableComponent.h"
-#include "Model/CommImpl/Output.h"
-#include "Model/CommImpl/Input.h"
-#include "Model/CommImpl/Spatial/Grid.h"
-#include "Model/CommImpl/Numeric/ScalarField.h"
-#include "Model/CommImpl/Numeric/Solver.h"
+#include "Model/CommImp/LinkableComponent.h"
+#include "Model/CommImp/Output.h"
+#include "Model/CommImp/Input.h"
+#include "Model/CommImp/Spatial/Grid.h"
+#include "Model/CommImp/Numeric/ScalarField.h"
+#include "Model/CommImp/Numeric/Solver.h"
 
 
 namespace OpenOasis
 {
 namespace SystHeats
 {
-using CommImpl::LinkableComponent;
-using CommImpl::Numeric::ScalarFieldDbl;
-using CommImpl::Numeric::Solver;
-using CommImpl::Spatial::Grid;
-using CommImpl::Spatial::Coordinate;
+using CommImp::LinkableComponent;
+using CommImp::Numeric::ScalarFieldDbl;
+using CommImp::Numeric::Solver;
+using CommImp::Spatial::Grid;
+using CommImp::Spatial::Coordinate;
 
 
 class HeatConductionModel : public LinkableComponent

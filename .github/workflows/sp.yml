@@ -1,4 +1,4 @@
-name: single precision workflow
+name: single_precision
 
 on:
   push:

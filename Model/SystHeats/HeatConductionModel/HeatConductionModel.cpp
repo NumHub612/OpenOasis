@@ -4,19 +4,18 @@
  *
  ** ***********************************************************************************/
 #include "HeatConductionModel.h"
-#include "Model/CommImpl/Arguments.h"
-#include "Model/CommImpl/Dimension.h"
-#include "Model/CommImpl/Unit.h"
-#include "Model/CommImpl/Time.h"
-#include "Model/CommImpl/TimeSet.h"
-#include "Model/CommImpl/Quantity.h"
-#include "Model/CommImpl/ElementSet.h"
-#include "Model/CommImpl/ValueSet2D.h"
-#include "Model/CommImpl/IO/logging.h"
-#include "Model/CommImpl/IO/MeshLoader.h"
-#include "Model/CommImpl/Spatial/Grid2D.h"
-#include "Model/CommImpl/Numeric/FvmSolver.h"
-#include "Model/CommImpl/Numeric/DirichletBoundary.h"
+#include "Model/CommImp/Arguments.h"
+#include "Model/CommImp/Dimension.h"
+#include "Model/CommImp/Unit.h"
+#include "Model/CommImp/Time.h"
+#include "Model/CommImp/TimeSet.h"
+#include "Model/CommImp/Quantity.h"
+#include "Model/CommImp/ElementSet.h"
+#include "Model/CommImp/ValueSet2D.h"
+#include "Model/CommImp/IO/MeshLoader.h"
+#include "Model/CommImp/Spatial/Grid2D.h"
+#include "Model/CommImp/Numeric/FvmSolver.h"
+#include "Model/CommImp/Numeric/DirichletBoundary.h"
 #include "Model/Utils/YamlHandler.h"
 #include "Model/Utils/Exception.h"
 #include "Model/Utils/StringHelper.h"
@@ -29,7 +28,7 @@
 
 namespace OpenOasis::SystHeats
 {
-using namespace CommImpl;
+using namespace CommImp;
 using namespace Spatial;
 using namespace Numeric;
 using namespace Utils;

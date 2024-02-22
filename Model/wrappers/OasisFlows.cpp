@@ -1,5 +1,5 @@
 #include "OasisFlows.h"
-#include "Model/SystFluids/Hydrologics/RainfallModule.h"
+// #include "Model/SystFluids/Hydrologics/RainfallModule.h"
 #include "Model/SystFluids/Hydrologics/RunoffModule.h"
 #include "Model/SystFluids/Hydrologics/RiverModule.h"
 #include "Model/SystHeats/HeatConductionModel/HeatConductionModel.h"
@@ -12,15 +12,29 @@ using namespace std;
 static vector<shared_ptr<OpenOasis::ILinkableComponent>> componenents;
 
 
-void *GetRainfallModule(const char *id, const char *coorFile, const char *dataFile)
-{
-    auto comp = make_shared<RainfallModule>(id, coorFile, dataFile);
-    componenents.push_back(comp);
+void *GetRunoffComp(const char *id, const char *taskFile);
+void *GetRiverComp(const char *id, const char *taskFile);
+void *GetHeatConductionComp(const char *id, const char *taskFile);
 
-    return comp.get();
+
+static unordered_map<string, function<void *(const char *, const char *)>>
+    componentFactory = {
+        {"RunoffComp", GetRunoffComp},
+        {"RiverComp", GetRiverComp},
+        {"HeatConductionComp", GetHeatConductionComp}};
+
+
+void *GetComponent(const char *id, const char *type, const char *task)
+{
+    if (componentFactory.count(type) == 1)
+    {
+        return componentFactory[type](id, task);
+    }
+
+    return nullptr;
 }
 
-void *GetRunoffModule(const char *id, const char *taskFile)
+void *GetRunoffComp(const char *id, const char *taskFile)
 {
     auto comp = make_shared<RunoffModule>(id, taskFile);
     componenents.push_back(comp);
@@ -28,7 +42,7 @@ void *GetRunoffModule(const char *id, const char *taskFile)
     return comp.get();
 }
 
-void *GetRiverModule(const char *id)
+void *GetRiverComp(const char *id, const char *taskFile)
 {
     auto comp = make_shared<RiverModule>(id);
     componenents.push_back(comp);
@@ -36,7 +50,7 @@ void *GetRiverModule(const char *id)
     return comp.get();
 }
 
-void *GetHeatConductionModule(const char *id, const char *taskFile)
+void *GetHeatConductionComp(const char *id, const char *taskFile)
 {
     auto comp = make_shared<HeatConductionModel>(id, taskFile);
     componenents.push_back(comp);

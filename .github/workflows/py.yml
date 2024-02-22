@@ -1,4 +1,4 @@
-name: PyOasis CI
+name: pyOasis
 
 on:
   push:
@@ -31,7 +31,10 @@ jobs:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install -r ${{ github.workspace }}/Agents/requirements.txt
+        run: pip install -r ${{ github.workspace }}/requirements.txt
 
-      - name: Run unittest tests
+      - name: Run agent unittest tests
         run: python -m unittest discover ${{ github.workspace }}/Agents/tests
+
+      # - name: Run uengrs unittest tests
+      #   run: python -m unittest discover ${{ github.workspace }}/Uengrs/tests        

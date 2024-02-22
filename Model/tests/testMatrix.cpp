@@ -1,7 +1,7 @@
 #include "ThirdPart/Catch2/catch.hpp"
-#include "Model/CommImpl/Numeric/Matrix.h"
+#include "Model/CommImp/Numeric/Matrix.h"
 
-using namespace OpenOasis::CommImpl::Numeric;
+using namespace OpenOasis::CommImp::Numeric;
 using namespace std;
 
 

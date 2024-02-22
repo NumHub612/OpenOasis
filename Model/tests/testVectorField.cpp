@@ -1,7 +1,7 @@
 #include "ThirdPart/Catch2/catch.hpp"
-#include "Model/CommImpl/Numeric/VectorField.h"
+#include "Model/CommImp/Numeric/VectorField.h"
 
-using namespace OpenOasis::CommImpl::Numeric;
+using namespace OpenOasis::CommImp::Numeric;
 using namespace std;
 
 
