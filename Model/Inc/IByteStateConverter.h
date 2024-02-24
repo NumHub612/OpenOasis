@@ -31,16 +31,16 @@ public:
     /// @brief Converts the state with the stateId into a byte stream.
     ///
     /// @param stateId Id of the state.
-    /// @return The state identified by stateId as an array of bytes.
-    virtual std::vector<unsigned char>
-    ConvertToByteArray(const std::shared_ptr<IIdentifiable> &stateId) = 0;
+    /// @return The state identified by stateId as a byte stream.
+    virtual std::stringstream
+    ConvertToByteStream(const std::shared_ptr<IIdentifiable> &stateId) = 0;
 
     /// @brief Creates a state from a byte stream and return the identifier.
     ///
-    /// @param byteArray State as a byte stream.
+    /// @param byteStream State as a byte stream.
     /// @return `IIdentifiable` identifying the state.
     virtual std::shared_ptr<IIdentifiable>
-    ConvertFromByteArray(const std::vector<unsigned char> &byteArray) = 0;
+    ConvertFromByteStream(const std::stringstream &byteStream) = 0;
 };
 
 }  // namespace OpenOasis

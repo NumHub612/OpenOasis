@@ -179,11 +179,6 @@ bool LinkableComponent::IsOptimizationTerminated() const
     return true;
 }
 
-shared_ptr<LinkableComponent> LinkableComponent::GetSnapshot() const
-{
-    throw NotImplementedException();
-}
-
 shared_ptr<ITime> LinkableComponent::GetStartTime() const
 {
     return ExtensionMethods::Start(mTimeExtent->GetTimeHorizon());

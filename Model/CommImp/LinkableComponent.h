@@ -28,13 +28,13 @@ using Utils::EventHandler;
 /// The implementation here predefines a set of methods that are useful in
 /// concrete model engine development.
 ///
-/// @todo All assets of a component is divided into properties, states, and data.
+/// @todo All assets of a component are divided into properties, variables.
 class LinkableComponent : public ILinkableComponent,
                           public IManageState,
                           public std::enable_shared_from_this<LinkableComponent>
 {
 protected:
-    // --- Object Identity information.
+    // --- Object identity information.
 
     std::string mId          = "";
     std::string mCaption     = "";
@@ -48,26 +48,24 @@ protected:
 
     std::shared_ptr<LinkableComponentStatusChangeEventArgs> mEventArgs;
 
-    std::vector<std::string> mRequiredArguments = {};
+    std::vector<std::string> mRequiredArguments;
 
-    std::vector<std::shared_ptr<IAdaptedOutputFactory>> mAdaptedOutputFactories;
-
-    // --- Object States.
-
-    LinkableComponentStatus mStatus = LinkableComponentStatus::Created;
+    std::unordered_map<std::string, std::shared_ptr<IArgument>> mArguments;
 
     bool mCascadingUpdateCallsDisabled = false;
 
-    std::shared_ptr<ITimeSet> mTimeExtent  = nullptr;  // todo: removed.
-    std::shared_ptr<ITime>    mCurrentTime = nullptr;  // todo: removed.
-
-    std::unordered_map<std::string, std::shared_ptr<IArgument>> mArguments;
+    std::vector<std::shared_ptr<IAdaptedOutputFactory>> mAdaptedOutputFactories;
 
     std::vector<std::shared_ptr<IInput>>  mInputs;
     std::vector<std::shared_ptr<IOutput>> mOutputs;
 
-    // --- Object Data.
+    std::shared_ptr<ITimeSet> mTimeExtent = nullptr;
 
+    // --- Object variables.
+
+    LinkableComponentStatus mStatus = LinkableComponentStatus::Created;
+
+    std::shared_ptr<ITime> mCurrentTime = nullptr;
 
 public:
     virtual ~LinkableComponent() = default;
@@ -148,8 +146,6 @@ public:
     virtual bool IsIterationConverged() const;
 
     virtual bool IsOptimizationTerminated() const;
-
-    virtual std::shared_ptr<LinkableComponent> GetSnapshot() const;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Additional methods for time info and time stepping.
