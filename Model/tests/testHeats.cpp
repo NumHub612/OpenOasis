@@ -25,7 +25,7 @@ TEST_CASE("Heats dummy test")
         while (model.GetStatus() != OpenOasis::LinkableComponentStatus::Done
                && model.GetStatus() != OpenOasis::LinkableComponentStatus::Failed)
         {
-            model.Update({});
+            model.Update();
         }
 
         model.Finish();

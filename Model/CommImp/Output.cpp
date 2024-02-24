@@ -347,7 +347,7 @@ void Output::Update()
            && availableTimestamp < queryTimestamp)
     {
         // The mComponent is responsible for updating output's timeset and valueset.
-        comp->Update({});
+        comp->Update();
         BroadcastEventWithMsg("component updated");
 
         status = comp->GetStatus();

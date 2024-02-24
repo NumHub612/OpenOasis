@@ -178,7 +178,7 @@ bool TimeAdaptor::Update(const shared_ptr<IBaseExchangeItem> &specifier)
             || component->GetStatus() == LinkableComponentStatus::Updated)
            && availableTimestamp + Time::EpsilonForTimeCompare < queryTimestamp)
     {
-        component->Update({});
+        component->Update();
 
         availableTimestamp =
             ExtensionMethods::End(output->GetTimeSet()->GetTimeHorizon())
