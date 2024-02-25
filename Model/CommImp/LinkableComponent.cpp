@@ -254,7 +254,7 @@ void LinkableComponent::Update()
     SetStatus(LinkableComponentStatus::WaitingForData);
 
     // Prepare all required input data.
-    RefreshInputs();
+    PullInputs();
 
     // Indicate that we are starting to compute.
     SetStatus(LinkableComponentStatus::Updating);
@@ -285,7 +285,7 @@ void LinkableComponent::Update()
             LinkableComponentStatus::Updated);
 }
 
-void LinkableComponent::RefreshInputs()
+void LinkableComponent::PullInputs()
 {
     for (const auto &input : mInputs)
     {

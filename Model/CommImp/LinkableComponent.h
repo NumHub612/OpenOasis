@@ -196,7 +196,7 @@ public:
     // TODO: refactor UpdateInputs() and UpdateOutputs() to be more generic.
     //
 
-    virtual void RefreshInputs();
+    virtual void PullInputs();
 
     virtual void ApplyInputData(const std::shared_ptr<IValueSet> &values) = 0;
 
