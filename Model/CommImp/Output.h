@@ -93,8 +93,7 @@ public:
     /// @brief Provides the values matching the value definition specified.
     /// Time and space are not considered in tihs version.
     /// Thus, there's no updating while querier specified.
-    virtual std::shared_ptr<IValueSet>
-    GetValues(const std::shared_ptr<IBaseExchangeItem> &querySpecifier) override;
+    virtual std::shared_ptr<IValueSet> GetValues() override;
 
     virtual void Reset() override;
 
@@ -112,9 +111,9 @@ public:
 
     virtual void SetElementSet(std::shared_ptr<IElementSet> elements) override;
 
-    virtual void AddListener(const ListenFuncType &func) override;
+    virtual void AddListener(const ListenFunc &func) override;
 
-    virtual void RemoveListener(const ListenFuncType &func) override;
+    virtual void RemoveListener(const ListenFunc &func) override;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Implement methods inherited from `IOutput`.

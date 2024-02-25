@@ -82,14 +82,9 @@ void SpaceMapAdaptor::Refresh()
 void SpaceMapAdaptor::SetElementSet(shared_ptr<IElementSet> elements)
 {}
 
-shared_ptr<IValueSet>
-SpaceMapAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
+shared_ptr<IValueSet> SpaceMapAdaptor::GetValues()
 {
-    shared_ptr<IBaseExchangeItem> querier = specifiedQuerier;
-    if (!querier)
-    {
-        querier = mConsumers.back().lock();
-    }
+    shared_ptr<IBaseExchangeItem> querier = mConsumers.back().lock();
 
     // Time set of query must be defined and have at least 1 time.
     if (querier->GetTimeSet() == nullptr || querier->GetTimeSet()->GetTimes().empty())
@@ -103,7 +98,7 @@ SpaceMapAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier
     // Set query time to internal query item.
     mQuery->SetTimeSet(querier->GetTimeSet());
 
-    const auto &incomingValues = mOutput.lock()->GetValues(mQuery);
+    const auto &incomingValues = mOutput.lock()->GetValues();
     auto        resultValues   = ElementMapper::CreateResultValueSet(
         ExtensionMethods::TimesCount(incomingValues),
         GetSpatialDefinition()->GetElementCount());
@@ -129,7 +124,7 @@ void SpaceMapAdaptor::GetValues(
     // Set query time to internal query item.
     mQuery->SetTimeSet(querySpecifier->GetTimeSet());
 
-    const auto &incomingValues = mOutput.lock()->GetValues(mQuery);
+    const auto &incomingValues = mOutput.lock()->GetValues();
 
     // Transform the values from the adaptee
     mElementMapper->MapValues(targetSet, incomingValues);

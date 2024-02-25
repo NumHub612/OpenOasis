@@ -25,7 +25,7 @@ class ILinkableComponent;
 class IBaseExchangeItem : public IIdentifiable
 {
 public:
-    using ListenFuncType =
+    using ListenFunc =
         std::function<void(std::shared_ptr<ExchangeItemChangeEventArgs>)>;
 
 public:
@@ -46,14 +46,7 @@ public:
     /// For an input item, this means to get the input item's value pulled from its
     /// provider(s). For an output item, this means to provide the values
     /// required by consumers.
-    ///
-    /// The querySpecifier is used to have the flexibility to loosen the "always
-    /// register as consumer-provider" approach. If no querySpecifier given,
-    /// it means return all values.
-    ///
-    /// @param querySpecifier The query item specifed the value definition.
-    virtual std::shared_ptr<IValueSet>
-    GetValues(const std::shared_ptr<IBaseExchangeItem> &querySpecifier) = 0;
+    virtual std::shared_ptr<IValueSet> GetValues() = 0;
 
     /// @brief Gets the exchange item's elements.
     /// If it's id-based, return null.
@@ -80,10 +73,10 @@ public:
     virtual std::weak_ptr<ILinkableComponent> GetComponent() const = 0;
 
     /// @brief Adds a listener to the exchange item.
-    virtual void AddListener(const ListenFuncType &func) = 0;
+    virtual void AddListener(const ListenFunc &func) = 0;
 
     /// @brief Removes the listener if it is no more interested at this item.
-    virtual void RemoveListener(const ListenFuncType &func) = 0;
+    virtual void RemoveListener(const ListenFunc &func) = 0;
 };
 
 }  // namespace OpenOasis

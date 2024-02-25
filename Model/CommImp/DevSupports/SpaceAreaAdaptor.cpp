@@ -176,11 +176,10 @@ void SpaceAreaAdaptor::UpdateQuantity()
         unit, sourceQuantity->GetCaption() + pq, sourceQuantity->GetDescription() + pq);
 }
 
-shared_ptr<IValueSet>
-SpaceAreaAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &querier)
+shared_ptr<IValueSet> SpaceAreaAdaptor::GetValues()
 {
     return ExtensionMethods::MultiplyElementValues(
-        mOutput.lock()->GetValues(querier), mFactors);
+        mOutput.lock()->GetValues(), mFactors);
 }
 
 shared_ptr<SpaceAreaAdaptor> SpaceAreaAdaptor::GetInstance()

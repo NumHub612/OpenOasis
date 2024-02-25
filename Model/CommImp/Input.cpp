@@ -172,15 +172,8 @@ void Input::RemoveProvider(const shared_ptr<IOutput> &provider)
     mProviders.erase(iter, mProviders.end());
 }
 
-shared_ptr<IValueSet>
-Input::GetValues(const shared_ptr<IBaseExchangeItem> &querySpecifier)
+shared_ptr<IValueSet> Input::GetValues()
 {
-    // No updating action while querier specified.
-    if (querySpecifier)
-    {
-        return (IsValidQuerySpecifier(querySpecifier)) ? mValues : nullptr;
-    }
-
     Update();
 
     return mValues;
@@ -195,7 +188,7 @@ void Input::Update()
     {
         // Here we hasn't specified the querier, because the AdaptedOutputs
         // are used to adapt this input item.
-        const auto &valueset = provider.lock()->GetValues(nullptr);
+        const auto &valueset = provider.lock()->GetValues();
         if (valueset->GetIndexCount({0}) == 0)
             continue;
         acceptedValues.emplace_back(valueset);

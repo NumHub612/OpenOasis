@@ -94,16 +94,6 @@ vector<shared_ptr<IArgument>> LinkableComponent::GetArguments() const
     return MapHelper::GetValues(mArguments);
 }
 
-void LinkableComponent::SetArguments(const vector<shared_ptr<IArgument>> &values)
-{
-    for (const auto &arg : values)
-    {
-        const auto &id = arg->GetId();
-        if (mArguments.count(id) > 0)
-            mArguments[id] = arg;
-    }
-}
-
 void LinkableComponent::SetStatus(LinkableComponentStatus value, const string &msg)
 {
     if (value == mStatus)
@@ -264,7 +254,7 @@ void LinkableComponent::Update()
     SetStatus(LinkableComponentStatus::WaitingForData);
 
     // Prepare all required input data.
-    UpdateInputs();
+    RefreshInputs();
 
     // Indicate that we are starting to compute.
     SetStatus(LinkableComponentStatus::Updating);
@@ -286,7 +276,7 @@ void LinkableComponent::Update()
     // data before this time. Done after the `PerformTimestep` in order to support
     // redoing of time steps.
     if (!mCascadingUpdateCallsDisabled)
-        UpdateInputTimesAndValues();
+        UpdateInputs();
 
     // Indicate that Update is done.
     SetStatus(
@@ -295,19 +285,19 @@ void LinkableComponent::Update()
             LinkableComponentStatus::Updated);
 }
 
-void LinkableComponent::UpdateInputs()
+void LinkableComponent::RefreshInputs()
 {
     for (const auto &input : mInputs)
     {
         if (input->GetProviders().empty())
             continue;
 
-        const auto &values = input->GetValues(nullptr);
+        const auto &values = input->GetValues();
         ApplyInputData(values);
     }
 }
 
-void LinkableComponent::UpdateInputTimesAndValues()
+void LinkableComponent::UpdateInputs()
 {
     double lastTimestamp = mCurrentTime->GetTimeStamp();
 
@@ -317,7 +307,7 @@ void LinkableComponent::UpdateInputTimesAndValues()
             continue;
 
         const auto &timeset  = input->GetTimeSet();
-        const auto &valueset = input->GetValues(nullptr);
+        const auto &valueset = input->GetValues();
 
         int elments = valueset->GetIndexCount({0});
         while (!timeset->GetTimes().empty())

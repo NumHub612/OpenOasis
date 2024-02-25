@@ -81,8 +81,7 @@ public:
     // Implement methods inherited from `IBaseExchangeItem`.
     //
 
-    virtual std::shared_ptr<IValueSet>
-    GetValues(const std::shared_ptr<IBaseExchangeItem> &querySpecifier) override = 0;
+    virtual std::shared_ptr<IValueSet> GetValues() override = 0;
 
     virtual void Reset() override = 0;
 

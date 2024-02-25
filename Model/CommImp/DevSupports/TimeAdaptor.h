@@ -42,8 +42,7 @@ public:
     // Override methods.
     //
 
-    virtual std::shared_ptr<IValueSet>
-    GetValues(const std::shared_ptr<IBaseExchangeItem> &querySpecifier) override;
+    virtual std::shared_ptr<IValueSet> GetValues() override;
 
     virtual void Reset() override;
 

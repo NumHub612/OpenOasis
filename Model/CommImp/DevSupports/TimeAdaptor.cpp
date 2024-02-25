@@ -52,17 +52,12 @@ void TimeAdaptor::SetValues(shared_ptr<IValueSet> value)
     throw NotImplementedException("TimeAdaptor::SetValues()");
 }
 
-shared_ptr<IValueSet>
-TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
+shared_ptr<IValueSet> TimeAdaptor::GetValues()
 {
     //------------------------------------------------------
     // Check if we need to update the output component.
 
-    shared_ptr<IBaseExchangeItem> querier = specifiedQuerier;
-    if (!querier)
-    {
-        querier = mConsumers.back().lock();
-    }
+    shared_ptr<IBaseExchangeItem> querier = mConsumers.back().lock();
 
     // Time set of query must be defined and have at least 1 time.
     if (querier->GetTimeSet() == nullptr || querier->GetTimeSet()->GetTimes().empty())
@@ -94,7 +89,7 @@ TimeAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &specifiedQuerier)
     }
 
     // Pull data from Output item.
-    auto currentValues = mOutput.lock()->GetValues({});
+    auto currentValues = mOutput.lock()->GetValues();
     currentTimes       = mOutput.lock()->GetTimeSet()->GetTimes();
     for (std::size_t t = 0; t < currentTimes.size(); ++t)
     {
@@ -199,7 +194,7 @@ void TimeAdaptor::Refresh()
             "Update can only be called from component when it's validating/updating");
     }
 
-    const auto &values = mOutput.lock()->GetValues({});
+    const auto &values = mOutput.lock()->GetValues();
     const auto &times  = mOutput.lock()->GetTimeSet()->GetTimes();
 
     for (std::size_t t = 0; t < times.size(); ++t)

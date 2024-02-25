@@ -336,7 +336,7 @@ void HeatConductionModel::UpdateOutputs(const vector<shared_ptr<IOutput>> &outpu
 {
     for (auto &output : outputs)
     {
-        const auto &values = output->GetValues(output);
+        const auto &values = output->GetValues();
 
         double temp = (*mTempValues)(mCellOutputs[output->GetId()]);
         values->SetTimeSeriesValuesForElement(0, {temp});

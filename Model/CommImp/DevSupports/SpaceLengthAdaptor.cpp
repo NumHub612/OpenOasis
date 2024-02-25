@@ -179,11 +179,10 @@ void SpaceLengthAdaptor::UpdateQuantity()
         unit, sourceQuantity->GetCaption() + pq, sourceQuantity->GetDescription() + pq);
 }
 
-shared_ptr<IValueSet>
-SpaceLengthAdaptor::GetValues(const shared_ptr<IBaseExchangeItem> &querier)
+shared_ptr<IValueSet> SpaceLengthAdaptor::GetValues()
 {
     return ExtensionMethods::MultiplyElementValues(
-        mOutput.lock()->GetValues(querier), mFactors);
+        mOutput.lock()->GetValues(), mFactors);
 }
 
 shared_ptr<SpaceLengthAdaptor> SpaceLengthAdaptor::GetInstance()

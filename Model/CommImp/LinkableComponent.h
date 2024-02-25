@@ -164,8 +164,6 @@ public:
     // Internal methods for component initializing.
     //
 
-    virtual void SetArguments(const std::vector<std::shared_ptr<IArgument>> &arguments);
-
     virtual void SetStatus(LinkableComponentStatus status, const std::string &msg = "");
 
     virtual void SetAdaptedOutputFactories();
@@ -198,7 +196,7 @@ public:
     // TODO: refactor UpdateInputs() and UpdateOutputs() to be more generic.
     //
 
-    virtual void UpdateInputs();
+    virtual void RefreshInputs();
 
     virtual void ApplyInputData(const std::shared_ptr<IValueSet> &values) = 0;
 
@@ -212,7 +210,7 @@ public:
     virtual void
     PerformTimestep(const std::vector<std::shared_ptr<IOutput>> &outputs) = 0;
 
-    virtual void UpdateInputTimesAndValues();
+    virtual void UpdateInputs();
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Internal methods for component Finishing.

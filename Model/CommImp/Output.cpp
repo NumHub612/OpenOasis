@@ -256,12 +256,12 @@ shared_ptr<ISpatialDefinition> Output::GetSpatialDefinition() const
     return mElementSet;
 }
 
-void Output::AddListener(const ListenFuncType &func)
+void Output::AddListener(const ListenFunc &func)
 {
     mItemListeners += func;
 }
 
-void Output::RemoveListener(const ListenFuncType &func)
+void Output::RemoveListener(const ListenFunc &func)
 {
     mItemListeners -= func;
 }
@@ -278,22 +278,8 @@ shared_ptr<IValueDefinition> Output::GetValueDefinition() const
     }
 }
 
-shared_ptr<IValueSet>
-Output::GetValues(const shared_ptr<IBaseExchangeItem> &querySpecifier)
+shared_ptr<IValueSet> Output::GetValues()
 {
-    // No updating action while querier specified.
-    if (querySpecifier)
-    {
-        if (IsValidQuerySpecifier(querySpecifier))
-        {
-            return mValues;
-        }
-        else
-        {
-            return nullptr;
-        }
-    }
-
     // Get the earlist time which no value request will be made earlier than.
     const auto earliestTime =
         ExchangeItemHelper::GetEarliestConsumerTime(GetInstance());

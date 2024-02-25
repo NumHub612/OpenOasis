@@ -57,8 +57,7 @@ public:
 
     virtual void SetElementSet(std::shared_ptr<IElementSet> elements) override;
 
-    virtual std::shared_ptr<IValueSet>
-    GetValues(const std::shared_ptr<IBaseExchangeItem> &querier) override;
+    virtual std::shared_ptr<IValueSet> GetValues() override;
 
     virtual std::shared_ptr<ITimeSet> GetTimeExtent() const override;
 
