@@ -82,10 +82,10 @@ endif()
 # 加载项目文件
 # -------------------------------------------------------------
 set(RootDir  ${PROJECT_SOURCE_DIR})
-set(CoreDir ${RootDir}/Model)
+set(CoreDir ${RootDir}/Models)
 
 file(GLOB_RECURSE ToolsSrc ${CoreDir}/ThirdPart/*.cpp ${CoreDir}/ThirdPart/*.cc ${CoreDir}/ThirdPart/*.c) 
-file(GLOB driver "${PROJECT_SOURCE_DIR}/Model/Launcher.cpp")
+file(GLOB driver "${PROJECT_SOURCE_DIR}/Models/Launcher.cpp")
 
 if (NOT ENABLE_TESTS)
     list(FILTER ToolsSrc EXCLUDE REGEX ".*/Catch2/.*")
@@ -111,8 +111,8 @@ set(CommLib "CommLib")
 add_library(${CommLib}  STATIC  ${ToolsSrc} ${CommSrc} ${UtilSrc})
 target_include_directories(${CommLib}  
     PUBLIC  ${PROJECT_SOURCE_DIR}
-    PUBLIC  ${PROJECT_SOURCE_DIR}/Model
-    PUBLIC  ${PROJECT_SOURCE_DIR}/Model/ThirdPart
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Models
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Models/ThirdPart
     )
 set_target_properties(${CommLib} PROPERTIES PREFIX "")
 
@@ -174,8 +174,7 @@ endif()
 ##-- 添加附加包含目录
 target_include_directories(${ProjectName}  
     PUBLIC  ${PROJECT_SOURCE_DIR}   
-    PUBLIC  ${PROJECT_SOURCE_DIR}/Model/ThirdPart
-    # PUBLIC  "${PROJECT_SOURCE_DIR}\\Tools\\Eigen\\"    
+    PUBLIC  ${PROJECT_SOURCE_DIR}/Models/ThirdPart    
     )
     
 
