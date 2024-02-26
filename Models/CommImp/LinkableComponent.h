@@ -61,11 +61,11 @@ protected:
 
     std::shared_ptr<ITimeSet> mTimeExtent = nullptr;
 
-    // --- Object variables.
-
     LinkableComponentStatus mStatus = LinkableComponentStatus::Created;
 
     std::shared_ptr<ITime> mCurrentTime = nullptr;
+
+    // --- Object variables.
 
 public:
     virtual ~LinkableComponent() = default;

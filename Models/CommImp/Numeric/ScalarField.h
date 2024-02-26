@@ -9,6 +9,7 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Field.h"
+#include "Models/Utils/CommConstants.h"
 #include <type_traits>
 
 
@@ -41,5 +42,6 @@ public:
 
 using ScalarFieldDbl = ScalarField<double>;
 using ScalarFieldInt = ScalarField<int>;
+using ScalarFieldFp  = ScalarField<Utils::real>;
 
 }  // namespace OpenOasis::CommImp::Numeric

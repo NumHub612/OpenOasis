@@ -15,6 +15,16 @@
 
 1. [矩形平板的二维传导](https://www.theseus-fe.com/zh/zh-resources/zh-validations/zh-basic-heat-transfer)
 
+
+| 参数 | 数值 | 单位 | 描述 |
+|------|------|------|------|
+| k    | 81   | W/m*K| 导热系数 |
+| L    | 0.833| m    | 长度 |
+| w    | 0.83 | m    | 宽度 |
+| T 1  | 100  | °C   | 温度边界条件 |
+| T 2  | 20   | °C   | 温度边界条件 |
+
+
 **系统**
 
 ![](./heat_conduction_model/assets/system.PNG)

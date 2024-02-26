@@ -21,11 +21,11 @@ namespace OpenOasis
 namespace SystHeats
 {
 using CommImp::LinkableComponent;
-using CommImp::Numeric::ScalarFieldDbl;
+using CommImp::Numeric::ScalarFieldFp;
 using CommImp::Numeric::Solver;
 using CommImp::Spatial::Grid;
 using CommImp::Spatial::Coordinate;
-
+using Utils::real;
 
 class HeatConductionModel : public LinkableComponent
 {
@@ -33,14 +33,14 @@ private:
     std::string mTaskFile;
     std::string mOutputDir;
 
-    std::shared_ptr<Grid>           mGrid;
-    std::shared_ptr<ScalarFieldDbl> mTempValues;
-    std::shared_ptr<Solver>         mSolver;
+    std::shared_ptr<Grid>          mGrid;
+    std::shared_ptr<ScalarFieldFp> mTempValues;
+    std::shared_ptr<Solver>        mSolver;
 
-    double      mT0;
+    real        mT0;
     std::string mT0file;
 
-    double mK;
+    real mK;
 
     std::string mStart, mEnd;
 
@@ -87,9 +87,9 @@ private:
     std::shared_ptr<IOutput> CreateCellOutput(int idx, const std::string &var);
     std::vector<Coordinate>  NodesInCell(int idx);
 
-    std::tuple<std::vector<double>, std::vector<double>> GenerateCoeAndSrcMatrix();
+    std::tuple<std::vector<real>, std::vector<real>> GenerateCoeAndSrcMatrix();
 
-    std::tuple<double, double> CalculateUniformCoef();
+    std::tuple<real, real> CalculateUniformCoef();
 
     void SaveResult();
 };

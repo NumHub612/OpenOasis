@@ -8,8 +8,8 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Solver.h"
-#include "Matrix.h"
+#include "Models/CommImp/Numeric/Solver.h"
+#include "Models/CommImp/Numeric/Matrix.h"
 #include "Models/CommImp/Spatial/Grid.h"
 
 

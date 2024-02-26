@@ -198,7 +198,7 @@ void HeatConductionModel::InitializeSpace()
 
     // Initialize temperature field.
     auto size   = mGrid->GetNumCells();
-    mTempValues = make_shared<ScalarFieldDbl>(size, mT0);
+    mTempValues = make_shared<ScalarFieldFp>(size, mT0);
 
     if (mT0file.empty())
         return;
@@ -412,19 +412,19 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
 //     SaveResult();
 // }
 
-tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatrix()
+tuple<vector<real>, vector<real>> HeatConductionModel::GenerateCoeAndSrcMatrix()
 {
     // -Calculate coefficients.
 
-    double xCoe, yCoe;
+    real xCoe, yCoe;
     tie(xCoe, yCoe) = CalculateUniformCoef();
 
     // -All DIRICHLET boundary conditions, use 1-st precision.
 
     int size = mGrid->GetNumCells();
 
-    vector<double> matrix(static_cast<long>(size) * size, 0);
-    vector<double> source(size, 0);
+    vector<real> matrix(static_cast<long>(size) * size, 0);
+    vector<real> source(size, 0);
 
     for (int i = 0; i < size; i++)
     {
@@ -447,7 +447,7 @@ tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatr
             // Boundary conditions.
             if (isBound)
             {
-                double boundT = 0;
+                real boundT = 0;
                 for (const auto &bound : mPatchBounds["temp"])
                 {
                     const auto &fIdxs = mGrid->GetPatchFaceIndexes(bound.first);
@@ -458,7 +458,7 @@ tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatr
                     }
                 }
 
-                double coe = (isEast || isWest) ? xCoe : yCoe;
+                real coe = (isEast || isWest) ? xCoe : yCoe;
 
                 matrix[i * size + i] -= coe;
                 source[i] -= 2. * coe * boundT;
@@ -476,11 +476,11 @@ tuple<vector<double>, vector<double>> HeatConductionModel::GenerateCoeAndSrcMatr
     return {matrix, source};
 }
 
-tuple<double, double> HeatConductionModel::CalculateUniformCoef()
+tuple<real, real> HeatConductionModel::CalculateUniformCoef()
 {
     // A uniform rectangular 2d grid has same cell centroid distance at each
     // direction.
-    double dx = 0, dy = 0;
+    real dx = 0, dy = 0;
 
     const auto &cell = mGrid->GetCell(0);
     const auto &coor = cell.centroid;
@@ -488,8 +488,8 @@ tuple<double, double> HeatConductionModel::CalculateUniformCoef()
     {
         const auto &_coor = mGrid->GetCell(i).centroid;
 
-        double _dx = abs(_coor.x - coor.x);
-        double _dy = abs(_coor.y - coor.y);
+        real _dx = abs(_coor.x - coor.x);
+        real _dy = abs(_coor.y - coor.y);
 
         dx = max(dx, _dx);
         dy = max(dy, _dy);
@@ -498,8 +498,8 @@ tuple<double, double> HeatConductionModel::CalculateUniformCoef()
             break;
     }
 
-    double xCoe = -mK * dy / dx;
-    double yCoe = -mK * dx / dy;
+    real xCoe = -mK * dy / dx;
+    real yCoe = -mK * dx / dy;
     return {xCoe, yCoe};
 }
 

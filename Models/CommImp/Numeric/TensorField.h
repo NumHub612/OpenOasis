@@ -10,6 +10,7 @@
 #pragma once
 #include "Field.h"
 #include "Tensor.h"
+#include "Models/Utils/CommConstants.h"
 
 
 namespace OpenOasis::CommImp::Numeric
@@ -37,7 +38,8 @@ public:
     }
 };
 
-using TensorFieldInt = TensorField<int>;
 using TensorFieldDbl = TensorField<double>;
+using TensorFieldInt = TensorField<int>;
+using TensorFieldFp  = TensorField<Utils::real>;
 
 }  // namespace OpenOasis::CommImp::Numeric
