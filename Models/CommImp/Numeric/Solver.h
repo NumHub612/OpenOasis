@@ -40,29 +40,27 @@ public:
         const std::string                                    &var,
         const std::variant<real, Vector<real>, Tensor<real>> &value) = 0;
 
-    // virtual void
-    // SetInitialValue(const std::string &var, const ScalarField<real> &values);
+    virtual void
+    SetInitialValue(const std::string &var, const ScalarField<real> &values) = 0;
 
-    // virtual void
-    // SetInitialValue(const std::string &var, const VectorField<real> &values);
+    virtual void
+    SetInitialValue(const std::string &var, const VectorField<real> &values) = 0;
 
-    // virtual void
-    // SetInitialValue(const std::string &var, const TensorField<real> &values);
+    virtual void
+    SetInitialValue(const std::string &var, const TensorField<real> &values) = 0;
 
     virtual void SetCoefficient(
         const std::string                                    &var,
         const std::variant<real, Vector<real>, Tensor<real>> &coeff) = 0;
 
-    // virtual void
-    // SetCoefficient(const std::string &var, const ScalarField<real> &coefficients);
+    virtual void
+    SetCoefficient(const std::string &var, const ScalarField<real> &coeffs) = 0;
 
-    // virtual void
-    // SetCoefficient(const std::string &var, const VectorField<real> &coefficients);
+    virtual void
+    SetCoefficient(const std::string &var, const VectorField<real> &coeffs) = 0;
 
-    // virtual void
-    // SetCoefficient(const std::string &var, const TensorField<real> &coefficients);
-
-    // virtual void Reset();
+    virtual void
+    SetCoefficient(const std::string &var, const TensorField<real> &coeffs) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Equation discretizing.
@@ -88,6 +86,11 @@ public:
     virtual void BeforeSolve() = 0;
     virtual void Solve()       = 0;
     virtual void AfterSolve()  = 0;
+
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Solution access.
+    //
 
     virtual ScalarField<real> GetScalarSolutions() const = 0;
 };

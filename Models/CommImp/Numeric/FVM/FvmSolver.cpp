@@ -8,7 +8,7 @@
 #include "Models/Utils/Exception.h"
 
 
-namespace OpenOasis::CommImp::Numeric
+namespace OpenOasis::CommImp::Numeric::FVM
 {
 using namespace std;
 using namespace Utils;
@@ -124,4 +124,4 @@ ScalarField<real> FvmSolver::GetScalarSolutions() const
     return mTemps;
 }
 
-}  // namespace OpenOasis::CommImp::Numeric
+}  // namespace OpenOasis::CommImp::Numeric::FVM

@@ -74,7 +74,7 @@ private:
 
     void PrepareInputs() override;
     void PrepareOutputs() override;
-    void UpdateInputs() override;
+    void PullInputs() override;
 
     void ApplyInputData(const std::shared_ptr<IValueSet> &values) override;
     void UpdateOutputs(const std::vector<std::shared_ptr<IOutput>> &outputs) override;

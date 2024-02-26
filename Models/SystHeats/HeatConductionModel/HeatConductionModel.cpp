@@ -14,7 +14,7 @@
 #include "Models/CommImp/ValueSet2D.h"
 #include "Models/CommImp/IO/MeshLoader.h"
 #include "Models/CommImp/Spatial/Grid2D.h"
-#include "Models/CommImp/Numeric/FvmSolver.h"
+#include "Models/CommImp/Numeric/FVM/FvmSolver.h"
 #include "Models/CommImp/Numeric/DirichletBoundary.h"
 #include "Models/Utils/YamlHandler.h"
 #include "Models/Utils/Exception.h"
@@ -111,7 +111,7 @@ void HeatConductionModel::InitializeArguments()
         loader.GetPatches(),
         loader.GetZones());
 
-    mSolver = make_shared<FvmSolver>(mGrid);
+    mSolver = make_shared<FVM::FvmSolver>(mGrid);
 
     // Equation.
     seg = "EQUATION";
@@ -322,7 +322,7 @@ shared_ptr<IQuantity> HeatConductionModel::GetTempQuantity()
     return quan;
 }
 
-void HeatConductionModel::UpdateInputs()
+void HeatConductionModel::PullInputs()
 {
     // pass.
 }

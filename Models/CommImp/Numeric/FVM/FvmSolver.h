@@ -13,7 +13,7 @@
 #include "Models/CommImp/Spatial/Grid.h"
 
 
-namespace OpenOasis::CommImp::Numeric
+namespace OpenOasis::CommImp::Numeric::FVM
 {
 using Spatial::Grid;
 using Utils::real;
@@ -60,4 +60,4 @@ public:
     ScalarField<real> GetScalarSolutions() const override;
 };
 
-}  // namespace OpenOasis::CommImp::Numeric
+}  // namespace OpenOasis::CommImp::Numeric::FVM
