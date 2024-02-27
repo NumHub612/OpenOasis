@@ -21,19 +21,19 @@ class VectorField : public Field<Vector<T, N>>
 public:
     virtual ~VectorField() = default;
 
-    VectorField(FieldRange range = FieldRange::CELL)
+    VectorField(FieldDomain domain = FieldDomain::CELL)
     {
-        this->mRange = range;
-        this->mType  = FieldType::VECTOR;
+        this->mDomain = domain;
+        this->mType   = FieldType::VECTOR;
     }
 
     VectorField(
         std::size_t size, const Vector<T, N> &val = {},
-        FieldRange range = FieldRange::CELL) :
+        FieldDomain domain = FieldDomain::CELL) :
         Field<Vector<T, N>>(size, val)
     {
-        this->mRange = range;
-        this->mType  = FieldType::VECTOR;
+        this->mDomain = domain;
+        this->mType   = FieldType::VECTOR;
     }
 };
 
@@ -41,5 +41,6 @@ using VectorFieldInt3D = VectorField<int, 3>;
 using VectorFieldInt2D = VectorField<int, 2>;
 using VectorFieldDbl3D = VectorField<double, 3>;
 using VectorFieldDbl2D = VectorField<double, 2>;
+using VectorFieldFp3D  = VectorField<Utils::real, 3>;
 
 }  // namespace OpenOasis::CommImp::Numeric

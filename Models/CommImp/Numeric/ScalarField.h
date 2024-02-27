@@ -9,7 +9,6 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Field.h"
-#include "Models/Utils/CommConstants.h"
 #include <type_traits>
 
 
@@ -26,17 +25,17 @@ public:
 
     virtual ~ScalarField() = default;
 
-    ScalarField(std::size_t size, T val = 0, FieldRange range = FieldRange::CELL) :
+    ScalarField(std::size_t size, T val = 0, FieldDomain domain = FieldDomain::CELL) :
         Field<T>(size, val)
     {
-        this->mRange = range;
-        this->mType  = FieldType::SCALAR;
+        this->mDomain = domain;
+        this->mType   = FieldType::SCALAR;
     }
 
-    ScalarField(FieldRange range = FieldRange::CELL)
+    ScalarField(FieldDomain domain = FieldDomain::CELL)
     {
-        this->mRange = range;
-        this->mType  = FieldType::SCALAR;
+        this->mDomain = domain;
+        this->mType   = FieldType::SCALAR;
     }
 };
 

@@ -17,18 +17,18 @@ namespace OpenOasis::CommImp::Numeric
 {
 enum class FieldType
 {
+    NONE,
     SCALAR,
     VECTOR,
-    TENSOR,
-    NONE
+    TENSOR
 };
 
-enum class FieldRange
+enum class FieldDomain
 {
+    NONE,
     NODE,
     FACE,
-    CELL,
-    NONE
+    CELL
 };
 
 /// @brief The abstract field class used to represent numeric field, such as
@@ -37,8 +37,8 @@ template <typename T>
 class Field
 {
 protected:
-    FieldRange mRange = FieldRange::NONE;
-    FieldType  mType  = FieldType::NONE;
+    FieldDomain mDomain = FieldDomain::NONE;
+    FieldType   mType   = FieldType::NONE;
 
     std::vector<T> mData;
 
@@ -133,9 +133,9 @@ public:
         return mType;
     }
 
-    FieldRange Range() const
+    FieldDomain Range() const
     {
-        return mRange;
+        return mDomain;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////

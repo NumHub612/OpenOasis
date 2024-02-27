@@ -10,7 +10,6 @@
 #pragma once
 #include "Field.h"
 #include "Tensor.h"
-#include "Models/Utils/CommConstants.h"
 
 
 namespace OpenOasis::CommImp::Numeric
@@ -22,19 +21,19 @@ class TensorField : public Field<Tensor<T>>
 public:
     virtual ~TensorField() = default;
 
-    TensorField(FieldRange range = FieldRange::CELL)
+    TensorField(FieldDomain domain = FieldDomain::CELL)
     {
-        this->mRange = range;
-        this->mType  = FieldType::TENSOR;
+        this->mDomain = domain;
+        this->mType   = FieldType::TENSOR;
     }
 
     TensorField(
         std::size_t size, const Tensor<T> &val = {},
-        FieldRange range = FieldRange::CELL) :
+        FieldDomain domain = FieldDomain::CELL) :
         Field<Tensor<T>>(size, val)
     {
-        this->mRange = range;
-        this->mType  = FieldType::TENSOR;
+        this->mDomain = domain;
+        this->mType   = FieldType::TENSOR;
     }
 };
 
