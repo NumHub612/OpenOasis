@@ -24,13 +24,15 @@
  *                "description": "{some description about comp1}",
  *                "type": "{component type of comp1}",
  *                "task": "{path_to_taskfile}/task.yaml",
- *                "dll": "{path_to_dllfile}/OasisFlows.dll"
+ *                "dll": "{path_to_dllfile}/OasisFlows.dll",
+ *                "link": false
  *            },
  *            "comp2": {
  *                "description": "{some description about comp2}",
  *                "type": "{component type of comp2}",
  *                "task": "{path_to_taskfile}/task.yaml",
- *                "dll": "{path_to_dllfile}/OasisFlows.dll"
+ *                "dll": "{path_to_dllfile}/OasisFlows.dll",
+ *                "link": false
  *            },
  *            ...
  *        },
@@ -83,7 +85,7 @@ namespace OpenOasis::CommImp::IO
 {
 using Utils::JsonLoader;
 
-/// @brief Clas forLoading components coupling configurations json file.
+/// @brief Class forLoading components coupling configurations json file.
 class LinkLoader
 {
 public:
