@@ -50,7 +50,7 @@ void FvmSolver::ParseTimeDerivativeTerm()
     throw NotImplementedException();
 }
 
-void FvmSolver::ParseConvectiveTerm()
+void FvmSolver::ParseConvectionTerm()
 {
     throw NotImplementedException();
 }
@@ -119,9 +119,10 @@ void FvmSolver::Solve()
 void FvmSolver::AfterSolve()
 {}
 
-ScalarField<real> FvmSolver::GetScalarSolutions() const
+optional<ScalarFieldFp> FvmSolver::GetScalarSolutions(const string &var) const
 {
     return mTemps;
 }
+
 
 }  // namespace OpenOasis::CommImp::Numeric::FVM

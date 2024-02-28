@@ -30,7 +30,7 @@ private:
     real mCoeffHeat;
     real mInitValue;
 
-    ScalarField<real> mTemps;
+    ScalarFieldFp mTemps;
 
 public:
     ~FvmSolver() = default;
@@ -45,7 +45,7 @@ public:
         const std::variant<real, Vector<real>, Tensor<real>> &coeff) override;
 
     void ParseTimeDerivativeTerm() override;
-    void ParseConvectiveTerm() override;
+    void ParseConvectionTerm() override;
     void ParseDiffusionTerm() override;
     void ParseSourceTerm() override;
 
@@ -57,7 +57,8 @@ public:
     void Solve() override;
     void AfterSolve() override;
 
-    ScalarField<real> GetScalarSolutions() const override;
+    std::optional<ScalarFieldFp>
+    GetScalarSolutions(const std::string &var) const override;
 };
 
 }  // namespace OpenOasis::CommImp::Numeric::FVM

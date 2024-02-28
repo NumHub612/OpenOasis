@@ -41,6 +41,6 @@ using VectorFieldInt3D = VectorField<int, 3>;
 using VectorFieldInt2D = VectorField<int, 2>;
 using VectorFieldDbl3D = VectorField<double, 3>;
 using VectorFieldDbl2D = VectorField<double, 2>;
-using VectorFieldFp3D  = VectorField<Utils::real, 3>;
+using VectorFieldFp    = VectorField<Utils::real, 3>;
 
 }  // namespace OpenOasis::CommImp::Numeric

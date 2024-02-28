@@ -370,7 +370,7 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
 
     mSolver->Solve();
 
-    const auto &solution = mSolver->GetScalarSolutions();
+    const auto &solution = mSolver->GetScalarSolutions("temp").value();
 
     for (int i = 0; i < (int)solution.Size(); i++)
         mTempValues->SetAt(i, solution(i));
