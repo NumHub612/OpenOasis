@@ -31,7 +31,6 @@ using LinearEqs = std::tuple<Matrix<real>, std::vector<real>>;
 /// @details Each numerical operator can discretize specific equation terms, or say
 /// carry out specific operations on field quantities, and return corresponding
 /// coefficient matrix and source term vector.
-/// @todo Each operator can customize the algorithm and register automatically.
 class Operator
 {
 protected:

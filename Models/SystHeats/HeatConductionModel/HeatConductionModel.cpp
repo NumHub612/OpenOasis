@@ -364,10 +364,6 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
 
     mSolver->ParseDiffusionTerm();
 
-    mSolver->ParseSourceTerm();
-
-    mSolver->Scheme();
-
     mSolver->Solve();
 
     const auto &solution = mSolver->GetScalarSolutions("temp").value();

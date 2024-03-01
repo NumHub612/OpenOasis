@@ -44,18 +44,9 @@ public:
         const std::string                                    &var,
         const std::variant<real, Vector<real>, Tensor<real>> &coeff) override;
 
-    void ParseTimeDerivativeTerm() override;
-    void ParseConvectionTerm() override;
     void ParseDiffusionTerm() override;
-    void ParseSourceTerm() override;
 
-    void BeforeScheme() override;
-    void Scheme() override;
-    void AfterScheme() override;
-
-    void BeforeSolve() override;
     void Solve() override;
-    void AfterSolve() override;
 
     std::optional<ScalarFieldFp>
     GetScalarSolutions(const std::string &var) const override;

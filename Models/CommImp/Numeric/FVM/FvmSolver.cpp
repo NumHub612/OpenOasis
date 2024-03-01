@@ -45,16 +45,6 @@ void FvmSolver::SetCoefficient(
     mCoeffHeat = get<real>(coeff);
 }
 
-void FvmSolver::ParseTimeDerivativeTerm()
-{
-    throw NotImplementedException();
-}
-
-void FvmSolver::ParseConvectionTerm()
-{
-    throw NotImplementedException();
-}
-
 void FvmSolver::ParseDiffusionTerm()
 {
     Laplacian lap(mGrid);
@@ -79,21 +69,6 @@ void FvmSolver::ParseDiffusionTerm()
     }
 }
 
-void FvmSolver::ParseSourceTerm()
-{}
-
-void FvmSolver::BeforeScheme()
-{}
-
-void FvmSolver::Scheme()
-{}
-
-void FvmSolver::AfterScheme()
-{}
-
-void FvmSolver::BeforeSolve()
-{}
-
 void FvmSolver::Solve()
 {
     Eigen::Map<Eigen::Matrix<real, Eigen::Dynamic, 1>> b(mRhs.data(), (int)mRhs.size());
@@ -115,9 +90,6 @@ void FvmSolver::Solve()
         mTemps(i) = x[i];
     }
 }
-
-void FvmSolver::AfterSolve()
-{}
 
 optional<ScalarFieldFp> FvmSolver::GetScalarSolutions(const string &var) const
 {

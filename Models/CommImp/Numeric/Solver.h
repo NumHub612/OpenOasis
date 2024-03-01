@@ -5,12 +5,12 @@
  *    @License   :  Apache-2.0
  *
  *    @Desc      :  Abstract solver class to provide unified interfaces.
- *    A solver is responsible for parsing the equation expression to be solved, and
+ *    Solver's responsible for parsing the equation expression to be solved, and
  *    discretizing the equation items in the computational domain,
  *    combining them into a matrix, and
  *    solving it.
  *
- *    The solver is also responsible for initializing the relevant field quantities,
+ *    Solver is also responsible for initializing the relevant field quantities,
  *    and providing specific discrete and stepping scheme.
  *
  ** ***********************************************************************************/
@@ -18,6 +18,7 @@
 #include "Boundary.h"
 #include "Source.h"
 #include "Operator.h"
+#include "Matrix.h"
 #include <optional>
 
 
@@ -25,14 +26,23 @@ namespace OpenOasis::CommImp::Numeric
 {
 using Utils::real;
 
+enum class SolverStatus
+{
+    Created,
+    Initialized,
+    Parsed,
+    Discretized,
+    Updated,
+    Solved,
+    Failed
+};
+
 /// @brief Abstract solver class.
-/// @todo Each solver can customize the algorithm and register automatically.
-/// @todo Each step of the solver calculation can be debugged.
 class Solver
 {
 public:
     ///////////////////////////////////////////////////////////////////////////////////
-    // Configuration setting.
+    // Configuration and initialization.
     //
 
     virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &bound)
@@ -85,33 +95,7 @@ public:
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Mount pre/post solvers and callbacks functions.
-    //
-
-    // virtual void
-    // AddPreSolver(const std::string &id, const std::shared_ptr<Solver> &solver)
-    // {
-    //     throw std::runtime_error("Not implemented.");
-    // }
-
-    // virtual void
-    // AddPostSolver(const std::string &id, const std::shared_ptr<Solver> &solver)
-    // {
-    //     throw std::runtime_error("Not implemented.");
-    // }
-
-    // virtual void RemoveSolver(const std::string &id)
-    // {
-    //     throw std::runtime_error("Not implemented.");
-    // }
-
-    virtual void AddCallback(const std::function<void()> &callback)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Equation discretizing.
+    // Equation parsing and discretizing.
     //
 
     virtual void ParseTimeDerivativeTerm()
@@ -176,6 +160,11 @@ public:
     ///////////////////////////////////////////////////////////////////////////////////
     // Solution access.
     //
+
+    std::optional<LinearEqs> GetLinearEqs() const
+    {
+        throw std::runtime_error("Not implemented.");
+    }
 
     virtual std::optional<ScalarFieldFp>
     GetScalarSolutions(const std::string &var) const
