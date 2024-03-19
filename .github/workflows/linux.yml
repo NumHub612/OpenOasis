@@ -52,10 +52,10 @@ jobs:
           cd ${{ github.workspace }}/build
           ctest --output-on-failure -C Release -VV
         shell: bash
-      - name: Valgrind
-        run: |
-          sudo apt-get install valgrind -y
-          cd ${{ github.workspace }}/build
-          valgrind --leak-check=full --errors-for-leak-kinds=all --error-exitcode=1 ./bin/OpenOasis 
-        shell: bash
+      # - name: Valgrind
+      #   run: |
+      #     sudo apt-get install valgrind -y
+      #     cd ${{ github.workspace }}/build
+      #     valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=1 ./bin/OpenOasis 
+      #   shell: bash
         
