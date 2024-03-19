@@ -8,7 +8,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Models/Utils/CommMacros.h"
+#include "Models/Utils/CommConstants.h"
 #include "Field.h"
 #include <type_traits>
 
