@@ -8,6 +8,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Models/Utils/CommMacros.h"
 #include "Field.h"
 #include "Tensor.h"
 
