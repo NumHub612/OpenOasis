@@ -504,7 +504,7 @@ void HeatConductionModel::SaveResult()
     auto file = FilePathHelper::Combine(mOutputDir, "heat_conduction_result.csv");
 
     CsvWriter writer(file);
-    writer.InsertColumn<double>(0, "temp", mTempValues->Data());
+    writer.InsertColumn<Utils::real>(0, "temp", mTempValues->Data());
 
     writer.SetRowLabel(-1, "id");
     for (int i = 0; i < (int)mTempValues->Size(); i++)
