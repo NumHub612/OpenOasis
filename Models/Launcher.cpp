@@ -72,7 +72,7 @@ int main(int argc, const char *argv[])
     }
     else
     {
-        configFilePath = "config.json";
+        return 0;
     }
     spdlog::info("Config file path: {}", configFilePath);
 
