@@ -6,7 +6,7 @@ __author__ = 'Qin zhaoyu'
 """
 import numpy as np
 from .ABCLayer import Layer
-from ...utils.LayerInitializer import Zeros, XavierUniform
+from ..utils.LayerInitializer import Zeros, XavierUniform
 
 
 class Dense(Layer):

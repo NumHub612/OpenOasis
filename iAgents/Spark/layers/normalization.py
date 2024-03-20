@@ -7,7 +7,7 @@ __url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 from .ABCLayer import Layer
-from ...utils.LayerInitializer import Zeros, Ones
+from ..utils.LayerInitializer import Zeros, Ones
 
 
 class BatchNormalization(Layer):

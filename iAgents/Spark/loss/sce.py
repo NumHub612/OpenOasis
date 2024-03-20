@@ -7,7 +7,7 @@ __url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 from .ABCLoss import Loss
-from ...utils.math import softmax, log_softmax
+from ..utils.math import softmax, log_softmax
 
 
 class SoftmaxCrossEntropy(Loss):

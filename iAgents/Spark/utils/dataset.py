@@ -10,7 +10,7 @@ import gzip
 import pickle
 import numpy as np
 
-from .downloader import download_url
+from Spark.utils.downloader import download_url
 
 
 class Dataset:

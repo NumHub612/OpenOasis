@@ -7,8 +7,8 @@ __url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 from .ABCLayer import Layer
-from ...utils.LayerInitializer import Zeros, XavierUniform
-from ...utils.math import sigmoid, empty
+from ..utils.LayerInitializer import Zeros, XavierUniform
+from ..utils.math import sigmoid, empty
 
 
 class LSTM(Layer):

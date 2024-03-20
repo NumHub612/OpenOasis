@@ -6,7 +6,7 @@ __author__ = 'borgwang'
 __url__ = https://github.com/borgwang/tinynn
 """
 from .ABCActivator import Activation
-from ...utils.math import sigmoid
+from ..utils.math import sigmoid
 
 
 class Sigmoid(Activation):

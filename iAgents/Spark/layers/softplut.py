@@ -7,7 +7,7 @@ __url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 from .ABCActivator import Activation
-from ...utils.math import sigmoid
+from ..utils.math import sigmoid
 
 
 class Softplus(Activation):

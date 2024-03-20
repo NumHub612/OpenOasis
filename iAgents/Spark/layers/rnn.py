@@ -7,8 +7,8 @@ __url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 from .ABCLayer import Layer
-from ...utils.LayerInitializer import Zeros, XavierUniform
-from ...utils.math import empty
+from ..utils.LayerInitializer import Zeros, XavierUniform
+from ..utils.math import empty
 
 
 class RNN(Layer):

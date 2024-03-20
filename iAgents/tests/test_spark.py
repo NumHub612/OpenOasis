@@ -12,15 +12,18 @@ import time
 import unittest
 import numpy as np
 
-from Spark.pipeline import Model
-from Spark.modules import Net, Dense, ReLU, Adam, SoftmaxCrossEntropy
+from Spark.model import Model
+from Spark.net import Net
+from Spark.layers import Dense, ReLU
+from Spark.loss import SoftmaxCrossEntropy
+from Spark.optimizer import Adam
 from Spark.utils import random_seed, MNIST, BatchIterator, accuracy
 
 
 class TestSpark(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print("\n---------- Test start \n")
+        print(f"\n---------- Test {cls.__name__} \n")
 
     @classmethod
     def tearDownClass(cls):
