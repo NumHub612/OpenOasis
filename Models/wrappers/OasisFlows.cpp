@@ -8,6 +8,10 @@ using namespace std;
 
 static vector<shared_ptr<OpenOasis::ILinkableComponent>> componenents;
 
+const char *GetOasisVersion()
+{
+    return "0.0.0";
+}
 
 void *GetHeatConductionComp(const char *id, const char *taskFile);
 
@@ -16,7 +20,7 @@ static unordered_map<string, function<void *(const char *, const char *)>>
     componentFactory = {{"HeatConductionComp", GetHeatConductionComp}};
 
 
-void *GetComponent(const char *id, const char *type, const char *task)
+void *GetOasisComponent(const char *id, const char *type, const char *task)
 {
     if (componentFactory.count(type) == 1)
     {

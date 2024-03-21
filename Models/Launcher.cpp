@@ -97,13 +97,22 @@ int main(int argc, const char *argv[])
 
         if (!libLoader.Load(dllPath))
         {
-            spdlog::error("Failed to load component {} from {}", compId, dllPath);
+            spdlog::error("Failed to load dll/so from {}", dllPath);
             return 1;
+        }
+        else
+        {
+            auto ver = libLoader.RunFunction<const char *()>("GetOasisVersion");
+            spdlog::info(
+                "Dll/so for component {} loaded from {} (version: {})",
+                compId,
+                dllPath,
+                ver);
         }
 
         auto rawComp =
             libLoader.RunFunction<void *(const char *, const char *, const char *)>(
-                "GetComponent", compId.c_str(), type.c_str(), taskFile.c_str());
+                "GetOasisComponent", compId.c_str(), type.c_str(), taskFile.c_str());
 
         if (rawComp == nullptr)
         {
