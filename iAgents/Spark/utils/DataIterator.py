@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Data Iterator class.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 from collections import namedtuple
 import numpy as np

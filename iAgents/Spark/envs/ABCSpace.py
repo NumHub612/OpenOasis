@@ -5,8 +5,6 @@ Abstract model for a space that is used for the state and action spaces.
 Each action space defines the set of actions an agent can perform, and 
 each state space defines the set of all possible states in the `env`. 
 Space can be either continuous or discrete.
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod, ABCMeta
 

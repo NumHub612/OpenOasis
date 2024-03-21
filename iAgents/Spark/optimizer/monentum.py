@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Momentum optimizer.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 from .ABCOptimizer import Optimizer
 

@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Reshape layer.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 from .ABCLayer import Layer
 

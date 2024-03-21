@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Sigmoid activator layer.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 from .ABCActivator import Activation
 from ..utils.math import sigmoid

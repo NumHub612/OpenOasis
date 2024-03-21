@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Numpy random seeder.
-
-__author__ = 'Qin zhaoyu'
 """
 import numpy as np
 

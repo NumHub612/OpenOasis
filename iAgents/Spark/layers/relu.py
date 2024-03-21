@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 ReLU activation function.
-
-__author__ = 'Qin zhaoyu'
 """
 import numpy as np
 from .ABCActivator import Activation

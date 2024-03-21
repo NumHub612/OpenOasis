@@ -2,8 +2,6 @@
 """
 A activation layer in a neural net is responsible for providing 
 the nonlinear representation of the model.
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod
 from .ABCLayer import Layer

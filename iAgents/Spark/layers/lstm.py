@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 LSTM layer.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 from .ABCLayer import Layer

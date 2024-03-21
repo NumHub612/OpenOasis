@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Mean Squared Error loss function.
-
-__author__ = 'Qin zhaoyu'
 """
 import numpy as np
 from .ABCLoss import Loss

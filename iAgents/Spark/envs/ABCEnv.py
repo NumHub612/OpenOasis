@@ -14,8 +14,6 @@ To implement your own environment, you need to define the following methods:
 - `close`
 
 Refer to the [Gym documentation](https://gym.openai.com/docs/#environments).
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod, ABCMeta
 import numpy as np

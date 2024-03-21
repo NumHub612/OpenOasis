@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Simple utilities to download and save a file with progress bar.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 import hashlib
 import os

@@ -2,8 +2,6 @@
 """
 A optimizer in a neural net is responsible for updating the parameters of the model 
 using gradients.
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod, ABCMeta
 

@@ -16,8 +16,6 @@ To implement your own agent, you should implement the following methods:
 - `load_weights`
 - `save_weights`
 - `layers`
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod, ABCMeta
 

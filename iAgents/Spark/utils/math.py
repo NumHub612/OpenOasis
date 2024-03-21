@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Useful math utilities.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 

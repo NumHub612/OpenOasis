@@ -9,8 +9,6 @@ the observations, actions, and rewards of the environment.
 By implementing a custom processor,
 it can effectively translate between the two without having to change the underlaying
 implementation of the agent or environment.
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod, ABCMeta
 

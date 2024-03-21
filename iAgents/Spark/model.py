@@ -2,8 +2,6 @@
 """
 The `Model` component is responsible for integrating all the components 
 to form the entire pipeline.
-
-__author__ = 'Qin zhaoyu'
 """
 import pickle
 

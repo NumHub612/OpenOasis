@@ -2,8 +2,6 @@
 """
 A loss in a neural net outputs the loss value and the gradient about the last layer
 after given the model predicted value and the true value.
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod, ABCMeta
 

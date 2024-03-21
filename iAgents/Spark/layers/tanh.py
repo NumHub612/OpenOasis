@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 Tanh activator layer.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 import numpy as np
 from .ABCActivator import Activation

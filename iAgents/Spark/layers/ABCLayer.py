@@ -3,8 +3,6 @@
 A layer in a neural net is responsible for receiving the input of the previous layer, 
 performing the operations of the layer, and 
 output the results to the next layer.
-
-__author__ = 'Qin zhaoyu'
 """
 from abc import abstractmethod, ABCMeta
 

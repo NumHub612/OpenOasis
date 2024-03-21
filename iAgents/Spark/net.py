@@ -3,8 +3,6 @@
 The `Net` component manages the forward and backpropagation of tensor between layers,
 and provides interfaces for obtaining parameters, 
 setting parameters, and obtaining gradients.
-
-__author__ = 'Qin zhaoyu'
 """
 import copy
 from Spark.utils.StructuredParam import StructuredParam

@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 A dense layer operates `outputs = dot(intputs, weight) + bias`.
-
-__author__ = 'Qin zhaoyu'
 """
 import numpy as np
 from .ABCLayer import Layer
