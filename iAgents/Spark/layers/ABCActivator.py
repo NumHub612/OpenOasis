@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-A activation layer in a neural net is responsible for providing 
+An activation layer in a neural net is responsible for providing 
 the nonlinear representation of the model.
 """
 from abc import abstractmethod

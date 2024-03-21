@@ -2,13 +2,13 @@
 """
 A layer in a neural net is responsible for receiving the input of the previous layer, 
 performing the operations of the layer, and 
-output the results to the next layer.
+outputing the results to the next layer.
 """
 from abc import abstractmethod, ABCMeta
 
 
 class Layer(metaclass=ABCMeta):
-    """Base class for layers."""
+    """Base layer class."""
 
     def __init__(self):
         self.params = {p: None for p in self.param_names}

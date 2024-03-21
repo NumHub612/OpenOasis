@@ -36,7 +36,7 @@ class TruncatedNormal(Initializer):
 
     def __init__(self, low, high, mean=0.0, std=1.0):
         self._mean, self._std = mean, std
-        self._low, self._high = low, high  #
+        self._low, self._high = low, high
 
     def init(self, shape):
         data = np.random.normal(loc=self._mean, scale=self._std, size=shape)
@@ -99,7 +99,6 @@ class XavierUniform(Initializer):
 
     Weights will have values sampled from uniform distribution U(-a, a) where
     a = gain * sqrt(6.0 / (num_in + num_out))
-
     """
 
     def __init__(self, gain=1.0):
