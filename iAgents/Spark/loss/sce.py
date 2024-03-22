@@ -8,7 +8,11 @@ from ..utils.math import softmax, log_softmax
 
 
 class SoftmaxCrossEntropy(Loss):
-    """Softmax Cross Entropy loss function."""
+    """Softmax Cross Entropy loss function.
+
+    :param T: temperature parameter for softmax function.
+    :param weights: weights for each class.
+    """
 
     def __init__(self, T=1.0, weights=None):
         self._weights = np.asarray(weights) if weights is not None else weights

@@ -6,18 +6,18 @@ from .ABCOptimizer import Optimizer
 
 
 class Adam(Optimizer):
-    """Adam optimizer."""
+    """Adam optimizer.
+
+    :param lr: Learning rate.
+    :param beta1: Exponential decay rate for the first moment estimates.
+    :param beta2: Exponential decay rate for the second moment estimates.
+    :param epsilon: Small value to avoid zero division.
+    :param weight_decay: Weight decay factor.
+    """
 
     def __init__(
         self, lr=0.001, beta1=0.9, beta2=0.999, epsilon=1e-8, weight_decay=0.0
     ):
-        """
-        :param lr: Learning rate.
-        :param beta1: Exponential decay rate for the first moment estimates.
-        :param beta2: Exponential decay rate for the second moment estimates.
-        :param epsilon: Small value to avoid zero division.
-        :param weight_decay: Weight decay factor.
-        """
         super().__init__(lr, weight_decay)
         self._b1 = beta1
         self._b2 = beta2

@@ -23,7 +23,7 @@ from Spark.utils import random_seed, MNIST, BatchIterator, accuracy
 class TestSpark(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print(f"\n---------- Test {cls.__name__} \n")
+        print(f"\n---------- {cls.__name__} \n")
 
     @classmethod
     def tearDownClass(cls):
@@ -67,11 +67,11 @@ class TestSpark(unittest.TestCase):
         # compile a model.
         model = Model(net=net, loss=SoftmaxCrossEntropy(), optimizer=Adam(0.0001))
 
-        # train.
+        # train in one episode.
         iterator = BatchIterator(batch_size=128)
         for epoch in range(10):
             t_start = time.time()
-            # trainning in each episode.
+            # train in epoch.
             for batch in iterator(train_x, train_y):
                 pred = model.forward(batch.inputs)
                 loss, grads = model.backward(pred, batch.targets)

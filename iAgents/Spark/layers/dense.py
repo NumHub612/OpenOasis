@@ -15,13 +15,13 @@ class Dense(Layer):
     :param b_init: Bias initializer.
     """
 
-    def __init__(self, num_out, w_init=XavierUniform(), b_init=Zeros()):
+    def __init__(self, num_out: int, w_init=XavierUniform(), b_init=Zeros()):
         super().__init__()
 
         self.initializers = {"w": w_init, "b": b_init}
         self.shapes = {"w": [None, num_out], "b": [num_out]}
 
-    def forward(self, inputs):
+    def forward(self, inputs: np.ndarray) -> np.ndarray:
         # Run operates `outputs = dot(intputs, weight) + bias`.
         if not self.is_init:
             self.shapes["w"][0] = inputs.shape[1]
@@ -29,7 +29,7 @@ class Dense(Layer):
         self.ctx = {"X": inputs}
         return inputs @ self.params["w"] + self.params["b"]
 
-    def backward(self, grad):
+    def backward(self, grad: np.ndarray) -> np.ndarray:
         # Calculates the gradients of the parameters w, b,
         # and the input,
         # and returns the gradient of the input.
@@ -39,4 +39,5 @@ class Dense(Layer):
 
     @property
     def param_names(self):
+        """Returns the names of the parameters."""
         return "w", "b"

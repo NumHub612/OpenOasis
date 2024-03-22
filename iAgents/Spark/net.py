@@ -5,31 +5,41 @@ and provides interfaces for obtaining parameters,
 setting parameters, and obtaining gradients.
 """
 import copy
+import numpy as np
 from Spark.utils.StructuredParam import StructuredParam
 
 
 class Net:
-    """Feed-forward Neural Network class."""
+    """Feed-forward Neural Network class.
 
-    def __init__(self, layers):
+    :param layers: a list of `Layer` objects, in the order they should be connected.
+    """
+
+    def __init__(self, layers: list):
         self.layers = layers
         self._is_training = True
 
     def __repr__(self):
         return "\n".join([str(layer) for layer in self.layers])
 
-    def forward(self, inputs):
+    def forward(self, inputs: np.ndarray) -> np.ndarray:
         """Forward propagation traverses  all layers sequentially,
         with the output of each layer calculated
         as the input to the next layer.
+
+        :param inputs: input tensor to the network.
+        :return: result tensor of the network.
         """
         for layer in self.layers:
             inputs = layer.forward(inputs)
         return inputs
 
-    def backward(self, grad):
+    def backward(self, grad: np.ndarray) -> StructuredParam:
         """Back propagation traverses all layers in reverse order,
         using the gradient of each layer as input to the next.
+
+        :param grad: gradient tensor of the network.
+        :return: structured gradients.
         """
         # back propagation
         for layer in reversed(self.layers):
@@ -45,6 +55,9 @@ class Net:
 
     @property
     def params(self):
+        """Returns a structured parameter object containing the trainable and non-trainable
+        parameters of all layers in the network.
+        """
         trainable = [layer.params for layer in self.layers]
         non_trainable = [layer.nt_params for layer in self.layers]
         return StructuredParam(trainable, non_trainable)
@@ -56,6 +69,7 @@ class Net:
 
     @property
     def is_training(self):
+        """Whether the network is in training mode or not."""
         return self._is_training
 
     @is_training.setter
