@@ -35,10 +35,12 @@
 #endif
 
 
+EXPORT const char *GetOasisVersion();
+
 /// @brief Get OpenOasis linkable component.
 /// @param id Id.
 /// @param type Type of component.
 /// @param task Task yaml/yml file contains configurations of the component.
 /// @return Component.
 /// @note No deletion is required.
-EXPORT void *GetComponent(const char *id, const char *type, const char *task);
+EXPORT void *GetOasisComponent(const char *id, const char *type, const char *task);

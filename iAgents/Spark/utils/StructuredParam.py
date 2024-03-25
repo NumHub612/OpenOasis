@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
 A helper class represents network parameters or gradients.
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 import copy
 import numpy as np

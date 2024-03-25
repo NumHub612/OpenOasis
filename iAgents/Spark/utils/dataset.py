@@ -1,16 +1,13 @@
 # -*- encoding: utf-8 -*-
 """
 Common datasets
-
-__author__ = 'borgwang'
-__url__ = https://github.com/borgwang/tinynn
 """
 import os
 import gzip
 import pickle
 import numpy as np
 
-from .downloader import download_url
+from Spark.utils.downloader import download_url
 
 
 class Dataset:
