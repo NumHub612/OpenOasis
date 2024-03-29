@@ -1,6 +1,9 @@
 #include "OasisFlows.h"
 #include "Models/SystHeats/HeatConductionModel/HeatConductionModel.h"
 
+#ifndef PROJECT_VERSION
+#define PROJECT_VERSION "dev-0.0.0"
+#endif
 
 // using namespace OpenOasis::SystFluids::Hydrologics;
 using namespace OpenOasis::SystHeats;
@@ -10,7 +13,7 @@ static vector<shared_ptr<OpenOasis::ILinkableComponent>> componenents;
 
 const char *GetOasisVersion()
 {
-    return "0.0.0";
+    return PROJECT_VERSION;
 }
 
 void *GetHeatConductionComp(const char *id, const char *taskFile);
