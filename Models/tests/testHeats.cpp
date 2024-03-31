@@ -1,5 +1,4 @@
 #include "ThirdPart/Catch2/catch.hpp"
-#include "FolderConfig.h"
 #include "Models/Utils/FilePathHelper.h"
 #include "Models/Utils/CsvHandler.h"
 #include "Models/SystHeats/HeatConductionModel/HeatConductionModel.h"
@@ -8,13 +7,17 @@ using namespace std;
 using namespace OpenOasis::SystHeats;
 using namespace OpenOasis::Utils;
 
+#ifndef PROJECT_DIR
+#define PROJECT_DIR "."
+#endif
+
 
 TEST_CASE("Heats dummy test")
 {
     SECTION("function test")
     {
         string file = FilePathHelper::Combine(
-            PROJECT_SRC_DIR, "Rsrc/Benchmarks/heat_conduction_model/task.yaml");
+            PROJECT_DIR, "Rsrc/Benchmarks/heat_conduction_model/task.yaml");
 
         HeatConductionModel model("heat", file);
 
@@ -31,8 +34,7 @@ TEST_CASE("Heats dummy test")
         model.Finish();
 
         string ref_file = FilePathHelper::Combine(
-            PROJECT_SRC_DIR,
-            "Rsrc/Benchmarks/heat_conduction_model/assets/validation.csv");
+            PROJECT_DIR, "Rsrc/Benchmarks/heat_conduction_model/assets/validation.csv");
 
         string simu_file =
             FilePathHelper::GetFullPath("./outputs/heat_conduction_result.csv");

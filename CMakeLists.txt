@@ -50,6 +50,10 @@ endif()
 file(STRINGS "${PROJECT_SOURCE_DIR}/Rsrc/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
 message(STATUS "${PROJECT_LOGO}")
 
+file(STRINGS "${PROJECT_SOURCE_DIR}/Models/VERSION.txt" _VERSION)
+add_compile_definitions(PROJECT_VERSION="${_VERSION}")
+message(STATUS "OpenOasis Version: ${_VERSION}")
+
 
 # -------------------------------------------------------------
 # 配置编译选项
@@ -183,8 +187,7 @@ target_include_directories(${ProjectName}
 # -------------------------------------------------------------
 if (ENABLE_TESTS)
     set(ProjectTestName "OasisTests")
-
-    configure_file("${CoreDir}/tests/FolderConfig.h.in" "${CoreDir}/tests/FolderConfig.h")
+    add_compile_definitions(PROJECT_DIR="${PROJECT_SOURCE_DIR}")
 
     add_executable(${ProjectTestName} ${TestSrc} ${FluidSrc} ${HeatSrc})
     target_link_libraries(${ProjectTestName} 

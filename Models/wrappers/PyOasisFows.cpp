@@ -8,8 +8,14 @@ int oasis_add(int i, int j)
 }
 
 
+#ifndef PROJECT_VERSION
+#define PROJECT_VERSION "dev-0.0.0"
+#endif
+
+
 PYBIND11_MODULE(PyOasisFlows, m)
 {
+    m.attr("__version__") = PROJECT_VERSION;
     // optional module docstring
     m.doc() = "pybind11 example plugin";
     // expose add function, and add keyword arguments and default arguments
