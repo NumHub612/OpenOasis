@@ -14,6 +14,7 @@ jobs:
       COVERAGE_DATA_PATH: coverage-data/coverage.info    
     steps:
       - uses: actions/checkout@v2
+      - uses: mpi4py/setup-mpi@v1
       - name: Install GCC-10
         run: |
           sudo apt-get update
@@ -21,7 +22,7 @@ jobs:
           gcc --version
           g++ --version
           ls /usr/bin/gcc*
-        shell: bash
+        shell: bash      
       - name: CMake Build
         run: |
           cd ${{ github.workspace }}

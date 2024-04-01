@@ -20,6 +20,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: mpi4py/setup-mpi@v1
       - name: Install Compiler 
         run: |
           rm '/usr/local/bin/2to3'

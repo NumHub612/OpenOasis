@@ -12,6 +12,7 @@ jobs:
       runs-on: windows-latest
       steps:
         - uses: actions/checkout@v2
+        - uses: mpi4py/setup-mpi@v1
         - name: CMake Build
           run: |
             cd D:/a/OpenOasis/OpenOasis
@@ -30,6 +31,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
+        - uses: mpi4py/setup-mpi@v1
         - name: Install GCC-10
           run: |
             sudo apt-get update
@@ -37,7 +39,7 @@ jobs:
             gcc --version
             g++ --version
             ls /usr/bin/gcc*
-          shell: bash
+          shell: bash          
         - name: CMake Build
           run: |
             cd ${{ github.workspace }}
@@ -57,6 +59,7 @@ jobs:
       runs-on: macos-latest
       steps:
         - uses: actions/checkout@v2
+        - uses: mpi4py/setup-mpi@v1
         - name: Install Compiler 
           run: |
             rm '/usr/local/bin/2to3'

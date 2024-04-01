@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: mpi4py/setup-mpi@v1
       - name: Install GCC-10
         run: |
           sudo apt-get update
@@ -27,7 +28,7 @@ jobs:
           gcc --version
           g++ --version
           ls /usr/bin/gcc*
-        shell: bash
+        shell: bash        
       - name: Install Third party library
         run: |
           git clone https://github.com/pybind/pybind11.git
