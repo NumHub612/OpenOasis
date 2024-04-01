@@ -52,13 +52,14 @@ message(STATUS "${PROJECT_LOGO}")
 
 file(STRINGS "${PROJECT_SOURCE_DIR}/Models/VERSION.txt" _VERSION)
 add_compile_definitions(PROJECT_VERSION="${_VERSION}")
-message(STATUS "OpenOasis Version: ${_VERSION}")
+message(STATUS "OasisFlows Version: ${_VERSION}")
 
 
 # -------------------------------------------------------------
 # 配置编译选项
 # -------------------------------------------------------------
 find_package(OpenMP REQUIRED)
+find_package(MPI REQUIRED)
 option(ENABLE_PYLIB "-- If generating python3 packages" OFF)
 if (ENABLE_PYLIB)
     find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
@@ -169,6 +170,7 @@ add_executable(${ProjectName} ${driver})
 ##-- 链接库
 target_link_libraries(${ProjectName} 
     PUBLIC ${CommLib}
+    PUBLIC ${MPI_C_LIBRARIES}
     PUBLIC OpenMP::OpenMP_CXX
     )
 if (LINUX)
@@ -177,6 +179,7 @@ endif()
 
 ##-- 添加附加包含目录
 target_include_directories(${ProjectName}  
+    PUBLIC  ${MPI_INCLUDE_PATH}
     PUBLIC  ${PROJECT_SOURCE_DIR}   
     PUBLIC  ${PROJECT_SOURCE_DIR}/Models/ThirdPart    
     )
