@@ -25,6 +25,7 @@ if (MSVC)
 else()
     add_compile_options(-fPIC)
     add_compile_options(-pthread)
+    add_compile_options(-ldl)    
 endif()
 
 if (NOT CMAKE_BUILD_TYPE)
@@ -145,10 +146,8 @@ add_library(${ModuleName} SHARED ${FluidSrc} ${HeatSrc} ${ExportSrc})
 target_link_libraries(${ModuleName} 
     PUBLIC ${CommLib}
     PUBLIC OpenMP::OpenMP_CXX
+    PUBLIC ${CMAKE_DL_LIBS}
     )
-if (LINUX)
-    target_link_libraries(${ModuleName} PUBLIC dl)
-endif()
 
 ##-- 增加包含目录
 target_include_directories(${ModuleName}
@@ -172,10 +171,8 @@ target_link_libraries(${ProjectName}
     PUBLIC ${CommLib}
     PUBLIC ${MPI_C_LIBRARIES}
     PUBLIC OpenMP::OpenMP_CXX
+    PUBLIC ${CMAKE_DL_LIBS}
     )
-if (LINUX)
-    target_link_libraries(${ProjectName} PUBLIC dl)
-endif()
 
 ##-- 添加附加包含目录
 target_include_directories(${ProjectName}  
