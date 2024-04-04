@@ -60,7 +60,6 @@ message(STATUS "OasisFlows Version: ${_VERSION}")
 # 配置编译选项
 # -------------------------------------------------------------
 find_package(OpenMP REQUIRED)
-find_package(MPI REQUIRED)
 option(ENABLE_PYLIB "-- If generating python3 packages" OFF)
 if (ENABLE_PYLIB)
     find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
@@ -169,14 +168,12 @@ add_executable(${ProjectName} ${driver})
 ##-- 链接库
 target_link_libraries(${ProjectName} 
     PUBLIC ${CommLib}
-    PUBLIC ${MPI_C_LIBRARIES}
     PUBLIC OpenMP::OpenMP_CXX
     PUBLIC ${CMAKE_DL_LIBS}
     )
 
 ##-- 添加附加包含目录
 target_include_directories(${ProjectName}  
-    PUBLIC  ${MPI_INCLUDE_PATH}
     PUBLIC  ${PROJECT_SOURCE_DIR}   
     PUBLIC  ${PROJECT_SOURCE_DIR}/Models/ThirdPart    
     )
