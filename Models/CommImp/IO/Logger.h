@@ -19,7 +19,18 @@ namespace CommImp
 namespace IO
 {
 /// @brief To get rotating logger with specified id.
-std::shared_ptr<spdlog::logger> GetLogger(const std::string &loggerId = "OasisLog");
+class Logger
+{
+public:
+    static std::shared_ptr<spdlog::logger>
+    GetLogger(const std::string &loggerId = "OasisLog");
+
+private:
+    static int DEFAULT_LOGGER_SIZE;
+    static int DEFAULT_FILE_NUM;
+
+    static std::unordered_map<std::string, std::shared_ptr<spdlog::logger>> mLoggers;
+};
 
 }  // namespace IO
 }  // namespace CommImp

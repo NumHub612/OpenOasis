@@ -17,10 +17,10 @@ namespace OpenOasis::CommImp::IO
 using namespace std;
 using namespace Utils;
 
-static shared_ptr<spdlog::logger> logger = GetLogger();
 
 void LinkLoader::Load()
 {
+    shared_ptr<spdlog::logger> logger = Logger::GetLogger();
     logger->info("Loading links from [{}].", mLinkFile);
     LoadComponents();
     LoadLinks();

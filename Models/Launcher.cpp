@@ -60,7 +60,7 @@ int main(int argc, const char *argv[])
 
         spdlog::set_level(spdlog::level::from_str(logLevelStr));
 
-        auto logger = IO::GetLogger();
+        auto logger = IO::Logger::GetLogger();
         logger->set_level(spdlog::level::from_str(logLevelStr));
     }
 
