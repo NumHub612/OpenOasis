@@ -4,11 +4,15 @@ site_name: OpenOasis
 docs_dir: 'Doc'
 nav:
   - Home: 
-    - Intro: README.md
-    # - iAgents: 
-    #   - spark: iAgents/spark_docs.md
-    # - models: 
-    #   - api: models/api.md
+    - Intro: README.md 
+    - 'Oasis iAgents': 
+      - 'Spark': iAgents\README.md
+    - 'Oasis Models': 
+      - 'Oasis API': models\namespace_open_oasis.md
+      - 'Solvers': models\namespace_open_oasis_1_1_comm_imp_1_1_numeric.md
+      - 'Heats': models\namespace_open_oasis_1_1_syst_heats.md 
+    - 'Data Assts':
+      - 'Converters': DataAssts\README.md           
   - Tutorials: OpenOasisTutorial.md
   - DevTips: OpenOasisDevTips.md
 
@@ -54,4 +58,11 @@ markdown_extensions:
 plugins:
   - search
   - mkdocstrings
- 
+  - mkdoxy:
+      projects:
+        models: 
+          src-dirs: Models/Inc Models/SystHeats Models/CommImp/IO Models/CommImp/Numeric Models/CommImp/Temporal Models/CommImp/Spatial
+          full-doc: True
+          doxy-cfg: 
+            FILE_PATTERNS: "*.cpp *.h*"
+            RECURSIVE: True 

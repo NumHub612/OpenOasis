@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Install GCC-10
         run: |
           sudo apt-get update
@@ -28,6 +29,7 @@ jobs:
           g++ --version
           ls /usr/bin/gcc*
         shell: bash
+
       - name: Install Third party library
         run: |
           git clone https://github.com/pybind/pybind11.git
@@ -38,6 +40,7 @@ jobs:
           cmake --build . --config Release
           sudo cmake --install .
         shell: bash
+
       - name: CMake Build
         run: |
           export pybind11_DIR=/usr/local/share/cmake/pybind11/
@@ -47,22 +50,27 @@ jobs:
           cmake .. -DENABLE_TESTS=on -DENABLE_PYLIB=on -DCMAKE_BUILD_TYPE:STRING=Release
           cmake --build .
         shell: bash 
+
       - name: Ctest
         run: |
           cd ${{ github.workspace }}/build
           ctest --output-on-failure -C Release -VV
         shell: bash
-      # - name: Valgrind
-      #   run: |
-      #     sudo apt-get install valgrind -y
-      #     cd ${{ github.workspace }}/build
-      #     valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=1 ./bin/OpenOasis 
-      #   shell: bash
+
+      - name: Valgrind
+        run: |
+          sudo apt-get install valgrind -y
+          cd ${{ github.workspace }}/build
+          valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=1 ./bin/OpenOasis 
+        shell: bash
+
       - name: mkdocs
+        if: github.ref == 'refs/heads/main'
         run: |
           cd ${{ github.workspace }}
           pip install mkdocs
           pip install mkdocstrings
           pip install mkdocs-material
+          pip install mkdoxy
           mkdocs gh-deploy --clean
         shell: bash        
