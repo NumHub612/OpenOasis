@@ -36,5 +36,14 @@ jobs:
       - name: Run agent unittest tests
         run: python -m unittest discover ${{ github.workspace }}/iAgents/tests
 
-      # - name: Run uengrs unittest tests
-      #   run: python -m unittest discover ${{ github.workspace }}/Uengrs/tests        
+      - name: Run dataasst unittest tests
+        run: python -m unittest discover ${{ github.workspace }}/DataAsst/tests  
+      
+      - name: mkdocs
+        run: |
+          cd ${{ github.workspace }}
+          pip install mkdocs
+          pip install mkdocstrings
+          pip install mkdocs-material
+          mkdocs gh-deploy --clean
+        shell: bash      

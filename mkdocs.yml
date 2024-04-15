@@ -1,0 +1,57 @@
+site_name: OpenOasis
+
+
+docs_dir: 'Doc'
+nav:
+  - Home: 
+    - Intro: README.md
+    # - iAgents: 
+    #   - spark: iAgents/spark_docs.md
+    # - models: 
+    #   - api: models/api.md
+  - Tutorials: OpenOasisTutorial.md
+  - DevTips: OpenOasisDevTips.md
+
+
+theme:
+  # name: rtd-dropdown
+  name: readthedocs
+  language: zh  
+  palette:  
+    primary: light blue
+    accent: indigo
+  feature:
+    tabs: true  
+
+
+markdown_extensions:
+  - admonition 
+  - footnotes 
+  - meta 
+  - pymdownx.caret  
+  - pymdownx.tilde  
+  - pymdownx.critic  
+  - pymdownx.details 
+  - pymdownx.inlinehilite 
+  - pymdownx.mark 
+  - pymdownx.smartsymbols  
+  - pymdownx.superfences  
+  - codehilite:   
+      guess_lang: false
+      linenums: true
+  - toc:  
+      permalink: true
+  - pymdownx.arithmatex 
+  - pymdownx.betterem:  
+      smart_enable: all
+  - pymdownx.emoji:  
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.magiclink  
+  - pymdownx.tasklist: 
+      custom_checkbox: true
+
+
+plugins:
+  - search
+  - mkdocstrings
+ 
