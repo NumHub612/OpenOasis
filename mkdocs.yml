@@ -4,14 +4,14 @@ site_name: OpenOasis
 docs_dir: 'Doc'
 nav:
   - Home: 
-    - Intro: README.md 
+    - brief: README.md 
     - 'Oasis iAgents': 
       - 'Spark': iAgents\README.md
     - 'Oasis Models': 
       - 'Oasis API': models\namespace_open_oasis.md
       - 'Solvers': models\namespace_open_oasis_1_1_comm_imp_1_1_numeric.md
       - 'Heats': models\namespace_open_oasis_1_1_syst_heats.md 
-    - 'Data Assts':
+    - 'Data Asstants':
       - 'Converters': DataAssts\README.md           
   - Tutorials: OpenOasisTutorial.md
   - DevTips: OpenOasisDevTips.md

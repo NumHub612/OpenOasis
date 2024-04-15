@@ -10,7 +10,11 @@
 
 *Spark*  
 
+------
+
 ::: iAgents.Spark.model
+
+------
 
 ::: iAgents.Spark.net
 
