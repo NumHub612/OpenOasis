@@ -4,7 +4,7 @@ site_name: OpenOasis
 docs_dir: 'Doc'
 nav:
   - Home: 
-    - brief: README.md 
+    - 'intro': README.md 
     - 'Oasis iAgents': 
       - 'Spark': iAgents\README.md
     - 'Oasis Models': 
