@@ -47,5 +47,6 @@ jobs:
           pip install mkdocstrings
           pip install mkdocs-material
           pip install mkdoxy
+          mkdocs serve --no-livereload
           mkdocs gh-deploy --clean
         shell: bash      

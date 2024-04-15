@@ -11,7 +11,7 @@ nav:
       - 'Oasis API': models\namespace_open_oasis.md
       - 'Solvers': models\namespace_open_oasis_1_1_comm_imp_1_1_numeric.md
       - 'Heats': models\namespace_open_oasis_1_1_syst_heats.md 
-    - 'Data Asstants':
+    - 'Data Assistants':
       - 'Converters': DataAssts\README.md           
   - DevTips: OpenOasisDevTips.md
 
