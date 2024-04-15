@@ -13,7 +13,6 @@ nav:
       - 'Heats': models\namespace_open_oasis_1_1_syst_heats.md 
     - 'Data Asstants':
       - 'Converters': DataAssts\README.md           
-  - Tutorials: OpenOasisTutorial.md
   - DevTips: OpenOasisDevTips.md
 
 
