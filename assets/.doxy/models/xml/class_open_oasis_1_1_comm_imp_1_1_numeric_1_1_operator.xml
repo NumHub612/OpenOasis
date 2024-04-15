@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::Operator</compoundname>
+    <derivedcompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::Laplacian</derivedcompoundref>
+    <includes refid="_operator_8h" local="no">Operator.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1af156a0f2477366dfd5f3465d9a9a3f06" prot="protected" static="no" mutable="no">
+        <type>std::optional&lt; std::variant&lt; real, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; real &gt;, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref>&lt; real &gt; &gt; &gt;</type>
+        <definition>std::optional&lt;std::variant&lt;real, Vector&lt;real&gt;, Tensor&lt;real&gt; &gt; &gt; OpenOasis::CommImp::Numeric::Operator::mCoefficient</definition>
+        <argsstring></argsstring>
+        <name>mCoefficient</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::mCoefficient</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="37" column="19" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a6acee42b5225a3574315d971413cd6cc" prot="protected" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarField</ref>&lt; real &gt; &gt;</type>
+        <definition>std::optional&lt;ScalarField&lt;real&gt; &gt; OpenOasis::CommImp::Numeric::Operator::mScalarCoeffs</definition>
+        <argsstring></argsstring>
+        <name>mScalarCoeffs</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::mScalarCoeffs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="39" column="19" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a178b5b06d4f47ca10d97b09f8bdc4ad0" prot="protected" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" kindref="compound">VectorField</ref>&lt; real &gt; &gt;</type>
+        <definition>std::optional&lt;VectorField&lt;real&gt; &gt; OpenOasis::CommImp::Numeric::Operator::mVectorCoeffs</definition>
+        <argsstring></argsstring>
+        <name>mVectorCoeffs</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::mVectorCoeffs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="40" column="19" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adde182d73491e15d60f895610952515f" prot="protected" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField</ref>&lt; real &gt; &gt;</type>
+        <definition>std::optional&lt;TensorField&lt;real&gt; &gt; OpenOasis::CommImp::Numeric::Operator::mTensorCoeffs</definition>
+        <argsstring></argsstring>
+        <name>mTensorCoeffs</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::mTensorCoeffs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="41" column="19" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ac83a04ac747704e8069cd6553fb82d37" prot="protected" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref> &gt;</type>
+        <definition>std::unordered_map&lt;int, BoundaryCondition&gt; OpenOasis::CommImp::Numeric::Operator::mboundaries</definition>
+        <argsstring></argsstring>
+        <name>mboundaries</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::mboundaries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="43" column="24" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0994a06bd735c84e02ea58ff5a8079ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::CommImp::Numeric::Operator::~Operator</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Operator</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::~Operator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="46" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a9209a2cd6a101301c02f18ae09eb5915" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Operator::SetCoefficient</definition>
+        <argsstring>(const std::variant&lt; real, Vector&lt; real &gt;, Tensor&lt; real &gt; &gt; &amp;coeff)</argsstring>
+        <name>SetCoefficient</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::SetCoefficient</qualifiedname>
+        <param>
+          <type>const std::variant&lt; real, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; real &gt;, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref>&lt; real &gt; &gt; &amp;</type>
+          <declname>coeff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="53" column="5" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ae8c32fc86d3edddf38e8c7ffb688bcc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Operator::SetCoefficient</definition>
+        <argsstring>(const ScalarField&lt; real &gt; &amp;coefficients)</argsstring>
+        <name>SetCoefficient</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::SetCoefficient</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarField</ref>&lt; real &gt; &amp;</type>
+          <declname>coefficients</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="58" column="18" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0f9e8e15c52ace2fc0392569a90a2d4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Operator::SetCoefficient</definition>
+        <argsstring>(const VectorField&lt; real &gt; &amp;coefficients)</argsstring>
+        <name>SetCoefficient</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::SetCoefficient</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" kindref="compound">VectorField</ref>&lt; real &gt; &amp;</type>
+          <declname>coefficients</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="63" column="18" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a127681f5b8a9045276d3d29ec8947552" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Operator::SetCoefficient</definition>
+        <argsstring>(const TensorField&lt; real &gt; &amp;coefficients)</argsstring>
+        <name>SetCoefficient</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::SetCoefficient</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField</ref>&lt; real &gt; &amp;</type>
+          <declname>coefficients</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="68" column="18" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1afef2e593e89e95899bc84d76b97ea2a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Operator::SetBoundaryCondition</definition>
+        <argsstring>(int faceIndex, const BoundaryCondition &amp;boundary)</argsstring>
+        <name>SetBoundaryCondition</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::SetBoundaryCondition</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>faceIndex</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref> &amp;</type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="77" column="18" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adb2a610af5eff9385b5b346ddaf14d74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ac5a04c703cdd7fc077ab7b5af313a3d0" kindref="member">LinearEqs</ref></type>
+        <definition>virtual LinearEqs OpenOasis::CommImp::Numeric::Operator::Discretize</definition>
+        <argsstring>(const ScalarField&lt; real &gt; &amp;phiCellField, const ScalarField&lt; real &gt; &amp;phiFaceField)</argsstring>
+        <name>Discretize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::Discretize</qualifiedname>
+        <reimplementedby refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian_1adeeb8cee34c0aa438dfd8dff91c03c68">Discretize</reimplementedby>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiCellField</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiFaceField</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="86" column="23" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a54e4c1080538b30a6befe27e9fa7fba8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ac5a04c703cdd7fc077ab7b5af313a3d0" kindref="member">LinearEqs</ref></type>
+        <definition>virtual LinearEqs OpenOasis::CommImp::Numeric::Operator::Discretize</definition>
+        <argsstring>(const VectorField&lt; real &gt; &amp;phiCellField, const VectorField&lt; real &gt; &amp;phiFaceField)</argsstring>
+        <name>Discretize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::Discretize</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" kindref="compound">VectorField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiCellField</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" kindref="compound">VectorField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiFaceField</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="92" column="23" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1aa233a3df86816b489e42d704e7067357" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ac5a04c703cdd7fc077ab7b5af313a3d0" kindref="member">LinearEqs</ref></type>
+        <definition>virtual LinearEqs OpenOasis::CommImp::Numeric::Operator::Discretize</definition>
+        <argsstring>(const TensorField&lt; real &gt; &amp;phiCellField, const TensorField&lt; real &gt; &amp;phiFaceField)</argsstring>
+        <name>Discretize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Operator::Discretize</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiCellField</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiFaceField</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Operator.h" line="98" column="23" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="98" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Abstract operator class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Each numerical operator can discretize specific equation terms, or say carry out specific operations on field quantities, and return corresponding coefficient matrix and source term vector. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::Laplacian</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::Operator</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator"/>
+      </node>
+    </inheritancegraph>
+    <location file="Models/CommImp/Numeric/Operator.h" line="34" column="1" bodyfile="Models/CommImp/Numeric/Operator.h" bodystart="35" bodyend="103"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adb2a610af5eff9385b5b346ddaf14d74" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>Discretize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a54e4c1080538b30a6befe27e9fa7fba8" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>Discretize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1aa233a3df86816b489e42d704e7067357" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>Discretize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ac83a04ac747704e8069cd6553fb82d37" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>mboundaries</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1af156a0f2477366dfd5f3465d9a9a3f06" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>mCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a6acee42b5225a3574315d971413cd6cc" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>mScalarCoeffs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adde182d73491e15d60f895610952515f" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>mTensorCoeffs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a178b5b06d4f47ca10d97b09f8bdc4ad0" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>mVectorCoeffs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1afef2e593e89e95899bc84d76b97ea2a1" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>SetBoundaryCondition</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a9209a2cd6a101301c02f18ae09eb5915" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ae8c32fc86d3edddf38e8c7ffb688bcc9" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0f9e8e15c52ace2fc0392569a90a2d4f" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a127681f5b8a9045276d3d29ec8947552" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0994a06bd735c84e02ea58ff5a8079ab" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Operator</scope><name>~Operator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

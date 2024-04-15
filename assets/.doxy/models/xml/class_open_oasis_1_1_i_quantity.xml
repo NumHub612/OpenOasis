@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_quantity" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IQuantity</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_value_definition" prot="public" virt="non-virtual">OpenOasis::IValueDefinition</basecompoundref>
+    <includes refid="_i_quantity_8h" local="no">IQuantity.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_quantity_1a6021d58c406667e46661168438001b81" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_unit" kindref="compound">IUnit</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IUnit &gt; OpenOasis::IQuantity::GetUnit</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetUnit</name>
+        <qualifiedname>OpenOasis::IQuantity::GetUnit</qualifiedname>
+        <briefdescription>
+<para>Unit of quantity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IQuantity.h" line="22" column="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class specifies values as an amount of some unit. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IQuantity</label>
+        <link refid="class_open_oasis_1_1_i_quantity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IValueDefinition</label>
+        <link refid="class_open_oasis_1_1_i_value_definition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IQuantity</label>
+        <link refid="class_open_oasis_1_1_i_quantity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IValueDefinition</label>
+        <link refid="class_open_oasis_1_1_i_value_definition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/IQuantity.h" line="18" column="1" bodyfile="Models/Inc/IQuantity.h" bodystart="19" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuantity</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuantity</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_value_definition_1a0f4111f71fa7b1c864b9548d6d70befa" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuantity</scope><name>GetMissingDataValue</name></member>
+      <member refid="class_open_oasis_1_1_i_quantity_1a6021d58c406667e46661168438001b81" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuantity</scope><name>GetUnit</name></member>
+      <member refid="class_open_oasis_1_1_i_value_definition_1a5bd532cff498fc55ab5c1b8f93892dc1" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuantity</scope><name>GetValueType</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuantity</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuantity</scope><name>SetDescription</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

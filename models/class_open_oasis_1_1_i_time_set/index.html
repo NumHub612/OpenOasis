@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::ITimeSet - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::ITimeSet";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_i_time_set.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::ITimeSet</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasisitimeset">Class OpenOasis::ITimeSet<a class="headerlink" href="#class-openoasisitimeset" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="./"><strong>ITimeSet</strong></a></p>
+<p><em>Set of time stamps or time intervals, used to indicate when an output has and can provide values, and when an input item does or may require values.</em> </p>
+<ul>
+<li><code>#include &lt;ITimeSet.h&gt;</code></li>
+</ul>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-addtime"><strong>AddTime</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; time) = 0<br><em>Adds a</em> <code>ITime</code> <em>to this time set.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual double</td>
+<td style="text-align: left;"><a href="#function-getoffsetfromutcinhours"><strong>GetOffsetFromUtcInHours</strong></a> () const = 0<br><em>Time zone offset from UTC, expressed in the number of hours.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-gettimehorizon"><strong>GetTimeHorizon</strong></a> () const = 0<br><em>Gets the time horizon for what timespan it may require/provide values.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#function-gettimes"><strong>GetTimes</strong></a> () const = 0<br><em>Time stamps or spans as available in of an output item, or as required by an input item. Times should be ordered.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual bool</td>
+<td style="text-align: left;"><a href="#function-hasdurations"><strong>HasDurations</strong></a> () const = 0<br><em>Whether each</em> <code>ITime</code> <em>have duration. In this case,duration value greater than zero is expected for each</em><code>ITime</code> <em>in the</em><code>GetTimes()</code> <em>list.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-removetime"><strong>RemoveTime</strong></a> (int index) = 0<br><em>Removes the</em> <code>ITime</code> <em>element with specified index. After removing time, the duration must be updated automatically.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-addtime">function AddTime<a class="headerlink" href="#function-addtime" title="Permanent link">&para;</a></h3>
+<p><em>Adds a</em> <code>ITime</code> <em>to this time set.</em>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ITimeSet</span><span class="o">::</span><span class="n">AddTime</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">time</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>Usually, a timeset item is ordered by timestamp, it means the insertion will trigger interval sorting. After adding time, the duration must be updated automatically. </p>
+<h3 id="function-getoffsetfromutcinhours">function GetOffsetFromUtcInHours<a class="headerlink" href="#function-getoffsetfromutcinhours" title="Permanent link">&para;</a></h3>
+<p><em>Time zone offset from UTC, expressed in the number of hours.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ITimeSet</span><span class="o">::</span><span class="n">GetOffsetFromUtcInHours</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>Since some of the world's time zone differ half an hour from their neighbour the value is specified as a double. </p>
+<h3 id="function-gettimehorizon">function GetTimeHorizon<a class="headerlink" href="#function-gettimehorizon" title="Permanent link">&para;</a></h3>
+<p><em>Gets the time horizon for what timespan it may require/provide values.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ITimeSet</span><span class="o">::</span><span class="n">GetTimeHorizon</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>The providers of this input can assume that the input item never go back further in time than the time horizon's begin time: <code>GetTimeHorizon() -&gt;GetTimeStamp()</code>. Also, it will never go further ahead than the time horizon's end time:: <code>GetTimeHorizon() -&gt;GetTimeStamp() + GetTimeHorizon() -&gt;GetDurationInDays()</code>.</p>
+<p>For an output item, thus for an adapted output, the time horizon indicates in what time span the item can provide values. Specific values: <code>GetTimeHorizon() -&gt;GetTimeStamp()</code> == - Infinity: far back in time; <code>GetTimeHorizon() -&gt;GetDurationInDays()</code> == + Infinity: far in the future. </p>
+<h3 id="function-gettimes">function GetTimes<a class="headerlink" href="#function-gettimes" title="Permanent link">&para;</a></h3>
+<p><em>Time stamps or spans as available in of an output item, or as required by an input item. Times should be ordered.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ITimeSet</span><span class="o">::</span><span class="n">GetTimes</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>Specific values:
+* <code>TimeSet::GetTimes().size() == 0</code>, in case of input: time dependent item, but currently no values required.
+* <code>TimeSet::GetTimes().size() == 0</code>, in case of output: time dependent item, but no values available yet or required yet. </p>
+<h3 id="function-hasdurations">function HasDurations<a class="headerlink" href="#function-hasdurations" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ITimeSet</span><span class="o">::</span><span class="n">HasDurations</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="function-removetime">function RemoveTime<a class="headerlink" href="#function-removetime" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ITimeSet</span><span class="o">::</span><span class="n">RemoveTime</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/Inc/ITimeSet.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_category" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::ICategory</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_describable" prot="public" virt="non-virtual">OpenOasis::IDescribable</basecompoundref>
+    <includes refid="_i_category_8h" local="no">ICategory.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_category_1a447638bef76a10c180ef98f57b2626c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::any</type>
+        <definition>virtual std::any OpenOasis::ICategory::GetValue</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetValue</name>
+        <qualifiedname>OpenOasis::ICategory::GetValue</qualifiedname>
+        <briefdescription>
+<para>Value for this category. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Example, &quot;blue&quot; in a {&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;} set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ICategory.h" line="30" column="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class describes one item of a possible categorization. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It is used by the <computeroutput><ref refid="class_open_oasis_1_1_i_quality" kindref="compound">IQuality</ref></computeroutput> interface for describing qualitative data. A category defines one &quot;class&quot; within a &quot;set of classes&quot;.</para>
+<para>For qualitative data the <computeroutput><ref refid="class_open_oasis_1_1_i_value_set" kindref="compound">IValueSet</ref></computeroutput> exchanged between <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> contains one of the possible <computeroutput><ref refid="class_open_oasis_1_1_i_category" kindref="compound">ICategory</ref></computeroutput> instances per data element. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>OpenOasis::ICategory</label>
+        <link refid="class_open_oasis_1_1_i_category"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::ICategory</label>
+        <link refid="class_open_oasis_1_1_i_category"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/ICategory.h" line="24" column="1" bodyfile="Models/Inc/ICategory.h" bodystart="25" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::ICategory</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::ICategory</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_category_1a447638bef76a10c180ef98f57b2626c4" prot="public" virt="pure-virtual"><scope>OpenOasis::ICategory</scope><name>GetValue</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::ICategory</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::ICategory</scope><name>SetDescription</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

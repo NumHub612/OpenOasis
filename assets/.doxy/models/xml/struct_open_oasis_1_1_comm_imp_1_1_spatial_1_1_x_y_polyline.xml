@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::XYPolyline</compoundname>
+    <includes refid="_x_y_geo_structs_8h" local="no">XYGeoStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a49d79c31ebaa81bf9807652816dec64e" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &gt;</type>
+        <definition>std::vector&lt;XYPoint&gt; OpenOasis::CommImp::Spatial::XYPolyline::points</definition>
+        <argsstring></argsstring>
+        <name>points</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPolyline::points</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="53" column="17" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a1876f40c8219a3f4be743d2e15723ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYPolyline::XYPolyline</definition>
+        <argsstring>()=default</argsstring>
+        <name>XYPolyline</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPolyline::XYPolyline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="55" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a02374bb1a0b842664c0936a7b2cab91f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYPolyline::XYPolyline</definition>
+        <argsstring>(const std::vector&lt; XYPoint &gt; &amp;points)</argsstring>
+        <name>XYPolyline</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPolyline::XYPolyline</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &gt; &amp;</type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="56" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1af773c812d0aa19fcd6ce3d80a2f94c97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYPolyline::XYPolyline</definition>
+        <argsstring>(const XYPolyline &amp;pline)</argsstring>
+        <name>XYPolyline</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPolyline::XYPolyline</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref> &amp;</type>
+          <declname>pline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="57" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1afb4d69246740e84a7360fb676a0bd5e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYPolyline::Validate</definition>
+        <argsstring>() const</argsstring>
+        <name>Validate</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPolyline::Validate</qualifiedname>
+        <briefdescription>
+<para>The validate method check if the <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref> is valid. The checks made are: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>is number of points &gt;= 2</para>
+</listitem><listitem><para>is the length of all line segments positive</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is raised if these above constraints aren&apos;t met. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="65" column="10" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="80" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a4297abbf3209388623ff512b0f13daef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYPolyline::GetLength</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLength</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPolyline::GetLength</qualifiedname>
+        <briefdescription>
+<para>Returns the cumulative calculating length of current line. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="68" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="109" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a21a7919b537c126b38730887ae8d7a7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref></type>
+        <definition>XYLine OpenOasis::CommImp::Spatial::XYPolyline::GetLine</definition>
+        <argsstring>(int lineNumber) const</argsstring>
+        <name>GetLine</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPolyline::GetLine</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>lineNumber</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the lineNumber line segment of the polyline. The index list is zero based. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="72" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="99" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref> is a collection of points (at least 2) connected with straigth lines. XYPolylines are typically used for presentation of 1D data, river network. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="51" column="1" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="52" bodyend="73"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a4297abbf3209388623ff512b0f13daef" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPolyline</scope><name>GetLength</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a21a7919b537c126b38730887ae8d7a7d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPolyline</scope><name>GetLine</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a49d79c31ebaa81bf9807652816dec64e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPolyline</scope><name>points</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1afb4d69246740e84a7360fb676a0bd5e5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPolyline</scope><name>Validate</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a1876f40c8219a3f4be743d2e15723ddc" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPolyline</scope><name>XYPolyline</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a02374bb1a0b842664c0936a7b2cab91f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPolyline</scope><name>XYPolyline</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1af773c812d0aa19fcd6ce3d80a2f94c97" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPolyline</scope><name>XYPolyline</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

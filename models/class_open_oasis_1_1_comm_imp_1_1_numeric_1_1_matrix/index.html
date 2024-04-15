@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::CommImp::Numeric::Matrix - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::CommImp::Numeric::Matrix";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::CommImp::Numeric::Matrix</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasiscommimpnumericmatrix">Class OpenOasis::CommImp::Numeric::Matrix<a class="headerlink" href="#class-openoasiscommimpnumericmatrix" title="Permanent link">&para;</a></h1>
+<p><strong>template &lt;typename T&gt;</strong></p>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/"><strong>Numeric</strong></a> <strong>&gt;</strong> <a href="./"><strong>Matrix</strong></a></p>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-add-12"><strong>Add</strong></a> (std::size_t i, std::size_t j, const T &amp; s) <br><em>Add input scalar</em> <code>s</code> <em>to specified element.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-add-22"><strong>Add</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) <br><em>Adds input matrix</em> <code>m</code> <em>(element-wise).</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-adjoint"><strong>Adjoint</strong></a> () const<br><em>Returns adjoint matrix.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">size_t</td>
+<td style="text-align: left;"><a href="#function-cols"><strong>Cols</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Eigen::SparseMatrix&lt; T &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-data-12"><strong>Data</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const Eigen::SparseMatrix&lt; T &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-data-22"><strong>Data</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">T</td>
+<td style="text-align: left;"><a href="#function-determinant"><strong>Determinant</strong></a> () const<br><em>Returns the determinant of this matrix.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>Vector</strong></a>&lt; T, N &gt;</td>
+<td style="text-align: left;"><a href="#function-diagonal"><strong>Diagonal</strong></a> () const<br><em>Returns diagonal vector of this matrix.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-invert"><strong>Invert</strong></a> () const<br><em>Returns inverse matrix.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-matrix-15"><strong>Matrix</strong></a> (int rows, int cols) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-matrix-25"><strong>Matrix</strong></a> (int size) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-matrix-35"><strong>Matrix</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; other) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-matrix-45"><strong>Matrix</strong></a> (const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp; lst) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-matrix-55"><strong>Matrix</strong></a> (const Eigen::SparseMatrix&lt; T &gt; &amp; mat) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">T</td>
+<td style="text-align: left;"><a href="#function-max"><strong>Max</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">T</td>
+<td style="text-align: left;"><a href="#function-min"><strong>Min</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-mul-12"><strong>Mul</strong></a> (const T &amp; s) <br><em>Multiplies scalar</em> <code>s</code> <em>to the whole matrix.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-mul-22"><strong>Mul</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) const<br><em>Returns this matrix * input matrix</em> <code>m</code> <em>.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">size_t</td>
+<td style="text-align: left;"><a href="#function-rows"><strong>Rows</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-set-12"><strong>Set</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; other) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-set-22"><strong>Set</strong></a> (const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp; lst) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setat"><strong>SetAt</strong></a> (size_t i, size_t j, const T &amp; val) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setcol"><strong>SetCol</strong></a> (size_t j, const <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>Vector</strong></a>&lt; T, N &gt; &amp; vec) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setdiagonal"><strong>SetDiagonal</strong></a> (const T &amp; s) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setrow"><strong>SetRow</strong></a> (size_t i, const <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>Vector</strong></a>&lt; T, N &gt; &amp; vec) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setunit"><strong>SetUnit</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setzero"><strong>SetZero</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-sub-12"><strong>Sub</strong></a> (std::size_t i, std::size_t j, const T &amp; s) <br><em>Subtracts scalar</em> <code>s</code> <em>to specified element.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-sub-22"><strong>Sub</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) <br><em>Subtracts input matrix</em> <code>m</code> <em>(element-wise).</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">T</td>
+<td style="text-align: left;"><a href="#function-sum"><strong>Sum</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">T</td>
+<td style="text-align: left;"><a href="#function-trace"><strong>Trace</strong></a> () const<br><em>Returns the trace of this matrix.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-transpose"><strong>Transpose</strong></a> () const<br><em>Returns transpose matrix.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">T &amp;</td>
+<td style="text-align: left;"><a href="#function-operator()-12"><strong>operator()</strong></a> (size_t i, size_t j) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const T &amp;</td>
+<td style="text-align: left;"><a href="#function-operator()-22"><strong>operator()</strong></a> (size_t i, size_t j) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-operator"><strong>operator*</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-operator_1"><strong>operator*</strong></a> (const T &amp; s) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-operator_2"><strong>operator*=</strong></a> (const T &amp; s) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-operator_3"><strong>operator*=</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-operator_4"><strong>operator+</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-operator_5"><strong>operator+=</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-operator_6"><strong>operator-</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-operator_7"><strong>operator-=</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; m) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-operator_8"><strong>operator=</strong></a> (const <a href="./"><strong>Matrix</strong></a> &amp; other) <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-static-functions">Public Static Functions<a class="headerlink" href="#public-static-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-unit"><strong>Unit</strong></a> (int rows, int cols) <br><em>Makes a sparse matrix with all diagonal elements to 1, and other elements to 0.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>Matrix</strong></a></td>
+<td style="text-align: left;"><a href="#function-zero"><strong>Zero</strong></a> (int rows, int cols) <br><em>Makes a sparse matrix with zeros.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-add-12">function Add [&frac12;]<a class="headerlink" href="#function-add-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Add</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-add-22">function Add [2/2]<a class="headerlink" href="#function-add-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Add</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-adjoint">function Adjoint<a class="headerlink" href="#function-adjoint" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Adjoint</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-cols">function Cols<a class="headerlink" href="#function-cols" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Cols</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-data-12">function Data [&frac12;]<a class="headerlink" href="#function-data-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Data</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-data-22">function Data [2/2]<a class="headerlink" href="#function-data-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Data</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-determinant">function Determinant<a class="headerlink" href="#function-determinant" title="Permanent link">&para;</a></h3>
+<p><em>Returns the determinant of this matrix.</em> 
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Determinant</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div></p>
+<p><strong>Warning:</strong></p>
+<p>Should be a square matrix. </p>
+<h3 id="function-diagonal">function Diagonal<a class="headerlink" href="#function-diagonal" title="Permanent link">&para;</a></h3>
+<p><em>Returns diagonal vector of this matrix.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Diagonal</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div></p>
+<p><strong>Warning:</strong></p>
+<p>Should be a square matrix. </p>
+<h3 id="function-invert">function Invert<a class="headerlink" href="#function-invert" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Invert</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-matrix-15">function Matrix [&#8533;]<a class="headerlink" href="#function-matrix-15" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Matrix</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cols</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-matrix-25">function Matrix [&#8534;]<a class="headerlink" href="#function-matrix-25" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Matrix</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-matrix-35">function Matrix [&#8535;]<a class="headerlink" href="#function-matrix-35" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Matrix</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-matrix-45">function Matrix [&#8536;]<a class="headerlink" href="#function-matrix-45" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Matrix</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">lst</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-matrix-55">function Matrix [5/5]<a class="headerlink" href="#function-matrix-55" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Matrix</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mat</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-max">function Max<a class="headerlink" href="#function-max" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Max</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-min">function Min<a class="headerlink" href="#function-min" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Min</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-mul-12">function Mul [&frac12;]<a class="headerlink" href="#function-mul-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Mul</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-mul-22">function Mul [2/2]<a class="headerlink" href="#function-mul-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Mul</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-rows">function Rows<a class="headerlink" href="#function-rows" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Rows</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-set-12">function Set [&frac12;]<a class="headerlink" href="#function-set-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Set</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-set-22">function Set [2/2]<a class="headerlink" href="#function-set-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Set</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">lst</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setat">function SetAt<a class="headerlink" href="#function-setat" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">SetAt</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">val</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setcol">function SetCol<a class="headerlink" href="#function-setcol" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">SetCol</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">vec</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setdiagonal">function SetDiagonal<a class="headerlink" href="#function-setdiagonal" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">SetDiagonal</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setrow">function SetRow<a class="headerlink" href="#function-setrow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">SetRow</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">vec</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setunit">function SetUnit<a class="headerlink" href="#function-setunit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">SetUnit</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setzero">function SetZero<a class="headerlink" href="#function-setzero" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">SetZero</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-sub-12">function Sub [&frac12;]<a class="headerlink" href="#function-sub-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Sub</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-sub-22">function Sub [2/2]<a class="headerlink" href="#function-sub-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Sub</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-sum">function Sum<a class="headerlink" href="#function-sum" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Sum</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-trace">function Trace<a class="headerlink" href="#function-trace" title="Permanent link">&para;</a></h3>
+<p><em>Returns the trace of this matrix.</em> 
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Trace</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div></p>
+<p><strong>Warning:</strong></p>
+<p>Should be a square matrix. </p>
+<h3 id="function-transpose">function Transpose<a class="headerlink" href="#function-transpose" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Transpose</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-operator-12">function operator() [&frac12;]<a class="headerlink" href="#function-operator-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-operator-22">function operator() [2/2]<a class="headerlink" href="#function-operator-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-operator">function operator*<a class="headerlink" href="#function-operator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">*</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-operator_1">function operator*<a class="headerlink" href="#function-operator_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">*</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-operator_2">function operator*=<a class="headerlink" href="#function-operator_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">*=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-operator_3">function operator*=<a class="headerlink" href="#function-operator_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">*=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-operator_4">function operator+<a class="headerlink" href="#function-operator_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-operator_5">function operator+=<a class="headerlink" href="#function-operator_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">+=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-operator-">function operator-<a class="headerlink" href="#function-operator-" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">-</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-operator-_1">function operator-=<a class="headerlink" href="#function-operator-_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">-=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-operator_6">function operator=<a class="headerlink" href="#function-operator_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="public-static-functions-documentation">Public Static Functions Documentation<a class="headerlink" href="#public-static-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-unit">function Unit<a class="headerlink" href="#function-unit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Unit</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cols</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-zero">function Zero<a class="headerlink" href="#function-zero" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Matrix</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">Matrix</span><span class="o">::</span><span class="n">Zero</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cols</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/CommImp/Numeric/Matrix.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

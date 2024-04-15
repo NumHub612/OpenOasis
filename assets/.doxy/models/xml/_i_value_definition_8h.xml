@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_i_value_definition_8h" kind="file" language="C++">
+    <compoundname>IValueDefinition.h</compoundname>
+    <includes refid="_i_describable_8h" local="yes">IDescribable.h</includes>
+    <includes local="no">any</includes>
+    <includes local="no">typeinfo</includes>
+    <includedby refid="_i_base_exchange_item_8h" local="yes">Models/Inc/IBaseExchangeItem.h</includedby>
+    <includedby refid="_i_quality_8h" local="yes">Models/Inc/IQuality.h</includedby>
+    <includedby refid="_i_quantity_8h" local="yes">Models/Inc/IQuantity.h</includedby>
+    <includedby refid="_i_value_set_8h" local="yes">Models/Inc/IValueSet.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>IDescribable.h</label>
+        <link refid="_i_describable_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/Inc/IValueDefinition.h</label>
+        <link refid="_i_value_definition_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>any</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>typeinfo</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>Models/Inc/IAdaptedOutput.h</label>
+        <link refid="_i_adapted_output_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Models/Inc/IAdaptedOutputFactory.h</label>
+        <link refid="_i_adapted_output_factory_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Models/Inc/IBaseExchangeItem.h</label>
+        <link refid="_i_base_exchange_item_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Models/Inc/IInput.h</label>
+        <link refid="_i_input_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Models/Inc/ILinkableComponent.h</label>
+        <link refid="_i_linkable_component_8h_source"/>
+      </node>
+      <node id="4">
+        <label>Models/Inc/IOutput.h</label>
+        <link refid="_i_output_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Models/Inc/IQuality.h</label>
+        <link refid="_i_quality_8h_source"/>
+      </node>
+      <node id="9">
+        <label>Models/Inc/IQuantity.h</label>
+        <link refid="_i_quantity_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Models/Inc/IValueDefinition.h</label>
+        <link refid="_i_value_definition_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Models/Inc/IValueSet.h</label>
+        <link refid="_i_value_set_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_open_oasis_1_1_i_value_definition" prot="public">OpenOasis::IValueDefinition</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IDescribable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;any&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;typeinfo&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19" refid="class_open_oasis_1_1_i_value_definition" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_i_value_definition" kindref="compound">IValueDefinition</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_describable" kindref="compound">IDescribable</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="class_open_oasis_1_1_i_value_definition_1a5bd532cff498fc55ab5c1b8f93892dc1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::type_info<sp/>&amp;<ref refid="class_open_oasis_1_1_i_value_definition_1a5bd532cff498fc55ab5c1b8f93892dc1" kindref="member">GetValueType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_open_oasis_1_1_i_value_definition_1a0f4111f71fa7b1c864b9548d6d70befa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::any<sp/><ref refid="class_open_oasis_1_1_i_value_definition_1a0f4111f71fa7b1c864b9548d6d70befa" kindref="member">GetMissingDataValue</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Models/Inc/IValueDefinition.h"/>
+  </compounddef>
+</doxygen>

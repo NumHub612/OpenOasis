@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_exchange_item_change_event_args" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::ExchangeItemChangeEventArgs</compoundname>
+    <includes refid="_exchange_item_change_event_args_8h" local="no">ExchangeItemChangeEventArgs.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_exchange_item_change_event_args_1a9b2c4cf90ae7079051ae589da1220744" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_base_exchange_item" kindref="compound">IBaseExchangeItem</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IBaseExchangeItem &gt; OpenOasis::ExchangeItemChangeEventArgs::GetExchangeItem</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetExchangeItem</name>
+        <qualifiedname>OpenOasis::ExchangeItemChangeEventArgs::GetExchangeItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ExchangeItemChangeEventArgs.h" line="32" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_exchange_item_change_event_args_1afbec1fac773958228386f119e8de468c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ExchangeItemChangeEventArgs::SetExchangeItem</definition>
+        <argsstring>(std::shared_ptr&lt; IBaseExchangeItem &gt; obj)=0</argsstring>
+        <name>SetExchangeItem</name>
+        <qualifiedname>OpenOasis::ExchangeItemChangeEventArgs::SetExchangeItem</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_base_exchange_item" kindref="compound">IBaseExchangeItem</ref> &gt;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ExchangeItemChangeEventArgs.h" line="34" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_exchange_item_change_event_args_1a818baf8277ad3c0b2fa1ec14c67cd213" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string OpenOasis::ExchangeItemChangeEventArgs::GetMessages</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetMessages</name>
+        <qualifiedname>OpenOasis::ExchangeItemChangeEventArgs::GetMessages</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ExchangeItemChangeEventArgs.h" line="41" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_exchange_item_change_event_args_1a26fc5c80fdfa3c91c3429f820201a2b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ExchangeItemChangeEventArgs::SetMessages</definition>
+        <argsstring>(const std::string &amp;value)=0</argsstring>
+        <name>SetMessages</name>
+        <qualifiedname>OpenOasis::ExchangeItemChangeEventArgs::SetMessages</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ExchangeItemChangeEventArgs.h" line="43" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class containing the information that will be passed when firing an <computeroutput>ExchangeItemValueChanged</computeroutput> event. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Sending exchange item events is optional, so it should not be used as a mechanism to build critical functionality upon. </para>
+    </detaileddescription>
+    <location file="Models/Inc/ExchangeItemChangeEventArgs.h" line="25" column="1" bodyfile="Models/Inc/ExchangeItemChangeEventArgs.h" bodystart="26" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1a9b2c4cf90ae7079051ae589da1220744" prot="public" virt="pure-virtual"><scope>OpenOasis::ExchangeItemChangeEventArgs</scope><name>GetExchangeItem</name></member>
+      <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1a818baf8277ad3c0b2fa1ec14c67cd213" prot="public" virt="pure-virtual"><scope>OpenOasis::ExchangeItemChangeEventArgs</scope><name>GetMessages</name></member>
+      <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1afbec1fac773958228386f119e8de468c" prot="public" virt="pure-virtual"><scope>OpenOasis::ExchangeItemChangeEventArgs</scope><name>SetExchangeItem</name></member>
+      <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1a26fc5c80fdfa3c91c3429f820201a2b9" prot="public" virt="pure-virtual"><scope>OpenOasis::ExchangeItemChangeEventArgs</scope><name>SetMessages</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

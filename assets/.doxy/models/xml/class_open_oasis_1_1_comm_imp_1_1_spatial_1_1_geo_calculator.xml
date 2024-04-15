@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>OpenOasis::CommImp::Spatial::GeoCalculator</compoundname>
+    <includes refid="_geo_calculator_8h" local="no">GeoCalculator.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a0e532b5478b382fb43bf764e336e735a" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr real</type>
+        <definition>constexpr real OpenOasis::CommImp::Spatial::GeoCalculator::EPSILON</definition>
+        <argsstring></argsstring>
+        <name>EPSILON</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::EPSILON</qualifiedname>
+        <initializer>= 1.0e-5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="28" column="27" bodyfile="Models/CommImp/Spatial/GeoCalculator.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a5b7825b39aadfd6d9ff3f97bd307d11b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>vector&lt; int &gt; OpenOasis::CommImp::Spatial::GeoCalculator::GetCellNodeIndexes</definition>
+        <argsstring>(int cellIdx, const Mesh &amp;mesh)</argsstring>
+        <name>GetCellNodeIndexes</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::GetCellNodeIndexes</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>cellIdx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="30" column="24" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="154" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1ae0dd3eefaca5bf28476c6544317fca89" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>vector&lt; int &gt; OpenOasis::CommImp::Spatial::GeoCalculator::SortNodes</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;nodeIdxs, const std::unordered_map&lt; int, Node &gt; &amp;nodes)</argsstring>
+        <name>SortNodes</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::SortNodes</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>nodeIdxs</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &gt; &amp;</type>
+          <declname>nodes</declname>
+        </param>
+        <briefdescription>
+<para>Sortes the specified Nodes counterclockwise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nodeIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> indexes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Nodes map. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sorted <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> indexes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="36" column="24" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="16" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a8a98da37a4ad9f347de6769171838241" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>vector&lt; int &gt; OpenOasis::CommImp::Spatial::GeoCalculator::SortFaceNodes</definition>
+        <argsstring>(int faceIndex, const Mesh &amp;mesh)</argsstring>
+        <name>SortFaceNodes</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::SortFaceNodes</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>faceIndex</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="39" column="24" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1aecba4946331c70095bc56644bb64133b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref></type>
+        <definition>Coordinate OpenOasis::CommImp::Spatial::GeoCalculator::CalculateCentroid</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;nodeIdxs, const std::unordered_map&lt; int, Node &gt; &amp;nodes)</argsstring>
+        <name>CalculateCentroid</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateCentroid</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>nodeIdxs</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &gt; &amp;</type>
+          <declname>nodes</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the centroid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nodeIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> indexes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Nodes map. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Centroid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="45" column="23" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="126" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a94fde26c1a56e0493bac226be4649779" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref></type>
+        <definition>Coordinate OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFaceCentroid</definition>
+        <argsstring>(int faceIdx, const Mesh &amp;mesh)</argsstring>
+        <name>CalculateFaceCentroid</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFaceCentroid</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>faceIdx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="48" column="23" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a203f2dca9d7564cfc3b1801a48903fb9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref></type>
+        <definition>Coordinate OpenOasis::CommImp::Spatial::GeoCalculator::CalculateCellCentroid</definition>
+        <argsstring>(int cellIdx, const Mesh &amp;mesh)</argsstring>
+        <name>CalculateCellCentroid</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateCellCentroid</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>cellIdx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="50" column="23" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a8f346c095b70e1ded18e33bb60cb699d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::array&lt; real, 3 &gt;</type>
+        <definition>array&lt; real, 3 &gt; OpenOasis::CommImp::Spatial::GeoCalculator::CalculateNormal</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;nodeIdxs, const std::unordered_map&lt; int, Node &gt; &amp;nodes)</argsstring>
+        <name>CalculateNormal</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateNormal</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>nodeIdxs</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &gt; &amp;</type>
+          <declname>nodes</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the plane(2d or 3d) unit normal vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nodeIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clock- or counter- clockwise ordered <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> indexes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Nodes map. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unit normal vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="56" column="23" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="170" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a11b6e2300d3b764518206aa528706b1d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::array&lt; real, 3 &gt;</type>
+        <definition>array&lt; real, 3 &gt; OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFaceNormal</definition>
+        <argsstring>(int faceIdx, const Mesh &amp;mesh)</argsstring>
+        <name>CalculateFaceNormal</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFaceNormal</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>faceIdx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="59" column="23" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a2f65cd552a095c91ed28d3449d844d53" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::GeoCalculator::CalculateArea</definition>
+        <argsstring>(const Vector&lt; real, 3 &gt; &amp;normal, const std::vector&lt; int &gt; &amp;nodeIdxs, const std::unordered_map&lt; int, Node &gt; &amp;nodes)</argsstring>
+        <name>CalculateArea</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateArea</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; real, 3 &gt; &amp;</type>
+          <declname>normal</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>nodeIdxs</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &gt; &amp;</type>
+          <declname>nodes</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the plane(2d or 3d) area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>normal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unit normal vector of the plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clock- or counter- clockwise ordered <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> indexes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> map. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Area of the plane. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="66" column="17" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="200" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a71e9c40fc1c13a62eacaee4589bf190a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFaceArea</definition>
+        <argsstring>(int faceIdx, const Mesh &amp;mesh)</argsstring>
+        <name>CalculateFaceArea</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFaceArea</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>faceIdx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="70" column="17" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="238" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1ab89ea0b95c82f057d1d0f5db56cb95a6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::GeoCalculator::CalculateLength</definition>
+        <argsstring>(const Node &amp;node0, const Node &amp;node1)</argsstring>
+        <name>CalculateLength</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateLength</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &amp;</type>
+          <declname>node0</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &amp;</type>
+          <declname>node1</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the distance between two Nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The endpoint. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The endpoint. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The length. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="76" column="17" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="244" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a966b7689237b8f23915983dfe26789dc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFacePerimeter</definition>
+        <argsstring>(int faceIdx, const Mesh &amp;mesh)</argsstring>
+        <name>CalculateFacePerimeter</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateFacePerimeter</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>faceIdx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="78" column="17" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="250" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1acb04703b7010b277f61d12b7276ae01d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::GeoCalculator::CalculateVolume</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;nodeIdxs, const std::unordered_map&lt; int, Node &gt; &amp;nodes)</argsstring>
+        <name>CalculateVolume</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateVolume</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>nodeIdxs</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &gt; &amp;</type>
+          <declname>nodes</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the volume of a polygon pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nodeIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> indexes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> map. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Volume. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="84" column="17" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="270" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1acfbb192982e09b4f5a37f779308acbce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::GeoCalculator::CalculateCellVolume</definition>
+        <argsstring>(int cellIdx, const Mesh &amp;mesh)</argsstring>
+        <name>CalculateCellVolume</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CalculateCellVolume</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>cellIdx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="87" column="17" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="293" bodyend="297"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1aca3f1a9ea8c3bd47c9f6a66c03cbd02e" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; real, 3 &gt;</type>
+        <definition>Vector&lt; real, 3 &gt; OpenOasis::CommImp::Spatial::GeoCalculator::ToVector</definition>
+        <argsstring>(const Node &amp;start, const Node &amp;stop)</argsstring>
+        <name>ToVector</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::ToVector</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &amp;</type>
+          <declname>stop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="90" column="19" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="299" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a88929e611e2ec4489910d65c472ef031" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Spatial::GeoCalculator::ChooseFoldedAxis</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;nodeIdxs, const std::unordered_map&lt; int, Node &gt; &amp;nodes)</argsstring>
+        <name>ChooseFoldedAxis</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::ChooseFoldedAxis</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>nodeIdxs</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &gt; &amp;</type>
+          <declname>nodes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="92" column="16" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="49" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a68cc03f07b041d481e551c2c2d3ca04d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::GeoCalculator::CompareNodeOrder</definition>
+        <argsstring>(const Node &amp;node0, const Node &amp;node1, const Coordinate &amp;centroid, int ignoredAxis)</argsstring>
+        <name>CompareNodeOrder</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::GeoCalculator::CompareNodeOrder</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &amp;</type>
+          <declname>node0</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &amp;</type>
+          <declname>node1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &amp;</type>
+          <declname>centroid</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ignoredAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/GeoCalculator.h" line="95" column="17" bodyfile="Models/CommImp/Spatial/GeoCalculator.cpp" bodystart="84" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator" kindref="compound">GeoCalculator</ref> is a collection of general geometry functions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Spatial::GeoCalculator</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>EPSILON</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>real</label>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Spatial/GeoCalculator.h" line="25" column="1" bodyfile="Models/CommImp/Spatial/GeoCalculator.h" bodystart="26" bodyend="98"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a2f65cd552a095c91ed28d3449d844d53" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateArea</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a203f2dca9d7564cfc3b1801a48903fb9" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateCellCentroid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1acfbb192982e09b4f5a37f779308acbce" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateCellVolume</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1aecba4946331c70095bc56644bb64133b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateCentroid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a71e9c40fc1c13a62eacaee4589bf190a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateFaceArea</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a94fde26c1a56e0493bac226be4649779" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateFaceCentroid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a11b6e2300d3b764518206aa528706b1d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateFaceNormal</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a966b7689237b8f23915983dfe26789dc" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateFacePerimeter</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1ab89ea0b95c82f057d1d0f5db56cb95a6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateLength</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a8f346c095b70e1ded18e33bb60cb699d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateNormal</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1acb04703b7010b277f61d12b7276ae01d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CalculateVolume</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a88929e611e2ec4489910d65c472ef031" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>ChooseFoldedAxis</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a68cc03f07b041d481e551c2c2d3ca04d" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>CompareNodeOrder</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a0e532b5478b382fb43bf764e336e735a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>EPSILON</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a5b7825b39aadfd6d9ff3f97bd307d11b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>GetCellNodeIndexes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a8a98da37a4ad9f347de6769171838241" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>SortFaceNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1ae0dd3eefaca5bf28476c6544317fca89" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>SortNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1aca3f1a9ea8c3bd47c9f6a66c03cbd02e" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::GeoCalculator</scope><name>ToVector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

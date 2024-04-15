@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>File HeatConductionModel.cpp - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "File HeatConductionModel.cpp";
+        var mkdocs_page_input_path = "models\\_heat_conduction_model_8cpp_source.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">File HeatConductionModel.cpp</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="file-heatconductionmodelcpp">File HeatConductionModel.cpp<a class="headerlink" href="#file-heatconductionmodelcpp" title="Permanent link">&para;</a></h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_598ce1e743ead5e92cc84cac2af27086/"><strong>HeatConductionModel</strong></a> <strong>&gt;</strong> <a href="../_heat_conduction_model_8cpp/"><strong>HeatConductionModel.cpp</strong></a></p>
+<p><a href="../_heat_conduction_model_8cpp/">Go to the documentation of this file</a></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;HeatConductionModel.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Arguments.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Dimension.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Unit.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Time.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/TimeSet.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Quantity.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/ElementSet.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/ValueSet2D.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/IO/MeshLoader.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Spatial/Grid2D.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Numeric/FVM/FvmSolver.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Numeric/DirichletBoundary.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/YamlHandler.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/Exception.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/StringHelper.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/FilePathHelper.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/VectorHelper.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/CsvHandler.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ThirdPart/Eigen/IterativeLinearSolvers&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;set&gt;</span>
+
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">OpenOasis</span><span class="o">::</span><span class="nn">SystHeats</span>
+<span class="p">{</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">CommImp</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Spatial</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Numeric</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Utils</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">IO</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">sExchangeableStates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;temp&quot;</span><span class="p">};</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">sExchangeableObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;cell&quot;</span><span class="p">};</span>
+
+
+<span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">HeatConductionModel</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">taskFile</span><span class="p">)</span><span class="w"> </span><span class="o">:</span>
+<span class="w">    </span><span class="n">LinkableComponent</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">mCaption</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2D steady heat conduction module&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;(more details)&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">mTaskFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">GetFullPath</span><span class="p">(</span><span class="n">taskFile</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">mRequiredArguments</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;TaskFile&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mArguments</span><span class="p">[</span><span class="s">&quot;TaskFile&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ArgumentString</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;TaskFile&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mTaskFile</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">InitializeArguments</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">taskDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">GetDirectoryName</span><span class="p">(</span><span class="n">mTaskFile</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">YamlLoader</span><span class="w"> </span><span class="n">yml</span><span class="p">;</span>
+<span class="w">    </span><span class="n">yml</span><span class="p">.</span><span class="n">LoadByFile</span><span class="p">(</span><span class="n">mTaskFile</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Check segments.</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">segments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s">&quot;OPTION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MESH&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;EQUATION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;INITIALIZATION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;BOUNDARY&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SOLVER&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;OUTPUT&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">MapKeys</span><span class="p">({});</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">seg</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">segments</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sections</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">seg</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">FileLoadException</span><span class="p">(</span><span class="n">StringHelper</span><span class="o">::</span><span class="n">FormatSimple</span><span class="p">(</span>
+<span class="w">                </span><span class="s">&quot;Heat model [{}] missing section [{}].&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mId</span><span class="p">,</span><span class="w"> </span><span class="n">seg</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Global options.</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;OPTION&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">mStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;start_dt&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mEnd</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;end_dt&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">inputDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">Combine</span><span class="p">(</span><span class="n">taskDir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;inputs&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">input</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;input_dir&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">has_value</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">inputDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">GetFullPath</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">outDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">Combine</span><span class="p">(</span><span class="n">taskDir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outputs&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;output_dir&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">has_value</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">outDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">GetFullPath</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Mesh.</span>
+<span class="w">    </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MESH&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">meshType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;mesh_type&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">meshMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;mesh_mode&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">meshDir</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">Combine</span><span class="p">(</span><span class="n">inputDir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mesh&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">MeshLoader</span><span class="w"> </span><span class="nf">loader</span><span class="p">(</span><span class="n">meshDir</span><span class="p">);</span>
+<span class="w">    </span><span class="n">loader</span><span class="p">.</span><span class="n">Load</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">mGrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Grid2D</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="n">loader</span><span class="p">.</span><span class="n">GetNodeCoordinates</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">loader</span><span class="p">.</span><span class="n">GetFaceCoordinates</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">loader</span><span class="p">.</span><span class="n">GetCellCoordinates</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">loader</span><span class="p">.</span><span class="n">GetFaceNodes</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">loader</span><span class="p">.</span><span class="n">GetCellFaces</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">loader</span><span class="p">.</span><span class="n">GetPatches</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">loader</span><span class="p">.</span><span class="n">GetZones</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">mSolver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">FVM</span><span class="o">::</span><span class="n">FvmSolver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mGrid</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Equation.</span>
+<span class="w">    </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;EQUATION&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">SeqSize</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coefficents&quot;</span><span class="p">});</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">coef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapInSeq</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coefficents&quot;</span><span class="p">},</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">coef</span><span class="p">[</span><span class="s">&quot;var&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;k&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">coef</span><span class="p">[</span><span class="s">&quot;mode&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;uniform&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stod</span><span class="p">(</span><span class="n">coef</span><span class="p">[</span><span class="s">&quot;value&quot;</span><span class="p">]);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Initialization.</span>
+<span class="w">    </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;INITIALIZATION&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">globalInitSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">SeqSize</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;global_inits&quot;</span><span class="p">});</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">globalInitSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">init</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapInSeq</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;global_inits&quot;</span><span class="p">},</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">init</span><span class="p">[</span><span class="s">&quot;var&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;temp&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mT0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stod</span><span class="p">(</span><span class="n">init</span><span class="p">[</span><span class="s">&quot;value&quot;</span><span class="p">]);</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">localInitSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">SeqSize</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;local_inits&quot;</span><span class="p">});</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">localInitSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">init</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapInSeq</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;local_inits&quot;</span><span class="p">},</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">init</span><span class="p">[</span><span class="s">&quot;var&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;temp&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">init</span><span class="p">[</span><span class="s">&quot;mode&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mT0file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">Combine</span><span class="p">(</span><span class="n">inputDir</span><span class="p">,</span><span class="w"> </span><span class="n">init</span><span class="p">[</span><span class="s">&quot;file&quot;</span><span class="p">]);</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Boundaries.</span>
+<span class="w">    </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BOUNDARY&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">SeqSize</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;boundaries&quot;</span><span class="p">});</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">bound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapInSeq</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;boundaries&quot;</span><span class="p">},</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bound</span><span class="p">[</span><span class="s">&quot;var&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;temp&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">bound</span><span class="p">[</span><span class="s">&quot;type&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;first&quot;</span>
+<span class="w">            </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">bound</span><span class="p">[</span><span class="s">&quot;mode&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;constant&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">patch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bound</span><span class="p">[</span><span class="s">&quot;patch&quot;</span><span class="p">];</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stod</span><span class="p">(</span><span class="n">bound</span><span class="p">[</span><span class="s">&quot;value&quot;</span><span class="p">]);</span>
+
+<span class="w">            </span><span class="n">mPatchBounds</span><span class="p">[</span><span class="s">&quot;temp&quot;</span><span class="p">].</span><span class="n">insert</span><span class="p">({</span><span class="n">patch</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Sovler.</span>
+<span class="w">    </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SOLVER&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">solverType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;solver&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mEigenSolver</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapValueInStr</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;settings&quot;</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;eigen_solver&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Output.</span>
+<span class="w">    </span><span class="n">seg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;OUTPUT&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">oSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">SeqSize</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outputs&quot;</span><span class="p">});</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">oSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yml</span><span class="p">.</span><span class="n">GetMapInSeq</span><span class="p">({</span><span class="n">seg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outputs&quot;</span><span class="p">},</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="s">&quot;var&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;temp&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="s">&quot;fmt&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;csv&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mOutputVars</span><span class="p">[</span><span class="s">&quot;temp&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="s">&quot;fmt&quot;</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">mOutputDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outDir</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">InitializeSpace</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize grid.</span>
+<span class="w">    </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">Activate</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Initialize temperature field.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">size</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetNumCells</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mTempValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ScalarFieldFp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">mT0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mT0file</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">CsvLoader</span><span class="w"> </span><span class="nf">loader</span><span class="p">(</span><span class="n">mT0file</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loader</span><span class="p">.</span><span class="n">GetRowLabels</span><span class="p">().</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">id</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ids</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stoi</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loader</span><span class="p">.</span><span class="n">GetCell</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">mTempValues</span><span class="o">-&gt;</span><span class="n">SetAt</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">InitializeTime</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// To give a time point.</span>
+<span class="w">    </span><span class="n">mCurrentTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Time</span><span class="o">&gt;</span><span class="p">(</span><span class="n">DateTime</span><span class="o">::</span><span class="n">FromString</span><span class="p">(</span><span class="n">mStart</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">mTimeExtent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TimeSet</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mTimeExtent</span><span class="o">-&gt;</span><span class="n">AddTime</span><span class="p">(</span><span class="n">mCurrentTime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">InitializeInputs</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Don&#39;t accept input currently.</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">InitializeOutputs</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">outputters</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">any_cast</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">array</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="n">mArguments</span><span class="p">[</span><span class="s">&quot;OUTPUTTERS&quot;</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetValue</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">output</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">outputters</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;CELL&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;T&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">mOutputs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">CreateCellOutput</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="w"> </span><span class="s">&quot;T&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IOutput</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">CreateCellOutput</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">var</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetNumCells</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">invalid_argument</span><span class="p">(</span><span class="s">&quot;Cell output item out of range.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">comp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">HeatConductionModel</span><span class="o">&gt;</span><span class="p">(</span><span class="n">shared_from_this</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cellId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mId</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;_cell_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">to_string</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Coordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NodesInCell</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">Element</span><span class="w"> </span><span class="n">cell</span><span class="p">(</span><span class="n">cellId</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cell&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nodes</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ElementSet</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;HeatConductionModel face&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="o">::</span><span class="n">Polygon</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Element</span><span class="o">&gt;</span><span class="p">{</span><span class="n">cell</span><span class="p">});</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">outputId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringHelper</span><span class="o">::</span><span class="n">FormatSimple</span><span class="p">(</span><span class="s">&quot;{}_output_cell_{}_{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mId</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mCellOutputs</span><span class="p">[</span><span class="n">outputId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Output</span><span class="o">&gt;</span><span class="p">(</span><span class="n">outputId</span><span class="p">,</span><span class="w"> </span><span class="n">comp</span><span class="p">);</span>
+<span class="w">    </span><span class="n">output</span><span class="o">-&gt;</span><span class="n">SetCaption</span><span class="p">(</span><span class="s">&quot;HeatConductionModel output item&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">output</span><span class="o">-&gt;</span><span class="n">SetDescription</span><span class="p">(</span><span class="s">&quot;Output exchange item providing temperature data.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">output</span><span class="o">-&gt;</span><span class="n">SetElementSet</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mOutputs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">output</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">output</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">Coordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">NodesInCell</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetCell</span><span class="p">(</span><span class="n">idx</span><span class="p">).</span><span class="n">faceIndexes</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">nodeIdx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetFace</span><span class="p">(</span><span class="n">faceIdx</span><span class="p">).</span><span class="n">nodeIndexes</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">nodeIdxs</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">nodeIdx</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Coordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nodes</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">)</span>
+<span class="w">        </span><span class="n">nodes</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">coor</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">nodes</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">OnValidate</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// No validation check currently.</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">PrepareInputs</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// pass.</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">PrepareOutputs</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">output</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mOutputs</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">output</span><span class="o">-&gt;</span><span class="n">SetValues</span><span class="p">(</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ValueSetFP</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">            </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;&gt;</span><span class="p">{{</span><span class="n">FP</span><span class="p">(</span><span class="n">mT0</span><span class="p">)}},</span><span class="w"> </span><span class="n">GetTempQuantity</span><span class="p">()));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IQuantity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">GetTempQuantity</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">dime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Dimension</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">dime</span><span class="o">-&gt;</span><span class="n">SetPower</span><span class="p">(</span><span class="n">DimensionBase</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Unit</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dime</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;temperature&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;centigrade(℃)&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="mf">273.15</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">quan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Quantity</span><span class="o">&gt;</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;temperature&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;centigrade(℃)&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">-9999.</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">quan</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">PullInputs</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// pass.</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">ApplyInputData</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IValueSet</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// pass.</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">UpdateOutputs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IOutput</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">outputs</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">output</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">outputs</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="o">-&gt;</span><span class="n">GetValues</span><span class="p">();</span>
+
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">mTempValues</span><span class="p">)(</span><span class="n">mCellOutputs</span><span class="p">[</span><span class="n">output</span><span class="o">-&gt;</span><span class="n">GetId</span><span class="p">()]);</span>
+<span class="w">        </span><span class="n">values</span><span class="o">-&gt;</span><span class="n">SetTimeSeriesValuesForElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">temp</span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">PerformTimestep</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IOutput</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">outputs</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tempBounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mPatchBounds</span><span class="p">[</span><span class="s">&quot;temp&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">tempBounds</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">real</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FP</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">DirichletBoundary</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fIdx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetPatchFaceIndexes</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">first</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mSolver</span><span class="o">-&gt;</span><span class="n">SetBoundary</span><span class="p">(</span><span class="n">fIdx</span><span class="p">,</span><span class="w"> </span><span class="n">bound</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">mSolver</span><span class="o">-&gt;</span><span class="n">SetInitialValue</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;temp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">variant</span><span class="o">&lt;</span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Tensor</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">FP</span><span class="p">(</span><span class="n">mT0</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">mSolver</span><span class="o">-&gt;</span><span class="n">SetCoefficient</span><span class="p">(</span><span class="s">&quot;temp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">variant</span><span class="o">&lt;</span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Tensor</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">FP</span><span class="p">(</span><span class="o">-</span><span class="n">mK</span><span class="p">)));</span>
+
+<span class="w">    </span><span class="n">mSolver</span><span class="o">-&gt;</span><span class="n">ParseDiffusionTerm</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">mSolver</span><span class="o">-&gt;</span><span class="n">Solve</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mSolver</span><span class="o">-&gt;</span><span class="n">GetScalarSolutions</span><span class="p">(</span><span class="s">&quot;temp&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">solution</span><span class="p">.</span><span class="n">Size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">mTempValues</span><span class="o">-&gt;</span><span class="n">SetAt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">solution</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">SaveResult</span><span class="p">();</span>
+<span class="p">}</span>
+
+
+<span class="c1">// void HeatConductionModel::PerformTimestep(const vector&lt;shared_ptr&lt;IOutput&gt;&gt; &amp;outputs)</span>
+<span class="c1">// {</span>
+<span class="c1">//     vector&lt;double&gt; matrix, source;</span>
+<span class="c1">//     tie(matrix, source) = GenerateCoeAndSrcMatrix();</span>
+<span class="c1">//</span>
+<span class="c1">//     int size = sqrt(matrix.size());</span>
+<span class="c1">//</span>
+<span class="c1">//     // Solve Ax=b by Eigen.</span>
+<span class="c1">//     Eigen::Map&lt;Eigen::MatrixXd&gt; A(matrix.data(), size, size);</span>
+<span class="c1">//     // 填充A</span>
+<span class="c1">//     Eigen::Map&lt;Eigen::VectorXd&gt; b(source.data(), size);</span>
+<span class="c1">//     // // 填充b</span>
+<span class="c1">//     Eigen::ConjugateGradient&lt;Eigen::MatrixXd&gt; solver;</span>
+<span class="c1">//     solver.compute(A);</span>
+<span class="c1">//     if (solver.info() != Eigen::Success)</span>
+<span class="c1">//     {</span>
+<span class="c1">//         // 分解失败</span>
+<span class="c1">//         throw runtime_error(&quot;compute failed.&quot;);</span>
+<span class="c1">//     }</span>
+<span class="c1">//     Eigen::VectorXd x = solver.solve(b);</span>
+<span class="c1">//     if (solver.info() != Eigen::Success)</span>
+<span class="c1">//     {</span>
+<span class="c1">//         // 解决失败</span>
+<span class="c1">//         throw runtime_error(&quot;Solve failed.&quot;);</span>
+<span class="c1">//     }</span>
+<span class="c1">//</span>
+<span class="c1">//     vector&lt;double&gt; solution(&amp;x[0], x.data() + x.cols() * x.rows());</span>
+<span class="c1">//     for (int i = 0; i &lt; size; i++)</span>
+<span class="c1">//         mTempValues-&gt;SetAt(i, solution[i]);</span>
+<span class="c1">//</span>
+<span class="c1">//     SaveResult();</span>
+<span class="c1">// }</span>
+
+<span class="n">tuple</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">GenerateCoeAndSrcMatrix</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// -Calculate coefficients.</span>
+
+<span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">xCoe</span><span class="p">,</span><span class="w"> </span><span class="n">yCoe</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tie</span><span class="p">(</span><span class="n">xCoe</span><span class="p">,</span><span class="w"> </span><span class="n">yCoe</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CalculateUniformCoef</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// -All DIRICHLET boundary conditions, use 1-st precision.</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetNumCells</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">source</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-2.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">xCoe</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">yCoe</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetCell</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">faceIndexes</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">face</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetFace</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">normal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">normal</span><span class="p">;</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cells</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Face location.</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">isEast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">normal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-9</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">isWest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">normal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-9</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// bool isNorth = (abs(normal[1] - 1.0) &lt; 1.e-9) ? true : false;</span>
+<span class="w">            </span><span class="c1">// bool isSouth = (abs(normal[1] + 1.0) &lt; 1.e-9) ? true : false;</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">isBound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">cells</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Boundary conditions.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isBound</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">real</span><span class="w"> </span><span class="n">boundT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bound</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mPatchBounds</span><span class="p">[</span><span class="s">&quot;temp&quot;</span><span class="p">])</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fIdxs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetPatchFaceIndexes</span><span class="p">(</span><span class="n">bound</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">fIdxs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">fIdxs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">fIdxs</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">boundT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bound</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="w">                        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="n">real</span><span class="w"> </span><span class="n">coe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">isEast</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">isWest</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">xCoe</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">yCoe</span><span class="p">;</span>
+
+<span class="w">                </span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">coe</span><span class="p">;</span>
+<span class="w">                </span><span class="n">source</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">coe</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">boundT</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// interial cell.</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">cIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">cells</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="w">                </span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cIdx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">isEast</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">isWest</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">xCoe</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">yCoe</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">matrix</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="n">tuple</span><span class="o">&lt;</span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="n">real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">CalculateUniformCoef</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// A uniform rectangular 2d grid has same cell centroid distance at each</span>
+<span class="w">    </span><span class="c1">// direction.</span>
+<span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetCell</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">coor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">centroid</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">neighbors</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">_coor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetCell</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">centroid</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">real</span><span class="w"> </span><span class="n">_dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">_coor</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coor</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">real</span><span class="w"> </span><span class="n">_dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">_coor</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coor</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">_dx</span><span class="p">);</span>
+<span class="w">        </span><span class="n">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span><span class="w"> </span><span class="n">_dy</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dx</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-10</span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">xCoe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">mK</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dx</span><span class="p">;</span>
+<span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">yCoe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">mK</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dy</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">xCoe</span><span class="p">,</span><span class="w"> </span><span class="n">yCoe</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">SaveResult</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilePathHelper</span><span class="o">::</span><span class="n">Combine</span><span class="p">(</span><span class="n">mOutputDir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;heat_conduction_result.csv&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">CsvWriter</span><span class="w"> </span><span class="nf">writer</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="w">    </span><span class="n">writer</span><span class="p">.</span><span class="n">InsertColumn</span><span class="o">&lt;</span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;temp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mTempValues</span><span class="o">-&gt;</span><span class="n">Data</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">writer</span><span class="p">.</span><span class="n">SetRowLabel</span><span class="p">(</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;id&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">mTempValues</span><span class="o">-&gt;</span><span class="n">Size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="n">SetRowLabel</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">writer</span><span class="p">.</span><span class="n">Save</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">HeatConductionModel</span><span class="o">::</span><span class="n">IsIterationConverged</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace OpenOasis::SystHeats</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

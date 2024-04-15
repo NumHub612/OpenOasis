@@ -1,0 +1,540 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::IO::LinkLoader</compoundname>
+    <includes refid="_link_loader_8h" local="no">LinkLoader.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1abe75ff3076acc9628db852c3cc1eb0ea" prot="public" static="no">
+        <type>std::array&lt; std::string, 3 &gt;</type>
+        <definition>using OpenOasis::CommImp::IO::LinkLoader::ComponentInfo =  std::array&lt;std::string, 3&gt;</definition>
+        <argsstring></argsstring>
+        <name>ComponentInfo</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::ComponentInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="96" column="5" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ab80b39d0c79dd6e0c1f7393e1d2da0c9" prot="public" static="no">
+        <type>std::array&lt; std::string, 5 &gt;</type>
+        <definition>using OpenOasis::CommImp::IO::LinkLoader::ElementInfo =  std::array&lt;std::string, 5&gt;</definition>
+        <argsstring></argsstring>
+        <name>ElementInfo</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::ElementInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="104" column="5" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a84d6fcb5df0cfbbcf9eac53fcfc39651" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::CommImp::IO::LinkLoader::mLinkFile</definition>
+        <argsstring></argsstring>
+        <name>mLinkFile</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mLinkFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="107" column="17" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a3c11317aa512d29fd817aa1adabc1100" prot="private" static="no" mutable="no">
+        <type>JsonLoader</type>
+        <definition>JsonLoader OpenOasis::CommImp::IO::LinkLoader::mLoader</definition>
+        <argsstring></argsstring>
+        <name>mLoader</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mLoader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="108" column="17" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a310030b4e8c5798dbfb7460c063628aa" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; OpenOasis::CommImp::IO::LinkLoader::mOutputConsumers</definition>
+        <argsstring></argsstring>
+        <name>mOutputConsumers</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mOutputConsumers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="110" column="24" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a6a3d45ed1f8a4d66be9450449966d0ca" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; OpenOasis::CommImp::IO::LinkLoader::mInputProviders</definition>
+        <argsstring></argsstring>
+        <name>mInputProviders</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mInputProviders</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="111" column="24" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa2512ceea14bb6be898c18b6d30eb4ed" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, ComponentInfo &gt;</type>
+        <definition>std::unordered_map&lt;std::string, ComponentInfo&gt; OpenOasis::CommImp::IO::LinkLoader::mComps</definition>
+        <argsstring></argsstring>
+        <name>mComps</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mComps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="113" column="35" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a1dc109db66976a30f27aaa1f2b981774" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; ElementInfo &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;ElementInfo&gt; &gt; OpenOasis::CommImp::IO::LinkLoader::mInps</definition>
+        <argsstring></argsstring>
+        <name>mInps</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mInps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="114" column="24" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa21b67987be4ff72dc06b1cbefef9663" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; ElementInfo &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;ElementInfo&gt; &gt; OpenOasis::CommImp::IO::LinkLoader::mOuts</definition>
+        <argsstring></argsstring>
+        <name>mOuts</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mOuts</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="115" column="24" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a1e1ad85c3e2e2a6d1bcdb05859c9696c" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; OpenOasis::CommImp::IO::LinkLoader::mIterGroups</definition>
+        <argsstring></argsstring>
+        <name>mIterGroups</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mIterGroups</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="120" column="24" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a2373346d8e3e45d52a79137fc7724f4e" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::multimap&lt; std::string, std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::multimap&lt;std::string, std::string&gt; &gt; OpenOasis::CommImp::IO::LinkLoader::mIterConfigs</definition>
+        <argsstring></argsstring>
+        <name>mIterConfigs</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::mIterConfigs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="126" column="9" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ac4a5d46db9b6f9642d71e4381ea9e956" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::IO::LinkLoader::LinkLoader</definition>
+        <argsstring>(const std::string &amp;json)</argsstring>
+        <name>LinkLoader</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::LinkLoader</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>json</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="129" column="5" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="129" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a0528c98b41048c1dff700b5c29ca9bfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::LinkLoader::Load</definition>
+        <argsstring>()</argsstring>
+        <name>Load</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::Load</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="132" column="10" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="22" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a37c63554827c402a0b5a224efd58749c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>vector&lt; string &gt; OpenOasis::CommImp::IO::LinkLoader::GetComponentIds</definition>
+        <argsstring>() const</argsstring>
+        <name>GetComponentIds</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetComponentIds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="134" column="17" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1acf66ba3dded54b0bd72f64ec85fddeb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>ComponentInfo</type>
+        <definition>LinkLoader::ComponentInfo OpenOasis::CommImp::IO::LinkLoader::GetComponentInfo</definition>
+        <argsstring>(const std::string &amp;compId) const</argsstring>
+        <name>GetComponentInfo</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetComponentInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>compId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="136" column="19" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1af62b55c932bb3f247d3f38e8ecda5287" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; ElementInfo &gt;</type>
+        <definition>vector&lt; LinkLoader::ElementInfo &gt; OpenOasis::CommImp::IO::LinkLoader::GetComponentOutputs</definition>
+        <argsstring>(const std::string &amp;compId) const</argsstring>
+        <name>GetComponentOutputs</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetComponentOutputs</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>compId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="138" column="17" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="94" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a66eaa6e7616472fb457b9b62f3d5f2f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; ElementInfo &gt; &gt;</type>
+        <definition>unordered_map&lt; string, vector&lt; LinkLoader::ElementInfo &gt; &gt; OpenOasis::CommImp::IO::LinkLoader::GetOutputConsumers</definition>
+        <argsstring>(const std::string &amp;compId, const ElementInfo &amp;output) const</argsstring>
+        <name>GetOutputConsumers</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetOutputConsumers</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>compId</declname>
+        </param>
+        <param>
+          <type>const ElementInfo &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="141" column="5" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="105" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ac5779fc137246bcacd26be343097e7f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; ElementInfo &gt;</type>
+        <definition>vector&lt; LinkLoader::ElementInfo &gt; OpenOasis::CommImp::IO::LinkLoader::GetComponentInputs</definition>
+        <argsstring>(const std::string &amp;compId) const</argsstring>
+        <name>GetComponentInputs</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetComponentInputs</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>compId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="143" column="17" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="136" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aee045f20eb6e2fcf544d29b0d49c3bf5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; ElementInfo &gt; &gt;</type>
+        <definition>unordered_map&lt; string, vector&lt; LinkLoader::ElementInfo &gt; &gt; OpenOasis::CommImp::IO::LinkLoader::GetInputProviders</definition>
+        <argsstring>(const std::string &amp;compId, const ElementInfo &amp;input) const</argsstring>
+        <name>GetInputProviders</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetInputProviders</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>compId</declname>
+        </param>
+        <param>
+          <type>const ElementInfo &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="146" column="5" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="147" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a20d7accc6dae8b9061f7fca68cbdf017" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>unordered_map&lt; string, vector&lt; string &gt; &gt; OpenOasis::CommImp::IO::LinkLoader::GetIteratorGroups</definition>
+        <argsstring>() const</argsstring>
+        <name>GetIteratorGroups</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetIteratorGroups</qualifiedname>
+        <briefdescription>
+<para>Gets iterator groups consisted of components. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The iterator groups, where each group contains a set of components. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="150" column="24" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a93dc7f7f4a2f68e0cfccf6aee207afcf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::multimap&lt; std::string, std::string &gt;</type>
+        <definition>multimap&lt; string, string &gt; OpenOasis::CommImp::IO::LinkLoader::GetIteratorConfigs</definition>
+        <argsstring>(const std::string &amp;iterId) const</argsstring>
+        <name>GetIteratorConfigs</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GetIteratorConfigs</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>iterId</declname>
+        </param>
+        <briefdescription>
+<para>Gets the iterator configurations of specified iterator group. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="154" column="5" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="182" bodyend="190"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1abf2dd11561ce230c3167f9bdb77a6b5d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::LinkLoader::LoadComponents</definition>
+        <argsstring>()</argsstring>
+        <name>LoadComponents</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::LoadComponents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="157" column="10" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="30" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa859a7a58622d24d39535a4ecc1d52f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::LinkLoader::LoadLinks</definition>
+        <argsstring>()</argsstring>
+        <name>LoadLinks</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::LoadLinks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="158" column="10" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="60" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a3e881bc32b239b2b88aaa6324b2de323" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::LinkLoader::LoadPipeline</definition>
+        <argsstring>(const std::string &amp;linkId, const nlohmann::json &amp;json, int index, std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;linkGroups)</argsstring>
+        <name>LoadPipeline</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::LoadPipeline</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>linkId</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;</type>
+          <declname>linkGroups</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="159" column="10" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="263" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a88e40f83f68a3fa64b9f3b19d5c26182" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::LinkLoader::CollectExchangeItemMap</definition>
+        <argsstring>(const std::string &amp;srcCompId, const ElementInfo &amp;output, const std::string &amp;tarCompId, const ElementInfo &amp;input)</argsstring>
+        <name>CollectExchangeItemMap</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::CollectExchangeItemMap</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>srcCompId</declname>
+        </param>
+        <param>
+          <type>const ElementInfo &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tarCompId</declname>
+        </param>
+        <param>
+          <type>const ElementInfo &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="163" column="10" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="311" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ab58d6dba632eca1f3f182c709b4ec54f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::LinkLoader::CollectIteratorGroups</definition>
+        <argsstring>(const std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;linkGroups, const std::unordered_map&lt; std::string, std::string &gt; &amp;linkModes, const std::unordered_map&lt; std::string, std::unordered_map&lt; std::string, std::string &gt; &gt; &amp;linkConfs)</argsstring>
+        <name>CollectIteratorGroups</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::CollectIteratorGroups</qualifiedname>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;</type>
+          <declname>linkGroups</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>linkModes</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::unordered_map&lt; std::string, std::string &gt; &gt; &amp;</type>
+          <declname>linkConfs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="167" column="10" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="192" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1acac2e8c2bbc4fe8a3fc6747fd6d6bbbe" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>string OpenOasis::CommImp::IO::LinkLoader::GenerateUniqueElementId</definition>
+        <argsstring>(const std::string &amp;compId, const ElementInfo &amp;element) const</argsstring>
+        <name>GenerateUniqueElementId</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::GenerateUniqueElementId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>compId</declname>
+        </param>
+        <param>
+          <type>const ElementInfo &amp;</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="173" column="17" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="335" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a7122043f80cd578fc500100a177f9623" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>vector&lt; string &gt; OpenOasis::CommImp::IO::LinkLoader::SplitUniqueElementId</definition>
+        <argsstring>(const std::string &amp;uniqueId) const</argsstring>
+        <name>SplitUniqueElementId</name>
+        <qualifiedname>OpenOasis::CommImp::IO::LinkLoader::SplitUniqueElementId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uniqueId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.h" line="176" column="17" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="348" bodyend="358"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class forLoading components coupling configurations json file. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/IO/LinkLoader.h" line="89" column="1" bodyfile="Models/CommImp/IO/LinkLoader.h" bodystart="90" bodyend="177"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a88e40f83f68a3fa64b9f3b19d5c26182" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>CollectExchangeItemMap</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ab58d6dba632eca1f3f182c709b4ec54f" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>CollectIteratorGroups</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1abe75ff3076acc9628db852c3cc1eb0ea" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>ComponentInfo</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ab80b39d0c79dd6e0c1f7393e1d2da0c9" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>ElementInfo</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1acac2e8c2bbc4fe8a3fc6747fd6d6bbbe" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GenerateUniqueElementId</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a37c63554827c402a0b5a224efd58749c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetComponentIds</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1acf66ba3dded54b0bd72f64ec85fddeb8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetComponentInfo</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ac5779fc137246bcacd26be343097e7f6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetComponentInputs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1af62b55c932bb3f247d3f38e8ecda5287" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetComponentOutputs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aee045f20eb6e2fcf544d29b0d49c3bf5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetInputProviders</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a93dc7f7f4a2f68e0cfccf6aee207afcf" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetIteratorConfigs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a20d7accc6dae8b9061f7fca68cbdf017" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetIteratorGroups</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a66eaa6e7616472fb457b9b62f3d5f2f8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>GetOutputConsumers</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ac4a5d46db9b6f9642d71e4381ea9e956" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>LinkLoader</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a0528c98b41048c1dff700b5c29ca9bfc" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>Load</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1abf2dd11561ce230c3167f9bdb77a6b5d" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>LoadComponents</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa859a7a58622d24d39535a4ecc1d52f9" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>LoadLinks</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a3e881bc32b239b2b88aaa6324b2de323" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>LoadPipeline</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa2512ceea14bb6be898c18b6d30eb4ed" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mComps</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a1dc109db66976a30f27aaa1f2b981774" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mInps</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a6a3d45ed1f8a4d66be9450449966d0ca" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mInputProviders</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a2373346d8e3e45d52a79137fc7724f4e" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mIterConfigs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a1e1ad85c3e2e2a6d1bcdb05859c9696c" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mIterGroups</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a84d6fcb5df0cfbbcf9eac53fcfc39651" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mLinkFile</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a3c11317aa512d29fd817aa1adabc1100" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mLoader</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a310030b4e8c5798dbfb7460c063628aa" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mOutputConsumers</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa21b67987be4ff72dc06b1cbefef9663" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>mOuts</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a7122043f80cd578fc500100a177f9623" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::LinkLoader</scope><name>SplitUniqueElementId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

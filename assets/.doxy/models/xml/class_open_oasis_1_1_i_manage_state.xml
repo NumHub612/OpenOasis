@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_manage_state" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IManageState</compoundname>
+    <includes refid="_i_manage_state_8h" local="no">IManageState.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_manage_state_1a3b30673260f54999d3859de6992a719b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IIdentifiable &gt; OpenOasis::IManageState::KeepCurrentState</definition>
+        <argsstring>()=0</argsstring>
+        <name>KeepCurrentState</name>
+        <qualifiedname>OpenOasis::IManageState::KeepCurrentState</qualifiedname>
+        <briefdescription>
+<para>Stores the linkable component&apos;s current state to a snapshot. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Identifier of the stored state. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IManageState.h" line="31" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_manage_state_1a96fd1dd0186e4b08bbaf59a03f4e2c4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IManageState::RestoreState</definition>
+        <argsstring>(const std::shared_ptr&lt; IIdentifiable &gt; &amp;stateId)=0</argsstring>
+        <name>RestoreState</name>
+        <qualifiedname>OpenOasis::IManageState::RestoreState</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref> &gt; &amp;</type>
+          <declname>stateId</declname>
+        </param>
+        <briefdescription>
+<para>Restores the state identified by the stateId. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stateId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier of the component state to be restored.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stateId identifier is not known by the linkable component, an exception should be thrown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IManageState.h" line="39" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_manage_state_1a1cdf33d1df4ae5b2768f73d0e6413fc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IManageState::ClearState</definition>
+        <argsstring>(const std::shared_ptr&lt; IIdentifiable &gt; &amp;stateId)=0</argsstring>
+        <name>ClearState</name>
+        <qualifiedname>OpenOasis::IManageState::ClearState</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref> &gt; &amp;</type>
+          <declname>stateId</declname>
+        </param>
+        <briefdescription>
+<para>Clears a state from the linkable component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stateId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier of the componentstate to be cleared.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stateId identifier is not known by the linkable component, an exception should be trown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IManageState.h" line="47" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>It provides additional methods for handling component state so it can be saved, restored and cleared. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An optional interface to be implemented by components in addition to the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> interface. It can be left completely to the component to handle persistence of state or it can also implement <computeroutput><ref refid="class_open_oasis_1_1_i_byte_state_converter" kindref="compound">IByteStateConverter</ref></computeroutput> and provide ways for state to be converted to and from an array of bytes. </para>
+    </detaileddescription>
+    <location file="Models/Inc/IManageState.h" line="25" column="1" bodyfile="Models/Inc/IManageState.h" bodystart="26" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_manage_state_1a1cdf33d1df4ae5b2768f73d0e6413fc3" prot="public" virt="pure-virtual"><scope>OpenOasis::IManageState</scope><name>ClearState</name></member>
+      <member refid="class_open_oasis_1_1_i_manage_state_1a3b30673260f54999d3859de6992a719b" prot="public" virt="pure-virtual"><scope>OpenOasis::IManageState</scope><name>KeepCurrentState</name></member>
+      <member refid="class_open_oasis_1_1_i_manage_state_1a96fd1dd0186e4b08bbaf59a03f4e2c4a" prot="public" virt="pure-virtual"><scope>OpenOasis::IManageState</scope><name>RestoreState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

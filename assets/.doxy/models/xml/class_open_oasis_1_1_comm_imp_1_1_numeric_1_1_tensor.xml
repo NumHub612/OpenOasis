@@ -1,0 +1,835 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::Tensor</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a50e36bf2198d7e159ab740763b7e6085" prot="private" static="no" mutable="no">
+        <type>std::array&lt; T, 9 &gt;</type>
+        <definition>std::array&lt;T, 9&gt; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::mElement</definition>
+        <argsstring></argsstring>
+        <name>mElement</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::mElement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="28" column="16" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a3375784e6bfff84fe37de244d7e0c3b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Tensor</definition>
+        <argsstring>()</argsstring>
+        <name>Tensor</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Tensor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="33" column="5" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a03a3adcdb5a2e84422538305940495a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Tensor</definition>
+        <argsstring>(const Tensor &amp;other)</argsstring>
+        <name>Tensor</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Tensor</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="38" column="5" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7e80d6d5d8030b9264d623ee06c815a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Tensor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>Tensor</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Tensor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="44" column="5" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="44" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a559a7aa44ad22e499773150a8c94a5a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Tensor</definition>
+        <argsstring>(const std::initializer_list&lt; U &gt; &amp;lst)</argsstring>
+        <name>Tensor</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Tensor</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; U &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="52" column="5" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1afae09080a98c903ee61de80bd0edf979" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Set</definition>
+        <argsstring>(const Tensor &amp;other)</argsstring>
+        <name>Set</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Set</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="61" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="61" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ab31b31ff584f708fcbf82b0d830542fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::SetAt</definition>
+        <argsstring>(std::size_t i, T v, Args... args)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::SetAt</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="72" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="72" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aae9dec7a0b29ebc1b042aea89072fb3f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::SetAt</definition>
+        <argsstring>(std::size_t i, T v)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::SetAt</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="79" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7c0781cf9ba1b10fbb8150b182b5df08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::SetAt</definition>
+        <argsstring>(std::size_t i, std::size_t j, T v)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::SetAt</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="84" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a553655d9c1566e66589bf6cbcbea741a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::SetAt</definition>
+        <argsstring>(std::size_t i, const Vector&lt; T, 3 &gt; &amp;vec)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::SetAt</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, 3 &gt; &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="89" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="89" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a77f63c0d193bc7c08b3669c87987e8e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Set</definition>
+        <argsstring>(const std::initializer_list&lt; U &gt; &amp;lst)</argsstring>
+        <name>Set</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Set</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; U &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="96" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="96" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a05a6c9f637de4b3ab854e748038c4ea8" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr std::size_t</type>
+        <definition>constexpr std::size_t OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Size</definition>
+        <argsstring>() const</argsstring>
+        <name>Size</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="105" column="27" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a5146b6220a6a74b0a1f9256c948dc9d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator()</definition>
+        <argsstring>(std::size_t i, std::size_t j)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator()</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="110" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a59b4f9b7fbd016061c1eca42b8d98493" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator()</definition>
+        <argsstring>(std::size_t i, std::size_t j) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator()</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="115" column="13" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a83c80604953d8b56e1344aaed1d2a765" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Sum</definition>
+        <argsstring>() const</argsstring>
+        <name>Sum</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Sum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="124" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="124" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a51cba3243d220ad10146848334c6f6a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Avg</definition>
+        <argsstring>() const</argsstring>
+        <name>Avg</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Avg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="133" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a6ffd8ce8ba97685fba559acf00b4da1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Min</definition>
+        <argsstring>() const</argsstring>
+        <name>Min</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Min</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="138" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="138" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a9053b95b29f15b9346bc04f76650f950" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::AbsMin</definition>
+        <argsstring>() const</argsstring>
+        <name>AbsMin</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::AbsMin</qualifiedname>
+        <briefdescription>
+<para>Return the component of the tensor hasing the minimum absolute value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="148" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="148" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1af09a192a10bf4a57d817743cac6c0ef8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Max</definition>
+        <argsstring>() const</argsstring>
+        <name>Max</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="157" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="157" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7b4fd5841037197aad807285412c1a58" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::AbsMax</definition>
+        <argsstring>() const</argsstring>
+        <name>AbsMax</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::AbsMax</qualifiedname>
+        <briefdescription>
+<para>Return the component of the tensor hasing the maximum absolute value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="167" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="167" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aff3a84c86183789f500dbbaffa5043e9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Length</definition>
+        <argsstring>() const</argsstring>
+        <name>Length</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Length</qualifiedname>
+        <briefdescription>
+<para>Return the tensor&apos;s length(magnitude). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="177" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a10dceca5bfe2ed56a516235496db7560" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::IsEqual</definition>
+        <argsstring>(const Tensor &amp;other) const</argsstring>
+        <name>IsEqual</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::IsEqual</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="182" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="182" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a71c9f5137a224556cda6d3a786b26949" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Normalize</definition>
+        <argsstring>()</argsstring>
+        <name>Normalize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Normalize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="197" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="197" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a37d3187ce667873ae56f433c49544ead" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Add</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Add</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Add</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="206" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="206" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aad264b31580c0fe730a6110f96daaf0f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Add</definition>
+        <argsstring>(const Tensor &amp;other)</argsstring>
+        <name>Add</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Add</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="212" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="212" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a85825b6e28560c695d7abcb83bc93b4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Sub</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Sub</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Sub</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="218" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="218" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a072079b27bd7f97e1a55abce772d8725" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Sub</definition>
+        <argsstring>(const Tensor &amp;other)</argsstring>
+        <name>Sub</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Sub</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="224" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="224" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ada422e03969c3f7591a83d4dbbdb4dfb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Mul</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Mul</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Mul</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="230" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="230" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a4dd5d43638164460da632ae73d98b27c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Div</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Div</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Div</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="236" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="236" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a10328c9dad724fc35a400535348e55c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, 3 &gt;</type>
+        <definition>Vector&lt; T, 3 &gt; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::Dot</definition>
+        <argsstring>(const Vector&lt; T, 3 &gt; &amp;other) const</argsstring>
+        <name>Dot</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::Dot</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, 3 &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="244" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="244" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aa0564196c684a93267b7c7d5d9c5ffc9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::DDot</definition>
+        <argsstring>(const Tensor &amp;other) const</argsstring>
+        <name>DDot</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::DDot</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="257" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="257" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aa9be8de1590fdc2c463c5fc8057e6030" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator=</definition>
+        <argsstring>(const Tensor &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="276" column="10" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1abd94bb0423561c490a32a522eda1144c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref></type>
+        <definition>Tensor OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator+</definition>
+        <argsstring>(const Tensor &amp;other) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="281" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="281" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a98e183acae2097c4406155d35d564c81" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref></type>
+        <definition>Tensor OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator+</definition>
+        <argsstring>(T v) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator+</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="289" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="289" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ac244cb80ab03f8b3441a38e3aa0029ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+        <definition>Tensor &amp; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator+=</definition>
+        <argsstring>(const Tensor &amp;other)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="297" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="297" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a05f41a698102854d7da077cdefcabef7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+        <definition>Tensor &amp; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator+=</definition>
+        <argsstring>(T v)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator+=</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="303" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="303" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aada1975704c553d7587a307359fee6bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref></type>
+        <definition>Tensor OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator-</definition>
+        <argsstring>(const Tensor &amp;other) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="309" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="309" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ab575a294fd75ec685e394ab5c833950b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref></type>
+        <definition>Tensor OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator-</definition>
+        <argsstring>(T v) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator-</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="317" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="317" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a4ed53b73f99a7755204ca0113c4339f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+        <definition>Tensor &amp; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator-=</definition>
+        <argsstring>(const Tensor &amp;other)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="325" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="325" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a67126c15108b99ca2ba0d232f5fa3c1b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+        <definition>Tensor &amp; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator-=</definition>
+        <argsstring>(T v)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator-=</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="331" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="331" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ac794cd0d3621728ec87b0d05d52ef3ce" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, 3 &gt;</type>
+        <definition>Vector&lt; T, 3 &gt; OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator*</definition>
+        <argsstring>(const Vector&lt; T, 3 &gt; &amp;other) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, 3 &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="337" column="12" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="337" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a39b1962011b5d461605d5013b7f8cbec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Tensor&lt; T &gt;::operator*</definition>
+        <argsstring>(const Tensor &amp;other) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Tensor::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Tensor.h" line="342" column="7" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="342" bodyend="345"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Numeric/Tensor.h" line="25" column="1" bodyfile="Models/CommImp/Numeric/Tensor.h" bodystart="26" bodyend="346"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7b4fd5841037197aad807285412c1a58" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>AbsMax</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a9053b95b29f15b9346bc04f76650f950" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>AbsMin</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a37d3187ce667873ae56f433c49544ead" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Add</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aad264b31580c0fe730a6110f96daaf0f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Add</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a51cba3243d220ad10146848334c6f6a0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Avg</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aa0564196c684a93267b7c7d5d9c5ffc9" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>DDot</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a4dd5d43638164460da632ae73d98b27c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Div</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a10328c9dad724fc35a400535348e55c3" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Dot</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a10dceca5bfe2ed56a516235496db7560" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>IsEqual</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aff3a84c86183789f500dbbaffa5043e9" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Length</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1af09a192a10bf4a57d817743cac6c0ef8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Max</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a50e36bf2198d7e159ab740763b7e6085" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>mElement</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a6ffd8ce8ba97685fba559acf00b4da1a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Min</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ada422e03969c3f7591a83d4dbbdb4dfb" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Mul</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a71c9f5137a224556cda6d3a786b26949" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Normalize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a5146b6220a6a74b0a1f9256c948dc9d6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a59b4f9b7fbd016061c1eca42b8d98493" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ac794cd0d3621728ec87b0d05d52ef3ce" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a39b1962011b5d461605d5013b7f8cbec" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1abd94bb0423561c490a32a522eda1144c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator+</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a98e183acae2097c4406155d35d564c81" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator+</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ac244cb80ab03f8b3441a38e3aa0029ed" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator+=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a05f41a698102854d7da077cdefcabef7" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator+=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aada1975704c553d7587a307359fee6bd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator-</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ab575a294fd75ec685e394ab5c833950b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator-</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a4ed53b73f99a7755204ca0113c4339f4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator-=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a67126c15108b99ca2ba0d232f5fa3c1b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator-=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aa9be8de1590fdc2c463c5fc8057e6030" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>operator=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1afae09080a98c903ee61de80bd0edf979" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Set</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a77f63c0d193bc7c08b3669c87987e8e1" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Set</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ab31b31ff584f708fcbf82b0d830542fe" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aae9dec7a0b29ebc1b042aea89072fb3f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7c0781cf9ba1b10fbb8150b182b5df08" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a553655d9c1566e66589bf6cbcbea741a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a05a6c9f637de4b3ab854e748038c4ea8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Size</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a85825b6e28560c695d7abcb83bc93b4d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Sub</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a072079b27bd7f97e1a55abce772d8725" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Sub</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a83c80604953d8b56e1344aaed1d2a765" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Sum</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a3375784e6bfff84fe37de244d7e0c3b6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Tensor</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a03a3adcdb5a2e84422538305940495a5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Tensor</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7e80d6d5d8030b9264d623ee06c815a0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Tensor</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a559a7aa44ad22e499773150a8c94a5a0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Tensor</scope><name>Tensor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

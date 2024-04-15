@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::CommImp::Temporal::TimeBuffer - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::CommImp::Temporal::TimeBuffer";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::CommImp::Temporal::TimeBuffer</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasiscommimptemporaltimebuffer">Class OpenOasis::CommImp::Temporal::TimeBuffer<a class="headerlink" href="#class-openoasiscommimptemporaltimebuffer" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp_1_1_temporal/"><strong>Temporal</strong></a> <strong>&gt;</strong> <a href="./"><strong>TimeBuffer</strong></a></p>
+<p><em>The</em> <a href="./"><em><strong>TimeBuffer</strong></em></a> <em>class provides temporal buffering functionality.</em></p>
+<ul>
+<li><code>#include &lt;TimeBuffer.h&gt;</code></li>
+</ul>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-addvalues"><strong>AddValues</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &amp; time, const std::vector&lt; real &gt; &amp; values) <br><em>Adds corresponding values for time and values to the</em> <a href="./"><em><strong>TimeBuffer</strong></em></a> <em>. The AddValues method will internally make a copy of the added times and values. The reason for doing this is that the times and values arguments are reference, and the corresponding values could be changed by the owner of the classes.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-checkbuffer"><strong>CheckBuffer</strong></a> () const<br><em>Checks weather the contents of the buffer is valid.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-clearafter"><strong>ClearAfter</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; time) <br><em>Clears all times and values in the buffer at/or later than the specified time. If the specified time is span, the start time is used.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-clearbefore"><strong>ClearBefore</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; time) <br><em>Clears all records in the buffer associated to time that is earlier than the time specified.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; std::vector&lt; real &gt; &gt;</td>
+<td style="text-align: left;"><a href="#function-getallvalues"><strong>GetAllValues</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-getdoextendeddataverification"><strong>GetDoExtendedDataVerification</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-getdoextrapolate"><strong>GetDoExtrapolate</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#function-getrelaxationfactor"><strong>GetRelaxationFactor</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-gettimeat"><strong>GetTimeAt</strong></a> (int timeStep) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::shared_ptr&lt; TimeSet &gt;</td>
+<td style="text-align: left;"><a href="#function-gettimeset"><strong>GetTimeSet</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-gettimescount"><strong>GetTimesCount</strong></a> () const<br><em>Number of time streps in the buffer.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::shared_ptr&lt; ValueSet2D &gt;</td>
+<td style="text-align: left;"><a href="#function-getvalueset"><strong>GetValueSet</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; real &gt;</td>
+<td style="text-align: left;"><a href="#function-getvalues"><strong>GetValues</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &amp; requestedTime) <br><em>Returns the values that corresponds to the requestedTime. The values may be found by interpolation, extrapolation and/or aggregation.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; real &gt;</td>
+<td style="text-align: left;"><a href="#function-getvaluesat"><strong>GetValuesAt</strong></a> (int timeStep) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getvaluescount"><strong>GetValuesCount</strong></a> () const<br><em>The number of values in the valuesets contained in the buffer.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-reset"><strong>Reset</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setdoextendeddataverification"><strong>SetDoExtendedDataVerification</strong></a> (bool value) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setdoextrapolate"><strong>SetDoExtrapolate</strong></a> (bool value) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setoraddvalues"><strong>SetOrAddValues</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; time, std::vector&lt; real &gt; values) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setrelaxationfactor"><strong>SetRelaxationFactor</strong></a> (real value) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-timebuffer-12"><strong>TimeBuffer</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-timebuffer-22"><strong>TimeBuffer</strong></a> (const <a href="./"><strong>TimeBuffer</strong></a> &amp; TimeBuffer) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual</td>
+<td style="text-align: left;"><a href="#function-timebuffer"><strong>~TimeBuffer</strong></a> () <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-attributes">Protected Attributes<a class="headerlink" href="#protected-attributes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#variable-mdoextendeddataverification"><strong>mDoExtendedDataVerification</strong></a>   = = false<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#variable-mdoextrapolate"><strong>mDoExtrapolate</strong></a>   = = true<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#variable-mlastbuffersizemessagecounter"><strong>mLastBufferSizeMessageCounter</strong></a>   = = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#variable-mrelaxationfactor"><strong>mRelaxationFactor</strong></a>   = = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::shared_ptr&lt; TimeSet &gt;</td>
+<td style="text-align: left;"><a href="#variable-mtimes"><strong>mTimes</strong></a>   = = nullptr<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::shared_ptr&lt; ValueSet2D &gt;</td>
+<td style="text-align: left;"><a href="#variable-mvalues"><strong>mValues</strong></a>   = = nullptr<br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions">Protected Functions<a class="headerlink" href="#protected-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-addvaluestobuffer"><strong>AddValuesToBuffer</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &amp; time, const std::vector&lt; real &gt; &amp; values) <br><em>Adds values to the buffer, check the time is increasing, not overlapping(spans), and has durations matching the TimeSet.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-create"><strong>Create</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; real &gt;</td>
+<td style="text-align: left;"><a href="#function-mapfromtimespanstotimespan"><strong>MapFromTimeSpansToTimeSpan</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &amp; requestedTime) <br><em>A ValueSet corresponding to a TimeSpan is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeSpans.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; real &gt;</td>
+<td style="text-align: left;"><a href="#function-mapfromtimespanstotimestamp"><strong>MapFromTimeSpansToTimeStamp</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &amp; requestedTimeStamp) <br><em>A ValueSet for a time stamp is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeSpans.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; real &gt;</td>
+<td style="text-align: left;"><a href="#function-mapfromtimestampstotimespan"><strong>MapFromTimeStampsToTimeSpan</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &amp; requestedTime) <br><em>A ValueSet corresponding to a TimeSpan is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeStamps.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; real &gt;</td>
+<td style="text-align: left;"><a href="#function-mapfromtimestampstotimestamp"><strong>MapFromTimeStampsToTimeStamp</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time/"><strong>ITime</strong></a> &gt; &amp; requestedTimeStamp) <br><em>A ValueSet corresponding to Time Stamp is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeStamps.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-addvalues">function AddValues<a class="headerlink" href="#function-addvalues" title="Permanent link">&para;</a></h3>
+<p><em>Adds corresponding values for time and values to the</em> <a href="./"><em><strong>TimeBuffer</strong></em></a> <em>. The AddValues method will internally make a copy of the added times and values. The reason for doing this is that the times and values arguments are reference, and the corresponding values could be changed by the owner of the classes.</em>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">AddValues</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">time</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">values</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>time</code> Description of the time parameter. </li>
+<li><code>valueSet</code> Description of the values parameter. </li>
+</ul>
+<h3 id="function-checkbuffer">function CheckBuffer<a class="headerlink" href="#function-checkbuffer" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">CheckBuffer</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-clearafter">function ClearAfter<a class="headerlink" href="#function-clearafter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">ClearAfter</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">time</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-clearbefore">function ClearBefore<a class="headerlink" href="#function-clearbefore" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">ClearBefore</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">time</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-getallvalues">function GetAllValues<a class="headerlink" href="#function-getallvalues" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetAllValues</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-getdoextendeddataverification">function GetDoExtendedDataVerification<a class="headerlink" href="#function-getdoextendeddataverification" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetDoExtendedDataVerification</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getdoextrapolate">function GetDoExtrapolate<a class="headerlink" href="#function-getdoextrapolate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetDoExtrapolate</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getrelaxationfactor">function GetRelaxationFactor<a class="headerlink" href="#function-getrelaxationfactor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetRelaxationFactor</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-gettimeat">function GetTimeAt<a class="headerlink" href="#function-gettimeat" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetTimeAt</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">timeStep</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-gettimeset">function GetTimeSet<a class="headerlink" href="#function-gettimeset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">TimeSet</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetTimeSet</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-gettimescount">function GetTimesCount<a class="headerlink" href="#function-gettimescount" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetTimesCount</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getvalueset">function GetValueSet<a class="headerlink" href="#function-getvalueset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ValueSet2D</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetValueSet</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getvalues">function GetValues<a class="headerlink" href="#function-getvalues" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetValues</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">requestedTime</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-getvaluesat">function GetValuesAt<a class="headerlink" href="#function-getvaluesat" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetValuesAt</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">timeStep</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getvaluescount">function GetValuesCount<a class="headerlink" href="#function-getvaluescount" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">GetValuesCount</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-reset">function Reset<a class="headerlink" href="#function-reset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">Reset</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setdoextendeddataverification">function SetDoExtendedDataVerification<a class="headerlink" href="#function-setdoextendeddataverification" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">SetDoExtendedDataVerification</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">value</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setdoextrapolate">function SetDoExtrapolate<a class="headerlink" href="#function-setdoextrapolate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">SetDoExtrapolate</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">value</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setoraddvalues">function SetOrAddValues<a class="headerlink" href="#function-setoraddvalues" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">SetOrAddValues</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-setrelaxationfactor">function SetRelaxationFactor<a class="headerlink" href="#function-setrelaxationfactor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">SetRelaxationFactor</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">value</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-timebuffer-12">function TimeBuffer [&frac12;]<a class="headerlink" href="#function-timebuffer-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-timebuffer-22">function TimeBuffer [2/2]<a class="headerlink" href="#function-timebuffer-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">TimeBuffer</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">TimeBuffer</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-timebuffer">function ~TimeBuffer<a class="headerlink" href="#function-timebuffer" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::~</span><span class="n">TimeBuffer</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="protected-attributes-documentation">Protected Attributes Documentation<a class="headerlink" href="#protected-attributes-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="variable-mdoextendeddataverification">variable mDoExtendedDataVerification<a class="headerlink" href="#variable-mdoextendeddataverification" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">mDoExtendedDataVerification</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mdoextrapolate">variable mDoExtrapolate<a class="headerlink" href="#variable-mdoextrapolate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">mDoExtrapolate</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mlastbuffersizemessagecounter">variable mLastBufferSizeMessageCounter<a class="headerlink" href="#variable-mlastbuffersizemessagecounter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">mLastBufferSizeMessageCounter</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mrelaxationfactor">variable mRelaxationFactor<a class="headerlink" href="#variable-mrelaxationfactor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">mRelaxationFactor</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mtimes">variable mTimes<a class="headerlink" href="#variable-mtimes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">TimeSet</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">mTimes</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mvalues">variable mValues<a class="headerlink" href="#variable-mvalues" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ValueSet2D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">mValues</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="protected-functions-documentation">Protected Functions Documentation<a class="headerlink" href="#protected-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-addvaluestobuffer">function AddValuesToBuffer<a class="headerlink" href="#function-addvaluestobuffer" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">AddValuesToBuffer</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">time</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">values</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-create">function Create<a class="headerlink" href="#function-create" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">Create</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-mapfromtimespanstotimespan">function MapFromTimeSpansToTimeSpan<a class="headerlink" href="#function-mapfromtimespanstotimespan" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">MapFromTimeSpansToTimeSpan</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">requestedTime</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-mapfromtimespanstotimestamp">function MapFromTimeSpansToTimeStamp<a class="headerlink" href="#function-mapfromtimespanstotimestamp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">MapFromTimeSpansToTimeStamp</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">requestedTimeStamp</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-mapfromtimestampstotimespan">function MapFromTimeStampsToTimeSpan<a class="headerlink" href="#function-mapfromtimestampstotimespan" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">MapFromTimeStampsToTimeSpan</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">requestedTime</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-mapfromtimestampstotimestamp">function MapFromTimeStampsToTimeStamp<a class="headerlink" href="#function-mapfromtimestampstotimestamp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Temporal</span><span class="o">::</span><span class="n">TimeBuffer</span><span class="o">::</span><span class="n">MapFromTimeStampsToTimeStamp</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">ITime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">requestedTimeStamp</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/CommImp/Temporal/TimeBuffer.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

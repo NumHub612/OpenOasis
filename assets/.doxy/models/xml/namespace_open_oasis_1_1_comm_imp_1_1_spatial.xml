@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespace_open_oasis_1_1_comm_imp_1_1_spatial" kind="namespace" language="C++">
+    <compoundname>OpenOasis::CommImp::Spatial</compoundname>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell" prot="public">OpenOasis::CommImp::Spatial::Cell</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" prot="public">OpenOasis::CommImp::Spatial::Coordinate</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face" prot="public">OpenOasis::CommImp::Spatial::Face</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator" prot="public">OpenOasis::CommImp::Spatial::GeoCalculator</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" prot="public">OpenOasis::CommImp::Spatial::Grid</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d" prot="public">OpenOasis::CommImp::Spatial::Grid1D</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d" prot="public">OpenOasis::CommImp::Spatial::Grid2D</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d" prot="public">OpenOasis::CommImp::Spatial::Grid3D</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" prot="public">OpenOasis::CommImp::Spatial::Mesh</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" prot="public">OpenOasis::CommImp::Spatial::Node</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" prot="public">OpenOasis::CommImp::Spatial::XYExtent</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools" prot="public">OpenOasis::CommImp::Spatial::XYGeoTools</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" prot="public">OpenOasis::CommImp::Spatial::XYLine</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" prot="public">OpenOasis::CommImp::Spatial::XYPoint</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" prot="public">OpenOasis::CommImp::Spatial::XYPolygon</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" prot="public">OpenOasis::CommImp::Spatial::XYPolyline</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+ @File : Coordinate.cpp @Brief : None.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_coordinate_8h_source" kindref="compound">Coordinate.h</ref> @License : Apache-2.0</para>
+<para>@Desc : The <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> struct contains a (x, y, z) coordinate.</para>
+<para><hruler/>
+ @File : GeoCalculator.cpp @Brief : A collection of general geometry functions.</para>
+<para><hruler/>
+ @File : Grid.cpp @Brief : <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> used for numerical calculation.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_grid_8h_source" kindref="compound">Grid.h</ref> @License : Apache-2.0</para>
+<para>@Desc : <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> used for numerical calculation.</para>
+<para><hruler/>
+ @File : Grid1D.cpp @Brief : <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> in river net used for numerical calculation.</para>
+<para><hruler/>
+ @File : Grid2D.cpp @Brief : <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> in 2d used for numerical calculation.</para>
+<para><hruler/>
+ @File : Grid3D.cpp @Brief : <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> in 3d used for numerical calculation.</para>
+<para><hruler/>
+ @File : XYGeoStructs.cpp @Brief : To provide basic plane geometry data structures (no z coordinate).</para>
+<para><hruler/>
+ @File : XYGeoTools.cpp @Brief : The <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools" kindref="compound">XYGeoTools</ref> class is a collection of general geometry functions. </para>
+    </detaileddescription>
+    <location file="Models/CommImp/Spatial/Coordinate.cpp" line="9" column="1"/>
+  </compounddef>
+</doxygen>

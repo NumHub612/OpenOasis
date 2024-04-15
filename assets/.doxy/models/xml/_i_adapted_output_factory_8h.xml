@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_i_adapted_output_factory_8h" kind="file" language="C++">
+    <compoundname>IAdaptedOutputFactory.h</compoundname>
+    <includes refid="_i_adapted_output_8h" local="yes">IAdaptedOutput.h</includes>
+    <includes refid="_i_output_8h" local="yes">IOutput.h</includes>
+    <includedby refid="_i_linkable_component_8h" local="yes">Models/Inc/ILinkableComponent.h</includedby>
+    <incdepgraph>
+      <node id="19">
+        <label>ExchangeItemChangeEventArgs.h</label>
+        <link refid="_exchange_item_change_event_args_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IAdaptedOutput.h</label>
+        <link refid="_i_adapted_output_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/Inc/IAdaptedOutputFactory.h</label>
+        <link refid="_i_adapted_output_factory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IArgument.h</label>
+        <link refid="_i_argument_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>IBaseExchangeItem.h</label>
+        <link refid="_i_base_exchange_item_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IDescribable.h</label>
+        <link refid="_i_describable_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>IElementSet.h</label>
+        <link refid="_i_element_set_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IIdentifiable.h</label>
+        <link refid="_i_identifiable_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>IInput.h</label>
+        <link refid="_i_input_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>IOutput.h</label>
+        <link refid="_i_output_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ISpatialDefinition.h</label>
+        <link refid="_i_spatial_definition_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ITime.h</label>
+        <link refid="_i_time_8h_source"/>
+      </node>
+      <node id="15">
+        <label>ITimeSet.h</label>
+        <link refid="_i_time_set_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>IValueDefinition.h</label>
+        <link refid="_i_value_definition_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>IValueSet.h</label>
+        <link refid="_i_value_set_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>any</label>
+      </node>
+      <node id="20">
+        <label>functional</label>
+      </node>
+      <node id="14">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>typeinfo</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Models/Inc/IAdaptedOutputFactory.h</label>
+        <link refid="_i_adapted_output_factory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Models/Inc/ILinkableComponent.h</label>
+        <link refid="_i_linkable_component_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_open_oasis_1_1_i_adapted_output_factory" prot="public">OpenOasis::IAdaptedOutputFactory</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IAdaptedOutput.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IOutput.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18" refid="class_open_oasis_1_1_i_adapted_output_factory" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_i_adapted_output_factory" kindref="compound">IAdaptedOutputFactory</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31" refid="class_open_oasis_1_1_i_adapted_output_factory_1a59e8fec563b82374d18f1884d84d3c5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;std::shared_ptr&lt;IIdentifiable&gt;&gt;<sp/><ref refid="class_open_oasis_1_1_i_adapted_output_factory_1a59e8fec563b82374d18f1884d84d3c5f" kindref="member">GetAvailableAdaptedOutputIds</ref>(</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IOutput&gt;<sp/>&amp;adaptee,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IInput&gt;<sp/><sp/>&amp;target)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_open_oasis_1_1_i_adapted_output_factory_1a7105896e885eb25cd742055113e7b171" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IAdaptedOutput&gt;<sp/><ref refid="class_open_oasis_1_1_i_adapted_output_factory_1a7105896e885eb25cd742055113e7b171" kindref="member">CreateAdaptedOutput</ref>(</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IIdentifiable&gt;<sp/>&amp;adaptedOutputId,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IOutput&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;adaptee,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IInput&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;target)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Models/Inc/IAdaptedOutputFactory.h"/>
+  </compounddef>
+</doxygen>

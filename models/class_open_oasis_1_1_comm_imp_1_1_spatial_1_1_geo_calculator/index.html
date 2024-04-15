@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::CommImp::Spatial::GeoCalculator - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::CommImp::Spatial::GeoCalculator";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::CommImp::Spatial::GeoCalculator</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasiscommimpspatialgeocalculator">Class OpenOasis::CommImp::Spatial::GeoCalculator<a class="headerlink" href="#class-openoasiscommimpspatialgeocalculator" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp_1_1_spatial/"><strong>Spatial</strong></a> <strong>&gt;</strong> <a href="./"><strong>GeoCalculator</strong></a></p>
+<p><em>The</em> <a href="./"><em><strong>GeoCalculator</strong></em></a> <em>is a collection of general geometry functions.</em></p>
+<ul>
+<li><code>#include &lt;GeoCalculator.h&gt;</code></li>
+</ul>
+<h2 id="public-static-attributes">Public Static Attributes<a class="headerlink" href="#public-static-attributes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">constexpr real</td>
+<td style="text-align: left;"><a href="#variable-epsilon"><strong>EPSILON</strong></a>   = = 1.0e-5<br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-static-functions">Public Static Functions<a class="headerlink" href="#public-static-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#function-calculatearea"><strong>CalculateArea</strong></a> (const <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>Vector</strong></a>&lt; real, 3 &gt; &amp; normal, const std::vector&lt; int &gt; &amp; nodeIdxs, const std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &gt; &amp; nodes) <br><em>Calculates the plane(2d or 3d) area.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a></td>
+<td style="text-align: left;"><a href="#function-calculatecellcentroid"><strong>CalculateCellCentroid</strong></a> (int cellIdx, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#function-calculatecellvolume"><strong>CalculateCellVolume</strong></a> (int cellIdx, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a></td>
+<td style="text-align: left;"><a href="#function-calculatecentroid"><strong>CalculateCentroid</strong></a> (const std::vector&lt; int &gt; &amp; nodeIdxs, const std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &gt; &amp; nodes) <br><em>Calculates the centroid.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#function-calculatefacearea"><strong>CalculateFaceArea</strong></a> (int faceIdx, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a></td>
+<td style="text-align: left;"><a href="#function-calculatefacecentroid"><strong>CalculateFaceCentroid</strong></a> (int faceIdx, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::array&lt; real, 3 &gt;</td>
+<td style="text-align: left;"><a href="#function-calculatefacenormal"><strong>CalculateFaceNormal</strong></a> (int faceIdx, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#function-calculatefaceperimeter"><strong>CalculateFacePerimeter</strong></a> (int faceIdx, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#function-calculatelength"><strong>CalculateLength</strong></a> (const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &amp; node0, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &amp; node1) <br><em>Calculates the distance between two Nodes.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::array&lt; real, 3 &gt;</td>
+<td style="text-align: left;"><a href="#function-calculatenormal"><strong>CalculateNormal</strong></a> (const std::vector&lt; int &gt; &amp; nodeIdxs, const std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &gt; &amp; nodes) <br><em>Calculates the plane(2d or 3d) unit normal vector.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">real</td>
+<td style="text-align: left;"><a href="#function-calculatevolume"><strong>CalculateVolume</strong></a> (const std::vector&lt; int &gt; &amp; nodeIdxs, const std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &gt; &amp; nodes) <br><em>Calculates the volume of a polygon pyramid.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#function-getcellnodeindexes"><strong>GetCellNodeIndexes</strong></a> (int cellIdx, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#function-sortfacenodes"><strong>SortFaceNodes</strong></a> (int faceIndex, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a> &amp; mesh) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#function-sortnodes"><strong>SortNodes</strong></a> (const std::vector&lt; int &gt; &amp; nodeIdxs, const std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &gt; &amp; nodes) <br><em>Sortes the specified Nodes counterclockwise.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-static-attributes-documentation">Public Static Attributes Documentation<a class="headerlink" href="#public-static-attributes-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="variable-epsilon">variable EPSILON<a class="headerlink" href="#variable-epsilon" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">constexpr</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">EPSILON</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="public-static-functions-documentation">Public Static Functions Documentation<a class="headerlink" href="#public-static-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-calculatearea">function CalculateArea<a class="headerlink" href="#function-calculatearea" title="Permanent link">&para;</a></h3>
+<p><em>Calculates the plane(2d or 3d) area.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateArea</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">normal</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodes</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>normal</code> The unit normal vector of the plane. </li>
+<li><code>nodeIdxs</code> The clock- or counter- clockwise ordered <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> indexes. </li>
+<li><code>nodes</code> The <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> map. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Area of the plane. </p>
+<h3 id="function-calculatecellcentroid">function CalculateCellCentroid<a class="headerlink" href="#function-calculatecellcentroid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateCellCentroid</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatecellvolume">function CalculateCellVolume<a class="headerlink" href="#function-calculatecellvolume" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateCellVolume</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatecentroid">function CalculateCentroid<a class="headerlink" href="#function-calculatecentroid" title="Permanent link">&para;</a></h3>
+<p><em>Calculates the centroid.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateCentroid</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodes</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>nodeIdxs</code> <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> indexes. </li>
+<li><code>nodes</code> The Nodes map. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Centroid. </p>
+<h3 id="function-calculatefacearea">function CalculateFaceArea<a class="headerlink" href="#function-calculatefacearea" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateFaceArea</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefacecentroid">function CalculateFaceCentroid<a class="headerlink" href="#function-calculatefacecentroid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateFaceCentroid</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefacenormal">function CalculateFaceNormal<a class="headerlink" href="#function-calculatefacenormal" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateFaceNormal</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefaceperimeter">function CalculateFacePerimeter<a class="headerlink" href="#function-calculatefaceperimeter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateFacePerimeter</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatelength">function CalculateLength<a class="headerlink" href="#function-calculatelength" title="Permanent link">&para;</a></h3>
+<p><em>Calculates the distance between two Nodes.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateLength</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node0</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node1</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>node0</code> The endpoint. </li>
+<li><code>node1</code> The endpoint. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The length. </p>
+<h3 id="function-calculatenormal">function CalculateNormal<a class="headerlink" href="#function-calculatenormal" title="Permanent link">&para;</a></h3>
+<p><em>Calculates the plane(2d or 3d) unit normal vector.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="w"> </span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateNormal</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodes</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>nodeIdxs</code> The clock- or counter- clockwise ordered <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> indexes. </li>
+<li><code>nodes</code> The Nodes map. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Unit normal vector. </p>
+<h3 id="function-calculatevolume">function CalculateVolume<a class="headerlink" href="#function-calculatevolume" title="Permanent link">&para;</a></h3>
+<p><em>Calculates the volume of a polygon pyramid.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">CalculateVolume</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodes</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>nodeIdxs</code> The <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> indexes. </li>
+<li><code>nodes</code> The <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> map. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Volume. </p>
+<h3 id="function-getcellnodeindexes">function GetCellNodeIndexes<a class="headerlink" href="#function-getcellnodeindexes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">GetCellNodeIndexes</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-sortfacenodes">function SortFaceNodes<a class="headerlink" href="#function-sortfacenodes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">SortFaceNodes</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-sortnodes">function SortNodes<a class="headerlink" href="#function-sortnodes" title="Permanent link">&para;</a></h3>
+<p><em>Sortes the specified Nodes counterclockwise.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">SortNodes</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodes</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>nodeIdxs</code> The <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> indexes. </li>
+<li><code>nodes</code> The Nodes map. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The sorted <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> indexes. </p>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/CommImp/Spatial/GeoCalculator.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

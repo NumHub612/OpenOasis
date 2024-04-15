@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_additional_control_1_1_i_time_extension" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::AdditionalControl::ITimeExtension</compoundname>
+    <includes refid="_i_time_extension_8h" local="no">ITimeExtension.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_additional_control_1_1_i_time_extension_1a6e125dfbfe3e637f73a8ef8c15fd096d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time_set" kindref="compound">ITimeSet</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; ITimeSet &gt; OpenOasis::AdditionalControl::ITimeExtension::GetTimeExtent</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetTimeExtent</name>
+        <qualifiedname>OpenOasis::AdditionalControl::ITimeExtension::GetTimeExtent</qualifiedname>
+        <briefdescription>
+<para>The property describes in what time span the component can operate. This can be used to support the user when creating a composition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/AdditionalControl/ITimeExtension.h" line="25" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_additional_control_1_1_i_time_extension_1aeeb6d02ad5d69ba84d555ddc9e9aca8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; ITime &gt; OpenOasis::AdditionalControl::ITimeExtension::GetCurrTime</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCurrTime</name>
+        <qualifiedname>OpenOasis::AdditionalControl::ITimeExtension::GetCurrTime</qualifiedname>
+        <briefdescription>
+<para>The property describes what time stamp the component is at. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/AdditionalControl/ITimeExtension.h" line="28" column="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Methods that are specific for a time-space component. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/AdditionalControl/ITimeExtension.h" line="20" column="1" bodyfile="Models/Inc/AdditionalControl/ITimeExtension.h" bodystart="21" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_additional_control_1_1_i_time_extension_1aeeb6d02ad5d69ba84d555ddc9e9aca8a" prot="public" virt="pure-virtual"><scope>OpenOasis::AdditionalControl::ITimeExtension</scope><name>GetCurrTime</name></member>
+      <member refid="class_open_oasis_1_1_additional_control_1_1_i_time_extension_1a6e125dfbfe3e637f73a8ef8c15fd096d" prot="public" virt="pure-virtual"><scope>OpenOasis::AdditionalControl::ITimeExtension</scope><name>GetTimeExtent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

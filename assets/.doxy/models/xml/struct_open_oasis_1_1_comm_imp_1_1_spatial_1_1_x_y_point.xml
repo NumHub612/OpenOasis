@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::XYPoint</compoundname>
+    <includes refid="_x_y_geo_structs_8h" local="no">XYGeoStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1accba745eff71fd645e3f2da31f7cbe48" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYPoint::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPoint::x</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="24" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1a3fd757485ee81d979d404189f6855883" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYPoint::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPoint::y</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="25" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1ab683db5362511875eb8fc9cafcbc8dd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</definition>
+        <argsstring>()=default</argsstring>
+        <name>XYPoint</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1a8f089e5398d7cce84a59abe08989b7e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</definition>
+        <argsstring>(const XYPoint &amp;obj)</argsstring>
+        <name>XYPoint</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="28" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1ab005712420ee4ba8fe9434b51336b495" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</definition>
+        <argsstring>(const Coordinate &amp;coor)</argsstring>
+        <name>XYPoint</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &amp;</type>
+          <declname>coor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="29" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="27" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1aa566104bb2ecca4f8ec2f1a9ef15911f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</definition>
+        <argsstring>(double coorX, double coorY)</argsstring>
+        <name>XYPoint</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYPoint::XYPoint</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>coorX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>coorY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="30" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="21" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> is simply a x and y coordinate point (has no z coordinate). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="22" column="1" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="23" bodyend="31"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1accba745eff71fd645e3f2da31f7cbe48" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPoint</scope><name>x</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1ab683db5362511875eb8fc9cafcbc8dd6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPoint</scope><name>XYPoint</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1a8f089e5398d7cce84a59abe08989b7e5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPoint</scope><name>XYPoint</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1ab005712420ee4ba8fe9434b51336b495" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPoint</scope><name>XYPoint</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1aa566104bb2ecca4f8ec2f1a9ef15911f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPoint</scope><name>XYPoint</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1a3fd757485ee81d979d404189f6855883" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYPoint</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

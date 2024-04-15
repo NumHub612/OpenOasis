@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_i_time_8h" kind="file" language="C++">
+    <compoundname>ITime.h</compoundname>
+    <includedby refid="_i_time_set_8h" local="yes">Models/Inc/ITimeSet.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>Models/Inc/AdditionalControl/ITimeExtension.h</label>
+        <link refid="_i_time_extension_8h_source"/>
+      </node>
+      <node id="7">
+        <label>Models/Inc/IAdaptedOutput.h</label>
+        <link refid="_i_adapted_output_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Models/Inc/IAdaptedOutputFactory.h</label>
+        <link refid="_i_adapted_output_factory_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Models/Inc/IBaseExchangeItem.h</label>
+        <link refid="_i_base_exchange_item_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Models/Inc/IInput.h</label>
+        <link refid="_i_input_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Models/Inc/ILinkableComponent.h</label>
+        <link refid="_i_linkable_component_8h_source"/>
+      </node>
+      <node id="6">
+        <label>Models/Inc/IOutput.h</label>
+        <link refid="_i_output_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/Inc/ITime.h</label>
+        <link refid="_i_time_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Models/Inc/ITimeSet.h</label>
+        <link refid="_i_time_set_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_open_oasis_1_1_i_time" prot="public">OpenOasis::ITime</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="class_open_oasis_1_1_i_time" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="class_open_oasis_1_1_i_time_1ae6c23ac6f919ca9af79a441f2066ca46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_time_1ae6c23ac6f919ca9af79a441f2066ca46" kindref="member">GetTimeStamp</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_open_oasis_1_1_i_time_1a54a06a160cc5fee0b5ef12976955d552" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_time_1a54a06a160cc5fee0b5ef12976955d552" kindref="member">GetDurationInDays</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Models/Inc/ITime.h"/>
+  </compounddef>
+</doxygen>

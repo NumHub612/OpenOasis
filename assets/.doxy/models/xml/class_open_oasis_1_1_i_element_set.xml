@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_element_set" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IElementSet</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_spatial_definition" prot="public" virt="non-virtual">OpenOasis::ISpatialDefinition</basecompoundref>
+    <includes refid="_i_element_set_8h" local="no">IElementSet.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1a2a2879f6c45320260fc8deb3b2b8512c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75" kindref="member">ElementType</ref></type>
+        <definition>virtual ElementType OpenOasis::IElementSet::GetElementType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetElementType</name>
+        <qualifiedname>OpenOasis::IElementSet::GetElementType</qualifiedname>
+        <briefdescription>
+<para>Gets <computeroutput>ElementType</computeroutput> of the elementset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="51" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1a68a357c33e9017d237ea1fb72634bc95" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int OpenOasis::IElementSet::GetElementIndex</definition>
+        <argsstring>(const std::string &amp;elementId)=0</argsstring>
+        <name>GetElementIndex</name>
+        <qualifiedname>OpenOasis::IElementSet::GetElementIndex</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>elementId</declname>
+        </param>
+        <briefdescription>
+<para>Index of element with id &apos;elementId&apos; in the element set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identification string of the element required. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Index of the element with the specified id; return -1 if not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="57" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1addfb22b03b7aaf1ef3cf4e4a4fc59182" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string OpenOasis::IElementSet::GetElementId</definition>
+        <argsstring>(int index)=0</argsstring>
+        <name>GetElementId</name>
+        <qualifiedname>OpenOasis::IElementSet::GetElementId</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets Id of the index element in the element set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The element index for which the element <computeroutput>Id</computeroutput> is requested.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The id of the element with the specified index. If the <computeroutput>ElementType</computeroutput> of the elementset is not <computeroutput>IdBased</computeroutput>, an empty string may be returned.</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index outside the range, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="68" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1a2b60e0f8a139a3a902ceee11ef137766" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int OpenOasis::IElementSet::GetFaceCount</definition>
+        <argsstring>(int elementIndex)=0</argsstring>
+        <name>GetFaceCount</name>
+        <qualifiedname>OpenOasis::IElementSet::GetFaceCount</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <briefdescription>
+<para>Gets the number of faces in a element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index for the element. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of faces. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index outside the range, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="75" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1a58e9188e4d13dc01f7364d148ac56a21" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int OpenOasis::IElementSet::GetNodeCount</definition>
+        <argsstring>(int elementIndex)=0</argsstring>
+        <name>GetNodeCount</name>
+        <qualifiedname>OpenOasis::IElementSet::GetNodeCount</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <briefdescription>
+<para>Gets number of nodes for the element specified by the index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The element index for the element.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of nodes in element defined by the elementIndex.</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index outside the range, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the method is invoked with type <computeroutput>IdBased</computeroutput>, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="86" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1a4064e9d823d4e15a1e5c7e4b056adf23" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>virtual std::vector&lt; int &gt; OpenOasis::IElementSet::GetFaceNodeIndices</definition>
+        <argsstring>(int elementIndex, int faceIndex)=0</argsstring>
+        <name>GetFaceNodeIndices</name>
+        <qualifiedname>OpenOasis::IElementSet::GetFaceNodeIndices</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>faceIndex</declname>
+        </param>
+        <briefdescription>
+<para>Gets an array with the node indices for a face. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>faceIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Face index. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The node indices for this face. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="93" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1afa6785ed9eaf45db349cf750a01bdf09" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double OpenOasis::IElementSet::GetNodeXCoordinate</definition>
+        <argsstring>(int elementIndex, int nodeIndex)=0</argsstring>
+        <name>GetNodeXCoordinate</name>
+        <qualifiedname>OpenOasis::IElementSet::GetNodeXCoordinate</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nodeIndex</declname>
+        </param>
+        <briefdescription>
+<para>X coordinate for the node with nodeIndex of the element with elementIndex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node index in the element with index elementIndex.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>X coordinate for the node. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="102" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1acde51ce6e0f704eb56ead0f906228649" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double OpenOasis::IElementSet::GetNodeYCoordinate</definition>
+        <argsstring>(int elementIndex, int nodeIndex)=0</argsstring>
+        <name>GetNodeYCoordinate</name>
+        <qualifiedname>OpenOasis::IElementSet::GetNodeYCoordinate</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nodeIndex</declname>
+        </param>
+        <briefdescription>
+<para>Y coordinate for the node with nodeIndex of the element with elementIndex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node index in the element with index elementIndex.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Y coordinate for the node. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="111" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_element_set_1ae97330b2ab6039593bd46b79255316d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double OpenOasis::IElementSet::GetNodeZCoordinate</definition>
+        <argsstring>(int elementIndex, int nodeIndex)=0</argsstring>
+        <name>GetNodeZCoordinate</name>
+        <qualifiedname>OpenOasis::IElementSet::GetNodeZCoordinate</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nodeIndex</declname>
+        </param>
+        <briefdescription>
+<para>Z coordinate for the node with nodeIndex of the element with elementIndex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node index in the element with index elementIndex.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Z coordinate for the node. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="120" column="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An list of elements having a common type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IElementSet</label>
+        <link refid="class_open_oasis_1_1_i_element_set"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::ISpatialDefinition</label>
+        <link refid="class_open_oasis_1_1_i_spatial_definition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IElementSet</label>
+        <link refid="class_open_oasis_1_1_i_element_set"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::ISpatialDefinition</label>
+        <link refid="class_open_oasis_1_1_i_spatial_definition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/IElementSet.h" line="47" column="1" bodyfile="Models/Inc/IElementSet.h" bodystart="48" bodyend="121"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_spatial_definition_1a382e067951deb05e30d9351311e68f4d" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetElementCount</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1addfb22b03b7aaf1ef3cf4e4a4fc59182" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetElementId</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1a68a357c33e9017d237ea1fb72634bc95" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetElementIndex</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1a2a2879f6c45320260fc8deb3b2b8512c" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetElementType</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1a2b60e0f8a139a3a902ceee11ef137766" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetFaceCount</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1a4064e9d823d4e15a1e5c7e4b056adf23" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetFaceNodeIndices</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1a58e9188e4d13dc01f7364d148ac56a21" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetNodeCount</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1afa6785ed9eaf45db349cf750a01bdf09" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetNodeXCoordinate</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1acde51ce6e0f704eb56ead0f906228649" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetNodeYCoordinate</name></member>
+      <member refid="class_open_oasis_1_1_i_element_set_1ae97330b2ab6039593bd46b79255316d8" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetNodeZCoordinate</name></member>
+      <member refid="class_open_oasis_1_1_i_spatial_definition_1ad78968c1aaa0144e95145fbe66670b01" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetSpatialReferenceSystem</name></member>
+      <member refid="class_open_oasis_1_1_i_spatial_definition_1a19cb250dc25438d7fe5905a252c6c3e5" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>GetVersion</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::IElementSet</scope><name>SetDescription</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

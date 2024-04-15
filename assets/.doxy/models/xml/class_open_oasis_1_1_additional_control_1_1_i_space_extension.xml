@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_additional_control_1_1_i_space_extension" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::AdditionalControl::ISpaceExtension</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_additional_control_1_1_i_space_extension_1a10f7f01d9a969d7e537f71e78c4355db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_spatial_definition" kindref="compound">ISpatialDefinition</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; ISpatialDefinition &gt; OpenOasis::AdditionalControl::ISpaceExtension::GetSpatialDefinition</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetSpatialDefinition</name>
+        <qualifiedname>OpenOasis::AdditionalControl::ISpaceExtension::GetSpatialDefinition</qualifiedname>
+        <briefdescription>
+<para>Spatial information (usually an element set) on the values that are available in an output exchange item or required by an input exchange item. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/AdditionalControl/ISpaceExtension.h" line="24" column="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/AdditionalControl/ISpaceExtension.h" line="19" column="1" bodyfile="Models/Inc/AdditionalControl/ISpaceExtension.h" bodystart="20" bodyend="25"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_additional_control_1_1_i_space_extension_1a10f7f01d9a969d7e537f71e78c4355db" prot="public" virt="pure-virtual"><scope>OpenOasis::AdditionalControl::ISpaceExtension</scope><name>GetSpatialDefinition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

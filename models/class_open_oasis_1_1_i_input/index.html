@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::IInput - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::IInput";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_i_input.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::IInput</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasisiinput">Class OpenOasis::IInput<a class="headerlink" href="#class-openoasisiinput" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="./"><strong>IInput</strong></a></p>
+<p><em>An input item that can accept values for an</em> <code>ILinkableComponent</code> <em>. The input item may have multiple providers.</em></p>
+<ul>
+<li><code>#include &lt;IInput.h&gt;</code></li>
+</ul>
+<p>Inherits the following classes: <a href="../class_open_oasis_1_1_i_base_exchange_item/">OpenOasis::IBaseExchangeItem</a></p>
+<h2 id="public-types-inherited-from-openoasisibaseexchangeitem">Public Types inherited from OpenOasis::IBaseExchangeItem<a class="headerlink" href="#public-types-inherited-from-openoasisibaseexchangeitem" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_base_exchange_item/">OpenOasis::IBaseExchangeItem</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">typedef std::function&lt; void(std::shared_ptr&lt; <a href="../class_open_oasis_1_1_exchange_item_change_event_args/"><strong>ExchangeItemChangeEventArgs</strong></a> &gt;)&gt;</td>
+<td style="text-align: left;"><a href="#typedef-listenfunc"><strong>ListenFunc</strong></a>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-addprovider"><strong>AddProvider</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_output/"><strong>IOutput</strong></a> &gt; provider) = 0<br><em>Adds a provider for this input item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::weak_ptr&lt; <a href="../class_open_oasis_1_1_i_output/"><strong>IOutput</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#function-getproviders"><strong>GetProviders</strong></a> () const = 0<br><em>Gets the providers that this input should get its values from.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-removeprovider"><strong>RemoveProvider</strong></a> (const std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_output/"><strong>IOutput</strong></a> &gt; &amp; provider) = 0<br><em>Removes specified provider from this input item.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-openoasisibaseexchangeitem">Public Functions inherited from OpenOasis::IBaseExchangeItem<a class="headerlink" href="#public-functions-inherited-from-openoasisibaseexchangeitem" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_base_exchange_item/">OpenOasis::IBaseExchangeItem</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-addlistener"><strong>AddListener</strong></a> (const ListenFunc &amp; func) = 0<br><em>Adds a listener to the exchange item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::weak_ptr&lt; <a href="../class_open_oasis_1_1_i_linkable_component/"><strong>ILinkableComponent</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-getcomponent"><strong>GetComponent</strong></a> () const = 0<br><em>Gets the owner of the exchange item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_element_set/"><strong>IElementSet</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-getelementset"><strong>GetElementSet</strong></a> () const = 0<br><em>Gets the exchange item's elements. If it's id-based, return null.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time_set/"><strong>ITimeSet</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-gettimeset"><strong>GetTimeSet</strong></a> () const = 0<br><em>Gets the exchange item's available time set. If it's time independent, return null.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_value_definition/"><strong>IValueDefinition</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-getvaluedefinition"><strong>GetValueDefinition</strong></a> () const = 0<br><em>Definition of the values in the exchange item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_value_set/"><strong>IValueSet</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-getvalues"><strong>GetValues</strong></a> () = 0<br><em>Provides the values matching the value definition specified. Extensions can overwrite this base version to include more details in the query, e.g. time and space.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-removelistener"><strong>RemoveListener</strong></a> (const ListenFunc &amp; func) = 0<br><em>Removes the listener if it is no more interested at this item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-reset"><strong>Reset</strong></a> () = 0<br><em>Resets the exchange item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setelementset"><strong>SetElementSet</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_element_set/"><strong>IElementSet</strong></a> &gt; elements) = 0<br><em>Sets the exchange item's elements.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-settimeset"><strong>SetTimeSet</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_time_set/"><strong>ITimeSet</strong></a> &gt; times) = 0<br><em>Sets the exchange item's time set.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setvalues"><strong>SetValues</strong></a> (std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_value_set/"><strong>IValueSet</strong></a> &gt; value) = 0<br><em>Sets the exchange item's values.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-openoasisiidentifiable">Public Functions inherited from OpenOasis::IIdentifiable<a class="headerlink" href="#public-functions-inherited-from-openoasisiidentifiable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_identifiable/">OpenOasis::IIdentifiable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getid"><strong>GetId</strong></a> () const = 0<br><em>Gets id string.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-openoasisidescribable">Public Functions inherited from OpenOasis::IDescribable<a class="headerlink" href="#public-functions-inherited-from-openoasisidescribable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_describable/">OpenOasis::IDescribable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getcaption"><strong>GetCaption</strong></a> () const = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getdescription"><strong>GetDescription</strong></a> () const = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setcaption"><strong>SetCaption</strong></a> (const std::string &amp; value) = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setdescription"><strong>SetDescription</strong></a> (const std::string &amp; value) = 0<br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-addprovider">function AddProvider<a class="headerlink" href="#function-addprovider" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IInput</span><span class="o">::</span><span class="n">AddProvider</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IOutput</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">provider</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="function-getproviders">function GetProviders<a class="headerlink" href="#function-getproviders" title="Permanent link">&para;</a></h3>
+<p><em>Gets the providers that this input should get its values from.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IOutput</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IInput</span><span class="o">::</span><span class="n">GetProviders</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>An <code>IOutput</code> item provides data while calling its <code>GetValues()</code>. </p>
+<h3 id="function-removeprovider">function RemoveProvider<a class="headerlink" href="#function-removeprovider" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IInput</span><span class="o">::</span><span class="n">RemoveProvider</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IOutput</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">provider</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/Inc/IInput.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

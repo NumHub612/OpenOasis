@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::Node</compoundname>
+    <includes refid="_mesh_structs_8h" local="no">MeshStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1acc327fbd487236d93043ca2344991602" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref></type>
+        <definition>Coordinate OpenOasis::CommImp::Spatial::Node::coor</definition>
+        <argsstring></argsstring>
+        <name>coor</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Node::coor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="28" column="16" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1a720a8be17a735d26cc37997c557631d2" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; OpenOasis::CommImp::Spatial::Node::faceIndexes</definition>
+        <argsstring></argsstring>
+        <name>faceIndexes</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Node::faceIndexes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="31" column="17" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1a7ab91acb46924e2dd8815de3932e8da4" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; OpenOasis::CommImp::Spatial::Node::cellIndexes</definition>
+        <argsstring></argsstring>
+        <name>cellIndexes</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Node::cellIndexes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="34" column="17" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> node data structure. (Point type). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>OpenOasis::CommImp::Spatial::Coordinate</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Spatial::Node</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>coor</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>real</label>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Spatial/MeshStructs.h" line="26" column="1" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="27" bodyend="35"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1a7ab91acb46924e2dd8815de3932e8da4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Node</scope><name>cellIndexes</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1acc327fbd487236d93043ca2344991602" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Node</scope><name>coor</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1a720a8be17a735d26cc37997c557631d2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Node</scope><name>faceIndexes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

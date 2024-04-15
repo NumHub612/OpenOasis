@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_quality" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IQuality</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_value_definition" prot="public" virt="non-virtual">OpenOasis::IValueDefinition</basecompoundref>
+    <includes refid="_i_quality_8h" local="no">IQuality.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_quality_1a111afba5afdbae29d0d8cf86ea6e992e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_category" kindref="compound">ICategory</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; ICategory &gt; &gt; OpenOasis::IQuality::GetCategories</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCategories</name>
+        <qualifiedname>OpenOasis::IQuality::GetCategories</qualifiedname>
+        <briefdescription>
+<para>Gets a list of the possible <computeroutput><ref refid="class_open_oasis_1_1_i_category" kindref="compound">ICategory</ref></computeroutput> allowed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the quality is not ordered, the list contains the <computeroutput><ref refid="class_open_oasis_1_1_i_category" kindref="compound">ICategory</ref></computeroutput>s in an unspecified order. When it&apos;s ordered, the list contains the <computeroutput><ref refid="class_open_oasis_1_1_i_category" kindref="compound">ICategory</ref></computeroutput>s in the same sequence. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IQuality.h" line="42" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_quality_1af25dcdd7657076b4fc51add2408611a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool OpenOasis::IQuality::IsOrdered</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsOrdered</name>
+        <qualifiedname>OpenOasis::IQuality::IsOrdered</qualifiedname>
+        <briefdescription>
+<para>Checks if this <computeroutput><ref refid="class_open_oasis_1_1_i_quality" kindref="compound">IQuality</ref></computeroutput> is defined by an ordered set or not. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IQuality.h" line="45" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class describes qualitative data, where a value is specified as one category within a number of predefined (possible) categories. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Qualitative data described items in terms of some quality or categorization that may be &apos;informal&apos; or may use relatively ill-defined characteristics such as warmth and flavour. However, qualitative data can include well-defined aspects such as gender, nationality or commodity type.</para>
+<para>For qualitative data the <computeroutput><ref refid="class_open_oasis_1_1_i_value_set" kindref="compound">IValueSet</ref></computeroutput> exchanged between <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput>s contains one of the possible <computeroutput><ref refid="class_open_oasis_1_1_i_category" kindref="compound">ICategory</ref></computeroutput> instances per element in the element set involved. For examples: Colors : red, green, blue; Land use: nature, recreation, industry, infrastructure; Rating : worse, same, better. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IQuality</label>
+        <link refid="class_open_oasis_1_1_i_quality"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IValueDefinition</label>
+        <link refid="class_open_oasis_1_1_i_value_definition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IQuality</label>
+        <link refid="class_open_oasis_1_1_i_quality"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IValueDefinition</label>
+        <link refid="class_open_oasis_1_1_i_value_definition"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/IQuality.h" line="34" column="1" bodyfile="Models/Inc/IQuality.h" bodystart="35" bodyend="46"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_quality_1a111afba5afdbae29d0d8cf86ea6e992e" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>GetCategories</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_value_definition_1a0f4111f71fa7b1c864b9548d6d70befa" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>GetMissingDataValue</name></member>
+      <member refid="class_open_oasis_1_1_i_value_definition_1a5bd532cff498fc55ab5c1b8f93892dc1" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>GetValueType</name></member>
+      <member refid="class_open_oasis_1_1_i_quality_1af25dcdd7657076b4fc51add2408611a9" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>IsOrdered</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::IQuality</scope><name>SetDescription</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

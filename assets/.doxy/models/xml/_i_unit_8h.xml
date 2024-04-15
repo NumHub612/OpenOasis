@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_i_unit_8h" kind="file" language="C++">
+    <compoundname>IUnit.h</compoundname>
+    <includes refid="_i_describable_8h" local="yes">IDescribable.h</includes>
+    <includes refid="_i_dimension_8h" local="yes">IDimension.h</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="_i_quantity_8h" local="yes">Models/Inc/IQuantity.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>IDescribable.h</label>
+        <link refid="_i_describable_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IDimension.h</label>
+        <link refid="_i_dimension_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Models/Inc/IUnit.h</label>
+        <link refid="_i_unit_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Models/Inc/IQuantity.h</label>
+        <link refid="_i_quantity_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Models/Inc/IUnit.h</label>
+        <link refid="_i_unit_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_open_oasis_1_1_i_unit" prot="public">OpenOasis::IUnit</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IDescribable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IDimension.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19" refid="class_open_oasis_1_1_i_unit" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_i_unit" kindref="compound">IUnit</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_describable" kindref="compound">IDescribable</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="class_open_oasis_1_1_i_unit_1a36367e3ad5015930b2c14c43b45e8350" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IDimension&gt;<sp/><ref refid="class_open_oasis_1_1_i_unit_1a36367e3ad5015930b2c14c43b45e8350" kindref="member">GetDimension</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_open_oasis_1_1_i_unit_1ace9a0971f4769a494c4c483d806fdcd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_unit_1ace9a0971f4769a494c4c483d806fdcd3" kindref="member">GetConversionFactorToSI</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_open_oasis_1_1_i_unit_1aed97420a36ac68f0f49764193f6effec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_unit_1aed97420a36ac68f0f49764193f6effec" kindref="member">GetOffSetToSI</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Models/Inc/IUnit.h"/>
+  </compounddef>
+</doxygen>

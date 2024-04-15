@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_mesh_structs_8h" kind="file" language="C++">
+    <compoundname>MeshStructs.h</compoundname>
+    <includes refid="_coordinate_8h" local="yes">Coordinate.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">array</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">cmath</includes>
+    <includedby refid="_geo_calculator_8h" local="yes">Models/CommImp/Spatial/GeoCalculator.h</includedby>
+    <includedby refid="_grid_8h" local="yes">Models/CommImp/Spatial/Grid.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Coordinate.h</label>
+        <link refid="_coordinate_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/CommImp/Spatial/MeshStructs.h</label>
+        <link refid="_mesh_structs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Models/Utils/CommConstants.h</label>
+      </node>
+      <node id="5">
+        <label>array</label>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="6">
+        <label>unordered_map</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>Models/CommImp/Numeric/FVM/FvmSolver.h</label>
+        <link refid="_fvm_solver_8h_source"/>
+      </node>
+      <node id="5">
+        <label>Models/CommImp/Numeric/LaplacianOperator.h</label>
+        <link refid="_laplacian_operator_8h_source"/>
+      </node>
+      <node id="2">
+        <label>Models/CommImp/Spatial/GeoCalculator.h</label>
+        <link refid="_geo_calculator_8h_source"/>
+      </node>
+      <node id="3">
+        <label>Models/CommImp/Spatial/Grid.h</label>
+        <link refid="_grid_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Models/CommImp/Spatial/Grid1D.h</label>
+        <link refid="_grid1_d_8h_source"/>
+      </node>
+      <node id="7">
+        <label>Models/CommImp/Spatial/Grid2D.h</label>
+        <link refid="_grid2_d_8h_source"/>
+      </node>
+      <node id="8">
+        <label>Models/CommImp/Spatial/Grid3D.h</label>
+        <link refid="_grid3_d_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Models/CommImp/Spatial/MeshStructs.h</label>
+        <link refid="_mesh_structs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Models/SystHeats/HeatConductionModel/HeatConductionModel.h</label>
+        <link refid="_heat_conduction_model_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" prot="public">OpenOasis::CommImp::Spatial::Node</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face" prot="public">OpenOasis::CommImp::Spatial::Face</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell" prot="public">OpenOasis::CommImp::Spatial::Cell</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" prot="public">OpenOasis::CommImp::Spatial::Mesh</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp">OpenOasis::CommImp</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_spatial">OpenOasis::CommImp::Spatial</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Coordinate.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">CommImp</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Spatial</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref><sp/>coor;<sp/><sp/></highlight><highlight class="comment">//<sp/>unit(m).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexes<sp/>of<sp/>mesh<sp/>faces<sp/>shared<sp/>the<sp/>node.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>faceIndexes;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexes<sp/>of<sp/>mesh<sp/>cells<sp/>shared<sp/>the<sp/>node.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>cellIndexes;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face" kindref="compound">Face</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref><sp/>centroid;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Perimeter<sp/>of<sp/>the<sp/>face<sp/>in<sp/>(m).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>real<sp/>perimeter<sp/>=<sp/>NAN;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Area<sp/>of<sp/>the<sp/>face<sp/>in<sp/>(m^2).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>real<sp/>area<sp/>=<sp/>NAN;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Unit<sp/>normal<sp/>vector.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;real,<sp/>3&gt;<sp/>normal;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexes<sp/>of<sp/>mesh<sp/>nodes<sp/>on<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>face<sp/>sorted<sp/>counterclockwise.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>nodeIndexes;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexes<sp/>of<sp/>mesh<sp/>cells<sp/>shared</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>face.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>cellIndexes;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Orientation<sp/>of<sp/>cells<sp/>to<sp/>face</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(Same<sp/>or<sp/>opposite<sp/>to<sp/>normal)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(Corresponds<sp/>to<sp/>cellIndexes)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>cellSides;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell" kindref="compound">Cell</ref></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref><sp/>centroid;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Volume<sp/>of<sp/>the<sp/>cell<sp/>in<sp/>(m^3).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>real<sp/>volume<sp/>=<sp/>NAN;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Surface<sp/>area<sp/>in<sp/>(m^2).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>real<sp/>surface<sp/>=<sp/>NAN;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexes<sp/>of<sp/>faces<sp/>on<sp/>the<sp/>cell.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>faceIndexes;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexes<sp/>of<sp/>neighboring<sp/>cells.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>neighbors;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexes<sp/>of<sp/>sub-cells</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>after<sp/>current<sp/>cell&apos;s<sp/>refined.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>subCells;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Mesh<sp/>nodes<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;int,<sp/>Node&gt;<sp/>nodes;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Mesh<sp/>faces<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;int,<sp/>Face&gt;<sp/>faces;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Mesh<sp/>cells<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;int,<sp/>Cell&gt;<sp/>cells;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Spatial</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>CommImp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Models/CommImp/Spatial/MeshStructs.h"/>
+  </compounddef>
+</doxygen>

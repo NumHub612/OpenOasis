@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>File LinkLoader.cpp - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "File LinkLoader.cpp";
+        var mkdocs_page_input_path = "models\\_link_loader_8cpp_source.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">File LinkLoader.cpp</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="file-linkloadercpp">File LinkLoader.cpp<a class="headerlink" href="#file-linkloadercpp" title="Permanent link">&para;</a></h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_6202b98a8704f42b1ea358646461643f/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../dir_3b1940e7bde9c1f91eabae8dc723b4f2/"><strong>IO</strong></a> <strong>&gt;</strong> <a href="../_link_loader_8cpp/"><strong>LinkLoader.cpp</strong></a></p>
+<p><a href="../_link_loader_8cpp/">Go to the documentation of this file</a></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;LinkLoader.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Logger.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Utils/FilePathHelper.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Utils/Exception.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Utils/StringHelper.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Utils/MapHelper.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;set&gt;</span>
+
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">OpenOasis</span><span class="o">::</span><span class="nn">CommImp</span><span class="o">::</span><span class="nn">IO</span>
+<span class="p">{</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Utils</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">spdlog</span><span class="o">::</span><span class="n">logger</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetLogger</span><span class="p">();</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">LinkLoader::Load</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Loading links from [{}].&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mLinkFile</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LoadComponents</span><span class="p">();</span>
+<span class="w">    </span><span class="n">LoadLinks</span><span class="p">();</span>
+<span class="w">    </span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Loading links completed.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">LinkLoader::LoadComponents</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">compsJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(</span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;comps&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">compIds</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetKeys</span><span class="p">(</span><span class="n">compsJson</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">compIds</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">confs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetMap</span><span class="p">(</span><span class="n">compsJson</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">confs</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;type&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">confs</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;task&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">confs</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;dll&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="n">StringHelper</span><span class="o">::</span><span class="n">FormatSimple</span><span class="p">(</span>
+<span class="w">                </span><span class="s">&quot;Component [{}] configuration is incomplete.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">ComponentInfo</span><span class="w"> </span><span class="n">infos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">confs</span><span class="p">[</span><span class="s">&quot;type&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">confs</span><span class="p">[</span><span class="s">&quot;task&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">confs</span><span class="p">[</span><span class="s">&quot;dll&quot;</span><span class="p">]};</span>
+<span class="w">        </span><span class="n">mComps</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">infos</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetComponentIds</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MapHelper</span><span class="o">::</span><span class="n">GetKeys</span><span class="p">(</span><span class="n">mComps</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">LinkLoader</span><span class="o">::</span><span class="n">ComponentInfo</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetComponentInfo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mComps</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">LoadLinks</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">linksJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(</span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;links&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">linkIds</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetKeys</span><span class="p">(</span><span class="n">linksJson</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w">                </span><span class="n">linkGroups</span><span class="p">;</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w">                        </span><span class="n">linkModes</span><span class="p">;</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">linkConfs</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">linkIds</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">linkJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(</span><span class="n">linksJson</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Get the mode and parameters of the current link.</span>
+<span class="w">        </span><span class="k">auto</span><span class="w">   </span><span class="n">mode</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">linkJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mode&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">modeId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">has_value</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span><span class="n">value</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;PULL&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">linkModes</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modeId</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">parms</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetMap</span><span class="p">(</span><span class="n">linkJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;params&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">linkConfs</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parms</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Get data exchage pipelines of the current link.</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">pipelinesJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(</span><span class="n">linkJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pipelines&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w">  </span><span class="n">pipelineNum</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetArraySize</span><span class="p">(</span><span class="n">pipelinesJson</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">pipelineNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LoadPipeline</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">pipelinesJson</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">linkGroups</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Collect the coupling groups.</span>
+<span class="w">    </span><span class="n">CollectIteratorGroups</span><span class="p">(</span><span class="n">linkGroups</span><span class="p">,</span><span class="w"> </span><span class="n">linkModes</span><span class="p">,</span><span class="w"> </span><span class="n">linkConfs</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">ElementInfo</span><span class="o">&gt;</span>
+<span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetComponentOutputs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">compId</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mOuts</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">compId</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mOuts</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">compId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">ElementInfo</span><span class="o">&gt;&gt;</span>
+<span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetOutputConsumers</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">compId</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="n">output</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">outputId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateUniqueElementId</span><span class="p">(</span><span class="n">compId</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">consumers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mOutputConsumers</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">outputId</span><span class="p">);</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ElementInfo</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">consumerId</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">consumers</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">consumer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SplitUniqueElementId</span><span class="p">(</span><span class="n">consumerId</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">compId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">consumer</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">elemId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">consumer</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">elemType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">consumer</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">state</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">consumer</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">tOptId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">consumer</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">sOptId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">consumer</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="w">        </span><span class="n">ElementInfo</span><span class="w"> </span><span class="n">elemInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">elemId</span><span class="p">,</span><span class="w"> </span><span class="n">elemType</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">tOptId</span><span class="p">,</span><span class="w"> </span><span class="n">sOptId</span><span class="p">};</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">compId</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">res</span><span class="p">[</span><span class="n">compId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">elemInfo</span><span class="p">};</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">res</span><span class="p">[</span><span class="n">compId</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">elemInfo</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">ElementInfo</span><span class="o">&gt;</span>
+<span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetComponentInputs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">compId</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mInps</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">compId</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mInps</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">compId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">ElementInfo</span><span class="o">&gt;&gt;</span>
+<span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetInputProviders</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">compId</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">inputId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateUniqueElementId</span><span class="p">(</span><span class="n">compId</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w">   </span><span class="n">providers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mInputProviders</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">inputId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ElementInfo</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">providerId</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">providers</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SplitUniqueElementId</span><span class="p">(</span><span class="n">providerId</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">compId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">elemId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">elemType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">state</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">tOptId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">sOptId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="w">        </span><span class="n">ElementInfo</span><span class="w"> </span><span class="n">elemInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">elemId</span><span class="p">,</span><span class="w"> </span><span class="n">elemType</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">tOptId</span><span class="p">,</span><span class="w"> </span><span class="n">sOptId</span><span class="p">};</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">compId</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">res</span><span class="p">[</span><span class="n">compId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">elemInfo</span><span class="p">};</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">res</span><span class="p">[</span><span class="n">compId</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">elemInfo</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetIteratorGroups</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mIterGroups</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">GetIteratorConfigs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">iterId</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mIterConfigs</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">iterId</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mIterConfigs</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">iterId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">CollectIteratorGroups</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w">                </span><span class="o">&amp;</span><span class="n">linkGroups</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w">                        </span><span class="o">&amp;</span><span class="n">linkModes</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">linkConfs</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxGroupSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linkModes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Collect the loop coupling groups.</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">groups</span><span class="p">(</span><span class="n">maxGroupSize</span><span class="p">),</span><span class="w"> </span><span class="n">links</span><span class="p">(</span><span class="n">maxGroupSize</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pair</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">linkGroups</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">linkId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">StringHelper</span><span class="o">::</span><span class="n">ToUpper</span><span class="p">(</span><span class="n">linkModes</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">linkId</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;LOOP&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Check if the link has been added to a group.</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">comps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pair</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">maxGroupSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span><span class="p">(</span><span class="n">comps</span><span class="p">.</span><span class="n">front</span><span class="p">()))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="n">comps</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
+<span class="w">                </span><span class="n">links</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="n">linkId</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span><span class="p">(</span><span class="n">comps</span><span class="p">.</span><span class="n">back</span><span class="p">()))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="n">comps</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+<span class="w">                </span><span class="n">links</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="n">linkId</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">maxGroupSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">empty</span><span class="p">())</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">groupId</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">StringHelper</span><span class="o">::</span><span class="n">FormatSimple</span><span class="p">(</span><span class="s">&quot;LOOP_GROUP_{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mIterGroups</span><span class="p">[</span><span class="n">groupId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Collect loop coupling groups parameters.</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">maxGroupSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">empty</span><span class="p">())</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">groupId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringHelper</span><span class="o">::</span><span class="n">FormatSimple</span><span class="p">(</span><span class="s">&quot;LOOP_GROUP_{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">linkId</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">links</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">confs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linkConfs</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">linkId</span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pair</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">confs</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">params</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">mIterConfigs</span><span class="p">[</span><span class="n">groupId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">LoadPipeline</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">linkId</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span><span class="w"> </span><span class="o">&amp;</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">linkGroups</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">pipelineJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Get the source and target components, also the exchanged state.</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">srcCompId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pipelineJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;src_component&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">srcState</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pipelineJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;src_state&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">tarCompId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pipelineJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tar_component&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Get the temporal and spatial operators.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w">   </span><span class="n">tOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pipelineJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;temporal_operators&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">tOptId</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">tOperator</span><span class="p">.</span><span class="n">has_value</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">tOperator</span><span class="p">.</span><span class="n">value</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w">   </span><span class="n">sOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pipelineJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;spatial_operators&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">sOptId</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sOperator</span><span class="p">.</span><span class="n">has_value</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">sOperator</span><span class="p">.</span><span class="n">value</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Get the target element.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w">   </span><span class="n">tarElement</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetMap</span><span class="p">(</span><span class="n">pipelineJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tar_element&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">tarElemId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">tarElement</span><span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">tarElemType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tarElement</span><span class="p">[</span><span class="s">&quot;type&quot;</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Collect the inputs of the target component.</span>
+<span class="w">    </span><span class="n">ElementInfo</span><span class="w"> </span><span class="n">tarElemInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">tarElemId</span><span class="p">,</span><span class="w"> </span><span class="n">tarElemType</span><span class="p">,</span><span class="w"> </span><span class="n">srcState</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">mInps</span><span class="p">[</span><span class="n">tarCompId</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">tarElemInfo</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Get the source elements.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">elementsJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetJson</span><span class="p">(</span><span class="n">pipelineJson</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;src_elements&quot;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">elementNum</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetArraySize</span><span class="p">(</span><span class="n">elementsJson</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">elementNum</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w">   </span><span class="n">srcElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mLoader</span><span class="p">.</span><span class="n">GetMap</span><span class="p">(</span><span class="n">elementsJson</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">srcElemId</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">srcElements</span><span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">];</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">srcElemType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">srcElements</span><span class="p">[</span><span class="s">&quot;type&quot;</span><span class="p">];</span>
+
+<span class="w">        </span><span class="c1">// Collect the outputs of the source component.</span>
+<span class="w">        </span><span class="n">ElementInfo</span><span class="w"> </span><span class="n">srcElemInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">srcElemId</span><span class="p">,</span><span class="w"> </span><span class="n">srcElemType</span><span class="p">,</span><span class="w"> </span><span class="n">srcState</span><span class="p">,</span><span class="w"> </span><span class="n">tOptId</span><span class="p">,</span><span class="w"> </span><span class="n">sOptId</span><span class="p">};</span>
+<span class="w">        </span><span class="n">mOuts</span><span class="p">[</span><span class="n">srcCompId</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">srcElemInfo</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Collect the exchange item map.</span>
+<span class="w">        </span><span class="n">CollectExchangeItemMap</span><span class="p">(</span><span class="n">srcCompId</span><span class="p">,</span><span class="w"> </span><span class="n">srcElemInfo</span><span class="p">,</span><span class="w"> </span><span class="n">tarCompId</span><span class="p">,</span><span class="w"> </span><span class="n">tarElemInfo</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Collect the coupling groups.</span>
+<span class="w">    </span><span class="n">linkGroups</span><span class="p">[</span><span class="n">linkId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">srcCompId</span><span class="p">,</span><span class="w"> </span><span class="n">tarCompId</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">CollectExchangeItemMap</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">srcCompId</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tarCompId</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ElementInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="n">input</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">outputId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateUniqueElementId</span><span class="p">(</span><span class="n">srcCompId</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">inputId</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateUniqueElementId</span><span class="p">(</span><span class="n">tarCompId</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">setter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w">                          </span><span class="o">&amp;</span><span class="n">key</span><span class="p">,</span>
+<span class="w">                     </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w">                          </span><span class="o">&amp;</span><span class="n">value</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">map</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">value</span><span class="p">};</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">setter</span><span class="p">(</span><span class="n">outputId</span><span class="p">,</span><span class="w"> </span><span class="n">inputId</span><span class="p">,</span><span class="w"> </span><span class="n">mOutputConsumers</span><span class="p">);</span>
+<span class="w">    </span><span class="n">setter</span><span class="p">(</span><span class="n">inputId</span><span class="p">,</span><span class="w"> </span><span class="n">outputId</span><span class="p">,</span><span class="w"> </span><span class="n">mInputProviders</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">string</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">GenerateUniqueElementId</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">compId</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ElementInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">StringHelper</span><span class="o">::</span><span class="n">FormatSimple</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;{}_{}_{}_{}_{}_{}&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">compId</span><span class="p">,</span>
+<span class="w">        </span><span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="w">        </span><span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="w">        </span><span class="n">element</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+<span class="w">        </span><span class="n">element</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+<span class="w">        </span><span class="n">element</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">LinkLoader</span><span class="o">::</span><span class="n">SplitUniqueElementId</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">uniqueId</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringHelper</span><span class="o">::</span><span class="n">Split</span><span class="p">(</span><span class="n">uniqueId</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;_&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parts</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span>
+<span class="w">            </span><span class="n">StringHelper</span><span class="o">::</span><span class="n">FormatSimple</span><span class="p">(</span><span class="s">&quot;Invalid unique element id [{}].&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">uniqueId</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">parts</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace OpenOasis::CommImp::IO</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

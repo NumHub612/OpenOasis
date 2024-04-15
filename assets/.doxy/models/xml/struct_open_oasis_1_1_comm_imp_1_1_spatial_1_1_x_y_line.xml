@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::XYLine</compoundname>
+    <includes refid="_x_y_geo_structs_8h" local="no">XYGeoStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1af4fa25c80937591ff16c661c74b59a2a" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref></type>
+        <definition>XYPoint OpenOasis::CommImp::Spatial::XYLine::point1</definition>
+        <argsstring></argsstring>
+        <name>point1</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYLine::point1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="37" column="13" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a0c4c9ce677283aba84127b5a9d2f58b8" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref></type>
+        <definition>XYPoint OpenOasis::CommImp::Spatial::XYLine::point2</definition>
+        <argsstring></argsstring>
+        <name>point2</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYLine::point2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="38" column="13" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1afd104ae0ab32923f9e70e64c7a65457e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYLine::XYLine</definition>
+        <argsstring>()=default</argsstring>
+        <name>XYLine</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYLine::XYLine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="40" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1ac4bbae23076a3600fca28f1788155f9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYLine::XYLine</definition>
+        <argsstring>(double x1, double y1, double x2, double y2)</argsstring>
+        <name>XYLine</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYLine::XYLine</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="41" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a79672486749c3df705d0bd275aa94d3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYLine::XYLine</definition>
+        <argsstring>(const XYPoint &amp;p1, const XYPoint &amp;p2)</argsstring>
+        <name>XYLine</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYLine::XYLine</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="42" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="48" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1ad32ef9062322738c13d745407df6d641" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYLine::XYLine</definition>
+        <argsstring>(const XYLine &amp;line)</argsstring>
+        <name>XYLine</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYLine::XYLine</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="43" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="54" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a2a98823511c8206a43d0c414dccc10ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYLine::GetLength</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLength</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYLine::GetLength</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="45" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="60" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The XYline struct is used for representing a line segment. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Spatial::XYLine</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>point1</edgelabel>
+          <edgelabel>point2</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::CommImp::Spatial::XYPoint</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point"/>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="35" column="1" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="36" bodyend="46"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a2a98823511c8206a43d0c414dccc10ae" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYLine</scope><name>GetLength</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1af4fa25c80937591ff16c661c74b59a2a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYLine</scope><name>point1</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a0c4c9ce677283aba84127b5a9d2f58b8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYLine</scope><name>point2</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1afd104ae0ab32923f9e70e64c7a65457e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYLine</scope><name>XYLine</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1ac4bbae23076a3600fca28f1788155f9f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYLine</scope><name>XYLine</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a79672486749c3df705d0bd275aa94d3c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYLine</scope><name>XYLine</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1ad32ef9062322738c13d745407df6d641" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYLine</scope><name>XYLine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

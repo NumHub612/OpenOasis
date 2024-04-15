@@ -1,0 +1,449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::IO::MeshLoader</compoundname>
+    <includes refid="_mesh_loader_8h" local="no">MeshLoader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a5a75c474dce0196d3cd5273fba35bb9a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::CommImp::IO::MeshLoader::mMeshDir</definition>
+        <argsstring></argsstring>
+        <name>mMeshDir</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mMeshDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="42" column="17" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a4c947997e6da6dd1dc8b6a89e246ca29" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;int&gt; &gt; OpenOasis::CommImp::IO::MeshLoader::mPatchFaces</definition>
+        <argsstring></argsstring>
+        <name>mPatchFaces</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mPatchFaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="44" column="24" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a72e37448bf19a4c6708a57a84042f4b2" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;int&gt; &gt; OpenOasis::CommImp::IO::MeshLoader::mZoneFaces</definition>
+        <argsstring></argsstring>
+        <name>mZoneFaces</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mZoneFaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="45" column="24" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a069639c471626a9574c19aea8a4780ef" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt;</type>
+        <definition>std::unordered_map&lt;int, Coordinate&gt; OpenOasis::CommImp::IO::MeshLoader::mNodeCoords</definition>
+        <argsstring></argsstring>
+        <name>mNodeCoords</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mNodeCoords</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="47" column="24" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a6f60048071166090b127f4c86f8574d8" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt;</type>
+        <definition>std::unordered_map&lt;int, Coordinate&gt; OpenOasis::CommImp::IO::MeshLoader::mFaceCoords</definition>
+        <argsstring></argsstring>
+        <name>mFaceCoords</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mFaceCoords</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="48" column="24" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abcb7a9e1956a5c6e5125176314284d44" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt;</type>
+        <definition>std::unordered_map&lt;int, Coordinate&gt; OpenOasis::CommImp::IO::MeshLoader::mCellCoords</definition>
+        <argsstring></argsstring>
+        <name>mCellCoords</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mCellCoords</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="49" column="24" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a35b30792158d431a6be9f52e71fc4bff" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, std::vector&lt; int &gt; &gt;</type>
+        <definition>std::unordered_map&lt;int, std::vector&lt;int&gt; &gt; OpenOasis::CommImp::IO::MeshLoader::mFaceNodes</definition>
+        <argsstring></argsstring>
+        <name>mFaceNodes</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mFaceNodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="51" column="24" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ac6733c1866675bad27f8389e63941db9" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, std::vector&lt; int &gt; &gt;</type>
+        <definition>std::unordered_map&lt;int, std::vector&lt;int&gt; &gt; OpenOasis::CommImp::IO::MeshLoader::mCellFaces</definition>
+        <argsstring></argsstring>
+        <name>mCellFaces</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::mCellFaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="52" column="24" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a28c8098e84d21d056dd4af71358908c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::IO::MeshLoader::MeshLoader</definition>
+        <argsstring>(const std::string &amp;meshDir)</argsstring>
+        <name>MeshLoader</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::MeshLoader</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshDir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="55" column="5" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="19" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1aed018948c8fbef3a5f44db05c0f32c4e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::IO::MeshLoader::~MeshLoader</definition>
+        <argsstring>()</argsstring>
+        <name>~MeshLoader</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::~MeshLoader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="56" column="5" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="56" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a387ed38c4231fd1231dd7fa007a08621" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::Load</definition>
+        <argsstring>()</argsstring>
+        <name>Load</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::Load</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="59" column="18" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="30" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a1468ee90521471f9984f3133190bb5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp;</type>
+        <definition>unordered_map&lt; string, vector&lt; int &gt; &gt; &amp; OpenOasis::CommImp::IO::MeshLoader::GetPatches</definition>
+        <argsstring>()</argsstring>
+        <name>GetPatches</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GetPatches</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="61" column="32" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a1686e5e1d1482350af0dbb1433cbf3fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp;</type>
+        <definition>unordered_map&lt; string, vector&lt; int &gt; &gt; &amp; OpenOasis::CommImp::IO::MeshLoader::GetZones</definition>
+        <argsstring>()</argsstring>
+        <name>GetZones</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GetZones</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="62" column="32" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abff3e7f5eaaa1d0d181e5384f2efaa0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt; &amp;</type>
+        <definition>unordered_map&lt; int, Coordinate &gt; &amp; OpenOasis::CommImp::IO::MeshLoader::GetNodeCoordinates</definition>
+        <argsstring>()</argsstring>
+        <name>GetNodeCoordinates</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GetNodeCoordinates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="64" column="32" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ab1bcd11a23f0212082d8ca0922342fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt; &amp;</type>
+        <definition>unordered_map&lt; int, Coordinate &gt; &amp; OpenOasis::CommImp::IO::MeshLoader::GetFaceCoordinates</definition>
+        <argsstring>()</argsstring>
+        <name>GetFaceCoordinates</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GetFaceCoordinates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="65" column="32" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a83c328935dec757531a18858ef9cbff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt; &amp;</type>
+        <definition>unordered_map&lt; int, Coordinate &gt; &amp; OpenOasis::CommImp::IO::MeshLoader::GetCellCoordinates</definition>
+        <argsstring>()</argsstring>
+        <name>GetCellCoordinates</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GetCellCoordinates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="66" column="32" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1af2fe9b00a6f5cbd362fc8d9faaba75ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp;</type>
+        <definition>unordered_map&lt; int, vector&lt; int &gt; &gt; &amp; OpenOasis::CommImp::IO::MeshLoader::GetFaceNodes</definition>
+        <argsstring>()</argsstring>
+        <name>GetFaceNodes</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GetFaceNodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="68" column="32" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a7f004a02a004f2e472df9c61d945f868" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp;</type>
+        <definition>unordered_map&lt; int, vector&lt; int &gt; &gt; &amp; OpenOasis::CommImp::IO::MeshLoader::GetCellFaces</definition>
+        <argsstring>()</argsstring>
+        <name>GetCellFaces</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GetCellFaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="69" column="32" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a46574acb75318f1d3a944261afaf7adc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::LoadNodes</definition>
+        <argsstring>(const std::string &amp;file=&quot;nodes.csv&quot;)</argsstring>
+        <name>LoadNodes</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::LoadNodes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file</declname>
+          <defval>&quot;nodes.csv&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="72" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="95" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a7c899ac11a03542c44e5f7562d45a5c9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::LoadFaces</definition>
+        <argsstring>(const std::string &amp;file=&quot;faces.csv&quot;)</argsstring>
+        <name>LoadFaces</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::LoadFaces</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file</declname>
+          <defval>&quot;faces.csv&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="73" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="118" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a4e5700d6616ab579dd86e4864339df96" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::LoadCells</definition>
+        <argsstring>(const std::string &amp;file=&quot;cells.csv&quot;)</argsstring>
+        <name>LoadCells</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::LoadCells</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file</declname>
+          <defval>&quot;cells.csv&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="74" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="139" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ac610e73290b23f06ce64451d3e70305b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::LoadZones</definition>
+        <argsstring>(const std::string &amp;file=&quot;zones.csv&quot;)</argsstring>
+        <name>LoadZones</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::LoadZones</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file</declname>
+          <defval>&quot;zones.csv&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="75" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="180" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1af24e12bcbd73dad31e40853de9dcc16b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::LoadPatches</definition>
+        <argsstring>(const std::string &amp;file=&quot;patches.csv&quot;)</argsstring>
+        <name>LoadPatches</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::LoadPatches</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file</declname>
+          <defval>&quot;patches.csv&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="76" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="160" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abf85ce4f6e293a8eb7df8632a87de809" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::CheckIds</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;ids, const std::string &amp;meta)</argsstring>
+        <name>CheckIds</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::CheckIds</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>ids</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="78" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="200" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a91cbc89e3f4bb66faab7201a80831aa7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::GenerateFaceCoordinates</definition>
+        <argsstring>()</argsstring>
+        <name>GenerateFaceCoordinates</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GenerateFaceCoordinates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="80" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="219" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1aaef4506a75cc394c76b45f5bf4202afd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::IO::MeshLoader::GenerateCellCoordinates</definition>
+        <argsstring>()</argsstring>
+        <name>GenerateCellCoordinates</name>
+        <qualifiedname>OpenOasis::CommImp::IO::MeshLoader::GenerateCellCoordinates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/MeshLoader.h" line="81" column="10" bodyfile="Models/CommImp/IO/MeshLoader.cpp" bodystart="242" bodyend="263"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Default <computeroutput>Mesh</computeroutput> data loader. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>In default mode, coordinates are defined on nodes. </para>
+    </detaileddescription>
+    <location file="Models/CommImp/IO/MeshLoader.h" line="39" column="1" bodyfile="Models/CommImp/IO/MeshLoader.h" bodystart="40" bodyend="82"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abf85ce4f6e293a8eb7df8632a87de809" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>CheckIds</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1aaef4506a75cc394c76b45f5bf4202afd" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GenerateCellCoordinates</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a91cbc89e3f4bb66faab7201a80831aa7" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GenerateFaceCoordinates</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a83c328935dec757531a18858ef9cbff5" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GetCellCoordinates</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a7f004a02a004f2e472df9c61d945f868" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GetCellFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ab1bcd11a23f0212082d8ca0922342fb0" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GetFaceCoordinates</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1af2fe9b00a6f5cbd362fc8d9faaba75ea" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GetFaceNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abff3e7f5eaaa1d0d181e5384f2efaa0b" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GetNodeCoordinates</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a1468ee90521471f9984f3133190bb5d9" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GetPatches</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a1686e5e1d1482350af0dbb1433cbf3fc" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>GetZones</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a387ed38c4231fd1231dd7fa007a08621" prot="public" virt="virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>Load</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a4e5700d6616ab579dd86e4864339df96" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>LoadCells</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a7c899ac11a03542c44e5f7562d45a5c9" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>LoadFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a46574acb75318f1d3a944261afaf7adc" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>LoadNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1af24e12bcbd73dad31e40853de9dcc16b" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>LoadPatches</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ac610e73290b23f06ce64451d3e70305b" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>LoadZones</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abcb7a9e1956a5c6e5125176314284d44" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mCellCoords</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ac6733c1866675bad27f8389e63941db9" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mCellFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a28c8098e84d21d056dd4af71358908c6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>MeshLoader</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a6f60048071166090b127f4c86f8574d8" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mFaceCoords</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a35b30792158d431a6be9f52e71fc4bff" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mFaceNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a5a75c474dce0196d3cd5273fba35bb9a" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mMeshDir</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a069639c471626a9574c19aea8a4780ef" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mNodeCoords</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a4c947997e6da6dd1dc8b6a89e246ca29" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mPatchFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a72e37448bf19a4c6708a57a84042f4b2" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>mZoneFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1aed018948c8fbef3a5f44db05c0f32c4e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::IO::MeshLoader</scope><name>~MeshLoader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

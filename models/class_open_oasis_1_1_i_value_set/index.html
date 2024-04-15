@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::IValueSet - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::IValueSet";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_i_value_set.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::IValueSet</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasisivalueset">Class OpenOasis::IValueSet<a class="headerlink" href="#class-openoasisivalueset" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="./"><strong>IValueSet</strong></a></p>
+<p><em>Class represents a general(ordered) multi-dimensional set of values.</em> <a href="#detailed-description">More...</a></p>
+<ul>
+<li><code>#include &lt;IValueSet.h&gt;</code></li>
+</ul>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::any &gt;</td>
+<td style="text-align: left;"><a href="#function-getelementvaluesfortime"><strong>GetElementValuesForTime</strong></a> (int timeIndex) const = 0<br><em>Gets the values, for all elements, for the given timeIndex. If data is time independent,</em> <code>timeIndex</code> <em>must be specified as 0.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-getindexcount"><strong>GetIndexCount</strong></a> (const std::vector&lt; int &gt; &amp; indices) const = 0<br><em>Returns the length of the dimension specified.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-getnumberofindices"><strong>GetNumberOfIndices</strong></a> () const = 0<br><em>Returns the number of possible indices (dimensions).</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::any &gt;</td>
+<td style="text-align: left;"><a href="#function-gettimeseriesvaluesforelement"><strong>GetTimeSeriesValuesForElement</strong></a> (int elementIndex) const = 0<br><em>Gets the values, for all times, for the given elementIndex. If the data is spatial independent,</em> <code>elementIndex</code> <em>must be specified as 0.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::any</td>
+<td style="text-align: left;"><a href="#function-getvalue"><strong>GetValue</strong></a> (const std::vector&lt; int &gt; &amp; indices) const = 0<br><em>Returns the value object specified by the given indices array.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_value_definition/"><strong>IValueDefinition</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#function-getvaluedefinition"><strong>GetValueDefinition</strong></a> () const = 0<br><em>Definition of the values in the value set.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual bool</td>
+<td style="text-align: left;"><a href="#function-isvalues2d"><strong>IsValues2D</strong></a> () const = 0<br><em>Whether this value set is a specified two-dimensional type.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-removevalue"><strong>RemoveValue</strong></a> (const std::vector&lt; int &gt; &amp; indices) = 0<br><em>Removes the values specified by the given indices.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setelementvaluesfortime"><strong>SetElementValuesForTime</strong></a> (int timeIndex, const std::vector&lt; std::any &gt; &amp; values) = 0<br><em>Sets the values, for all elements, for the given timeIndex. If data is time independent,</em> <code>timeIndex</code> <em>must be specified as 0.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setoraddvalue"><strong>SetOrAddValue</strong></a> (const std::vector&lt; int &gt; &amp; indices, const std::any &amp; value) = 0<br><em>Sets or adds the value object specified by the given indices.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-settimeseriesvaluesforelement"><strong>SetTimeSeriesValuesForElement</strong></a> (int elementIndex, const std::vector&lt; std::any &gt; &amp; values) = 0<br><em>Sets the values, for all times, for the given elementIndex. If the data is spatial independent,</em> <code>elementIndex</code> <em>must be specified as 0.</em></td>
+</tr>
+</tbody>
+</table>
+<h1 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h1>
+<p>The size of each dimension can vary, depending on the indices provided, e.g. In a 2D matrix, each row can have different lengths. For example, assuming the data is stored as a double<span data-autorefs-identifier=""></span> matrix, then matrix[1].Size need not equal to matrix[2].Size. </p>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-getelementvaluesfortime">function GetElementValuesForTime<a class="headerlink" href="#function-getelementvaluesfortime" title="Permanent link">&para;</a></h3>
+<p><em>Gets the values, for all elements, for the given timeIndex. If data is time independent,</em> <code>timeIndex</code> <em>must be specified as 0.</em>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">any</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">GetElementValuesForTime</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">timeIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>timeIndex</code> Index of time in <code>ITimeSet</code>. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Element valueset at given time. </p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> <code>timeIndex</code> is out of range, throw an exception. </li>
+</ul>
+<h3 id="function-getindexcount">function GetIndexCount<a class="headerlink" href="#function-getindexcount" title="Permanent link">&para;</a></h3>
+<p><em>Returns the length of the dimension specified.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">GetIndexCount</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">indices</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>To get the size of the specified dimension, use zero-length int array as input argument. Length of indice must be a least one smaller than the <code>GetNumberOfIndices()</code>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>indices</code> Indices of the dimension to get the size of. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Length of the specified dimension. </p>
+<h3 id="function-getnumberofindices">function GetNumberOfIndices<a class="headerlink" href="#function-getnumberofindices" title="Permanent link">&para;</a></h3>
+<p><em>Returns the number of possible indices (dimensions).</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">GetNumberOfIndices</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Returns:</strong></p>
+<p>number of indices, zero based. </p>
+<h3 id="function-gettimeseriesvaluesforelement">function GetTimeSeriesValuesForElement<a class="headerlink" href="#function-gettimeseriesvaluesforelement" title="Permanent link">&para;</a></h3>
+<p><em>Gets the values, for all times, for the given elementIndex. If the data is spatial independent,</em> <code>elementIndex</code> <em>must be specified as 0.</em>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">any</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">GetTimeSeriesValuesForElement</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> Index of element in <code>IElementSet</code>. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The timeseries values. </p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> the <code>elementIndex</code> is out of range, throw an exception. </li>
+</ul>
+<h3 id="function-getvalue">function GetValue<a class="headerlink" href="#function-getvalue" title="Permanent link">&para;</a></h3>
+<p><em>Returns the value object specified by the given indices array.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">any</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">GetValue</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">indices</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>indices</code> Indices of each dimension. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The value object for the given indices. </p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>The</code> length of the array of indices is N, so that the index for each dimension is specified. Otherwise throw an exception. </li>
+</ul>
+<h3 id="function-getvaluedefinition">function GetValueDefinition<a class="headerlink" href="#function-getvaluedefinition" title="Permanent link">&para;</a></h3>
+<p><em>Definition of the values in the value set.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IValueDefinition</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">GetValueDefinition</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>The "IValueDefinition" should never be returned directly; The all implementing classes should return either an <code>IQuality</code>, an <code>IQuantity</code>, or a custom derived value definition interface. </p>
+<h3 id="function-isvalues2d">function IsValues2D<a class="headerlink" href="#function-isvalues2d" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">IsValues2D</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="function-removevalue">function RemoveValue<a class="headerlink" href="#function-removevalue" title="Permanent link">&para;</a></h3>
+<p><em>Removes the values specified by the given indices.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">RemoveValue</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">indices</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>It is possible to remove not just a single value item, but also the whole set of values for the given indices.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>indices</code> Indices of specified dimension. </li>
+</ul>
+<h3 id="function-setelementvaluesfortime">function SetElementValuesForTime<a class="headerlink" href="#function-setelementvaluesfortime" title="Permanent link">&para;</a></h3>
+<p><em>Sets the values, for all elements, for the given timeIndex. If data is time independent,</em> <code>timeIndex</code> <em>must be specified as 0.</em>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">SetElementValuesForTime</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">timeIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">any</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">values</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>timeIndex</code> Index of time in <code>ITimeSet</code>. </li>
+<li><code>values</code> Element valueset at given time. </li>
+</ul>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> <code>timeIndex</code> is out of range, throw an exception. </li>
+</ul>
+<h3 id="function-setoraddvalue">function SetOrAddValue<a class="headerlink" href="#function-setoraddvalue" title="Permanent link">&para;</a></h3>
+<p><em>Sets or adds the value object specified by the given indices.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">SetOrAddValue</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">indices</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">any</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>indices</code> Indices of each dimension. </li>
+<li><code>value</code> Value object to be set or added. </li>
+</ul>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>The</code> length of the array of indices is N, so that the index for each dimension is specified. Otherwise throw an exception. </li>
+</ul>
+<h3 id="function-settimeseriesvaluesforelement">function SetTimeSeriesValuesForElement<a class="headerlink" href="#function-settimeseriesvaluesforelement" title="Permanent link">&para;</a></h3>
+<p><em>Sets the values, for all times, for the given elementIndex. If the data is spatial independent,</em> <code>elementIndex</code> <em>must be specified as 0.</em>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IValueSet</span><span class="o">::</span><span class="n">SetTimeSeriesValuesForElement</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">any</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">values</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> Index of element in <code>IElementSet</code>. </li>
+<li><code>values</code> Timeseries values for given element. </li>
+</ul>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> the <code>elementIndex</code> is out of range, throw an exception. </li>
+</ul>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/Inc/IValueSet.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

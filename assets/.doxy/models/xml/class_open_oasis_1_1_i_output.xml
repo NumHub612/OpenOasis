@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_output" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IOutput</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_base_exchange_item" prot="public" virt="non-virtual">OpenOasis::IBaseExchangeItem</basecompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_i_adapted_output" prot="public" virt="non-virtual">OpenOasis::IAdaptedOutput</derivedcompoundref>
+    <includes refid="_i_output_8h" local="no">IOutput.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_output_1ae4fbdfa83c8c7ccfc8358578bcfbc8f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::weak_ptr&lt; <ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::weak_ptr&lt; IInput &gt; &gt; OpenOasis::IOutput::GetConsumers</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetConsumers</name>
+        <qualifiedname>OpenOasis::IOutput::GetConsumers</qualifiedname>
+        <briefdescription>
+<para>Gets inputs that will consume the value, by calling the <computeroutput><ref refid="class_open_oasis_1_1_i_base_exchange_item_1a5ef3ba9e1070999e62761950f9198772" kindref="member">GetValues()</ref></computeroutput> method. Every input item needs to call the <computeroutput><ref refid="class_open_oasis_1_1_i_output_1a0214b1638e685b1779522d0a76dfe22b" kindref="member">AddConsumer()</ref></computeroutput> method first. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Please be aware that the unadulterated value in the output item provided by the read only &apos;<ref refid="class_open_oasis_1_1_i_base_exchange_item_1a5ef3ba9e1070999e62761950f9198772" kindref="member">GetValues()</ref>&apos; method, may be called anyway, even if there are no values available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IOutput.h" line="35" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_output_1a0214b1638e685b1779522d0a76dfe22b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IOutput::AddConsumer</definition>
+        <argsstring>(std::shared_ptr&lt; IInput &gt; consumer)=0</argsstring>
+        <name>AddConsumer</name>
+        <qualifiedname>OpenOasis::IOutput::AddConsumer</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref> &gt;</type>
+          <declname>consumer</declname>
+        </param>
+        <briefdescription>
+<para>Adds a consumer to the output item. Every input item needs to add itself as a consumer first. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="class_open_oasis_1_1_i_output_1a0214b1638e685b1779522d0a76dfe22b" kindref="member">AddConsumer()</ref></computeroutput> method must and will automatically add the consumer provider by calling the <computeroutput><ref refid="class_open_oasis_1_1_i_input_1a78ee47ec8a7da0cc7f501d2ae6dc2281" kindref="member">IInput::AddProvider()</ref></computeroutput> method.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a consumer is added that can&apos;t be handled, or it&apos;s incompatible with the already added consumers, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IOutput.h" line="45" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_output_1abc32403075d7dc7fa59c0e2304a1718d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IOutput::RemoveConsumer</definition>
+        <argsstring>(const std::shared_ptr&lt; IInput &gt; &amp;consumer)=0</argsstring>
+        <name>RemoveConsumer</name>
+        <qualifiedname>OpenOasis::IOutput::RemoveConsumer</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref> &gt; &amp;</type>
+          <declname>consumer</declname>
+        </param>
+        <briefdescription>
+<para>Removes a consumer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If an input item isn&apos;t interested any longer in calling <computeroutput><ref refid="class_open_oasis_1_1_i_base_exchange_item_1a5ef3ba9e1070999e62761950f9198772" kindref="member">GetValues()</ref></computeroutput> method, it should remove the input item.</para>
+<para>The <computeroutput><ref refid="class_open_oasis_1_1_i_output_1abc32403075d7dc7fa59c0e2304a1718d" kindref="member">RemoveConsumer()</ref></computeroutput> method must and will automatically remove the consumer&apos;s provider by calling the <computeroutput><ref refid="class_open_oasis_1_1_i_input_1a162082f7f441107f3215c69d45500d58" kindref="member">IInput::RemoveProvider()</ref></computeroutput> method. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IOutput.h" line="54" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_output_1a3e7a00b0142bc18530bf235a80c97803" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; IAdaptedOutput &gt; &gt; OpenOasis::IOutput::GetAdaptedOutputs</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetAdaptedOutputs</name>
+        <qualifiedname>OpenOasis::IOutput::GetAdaptedOutputs</qualifiedname>
+        <briefdescription>
+<para>Gets the adapted outputs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>As the output item&apos;s values have been updated, each <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> its <computeroutput>Refresh()</computeroutput> method must be called after. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IOutput.h" line="60" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_output_1aa1f5cf04d51205b8e53adb837939251f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IOutput::RemoveAdaptedOutput</definition>
+        <argsstring>(const std::shared_ptr&lt; IAdaptedOutput &gt; &amp;adaptedOutput)=0</argsstring>
+        <name>RemoveAdaptedOutput</name>
+        <qualifiedname>OpenOasis::IOutput::RemoveAdaptedOutput</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref> &gt; &amp;</type>
+          <declname>adaptedOutput</declname>
+        </param>
+        <briefdescription>
+<para>Removes a <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If an <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> is not interested any longer in this output item&apos;s data, it should remove itself by calling this method.</para>
+<para>The <computeroutput><ref refid="class_open_oasis_1_1_i_output_1aa1f5cf04d51205b8e53adb837939251f" kindref="member">RemoveAdaptedOutput()</ref></computeroutput> method must and will automatically remove the adapted output&apos;s adaptee by setting it to null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IOutput.h" line="70" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_output_1aefd3ed00664b1d1753e28db2356bf70a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IOutput::AddAdaptedOutput</definition>
+        <argsstring>(std::shared_ptr&lt; IAdaptedOutput &gt; adaptedOutput)=0</argsstring>
+        <name>AddAdaptedOutput</name>
+        <qualifiedname>OpenOasis::IOutput::AddAdaptedOutput</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref> &gt;</type>
+          <declname>adaptedOutput</declname>
+        </param>
+        <briefdescription>
+<para>Adds an adapted output to this output item as a transformer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="class_open_oasis_1_1_i_output_1aefd3ed00664b1d1753e28db2356bf70a" kindref="member">AddAdaptedOutput()</ref></computeroutput> method must and will automatically add the adapted output&apos;s adaptee by calling its <computeroutput>SetAdaptee()</computeroutput> method.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> item is added that can not be handled or is incompatible with the already added <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput>s, an exception will be thrown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IOutput.h" line="80" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Output exchange item that can deliver values from an <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>If an output does not provide the data in the way a consumer would like to have, the output can be adapted by an <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput>, which can transform the data according to the consumer&apos;s wishes. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>OpenOasis::IAdaptedOutput</label>
+        <link refid="class_open_oasis_1_1_i_adapted_output"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IBaseExchangeItem</label>
+        <link refid="class_open_oasis_1_1_i_base_exchange_item"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="3">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IOutput</label>
+        <link refid="class_open_oasis_1_1_i_output"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>OpenOasis::IBaseExchangeItem</label>
+        <link refid="class_open_oasis_1_1_i_base_exchange_item"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="3">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IOutput</label>
+        <link refid="class_open_oasis_1_1_i_output"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/IOutput.h" line="26" column="1" bodyfile="Models/Inc/IOutput.h" bodystart="27" bodyend="81"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_output_1aefd3ed00664b1d1753e28db2356bf70a" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>AddAdaptedOutput</name></member>
+      <member refid="class_open_oasis_1_1_i_output_1a0214b1638e685b1779522d0a76dfe22b" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>AddConsumer</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1ae54b2fe5cc53af7c479673b18decc4d9" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>AddListener</name></member>
+      <member refid="class_open_oasis_1_1_i_output_1a3e7a00b0142bc18530bf235a80c97803" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetAdaptedOutputs</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a91cb2450e540b44614b87f70360637ba" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetComponent</name></member>
+      <member refid="class_open_oasis_1_1_i_output_1ae4fbdfa83c8c7ccfc8358578bcfbc8f8" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetConsumers</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1aba32a53f63e74a03eebb044ec452d4d7" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetElementSet</name></member>
+      <member refid="class_open_oasis_1_1_i_identifiable_1a808d8d4b970d54a19fd19857518fe8d0" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetId</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a705d09b3618098100e8963f54a39b745" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetTimeSet</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a9a5e35bb80130907522907029370cdf5" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetValueDefinition</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a5ef3ba9e1070999e62761950f9198772" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>GetValues</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a11f50a5b03dc04b237e029257d4e4436" prot="public" virt="non-virtual"><scope>OpenOasis::IOutput</scope><name>ListenFunc</name></member>
+      <member refid="class_open_oasis_1_1_i_output_1aa1f5cf04d51205b8e53adb837939251f" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>RemoveAdaptedOutput</name></member>
+      <member refid="class_open_oasis_1_1_i_output_1abc32403075d7dc7fa59c0e2304a1718d" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>RemoveConsumer</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a966e9448d121dacb08a10424b26e19ef" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>RemoveListener</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1af3729ac3117c641521c1d4115a5f73ad" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>Reset</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>SetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a4be867eb35086189dbd669861b0d043f" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>SetElementSet</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a592bcfe9d29227cf535147371b96c937" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>SetTimeSet</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a74e3d6b09dbd1fb58b009ba0a4af18db" prot="public" virt="pure-virtual"><scope>OpenOasis::IOutput</scope><name>SetValues</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

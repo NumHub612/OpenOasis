@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_e48a3e9a07fc2444cdac51c67822643f" kind="dir">
+    <compoundname>Models/Inc</compoundname>
+    <innerdir refid="dir_f42854fb7a47e961c6b84a97d295c858">Models/Inc/AdditionalControl</innerdir>
+    <innerfile refid="_exchange_item_change_event_args_8h">ExchangeItemChangeEventArgs.h</innerfile>
+    <innerfile refid="_i_adapted_output_8h">IAdaptedOutput.h</innerfile>
+    <innerfile refid="_i_adapted_output_factory_8h">IAdaptedOutputFactory.h</innerfile>
+    <innerfile refid="_i_argument_8h">IArgument.h</innerfile>
+    <innerfile refid="_i_base_exchange_item_8h">IBaseExchangeItem.h</innerfile>
+    <innerfile refid="_i_byte_state_converter_8h">IByteStateConverter.h</innerfile>
+    <innerfile refid="_i_category_8h">ICategory.h</innerfile>
+    <innerfile refid="_i_describable_8h">IDescribable.h</innerfile>
+    <innerfile refid="_i_dimension_8h">IDimension.h</innerfile>
+    <innerfile refid="_i_element_set_8h">IElementSet.h</innerfile>
+    <innerfile refid="_i_identifiable_8h">IIdentifiable.h</innerfile>
+    <innerfile refid="_i_input_8h">IInput.h</innerfile>
+    <innerfile refid="_i_linkable_component_8h">ILinkableComponent.h</innerfile>
+    <innerfile refid="_i_manage_state_8h">IManageState.h</innerfile>
+    <innerfile refid="_i_output_8h">IOutput.h</innerfile>
+    <innerfile refid="_i_quality_8h">IQuality.h</innerfile>
+    <innerfile refid="_i_quantity_8h">IQuantity.h</innerfile>
+    <innerfile refid="_i_spatial_definition_8h">ISpatialDefinition.h</innerfile>
+    <innerfile refid="_i_time_8h">ITime.h</innerfile>
+    <innerfile refid="_i_time_set_8h">ITimeSet.h</innerfile>
+    <innerfile refid="_i_unit_8h">IUnit.h</innerfile>
+    <innerfile refid="_i_value_definition_8h">IValueDefinition.h</innerfile>
+    <innerfile refid="_i_value_set_8h">IValueSet.h</innerfile>
+    <innerfile refid="_linkable_component_status_8h">LinkableComponentStatus.h</innerfile>
+    <innerfile refid="_linkable_component_status_change_event_args_8h">LinkableComponentStatusChangeEventArgs.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/"/>
+  </compounddef>
+</doxygen>

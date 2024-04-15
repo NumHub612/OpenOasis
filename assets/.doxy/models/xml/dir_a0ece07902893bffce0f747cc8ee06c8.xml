@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_a0ece07902893bffce0f747cc8ee06c8" kind="dir">
+    <compoundname>Models/CommImp/Numeric</compoundname>
+    <innerdir refid="dir_ce9212301f8d93e5246dd812df0f37fe">Models/CommImp/Numeric/FVM</innerdir>
+    <innerfile refid="_boundary_8h">Boundary.h</innerfile>
+    <innerfile refid="_curl_operator_8h">CurlOperator.h</innerfile>
+    <innerfile refid="_ddt_operator_8h">DdtOperator.h</innerfile>
+    <innerfile refid="_dirichlet_boundary_8cpp">DirichletBoundary.cpp</innerfile>
+    <innerfile refid="_dirichlet_boundary_8h">DirichletBoundary.h</innerfile>
+    <innerfile refid="_div_operator_8h">DivOperator.h</innerfile>
+    <innerfile refid="_field_8h">Field.h</innerfile>
+    <innerfile refid="_grad_operator_8h">GradOperator.h</innerfile>
+    <innerfile refid="_interps_8cpp">Interps.cpp</innerfile>
+    <innerfile refid="_interps_8h">Interps.h</innerfile>
+    <innerfile refid="_laplacian_operator_8cpp">LaplacianOperator.cpp</innerfile>
+    <innerfile refid="_laplacian_operator_8h">LaplacianOperator.h</innerfile>
+    <innerfile refid="_matrix_8cpp">Matrix.cpp</innerfile>
+    <innerfile refid="_matrix_8h">Matrix.h</innerfile>
+    <innerfile refid="_neumann_boundary_8h">NeumannBoundary.h</innerfile>
+    <innerfile refid="_numeric_methods_8h">NumericMethods.h</innerfile>
+    <innerfile refid="_operator_8h">Operator.h</innerfile>
+    <innerfile refid="_robin_boundary_8h">RobinBoundary.h</innerfile>
+    <innerfile refid="_scalar_field_8h">ScalarField.h</innerfile>
+    <innerfile refid="_solver_8h">Solver.h</innerfile>
+    <innerfile refid="_source_8h">Source.h</innerfile>
+    <innerfile refid="_tensor_8h">Tensor.h</innerfile>
+    <innerfile refid="_tensor_field_8h">TensorField.h</innerfile>
+    <innerfile refid="_vector_8h">Vector.h</innerfile>
+    <innerfile refid="_vector_field_8h">VectorField.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Numeric/"/>
+  </compounddef>
+</doxygen>

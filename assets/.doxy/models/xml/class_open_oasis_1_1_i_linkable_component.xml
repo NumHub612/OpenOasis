@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_linkable_component" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::ILinkableComponent</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_identifiable" prot="public" virt="non-virtual">OpenOasis::IIdentifiable</basecompoundref>
+    <includes refid="_i_linkable_component_8h" local="no">ILinkableComponent.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_open_oasis_1_1_i_linkable_component_1acdffb0136e0b0de839fc6a2a218e85bc" prot="public" static="no">
+        <type>std::function&lt; void(std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_linkable_component_status_change_event_args" kindref="compound">LinkableComponentStatusChangeEventArgs</ref> &gt;)&gt;</type>
+        <definition>using OpenOasis::ILinkableComponent::ListenFunc =  std::function&lt;void(std::shared_ptr&lt;LinkableComponentStatusChangeEventArgs&gt;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ListenFunc</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::ListenFunc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="28" column="5" bodyfile="Models/Inc/ILinkableComponent.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1a2ee84c5129ce107eec5e896c7dce7c0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_argument" kindref="compound">IArgument</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; IArgument &gt; &gt; OpenOasis::ILinkableComponent::GetArguments</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetArguments</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::GetArguments</qualifiedname>
+        <briefdescription>
+<para>Gets arguments needed to let the component do its work. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Arguments validations can be done either when they occur, or when the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> method is called. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="36" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1aed1297b7aabdcd4cfa98cf7b828fbd0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fb" kindref="member">LinkableComponentStatus</ref></type>
+        <definition>virtual LinkableComponentStatus OpenOasis::ILinkableComponent::GetStatus</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetStatus</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::GetStatus</qualifiedname>
+        <briefdescription>
+<para>Gets status of the linkable component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The first status that a component sets is <computeroutput>Created</computeroutput>, as soon after it has been created. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="42" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1a317645510711158b9209a3b28d326fa0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; IInput &gt; &gt; OpenOasis::ILinkableComponent::GetInputs</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetInputs</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::GetInputs</qualifiedname>
+        <briefdescription>
+<para>Gets the input items for recieving values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>method must be accessible after <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> method has been called and until the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1af69b9768dba1528873d8f9f503a3427a" kindref="member">Validate()</ref></computeroutput> method has been invoked. Otherwise, <computeroutput>LinkableComponent</computeroutput> can&apos;t handle this, an exception must be thrown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="49" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1a2f81c33e8562380cd5f8a71850730bb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; IOutput &gt; &gt; OpenOasis::ILinkableComponent::GetOutputs</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetOutputs</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::GetOutputs</qualifiedname>
+        <briefdescription>
+<para>Gets the output items for producing results. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>method must be accessible after <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> method has been invoked and until <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1af69b9768dba1528873d8f9f503a3427a" kindref="member">Validate()</ref></computeroutput> method has been invoked. Otherwise, <computeroutput>LinkableComponent</computeroutput> cant handle this, an exception must be thrown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="56" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1a698e777b1879317adea98543ad8309ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_adapted_output_factory" kindref="compound">IAdaptedOutputFactory</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; IAdaptedOutputFactory &gt; &gt; OpenOasis::ILinkableComponent::GetAdaptedOutputFactories</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetAdaptedOutputFactories</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::GetAdaptedOutputFactories</qualifiedname>
+        <briefdescription>
+<para>Gets the list of <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output_factory" kindref="compound">IAdaptedOutputFactory</ref></computeroutput>, each allowing to create <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> item for making output fit to inputs in case they do not already do so. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="62" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ILinkableComponent::Initialize</definition>
+        <argsstring>()=0</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::Initialize</qualifiedname>
+        <briefdescription>
+<para>Initializes the component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> will and must be invoked before any other methods in the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> interface is invoked or accessed, except for the <computeroutput>GetArguments</computeroutput>.</para>
+<para>Immediatly after the method is been invoked, it changes the linkable component&apos;s status to <computeroutput>Initializing</computeroutput>. If component initializes succesfully, the status is changed to <computeroutput>Initialized</computeroutput>.</para>
+<para>The method will typically populate the component based on values specified in its arguments. Settings can be used to read input files, allocate memory, and organize input and output items.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>When</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the method is executed and an error occurs, the status will change to <computeroutput>Failed</computeroutput>, and an exception will be thrown. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>It&apos;s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>only required that <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> can be invoked once. If the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> method is invoked more than once, <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> can&apos;t handle this, thrown an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="83" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1af69b9768dba1528873d8f9f503a3427a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>virtual std::vector&lt; std::string &gt; OpenOasis::ILinkableComponent::Validate</definition>
+        <argsstring>()=0</argsstring>
+        <name>Validate</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::Validate</qualifiedname>
+        <briefdescription>
+<para>Validates the populated instance of the component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method will must be invoked after various provider/consumer relations between this component&apos;s exchange items and the exchange items of other components present in the composition.</para>
+<para>Immediatly after this method is invoked, it changes the component&apos;s status to <computeroutput>Validating</computeroutput>. When the method has finished, the status of the component has changed to either <computeroutput>Valid</computeroutput> or <computeroutput>Invalid</computeroutput>.</para>
+<para>If there are messages while components status is <computeroutput>Valid</computeroutput>, the messages are purely informative. If there&apos;re messages while components status is <computeroutput>Invalid</computeroutput>, at least one of the messages indicates a fatal error.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>method must be accessible after the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> has been called and until the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1a18193bc5ec4bdec401d585e98f947fce" kindref="member">Finish()</ref></computeroutput> method has been invoked. Otherwise, the linkable component can not handle this, an exception must be thrown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="104" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1ab3fa040fb160c57d657c4e0baef525d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ILinkableComponent::Prepare</definition>
+        <argsstring>()=0</argsstring>
+        <name>Prepare</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::Prepare</qualifiedname>
+        <briefdescription>
+<para>Prepares the component for calls to the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" kindref="member">Update()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Before <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab3fa040fb160c57d657c4e0baef525d0" kindref="member">Prepare()</ref></computeroutput> is called, the component are not required to honor any type of action that retrieves values from the component. After <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab3fa040fb160c57d657c4e0baef525d0" kindref="member">Prepare()</ref></computeroutput> is called, the component must be ready for providing values. Immediatly after the method is invoked, it changes the component&apos;s status to <computeroutput>Preparing</computeroutput>. When the method has finished, the status of the component has changed to either <computeroutput>Updated</computeroutput> or <computeroutput>Failed</computeroutput>.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>method must be accessible after the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kindref="member">Initialize()</ref></computeroutput> method has been called and until the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1a18193bc5ec4bdec401d585e98f947fce" kindref="member">Finish()</ref></computeroutput> method has been invoked. Otherwise, the linkable component can&apos;t handle it, an exception must be thrown. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>It&apos;s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>required the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab3fa040fb160c57d657c4e0baef525d0" kindref="member">Prepare()</ref></computeroutput> method can be invoked once. Otherwise, the linkable component can&apos;t handle this, an exception must be thrown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="123" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ILinkableComponent::Update</definition>
+        <argsstring>()=0</argsstring>
+        <name>Update</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::Update</qualifiedname>
+        <briefdescription>
+<para>Updates the linkable component itself, thus reaching its next state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Immediately after <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" kindref="member">Update()</ref></computeroutput> is invoked, it changes the component&apos;s status to <computeroutput>Updating</computeroutput>. If the method is performed succesfully, the component sets its status to <computeroutput>Updated</computeroutput>, unless after this update action is at the end of its computation, in which case it will set its status to <computeroutput>Done</computeroutput>.</para>
+<para>According to the &apos;pull-driven&apos; approach, linkable components can be connected in a chain, where invoking <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" kindref="member">Update()</ref></computeroutput> method on the last component in the chain trigger the entire stack of data exchange.</para>
+<para>The type of actions a component takes during the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" kindref="member">Update()</ref></computeroutput> method depends on the type of component. A numerical model that progresses in time will typically compute a time step. A database would typically look at the consumers of its output items, and perform one or more queries to be able to provide the values that the consumers required.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>during the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" kindref="member">Update()</ref></computeroutput> method problem arises, the component sets its state to <computeroutput>Failed</computeroutput> and throws an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="147" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1a18193bc5ec4bdec401d585e98f947fce" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ILinkableComponent::Finish</definition>
+        <argsstring>()=0</argsstring>
+        <name>Finish</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::Finish</qualifiedname>
+        <briefdescription>
+<para>Finishes the component computation, and then restart it if needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is and must be invoked as the last of any methods in the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> interfaces.</para>
+<para>Immediatly after this method is invoked, it changes the component&apos;s status to <computeroutput>Finishing</computeroutput>. Once the finishing is completed, the component changes status to <computeroutput>Finished</computeroutput> if it can&apos;t be restarted; <computeroutput>Created</computeroutput>, otherwise.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>This</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>method must be accessible after the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component_1ab3fa040fb160c57d657c4e0baef525d0" kindref="member">Prepare()</ref></computeroutput> method has been invoked. Otherwise,the component can&apos;t handled this, an exception must be thrown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="162" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1a997921d7b48b7cec7258c651af99b3e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ILinkableComponent::RemoveListener</definition>
+        <argsstring>(const ListenFunc &amp;func)=0</argsstring>
+        <name>RemoveListener</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::RemoveListener</qualifiedname>
+        <param>
+          <type>const ListenFunc &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="164" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_linkable_component_1af891dea5c7a7c4e43ba3c7f62a17a72a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ILinkableComponent::AddListener</definition>
+        <argsstring>(const ListenFunc &amp;func)=0</argsstring>
+        <name>AddListener</name>
+        <qualifiedname>OpenOasis::ILinkableComponent::AddListener</qualifiedname>
+        <param>
+          <type>const ListenFunc &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ILinkableComponent.h" line="165" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The key interface class for linkable modules connection and data transfer. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::ILinkableComponent</label>
+        <link refid="class_open_oasis_1_1_i_linkable_component"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::ILinkableComponent</label>
+        <link refid="class_open_oasis_1_1_i_linkable_component"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/ILinkableComponent.h" line="25" column="1" bodyfile="Models/Inc/ILinkableComponent.h" bodystart="26" bodyend="166"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1af891dea5c7a7c4e43ba3c7f62a17a72a" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>AddListener</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1a18193bc5ec4bdec401d585e98f947fce" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>Finish</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1a698e777b1879317adea98543ad8309ca" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetAdaptedOutputFactories</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1a2ee84c5129ce107eec5e896c7dce7c0a" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetArguments</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_identifiable_1a808d8d4b970d54a19fd19857518fe8d0" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetId</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1a317645510711158b9209a3b28d326fa0" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetInputs</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1a2f81c33e8562380cd5f8a71850730bb6" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetOutputs</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1aed1297b7aabdcd4cfa98cf7b828fbd0a" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>GetStatus</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>Initialize</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1acdffb0136e0b0de839fc6a2a218e85bc" prot="public" virt="non-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>ListenFunc</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1ab3fa040fb160c57d657c4e0baef525d0" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>Prepare</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1a997921d7b48b7cec7258c651af99b3e5" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>RemoveListener</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>SetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>Update</name></member>
+      <member refid="class_open_oasis_1_1_i_linkable_component_1af69b9768dba1528873d8f9f503a3427a" prot="public" virt="pure-virtual"><scope>OpenOasis::ILinkableComponent</scope><name>Validate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

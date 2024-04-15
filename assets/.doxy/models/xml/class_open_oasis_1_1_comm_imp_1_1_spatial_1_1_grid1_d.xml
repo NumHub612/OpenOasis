@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::Grid1D</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" prot="public" virt="non-virtual">OpenOasis::CommImp::Spatial::Grid</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae5ceede3a5f826cf06cb98bde854d746" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::CommImp::Spatial::Grid1D::~Grid1D</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Grid1D</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::~Grid1D</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="25" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a0e87f6760cf3076ea049f24254f9dd92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::Grid1D::Grid1D</definition>
+        <argsstring>(const std::shared_ptr&lt; Grid &gt; &amp;grid)</argsstring>
+        <name>Grid1D</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::Grid1D</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> &gt; &amp;</type>
+          <declname>grid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="26" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae4ca8f7edadebf69d4dad4ea8487e556" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::Grid1D::Grid1D</definition>
+        <argsstring>(std::unordered_map&lt; int, Coordinate &gt; &amp;nodeCoords, std::unordered_map&lt; int, Coordinate &gt; &amp;faceCoords, std::unordered_map&lt; int, Coordinate &gt; &amp;cellCoords, std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp;faceNodes, std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp;cellFaces, std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp;patches, std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp;zones)</argsstring>
+        <name>Grid1D</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::Grid1D</qualifiedname>
+        <param>
+          <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt; &amp;</type>
+          <declname>nodeCoords</declname>
+        </param>
+        <param>
+          <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt; &amp;</type>
+          <declname>faceCoords</declname>
+        </param>
+        <param>
+          <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt; &amp;</type>
+          <declname>cellCoords</declname>
+        </param>
+        <param>
+          <type>std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp;</type>
+          <declname>faceNodes</declname>
+        </param>
+        <param>
+          <type>std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp;</type>
+          <declname>cellFaces</declname>
+        </param>
+        <param>
+          <type>std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp;</type>
+          <declname>patches</declname>
+        </param>
+        <param>
+          <type>std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp;</type>
+          <declname>zones</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a4e9c511d71fb15c65dd1123b1d91f44d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Spatial::Grid1D::Type</definition>
+        <argsstring>() const override</argsstring>
+        <name>Type</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::Type</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a47310447987d2a11562a5067eebb8d3e">Type</reimplements>
+        <briefdescription>
+<para>Get the grid type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Return 1, for 1d grid; 2, for 2d; 3, for 3d; others, for invalid type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="36" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a2f3dadc22e2f4d5be609463ffcc7eef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::RefineCell</definition>
+        <argsstring>(int cellIndex) override</argsstring>
+        <name>RefineCell</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::RefineCell</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a28bed42f0902097e9a700c6f1b6a94ac">RefineCell</reimplements>
+        <param>
+          <type>int</type>
+          <declname>cellIndex</declname>
+        </param>
+        <briefdescription>
+<para>Refine the cell at the given index for adaptive grid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The refining wouldn&apos;t change the origin nodes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="37" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a26dac8b566fa815676f85e9e9eec938f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::RelaxCell</definition>
+        <argsstring>(int cellIndex) override</argsstring>
+        <name>RelaxCell</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::RelaxCell</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a5b7c0d45fc948d23a8b8f7ecbab8042d">RelaxCell</reimplements>
+        <param>
+          <type>int</type>
+          <declname>cellIndex</declname>
+        </param>
+        <briefdescription>
+<para>Relax the cell at the given index for adaptive grid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The coarsening wouldn&apos;t change the origin nodes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="38" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a815faaa1bfb285d0b2c0ee399356c81c" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::CollectCellsInZone</definition>
+        <argsstring>() override</argsstring>
+        <name>CollectCellsInZone</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::CollectCellsInZone</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a6707b9869acb99e26b91104e4665c1ce">CollectCellsInZone</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="41" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a5c42075be779b082bcf98354bed7ba93" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::CalculateFaceNormal</definition>
+        <argsstring>() override</argsstring>
+        <name>CalculateFaceNormal</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::CalculateFaceNormal</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a3e53c002327032d63e760f8b0b963c13">CalculateFaceNormal</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="42" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a038db6d5e2c7ec74a312741b44ae9019" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::CalculateFaceArea</definition>
+        <argsstring>() override</argsstring>
+        <name>CalculateFaceArea</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::CalculateFaceArea</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a16ef480272105cb72c6a018c9633e8c9">CalculateFaceArea</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="43" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1afd24fc8f1f8502bed6f6a537ab973464" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::CalculateFacePerimeter</definition>
+        <argsstring>() override</argsstring>
+        <name>CalculateFacePerimeter</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::CalculateFacePerimeter</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ab557b2bfa95f8311d11a278d8d70f7ba">CalculateFacePerimeter</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="44" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1af8885e4bb616dd28a2bc37f1da049b34" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::CalculateCellSurface</definition>
+        <argsstring>() override</argsstring>
+        <name>CalculateCellSurface</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::CalculateCellSurface</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a46d7f95d8e81092b59a4a1f91f58995d">CalculateCellSurface</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="45" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae7aa3e3979b5d9d2ba984979982a68e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::CalculateCellVolume</definition>
+        <argsstring>() override</argsstring>
+        <name>CalculateCellVolume</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::CalculateCellVolume</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1af2e476257b0b05104aa9af14060545d2">CalculateCellVolume</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="46" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a43f7a3a63b6dbe0fb29ac41efba762fd" prot="private" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::Grid1D::CheckMesh</definition>
+        <argsstring>() const override</argsstring>
+        <name>CheckMesh</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid1D::CheckMesh</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a3fff7d5506849b05a2470672bb45614c">CheckMesh</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid1D.h" line="47" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>OpenOasis::CommImp::Spatial::Grid</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Spatial::Grid1D</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>MultiIndexMap&lt; double &gt;</label>
+      </node>
+      <node id="2">
+        <label>OpenOasis::CommImp::Spatial::Grid</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mMesh</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>mBoundaryCenterDists</edgelabel>
+          <edgelabel>mCellFaceWeight</edgelabel>
+          <edgelabel>mCenterDists</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Spatial::Grid1D</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenOasis::CommImp::Spatial::Mesh</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh"/>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Spatial/Grid1D.h" line="22" column="1" bodyfile="Models/CommImp/Spatial/Grid1D.h" bodystart="23" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1abefd67083bcf97ac1032a3a442374acb" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>Activate</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aac080598fdccd4fc32bf9fd95ed79ccc" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateBoundaryCenterDistances</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a9d069e90e4db714df8fdbabb2e81d452" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateCellDistances</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1af8885e4bb616dd28a2bc37f1da049b34" prot="private" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateCellSurface</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae7aa3e3979b5d9d2ba984979982a68e9" prot="private" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateCellVolume</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1af7c48cde11d415c8ef8c402547701095" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateDistance</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a038db6d5e2c7ec74a312741b44ae9019" prot="private" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateFaceArea</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1af9d6cd4c1398fa8b116c85179e05b251" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateFaceCorrectionVector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a51f118fd98e842f8a4fc28d124bd5c7a" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateFaceDirector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ae70744960977f6277792a4a3e64801e3" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateFaceIntersections</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a5c42075be779b082bcf98354bed7ba93" prot="private" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateFaceNormal</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1afd24fc8f1f8502bed6f6a537ab973464" prot="private" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateFacePerimeter</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a0b674053ab0afb95632c16d4d6890c53" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CalculateFaceWeights</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a43f7a3a63b6dbe0fb29ac41efba762fd" prot="private" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CheckMesh</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ac67024f8a1ab7946eb5eb9c76234e0d0" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CollectBoundaryFacesAndCells</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a989342a57c69b38a41efa009c5f20ebf" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CollectCellNeighbors</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a815faaa1bfb285d0b2c0ee399356c81c" prot="private" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CollectCellsInZone</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1adb1fb1eb0cc5319bf66e472832d6eb28" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CollectCellsSharedFace</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ab3fffa3ed0ab1a53e1e5f8634337b0d7" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CollectCellsSharedNode</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a8beeb2261a36e32f9d4dda0dd1f56e5d" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>CollectFacesSharedNode</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a40069c544618b050172133444faef613" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetBoundaryCellIndexes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a7bd99dfa76aa6fa05ab6c7ca33140aed" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetBoundaryCenterDistance</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1adf2e2f02300681ba5470552aaaeecfdc" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetBoundaryCenterDistances</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a2927c2a37a519d78c3779e14c4c9cd23" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetBoundaryFaceIndexes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aafb58475420547679b6917116cb70b55" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetCell</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ace911cedbde30c46a3fd705b9ab66be2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetCellCenterDistance</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ad134f51c64e60f3c253a3ab3e2cb952b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetCellCenterDistances</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a4d5f156b2231ddab2d63f4939cd26091" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetCellWeightAtFace</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a2725627791a6a6e97dc940c95a005aea" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetCellWeightAtFace</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ab13771088b2bee78c2279a1355516aec" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetFace</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1adb1ab61aab83bb0f2d1155c6555a4178" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetFaceCorrectionVector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a963ff8c528cbaee2fe04d6772e7bd50d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetFaceCorrectionVector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aba7d435c5110eee2c55cf6dc26ecf377" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetNode</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a6c539e74df3b359798fe1c4d0d65453f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetNumCells</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a7f6939fbed038ddadf160de061310c29" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetNumFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a86d035162dea17c65dbb41b0868ce662" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetNumNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1afa81844143e3510398b1bae9304def54" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetPatchFaceIndexes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1acf5cabd1bae44d0f529fd524e7b4b3b0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetPatchIds</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a1176863a236508e11f3bb259b9159ea7" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetRawNumCells</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a9791ee9dc17dcccaf0d5546519c429e4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetRawNumFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a172395179dffb38a07ca10069aadc66a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetRawNumNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1acbe2364d8dcd33c894301459d99a5b28" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetZoneCellIndexes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a0b54083127723fe5de9484d24f11d213" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>GetZoneIds</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a3576e7012653ad5c00dce6e96281f429" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>Grid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a35282f6fb8757b65a84d4caf458b02c1" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>Grid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a0e87f6760cf3076ea049f24254f9dd92" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>Grid1D</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae4ca8f7edadebf69d4dad4ea8487e556" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>Grid1D</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a8fffca7073b890b218f985dee6f390c0" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mBoundaryCells</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a15202e5584eeabd0745fe5044fe7df9c" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mBoundaryCenterDists</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ac69caf9a7b4eab1e29e080324a5ab382" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mBoundaryFaces</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a44dd3b5d98151e8cbedecd54c67013b5" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mCellFaceWeight</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ae8dc3b0a375417ac5dc24a3f199de1d4" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mCenterDists</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ada52680f05640d59f1005ed7ed361c41" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mFaceCorrVecs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a1334ad29f1bbe1ca3a2a76d731fdf445" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mFaceIntersection</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a325a00301facccae10529fd400afad19" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mMesh</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a35f3a28a858070f00e89d86ed8b30720" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mPatches</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a44d1a46774b5686a4dc7e703d3490984" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mRawCellsNum</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a252ca9b276da70d47b9ea078f2e7cb81" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mRawFacesNum</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a9adb42fadc86d31eb785c18f6c763338" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mRawNodesNum</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a6a6efdac1d9cce64335ab87ac6790e64" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mZoneCells</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ac16b5aca056cf5704ed45147af8b5ae5" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>mZones</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a2f3dadc22e2f4d5be609463ffcc7eef9" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>RefineCell</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a26dac8b566fa815676f85e9e9eec938f" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>RelaxCell</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aa9fa3a41cfb4e8c4c8db438cc37da7d0" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>SortNodes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a4e9c511d71fb15c65dd1123b1d91f44d" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>Type</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aa4495be8281d320bf8926ca175eff10b" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>~Grid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae5ceede3a5f826cf06cb98bde854d746" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid1D</scope><name>~Grid1D</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::IElementSet - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::IElementSet";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_i_element_set.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::IElementSet</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasisielementset">Class OpenOasis::IElementSet<a class="headerlink" href="#class-openoasisielementset" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="./"><strong>IElementSet</strong></a></p>
+<p><em>An list of elements having a common type.</em> </p>
+<ul>
+<li><code>#include &lt;IElementSet.h&gt;</code></li>
+</ul>
+<p>Inherits the following classes: <a href="../class_open_oasis_1_1_i_spatial_definition/">OpenOasis::ISpatialDefinition</a></p>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getelementid"><strong>GetElementId</strong></a> (int index) = 0<br><em>Gets Id of the index element in the element set.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-getelementindex"><strong>GetElementIndex</strong></a> (const std::string &amp; elementId) = 0<br><em>Index of element with id 'elementId' in the element set.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual <a href="../namespace_open_oasis/#enum-elementtype"><strong>ElementType</strong></a></td>
+<td style="text-align: left;"><a href="#function-getelementtype"><strong>GetElementType</strong></a> () const = 0<br><em>Gets</em> <code>ElementType</code> <em>of the elementset.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-getfacecount"><strong>GetFaceCount</strong></a> (int elementIndex) = 0<br><em>Gets the number of faces in a element.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#function-getfacenodeindices"><strong>GetFaceNodeIndices</strong></a> (int elementIndex, int faceIndex) = 0<br><em>Gets an array with the node indices for a face.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-getnodecount"><strong>GetNodeCount</strong></a> (int elementIndex) = 0<br><em>Gets number of nodes for the element specified by the index.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual double</td>
+<td style="text-align: left;"><a href="#function-getnodexcoordinate"><strong>GetNodeXCoordinate</strong></a> (int elementIndex, int nodeIndex) = 0<br><em>X coordinate for the node with nodeIndex of the element with elementIndex.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual double</td>
+<td style="text-align: left;"><a href="#function-getnodeycoordinate"><strong>GetNodeYCoordinate</strong></a> (int elementIndex, int nodeIndex) = 0<br><em>Y coordinate for the node with nodeIndex of the element with elementIndex.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual double</td>
+<td style="text-align: left;"><a href="#function-getnodezcoordinate"><strong>GetNodeZCoordinate</strong></a> (int elementIndex, int nodeIndex) = 0<br><em>Z coordinate for the node with nodeIndex of the element with elementIndex.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-openoasisispatialdefinition">Public Functions inherited from OpenOasis::ISpatialDefinition<a class="headerlink" href="#public-functions-inherited-from-openoasisispatialdefinition" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_spatial_definition/">OpenOasis::ISpatialDefinition</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-getelementcount"><strong>GetElementCount</strong></a> () const = 0<br><em>Gets number of data elements in the spatial axis.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getspatialreferencesystem"><strong>GetSpatialReferenceSystem</strong></a> () const = 0<br><em>Specifies the OGC Well-Known Text(WKT) representation of spatial reference system to be used in association with the coordinates in the</em> <code>ISpatialDefinition</code> <em>.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-getversion"><strong>GetVersion</strong></a> () const = 0<br><em>Gets the version number for the spatial axis.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-openoasisidescribable">Public Functions inherited from OpenOasis::IDescribable<a class="headerlink" href="#public-functions-inherited-from-openoasisidescribable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_describable/">OpenOasis::IDescribable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getcaption"><strong>GetCaption</strong></a> () const = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getdescription"><strong>GetDescription</strong></a> () const = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setcaption"><strong>SetCaption</strong></a> (const std::string &amp; value) = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setdescription"><strong>SetDescription</strong></a> (const std::string &amp; value) = 0<br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-getelementid">function GetElementId<a class="headerlink" href="#function-getelementid" title="Permanent link">&para;</a></h3>
+<p><em>Gets Id of the index element in the element set.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetElementId</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>index</code> The element index for which the element <code>Id</code> is requested.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The id of the element with the specified index. If the <code>ElementType</code> of the elementset is not <code>IdBased</code>, an empty string may be returned.</p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> the index outside the range, throw an exception. </li>
+</ul>
+<h3 id="function-getelementindex">function GetElementIndex<a class="headerlink" href="#function-getelementindex" title="Permanent link">&para;</a></h3>
+<p><em>Index of element with id 'elementId' in the element set.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetElementIndex</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">elementId</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementId</code> Identification string of the element required. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Index of the element with the specified id; return -1 if not found. </p>
+<h3 id="function-getelementtype">function GetElementType<a class="headerlink" href="#function-getelementtype" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetElementType</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="function-getfacecount">function GetFaceCount<a class="headerlink" href="#function-getfacecount" title="Permanent link">&para;</a></h3>
+<p><em>Gets the number of faces in a element.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetFaceCount</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> Index for the element. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Number of faces. </p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> the index outside the range, throw an exception. </li>
+</ul>
+<h3 id="function-getfacenodeindices">function GetFaceNodeIndices<a class="headerlink" href="#function-getfacenodeindices" title="Permanent link">&para;</a></h3>
+<p><em>Gets an array with the node indices for a face.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetFaceNodeIndices</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> Element index. </li>
+<li><code>faceIndex</code> Face index. </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>The node indices for this face. </p>
+<h3 id="function-getnodecount">function GetNodeCount<a class="headerlink" href="#function-getnodecount" title="Permanent link">&para;</a></h3>
+<p><em>Gets number of nodes for the element specified by the index.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetNodeCount</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> The element index for the element.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Number of nodes in element defined by the elementIndex.</p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> the index outside the range, throw an exception. </li>
+<li><code>If</code> the method is invoked with type <code>IdBased</code>, throw an exception. </li>
+</ul>
+<h3 id="function-getnodexcoordinate">function GetNodeXCoordinate<a class="headerlink" href="#function-getnodexcoordinate" title="Permanent link">&para;</a></h3>
+<p><em>X coordinate for the node with nodeIndex of the element with elementIndex.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetNodeXCoordinate</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nodeIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> Element index. </li>
+<li><code>nodeIndex</code> Node index in the element with index elementIndex.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>X coordinate for the node. </p>
+<h3 id="function-getnodeycoordinate">function GetNodeYCoordinate<a class="headerlink" href="#function-getnodeycoordinate" title="Permanent link">&para;</a></h3>
+<p><em>Y coordinate for the node with nodeIndex of the element with elementIndex.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetNodeYCoordinate</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nodeIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> Element index. </li>
+<li><code>nodeIndex</code> Node index in the element with index elementIndex.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Y coordinate for the node. </p>
+<h3 id="function-getnodezcoordinate">function GetNodeZCoordinate<a class="headerlink" href="#function-getnodezcoordinate" title="Permanent link">&para;</a></h3>
+<p><em>Z coordinate for the node with nodeIndex of the element with elementIndex.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">IElementSet</span><span class="o">::</span><span class="n">GetNodeZCoordinate</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">elementIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nodeIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>elementIndex</code> Element index. </li>
+<li><code>nodeIndex</code> Node index in the element with index elementIndex.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Z coordinate for the node. </p>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/Inc/IElementSet.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

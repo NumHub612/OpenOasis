@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::XYExtent</compoundname>
+    <includes refid="_x_y_geo_structs_8h" local="no">XYGeoStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac847b2f19c311b324643f36ef42ad979" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYExtent::xMin</definition>
+        <argsstring></argsstring>
+        <name>xMin</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::xMin</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="109" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1aefb2b89d1c75c000099b819d422c17de" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYExtent::xMax</definition>
+        <argsstring></argsstring>
+        <name>xMax</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::xMax</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="110" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1adc7e78fd2532ef526a815f643f84e98d" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYExtent::yMin</definition>
+        <argsstring></argsstring>
+        <name>yMin</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::yMin</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="111" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a1772ef1788ee875b8f35e193965b9047" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYExtent::yMax</definition>
+        <argsstring></argsstring>
+        <name>yMax</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::yMax</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="112" column="12" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a757d81ffc1b1ab8d7a0558ba26a5966f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</definition>
+        <argsstring>()=default</argsstring>
+        <name>XYExtent</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="114" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac326709114ee748663b0bdd6683f0db7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</definition>
+        <argsstring>(const XYPoint &amp;point, double epsilon)</argsstring>
+        <name>XYExtent</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>epsilon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="115" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="235" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a71a4ee666b1c4a58074ec3af2d8f10ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</definition>
+        <argsstring>(const XYLine &amp;line)</argsstring>
+        <name>XYExtent</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="116" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="243" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac017e90faf6283ce5d7e460536244762" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</definition>
+        <argsstring>(const XYPolyline &amp;polyline)</argsstring>
+        <name>XYExtent</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref> &amp;</type>
+          <declname>polyline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="117" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="251" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1abea55e9fe7770c949490dea37e7e9908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</definition>
+        <argsstring>(const XYPolygon &amp;polygon)</argsstring>
+        <name>XYExtent</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="118" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="259" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a3fdd7b38ff679eefa59ddb4ac9f37bc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</definition>
+        <argsstring>(const XYExtent &amp;obj)</argsstring>
+        <name>XYExtent</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="119" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="227" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac33dbf15eff269350969d37fad653156" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</definition>
+        <argsstring>(double xmin, double xmax, double ymin, double ymax)</argsstring>
+        <name>XYExtent</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::XYExtent</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>xmin</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>xmax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ymin</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ymax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="120" column="5" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="267" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a311a5ef5c1d08f03a55381f59924b06a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::XYExtent::Include</definition>
+        <argsstring>(const XYExtent &amp;other)</argsstring>
+        <name>Include</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::Include</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Makes this extent include &quot;other&quot;. This will grow this extent, if the &quot;other&quot; point is outside this extent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="124" column="10" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="275" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1aa99cba7610695f1bfaba30bc98c5132c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::XYExtent::Include</definition>
+        <argsstring>(double x, double y)</argsstring>
+        <name>Include</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::Include</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Makes the extent include the xy-point. This will grow this extent, if the xy-point is outside this extent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="128" column="10" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="295" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1abc8c2ad11a304f28763dd3b3b8ff7905" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYExtent::IsContains</definition>
+        <argsstring>(double x, double y) const</argsstring>
+        <name>IsContains</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::IsContains</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Checks if this extent contains the xy-point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="131" column="10" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="315" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a2ee2e7c53c3d78892d292a46c2d396b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYExtent::IsOverlaps</definition>
+        <argsstring>(const XYExtent &amp;other) const</argsstring>
+        <name>IsOverlaps</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYExtent::IsOverlaps</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Checks if this extent overlaps this specified &apos;other&apos; extent item. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="134" column="10" bodyfile="Models/CommImp/Spatial/XYGeoStructs.cpp" bodystart="320" bodyend="324"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Extent is a rectangle in xy-space. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Spatial/XYGeoStructs.h" line="107" column="1" bodyfile="Models/CommImp/Spatial/XYGeoStructs.h" bodystart="108" bodyend="135"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a311a5ef5c1d08f03a55381f59924b06a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>Include</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1aa99cba7610695f1bfaba30bc98c5132c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>Include</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1abc8c2ad11a304f28763dd3b3b8ff7905" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>IsContains</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a2ee2e7c53c3d78892d292a46c2d396b4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>IsOverlaps</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1aefb2b89d1c75c000099b819d422c17de" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>xMax</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac847b2f19c311b324643f36ef42ad979" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>xMin</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a757d81ffc1b1ab8d7a0558ba26a5966f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>XYExtent</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac326709114ee748663b0bdd6683f0db7" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>XYExtent</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a71a4ee666b1c4a58074ec3af2d8f10ad" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>XYExtent</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac017e90faf6283ce5d7e460536244762" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>XYExtent</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1abea55e9fe7770c949490dea37e7e9908" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>XYExtent</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a3fdd7b38ff679eefa59ddb4ac9f37bc4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>XYExtent</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac33dbf15eff269350969d37fad653156" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>XYExtent</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a1772ef1788ee875b8f35e193965b9047" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>yMax</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1adc7e78fd2532ef526a815f643f84e98d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYExtent</scope><name>yMin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

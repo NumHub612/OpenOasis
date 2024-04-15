@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::Cell</compoundname>
+    <includes refid="_mesh_structs_8h" local="no">MeshStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1adf8d5b4194a7c6d3964f40e8f67b2c24" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref></type>
+        <definition>Coordinate OpenOasis::CommImp::Spatial::Cell::centroid</definition>
+        <argsstring></argsstring>
+        <name>centroid</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Cell::centroid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="74" column="16" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1aac4653f634727ff2768ecd9659c5b42f" prot="public" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::Cell::volume</definition>
+        <argsstring></argsstring>
+        <name>volume</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Cell::volume</qualifiedname>
+        <initializer>= NAN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="77" column="10" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1a65144085fb4cfda15162e48d114fbea2" prot="public" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::Cell::surface</definition>
+        <argsstring></argsstring>
+        <name>surface</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Cell::surface</qualifiedname>
+        <initializer>= NAN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="80" column="10" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1af0090036436fd42225851c67da628a47" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; OpenOasis::CommImp::Spatial::Cell::faceIndexes</definition>
+        <argsstring></argsstring>
+        <name>faceIndexes</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Cell::faceIndexes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="83" column="17" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1a1ccc39712fe57e7d5b963abb98c38b8d" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; OpenOasis::CommImp::Spatial::Cell::neighbors</definition>
+        <argsstring></argsstring>
+        <name>neighbors</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Cell::neighbors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="86" column="17" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1ae08a9e4a24a2f41bd0960eb5abdb6fc2" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; OpenOasis::CommImp::Spatial::Cell::subCells</definition>
+        <argsstring></argsstring>
+        <name>subCells</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Cell::subCells</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="90" column="17" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> cell data structure. Polygon type for 1D and 2D mesh, Polyhedron type for 3D mesh. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Spatial::Cell</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>centroid</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>surface</edgelabel>
+          <edgelabel>volume</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::CommImp::Spatial::Coordinate</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>real</label>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Spatial/MeshStructs.h" line="72" column="1" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="73" bodyend="91"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1adf8d5b4194a7c6d3964f40e8f67b2c24" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Cell</scope><name>centroid</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1af0090036436fd42225851c67da628a47" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Cell</scope><name>faceIndexes</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1a1ccc39712fe57e7d5b963abb98c38b8d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Cell</scope><name>neighbors</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1ae08a9e4a24a2f41bd0960eb5abdb6fc2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Cell</scope><name>subCells</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1a65144085fb4cfda15162e48d114fbea2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Cell</scope><name>surface</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1aac4653f634727ff2768ecd9659c5b42f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Cell</scope><name>volume</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

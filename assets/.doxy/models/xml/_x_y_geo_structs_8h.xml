@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_x_y_geo_structs_8h" kind="file" language="C++">
+    <compoundname>XYGeoStructs.h</compoundname>
+    <includes refid="_coordinate_8h" local="yes">Coordinate.h</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_x_y_geo_structs_8cpp" local="yes">Models/CommImp/Spatial/XYGeoStructs.cpp</includedby>
+    <includedby refid="_x_y_geo_tools_8h" local="yes">Models/CommImp/Spatial/XYGeoTools.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Coordinate.h</label>
+        <link refid="_coordinate_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/CommImp/Spatial/XYGeoStructs.h</label>
+        <link refid="_x_y_geo_structs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Models/Utils/CommConstants.h</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Models/CommImp/Spatial/XYGeoStructs.h</label>
+        <link refid="_x_y_geo_structs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Models/CommImp/Spatial/XYGeoTools.h</label>
+        <link refid="_x_y_geo_tools_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" prot="public">OpenOasis::CommImp::Spatial::XYPoint</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" prot="public">OpenOasis::CommImp::Spatial::XYLine</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" prot="public">OpenOasis::CommImp::Spatial::XYPolyline</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" prot="public">OpenOasis::CommImp::Spatial::XYPolygon</innerclass>
+    <innerclass refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" prot="public">OpenOasis::CommImp::Spatial::XYExtent</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp">OpenOasis::CommImp</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_spatial">OpenOasis::CommImp::Spatial</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Coordinate.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">CommImp</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Spatial</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>0.;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>0.;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref><sp/>&amp;obj);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref><sp/>&amp;coor);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>coorX,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>coorY);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref><sp/>point1;<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>start<sp/>XYPoint.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref><sp/>point2;<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>end<sp/>XYPoint.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x2,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y2);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref><sp/>&amp;p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref><sp/>&amp;p2);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref><sp/>&amp;line);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetLength()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;XYPoint&gt;<sp/>points;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;XYPoint&gt;<sp/>&amp;points);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref><sp/>&amp;pline);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1afb4d69246740e84a7360fb676a0bd5e5" kindref="member">Validate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a4297abbf3209388623ff512b0f13daef" kindref="member">GetLength</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a21a7919b537c126b38730887ae8d7a7d" kindref="member">GetLine</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lineNumber)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;XYPoint&gt;<sp/>points;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;XYPoint&gt;<sp/>&amp;points);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref><sp/>&amp;polygon);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1a16ccd63e638bb87e56578f5579971044" kindref="member">Validate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1a8c9c171743fe43e6df3f4be168e14920" kindref="member">GetArea</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1a7a3f4f2fff016eaf5b6c9b76f0c5e055" kindref="member">GetLine</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lineNumber)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1aa470ee7e9d287a509dffd2f297921221" kindref="member">IsConvex</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xMin<sp/>=<sp/>0.;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xMax<sp/>=<sp/>0.;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>yMin<sp/>=<sp/>0.;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>yMax<sp/>=<sp/>0.;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref><sp/>&amp;point,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>epsilon);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref><sp/>&amp;line);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref><sp/>&amp;polyline);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref><sp/>&amp;polygon);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref><sp/>&amp;obj);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xmin,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xmax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ymin,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ymax);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a311a5ef5c1d08f03a55381f59924b06a" kindref="member">Include</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref><sp/>&amp;other);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a311a5ef5c1d08f03a55381f59924b06a" kindref="member">Include</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1abc8c2ad11a304f28763dd3b3b8ff7905" kindref="member">IsContains</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a2ee2e7c53c3d78892d292a46c2d396b4" kindref="member">IsOverlaps</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kindref="compound">XYExtent</ref><sp/>&amp;other)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Spatial</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>CommImp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis</highlight></codeline>
+    </programlisting>
+    <location file="Models/CommImp/Spatial/XYGeoStructs.h"/>
+  </compounddef>
+</doxygen>

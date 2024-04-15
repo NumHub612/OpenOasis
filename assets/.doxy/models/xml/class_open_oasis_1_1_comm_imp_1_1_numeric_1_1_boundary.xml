@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::CommImp::Numeric::Boundary</compoundname>
+    <derivedcompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::DirichletBoundary</derivedcompoundref>
+    <includes refid="_boundary_8h" local="no">Boundary.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1aa2a6f24a130ab7704267fbc0de4ed730" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Boundary::SetBoundaryValue</definition>
+        <argsstring>(real value)=0</argsstring>
+        <name>SetBoundaryValue</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Boundary::SetBoundaryValue</qualifiedname>
+        <reimplementedby refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1aeb131467c1dd231731fda89b2a8da834">SetBoundaryValue</reimplementedby>
+        <param>
+          <type>real</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Boundary.h" line="33" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a6939073a97903c16708d39713da468a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Boundary::SetBoundaryFlux</definition>
+        <argsstring>(real flux)=0</argsstring>
+        <name>SetBoundaryFlux</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Boundary::SetBoundaryFlux</qualifiedname>
+        <reimplementedby refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a5f72ee899055b2e771b325b62490312a">SetBoundaryFlux</reimplementedby>
+        <param>
+          <type>real</type>
+          <declname>flux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Boundary.h" line="35" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a3fd931364c19d1d2399d4d88fcc3ef0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string OpenOasis::CommImp::Numeric::Boundary::GetType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetType</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Boundary::GetType</qualifiedname>
+        <reimplementedby refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1ae8763d604944271306fcc27a8296be6d">GetType</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Boundary.h" line="37" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a95d7fc9cb6d47d90a9b3ebd72cfa2894" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref></type>
+        <definition>virtual BoundaryCondition OpenOasis::CommImp::Numeric::Boundary::GetBoundaryCondition</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetBoundaryCondition</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Boundary::GetBoundaryCondition</qualifiedname>
+        <reimplementedby refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a23de84b6567fd0e253525123859a4d30">GetBoundaryCondition</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Boundary.h" line="39" column="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Abstract boundary class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::Boundary</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary"/>
+      </node>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::DirichletBoundary</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Models/CommImp/Numeric/Boundary.h" line="30" column="1" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="31" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a95d7fc9cb6d47d90a9b3ebd72cfa2894" prot="public" virt="pure-virtual"><scope>OpenOasis::CommImp::Numeric::Boundary</scope><name>GetBoundaryCondition</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a3fd931364c19d1d2399d4d88fcc3ef0a" prot="public" virt="pure-virtual"><scope>OpenOasis::CommImp::Numeric::Boundary</scope><name>GetType</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a6939073a97903c16708d39713da468a1" prot="public" virt="pure-virtual"><scope>OpenOasis::CommImp::Numeric::Boundary</scope><name>SetBoundaryFlux</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1aa2a6f24a130ab7704267fbc0de4ed730" prot="public" virt="pure-virtual"><scope>OpenOasis::CommImp::Numeric::Boundary</scope><name>SetBoundaryValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

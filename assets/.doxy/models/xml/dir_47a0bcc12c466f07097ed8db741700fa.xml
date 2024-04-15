@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_47a0bcc12c466f07097ed8db741700fa" kind="dir">
+    <compoundname>Models/CommImp/Spatial</compoundname>
+    <innerfile refid="_coordinate_8cpp">Coordinate.cpp</innerfile>
+    <innerfile refid="_coordinate_8h">Coordinate.h</innerfile>
+    <innerfile refid="_geo_calculator_8cpp">GeoCalculator.cpp</innerfile>
+    <innerfile refid="_geo_calculator_8h">GeoCalculator.h</innerfile>
+    <innerfile refid="_grid_8cpp">Grid.cpp</innerfile>
+    <innerfile refid="_grid_8h">Grid.h</innerfile>
+    <innerfile refid="_grid1_d_8cpp">Grid1D.cpp</innerfile>
+    <innerfile refid="_grid1_d_8h">Grid1D.h</innerfile>
+    <innerfile refid="_grid2_d_8cpp">Grid2D.cpp</innerfile>
+    <innerfile refid="_grid2_d_8h">Grid2D.h</innerfile>
+    <innerfile refid="_grid3_d_8cpp">Grid3D.cpp</innerfile>
+    <innerfile refid="_grid3_d_8h">Grid3D.h</innerfile>
+    <innerfile refid="_mesh_structs_8h">MeshStructs.h</innerfile>
+    <innerfile refid="_x_y_geo_structs_8cpp">XYGeoStructs.cpp</innerfile>
+    <innerfile refid="_x_y_geo_structs_8h">XYGeoStructs.h</innerfile>
+    <innerfile refid="_x_y_geo_tools_8cpp">XYGeoTools.cpp</innerfile>
+    <innerfile refid="_x_y_geo_tools_8h">XYGeoTools.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Spatial/"/>
+  </compounddef>
+</doxygen>

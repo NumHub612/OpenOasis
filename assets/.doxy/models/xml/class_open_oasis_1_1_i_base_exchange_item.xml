@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_base_exchange_item" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IBaseExchangeItem</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_identifiable" prot="public" virt="non-virtual">OpenOasis::IIdentifiable</basecompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_i_input" prot="public" virt="non-virtual">OpenOasis::IInput</derivedcompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_i_output" prot="public" virt="non-virtual">OpenOasis::IOutput</derivedcompoundref>
+    <includes refid="_i_base_exchange_item_8h" local="no">IBaseExchangeItem.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_open_oasis_1_1_i_base_exchange_item_1a11f50a5b03dc04b237e029257d4e4436" prot="public" static="no">
+        <type>std::function&lt; void(std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_exchange_item_change_event_args" kindref="compound">ExchangeItemChangeEventArgs</ref> &gt;)&gt;</type>
+        <definition>using OpenOasis::IBaseExchangeItem::ListenFunc =  std::function&lt;void(std::shared_ptr&lt;ExchangeItemChangeEventArgs&gt;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ListenFunc</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::ListenFunc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="28" column="5" bodyfile="Models/Inc/IBaseExchangeItem.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a9a5e35bb80130907522907029370cdf5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_value_definition" kindref="compound">IValueDefinition</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IValueDefinition &gt; OpenOasis::IBaseExchangeItem::GetValueDefinition</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetValueDefinition</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::GetValueDefinition</qualifiedname>
+        <briefdescription>
+<para>Definition of the values in the exchange item. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This <computeroutput><ref refid="class_open_oasis_1_1_i_value_definition" kindref="compound">IValueDefinition</ref></computeroutput> should never be returned directly; all implementing classes should return either <computeroutput><ref refid="class_open_oasis_1_1_i_quality" kindref="compound">IQuality</ref></computeroutput>, <computeroutput><ref refid="class_open_oasis_1_1_i_quantity" kindref="compound">IQuantity</ref></computeroutput>, or a custom derived value definition interface. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="37" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1af3729ac3117c641521c1d4115a5f73ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IBaseExchangeItem::Reset</definition>
+        <argsstring>()=0</argsstring>
+        <name>Reset</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::Reset</qualifiedname>
+        <briefdescription>
+<para>Resets the exchange item. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="40" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a5ef3ba9e1070999e62761950f9198772" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_value_set" kindref="compound">IValueSet</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IValueSet &gt; OpenOasis::IBaseExchangeItem::GetValues</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetValues</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::GetValues</qualifiedname>
+        <briefdescription>
+<para>Provides the values matching the value definition specified. Extensions can overwrite this base version to include more details in the query, e.g. time and space. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For an input item, this means to get the input item&apos;s value pulled from its provider(s). For an output item, this means to provide the values required by consumers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="49" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1aba32a53f63e74a03eebb044ec452d4d7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IElementSet &gt; OpenOasis::IBaseExchangeItem::GetElementSet</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetElementSet</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::GetElementSet</qualifiedname>
+        <briefdescription>
+<para>Gets the exchange item&apos;s elements. If it&apos;s id-based, return null. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="53" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a74e3d6b09dbd1fb58b009ba0a4af18db" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IBaseExchangeItem::SetValues</definition>
+        <argsstring>(std::shared_ptr&lt; IValueSet &gt; value)=0</argsstring>
+        <name>SetValues</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::SetValues</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_value_set" kindref="compound">IValueSet</ref> &gt;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the exchange item&apos;s values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="56" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a705d09b3618098100e8963f54a39b745" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time_set" kindref="compound">ITimeSet</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; ITimeSet &gt; OpenOasis::IBaseExchangeItem::GetTimeSet</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetTimeSet</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::GetTimeSet</qualifiedname>
+        <briefdescription>
+<para>Gets the exchange item&apos;s available time set. If it&apos;s time independent, return null. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="60" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a592bcfe9d29227cf535147371b96c937" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IBaseExchangeItem::SetTimeSet</definition>
+        <argsstring>(std::shared_ptr&lt; ITimeSet &gt; times)=0</argsstring>
+        <name>SetTimeSet</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::SetTimeSet</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time_set" kindref="compound">ITimeSet</ref> &gt;</type>
+          <declname>times</declname>
+        </param>
+        <briefdescription>
+<para>Sets the exchange item&apos;s time set. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="63" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a4be867eb35086189dbd669861b0d043f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IBaseExchangeItem::SetElementSet</definition>
+        <argsstring>(std::shared_ptr&lt; IElementSet &gt; elements)=0</argsstring>
+        <name>SetElementSet</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::SetElementSet</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref> &gt;</type>
+          <declname>elements</declname>
+        </param>
+        <briefdescription>
+<para>Sets the exchange item&apos;s elements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="66" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a91cb2450e540b44614b87f70360637ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt; ILinkableComponent &gt; OpenOasis::IBaseExchangeItem::GetComponent</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetComponent</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::GetComponent</qualifiedname>
+        <briefdescription>
+<para>Gets the owner of the exchange item. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For an output exchange item this is the component responsible for providing the content of the output item. It&apos;s possible for an exchange item to have no owner, in this case the method will return null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="73" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1ae54b2fe5cc53af7c479673b18decc4d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IBaseExchangeItem::AddListener</definition>
+        <argsstring>(const ListenFunc &amp;func)=0</argsstring>
+        <name>AddListener</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::AddListener</qualifiedname>
+        <param>
+          <type>const ListenFunc &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Adds a listener to the exchange item. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="76" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_base_exchange_item_1a966e9448d121dacb08a10424b26e19ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IBaseExchangeItem::RemoveListener</definition>
+        <argsstring>(const ListenFunc &amp;func)=0</argsstring>
+        <name>RemoveListener</name>
+        <qualifiedname>OpenOasis::IBaseExchangeItem::RemoveListener</qualifiedname>
+        <param>
+          <type>const ListenFunc &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Removes the listener if it is no more interested at this item. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IBaseExchangeItem.h" line="79" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class presenting a item that can be exchanged, either as an input or output. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>OpenOasis::IAdaptedOutput</label>
+        <link refid="class_open_oasis_1_1_i_adapted_output"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IBaseExchangeItem</label>
+        <link refid="class_open_oasis_1_1_i_base_exchange_item"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OpenOasis::IInput</label>
+        <link refid="class_open_oasis_1_1_i_input"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>OpenOasis::IOutput</label>
+        <link refid="class_open_oasis_1_1_i_output"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::IBaseExchangeItem</label>
+        <link refid="class_open_oasis_1_1_i_base_exchange_item"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/IBaseExchangeItem.h" line="25" column="1" bodyfile="Models/Inc/IBaseExchangeItem.h" bodystart="26" bodyend="80"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1ae54b2fe5cc53af7c479673b18decc4d9" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>AddListener</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a91cb2450e540b44614b87f70360637ba" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetComponent</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1aba32a53f63e74a03eebb044ec452d4d7" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetElementSet</name></member>
+      <member refid="class_open_oasis_1_1_i_identifiable_1a808d8d4b970d54a19fd19857518fe8d0" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetId</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a705d09b3618098100e8963f54a39b745" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetTimeSet</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a9a5e35bb80130907522907029370cdf5" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetValueDefinition</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a5ef3ba9e1070999e62761950f9198772" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>GetValues</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a11f50a5b03dc04b237e029257d4e4436" prot="public" virt="non-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>ListenFunc</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a966e9448d121dacb08a10424b26e19ef" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>RemoveListener</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1af3729ac3117c641521c1d4115a5f73ad" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>Reset</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>SetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a4be867eb35086189dbd669861b0d043f" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>SetElementSet</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a592bcfe9d29227cf535147371b96c937" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>SetTimeSet</name></member>
+      <member refid="class_open_oasis_1_1_i_base_exchange_item_1a74e3d6b09dbd1fb58b009ba0a4af18db" prot="public" virt="pure-virtual"><scope>OpenOasis::IBaseExchangeItem</scope><name>SetValues</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

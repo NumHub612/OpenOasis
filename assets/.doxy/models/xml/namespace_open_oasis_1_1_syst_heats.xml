@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespace_open_oasis_1_1_syst_heats" kind="namespace" language="C++">
+    <compoundname>OpenOasis::SystHeats</compoundname>
+    <innerclass refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model" prot="public">OpenOasis::SystHeats::HeatConductionModel</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+ @File : HeatConductionModel.cpp @Brief : Heat conduction model. </para>
+    </detaileddescription>
+    <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" line="29" column="1"/>
+  </compounddef>
+</doxygen>

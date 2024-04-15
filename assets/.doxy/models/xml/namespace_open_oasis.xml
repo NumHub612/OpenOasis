@@ -1,0 +1,490 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespace_open_oasis" kind="namespace" language="C++">
+    <compoundname>OpenOasis</compoundname>
+    <innerclass refid="class_open_oasis_1_1_exchange_item_change_event_args" prot="public">OpenOasis::ExchangeItemChangeEventArgs</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_adapted_output" prot="public">OpenOasis::IAdaptedOutput</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_adapted_output_factory" prot="public">OpenOasis::IAdaptedOutputFactory</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_argument" prot="public">OpenOasis::IArgument</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_base_exchange_item" prot="public">OpenOasis::IBaseExchangeItem</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_byte_state_converter" prot="public">OpenOasis::IByteStateConverter</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_category" prot="public">OpenOasis::ICategory</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_describable" prot="public">OpenOasis::IDescribable</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_dimension" prot="public">OpenOasis::IDimension</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_element_set" prot="public">OpenOasis::IElementSet</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_identifiable" prot="public">OpenOasis::IIdentifiable</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_input" prot="public">OpenOasis::IInput</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_linkable_component" prot="public">OpenOasis::ILinkableComponent</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_manage_state" prot="public">OpenOasis::IManageState</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_output" prot="public">OpenOasis::IOutput</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_quality" prot="public">OpenOasis::IQuality</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_quantity" prot="public">OpenOasis::IQuantity</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_spatial_definition" prot="public">OpenOasis::ISpatialDefinition</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_time" prot="public">OpenOasis::ITime</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_time_set" prot="public">OpenOasis::ITimeSet</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_unit" prot="public">OpenOasis::IUnit</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_value_definition" prot="public">OpenOasis::IValueDefinition</innerclass>
+    <innerclass refid="class_open_oasis_1_1_i_value_set" prot="public">OpenOasis::IValueSet</innerclass>
+    <innerclass refid="class_open_oasis_1_1_linkable_component_status_change_event_args" prot="public">OpenOasis::LinkableComponentStatusChangeEventArgs</innerclass>
+    <innernamespace refid="namespace_open_oasis_1_1_additional_control">OpenOasis::AdditionalControl</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp">OpenOasis::CommImp</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_syst_heats">OpenOasis::SystHeats</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>DimensionBase</name>
+        <qualifiedname>OpenOasis::DimensionBase</qualifiedname>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aba2a9c6c8c77e03f83ef8bf543612275" prot="public">
+          <name>Length</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aff2864d6f652ee0ac254814f1ae4f4a8" prot="public">
+          <name>Mass</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aa76d4ef5f3f6a672bbfab2865563e530" prot="public">
+          <name>Time</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6a9a60fd92ac6161bffa549ef2cd17f05e" prot="public">
+          <name>ElectricCurrent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aee7a8e262285ed49ea1b4e4ae11525bd" prot="public">
+          <name>Temperature</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6ad9918b61413aedf2ceafa18df27d3a3c" prot="public">
+          <name>AmountOfSubstance</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6ae91a9eb4f5dcc51ea18e180ea981d6ae" prot="public">
+          <name>LuminousIntensity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6a386c339d37e737a436499d423a77df0c" prot="public">
+          <name>Currency</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for base dimensions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IDimension.h" line="16" column="1" bodyfile="Models/Inc/IDimension.h" bodystart="17" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ElementType</name>
+        <qualifiedname>OpenOasis::ElementType</qualifiedname>
+        <enumvalue id="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a25dd7053999776020543853c8c68e4b7" prot="public">
+          <name>IdBased</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a2a3cd5946cfd317eb99c3d32e35e2d4c" prot="public">
+          <name>Point</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75af8fb02b84176d0b0f0007abfd9264fb9" prot="public">
+          <name>Polyline</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a4c0a11247d92f73fb84baa51e37a3263" prot="public">
+          <name>Polygon</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a3d217ee3a015efcd968eff5f36a5f671" prot="public">
+          <name>Polyhedron</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Shape Type of elements in an <computeroutput><ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IElementSet.h" line="36" column="1" bodyfile="Models/Inc/IElementSet.h" bodystart="37" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fb" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LinkableComponentStatus</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatus</qualifiedname>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba0eceeb45861f9585dd7a97a3e36f85c6" prot="public">
+          <name>Created</name>
+          <briefdescription>
+<para>The linkable component instance has just been <computeroutput>Created</computeroutput>. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>This status must and will be followed by `Initializing`. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba32b169f72b293ef80d35435e9894f8e2" prot="public">
+          <name>Initializing</name>
+          <briefdescription>
+<para>The linkable component is initializing itself. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>This status will end in a status change to `Initialized` or `Failed`. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba59d87a4758a9d35fbaf6b204341bb399" prot="public">
+          <name>Initialized</name>
+          <briefdescription>
+<para>The linkable component has succesfully initialized itself. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>The connections between its inputs/outputs and those of other components can be
+established. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbac423b2af9f3f373c6576a8512645da9b" prot="public">
+          <name>Validating</name>
+          <briefdescription>
+<para>This status will end in a status change to <computeroutput>Valid</computeroutput> or <computeroutput>Invalid</computeroutput>. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>After links between the component&apos;s inputs/outputs and those of other components
+have been established, the component is validating whether its required
+input will be available when it updates itself, whether indeed it will be
+able to provide the required output during this update. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba3ac705f2acd51a4613f9188c05c91d0d" prot="public">
+          <name>Valid</name>
+          <briefdescription>
+<para>The component is in a valid state. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>When updating itself its required input will be available, and it will be able
+to provide the required output. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba29d97bd4d929847eaa944fde55fcaaa8" prot="public">
+          <name>WaitingForData</name>
+          <briefdescription>
+<para>The component wants to update itself, but isnot yet able to perform the actual computation, because it is still waiting for input data from other components. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba4bbb8f967da6d1a610596d7257179c2b" prot="public">
+          <name>Invalid</name>
+          <briefdescription>
+<para>The component is in an invalid state. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>When updating itself not all required input will be available, and/or it will
+not be able to provide the required output. After the user has modified
+the connections between the component&apos;s inputs/outputs and those of other
+components, the `Validating` state can be entered again. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbaad866f19a13c5386d2ec6df246dcbfac" prot="public">
+          <name>Preparing</name>
+          <briefdescription>
+<para>The component is preparing itself for the first <computeroutput>GetValues()</computeroutput> call. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>This state will end in a status change to `Updated` or `Failed`. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba6909beea5b50605780e3411f879fe916" prot="public">
+          <name>Updating</name>
+          <briefdescription>
+<para>The component is updating itself. It receives all required input data from other components, and is now performing the actual computation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This state will end in a status change to <computeroutput>Updated</computeroutput>, <computeroutput>Done</computeroutput> or <computeroutput>Failed</computeroutput>. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbaff0a3b7f3daef040faf89a88fdac01b7" prot="public">
+          <name>Updated</name>
+          <briefdescription>
+<para>The component has succesfully updated itself. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbaf92965e2c8a7afb3c1b9a5c09a263636" prot="public">
+          <name>Done</name>
+          <briefdescription>
+<para>The last update process that component performed was the final one. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>A next call to the `Update()` method will leave the component&apos;s internal state
+unchanged. 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba242cf0bcf1047835a88da99b6931cc98" prot="public">
+          <name>Finishing</name>
+          <briefdescription>
+<para>The <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> was requested to perform the actions to be performed before it will either be disposed or re-intialized again. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Typical actions would be writing the final result files, close all open files, free memory, etc. When all required actions have been performed, the status switches to <computeroutput>Created</computeroutput> when re-initialization is possible. The status switches to <computeroutput>Finished</computeroutput> when component is to be disposed. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba8f3d10eb21bd36347c258679eba9e92b" prot="public">
+          <name>Finished</name>
+          <briefdescription>
+<para>The <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> has successfully performed its finalization actions. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Re-initialization of the component instance isn&apos;t possible and shouldn&apos;t be attempted. Instead the instance should be disposed, e.g. through the garbage collection mechanism. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbad7c8c85bf79bbe1b7188497c32c3b0ca" prot="public">
+          <name>Failed</name>
+          <briefdescription>
+<para>The component was requested to perform the actions to be performed before it will either be disposed or re-initialized again. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The linkable component has failed initialize itself, failed to prepare itself for computation, or failed to complete its update process.</para>
+<para>Typical actions would be writing the final result files, close all open files, free memory, etc. When all required actions have been performed, the status switches back to <computeroutput>Created</computeroutput> if the component supports being re-initialized. If it can&apos;t be re-initialized, it can be released from memory. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Class enumerates the possible statuses that a linkable component can be in. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatus.h" line="16" column="1" bodyfile="Models/Inc/LinkableComponentStatus.h" bodystart="17" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_comparable_8h_source" kindref="compound">IComparable.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide a unified interface for object comparison.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_space_extension_8h_source" kindref="compound">ISpaceExtension.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Spatial information (usually an element set) on the values.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_time_extension_8h_source" kindref="compound">ITimeExtension.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Methods that are specific for an time-space component.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_exchange_item_change_event_args_8h_source" kindref="compound">ExchangeItemChangeEventArgs.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To contain the information that will be passed when the <computeroutput><ref refid="class_open_oasis_1_1_i_base_exchange_item" kindref="compound">IBaseExchangeItem</ref></computeroutput> fires the <computeroutput>ExchangeItemValueChanged</computeroutput> event.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_adapted_output_8h_source" kindref="compound">IAdaptedOutput.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To adds one or more data operations on top of an output item.</para>
+<para><computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> objects are created by means of an <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output_factory" kindref="compound">IAdaptedOutputFactory</ref></computeroutput>. It is based on the adaptor design pattern.It adapts an <computeroutput><ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref></computeroutput> or another <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> to make it suitable for new use or purpose.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_adapted_output_factory_8h_source" kindref="compound">IAdaptedOutputFactory.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Factory to create instance of <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput>.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_argument_8h_source" kindref="compound">IArgument.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide an argument interface.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_base_exchange_item_8h_source" kindref="compound">IBaseExchangeItem.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide an item that can be exchanged, either as input or output.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_byte_state_converter_8h_source" kindref="compound">IByteStateConverter.h</ref> @License : Apache-2.0</para>
+<para>@Desc : An optional complement to support state management.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_category_8h_source" kindref="compound">ICategory.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To describe one item of a possible categorization.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_describable_8h_source" kindref="compound">IDescribable.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide descriptive information on an <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> entity.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_dimension_8h_source" kindref="compound">IDimension.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To define the order of dimension in each <computeroutput>DimensionBase</computeroutput> for a unit.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_element_set_8h_source" kindref="compound">IElementSet.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide an ordered list of elements for data exchanging.</para>
+<para>Data exchange between components is nearly always related to one or more elements in a space, either geo-referenced or not. An elementset can be a list of 2D or 3D spatial elements or as a special case, a list of ID based (non spatial) elements. Possible element types are defined in <computeroutput>ElementType</computeroutput>.</para>
+<para>For 3D elements (i.e. polyhedron) the shape can be queried by face. When the elementset is geo-referenced, coordinates (X, Y, Z) can be obtained for each node of an element.</para>
+<para>A geo-referenced elementset needs to have a valid &quot;SpatialReferenceSystem&quot; property set in a <computeroutput><ref refid="class_open_oasis_1_1_i_spatial_definition" kindref="compound">ISpatialDefinition</ref></computeroutput>. This is a string that specifies the OGC WKT representation of a spatial reference. An empty string indicates that there in no spatial reference, which is only valid if the <computeroutput>ElementType</computeroutput> is <computeroutput>IdBased</computeroutput>.</para>
+<para>While an <computeroutput><ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref></computeroutput> can be used to query the geometric description of a model schematization, it does not necessarily provide all topological knowledge on inter-element connections.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_identifiable_8h_source" kindref="compound">IIdentifiable.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide the id of an <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> entity.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_input_8h_source" kindref="compound">IInput.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide an input item that can accept values for an <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> object.</para>
+<para>This item is a combination of an <computeroutput><ref refid="class_open_oasis_1_1_i_value_definition" kindref="compound">IValueDefinition</ref></computeroutput>, an <computeroutput><ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref></computeroutput>, and an <computeroutput><ref refid="class_open_oasis_1_1_i_time_set" kindref="compound">ITimeSet</ref></computeroutput>. This combination specifies which type of data is required, where and when, as input for an <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput>.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_linkable_component_8h_source" kindref="compound">ILinkableComponent.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide key interface for module connection and data transfer.</para>
+<para><orderedlist>
+<listitem><para>An <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> compliant component must implement the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> interface according to specifications provided from <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> docs;</para>
+</listitem><listitem><para>An <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> compliant component can also comply to one ore more extensions, by implementing the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> interface and the extension interfaces, according to the specifications;</para>
+</listitem></orderedlist>
+</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_manage_state_8h_source" kindref="compound">IManageState.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide an optional interface to handling component state so it can be saved, restored and cleared.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_output_8h_source" kindref="compound">IOutput.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide an output exchange item that can deliver values from an <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput>.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_quality_8h_source" kindref="compound">IQuality.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To describe qualitative data, where a value is specified as one category within a number of predefined (possible) categories.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_quantity_8h_source" kindref="compound">IQuantity.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Specify values as an amount of some unit.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_spatial_definition_8h_source" kindref="compound">ISpatialDefinition.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide a general spatial construct that all other spatial constructions extend from.</para>
+<para>Data in component is often related to spatial coordinates, either georeferenced or not. Although most models encapsulate data with a static spatial definition, some advanced models might contain dynamic spatial definitions (e.g. waves, moving grids). A <computeroutput>Version</computeroutput> number has been introduced to enable tracking of spatial changes over time. If the version changes, the spatial definition might need to be queried again during the computation process.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_time_8h_source" kindref="compound">ITime.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Time interface to support a time stamp as well as a time interval.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_time_set_8h_source" kindref="compound">ITimeSet.h</ref> @License : Apache-2.0</para>
+<para>@Desc : A set of time stamps or time intervals, used to indicate when an output item has values and can provide values, and when an input item does or may require values.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_unit_8h_source" kindref="compound">IUnit.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To describe the physical unit of <computeroutput><ref refid="class_open_oasis_1_1_i_quantity" kindref="compound">IQuantity</ref></computeroutput>.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_value_definition_8h_source" kindref="compound">IValueDefinition.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide value definition description of an <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> entity.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_i_value_set_8h_source" kindref="compound">IValueSet.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To represent a general multi-dimensional set of values.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_linkable_component_status_8h_source" kindref="compound">LinkableComponentStatus.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To enumerate the possible statuses that a linkable component can be.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_linkable_component_status_change_event_args_8h_source" kindref="compound">LinkableComponentStatusChangeEventArgs.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To contain the information that will be passed when the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> fires the <computeroutput>StatusChanged</computeroutput> event.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_heat_conduction_model_8h_source" kindref="compound">HeatConductionModel.h</ref> @License : Apache-2.0</para>
+<para>@Desc : A dummy heat conduction model used for example purposes.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_logger_8h_source" kindref="compound">Logger.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Provide logger.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_tensor_8h_source" kindref="compound">Tensor.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Define Tensor template class for numerical calculation.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_vector_8h_source" kindref="compound">Vector.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Define Vector template class for numerical calculation.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_time_buffer_8h_source" kindref="compound">TimeBuffer.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide temporal buffering functionalities.</para>
+<para>The TimeBuffer class provides buffering functionalities that will store values needed for a particular output item in memory and functionality that will interpolate, extrapolate and aggregate values from these values.</para>
+<para>The content of the TimeBuffer is lists of corresponding times and ValueSets, where times can be TimeStamps or TimeSpans and the ValueSets are double[].</para>
+<para>TimeBuffer objects may not contain mixtures of TimeSpans and TimeStamps. The number of Times (TimeSpans or TimeStamps) must equal the number of value sets (double[]) in the TimeBuffer.</para>
+<para>When time spans are put in the buffer, it is assumed that there aren&apos;t holes between the spans, i.e. a time setup of:</para>
+<para>|-<mdash/>|-<mdash/>| |-<mdash/>|-<mdash/>| a b c d e f</para>
+<para>where data is missing between c and d isn&apos;t allowed (a value of 0 is assumed in such an interval).</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_geo_calculator_8h_source" kindref="compound">GeoCalculator.h</ref> @License : Apache-2.0</para>
+<para>@Desc : A collection of general geometry functions.</para>
+<para><hruler/>
+ Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_grid1_d_8h_source" kindref="compound">Grid1D.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Grid in river net used for numerical calculation.</para>
+<para><hruler/>
+ Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_grid2_d_8h_source" kindref="compound">Grid2D.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Grid formed by flat cells in 2d used for numerical calculation.</para>
+<para><hruler/>
+ Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_grid3_d_8h_source" kindref="compound">Grid3D.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Grid in 3d used for numerical calculation.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_mesh_structs_8h_source" kindref="compound">MeshStructs.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Definitions of mesh related structures.</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_x_y_geo_structs_8h_source" kindref="compound">XYGeoStructs.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide basic plane geometry data structures (no z coordinate).</para>
+<para><hruler/>
+ Copyright (C) 2022, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_x_y_geo_tools_8h_source" kindref="compound">XYGeoTools.h</ref> @License : Apache-2.0</para>
+<para>@Desc : The XYGeoTools class is a collection of general geometry functions. </para>
+    </detaileddescription>
+    <location file="Models/Inc/AdditionalControl/IComparable.h" line="14" column="1"/>
+  </compounddef>
+</doxygen>

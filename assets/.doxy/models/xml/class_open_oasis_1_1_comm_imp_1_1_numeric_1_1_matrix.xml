@@ -1,0 +1,960 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::Matrix</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1abdee99b4361cca43488a10055f8e5cda" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::mRows</definition>
+        <argsstring></argsstring>
+        <name>mRows</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::mRows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="24" column="28" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a05565af38c3e18ea1113fbbfb45faa4a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::mCols</definition>
+        <argsstring></argsstring>
+        <name>mCols</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::mCols</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="25" column="28" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a833e1e50b5042f0f13f315369528ef65" prot="private" static="no" mutable="no">
+        <type>Eigen::SparseMatrix&lt; T &gt;</type>
+        <definition>Eigen::SparseMatrix&lt;T&gt; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::mData</definition>
+        <argsstring></argsstring>
+        <name>mData</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::mData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="26" column="25" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a5e1196e70f63a73f82afa03381fc4a34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Matrix</definition>
+        <argsstring>(int rows, int cols)</argsstring>
+        <name>Matrix</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Matrix</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="29" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae6bd3ac90788044828a480abf8849b7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Matrix</definition>
+        <argsstring>(int size)</argsstring>
+        <name>Matrix</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Matrix</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="30" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac4d3737fe512b17426b6aedb4fb7d980" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Matrix</definition>
+        <argsstring>(const Matrix &amp;other)</argsstring>
+        <name>Matrix</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Matrix</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="32" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a384f839df68e29d698517c44835e1821" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Matrix</definition>
+        <argsstring>(const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp;lst)</argsstring>
+        <name>Matrix</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Matrix</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="37" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a66793f4945a980e94005122d75419209" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Matrix</definition>
+        <argsstring>(const Eigen::SparseMatrix&lt; T &gt; &amp;mat)</argsstring>
+        <name>Matrix</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Matrix</qualifiedname>
+        <param>
+          <type>const Eigen::SparseMatrix&lt; T &gt; &amp;</type>
+          <declname>mat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="42" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a02f0a34ca33cdb3df58bc7c9b2818188" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Set</definition>
+        <argsstring>(const Matrix &amp;other)</argsstring>
+        <name>Set</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Set</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="71" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="71" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a8bb3b3a0cf646decf757831f24dde774" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Set</definition>
+        <argsstring>(const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp;lst)</argsstring>
+        <name>Set</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Set</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="78" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="78" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea2e01157f510c232aef65d5cac06667" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::SetAt</definition>
+        <argsstring>(size_t i, size_t j, const T &amp;val)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::SetAt</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="101" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a157379aba161cef3ae32d724a5544a9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::SetDiagonal</definition>
+        <argsstring>(const T &amp;s)</argsstring>
+        <name>SetDiagonal</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::SetDiagonal</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="106" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="106" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7d36608a7af3d9c1c1eaea441deac349" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::SetRow</definition>
+        <argsstring>(size_t i, const Vector&lt; T, N &gt; &amp;vec)</argsstring>
+        <name>SetRow</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::SetRow</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, N &gt; &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="115" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="115" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a020b0ee1e398526d1251f9636994f1f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::SetCol</definition>
+        <argsstring>(size_t j, const Vector&lt; T, N &gt; &amp;vec)</argsstring>
+        <name>SetCol</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::SetCol</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, N &gt; &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="127" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="127" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af1c05aa76bab276262fd76d03f7e28ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::SetZero</definition>
+        <argsstring>()</argsstring>
+        <name>SetZero</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::SetZero</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="138" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7e2dc93be5680678f65d39ec4ad9e223" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::SetUnit</definition>
+        <argsstring>()</argsstring>
+        <name>SetUnit</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::SetUnit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="143" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa36319ec923846700279f07c685841ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Trace</definition>
+        <argsstring>() const</argsstring>
+        <name>Trace</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Trace</qualifiedname>
+        <briefdescription>
+<para>Returns the trace of this matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Should be a square matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="154" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="154" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a6208f271a5f63e898e91d2d61df29c9c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Determinant</definition>
+        <argsstring>() const</argsstring>
+        <name>Determinant</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Determinant</qualifiedname>
+        <briefdescription>
+<para>Returns the determinant of this matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Should be a square matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="167" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="167" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa255d9741403f6d394c03b893bc2354a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, N &gt;</type>
+        <definition>Vector&lt; T, N &gt; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Diagonal</definition>
+        <argsstring>() const</argsstring>
+        <name>Diagonal</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Diagonal</qualifiedname>
+        <briefdescription>
+<para>Returns diagonal vector of this matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Should be a square matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="179" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="179" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a87c4a055d370af873a915d63a9bb5108" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::SparseMatrix&lt; T &gt; &amp;</type>
+        <definition>Eigen::SparseMatrix&lt; T &gt; &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Data</definition>
+        <argsstring>()</argsstring>
+        <name>Data</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="190" column="25" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="190" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a13f4d0e8fbef9262c160cc05aa0b99ab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::SparseMatrix&lt; T &gt; &amp;</type>
+        <definition>const Eigen::SparseMatrix&lt; T &gt; &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Data</definition>
+        <argsstring>() const</argsstring>
+        <name>Data</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="195" column="31" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a49a22466f37970be368a3f7c2232e9f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Max</definition>
+        <argsstring>() const</argsstring>
+        <name>Max</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="200" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="200" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac56168382db54091610d67607b6bac01" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Min</definition>
+        <argsstring>() const</argsstring>
+        <name>Min</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Min</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="205" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a856310840af4cbb798ce66dc990a3e17" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Rows</definition>
+        <argsstring>() const</argsstring>
+        <name>Rows</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Rows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="210" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2c0a67c6f8e507d0e3551d7c8ecd7aea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Cols</definition>
+        <argsstring>() const</argsstring>
+        <name>Cols</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Cols</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="215" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="215" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a404bc30725ab34df336ffb6bc67ba7af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Sum</definition>
+        <argsstring>() const</argsstring>
+        <name>Sum</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Sum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="220" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ab4db54b7ddf4cc207c8732b3c827761b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Add</definition>
+        <argsstring>(std::size_t i, std::size_t j, const T &amp;s)</argsstring>
+        <name>Add</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Add</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Add input scalar <computeroutput>s</computeroutput> to specified element. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="230" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="230" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7f72031d7cd5c4bfa7a544ac226703c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Add</definition>
+        <argsstring>(const Matrix &amp;m)</argsstring>
+        <name>Add</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Add</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+<para>Adds input matrix <computeroutput>m</computeroutput> (element-wise). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="237" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="237" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a409f22eceffa744c13f64432404829fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Sub</definition>
+        <argsstring>(std::size_t i, std::size_t j, const T &amp;s)</argsstring>
+        <name>Sub</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Sub</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Subtracts scalar <computeroutput>s</computeroutput> to specified element. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="244" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="244" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2131e5f4ed4a74dd5da9763122471f24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Sub</definition>
+        <argsstring>(const Matrix &amp;m)</argsstring>
+        <name>Sub</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Sub</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+<para>Subtracts input matrix <computeroutput>m</computeroutput> (element-wise). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="251" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="251" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7736d4a332dbb3e833849f873c53cb05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Mul</definition>
+        <argsstring>(const T &amp;s)</argsstring>
+        <name>Mul</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Mul</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Multiplies scalar <computeroutput>s</computeroutput> to the whole matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="258" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="258" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a5f29ec279e56eb6f2cc168a53082d8f4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Mul</definition>
+        <argsstring>(const Matrix &amp;m) const</argsstring>
+        <name>Mul</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Mul</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+<para>Returns this matrix * input matrix <computeroutput>m</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="264" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="264" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af803d030ade35d52b666f1a8dd0a47a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Transpose</definition>
+        <argsstring>() const</argsstring>
+        <name>Transpose</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Transpose</qualifiedname>
+        <briefdescription>
+<para>Returns transpose matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="271" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="271" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa23c1c2e416ec92295379c7f09f8938e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Invert</definition>
+        <argsstring>() const</argsstring>
+        <name>Invert</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Invert</qualifiedname>
+        <briefdescription>
+<para>Returns inverse matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="277" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="277" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a0086fa1f74a945c29d363c050f01fdbd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Adjoint</definition>
+        <argsstring>() const</argsstring>
+        <name>Adjoint</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Adjoint</qualifiedname>
+        <briefdescription>
+<para>Returns adjoint matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="283" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="283" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2b727ea46ff8d1df2984c1f4b2db31be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator()</definition>
+        <argsstring>(size_t i, size_t j)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator()</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="292" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="292" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a921d4ec6207565016551f826a5c8afa6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator()</definition>
+        <argsstring>(size_t i, size_t j) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator()</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="297" column="13" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="297" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae4983a21bbe9211348f9f1878fd2ceeb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator+</definition>
+        <argsstring>(const Matrix &amp;m) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="302" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="302" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a80fb776d9ac25115e1a7449c057e3019" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator-</definition>
+        <argsstring>(const Matrix &amp;m) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="309" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="309" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae059abec989326ee016af59c762f2ed4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator*</definition>
+        <argsstring>(const Matrix &amp;m) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="316" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="316" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af258d8b8d489c49cbed9105b23662ac5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator*</definition>
+        <argsstring>(const T &amp;s) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator*</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="323" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="323" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea022ba70f9668ac9bade4dbb682855f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+        <definition>Matrix &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator=</definition>
+        <argsstring>(const Matrix &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="330" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="330" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa6559d5b738e8dff8bdd5059f802bb7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+        <definition>Matrix &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator+=</definition>
+        <argsstring>(const Matrix &amp;m)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="336" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="336" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac338817b7230f1351103f551a52393a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+        <definition>Matrix &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator-=</definition>
+        <argsstring>(const Matrix &amp;m)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="342" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="342" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2a6f6c72a9b466f36e509aff6918027d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+        <definition>Matrix &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator*=</definition>
+        <argsstring>(const T &amp;s)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator*=</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="348" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="348" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af990a6fb46929423cb29fb6044f3f844" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+        <definition>Matrix &amp; OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::operator*=</definition>
+        <argsstring>(const Matrix &amp;m)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::operator*=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="354" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="354" bodyend="358"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af0836d58d7206bffdf8c874268bdd21a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>static Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Zero</definition>
+        <argsstring>(int rows, int cols)</argsstring>
+        <name>Zero</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Zero</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cols</declname>
+        </param>
+        <briefdescription>
+<para>Makes a sparse matrix with zeros. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="54" column="19" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1abb656d08acd6fac6fcb881439824cf31" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
+        <definition>static Matrix OpenOasis::CommImp::Numeric::Matrix&lt; T &gt;::Unit</definition>
+        <argsstring>(int rows, int cols)</argsstring>
+        <name>Unit</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Matrix::Unit</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cols</declname>
+        </param>
+        <briefdescription>
+<para>Makes a sparse matrix with all diagonal elements to 1, and other elements to 0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="60" column="19" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="60" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Numeric/Matrix.h" line="21" column="1" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="22" bodyend="359"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ab4db54b7ddf4cc207c8732b3c827761b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Add</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7f72031d7cd5c4bfa7a544ac226703c2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Add</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a0086fa1f74a945c29d363c050f01fdbd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Adjoint</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2c0a67c6f8e507d0e3551d7c8ecd7aea" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Cols</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a87c4a055d370af873a915d63a9bb5108" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Data</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a13f4d0e8fbef9262c160cc05aa0b99ab" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Data</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a6208f271a5f63e898e91d2d61df29c9c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Determinant</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa255d9741403f6d394c03b893bc2354a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Diagonal</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa23c1c2e416ec92295379c7f09f8938e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Invert</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a5e1196e70f63a73f82afa03381fc4a34" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Matrix</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae6bd3ac90788044828a480abf8849b7e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Matrix</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac4d3737fe512b17426b6aedb4fb7d980" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Matrix</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a384f839df68e29d698517c44835e1821" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Matrix</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a66793f4945a980e94005122d75419209" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Matrix</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a49a22466f37970be368a3f7c2232e9f5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Max</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a05565af38c3e18ea1113fbbfb45faa4a" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>mCols</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a833e1e50b5042f0f13f315369528ef65" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>mData</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac56168382db54091610d67607b6bac01" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Min</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1abdee99b4361cca43488a10055f8e5cda" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>mRows</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7736d4a332dbb3e833849f873c53cb05" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Mul</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a5f29ec279e56eb6f2cc168a53082d8f4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Mul</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2b727ea46ff8d1df2984c1f4b2db31be" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a921d4ec6207565016551f826a5c8afa6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae059abec989326ee016af59c762f2ed4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af258d8b8d489c49cbed9105b23662ac5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2a6f6c72a9b466f36e509aff6918027d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator*=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af990a6fb46929423cb29fb6044f3f844" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator*=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae4983a21bbe9211348f9f1878fd2ceeb" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator+</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa6559d5b738e8dff8bdd5059f802bb7c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator+=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a80fb776d9ac25115e1a7449c057e3019" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator-</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac338817b7230f1351103f551a52393a0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator-=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea022ba70f9668ac9bade4dbb682855f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>operator=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a856310840af4cbb798ce66dc990a3e17" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Rows</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a02f0a34ca33cdb3df58bc7c9b2818188" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Set</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a8bb3b3a0cf646decf757831f24dde774" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Set</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea2e01157f510c232aef65d5cac06667" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a020b0ee1e398526d1251f9636994f1f5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>SetCol</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a157379aba161cef3ae32d724a5544a9e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>SetDiagonal</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7d36608a7af3d9c1c1eaea441deac349" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>SetRow</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7e2dc93be5680678f65d39ec4ad9e223" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>SetUnit</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af1c05aa76bab276262fd76d03f7e28ec" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>SetZero</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a409f22eceffa744c13f64432404829fa" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Sub</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2131e5f4ed4a74dd5da9763122471f24" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Sub</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a404bc30725ab34df336ffb6bc67ba7af" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Sum</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa36319ec923846700279f07c685841ca" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Trace</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af803d030ade35d52b666f1a8dd0a47a8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Transpose</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1abb656d08acd6fac6fcb881439824cf31" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Unit</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af0836d58d7206bffdf8c874268bdd21a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Zero</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,954 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::Vector</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>size_t</type>
+        <declname>N</declname>
+        <defname>N</defname>
+        <defval>3</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aabd37b8df7f3314377cc0ee3fa28e00e" prot="private" static="no" mutable="no">
+        <type>std::array&lt; T, N &gt;</type>
+        <definition>std::array&lt;T, N&gt; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::mElement</definition>
+        <argsstring></argsstring>
+        <name>mElement</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::mElement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="32" column="16" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3622d30cc61563707bf5f0f260c5a4f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::~Vector</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Vector</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::~Vector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="35" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a99e8150579c7f3bc9b5fbef6300b3a41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Vector</definition>
+        <argsstring>()</argsstring>
+        <name>Vector</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Vector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="37" column="5" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa50c96e1796492a2002482d20a5b57fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Vector</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>Vector</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Vector</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="42" column="5" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac4fb9e91eebc7d41c7f6acf00585ba44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Vector</definition>
+        <argsstring>(const std::array&lt; T, N &gt; &amp;other)</argsstring>
+        <name>Vector</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Vector</qualifiedname>
+        <param>
+          <type>const std::array&lt; T, N &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="47" column="5" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a4f88d6c9adade0ff7ab645ce634939bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Vector</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>Vector</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Vector</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="53" column="5" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="53" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a8b17118d0165deafaf90d56d09861707" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Vector</definition>
+        <argsstring>(const std::initializer_list&lt; U &gt; &amp;lst)</argsstring>
+        <name>Vector</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Vector</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; U &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="61" column="5" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a56c6cc24ef0128aba8927b00813580e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Set</definition>
+        <argsstring>(const std::initializer_list&lt; U &gt; &amp;lst)</argsstring>
+        <name>Set</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Set</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; U &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="71" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="71" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a1e21ceed64da45c547f729d720a4f9f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Set</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>Set</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Set</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="80" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="80" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1abf341be3ef5e4c7ade6b3c845ed23fba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::SetAt</definition>
+        <argsstring>(size_t i, T v, Args... args)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::SetAt</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="89" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="89" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aab65b3ec8e4185e2fbf27cc49dd5e5dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::SetAt</definition>
+        <argsstring>(size_t i, T v)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::SetAt</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="96" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa882bbd5f0c4f79e65feae634b2ff9dc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Size</definition>
+        <argsstring>() const</argsstring>
+        <name>Size</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="101" column="22" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a783faa2130388442db4bb30a8755a3d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator()</definition>
+        <argsstring>(size_t i)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator()</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="106" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac9e5ae8fcb778ecaa3680d3970549c89" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator()</definition>
+        <argsstring>(size_t i) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator()</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="111" column="13" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="111" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac857e64d4c10deaec79c0424d4e405ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Sum</definition>
+        <argsstring>() const</argsstring>
+        <name>Sum</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Sum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="120" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="120" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6f009e2b833044ace05bf926ddcb8c0c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Avg</definition>
+        <argsstring>() const</argsstring>
+        <name>Avg</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Avg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="129" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a4e7a5bec2c2c123c594b329840bf9bad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Min</definition>
+        <argsstring>() const</argsstring>
+        <name>Min</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Min</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="134" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="134" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a9ee38ec4e1948d88250b4c538cb86fe0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::AbsMin</definition>
+        <argsstring>() const</argsstring>
+        <name>AbsMin</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::AbsMin</qualifiedname>
+        <briefdescription>
+<para>Return the component of the vector hasing the minimum absolute value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="144" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="144" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac98e3f95367a8628519afbc79701609f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Max</definition>
+        <argsstring>() const</argsstring>
+        <name>Max</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="153" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="153" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a21e946e36eb394bd4a3a55ee0c725508" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::AbsMax</definition>
+        <argsstring>() const</argsstring>
+        <name>AbsMax</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::AbsMax</qualifiedname>
+        <briefdescription>
+<para>Return the component of the vector hasing the maximum absolute value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="163" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="163" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aff331eb9914b7bfc51b368825342d246" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Length</definition>
+        <argsstring>() const</argsstring>
+        <name>Length</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Length</qualifiedname>
+        <briefdescription>
+<para>Return the vector&apos;s length(magnitude). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="173" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a54b7b5f8c8d79e544e96de01dd9ead03" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::IsEqual</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>IsEqual</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::IsEqual</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="178" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="178" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a505187ce2630d20143cb216933a7f714" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Normalize</definition>
+        <argsstring>()</argsstring>
+        <name>Normalize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Normalize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="196" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="196" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1affd67afd803bce1d2ea9bfdaf8c0e113" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Add</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Add</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Add</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="205" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="205" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3ba5d066816151bc7833b560751e953d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Add</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>Add</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Add</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="211" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="211" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a90b4455ed02a2eff45d036348171174c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Sub</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Sub</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Sub</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="219" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="219" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa333806bf08e1f87d422e488a9117196" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Sub</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>Sub</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Sub</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="225" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="225" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a14602ff81445221b27fed2121da1196b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Mul</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Mul</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Mul</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="233" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="233" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2830f976f0aef7002a739fd78d673f26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Div</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Div</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Div</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="239" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="239" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a9ada005df2f543e6a33b7d1ab9367104" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Dot</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>Dot</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Dot</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="247" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="247" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2509cfb5ac41aed6b5a0a9e3484a1e1b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Cross</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>Cross</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Cross</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="258" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="258" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a07b05eec7fc31ea1c0625b8cb54ad12c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref>&lt; T &gt;</type>
+        <definition>Tensor&lt; T &gt; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::Dyadic</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>Dyadic</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::Dyadic</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="271" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="271" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a22e66470ee6343afa0dcb76341b92861" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator=</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="288" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="288" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a84574f03f80c869954f91fc7efd9da4f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator+</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="293" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="293" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a0383e1e782509d989c367ebb5f25b695" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator+</definition>
+        <argsstring>(T v) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator+</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="301" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="301" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6b2c987d28c5fe1531fca3285efe0165" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator+=</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="309" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="309" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1af6156c3de227332f20ba35ffbd15292f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator+=</definition>
+        <argsstring>(T v)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator+=</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="315" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="315" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1add76ca5977f5c2df8beaf6f1a292b9a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator-</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="321" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="321" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a22d6e84472d9d16d3b2339d5da47bdce" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator-</definition>
+        <argsstring>(T v) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator-</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="329" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="329" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ab2effdd63652f236b43fd82b8c70e98e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator-=</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="337" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="337" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2bdcb47012c0249708662092dc85e9dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator-=</definition>
+        <argsstring>(T v)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator-=</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="343" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="343" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a1189ea770dff02f3886cb8d566130770" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator*</definition>
+        <argsstring>(T v) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator*</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Override <computeroutput>*</computeroutput> operator for vector multiplication. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="350" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="350" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6fef6c976e6875b4fa942b0e54fdf08d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator*</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Override <computeroutput>*</computeroutput> operator for dot product. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="359" column="7" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="359" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3a2aa90a863701cf6adcc43ad2b029d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator*=</definition>
+        <argsstring>(T v)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator*=</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="364" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="364" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6ec3900732f987a10aa41bcb416d6c72" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator&amp;</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator&amp;</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Override <computeroutput>&amp;</computeroutput> operator for cross product. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="371" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="371" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1adc448e1cd64aff9664aa39be8b260439" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector &amp; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator&amp;=</definition>
+        <argsstring>(const Vector &amp;other)</argsstring>
+        <name>operator&amp;=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator&amp;=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="376" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="376" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aed43040d598e03132502cc4a634f3f31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref>&lt; T &gt;</type>
+        <definition>Tensor&lt; T &gt; OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator^</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>operator^</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator^</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Override <computeroutput>^</computeroutput> operator for dyadic product. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="383" column="12" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="383" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a15ec2827c4f2b6869adc51e8b4d1f7eb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator==</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="388" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="388" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a744163cba53a1814a84425111a628df4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Numeric::Vector&lt; T, N &gt;::operator!=</definition>
+        <argsstring>(const Vector &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Vector::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Vector.h" line="393" column="10" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="393" bodyend="396"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Numeric/Vector.h" line="23" column="1" bodyfile="Models/CommImp/Numeric/Vector.h" bodystart="24" bodyend="397"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a21e946e36eb394bd4a3a55ee0c725508" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>AbsMax</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a9ee38ec4e1948d88250b4c538cb86fe0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>AbsMin</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1affd67afd803bce1d2ea9bfdaf8c0e113" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Add</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3ba5d066816151bc7833b560751e953d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Add</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6f009e2b833044ace05bf926ddcb8c0c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Avg</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2509cfb5ac41aed6b5a0a9e3484a1e1b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Cross</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2830f976f0aef7002a739fd78d673f26" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Div</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a9ada005df2f543e6a33b7d1ab9367104" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Dot</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a07b05eec7fc31ea1c0625b8cb54ad12c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Dyadic</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a54b7b5f8c8d79e544e96de01dd9ead03" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>IsEqual</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aff331eb9914b7bfc51b368825342d246" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Length</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac98e3f95367a8628519afbc79701609f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Max</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aabd37b8df7f3314377cc0ee3fa28e00e" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>mElement</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a4e7a5bec2c2c123c594b329840bf9bad" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Min</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a14602ff81445221b27fed2121da1196b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Mul</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a505187ce2630d20143cb216933a7f714" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Normalize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a744163cba53a1814a84425111a628df4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator!=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6ec3900732f987a10aa41bcb416d6c72" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator&amp;</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1adc448e1cd64aff9664aa39be8b260439" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator&amp;=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a783faa2130388442db4bb30a8755a3d7" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac9e5ae8fcb778ecaa3680d3970549c89" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a1189ea770dff02f3886cb8d566130770" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6fef6c976e6875b4fa942b0e54fdf08d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3a2aa90a863701cf6adcc43ad2b029d9" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator*=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a84574f03f80c869954f91fc7efd9da4f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator+</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a0383e1e782509d989c367ebb5f25b695" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator+</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6b2c987d28c5fe1531fca3285efe0165" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator+=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1af6156c3de227332f20ba35ffbd15292f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator+=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1add76ca5977f5c2df8beaf6f1a292b9a8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator-</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a22d6e84472d9d16d3b2339d5da47bdce" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator-</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ab2effdd63652f236b43fd82b8c70e98e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator-=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2bdcb47012c0249708662092dc85e9dd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator-=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a22e66470ee6343afa0dcb76341b92861" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a15ec2827c4f2b6869adc51e8b4d1f7eb" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator==</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aed43040d598e03132502cc4a634f3f31" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>operator^</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a56c6cc24ef0128aba8927b00813580e9" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Set</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a1e21ceed64da45c547f729d720a4f9f0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Set</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1abf341be3ef5e4c7ade6b3c845ed23fba" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aab65b3ec8e4185e2fbf27cc49dd5e5dd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa882bbd5f0c4f79e65feae634b2ff9dc" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Size</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a90b4455ed02a2eff45d036348171174c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Sub</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa333806bf08e1f87d422e488a9117196" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Sub</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac857e64d4c10deaec79c0424d4e405ae" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Sum</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a99e8150579c7f3bc9b5fbef6300b3a41" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Vector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa50c96e1796492a2002482d20a5b57fa" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Vector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac4fb9e91eebc7d41c7f6acf00585ba44" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Vector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a4f88d6c9adade0ff7ab645ce634939bd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Vector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a8b17118d0165deafaf90d56d09861707" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>Vector</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3622d30cc61563707bf5f0f260c5a4f2" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Vector</scope><name>~Vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

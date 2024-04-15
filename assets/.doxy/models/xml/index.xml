@@ -1,0 +1,1142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.6" xml:lang="en-US">
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kind="class"><name>OpenOasis::CommImp::Numeric::Boundary</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1aa2a6f24a130ab7704267fbc0de4ed730" kind="function"><name>SetBoundaryValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a6939073a97903c16708d39713da468a1" kind="function"><name>SetBoundaryFlux</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a3fd931364c19d1d2399d4d88fcc3ef0a" kind="function"><name>GetType</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a95d7fc9cb6d47d90a9b3ebd72cfa2894" kind="function"><name>GetBoundaryCondition</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kind="struct"><name>OpenOasis::CommImp::Numeric::BoundaryCondition</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a7490ef63feebbcbad4872f765ced47ff" kind="variable"><name>type</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a547cc8faa5fbdc7f10957c62784cbb1d" kind="variable"><name>value</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1aa139f53ca1bf26bb9e54eaf2eb97aa83" kind="variable"><name>flux</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell" kind="struct"><name>OpenOasis::CommImp::Spatial::Cell</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1adf8d5b4194a7c6d3964f40e8f67b2c24" kind="variable"><name>centroid</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1aac4653f634727ff2768ecd9659c5b42f" kind="variable"><name>volume</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1a65144085fb4cfda15162e48d114fbea2" kind="variable"><name>surface</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1af0090036436fd42225851c67da628a47" kind="variable"><name>faceIndexes</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1a1ccc39712fe57e7d5b963abb98c38b8d" kind="variable"><name>neighbors</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell_1ae08a9e4a24a2f41bd0960eb5abdb6fc2" kind="variable"><name>subCells</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kind="struct"><name>OpenOasis::CommImp::Spatial::Coordinate</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a577c16c2692352b8fd43fb6f0a4904fb" kind="variable"><name>x</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a8a1310d76df3c71213a48009856d45f1" kind="variable"><name>y</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a85e71dc896847616efc3b0d5b8659ea7" kind="variable"><name>z</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a35956ff38627f09d776ff8026d92c117" kind="function"><name>Equals</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a4f7d49cb4e097019f1f5490a220e535d" kind="function"><name>Equals</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary" kind="class"><name>OpenOasis::CommImp::Numeric::DirichletBoundary</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a2efe3802dc451f732fe135ab248346e7" kind="variable"><name>mData</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a684f87778821f6d4bf1b170efc34a2b0" kind="function"><name>DirichletBoundary</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a652c061c7dd2b0c2d761784497bad1a0" kind="function"><name>DirichletBoundary</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a7e7493789ea9080da8e4243d80deee06" kind="function"><name>DirichletBoundary</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1aeb131467c1dd231731fda89b2a8da834" kind="function"><name>SetBoundaryValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a5f72ee899055b2e771b325b62490312a" kind="function"><name>SetBoundaryFlux</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1ae8763d604944271306fcc27a8296be6d" kind="function"><name>GetType</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a23de84b6567fd0e253525123859a4d30" kind="function"><name>GetBoundaryCondition</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix" kind="class"><name>OpenOasis::CommImp::Numeric::DoubleSparseMatrix</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a7f9cdaf24267444c0ee0df6e741956a3" kind="variable"><name>mRowCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a0a524f4056d56b246111eef7a89d0b25" kind="variable"><name>mColumnCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1aae7536a5ccb73963f0b3158df85d688e" kind="variable"><name>mValues</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a02f0cf323160d97067b347e9c5c25d50" kind="function"><name>DoubleSparseMatrix</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1acf776532db83d4b2cecd6e62261b8d95" kind="function"><name>GetRowCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1af1b25bceeb7540650a1858c2507cbf79" kind="function"><name>SetRowCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a73b9ed13b2c32985e83a4972a8ac09cb" kind="function"><name>GetColumnCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a7dd64e8685bc67eb3eb76a1a1a477136" kind="function"><name>SetColumnCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a65fdd76be050a9c7a874cd49ab1e35ff" kind="function"><name>Product</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a257ef230457bc9af058b808325844837" kind="function"><name>Product</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1ae5285c80b351aefbd8d66d648809fc68" kind="function"><name>IsCellEmpty</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a3139c8c04a6ac3007c2fc1233a52bd8d" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a050caf4a470f3e6d5e4afc821658b3e2" kind="function"><name>At</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a54b4b6d05a4445194f17d9de8cef3d93" kind="function"><name>SetValue</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_equal_func" kind="struct"><name>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::EqualFunc</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_equal_func_1a16085924d0c96599f212a5c6cbe96077" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_exchange_item_change_event_args" kind="class"><name>OpenOasis::ExchangeItemChangeEventArgs</name>
+    <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1a9b2c4cf90ae7079051ae589da1220744" kind="function"><name>GetExchangeItem</name></member>
+    <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1afbec1fac773958228386f119e8de468c" kind="function"><name>SetExchangeItem</name></member>
+    <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1a818baf8277ad3c0b2fa1ec14c67cd213" kind="function"><name>GetMessages</name></member>
+    <member refid="class_open_oasis_1_1_exchange_item_change_event_args_1a26fc5c80fdfa3c91c3429f820201a2b9" kind="function"><name>SetMessages</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face" kind="struct"><name>OpenOasis::CommImp::Spatial::Face</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face_1a20f576d5e649b3d3bd2725c686810b1b" kind="variable"><name>centroid</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face_1a2491f129ea4894760950ae6328b41c45" kind="variable"><name>perimeter</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face_1ad6a37f2e0214af3543b059b3d6a305aa" kind="variable"><name>area</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face_1a2cec8bbcc8b1cb376787d3fefcf0d900" kind="variable"><name>normal</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face_1ac2fc29f190f74e2070706e62f45d8d4a" kind="variable"><name>nodeIndexes</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face_1a5c6743f80c628d845d33202157ce12df" kind="variable"><name>cellIndexes</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face_1afe541aef1e003534e885d73c0ea506c2" kind="variable"><name>cellSides</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kind="class"><name>OpenOasis::CommImp::Numeric::Field</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ad3ef81d3f17fd00c43c8cb5b20d6fa4c" kind="variable"><name>mDomain</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a720f78f7c2ddc7d4dac5a81225a9f39a" kind="variable"><name>mType</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac8f9badcc6d94649bd7dad93e050e84e" kind="variable"><name>mData</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1afb172be2139f73ba601dd0c7525dcbcd" kind="variable"><name>mDefault</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7e28dae6d68f14dbb41d3282bd2da186" kind="function"><name>~Field</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7ba350e1c5074a5fb67b80c708c9db41" kind="function"><name>Field</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a27f369b21bf9aaf11b8d3d59b502d62c" kind="function"><name>Field</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9828b8f0ce3480c94aceb21e995444fd" kind="function"><name>Initialize</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a96c84634074f9c9d34e458d4aa1527da" kind="function"><name>Resize</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a20148bb3cbc2176bd001c564376b0535" kind="function"><name>Clean</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a90fde564762bb3dc7f07f3d422d06386" kind="function"><name>Clear</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ae3e09707942f5e8701556a8f2d1dc28f" kind="function"><name>ForEach</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a200572db7b652cd63486a619ab11abb5" kind="function"><name>Size</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a1ef6b14a4bc97a4828e19cb0cdef046b" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a2d45511475924bb9658c5177fad05124" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a32d9e1f9c6bb908ad7f77b67e9bef7ce" kind="function"><name>Data</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a42aec0bfe1445c179d063ad1b28e9c67" kind="function"><name>Type</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aa6dbec4eaab23a9219273ea91353b494" kind="function"><name>Range</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec1ba142f9ecbb822dbdbfa33e1efd66" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9f16cc8fe089c3536ecc1045799bb87c" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a6d89d83dbe016eedde1f511d57973ba8" kind="function"><name>operator=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac32428cba5d4facc1da808754858396a" kind="function"><name>operator=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a92eb5f1dad434f5b4b0a06fac42300cc" kind="function"><name>operator+</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec83aeca83e53d6a278cce79ee85b0f5" kind="function"><name>operator+=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a5e447ec33ca5bd3403dcf10e3c14d3cb" kind="function"><name>operator-</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a12741db58d23c8db9f134b343f5fdc61" kind="function"><name>operator-=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a4b94eec17c82fc749ad606566dac5c2d" kind="function"><name>operator*</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac2f84b381ead69f2c74469d26b0d1e01" kind="function"><name>operator*=</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver" kind="class"><name>OpenOasis::CommImp::Numeric::FVM::FvmSolver</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a4ecfdb46d5c97a4586206cd3ce097e26" kind="variable"><name>mGrid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a0270217cdaebedcbcf5444807d1a590d" kind="variable"><name>mCoeffMat</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a945eea7220ec9fdcb4608110992c3241" kind="variable"><name>mRhs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a06301317f819992f63bc73f768b92a75" kind="variable"><name>mBoundaries</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a85c3e3cbdefe986debe8b5e612d64f76" kind="variable"><name>mCoeffHeat</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1ab03548c8f0da41016ffd9d4db407944f" kind="variable"><name>mInitValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a319e1639fb4e662151b3bff9e30de476" kind="variable"><name>mTemps</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a5c7aa214d7161620dd697088364bc853" kind="function"><name>~FvmSolver</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a080b9a8fc3394156d373829e4fde6ebf" kind="function"><name>FvmSolver</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a0bf8e526619abf77591276c56f7f5479" kind="function"><name>SetBoundary</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a378463bcd3612c4a15211ec20676e07c" kind="function"><name>SetInitialValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1af45767e1240784055044a15ab5fbcf9e" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a65e12b05b1f7be8862fbcacd5ffe4af8" kind="function"><name>ParseDiffusionTerm</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a1b6b326242dada7ad83ecde17f07ffa5" kind="function"><name>Solve</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a417e1cbe7153e5472a8f52a09745bc5b" kind="function"><name>GetScalarSolutions</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator" kind="class"><name>OpenOasis::CommImp::Spatial::GeoCalculator</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a0e532b5478b382fb43bf764e336e735a" kind="variable"><name>EPSILON</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a5b7825b39aadfd6d9ff3f97bd307d11b" kind="function"><name>GetCellNodeIndexes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1ae0dd3eefaca5bf28476c6544317fca89" kind="function"><name>SortNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a8a98da37a4ad9f347de6769171838241" kind="function"><name>SortFaceNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1aecba4946331c70095bc56644bb64133b" kind="function"><name>CalculateCentroid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a94fde26c1a56e0493bac226be4649779" kind="function"><name>CalculateFaceCentroid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a203f2dca9d7564cfc3b1801a48903fb9" kind="function"><name>CalculateCellCentroid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a8f346c095b70e1ded18e33bb60cb699d" kind="function"><name>CalculateNormal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a11b6e2300d3b764518206aa528706b1d" kind="function"><name>CalculateFaceNormal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a2f65cd552a095c91ed28d3449d844d53" kind="function"><name>CalculateArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a71e9c40fc1c13a62eacaee4589bf190a" kind="function"><name>CalculateFaceArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1ab89ea0b95c82f057d1d0f5db56cb95a6" kind="function"><name>CalculateLength</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a966b7689237b8f23915983dfe26789dc" kind="function"><name>CalculateFacePerimeter</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1acb04703b7010b277f61d12b7276ae01d" kind="function"><name>CalculateVolume</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1acfbb192982e09b4f5a37f779308acbce" kind="function"><name>CalculateCellVolume</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1aca3f1a9ea8c3bd47c9f6a66c03cbd02e" kind="function"><name>ToVector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a88929e611e2ec4489910d65c472ef031" kind="function"><name>ChooseFoldedAxis</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator_1a68cc03f07b041d481e551c2c2d3ca04d" kind="function"><name>CompareNodeOrder</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kind="class"><name>OpenOasis::CommImp::Spatial::Grid</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a325a00301facccae10529fd400afad19" kind="variable"><name>mMesh</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a9adb42fadc86d31eb785c18f6c763338" kind="variable"><name>mRawNodesNum</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a44d1a46774b5686a4dc7e703d3490984" kind="variable"><name>mRawCellsNum</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a252ca9b276da70d47b9ea078f2e7cb81" kind="variable"><name>mRawFacesNum</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a8fffca7073b890b218f985dee6f390c0" kind="variable"><name>mBoundaryCells</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ac69caf9a7b4eab1e29e080324a5ab382" kind="variable"><name>mBoundaryFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a35f3a28a858070f00e89d86ed8b30720" kind="variable"><name>mPatches</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ac16b5aca056cf5704ed45147af8b5ae5" kind="variable"><name>mZones</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a6a6efdac1d9cce64335ab87ac6790e64" kind="variable"><name>mZoneCells</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ae8dc3b0a375417ac5dc24a3f199de1d4" kind="variable"><name>mCenterDists</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a15202e5584eeabd0745fe5044fe7df9c" kind="variable"><name>mBoundaryCenterDists</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a1334ad29f1bbe1ca3a2a76d731fdf445" kind="variable"><name>mFaceIntersection</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a44dd3b5d98151e8cbedecd54c67013b5" kind="variable"><name>mCellFaceWeight</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ada52680f05640d59f1005ed7ed361c41" kind="variable"><name>mFaceCorrVecs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aa4495be8281d320bf8926ca175eff10b" kind="function"><name>~Grid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a3576e7012653ad5c00dce6e96281f429" kind="function"><name>Grid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a35282f6fb8757b65a84d4caf458b02c1" kind="function"><name>Grid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a47310447987d2a11562a5067eebb8d3e" kind="function"><name>Type</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1abefd67083bcf97ac1032a3a442374acb" kind="function"><name>Activate</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a28bed42f0902097e9a700c6f1b6a94ac" kind="function"><name>RefineCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a5b7c0d45fc948d23a8b8f7ecbab8042d" kind="function"><name>RelaxCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a1176863a236508e11f3bb259b9159ea7" kind="function"><name>GetRawNumCells</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a9791ee9dc17dcccaf0d5546519c429e4" kind="function"><name>GetRawNumFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a172395179dffb38a07ca10069aadc66a" kind="function"><name>GetRawNumNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a6c539e74df3b359798fe1c4d0d65453f" kind="function"><name>GetNumCells</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a7f6939fbed038ddadf160de061310c29" kind="function"><name>GetNumFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a86d035162dea17c65dbb41b0868ce662" kind="function"><name>GetNumNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aafb58475420547679b6917116cb70b55" kind="function"><name>GetCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ab13771088b2bee78c2279a1355516aec" kind="function"><name>GetFace</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aba7d435c5110eee2c55cf6dc26ecf377" kind="function"><name>GetNode</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1acf5cabd1bae44d0f529fd524e7b4b3b0" kind="function"><name>GetPatchIds</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a0b54083127723fe5de9484d24f11d213" kind="function"><name>GetZoneIds</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1afa81844143e3510398b1bae9304def54" kind="function"><name>GetPatchFaceIndexes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1acbe2364d8dcd33c894301459d99a5b28" kind="function"><name>GetZoneCellIndexes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a2927c2a37a519d78c3779e14c4c9cd23" kind="function"><name>GetBoundaryFaceIndexes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a40069c544618b050172133444faef613" kind="function"><name>GetBoundaryCellIndexes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1adf2e2f02300681ba5470552aaaeecfdc" kind="function"><name>GetBoundaryCenterDistances</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a7bd99dfa76aa6fa05ab6c7ca33140aed" kind="function"><name>GetBoundaryCenterDistance</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ad134f51c64e60f3c253a3ab3e2cb952b" kind="function"><name>GetCellCenterDistances</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ace911cedbde30c46a3fd705b9ab66be2" kind="function"><name>GetCellCenterDistance</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a4d5f156b2231ddab2d63f4939cd26091" kind="function"><name>GetCellWeightAtFace</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a2725627791a6a6e97dc940c95a005aea" kind="function"><name>GetCellWeightAtFace</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1adb1ab61aab83bb0f2d1155c6555a4178" kind="function"><name>GetFaceCorrectionVector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a963ff8c528cbaee2fe04d6772e7bd50d" kind="function"><name>GetFaceCorrectionVector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ab3fffa3ed0ab1a53e1e5f8634337b0d7" kind="function"><name>CollectCellsSharedNode</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a8beeb2261a36e32f9d4dda0dd1f56e5d" kind="function"><name>CollectFacesSharedNode</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1adb1fb1eb0cc5319bf66e472832d6eb28" kind="function"><name>CollectCellsSharedFace</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a989342a57c69b38a41efa009c5f20ebf" kind="function"><name>CollectCellNeighbors</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a6707b9869acb99e26b91104e4665c1ce" kind="function"><name>CollectCellsInZone</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aa9fa3a41cfb4e8c4c8db438cc37da7d0" kind="function"><name>SortNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a51f118fd98e842f8a4fc28d124bd5c7a" kind="function"><name>CalculateFaceDirector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a3e53c002327032d63e760f8b0b963c13" kind="function"><name>CalculateFaceNormal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a16ef480272105cb72c6a018c9633e8c9" kind="function"><name>CalculateFaceArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ab557b2bfa95f8311d11a278d8d70f7ba" kind="function"><name>CalculateFacePerimeter</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a46d7f95d8e81092b59a4a1f91f58995d" kind="function"><name>CalculateCellSurface</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1af2e476257b0b05104aa9af14060545d2" kind="function"><name>CalculateCellVolume</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a3fff7d5506849b05a2470672bb45614c" kind="function"><name>CheckMesh</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a9d069e90e4db714df8fdbabb2e81d452" kind="function"><name>CalculateCellDistances</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aac080598fdccd4fc32bf9fd95ed79ccc" kind="function"><name>CalculateBoundaryCenterDistances</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ac67024f8a1ab7946eb5eb9c76234e0d0" kind="function"><name>CollectBoundaryFacesAndCells</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ae70744960977f6277792a4a3e64801e3" kind="function"><name>CalculateFaceIntersections</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a0b674053ab0afb95632c16d4d6890c53" kind="function"><name>CalculateFaceWeights</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1af9d6cd4c1398fa8b116c85179e05b251" kind="function"><name>CalculateFaceCorrectionVector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1af7c48cde11d415c8ef8c402547701095" kind="function"><name>CalculateDistance</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d" kind="class"><name>OpenOasis::CommImp::Spatial::Grid1D</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae5ceede3a5f826cf06cb98bde854d746" kind="function"><name>~Grid1D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a0e87f6760cf3076ea049f24254f9dd92" kind="function"><name>Grid1D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae4ca8f7edadebf69d4dad4ea8487e556" kind="function"><name>Grid1D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a4e9c511d71fb15c65dd1123b1d91f44d" kind="function"><name>Type</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a2f3dadc22e2f4d5be609463ffcc7eef9" kind="function"><name>RefineCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a26dac8b566fa815676f85e9e9eec938f" kind="function"><name>RelaxCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a815faaa1bfb285d0b2c0ee399356c81c" kind="function"><name>CollectCellsInZone</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a5c42075be779b082bcf98354bed7ba93" kind="function"><name>CalculateFaceNormal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a038db6d5e2c7ec74a312741b44ae9019" kind="function"><name>CalculateFaceArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1afd24fc8f1f8502bed6f6a537ab973464" kind="function"><name>CalculateFacePerimeter</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1af8885e4bb616dd28a2bc37f1da049b34" kind="function"><name>CalculateCellSurface</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1ae7aa3e3979b5d9d2ba984979982a68e9" kind="function"><name>CalculateCellVolume</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d_1a43f7a3a63b6dbe0fb29ac41efba762fd" kind="function"><name>CheckMesh</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d" kind="class"><name>OpenOasis::CommImp::Spatial::Grid2D</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1af15c3e9aa35113170d90be0b9eaf5b74" kind="function"><name>~Grid2D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a73d1338a31c06d92fe2b8872e7a9af9a" kind="function"><name>Grid2D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1af6dcb4ea1bdc0252bf41b90da4db87ed" kind="function"><name>Grid2D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a3a4dd6a87aff1ae77fc8bfc6132f9943" kind="function"><name>Type</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aaa082280a7206804af8929c6ca63af39" kind="function"><name>RefineCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1ae7521a7c5495ded79f658816c0dbf422" kind="function"><name>RelaxCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a7117c16f3d4b4f7549ee39ddad3a5b05" kind="function"><name>CollectCellsInZone</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a2a3e618fd60799d6eb0893d993f046e6" kind="function"><name>CalculateFaceNormal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a549b8bd6a3d05a7258d3c7c84d530638" kind="function"><name>CalculateFaceArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1ab50aa4681a27d40bd16dcab4e66d7e14" kind="function"><name>CalculateFacePerimeter</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a7b3e9487486087832a91dfbf4904fdd7" kind="function"><name>CalculateCellSurface</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aaf1c05e84fe73cb1ded5364f00f6327e" kind="function"><name>CalculateCellVolume</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aa56fe59fcc4d1308a06dff52da15775b" kind="function"><name>CheckMesh</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d" kind="class"><name>OpenOasis::CommImp::Spatial::Grid3D</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1aebe142feba089138826a393cd182aff8" kind="function"><name>~Grid3D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1a0164ba3d423f4f0f14e7fe155bc356d4" kind="function"><name>Grid3D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1a858c54f4923c6aad8b34aa4e687c73d0" kind="function"><name>Grid3D</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1adf0ac58d15881116207670d3ffddc2b4" kind="function"><name>Type</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1a04684b0454d1b0ad3555b085e8ba50fd" kind="function"><name>RefineCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1abf124dd5de307e8b02c6b1500e230ac1" kind="function"><name>RelaxCell</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1aa5b2fb1924d2b2e82f81ab31af581787" kind="function"><name>CollectCellsInZone</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1ad9e14957f64421ca5805dc17d7919021" kind="function"><name>CalculateFaceNormal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1a61ef99bdfaaa6b04ff75e67ffe7ba4bb" kind="function"><name>CalculateFaceArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1a68c15f76f5dd07ea88b5c42e95dc16d1" kind="function"><name>CalculateFacePerimeter</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1a52abacb33908bf757ae4c503bfe69cb6" kind="function"><name>CalculateCellSurface</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1aeebe424fee38be4c3aaa6924261f73f7" kind="function"><name>CalculateCellVolume</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d_1a427c136965567b599dc13a0a08ea58d2" kind="function"><name>CheckMesh</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_hash_func" kind="struct"><name>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::HashFunc</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_hash_func_1a6ecb7741388c9f45a6e3da3e49f03a7e" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model" kind="class"><name>OpenOasis::SystHeats::HeatConductionModel</name>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a252fc1ed727ded6ce5851fee898def74" kind="variable"><name>mTaskFile</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4b14a9fd8322f1647a79e7517e5a244c" kind="variable"><name>mOutputDir</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a502883e9b1ae59dc1d9cd9d66db44bd3" kind="variable"><name>mGrid</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a2501bed2de64142d9ee23d1f6979a688" kind="variable"><name>mTempValues</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aa082e2959c7a93ecd9936bf68034e0ab" kind="variable"><name>mSolver</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a93fb3fb0bc5515b9488cb973993a9c45" kind="variable"><name>mT0</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4b303c3d04b71001497548507fa91166" kind="variable"><name>mT0file</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a70f7337ff8305a45449f46ee9c8c4473" kind="variable"><name>mK</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1acd1163c028b7fcde0bb97bb8be21b56a" kind="variable"><name>mStart</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a33026507fcea9078ea2559878017f37f" kind="variable"><name>mEnd</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a696c149a03c5daeff20ade22505887a3" kind="variable"><name>mEigenSolver</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1abbaa0fec13476a777622d9053ddffe56" kind="variable"><name>mOutputVars</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a62cd6932c19466820c64a4c8a27f289b" kind="variable"><name>mPatchBounds</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1abb188b20bae1320481128d07ae475e88" kind="variable"><name>mBoundPatches</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1afae7351f6a289bb51d3df8dd375f80f4" kind="variable"><name>mCellOutputs</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a54ad6e3dc2424fa519605728199e1dfc" kind="variable"><name>sExchangeableStates</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a719f5abc8be7feaff8aa16fbfa9b6480" kind="variable"><name>sExchangeableObj</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a3745ea3f404390df69ec7d0bd7d795c3" kind="function"><name>HeatConductionModel</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a7258a1bef2e00ff966189738ff574fd3" kind="function"><name>~HeatConductionModel</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a5a966995c046052cd92d1eb76b8eb769" kind="function"><name>InitializeArguments</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a3f614ec155e8d7e80384b014e5b761c0" kind="function"><name>InitializeSpace</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4e0afb79084d952b393a6165638823cf" kind="function"><name>InitializeTime</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a520ab927727b68745d08b9be0e06618b" kind="function"><name>InitializeInputs</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1adc818f2a9410ebe6cff8b862b80b1331" kind="function"><name>InitializeOutputs</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a1ab769d3c2041fbe9e1bdee035a50d70" kind="function"><name>OnValidate</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a35a65c775127b6f28dec66524090e59c" kind="function"><name>PrepareInputs</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a63769872a17dbfa532947775c190b19b" kind="function"><name>PrepareOutputs</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aec5c66bb6766773e67a62b9199cb6451" kind="function"><name>PullInputs</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4bd47d67d1562280048d1dbc44d8dfc3" kind="function"><name>ApplyInputData</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a25c885902456404252191a8e070fc5e3" kind="function"><name>UpdateOutputs</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a8cb5685a2942fe6e6bdc70e262d31317" kind="function"><name>PerformTimestep</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aee0620acec2fd3e1bd0d216f1264b935" kind="function"><name>IsIterationConverged</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aa8cb2fa1cba1d693fd212cffe30abc05" kind="function"><name>GetTempQuantity</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1ad7f31549069199ac0f90a4a097bfcd12" kind="function"><name>CreateCellOutput</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1ab63bdb6b562fcd3a992fac86a81609f3" kind="function"><name>NodesInCell</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a2afeafaabb25f7674197be13a3af134b" kind="function"><name>GenerateCoeAndSrcMatrix</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a5f37fba218281774d0c59a2519e2a8b5" kind="function"><name>CalculateUniformCoef</name></member>
+    <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a74cf871f1f7a96c3d4342952cfde4e1c" kind="function"><name>SaveResult</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_adapted_output" kind="class"><name>OpenOasis::IAdaptedOutput</name>
+    <member refid="class_open_oasis_1_1_i_adapted_output_1a6ef6bc734a931e5b893f9451b7331c3b" kind="function"><name>GetArguments</name></member>
+    <member refid="class_open_oasis_1_1_i_adapted_output_1afc0f152ef3aeebe7f6c5dc32388b7b05" kind="function"><name>Initialize</name></member>
+    <member refid="class_open_oasis_1_1_i_adapted_output_1aaf26e121d139c431957af35344348f98" kind="function"><name>GetAdaptee</name></member>
+    <member refid="class_open_oasis_1_1_i_adapted_output_1a6ba52c51e8b47123c0b48a395fa3f476" kind="function"><name>SetAdaptee</name></member>
+    <member refid="class_open_oasis_1_1_i_adapted_output_1a9531e485613062024830fd1d29125d8a" kind="function"><name>Refresh</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_adapted_output_factory" kind="class"><name>OpenOasis::IAdaptedOutputFactory</name>
+    <member refid="class_open_oasis_1_1_i_adapted_output_factory_1a59e8fec563b82374d18f1884d84d3c5f" kind="function"><name>GetAvailableAdaptedOutputIds</name></member>
+    <member refid="class_open_oasis_1_1_i_adapted_output_factory_1a7105896e885eb25cd742055113e7b171" kind="function"><name>CreateAdaptedOutput</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_argument" kind="class"><name>OpenOasis::IArgument</name>
+    <member refid="class_open_oasis_1_1_i_argument_1a1f2d335bb484197fd2cb9b438762526d" kind="function"><name>GetValueType</name></member>
+    <member refid="class_open_oasis_1_1_i_argument_1ab18aae1acdd750e54fbb23b7581a5a82" kind="function"><name>IsOptional</name></member>
+    <member refid="class_open_oasis_1_1_i_argument_1a29968236da38adf1d8867684234d1f8f" kind="function"><name>IsReadOnly</name></member>
+    <member refid="class_open_oasis_1_1_i_argument_1ae40937af63362e203603b52fe0e87a7a" kind="function"><name>GetValue</name></member>
+    <member refid="class_open_oasis_1_1_i_argument_1a7325d42cad1e1c534a9b47dea8da0a53" kind="function"><name>SetValue</name></member>
+    <member refid="class_open_oasis_1_1_i_argument_1a112bbfabada7fc8477b86181a4434c9c" kind="function"><name>GetDefaultValue</name></member>
+    <member refid="class_open_oasis_1_1_i_argument_1a5ac9c047bed9319e1e79761046fbbdd4" kind="function"><name>GetPossibleValues</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_base_exchange_item" kind="class"><name>OpenOasis::IBaseExchangeItem</name>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a11f50a5b03dc04b237e029257d4e4436" kind="typedef"><name>ListenFunc</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a9a5e35bb80130907522907029370cdf5" kind="function"><name>GetValueDefinition</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1af3729ac3117c641521c1d4115a5f73ad" kind="function"><name>Reset</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a5ef3ba9e1070999e62761950f9198772" kind="function"><name>GetValues</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1aba32a53f63e74a03eebb044ec452d4d7" kind="function"><name>GetElementSet</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a74e3d6b09dbd1fb58b009ba0a4af18db" kind="function"><name>SetValues</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a705d09b3618098100e8963f54a39b745" kind="function"><name>GetTimeSet</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a592bcfe9d29227cf535147371b96c937" kind="function"><name>SetTimeSet</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a4be867eb35086189dbd669861b0d043f" kind="function"><name>SetElementSet</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a91cb2450e540b44614b87f70360637ba" kind="function"><name>GetComponent</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1ae54b2fe5cc53af7c479673b18decc4d9" kind="function"><name>AddListener</name></member>
+    <member refid="class_open_oasis_1_1_i_base_exchange_item_1a966e9448d121dacb08a10424b26e19ef" kind="function"><name>RemoveListener</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_byte_state_converter" kind="class"><name>OpenOasis::IByteStateConverter</name>
+    <member refid="class_open_oasis_1_1_i_byte_state_converter_1ab9cfb7748cb56809b42fa123574e4add" kind="function"><name>ConvertToByteStream</name></member>
+    <member refid="class_open_oasis_1_1_i_byte_state_converter_1a54936763e611f820a62bed17ff2df898" kind="function"><name>ConvertFromByteStream</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_category" kind="class"><name>OpenOasis::ICategory</name>
+    <member refid="class_open_oasis_1_1_i_category_1a447638bef76a10c180ef98f57b2626c4" kind="function"><name>GetValue</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_additional_control_1_1_i_comparable" kind="class"><name>OpenOasis::AdditionalControl::IComparable</name>
+    <member refid="class_open_oasis_1_1_additional_control_1_1_i_comparable_1a2263aac4b1cd0ab3617a8e443fc57112" kind="function"><name>CompareTo</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_describable" kind="class"><name>OpenOasis::IDescribable</name>
+    <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" kind="function"><name>GetCaption</name></member>
+    <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" kind="function"><name>SetCaption</name></member>
+    <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" kind="function"><name>GetDescription</name></member>
+    <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" kind="function"><name>SetDescription</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_dimension" kind="class"><name>OpenOasis::IDimension</name>
+    <member refid="class_open_oasis_1_1_i_dimension_1a3c00ea65f80f4195a0f6d9421e868692" kind="function"><name>GetPower</name></member>
+    <member refid="class_open_oasis_1_1_i_dimension_1a4441eabf9f3bd4a1e7332e7e4641030b" kind="function"><name>SetPower</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_element_set" kind="class"><name>OpenOasis::IElementSet</name>
+    <member refid="class_open_oasis_1_1_i_element_set_1a2a2879f6c45320260fc8deb3b2b8512c" kind="function"><name>GetElementType</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1a68a357c33e9017d237ea1fb72634bc95" kind="function"><name>GetElementIndex</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1addfb22b03b7aaf1ef3cf4e4a4fc59182" kind="function"><name>GetElementId</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1a2b60e0f8a139a3a902ceee11ef137766" kind="function"><name>GetFaceCount</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1a58e9188e4d13dc01f7364d148ac56a21" kind="function"><name>GetNodeCount</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1a4064e9d823d4e15a1e5c7e4b056adf23" kind="function"><name>GetFaceNodeIndices</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1afa6785ed9eaf45db349cf750a01bdf09" kind="function"><name>GetNodeXCoordinate</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1acde51ce6e0f704eb56ead0f906228649" kind="function"><name>GetNodeYCoordinate</name></member>
+    <member refid="class_open_oasis_1_1_i_element_set_1ae97330b2ab6039593bd46b79255316d8" kind="function"><name>GetNodeZCoordinate</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_identifiable" kind="class"><name>OpenOasis::IIdentifiable</name>
+    <member refid="class_open_oasis_1_1_i_identifiable_1a808d8d4b970d54a19fd19857518fe8d0" kind="function"><name>GetId</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_input" kind="class"><name>OpenOasis::IInput</name>
+    <member refid="class_open_oasis_1_1_i_input_1a1a50fef2fd13dc673ca2a5d599800d1f" kind="function"><name>GetProviders</name></member>
+    <member refid="class_open_oasis_1_1_i_input_1a78ee47ec8a7da0cc7f501d2ae6dc2281" kind="function"><name>AddProvider</name></member>
+    <member refid="class_open_oasis_1_1_i_input_1a162082f7f441107f3215c69d45500d58" kind="function"><name>RemoveProvider</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_linkable_component" kind="class"><name>OpenOasis::ILinkableComponent</name>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1acdffb0136e0b0de839fc6a2a218e85bc" kind="typedef"><name>ListenFunc</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1a2ee84c5129ce107eec5e896c7dce7c0a" kind="function"><name>GetArguments</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1aed1297b7aabdcd4cfa98cf7b828fbd0a" kind="function"><name>GetStatus</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1a317645510711158b9209a3b28d326fa0" kind="function"><name>GetInputs</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1a2f81c33e8562380cd5f8a71850730bb6" kind="function"><name>GetOutputs</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1a698e777b1879317adea98543ad8309ca" kind="function"><name>GetAdaptedOutputFactories</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1ae1b139821f150e03a128a62a1cdd369c" kind="function"><name>Initialize</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1af69b9768dba1528873d8f9f503a3427a" kind="function"><name>Validate</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1ab3fa040fb160c57d657c4e0baef525d0" kind="function"><name>Prepare</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1ab2a08207594bdb44805c0472e392b807" kind="function"><name>Update</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1a18193bc5ec4bdec401d585e98f947fce" kind="function"><name>Finish</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1a997921d7b48b7cec7258c651af99b3e5" kind="function"><name>RemoveListener</name></member>
+    <member refid="class_open_oasis_1_1_i_linkable_component_1af891dea5c7a7c4e43ba3c7f62a17a72a" kind="function"><name>AddListener</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_manage_state" kind="class"><name>OpenOasis::IManageState</name>
+    <member refid="class_open_oasis_1_1_i_manage_state_1a3b30673260f54999d3859de6992a719b" kind="function"><name>KeepCurrentState</name></member>
+    <member refid="class_open_oasis_1_1_i_manage_state_1a96fd1dd0186e4b08bbaf59a03f4e2c4a" kind="function"><name>RestoreState</name></member>
+    <member refid="class_open_oasis_1_1_i_manage_state_1a1cdf33d1df4ae5b2768f73d0e6413fc3" kind="function"><name>ClearState</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index" kind="class"><name>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Index</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index_1af822dff452ffb4a95237a1c654c1f1f7" kind="variable"><name>mRow</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index_1a38f9c4c5cbd71a718a8bdcbbcd5c07fc" kind="variable"><name>mCol</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index_1ab8529c5698fb14db0d959b3607220b57" kind="function"><name>Index</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index_1af1f9e8b3febfd1b0a401dfbc5363eb93" kind="function"><name>Index</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_output" kind="class"><name>OpenOasis::IOutput</name>
+    <member refid="class_open_oasis_1_1_i_output_1ae4fbdfa83c8c7ccfc8358578bcfbc8f8" kind="function"><name>GetConsumers</name></member>
+    <member refid="class_open_oasis_1_1_i_output_1a0214b1638e685b1779522d0a76dfe22b" kind="function"><name>AddConsumer</name></member>
+    <member refid="class_open_oasis_1_1_i_output_1abc32403075d7dc7fa59c0e2304a1718d" kind="function"><name>RemoveConsumer</name></member>
+    <member refid="class_open_oasis_1_1_i_output_1a3e7a00b0142bc18530bf235a80c97803" kind="function"><name>GetAdaptedOutputs</name></member>
+    <member refid="class_open_oasis_1_1_i_output_1aa1f5cf04d51205b8e53adb837939251f" kind="function"><name>RemoveAdaptedOutput</name></member>
+    <member refid="class_open_oasis_1_1_i_output_1aefd3ed00664b1d1753e28db2356bf70a" kind="function"><name>AddAdaptedOutput</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_quality" kind="class"><name>OpenOasis::IQuality</name>
+    <member refid="class_open_oasis_1_1_i_quality_1a111afba5afdbae29d0d8cf86ea6e992e" kind="function"><name>GetCategories</name></member>
+    <member refid="class_open_oasis_1_1_i_quality_1af25dcdd7657076b4fc51add2408611a9" kind="function"><name>IsOrdered</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_quantity" kind="class"><name>OpenOasis::IQuantity</name>
+    <member refid="class_open_oasis_1_1_i_quantity_1a6021d58c406667e46661168438001b81" kind="function"><name>GetUnit</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_additional_control_1_1_i_space_extension" kind="class"><name>OpenOasis::AdditionalControl::ISpaceExtension</name>
+    <member refid="class_open_oasis_1_1_additional_control_1_1_i_space_extension_1a10f7f01d9a969d7e537f71e78c4355db" kind="function"><name>GetSpatialDefinition</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_spatial_definition" kind="class"><name>OpenOasis::ISpatialDefinition</name>
+    <member refid="class_open_oasis_1_1_i_spatial_definition_1ad78968c1aaa0144e95145fbe66670b01" kind="function"><name>GetSpatialReferenceSystem</name></member>
+    <member refid="class_open_oasis_1_1_i_spatial_definition_1a382e067951deb05e30d9351311e68f4d" kind="function"><name>GetElementCount</name></member>
+    <member refid="class_open_oasis_1_1_i_spatial_definition_1a19cb250dc25438d7fe5905a252c6c3e5" kind="function"><name>GetVersion</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_time" kind="class"><name>OpenOasis::ITime</name>
+    <member refid="class_open_oasis_1_1_i_time_1ae6c23ac6f919ca9af79a441f2066ca46" kind="function"><name>GetTimeStamp</name></member>
+    <member refid="class_open_oasis_1_1_i_time_1a54a06a160cc5fee0b5ef12976955d552" kind="function"><name>GetDurationInDays</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_additional_control_1_1_i_time_extension" kind="class"><name>OpenOasis::AdditionalControl::ITimeExtension</name>
+    <member refid="class_open_oasis_1_1_additional_control_1_1_i_time_extension_1a6e125dfbfe3e637f73a8ef8c15fd096d" kind="function"><name>GetTimeExtent</name></member>
+    <member refid="class_open_oasis_1_1_additional_control_1_1_i_time_extension_1aeeb6d02ad5d69ba84d555ddc9e9aca8a" kind="function"><name>GetCurrTime</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_time_set" kind="class"><name>OpenOasis::ITimeSet</name>
+    <member refid="class_open_oasis_1_1_i_time_set_1aa9a7ea8753bffb429c0a1e6de71c7165" kind="function"><name>GetTimes</name></member>
+    <member refid="class_open_oasis_1_1_i_time_set_1adfbc65273ff97f072d84e5824b68a4fe" kind="function"><name>RemoveTime</name></member>
+    <member refid="class_open_oasis_1_1_i_time_set_1a2fdca5320e6669453150d69a7f66c731" kind="function"><name>AddTime</name></member>
+    <member refid="class_open_oasis_1_1_i_time_set_1aea3a636b96717b7a5f7430f3da69c135" kind="function"><name>HasDurations</name></member>
+    <member refid="class_open_oasis_1_1_i_time_set_1a95cbadb731bf1cde8ea7db2288604f0d" kind="function"><name>GetOffsetFromUtcInHours</name></member>
+    <member refid="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" kind="function"><name>GetTimeHorizon</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_unit" kind="class"><name>OpenOasis::IUnit</name>
+    <member refid="class_open_oasis_1_1_i_unit_1a36367e3ad5015930b2c14c43b45e8350" kind="function"><name>GetDimension</name></member>
+    <member refid="class_open_oasis_1_1_i_unit_1ace9a0971f4769a494c4c483d806fdcd3" kind="function"><name>GetConversionFactorToSI</name></member>
+    <member refid="class_open_oasis_1_1_i_unit_1aed97420a36ac68f0f49764193f6effec" kind="function"><name>GetOffSetToSI</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_value_definition" kind="class"><name>OpenOasis::IValueDefinition</name>
+    <member refid="class_open_oasis_1_1_i_value_definition_1a5bd532cff498fc55ab5c1b8f93892dc1" kind="function"><name>GetValueType</name></member>
+    <member refid="class_open_oasis_1_1_i_value_definition_1a0f4111f71fa7b1c864b9548d6d70befa" kind="function"><name>GetMissingDataValue</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_i_value_set" kind="class"><name>OpenOasis::IValueSet</name>
+    <member refid="class_open_oasis_1_1_i_value_set_1a7f6c5577289774d133853b5c7d89bf83" kind="function"><name>GetValueDefinition</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1a22425ebafd249be83495f0ef4375aca7" kind="function"><name>GetNumberOfIndices</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1a2f442a385b27c6152ef569bd0485f222" kind="function"><name>GetIndexCount</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1af6ec749edd7baa719b60fe694b634895" kind="function"><name>GetValue</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1a9aa978881c192a16e852ffcf1fd838a8" kind="function"><name>RemoveValue</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1a3423e65be94aa92b4da73905d7f67bea" kind="function"><name>SetOrAddValue</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1a1da387942656dc8539d45d5aa2c623fa" kind="function"><name>IsValues2D</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1a15758881e825f9eec7a368055692a276" kind="function"><name>GetTimeSeriesValuesForElement</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1abef75ad9ea445a39287f6204abe50468" kind="function"><name>SetTimeSeriesValuesForElement</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1ae7c3539914a8e7747b38fa4627678316" kind="function"><name>SetElementValuesForTime</name></member>
+    <member refid="class_open_oasis_1_1_i_value_set_1a15e3267ca676ffcbbb0da089a8dce715" kind="function"><name>GetElementValuesForTime</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian" kind="class"><name>OpenOasis::CommImp::Numeric::Laplacian</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian_1ac6fcf167c8ac24da76a4e6d35e54cc0d" kind="variable"><name>mGrid</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian_1ac50585b1365c3ef6bad426b68177e8fd" kind="function"><name>~Laplacian</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian_1a4ffe563e9b98cc1b75b40d51887876b4" kind="function"><name>Laplacian</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian_1adeeb8cee34c0aa438dfd8dff91c03c68" kind="function"><name>Discretize</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_linkable_component_status_change_event_args" kind="class"><name>OpenOasis::LinkableComponentStatusChangeEventArgs</name>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1ac480a04dc900d91d62574f859d6ab33f" kind="function"><name>GetLinkableComponent</name></member>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1aee766c29f24945a98d89e9435fbe9263" kind="function"><name>SetLinkableComponent</name></member>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a042b26bdc0f06148dd2ca9cfac516ddf" kind="function"><name>GetOldStatus</name></member>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1ab22247d1211986a427d09dedd7268c84" kind="function"><name>SetOldStatus</name></member>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a4309127e6feec5d655d53bfaf34cf0b1" kind="function"><name>GetNewStatus</name></member>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a3dc4820aef91a99225fc722c00317e73" kind="function"><name>SetNewStatus</name></member>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a60fc0841bb85318d2399521d4320feb6" kind="function"><name>GetMessages</name></member>
+    <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a12f531ea4c047271447c8962377f8490" kind="function"><name>SetMessages</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader" kind="class"><name>OpenOasis::CommImp::IO::LinkLoader</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1abe75ff3076acc9628db852c3cc1eb0ea" kind="typedef"><name>ComponentInfo</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ab80b39d0c79dd6e0c1f7393e1d2da0c9" kind="typedef"><name>ElementInfo</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a84d6fcb5df0cfbbcf9eac53fcfc39651" kind="variable"><name>mLinkFile</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a3c11317aa512d29fd817aa1adabc1100" kind="variable"><name>mLoader</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a310030b4e8c5798dbfb7460c063628aa" kind="variable"><name>mOutputConsumers</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a6a3d45ed1f8a4d66be9450449966d0ca" kind="variable"><name>mInputProviders</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa2512ceea14bb6be898c18b6d30eb4ed" kind="variable"><name>mComps</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a1dc109db66976a30f27aaa1f2b981774" kind="variable"><name>mInps</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa21b67987be4ff72dc06b1cbefef9663" kind="variable"><name>mOuts</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a1e1ad85c3e2e2a6d1bcdb05859c9696c" kind="variable"><name>mIterGroups</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a2373346d8e3e45d52a79137fc7724f4e" kind="variable"><name>mIterConfigs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ac4a5d46db9b6f9642d71e4381ea9e956" kind="function"><name>LinkLoader</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a0528c98b41048c1dff700b5c29ca9bfc" kind="function"><name>Load</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a37c63554827c402a0b5a224efd58749c" kind="function"><name>GetComponentIds</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1acf66ba3dded54b0bd72f64ec85fddeb8" kind="function"><name>GetComponentInfo</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1af62b55c932bb3f247d3f38e8ecda5287" kind="function"><name>GetComponentOutputs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a66eaa6e7616472fb457b9b62f3d5f2f8" kind="function"><name>GetOutputConsumers</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ac5779fc137246bcacd26be343097e7f6" kind="function"><name>GetComponentInputs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aee045f20eb6e2fcf544d29b0d49c3bf5" kind="function"><name>GetInputProviders</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a20d7accc6dae8b9061f7fca68cbdf017" kind="function"><name>GetIteratorGroups</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a93dc7f7f4a2f68e0cfccf6aee207afcf" kind="function"><name>GetIteratorConfigs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1abf2dd11561ce230c3167f9bdb77a6b5d" kind="function"><name>LoadComponents</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1aa859a7a58622d24d39535a4ecc1d52f9" kind="function"><name>LoadLinks</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a3e881bc32b239b2b88aaa6324b2de323" kind="function"><name>LoadPipeline</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a88e40f83f68a3fa64b9f3b19d5c26182" kind="function"><name>CollectExchangeItemMap</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1ab58d6dba632eca1f3f182c709b4ec54f" kind="function"><name>CollectIteratorGroups</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1acac2e8c2bbc4fe8a3fc6747fd6d6bbbe" kind="function"><name>GenerateUniqueElementId</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader_1a7122043f80cd578fc500100a177f9623" kind="function"><name>SplitUniqueElementId</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kind="class"><name>OpenOasis::CommImp::Numeric::Matrix</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1abdee99b4361cca43488a10055f8e5cda" kind="variable"><name>mRows</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a05565af38c3e18ea1113fbbfb45faa4a" kind="variable"><name>mCols</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a833e1e50b5042f0f13f315369528ef65" kind="variable"><name>mData</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a5e1196e70f63a73f82afa03381fc4a34" kind="function"><name>Matrix</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae6bd3ac90788044828a480abf8849b7e" kind="function"><name>Matrix</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac4d3737fe512b17426b6aedb4fb7d980" kind="function"><name>Matrix</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a384f839df68e29d698517c44835e1821" kind="function"><name>Matrix</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a66793f4945a980e94005122d75419209" kind="function"><name>Matrix</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a02f0a34ca33cdb3df58bc7c9b2818188" kind="function"><name>Set</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a8bb3b3a0cf646decf757831f24dde774" kind="function"><name>Set</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea2e01157f510c232aef65d5cac06667" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a157379aba161cef3ae32d724a5544a9e" kind="function"><name>SetDiagonal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7d36608a7af3d9c1c1eaea441deac349" kind="function"><name>SetRow</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a020b0ee1e398526d1251f9636994f1f5" kind="function"><name>SetCol</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af1c05aa76bab276262fd76d03f7e28ec" kind="function"><name>SetZero</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7e2dc93be5680678f65d39ec4ad9e223" kind="function"><name>SetUnit</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa36319ec923846700279f07c685841ca" kind="function"><name>Trace</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a6208f271a5f63e898e91d2d61df29c9c" kind="function"><name>Determinant</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa255d9741403f6d394c03b893bc2354a" kind="function"><name>Diagonal</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a87c4a055d370af873a915d63a9bb5108" kind="function"><name>Data</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a13f4d0e8fbef9262c160cc05aa0b99ab" kind="function"><name>Data</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a49a22466f37970be368a3f7c2232e9f5" kind="function"><name>Max</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac56168382db54091610d67607b6bac01" kind="function"><name>Min</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a856310840af4cbb798ce66dc990a3e17" kind="function"><name>Rows</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2c0a67c6f8e507d0e3551d7c8ecd7aea" kind="function"><name>Cols</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a404bc30725ab34df336ffb6bc67ba7af" kind="function"><name>Sum</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ab4db54b7ddf4cc207c8732b3c827761b" kind="function"><name>Add</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7f72031d7cd5c4bfa7a544ac226703c2" kind="function"><name>Add</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a409f22eceffa744c13f64432404829fa" kind="function"><name>Sub</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2131e5f4ed4a74dd5da9763122471f24" kind="function"><name>Sub</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7736d4a332dbb3e833849f873c53cb05" kind="function"><name>Mul</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a5f29ec279e56eb6f2cc168a53082d8f4" kind="function"><name>Mul</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af803d030ade35d52b666f1a8dd0a47a8" kind="function"><name>Transpose</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa23c1c2e416ec92295379c7f09f8938e" kind="function"><name>Invert</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a0086fa1f74a945c29d363c050f01fdbd" kind="function"><name>Adjoint</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2b727ea46ff8d1df2984c1f4b2db31be" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a921d4ec6207565016551f826a5c8afa6" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae4983a21bbe9211348f9f1878fd2ceeb" kind="function"><name>operator+</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a80fb776d9ac25115e1a7449c057e3019" kind="function"><name>operator-</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae059abec989326ee016af59c762f2ed4" kind="function"><name>operator*</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af258d8b8d489c49cbed9105b23662ac5" kind="function"><name>operator*</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea022ba70f9668ac9bade4dbb682855f" kind="function"><name>operator=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa6559d5b738e8dff8bdd5059f802bb7c" kind="function"><name>operator+=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac338817b7230f1351103f551a52393a0" kind="function"><name>operator-=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2a6f6c72a9b466f36e509aff6918027d" kind="function"><name>operator*=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af990a6fb46929423cb29fb6044f3f844" kind="function"><name>operator*=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af0836d58d7206bffdf8c874268bdd21a" kind="function"><name>Zero</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1abb656d08acd6fac6fcb881439824cf31" kind="function"><name>Unit</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kind="struct"><name>OpenOasis::CommImp::Spatial::Mesh</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1a2310fa60c21b7ac7c3e953159fb19de4" kind="variable"><name>nodes</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1a821bf77b778348c54d8a05580f536c7f" kind="variable"><name>faces</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1aa89fba578c20e17f87dff12a93d4b3ab" kind="variable"><name>cells</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader" kind="class"><name>OpenOasis::CommImp::IO::MeshLoader</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a5a75c474dce0196d3cd5273fba35bb9a" kind="variable"><name>mMeshDir</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a4c947997e6da6dd1dc8b6a89e246ca29" kind="variable"><name>mPatchFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a72e37448bf19a4c6708a57a84042f4b2" kind="variable"><name>mZoneFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a069639c471626a9574c19aea8a4780ef" kind="variable"><name>mNodeCoords</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a6f60048071166090b127f4c86f8574d8" kind="variable"><name>mFaceCoords</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abcb7a9e1956a5c6e5125176314284d44" kind="variable"><name>mCellCoords</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a35b30792158d431a6be9f52e71fc4bff" kind="variable"><name>mFaceNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ac6733c1866675bad27f8389e63941db9" kind="variable"><name>mCellFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a28c8098e84d21d056dd4af71358908c6" kind="function"><name>MeshLoader</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1aed018948c8fbef3a5f44db05c0f32c4e" kind="function"><name>~MeshLoader</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a387ed38c4231fd1231dd7fa007a08621" kind="function"><name>Load</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a1468ee90521471f9984f3133190bb5d9" kind="function"><name>GetPatches</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a1686e5e1d1482350af0dbb1433cbf3fc" kind="function"><name>GetZones</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abff3e7f5eaaa1d0d181e5384f2efaa0b" kind="function"><name>GetNodeCoordinates</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ab1bcd11a23f0212082d8ca0922342fb0" kind="function"><name>GetFaceCoordinates</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a83c328935dec757531a18858ef9cbff5" kind="function"><name>GetCellCoordinates</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1af2fe9b00a6f5cbd362fc8d9faaba75ea" kind="function"><name>GetFaceNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a7f004a02a004f2e472df9c61d945f868" kind="function"><name>GetCellFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a46574acb75318f1d3a944261afaf7adc" kind="function"><name>LoadNodes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a7c899ac11a03542c44e5f7562d45a5c9" kind="function"><name>LoadFaces</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a4e5700d6616ab579dd86e4864339df96" kind="function"><name>LoadCells</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1ac610e73290b23f06ce64451d3e70305b" kind="function"><name>LoadZones</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1af24e12bcbd73dad31e40853de9dcc16b" kind="function"><name>LoadPatches</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1abf85ce4f6e293a8eb7df8632a87de809" kind="function"><name>CheckIds</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1a91cbc89e3f4bb66faab7201a80831aa7" kind="function"><name>GenerateFaceCoordinates</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader_1aaef4506a75cc394c76b45f5bf4202afd" kind="function"><name>GenerateCellCoordinates</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kind="struct"><name>OpenOasis::CommImp::Spatial::Node</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1acc327fbd487236d93043ca2344991602" kind="variable"><name>coor</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1a720a8be17a735d26cc37997c557631d2" kind="variable"><name>faceIndexes</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node_1a7ab91acb46924e2dd8815de3932e8da4" kind="variable"><name>cellIndexes</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator" kind="class"><name>OpenOasis::CommImp::Numeric::Operator</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1af156a0f2477366dfd5f3465d9a9a3f06" kind="variable"><name>mCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a6acee42b5225a3574315d971413cd6cc" kind="variable"><name>mScalarCoeffs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a178b5b06d4f47ca10d97b09f8bdc4ad0" kind="variable"><name>mVectorCoeffs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adde182d73491e15d60f895610952515f" kind="variable"><name>mTensorCoeffs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ac83a04ac747704e8069cd6553fb82d37" kind="variable"><name>mboundaries</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0994a06bd735c84e02ea58ff5a8079ab" kind="function"><name>~Operator</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a9209a2cd6a101301c02f18ae09eb5915" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ae8c32fc86d3edddf38e8c7ffb688bcc9" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0f9e8e15c52ace2fc0392569a90a2d4f" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a127681f5b8a9045276d3d29ec8947552" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1afef2e593e89e95899bc84d76b97ea2a1" kind="function"><name>SetBoundaryCondition</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adb2a610af5eff9385b5b346ddaf14d74" kind="function"><name>Discretize</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a54e4c1080538b30a6befe27e9fa7fba8" kind="function"><name>Discretize</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1aa233a3df86816b489e42d704e7067357" kind="function"><name>Discretize</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kind="class"><name>OpenOasis::CommImp::Numeric::ScalarField</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field_1a0a92ed669772c35cccb0786ee5aa6a73" kind="function"><name>~ScalarField</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field_1a44ab4937ca501798a325110eaf2cd22d" kind="function"><name>ScalarField</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field_1aa7b8d5cba8d150806edbd7fd5c526f07" kind="function"><name>ScalarField</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver" kind="class"><name>OpenOasis::CommImp::Numeric::Solver</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a348b2345b05e9ba35df583f0d9786fdb" kind="function"><name>SetBoundary</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae027d2b890f888f5807d1ea6e2a3c396" kind="function"><name>SetInitialValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1afe01d09ce3f0021ff55667a9d77d8bc6" kind="function"><name>SetInitialValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a74555df964ce184239eba8252e556114" kind="function"><name>SetInitialValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a54349f2c4544472622bab4a90fa2991f" kind="function"><name>SetInitialValue</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aeac66a323bf200585eba8f729d476b12" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ab6ed4c2b562a8875fdfcaff2f755152b" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a5ffd902f27b3be2d8005b46bae61dea6" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a82db8f8f49f14991f0efa6a046b0c1e8" kind="function"><name>SetCoefficient</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae7a97e0f8cd71f16d7e0f3f5354c10df" kind="function"><name>ParseTimeDerivativeTerm</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a87c5b8eb3f2de56f44c961efea4b6094" kind="function"><name>ParseConvectionTerm</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ad83b9b0ae0fae5d76145ca2dd69a0ab7" kind="function"><name>ParseDiffusionTerm</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a7d1ef2ebe984805ac6a2b37d26d9c7b3" kind="function"><name>ParseSourceTerm</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a28f0bcd5c64e899071dcf2bfd62aef5f" kind="function"><name>BeforeScheme</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a1c6d6b76ef84d484d9d722cb999f3075" kind="function"><name>Scheme</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a544fef246c6cf41edf2b872dcc013880" kind="function"><name>AfterScheme</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae135886e3f94c8c1f99a7cec3ea54caf" kind="function"><name>BeforeSolve</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ac5246b3710831198c7e1901774b5fec9" kind="function"><name>Solve</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9d8349846efec36de9ff3d67f54ceefb" kind="function"><name>AfterSolve</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9cbf6bc354db51c3d4c8d8fc5a4fe72a" kind="function"><name>GetLinearEqs</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a10b6799050bcca98a3aa966f0cfaf221" kind="function"><name>GetScalarSolutions</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aa66414e1786218d2fee586e23e35cdaa" kind="function"><name>GetVectorSolutions</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a57043ade2003c0e8ef7e359482441440" kind="function"><name>GetTensorSolutions</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source" kind="class"><name>OpenOasis::CommImp::Numeric::Source</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source_1a9f2d1abe85a6f7294dc2cd8a19b8e38b" kind="function"><name>GetSource</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_task_loader" kind="class"><name>OpenOasis::CommImp::IO::TaskLoader</name>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kind="class"><name>OpenOasis::CommImp::Numeric::Tensor</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a50e36bf2198d7e159ab740763b7e6085" kind="variable"><name>mElement</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a3375784e6bfff84fe37de244d7e0c3b6" kind="function"><name>Tensor</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a03a3adcdb5a2e84422538305940495a5" kind="function"><name>Tensor</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7e80d6d5d8030b9264d623ee06c815a0" kind="function"><name>Tensor</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a559a7aa44ad22e499773150a8c94a5a0" kind="function"><name>Tensor</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1afae09080a98c903ee61de80bd0edf979" kind="function"><name>Set</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ab31b31ff584f708fcbf82b0d830542fe" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aae9dec7a0b29ebc1b042aea89072fb3f" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7c0781cf9ba1b10fbb8150b182b5df08" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a553655d9c1566e66589bf6cbcbea741a" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a77f63c0d193bc7c08b3669c87987e8e1" kind="function"><name>Set</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a05a6c9f637de4b3ab854e748038c4ea8" kind="function"><name>Size</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a5146b6220a6a74b0a1f9256c948dc9d6" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a59b4f9b7fbd016061c1eca42b8d98493" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a83c80604953d8b56e1344aaed1d2a765" kind="function"><name>Sum</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a51cba3243d220ad10146848334c6f6a0" kind="function"><name>Avg</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a6ffd8ce8ba97685fba559acf00b4da1a" kind="function"><name>Min</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a9053b95b29f15b9346bc04f76650f950" kind="function"><name>AbsMin</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1af09a192a10bf4a57d817743cac6c0ef8" kind="function"><name>Max</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a7b4fd5841037197aad807285412c1a58" kind="function"><name>AbsMax</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aff3a84c86183789f500dbbaffa5043e9" kind="function"><name>Length</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a10dceca5bfe2ed56a516235496db7560" kind="function"><name>IsEqual</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a71c9f5137a224556cda6d3a786b26949" kind="function"><name>Normalize</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a37d3187ce667873ae56f433c49544ead" kind="function"><name>Add</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aad264b31580c0fe730a6110f96daaf0f" kind="function"><name>Add</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a85825b6e28560c695d7abcb83bc93b4d" kind="function"><name>Sub</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a072079b27bd7f97e1a55abce772d8725" kind="function"><name>Sub</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ada422e03969c3f7591a83d4dbbdb4dfb" kind="function"><name>Mul</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a4dd5d43638164460da632ae73d98b27c" kind="function"><name>Div</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a10328c9dad724fc35a400535348e55c3" kind="function"><name>Dot</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aa0564196c684a93267b7c7d5d9c5ffc9" kind="function"><name>DDot</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aa9be8de1590fdc2c463c5fc8057e6030" kind="function"><name>operator=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1abd94bb0423561c490a32a522eda1144c" kind="function"><name>operator+</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a98e183acae2097c4406155d35d564c81" kind="function"><name>operator+</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ac244cb80ab03f8b3441a38e3aa0029ed" kind="function"><name>operator+=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a05f41a698102854d7da077cdefcabef7" kind="function"><name>operator+=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1aada1975704c553d7587a307359fee6bd" kind="function"><name>operator-</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ab575a294fd75ec685e394ab5c833950b" kind="function"><name>operator-</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a4ed53b73f99a7755204ca0113c4339f4" kind="function"><name>operator-=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a67126c15108b99ca2ba0d232f5fa3c1b" kind="function"><name>operator-=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1ac794cd0d3621728ec87b0d05d52ef3ce" kind="function"><name>operator*</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_1a39b1962011b5d461605d5013b7f8cbec" kind="function"><name>operator*</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kind="class"><name>OpenOasis::CommImp::Numeric::TensorField</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field_1ac6f93f07390052809d3411f4f7bbab00" kind="function"><name>~TensorField</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field_1a5ab954835578f9531c686d22f0a6645f" kind="function"><name>TensorField</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field_1a1f3837d3518a02af58c70b582aa842e3" kind="function"><name>TensorField</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer" kind="class"><name>OpenOasis::CommImp::Temporal::TimeBuffer</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a0f04133d922be923375c02a836daab6d" kind="variable"><name>mDoExtrapolate</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a036e6da6ef5a41849504291bc5809ada" kind="variable"><name>mValues</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a53ca632edcbd3b52f0bfc21011d488b3" kind="variable"><name>mTimes</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1afd1d8481c48ccbf184ba7b3d6d1a22ee" kind="variable"><name>mRelaxationFactor</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1af90d72f857e161f7443cbdc72b862c8f" kind="variable"><name>mLastBufferSizeMessageCounter</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a61437b02ea10d0a594328e1e06acfe5b" kind="variable"><name>mDoExtendedDataVerification</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a1c5fecfada744b8d166f1ba78463a160" kind="function"><name>~TimeBuffer</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a409a7b879210a6671a9fd2471ed4ae41" kind="function"><name>TimeBuffer</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1ac968f66287dee047c41a420461bafb76" kind="function"><name>TimeBuffer</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1aeb0227fb19023c5f91f71b3bdd6de1a6" kind="function"><name>SetDoExtrapolate</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a9b8736a1c521a4437766fe8e2cff9545" kind="function"><name>GetDoExtrapolate</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a96c367fa3bc0eef5feb7a0494eef5537" kind="function"><name>AddValues</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a8a4fe58ce30ab01258abc4742b09484e" kind="function"><name>GetValues</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3eec2519dd58ace365ddfb66b308f9dd" kind="function"><name>SetRelaxationFactor</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3da97b4d3d87831d353d3c44e562d7ca" kind="function"><name>GetRelaxationFactor</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a0b382c46d28bbe6398bf230f058a40e2" kind="function"><name>GetTimeAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a18308f86fa38d7ec9087d4f4894c3642" kind="function"><name>GetValuesAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a09c1c5af2caf5ab467f6fca140608ad3" kind="function"><name>GetTimeSet</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1ad6aa173a640706a6046648346e68cf9d" kind="function"><name>GetValueSet</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a9d284c5b099a71cbc64b711cd8a9adfb" kind="function"><name>GetDoExtendedDataVerification</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a5042359eccebd9b1bc86c45b8a17c806" kind="function"><name>SetDoExtendedDataVerification</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3e0551b7d2bbb44dad18e5c9c7009ce6" kind="function"><name>CheckBuffer</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1acf58a763f6079e11daf1b2d33b94de63" kind="function"><name>ClearBefore</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a2bd84242ce56428ff67e018a1604e1db" kind="function"><name>ClearAfter</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a178121ddbebede0994adc27c3dcfe81c" kind="function"><name>Reset</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1acab95b2ee6f2e16df21cdda0f204e96f" kind="function"><name>GetAllValues</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a8ae70e7a71efd87f275697e6af4cb29a" kind="function"><name>SetOrAddValues</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a4c2705e88333a0392e44424ece6e7ed7" kind="function"><name>GetTimesCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a38fcd2da7ac6a83e6cbbfd374e09c5af" kind="function"><name>GetValuesCount</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a1d3847fde7b048753539fbaaa035c9f7" kind="function"><name>AddValuesToBuffer</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1afd768981580875bc21854c551eb25364" kind="function"><name>Create</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a2f8f295931e33ca102982a389552ffb8" kind="function"><name>MapFromTimeStampsToTimeSpan</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a5ae768c381859210334d7c4ac26814f2" kind="function"><name>MapFromTimeSpansToTimeStamp</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1aa2880e24fd5986dc9fec1a8e46037e73" kind="function"><name>MapFromTimeSpansToTimeSpan</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a7b54e7ef47571274507a74ddf72b3941" kind="function"><name>MapFromTimeStampsToTimeStamp</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kind="class"><name>OpenOasis::CommImp::Numeric::Vector</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aabd37b8df7f3314377cc0ee3fa28e00e" kind="variable"><name>mElement</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3622d30cc61563707bf5f0f260c5a4f2" kind="function"><name>~Vector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a99e8150579c7f3bc9b5fbef6300b3a41" kind="function"><name>Vector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa50c96e1796492a2002482d20a5b57fa" kind="function"><name>Vector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac4fb9e91eebc7d41c7f6acf00585ba44" kind="function"><name>Vector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a4f88d6c9adade0ff7ab645ce634939bd" kind="function"><name>Vector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a8b17118d0165deafaf90d56d09861707" kind="function"><name>Vector</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a56c6cc24ef0128aba8927b00813580e9" kind="function"><name>Set</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a1e21ceed64da45c547f729d720a4f9f0" kind="function"><name>Set</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1abf341be3ef5e4c7ade6b3c845ed23fba" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aab65b3ec8e4185e2fbf27cc49dd5e5dd" kind="function"><name>SetAt</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa882bbd5f0c4f79e65feae634b2ff9dc" kind="function"><name>Size</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a783faa2130388442db4bb30a8755a3d7" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac9e5ae8fcb778ecaa3680d3970549c89" kind="function"><name>operator()</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac857e64d4c10deaec79c0424d4e405ae" kind="function"><name>Sum</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6f009e2b833044ace05bf926ddcb8c0c" kind="function"><name>Avg</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a4e7a5bec2c2c123c594b329840bf9bad" kind="function"><name>Min</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a9ee38ec4e1948d88250b4c538cb86fe0" kind="function"><name>AbsMin</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ac98e3f95367a8628519afbc79701609f" kind="function"><name>Max</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a21e946e36eb394bd4a3a55ee0c725508" kind="function"><name>AbsMax</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aff331eb9914b7bfc51b368825342d246" kind="function"><name>Length</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a54b7b5f8c8d79e544e96de01dd9ead03" kind="function"><name>IsEqual</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a505187ce2630d20143cb216933a7f714" kind="function"><name>Normalize</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1affd67afd803bce1d2ea9bfdaf8c0e113" kind="function"><name>Add</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3ba5d066816151bc7833b560751e953d" kind="function"><name>Add</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a90b4455ed02a2eff45d036348171174c" kind="function"><name>Sub</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aa333806bf08e1f87d422e488a9117196" kind="function"><name>Sub</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a14602ff81445221b27fed2121da1196b" kind="function"><name>Mul</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2830f976f0aef7002a739fd78d673f26" kind="function"><name>Div</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a9ada005df2f543e6a33b7d1ab9367104" kind="function"><name>Dot</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2509cfb5ac41aed6b5a0a9e3484a1e1b" kind="function"><name>Cross</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a07b05eec7fc31ea1c0625b8cb54ad12c" kind="function"><name>Dyadic</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a22e66470ee6343afa0dcb76341b92861" kind="function"><name>operator=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a84574f03f80c869954f91fc7efd9da4f" kind="function"><name>operator+</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a0383e1e782509d989c367ebb5f25b695" kind="function"><name>operator+</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6b2c987d28c5fe1531fca3285efe0165" kind="function"><name>operator+=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1af6156c3de227332f20ba35ffbd15292f" kind="function"><name>operator+=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1add76ca5977f5c2df8beaf6f1a292b9a8" kind="function"><name>operator-</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a22d6e84472d9d16d3b2339d5da47bdce" kind="function"><name>operator-</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1ab2effdd63652f236b43fd82b8c70e98e" kind="function"><name>operator-=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a2bdcb47012c0249708662092dc85e9dd" kind="function"><name>operator-=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a1189ea770dff02f3886cb8d566130770" kind="function"><name>operator*</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6fef6c976e6875b4fa942b0e54fdf08d" kind="function"><name>operator*</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a3a2aa90a863701cf6adcc43ad2b029d9" kind="function"><name>operator*=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a6ec3900732f987a10aa41bcb416d6c72" kind="function"><name>operator&amp;</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1adc448e1cd64aff9664aa39be8b260439" kind="function"><name>operator&amp;=</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1aed43040d598e03132502cc4a634f3f31" kind="function"><name>operator^</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a15ec2827c4f2b6869adc51e8b4d1f7eb" kind="function"><name>operator==</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_1a744163cba53a1814a84425111a628df4" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" kind="class"><name>OpenOasis::CommImp::Numeric::VectorField</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1aa3f5cae57ef946f56f181b163437dd3f" kind="function"><name>~VectorField</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1a5adda3cb5a744467382de3b4a5fe42bd" kind="function"><name>VectorField</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1a4c82a8336d30da94ccd228208bbac144" kind="function"><name>VectorField</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent" kind="struct"><name>OpenOasis::CommImp::Spatial::XYExtent</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac847b2f19c311b324643f36ef42ad979" kind="variable"><name>xMin</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1aefb2b89d1c75c000099b819d422c17de" kind="variable"><name>xMax</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1adc7e78fd2532ef526a815f643f84e98d" kind="variable"><name>yMin</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a1772ef1788ee875b8f35e193965b9047" kind="variable"><name>yMax</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a757d81ffc1b1ab8d7a0558ba26a5966f" kind="function"><name>XYExtent</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac326709114ee748663b0bdd6683f0db7" kind="function"><name>XYExtent</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a71a4ee666b1c4a58074ec3af2d8f10ad" kind="function"><name>XYExtent</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac017e90faf6283ce5d7e460536244762" kind="function"><name>XYExtent</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1abea55e9fe7770c949490dea37e7e9908" kind="function"><name>XYExtent</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a3fdd7b38ff679eefa59ddb4ac9f37bc4" kind="function"><name>XYExtent</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1ac33dbf15eff269350969d37fad653156" kind="function"><name>XYExtent</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a311a5ef5c1d08f03a55381f59924b06a" kind="function"><name>Include</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1aa99cba7610695f1bfaba30bc98c5132c" kind="function"><name>Include</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1abc8c2ad11a304f28763dd3b3b8ff7905" kind="function"><name>IsContains</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_extent_1a2ee2e7c53c3d78892d292a46c2d396b4" kind="function"><name>IsOverlaps</name></member>
+  </compound>
+  <compound refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools" kind="class"><name>OpenOasis::CommImp::Spatial::XYGeoTools</name>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aee0c6ed5bb1689a1660d8de2670e0c0f" kind="variable"><name>EPSILON</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1afe6b8013352141d1c5565c63e3127e2d" kind="function"><name>CalculatePointToPointDistance</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a73128c8ab1fbe4782021ae7100f8026a" kind="function"><name>IsLinesIntersected</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aada15cca9e79b89c2c87ff7c035324b7" kind="function"><name>CalculateIntersectionPoint</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a81db3f19a0e0457d9e5152df1b33c814" kind="function"><name>CalculateMidpoint</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ad890128a216f608eb0bc69f0723a9967" kind="function"><name>CalculateLineToPointDistance</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aaf1dc4e16dd5620482cec272fa6beead" kind="function"><name>CalculatePolylineToPointDistance</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ae85ab08d6c80c66376f24b7f1242bf8a" kind="function"><name>IsPointInLine</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a6e43df24f3fa94c948970dc1e7e7e37c" kind="function"><name>CalculateSharedArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ab3588acbf80d7eebc7b43a5b9649da3c" kind="function"><name>IsPointInPolygon</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a6ec018604a9205255e22a4cba31be0ab" kind="function"><name>GetTriangulations</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ae7ac13f258f0aa7a9fdaa7d4e8f9b632" kind="function"><name>CalculateLengthOfLineInsidePolygon</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a2ebc1cd2a2d9be027430a1668375e45b" kind="function"><name>CalculateLengthOfPolylineInsidePolygon</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a56a1a78070e92f00be4ad6cad8133e7f" kind="function"><name>FindTrianglePoints</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a054e47d323dae6e8f1ff23758dc22150" kind="function"><name>IsTriangleIntersected</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a97a73ab5bfea3cb27bba4a7e30f29eca" kind="function"><name>CalculateTriangleSharedArea</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a1a2d592b6b2090f383af9d4d8f8c0508" kind="function"><name>CalculateSharedLength</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a40ddd22762d9ab6ef49694a1525aa4b7" kind="function"><name>IntersectionPoint</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a58a8e17b8dd41a7865ae248cee731966" kind="function"><name>IsPointInLineInterior</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ab8eac874282aa44c385b541c1e55976a" kind="function"><name>Intersect</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aa4c4b79e7503b44024a88faec68181a4" kind="function"><name>IncrementModula</name></member>
+    <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aefb03da001a48d8afdcbf12e10a62682" kind="function"><name>DecrementModula</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kind="struct"><name>OpenOasis::CommImp::Spatial::XYLine</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1af4fa25c80937591ff16c661c74b59a2a" kind="variable"><name>point1</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a0c4c9ce677283aba84127b5a9d2f58b8" kind="variable"><name>point2</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1afd104ae0ab32923f9e70e64c7a65457e" kind="function"><name>XYLine</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1ac4bbae23076a3600fca28f1788155f9f" kind="function"><name>XYLine</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a79672486749c3df705d0bd275aa94d3c" kind="function"><name>XYLine</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1ad32ef9062322738c13d745407df6d641" kind="function"><name>XYLine</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line_1a2a98823511c8206a43d0c414dccc10ae" kind="function"><name>GetLength</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kind="struct"><name>OpenOasis::CommImp::Spatial::XYPoint</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1accba745eff71fd645e3f2da31f7cbe48" kind="variable"><name>x</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1a3fd757485ee81d979d404189f6855883" kind="variable"><name>y</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1ab683db5362511875eb8fc9cafcbc8dd6" kind="function"><name>XYPoint</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1a8f089e5398d7cce84a59abe08989b7e5" kind="function"><name>XYPoint</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1ab005712420ee4ba8fe9434b51336b495" kind="function"><name>XYPoint</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point_1aa566104bb2ecca4f8ec2f1a9ef15911f" kind="function"><name>XYPoint</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kind="struct"><name>OpenOasis::CommImp::Spatial::XYPolygon</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1abffcad23691b1c160d8db84216c3d569" kind="variable"><name>points</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1a8ddfa022788f1c42f937bc4550a1d731" kind="function"><name>XYPolygon</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1aa454a12a1df7da37d814097ebfebc250" kind="function"><name>XYPolygon</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1ab8c8cd97c126ccf9ff89909e78c8c2bc" kind="function"><name>XYPolygon</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1a16ccd63e638bb87e56578f5579971044" kind="function"><name>Validate</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1a8c9c171743fe43e6df3f4be168e14920" kind="function"><name>GetArea</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1a7a3f4f2fff016eaf5b6c9b76f0c5e055" kind="function"><name>GetLine</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon_1aa470ee7e9d287a509dffd2f297921221" kind="function"><name>IsConvex</name></member>
+  </compound>
+  <compound refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kind="struct"><name>OpenOasis::CommImp::Spatial::XYPolyline</name>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a49d79c31ebaa81bf9807652816dec64e" kind="variable"><name>points</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a1876f40c8219a3f4be743d2e15723ddc" kind="function"><name>XYPolyline</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a02374bb1a0b842664c0936a7b2cab91f" kind="function"><name>XYPolyline</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1af773c812d0aa19fcd6ce3d80a2f94c97" kind="function"><name>XYPolyline</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1afb4d69246740e84a7360fb676a0bd5e5" kind="function"><name>Validate</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a4297abbf3209388623ff512b0f13daef" kind="function"><name>GetLength</name></member>
+    <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline_1a21a7919b537c126b38730887ae8d7a7d" kind="function"><name>GetLine</name></member>
+  </compound>
+  <compound refid="namespace_dev_supports" kind="namespace"><name>DevSupports</name>
+  </compound>
+  <compound refid="namespace_open_oasis" kind="namespace"><name>OpenOasis</name>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6" kind="enum"><name>DimensionBase</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aba2a9c6c8c77e03f83ef8bf543612275" kind="enumvalue"><name>Length</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aff2864d6f652ee0ac254814f1ae4f4a8" kind="enumvalue"><name>Mass</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aa76d4ef5f3f6a672bbfab2865563e530" kind="enumvalue"><name>Time</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6a9a60fd92ac6161bffa549ef2cd17f05e" kind="enumvalue"><name>ElectricCurrent</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6aee7a8e262285ed49ea1b4e4ae11525bd" kind="enumvalue"><name>Temperature</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6ad9918b61413aedf2ceafa18df27d3a3c" kind="enumvalue"><name>AmountOfSubstance</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6ae91a9eb4f5dcc51ea18e180ea981d6ae" kind="enumvalue"><name>LuminousIntensity</name></member>
+    <member refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6a386c339d37e737a436499d423a77df0c" kind="enumvalue"><name>Currency</name></member>
+    <member refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75" kind="enum"><name>ElementType</name></member>
+    <member refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a25dd7053999776020543853c8c68e4b7" kind="enumvalue"><name>IdBased</name></member>
+    <member refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a2a3cd5946cfd317eb99c3d32e35e2d4c" kind="enumvalue"><name>Point</name></member>
+    <member refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75af8fb02b84176d0b0f0007abfd9264fb9" kind="enumvalue"><name>Polyline</name></member>
+    <member refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a4c0a11247d92f73fb84baa51e37a3263" kind="enumvalue"><name>Polygon</name></member>
+    <member refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75a3d217ee3a015efcd968eff5f36a5f671" kind="enumvalue"><name>Polyhedron</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fb" kind="enum"><name>LinkableComponentStatus</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba0eceeb45861f9585dd7a97a3e36f85c6" kind="enumvalue"><name>Created</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba32b169f72b293ef80d35435e9894f8e2" kind="enumvalue"><name>Initializing</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba59d87a4758a9d35fbaf6b204341bb399" kind="enumvalue"><name>Initialized</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbac423b2af9f3f373c6576a8512645da9b" kind="enumvalue"><name>Validating</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba3ac705f2acd51a4613f9188c05c91d0d" kind="enumvalue"><name>Valid</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba29d97bd4d929847eaa944fde55fcaaa8" kind="enumvalue"><name>WaitingForData</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba4bbb8f967da6d1a610596d7257179c2b" kind="enumvalue"><name>Invalid</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbaad866f19a13c5386d2ec6df246dcbfac" kind="enumvalue"><name>Preparing</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba6909beea5b50605780e3411f879fe916" kind="enumvalue"><name>Updating</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbaff0a3b7f3daef040faf89a88fdac01b7" kind="enumvalue"><name>Updated</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbaf92965e2c8a7afb3c1b9a5c09a263636" kind="enumvalue"><name>Done</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba242cf0bcf1047835a88da99b6931cc98" kind="enumvalue"><name>Finishing</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fba8f3d10eb21bd36347c258679eba9e92b" kind="enumvalue"><name>Finished</name></member>
+    <member refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fbad7c8c85bf79bbe1b7188497c32c3b0ca" kind="enumvalue"><name>Failed</name></member>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_additional_control" kind="namespace"><name>OpenOasis::AdditionalControl</name>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_comm_imp" kind="namespace"><name>OpenOasis::CommImp</name>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o" kind="namespace"><name>OpenOasis::CommImp::IO</name>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a3b4621744f0cffa92d392a64b9c4bba8" kind="variable"><name>logger</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a6be6ca18b9b79f4a4a24748330efe65d" kind="variable"><name>DEFAULT_LOGGER_ID</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1ad5dbb0bf82e296f7fa46aeaed9a8c120" kind="variable"><name>DEFAULT_LOGGER_SIZE</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a41ffba740023bf47b50b7ebf555055c4" kind="variable"><name>DEFAULT_FILE_NUM</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1ac6677c8ff94e5fa1064f2443fa64c275" kind="variable"><name>OasisLoggers</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1ae4ec81a9a0d8a441756ed060ec823878" kind="variable"><name>mtx</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a176872357a9a895c0d47ac225a83cad3" kind="function"><name>GetLogger</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a263f3536b6589615488b7fab6105940a" kind="function"><name>GetLogger</name></member>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric" kind="namespace"><name>OpenOasis::CommImp::Numeric</name>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a541d82253703c787feb6b20f3c8917e8" kind="enum"><name>FieldType</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a541d82253703c787feb6b20f3c8917e8ab50339a10e1de285ac99d4c3990b8693" kind="enumvalue"><name>NONE</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a541d82253703c787feb6b20f3c8917e8a8f3d9a4b6a7b7f2c7afa61ca113d0db9" kind="enumvalue"><name>SCALAR</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a541d82253703c787feb6b20f3c8917e8a87752381b583740610f1dfeb07fdad7e" kind="enumvalue"><name>VECTOR</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a541d82253703c787feb6b20f3c8917e8ace2f94540fa9914e8fe6f0de9817717b" kind="enumvalue"><name>TENSOR</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a42c9a2d269b37689edfcd5e61424f0a1" kind="enum"><name>FieldDomain</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a42c9a2d269b37689edfcd5e61424f0a1ab50339a10e1de285ac99d4c3990b8693" kind="enumvalue"><name>NONE</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a42c9a2d269b37689edfcd5e61424f0a1a0cc25b606fe928a0c9a58f7f209c4495" kind="enumvalue"><name>NODE</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a42c9a2d269b37689edfcd5e61424f0a1a345094d9e282b0f2b2b49fab9b8ad89f" kind="enumvalue"><name>FACE</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a42c9a2d269b37689edfcd5e61424f0a1adeaa44e5e872be992b4109cf1fbfe41e" kind="enumvalue"><name>CELL</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09d" kind="enum"><name>SolverStatus</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09da0eceeb45861f9585dd7a97a3e36f85c6" kind="enumvalue"><name>Created</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09da59d87a4758a9d35fbaf6b204341bb399" kind="enumvalue"><name>Initialized</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09daaaa4968be664d00365ca44b0bf2eaf9c" kind="enumvalue"><name>Parsed</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09da23acdb14f483e7c411cf432abb212e9b" kind="enumvalue"><name>Discretized</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09daff0a3b7f3daef040faf89a88fdac01b7" kind="enumvalue"><name>Updated</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09da2bed4ed6d6d4b10a818539fb0be36181" kind="enumvalue"><name>Solved</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a65ccc57f8c6b650f32d08f8af18be09dad7c8c85bf79bbe1b7188497c32c3b0ca" kind="enumvalue"><name>Failed</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ac5a04c703cdd7fc077ab7b5af313a3d0" kind="typedef"><name>LinearEqs</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a03a08869e47f69b2821a35a1563a2a16" kind="typedef"><name>ScalarFieldDbl</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1aabdb336be017ea16a4ef0149c125345d" kind="typedef"><name>ScalarFieldInt</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a855493953810206056be2a1f00918d16" kind="typedef"><name>ScalarFieldFp</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a5261bc9c60526a5eacd45a43e6ecf69e" kind="typedef"><name>TensorFieldDbl</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a6959cc679b3b884efee50cc4bb95a8be" kind="typedef"><name>TensorFieldInt</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1af912b27bff568e86421e3503bb90d728" kind="typedef"><name>TensorFieldFp</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a2cc43cbd2f39da84ea7d251f39027fb8" kind="typedef"><name>VectorFieldInt3D</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a9c9b3c6411e13f9f2fdfe51c5254aa2c" kind="typedef"><name>VectorFieldInt2D</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a5978cbe355bfcdbb6c66401bd43bb9ff" kind="typedef"><name>VectorFieldDbl3D</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a760688f8376703be081912ca49be7099" kind="typedef"><name>VectorFieldDbl2D</name></member>
+    <member refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ae1fd58ca9adbf817716f9fa168015b00" kind="typedef"><name>VectorFieldFp</name></member>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m" kind="namespace"><name>OpenOasis::CommImp::Numeric::FVM</name>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_comm_imp_1_1_spatial" kind="namespace"><name>OpenOasis::CommImp::Spatial</name>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_comm_imp_1_1_temporal" kind="namespace"><name>OpenOasis::CommImp::Temporal</name>
+  </compound>
+  <compound refid="namespace_open_oasis_1_1_syst_heats" kind="namespace"><name>OpenOasis::SystHeats</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="namespace_utils" kind="namespace"><name>Utils</name>
+  </compound>
+  <compound refid="_link_loader_8cpp" kind="file"><name>LinkLoader.cpp</name>
+  </compound>
+  <compound refid="_link_loader_8h" kind="file"><name>LinkLoader.h</name>
+  </compound>
+  <compound refid="_logger_8cpp" kind="file"><name>Logger.cpp</name>
+  </compound>
+  <compound refid="_logger_8h" kind="file"><name>Logger.h</name>
+  </compound>
+  <compound refid="_mesh_loader_8cpp" kind="file"><name>MeshLoader.cpp</name>
+  </compound>
+  <compound refid="_mesh_loader_8h" kind="file"><name>MeshLoader.h</name>
+  </compound>
+  <compound refid="_network_loader_8h" kind="file"><name>NetworkLoader.h</name>
+  </compound>
+  <compound refid="_output_csv_8h" kind="file"><name>OutputCsv.h</name>
+  </compound>
+  <compound refid="_task_loader_8h" kind="file"><name>TaskLoader.h</name>
+  </compound>
+  <compound refid="_boundary_8h" kind="file"><name>Boundary.h</name>
+  </compound>
+  <compound refid="_curl_operator_8h" kind="file"><name>CurlOperator.h</name>
+  </compound>
+  <compound refid="_ddt_operator_8h" kind="file"><name>DdtOperator.h</name>
+  </compound>
+  <compound refid="_dirichlet_boundary_8cpp" kind="file"><name>DirichletBoundary.cpp</name>
+  </compound>
+  <compound refid="_dirichlet_boundary_8h" kind="file"><name>DirichletBoundary.h</name>
+  </compound>
+  <compound refid="_div_operator_8h" kind="file"><name>DivOperator.h</name>
+  </compound>
+  <compound refid="_field_8h" kind="file"><name>Field.h</name>
+  </compound>
+  <compound refid="_fvm_solver_8cpp" kind="file"><name>FvmSolver.cpp</name>
+  </compound>
+  <compound refid="_fvm_solver_8h" kind="file"><name>FvmSolver.h</name>
+  </compound>
+  <compound refid="_grad_operator_8h" kind="file"><name>GradOperator.h</name>
+  </compound>
+  <compound refid="_interps_8cpp" kind="file"><name>Interps.cpp</name>
+  </compound>
+  <compound refid="_interps_8h" kind="file"><name>Interps.h</name>
+  </compound>
+  <compound refid="_laplacian_operator_8cpp" kind="file"><name>LaplacianOperator.cpp</name>
+  </compound>
+  <compound refid="_laplacian_operator_8h" kind="file"><name>LaplacianOperator.h</name>
+  </compound>
+  <compound refid="_matrix_8cpp" kind="file"><name>Matrix.cpp</name>
+  </compound>
+  <compound refid="_matrix_8h" kind="file"><name>Matrix.h</name>
+  </compound>
+  <compound refid="_neumann_boundary_8h" kind="file"><name>NeumannBoundary.h</name>
+  </compound>
+  <compound refid="_numeric_methods_8h" kind="file"><name>NumericMethods.h</name>
+  </compound>
+  <compound refid="_operator_8h" kind="file"><name>Operator.h</name>
+  </compound>
+  <compound refid="_robin_boundary_8h" kind="file"><name>RobinBoundary.h</name>
+  </compound>
+  <compound refid="_scalar_field_8h" kind="file"><name>ScalarField.h</name>
+  </compound>
+  <compound refid="_solver_8h" kind="file"><name>Solver.h</name>
+  </compound>
+  <compound refid="_source_8h" kind="file"><name>Source.h</name>
+  </compound>
+  <compound refid="_tensor_8h" kind="file"><name>Tensor.h</name>
+  </compound>
+  <compound refid="_tensor_field_8h" kind="file"><name>TensorField.h</name>
+  </compound>
+  <compound refid="_vector_8h" kind="file"><name>Vector.h</name>
+  </compound>
+  <compound refid="_vector_field_8h" kind="file"><name>VectorField.h</name>
+  </compound>
+  <compound refid="_coordinate_8cpp" kind="file"><name>Coordinate.cpp</name>
+  </compound>
+  <compound refid="_coordinate_8h" kind="file"><name>Coordinate.h</name>
+  </compound>
+  <compound refid="_geo_calculator_8cpp" kind="file"><name>GeoCalculator.cpp</name>
+  </compound>
+  <compound refid="_geo_calculator_8h" kind="file"><name>GeoCalculator.h</name>
+  </compound>
+  <compound refid="_grid_8cpp" kind="file"><name>Grid.cpp</name>
+  </compound>
+  <compound refid="_grid_8h" kind="file"><name>Grid.h</name>
+  </compound>
+  <compound refid="_grid1_d_8cpp" kind="file"><name>Grid1D.cpp</name>
+  </compound>
+  <compound refid="_grid1_d_8h" kind="file"><name>Grid1D.h</name>
+  </compound>
+  <compound refid="_grid2_d_8cpp" kind="file"><name>Grid2D.cpp</name>
+  </compound>
+  <compound refid="_grid2_d_8h" kind="file"><name>Grid2D.h</name>
+  </compound>
+  <compound refid="_grid3_d_8cpp" kind="file"><name>Grid3D.cpp</name>
+  </compound>
+  <compound refid="_grid3_d_8h" kind="file"><name>Grid3D.h</name>
+  </compound>
+  <compound refid="_mesh_structs_8h" kind="file"><name>MeshStructs.h</name>
+  </compound>
+  <compound refid="_x_y_geo_structs_8cpp" kind="file"><name>XYGeoStructs.cpp</name>
+  </compound>
+  <compound refid="_x_y_geo_structs_8h" kind="file"><name>XYGeoStructs.h</name>
+  </compound>
+  <compound refid="_x_y_geo_tools_8cpp" kind="file"><name>XYGeoTools.cpp</name>
+  </compound>
+  <compound refid="_x_y_geo_tools_8h" kind="file"><name>XYGeoTools.h</name>
+  </compound>
+  <compound refid="_time_buffer_8cpp" kind="file"><name>TimeBuffer.cpp</name>
+  </compound>
+  <compound refid="_time_buffer_8h" kind="file"><name>TimeBuffer.h</name>
+  </compound>
+  <compound refid="_i_comparable_8h" kind="file"><name>IComparable.h</name>
+  </compound>
+  <compound refid="_i_space_extension_8h" kind="file"><name>ISpaceExtension.h</name>
+  </compound>
+  <compound refid="_i_time_extension_8h" kind="file"><name>ITimeExtension.h</name>
+  </compound>
+  <compound refid="_exchange_item_change_event_args_8h" kind="file"><name>ExchangeItemChangeEventArgs.h</name>
+  </compound>
+  <compound refid="_i_adapted_output_8h" kind="file"><name>IAdaptedOutput.h</name>
+  </compound>
+  <compound refid="_i_adapted_output_factory_8h" kind="file"><name>IAdaptedOutputFactory.h</name>
+  </compound>
+  <compound refid="_i_argument_8h" kind="file"><name>IArgument.h</name>
+  </compound>
+  <compound refid="_i_base_exchange_item_8h" kind="file"><name>IBaseExchangeItem.h</name>
+  </compound>
+  <compound refid="_i_byte_state_converter_8h" kind="file"><name>IByteStateConverter.h</name>
+  </compound>
+  <compound refid="_i_category_8h" kind="file"><name>ICategory.h</name>
+  </compound>
+  <compound refid="_i_describable_8h" kind="file"><name>IDescribable.h</name>
+  </compound>
+  <compound refid="_i_dimension_8h" kind="file"><name>IDimension.h</name>
+  </compound>
+  <compound refid="_i_element_set_8h" kind="file"><name>IElementSet.h</name>
+  </compound>
+  <compound refid="_i_identifiable_8h" kind="file"><name>IIdentifiable.h</name>
+  </compound>
+  <compound refid="_i_input_8h" kind="file"><name>IInput.h</name>
+  </compound>
+  <compound refid="_i_linkable_component_8h" kind="file"><name>ILinkableComponent.h</name>
+  </compound>
+  <compound refid="_i_manage_state_8h" kind="file"><name>IManageState.h</name>
+  </compound>
+  <compound refid="_i_output_8h" kind="file"><name>IOutput.h</name>
+  </compound>
+  <compound refid="_i_quality_8h" kind="file"><name>IQuality.h</name>
+  </compound>
+  <compound refid="_i_quantity_8h" kind="file"><name>IQuantity.h</name>
+  </compound>
+  <compound refid="_i_spatial_definition_8h" kind="file"><name>ISpatialDefinition.h</name>
+  </compound>
+  <compound refid="_i_time_8h" kind="file"><name>ITime.h</name>
+  </compound>
+  <compound refid="_i_time_set_8h" kind="file"><name>ITimeSet.h</name>
+  </compound>
+  <compound refid="_i_unit_8h" kind="file"><name>IUnit.h</name>
+  </compound>
+  <compound refid="_i_value_definition_8h" kind="file"><name>IValueDefinition.h</name>
+  </compound>
+  <compound refid="_i_value_set_8h" kind="file"><name>IValueSet.h</name>
+  </compound>
+  <compound refid="_linkable_component_status_8h" kind="file"><name>LinkableComponentStatus.h</name>
+  </compound>
+  <compound refid="_linkable_component_status_change_event_args_8h" kind="file"><name>LinkableComponentStatusChangeEventArgs.h</name>
+  </compound>
+  <compound refid="_heat_conduction_model_8cpp" kind="file"><name>HeatConductionModel.cpp</name>
+  </compound>
+  <compound refid="_heat_conduction_model_8h" kind="file"><name>HeatConductionModel.h</name>
+  </compound>
+  <compound refid="dir_f42854fb7a47e961c6b84a97d295c858" kind="dir"><name>Models/Inc/AdditionalControl</name>
+  </compound>
+  <compound refid="dir_6202b98a8704f42b1ea358646461643f" kind="dir"><name>Models/CommImp</name>
+  </compound>
+  <compound refid="dir_ce9212301f8d93e5246dd812df0f37fe" kind="dir"><name>Models/CommImp/Numeric/FVM</name>
+  </compound>
+  <compound refid="dir_598ce1e743ead5e92cc84cac2af27086" kind="dir"><name>Models/SystHeats/HeatConductionModel</name>
+  </compound>
+  <compound refid="dir_e48a3e9a07fc2444cdac51c67822643f" kind="dir"><name>Models/Inc</name>
+  </compound>
+  <compound refid="dir_3b1940e7bde9c1f91eabae8dc723b4f2" kind="dir"><name>Models/CommImp/IO</name>
+  </compound>
+  <compound refid="dir_22305cb0964bbe63c21991dd2265ce48" kind="dir"><name>Models</name>
+  </compound>
+  <compound refid="dir_a0ece07902893bffce0f747cc8ee06c8" kind="dir"><name>Models/CommImp/Numeric</name>
+  </compound>
+  <compound refid="dir_47a0bcc12c466f07097ed8db741700fa" kind="dir"><name>Models/CommImp/Spatial</name>
+  </compound>
+  <compound refid="dir_a73574e9fd225504e8a3c322dcb45030" kind="dir"><name>Models/SystHeats</name>
+  </compound>
+  <compound refid="dir_ffb56fa5fbb3b89fb2d1e87d90c0c2f7" kind="dir"><name>Models/CommImp/Temporal</name>
+  </compound>
+</doxygenindex>

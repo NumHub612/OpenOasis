@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_22305cb0964bbe63c21991dd2265ce48" kind="dir">
+    <compoundname>Models</compoundname>
+    <innerdir refid="dir_6202b98a8704f42b1ea358646461643f">Models/CommImp</innerdir>
+    <innerdir refid="dir_e48a3e9a07fc2444cdac51c67822643f">Models/Inc</innerdir>
+    <innerdir refid="dir_a73574e9fd225504e8a3c322dcb45030">Models/SystHeats</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/"/>
+  </compounddef>
+</doxygen>

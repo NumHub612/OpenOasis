@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_dimension" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IDimension</compoundname>
+    <includes refid="_i_dimension_8h" local="no">IDimension.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_dimension_1a3c00ea65f80f4195a0f6d9421e868692" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double OpenOasis::IDimension::GetPower</definition>
+        <argsstring>(DimensionBase baseQuantity) const =0</argsstring>
+        <name>GetPower</name>
+        <qualifiedname>OpenOasis::IDimension::GetPower</qualifiedname>
+        <param>
+          <type><ref refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6" kindref="member">DimensionBase</ref></type>
+          <declname>baseQuantity</declname>
+        </param>
+        <briefdescription>
+<para>Gets the power for the requested dimension. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Example, For a quantity such as flow, which may have the unit m3/s, the <computeroutput>GetPower</computeroutput> method must work as follows: <computeroutput>Flow.GetPower(DimensionBase::AmountOfSubstance)</computeroutput> --&gt; returns 0 <computeroutput>Flow.GetPower(DimensionBase::Currency)</computeroutput> --&gt; returns 0 <computeroutput>Flow.GetPower(DimensionBase::ElectricCurrent)</computeroutput> --&gt; returns 0 <computeroutput>Flow.GetPower(DimensionBase::Length)</computeroutput> --&gt; returns 3 <computeroutput>Flow.GetPower(DimensionBase::LuminousIntensity)</computeroutput> --&gt; returns 0 <computeroutput>Flow.GetPower(DimensionBase::Mass)</computeroutput> --&gt; returns 0 <computeroutput>Flow.GetPower(DimensionBase::Temperature)</computeroutput> --&gt; returns 0 <computeroutput>Flow.GetPower(DimensionBase::Time)</computeroutput> --&gt; returns -1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IDimension.h" line="45" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_dimension_1a4441eabf9f3bd4a1e7332e7e4641030b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IDimension::SetPower</definition>
+        <argsstring>(DimensionBase baseQuantity, double power)=0</argsstring>
+        <name>SetPower</name>
+        <qualifiedname>OpenOasis::IDimension::SetPower</qualifiedname>
+        <param>
+          <type><ref refid="namespace_open_oasis_1ab1d6610f0f30d1e7af79a98f6c900fa6" kindref="member">DimensionBase</ref></type>
+          <declname>baseQuantity</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>power</declname>
+        </param>
+        <briefdescription>
+<para>Sets a power for a base dimension. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>baseQuantity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base dimension. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>power</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The power. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IDimension.h" line="51" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Define the order of each dimension in <computeroutput>DimensionBase</computeroutput> for a unit. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/IDimension.h" line="30" column="1" bodyfile="Models/Inc/IDimension.h" bodystart="31" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_dimension_1a3c00ea65f80f4195a0f6d9421e868692" prot="public" virt="pure-virtual"><scope>OpenOasis::IDimension</scope><name>GetPower</name></member>
+      <member refid="class_open_oasis_1_1_i_dimension_1a4441eabf9f3bd4a1e7332e7e4641030b" prot="public" virt="pure-virtual"><scope>OpenOasis::IDimension</scope><name>SetPower</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

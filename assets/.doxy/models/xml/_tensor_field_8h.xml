@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_tensor_field_8h" kind="file" language="C++">
+    <compoundname>TensorField.h</compoundname>
+    <includes local="yes">Models/Utils/CommConstants.h</includes>
+    <includes refid="_field_8h" local="yes">Field.h</includes>
+    <includes refid="_tensor_8h" local="yes">Tensor.h</includes>
+    <includedby refid="_operator_8h" local="yes">Models/CommImp/Numeric/Operator.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>Field.h</label>
+        <link refid="_field_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Tensor.h</label>
+        <link refid="_tensor_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/CommImp/Numeric/TensorField.h</label>
+        <link refid="_tensor_field_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Models/Utils/CommConstants.h</label>
+      </node>
+      <node id="4">
+        <label>Models/Utils/CommMacros.h</label>
+      </node>
+      <node id="6">
+        <label>algorithm</label>
+      </node>
+      <node id="8">
+        <label>array</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>Models/CommImp/Numeric/FVM/FvmSolver.h</label>
+        <link refid="_fvm_solver_8h_source"/>
+      </node>
+      <node id="3">
+        <label>Models/CommImp/Numeric/LaplacianOperator.h</label>
+        <link refid="_laplacian_operator_8h_source"/>
+      </node>
+      <node id="2">
+        <label>Models/CommImp/Numeric/Operator.h</label>
+        <link refid="_operator_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Models/CommImp/Numeric/Solver.h</label>
+        <link refid="_solver_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/CommImp/Numeric/TensorField.h</label>
+        <link refid="_tensor_field_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Models/SystHeats/HeatConductionModel/HeatConductionModel.h</label>
+        <link refid="_heat_conduction_model_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" prot="public">OpenOasis::CommImp::Numeric::TensorField</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp">OpenOasis::CommImp</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric">OpenOasis::CommImp::Numeric</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/Utils/CommConstants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Field.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Tensor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric" kindref="compound">OpenOasis::CommImp::Numeric</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="20" refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt;Tensor&lt;T&gt;&gt;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">~TensorField</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField</ref>(FieldDomain<sp/>domain<sp/>=<sp/>FieldDomain::CELL)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;mDomain<sp/>=<sp/>domain;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;mType<sp/><sp/><sp/>=<sp/>FieldType::TENSOR;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField</ref>(</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor&lt;T&gt;</ref><sp/>&amp;val<sp/>=<sp/>{},</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FieldDomain<sp/>domain<sp/>=<sp/>FieldDomain::CELL)<sp/>:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt;<ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor&lt;T&gt;</ref>&gt;(size,<sp/>val)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;mDomain<sp/>=<sp/>domain;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;mType<sp/><sp/><sp/>=<sp/>FieldType::TENSOR;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorFieldDbl</ref><sp/>=<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField&lt;double&gt;</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorFieldInt</ref><sp/>=<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField&lt;int&gt;</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorFieldFp</ref><sp/><sp/>=<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorField&lt;Utils::real&gt;</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis::CommImp::Numeric</highlight></codeline>
+    </programlisting>
+    <location file="Models/CommImp/Numeric/TensorField.h"/>
+  </compounddef>
+</doxygen>

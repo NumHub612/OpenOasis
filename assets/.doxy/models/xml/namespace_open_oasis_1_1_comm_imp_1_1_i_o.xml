@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespace_open_oasis_1_1_comm_imp_1_1_i_o" kind="namespace" language="C++">
+    <compoundname>OpenOasis::CommImp::IO</compoundname>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_link_loader" prot="public">OpenOasis::CommImp::IO::LinkLoader</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader" prot="public">OpenOasis::CommImp::IO::MeshLoader</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_task_loader" prot="public">OpenOasis::CommImp::IO::TaskLoader</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a3b4621744f0cffa92d392a64b9c4bba8" prot="public" static="yes" mutable="no">
+        <type>shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>shared_ptr&lt;spdlog::logger&gt; OpenOasis::CommImp::IO::logger</definition>
+        <argsstring></argsstring>
+        <name>logger</name>
+        <qualifiedname>OpenOasis::CommImp::IO::logger</qualifiedname>
+        <initializer>= GetLogger()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/LinkLoader.cpp" line="20" column="19" bodyfile="Models/CommImp/IO/LinkLoader.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a6be6ca18b9b79f4a4a24748330efe65d" prot="public" static="yes" mutable="no">
+        <type>const string</type>
+        <definition>const string OpenOasis::CommImp::IO::DEFAULT_LOGGER_ID</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_LOGGER_ID</name>
+        <qualifiedname>OpenOasis::CommImp::IO::DEFAULT_LOGGER_ID</qualifiedname>
+        <initializer>= &quot;OasisLog&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/Logger.cpp" line="15" column="21" bodyfile="Models/CommImp/IO/Logger.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1ad5dbb0bf82e296f7fa46aeaed9a8c120" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::IO::DEFAULT_LOGGER_SIZE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_LOGGER_SIZE</name>
+        <qualifiedname>OpenOasis::CommImp::IO::DEFAULT_LOGGER_SIZE</qualifiedname>
+        <initializer>= 1024 * 1024 * 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/Logger.cpp" line="17" column="12" bodyfile="Models/CommImp/IO/Logger.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a41ffba740023bf47b50b7ebf555055c4" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::IO::DEFAULT_FILE_NUM</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_FILE_NUM</name>
+        <qualifiedname>OpenOasis::CommImp::IO::DEFAULT_FILE_NUM</qualifiedname>
+        <initializer>= 9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/Logger.cpp" line="18" column="12" bodyfile="Models/CommImp/IO/Logger.cpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1ac6677c8ff94e5fa1064f2443fa64c275" prot="public" static="yes" mutable="no">
+        <type>unordered_map&lt; string, shared_ptr&lt; spdlog::logger &gt; &gt;</type>
+        <definition>unordered_map&lt;string, shared_ptr&lt;spdlog::logger&gt; &gt; OpenOasis::CommImp::IO::OasisLoggers</definition>
+        <argsstring></argsstring>
+        <name>OasisLoggers</name>
+        <qualifiedname>OpenOasis::CommImp::IO::OasisLoggers</qualifiedname>
+        <initializer>= {
+    {DEFAULT_LOGGER_ID,
+     spdlog::rotating_logger_mt(
+         DEFAULT_LOGGER_ID, DEFAULT_LOGGER_ID, DEFAULT_LOGGER_SIZE, DEFAULT_FILE_NUM)}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/Logger.cpp" line="20" column="22" bodyfile="Models/CommImp/IO/Logger.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1ae4ec81a9a0d8a441756ed060ec823878" prot="public" static="yes" mutable="no">
+        <type>mutex</type>
+        <definition>mutex OpenOasis::CommImp::IO::mtx</definition>
+        <argsstring></argsstring>
+        <name>mtx</name>
+        <qualifiedname>OpenOasis::CommImp::IO::mtx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/Logger.cpp" line="25" column="14" bodyfile="Models/CommImp/IO/Logger.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a176872357a9a895c0d47ac225a83cad3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>shared_ptr&lt; spdlog::logger &gt; OpenOasis::CommImp::IO::GetLogger</definition>
+        <argsstring>(const string &amp;loggerId)</argsstring>
+        <name>GetLogger</name>
+        <qualifiedname>OpenOasis::CommImp::IO::GetLogger</qualifiedname>
+        <param>
+          <type>const string &amp;</type>
+          <declname>loggerId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/Logger.cpp" line="27" column="12" bodyfile="Models/CommImp/IO/Logger.cpp" bodystart="27" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_open_oasis_1_1_comm_imp_1_1_i_o_1a263f3536b6589615488b7fab6105940a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>std::shared_ptr&lt; spdlog::logger &gt; OpenOasis::CommImp::IO::GetLogger</definition>
+        <argsstring>(const std::string &amp;loggerId=&quot;OasisLog&quot;)</argsstring>
+        <name>GetLogger</name>
+        <qualifiedname>OpenOasis::CommImp::IO::GetLogger</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>loggerId</declname>
+          <defval>&quot;OasisLog&quot;</defval>
+        </param>
+        <briefdescription>
+<para>To get rotating logger with specified id. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/IO/Logger.h" line="22" column="17" declfile="Models/CommImp/IO/Logger.h" declline="22" declcolumn="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+ @File : LinkLoader.cpp @Brief : To provide unified interfaces for loading coupling configurations.</para>
+<para><hruler/>
+ Copyright (C) 2024, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_link_loader_8h_source" kindref="compound">LinkLoader.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide unified interfaces for loading coupling configurations.</para>
+<para>Coupling between components requires clarification of several issues, including:<orderedlist>
+<listitem><para>Which coupling mode is used, i.e., loop-mode or pull-mode?</para>
+</listitem><listitem><para>Which two components are coupled?</para>
+</listitem><listitem><para>Which component objects are coupled?</para>
+</listitem><listitem><para>Which object states are coupled?</para>
+</listitem><listitem><para>During which period of coupling?</para>
+</listitem><listitem><para>What coupling adaptation operations are used?</para>
+</listitem></orderedlist>
+</para>
+<para>A component connection configuration needs to describe the above issues clearly, which is designed in the following format:</para>
+<para><programlisting filename=".json"><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;comps&quot;:<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;comp1&quot;:<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;description&quot;:<sp/>&quot;{some<sp/>description<sp/>about<sp/>comp1}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;type&quot;:<sp/>&quot;{component<sp/>type<sp/>of<sp/>comp1}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;task&quot;:<sp/>&quot;{path_to_taskfile}/task.yaml&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;dll&quot;:<sp/>&quot;{path_to_dllfile}/OasisFlows.dll&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;link&quot;:<sp/>false</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;comp2&quot;:<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;description&quot;:<sp/>&quot;{some<sp/>description<sp/>about<sp/>comp2}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;type&quot;:<sp/>&quot;{component<sp/>type<sp/>of<sp/>comp2}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;task&quot;:<sp/>&quot;{path_to_taskfile}/task.yaml&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;dll&quot;:<sp/>&quot;{path_to_dllfile}/OasisFlows.dll&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;link&quot;:<sp/>false</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;links&quot;:<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;link_comp1_to_comp2&quot;:<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;description&quot;:<sp/>&quot;{some<sp/>description<sp/>about<sp/>the<sp/>coupling<sp/>link}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;pipelines&quot;:<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;src_component&quot;:<sp/>&quot;{name<sp/>of<sp/>the<sp/>source<sp/>component}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;src_state&quot;:<sp/>&quot;{state<sp/>of<sp/>the<sp/>source<sp/>element}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;src_elements&quot;:<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;id&quot;:<sp/>&quot;c1_e1&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;type&quot;:<sp/>&quot;{type<sp/>of<sp/>the<sp/>specified<sp/>element}&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;id&quot;:<sp/>&quot;c1_e2&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;type&quot;:<sp/>&quot;{type<sp/>of<sp/>the<sp/>specified<sp/>element}&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;tar_component&quot;:<sp/>&quot;{name<sp/>of<sp/>the<sp/>target<sp/>component}&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;tar_element&quot;:<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;id&quot;:<sp/>&quot;c2_e1&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;type&quot;:<sp/>&quot;{type<sp/>of<sp/>the<sp/>specified<sp/>element}&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;temporal_operators&quot;:<sp/>&quot;accumulate&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;spatial_operators&quot;:<sp/>&quot;average&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;link_mode&quot;:<sp/>&quot;pull&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;params&quot;:{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;max_iter_steps&quot;:<sp/>&quot;25&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;tolerance&quot;:<sp/>&quot;0.001&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+ @File : Logger.cpp @Brief : Provide logger.</para>
+<para><hruler/>
+ @File : MeshLoader.cpp @Brief : Loading mesh data from files.</para>
+<para><hruler/>
+ Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_mesh_loader_8h_source" kindref="compound">MeshLoader.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Loading mesh data from files. The default mesh loader predefined a fixed set of csv files for storing mesh data, including :</para>
+<para>nodes.csv, used for storing node coordinates data, formated as : &quot;nId, x, y, z&quot; faces.csv, used for storing face nodes index data, formated as : &quot;fId, nId1, nId2&quot; cells.csv, used for storing cell faces index data, formated as : &quot;cId, fId1, fId2, fId3, ...&quot;</para>
+<para>And more :</para>
+<para>zones.csv, used for storing zone faces index data, formated as : &quot;zId, fId1, fId2, fId3, ...&quot; patches.csv, used for storing patch faces indexes, formated as : &quot;pId, fId1, fId2, fId3, ...&quot;</para>
+<para><hruler/>
+ Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_network_loader_8h_source" kindref="compound">NetworkLoader.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Loading river, pipe or mixed network data from files.</para>
+<para><hruler/>
+ Copyright (C) 2024, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_output_csv_8h_source" kindref="compound">OutputCsv.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide unified output interface for the csv format.</para>
+<para><hruler/>
+ Copyright (C) 2024, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_task_loader_8h_source" kindref="compound">TaskLoader.h</ref> @License : Apache-2.0</para>
+<para>@Desc : To provide a unified interface for loading model tasks. </para>
+    </detaileddescription>
+    <location file="Models/CommImp/IO/LinkLoader.cpp" line="15" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::ILinkableComponent - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::ILinkableComponent";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_i_linkable_component.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::ILinkableComponent</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasisilinkablecomponent">Class OpenOasis::ILinkableComponent<a class="headerlink" href="#class-openoasisilinkablecomponent" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="./"><strong>ILinkableComponent</strong></a></p>
+<p><em>The key interface class for linkable modules connection and data transfer.</em> </p>
+<ul>
+<li><code>#include &lt;ILinkableComponent.h&gt;</code></li>
+</ul>
+<p>Inherits the following classes: <a href="../class_open_oasis_1_1_i_identifiable/">OpenOasis::IIdentifiable</a></p>
+<h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">typedef std::function&lt; void(std::shared_ptr&lt; <a href="../class_open_oasis_1_1_linkable_component_status_change_event_args/"><strong>LinkableComponentStatusChangeEventArgs</strong></a> &gt;)&gt;</td>
+<td style="text-align: left;"><a href="#typedef-listenfunc"><strong>ListenFunc</strong></a>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-addlistener"><strong>AddListener</strong></a> (const ListenFunc &amp; func) = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-finish"><strong>Finish</strong></a> () = 0<br><em>Finishes the component computation, and then restart it if needed.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_adapted_output_factory/"><strong>IAdaptedOutputFactory</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#function-getadaptedoutputfactories"><strong>GetAdaptedOutputFactories</strong></a> () const = 0<br><em>Gets the list of</em> <code>IAdaptedOutputFactory</code> <em>, each allowing to create</em><code>IAdaptedOutput</code> <em>item for making output fit to inputs in case they do not already do so.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_argument/"><strong>IArgument</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#function-getarguments"><strong>GetArguments</strong></a> () const = 0<br><em>Gets arguments needed to let the component do its work.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_input/"><strong>IInput</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#function-getinputs"><strong>GetInputs</strong></a> () const = 0<br><em>Gets the input items for recieving values.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::shared_ptr&lt; <a href="../class_open_oasis_1_1_i_output/"><strong>IOutput</strong></a> &gt; &gt;</td>
+<td style="text-align: left;"><a href="#function-getoutputs"><strong>GetOutputs</strong></a> () const = 0<br><em>Gets the output items for producing results.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual <a href="../namespace_open_oasis/#enum-linkablecomponentstatus"><strong>LinkableComponentStatus</strong></a></td>
+<td style="text-align: left;"><a href="#function-getstatus"><strong>GetStatus</strong></a> () const = 0<br><em>Gets status of the linkable component.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-initialize"><strong>Initialize</strong></a> () = 0<br><em>Initializes the component.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-prepare"><strong>Prepare</strong></a> () = 0<br><em>Prepares the component for calls to the</em> <code>Update()</code> <em>.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-removelistener"><strong>RemoveListener</strong></a> (const ListenFunc &amp; func) = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-update"><strong>Update</strong></a> () = 0<br><em>Updates the linkable component itself, thus reaching its next state.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::vector&lt; std::string &gt;</td>
+<td style="text-align: left;"><a href="#function-validate"><strong>Validate</strong></a> () = 0<br><em>Validates the populated instance of the component.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-openoasisiidentifiable">Public Functions inherited from OpenOasis::IIdentifiable<a class="headerlink" href="#public-functions-inherited-from-openoasisiidentifiable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_identifiable/">OpenOasis::IIdentifiable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getid"><strong>GetId</strong></a> () const = 0<br><em>Gets id string.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-openoasisidescribable">Public Functions inherited from OpenOasis::IDescribable<a class="headerlink" href="#public-functions-inherited-from-openoasisidescribable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../class_open_oasis_1_1_i_describable/">OpenOasis::IDescribable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getcaption"><strong>GetCaption</strong></a> () const = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: left;"><a href="#function-getdescription"><strong>GetDescription</strong></a> () const = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setcaption"><strong>SetCaption</strong></a> (const std::string &amp; value) = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-setdescription"><strong>SetDescription</strong></a> (const std::string &amp; value) = 0<br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-types-documentation">Public Types Documentation<a class="headerlink" href="#public-types-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="typedef-listenfunc">typedef ListenFunc<a class="headerlink" href="#typedef-listenfunc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">ListenFunc</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">LinkableComponentStatusChangeEventArgs</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-addlistener">function AddListener<a class="headerlink" href="#function-addlistener" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">AddListener</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ListenFunc</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">func</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="function-finish">function Finish<a class="headerlink" href="#function-finish" title="Permanent link">&para;</a></h3>
+<p><em>Finishes the component computation, and then restart it if needed.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">Finish</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>This method is and must be invoked as the last of any methods in the <code>ILinkableComponent</code> interfaces.</p>
+<p>Immediatly after this method is invoked, it changes the component's status to <code>Finishing</code>. Once the finishing is completed, the component changes status to <code>Finished</code> if it can't be restarted; <code>Created</code>, otherwise.</p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>This</code> method must be accessible after the <code>Prepare()</code> method has been invoked. Otherwise,the component can't handled this, an exception must be thrown. </li>
+</ul>
+<h3 id="function-getadaptedoutputfactories">function GetAdaptedOutputFactories<a class="headerlink" href="#function-getadaptedoutputfactories" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IAdaptedOutputFactory</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">GetAdaptedOutputFactories</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="function-getarguments">function GetArguments<a class="headerlink" href="#function-getarguments" title="Permanent link">&para;</a></h3>
+<p><em>Gets arguments needed to let the component do its work.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IArgument</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">GetArguments</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>Arguments validations can be done either when they occur, or when the <code>Initialize()</code> method is called. </p>
+<h3 id="function-getinputs">function GetInputs<a class="headerlink" href="#function-getinputs" title="Permanent link">&para;</a></h3>
+<p><em>Gets the input items for recieving values.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IInput</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">GetInputs</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>The</code> method must be accessible after <code>Initialize()</code> method has been called and until the <code>Validate()</code> method has been invoked. Otherwise, <code>LinkableComponent</code> can't handle this, an exception must be thrown. </li>
+</ul>
+<h3 id="function-getoutputs">function GetOutputs<a class="headerlink" href="#function-getoutputs" title="Permanent link">&para;</a></h3>
+<p><em>Gets the output items for producing results.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">IOutput</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">GetOutputs</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>The</code> method must be accessible after <code>Initialize()</code> method has been invoked and until <code>Validate()</code> method has been invoked. Otherwise, <code>LinkableComponent</code> cant handle this, an exception must be thrown. </li>
+</ul>
+<h3 id="function-getstatus">function GetStatus<a class="headerlink" href="#function-getstatus" title="Permanent link">&para;</a></h3>
+<p><em>Gets status of the linkable component.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">LinkableComponentStatus</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">GetStatus</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>The first status that a component sets is <code>Created</code>, as soon after it has been created. </p>
+<h3 id="function-initialize">function Initialize<a class="headerlink" href="#function-initialize" title="Permanent link">&para;</a></h3>
+<p><em>Initializes the component.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">Initialize</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>The <code>Initialize()</code> will and must be invoked before any other methods in the <code>ILinkableComponent</code> interface is invoked or accessed, except for the <code>GetArguments</code>.</p>
+<p>Immediatly after the method is been invoked, it changes the linkable component's status to <code>Initializing</code>. If component initializes succesfully, the status is changed to <code>Initialized</code>.</p>
+<p>The method will typically populate the component based on values specified in its arguments. Settings can be used to read input files, allocate memory, and organize input and output items.</p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>When</code> the method is executed and an error occurs, the status will change to <code>Failed</code>, and an exception will be thrown. </li>
+<li><code>It's</code> only required that <code>Initialize()</code> can be invoked once. If the <code>Initialize()</code> method is invoked more than once, <code>ILinkableComponent</code> can't handle this, thrown an exception. </li>
+</ul>
+<h3 id="function-prepare">function Prepare<a class="headerlink" href="#function-prepare" title="Permanent link">&para;</a></h3>
+<p><em>Prepares the component for calls to the</em> <code>Update()</code> <em>.</em>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">Prepare</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>Before <code>Prepare()</code> is called, the component are not required to honor any type of action that retrieves values from the component. After <code>Prepare()</code> is called, the component must be ready for providing values. Immediatly after the method is invoked, it changes the component's status to <code>Preparing</code>. When the method has finished, the status of the component has changed to either <code>Updated</code> or <code>Failed</code>.</p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>The</code> method must be accessible after the <code>Initialize()</code> method has been called and until the <code>Finish()</code> method has been invoked. Otherwise, the linkable component can't handle it, an exception must be thrown. </li>
+<li><code>It's</code> required the <code>Prepare()</code> method can be invoked once. Otherwise, the linkable component can't handle this, an exception must be thrown. </li>
+</ul>
+<h3 id="function-removelistener">function RemoveListener<a class="headerlink" href="#function-removelistener" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">RemoveListener</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ListenFunc</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">func</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="function-update">function Update<a class="headerlink" href="#function-update" title="Permanent link">&para;</a></h3>
+<p><em>Updates the linkable component itself, thus reaching its next state.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">Update</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>Immediately after <code>Update()</code> is invoked, it changes the component's status to <code>Updating</code>. If the method is performed succesfully, the component sets its status to <code>Updated</code>, unless after this update action is at the end of its computation, in which case it will set its status to <code>Done</code>.</p>
+<p>According to the 'pull-driven' approach, linkable components can be connected in a chain, where invoking <code>Update()</code> method on the last component in the chain trigger the entire stack of data exchange.</p>
+<p>The type of actions a component takes during the <code>Update()</code> method depends on the type of component. A numerical model that progresses in time will typically compute a time step. A database would typically look at the consumers of its output items, and perform one or more queries to be able to provide the values that the consumers required.</p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>If</code> during the <code>Update()</code> method problem arises, the component sets its state to <code>Failed</code> and throws an exception. </li>
+</ul>
+<h3 id="function-validate">function Validate<a class="headerlink" href="#function-validate" title="Permanent link">&para;</a></h3>
+<p><em>Validates the populated instance of the component.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">ILinkableComponent</span><span class="o">::</span><span class="n">Validate</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p>The method will must be invoked after various provider/consumer relations between this component's exchange items and the exchange items of other components present in the composition.</p>
+<p>Immediatly after this method is invoked, it changes the component's status to <code>Validating</code>. When the method has finished, the status of the component has changed to either <code>Valid</code> or <code>Invalid</code>.</p>
+<p>If there are messages while components status is <code>Valid</code>, the messages are purely informative. If there're messages while components status is <code>Invalid</code>, at least one of the messages indicates a fatal error.</p>
+<p><strong>Exception:</strong></p>
+<ul>
+<li><code>The</code> method must be accessible after the <code>Initialize()</code> has been called and until the <code>Finish()</code> method has been invoked. Otherwise, the linkable component can not handle this, an exception must be thrown. </li>
+</ul>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/Inc/ILinkableComponent.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

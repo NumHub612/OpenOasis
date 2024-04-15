@@ -1,0 +1,109 @@
+
+
+# File FvmSolver.cpp
+
+[**File List**](files.md) **>** [**CommImp**](dir_6202b98a8704f42b1ea358646461643f.md) **>** [**Numeric**](dir_a0ece07902893bffce0f747cc8ee06c8.md) **>** [**FVM**](dir_ce9212301f8d93e5246dd812df0f37fe.md) **>** [**FvmSolver.cpp**](_fvm_solver_8cpp.md)
+
+[Go to the documentation of this file](_fvm_solver_8cpp.md)
+
+
+```C++
+
+#include "FvmSolver.h"
+#include "Models/CommImp/Numeric/LaplacianOperator.h"
+#include "Models/Utils/Exception.h"
+
+
+namespace OpenOasis::CommImp::Numeric::FVM
+{
+using namespace std;
+using namespace Utils;
+
+
+FvmSolver::FvmSolver(const shared_ptr<Grid> &grid) :
+    mGrid(grid), mCoeffMat(grid->GetNumCells()), mRhs(grid->GetNumCells())
+{}
+
+void FvmSolver::SetBoundary(int faceIndex, const shared_ptr<Boundary> &bound)
+{
+    mBoundaries[faceIndex] = bound;
+}
+
+void FvmSolver::SetInitialValue(
+    const string &var, const variant<real, Vector<real>, Tensor<real>> &value)
+{
+    if (var != "temp")
+    {
+        throw invalid_argument("only steady heat-diffusion");
+    }
+
+    mInitValue = get<real>(value);
+}
+
+void FvmSolver::SetCoefficient(
+    const string &var, const variant<real, Vector<real>, Tensor<real>> &coeff)
+{
+    if (var != "temp")
+    {
+        throw invalid_argument("only steady heat-diffusion");
+    }
+
+    mCoeffHeat = get<real>(coeff);
+}
+
+void FvmSolver::ParseDiffusionTerm()
+{
+    Laplacian lap(mGrid);
+
+    lap.SetCoefficient(variant<real, Vector<real>, Tensor<real>>(mCoeffHeat));
+
+    for (const auto &b : mBoundaries)
+    {
+        lap.SetBoundaryCondition(b.first, b.second->GetBoundaryCondition());
+    }
+
+    ScalarField tempField(mGrid->GetNumCells(), mInitValue);
+
+    const auto &eqs = lap.Discretize(tempField, {});
+
+    mCoeffMat += get<0>(eqs);
+
+    const auto &rhs = get<1>(eqs);
+    for (int i = 0; i < mGrid->GetNumCells(); ++i)
+    {
+        mRhs[i] += rhs[i];
+    }
+}
+
+void FvmSolver::Solve()
+{
+    Eigen::Map<Eigen::Matrix<real, Eigen::Dynamic, 1>> b(mRhs.data(), (int)mRhs.size());
+    Eigen::ConjugateGradient<Eigen::SparseMatrix<real>> solver;
+    solver.compute(mCoeffMat.Data());
+    if (solver.info() != Eigen::Success)
+    {
+        throw runtime_error("Solve compute failed.");
+    }
+    Eigen::Matrix<real, Eigen::Dynamic, 1> x = solver.solve(b);
+    if (solver.info() != Eigen::Success)
+    {
+        throw runtime_error("Solve failed.");
+    }
+
+    mTemps.Resize(mGrid->GetNumCells());
+    for (int i = 0; i < x.cols() * x.rows(); ++i)
+    {
+        mTemps(i) = x[i];
+    }
+}
+
+optional<ScalarFieldFp> FvmSolver::GetScalarSolutions(const string &var) const
+{
+    return mTemps;
+}
+
+
+}  // namespace OpenOasis::CommImp::Numeric::FVM
+```
+
+

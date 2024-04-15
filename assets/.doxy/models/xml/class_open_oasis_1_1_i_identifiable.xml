@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_identifiable" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IIdentifiable</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_describable" prot="public" virt="non-virtual">OpenOasis::IDescribable</basecompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_i_adapted_output_factory" prot="public" virt="non-virtual">OpenOasis::IAdaptedOutputFactory</derivedcompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_i_argument" prot="public" virt="non-virtual">OpenOasis::IArgument</derivedcompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_i_base_exchange_item" prot="public" virt="non-virtual">OpenOasis::IBaseExchangeItem</derivedcompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_i_linkable_component" prot="public" virt="non-virtual">OpenOasis::ILinkableComponent</derivedcompoundref>
+    <includes refid="_i_identifiable_8h" local="no">IIdentifiable.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_identifiable_1a808d8d4b970d54a19fd19857518fe8d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string OpenOasis::IIdentifiable::GetId</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetId</name>
+        <qualifiedname>OpenOasis::IIdentifiable::GetId</qualifiedname>
+        <briefdescription>
+<para>Gets id string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The Id must be unique within its context but does not need to be globally unique. e.g. the id of an input exchange item must be unique in the list of inputs of <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput>, but a similar Id might be used by an exchange item of another <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IIdentifiable.h" line="27" column="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>To define a method to get the Id of an <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> entity. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="8">
+        <label>OpenOasis::IAdaptedOutput</label>
+        <link refid="class_open_oasis_1_1_i_adapted_output"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenOasis::IAdaptedOutputFactory</label>
+        <link refid="class_open_oasis_1_1_i_adapted_output_factory"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OpenOasis::IArgument</label>
+        <link refid="class_open_oasis_1_1_i_argument"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>OpenOasis::IBaseExchangeItem</label>
+        <link refid="class_open_oasis_1_1_i_base_exchange_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>OpenOasis::IInput</label>
+        <link refid="class_open_oasis_1_1_i_input"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>OpenOasis::ILinkableComponent</label>
+        <link refid="class_open_oasis_1_1_i_linkable_component"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>OpenOasis::IOutput</label>
+        <link refid="class_open_oasis_1_1_i_output"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/IIdentifiable.h" line="18" column="1" bodyfile="Models/Inc/IIdentifiable.h" bodystart="19" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::IIdentifiable</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::IIdentifiable</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_identifiable_1a808d8d4b970d54a19fd19857518fe8d0" prot="public" virt="pure-virtual"><scope>OpenOasis::IIdentifiable</scope><name>GetId</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::IIdentifiable</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::IIdentifiable</scope><name>SetDescription</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

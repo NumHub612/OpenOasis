@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_byte_state_converter" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IByteStateConverter</compoundname>
+    <includes refid="_i_byte_state_converter_8h" local="no">IByteStateConverter.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_byte_state_converter_1ab9cfb7748cb56809b42fa123574e4add" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::stringstream</type>
+        <definition>virtual std::stringstream OpenOasis::IByteStateConverter::ConvertToByteStream</definition>
+        <argsstring>(const std::shared_ptr&lt; IIdentifiable &gt; &amp;stateId)=0</argsstring>
+        <name>ConvertToByteStream</name>
+        <qualifiedname>OpenOasis::IByteStateConverter::ConvertToByteStream</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref> &gt; &amp;</type>
+          <declname>stateId</declname>
+        </param>
+        <briefdescription>
+<para>Converts the state with the stateId into a byte stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stateId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of the state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The state identified by stateId as a byte stream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IByteStateConverter.h" line="36" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_byte_state_converter_1a54936763e611f820a62bed17ff2df898" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IIdentifiable &gt; OpenOasis::IByteStateConverter::ConvertFromByteStream</definition>
+        <argsstring>(const std::stringstream &amp;byteStream)=0</argsstring>
+        <name>ConvertFromByteStream</name>
+        <qualifiedname>OpenOasis::IByteStateConverter::ConvertFromByteStream</qualifiedname>
+        <param>
+          <type>const std::stringstream &amp;</type>
+          <declname>byteStream</declname>
+        </param>
+        <briefdescription>
+<para>Creates a state from a byte stream and return the identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>byteStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>State as a byte stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput><ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref></computeroutput> identifying the state. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IByteStateConverter.h" line="43" column="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An optional interface to save and transform the model state. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This interface is an optional complement to the <computeroutput><ref refid="class_open_oasis_1_1_i_manage_state" kindref="compound">IManageState</ref></computeroutput> interface.Both are extensions to <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput>, meant to provide state management. It defines methods for converting a state into a byte stream and reading in a state from a byte stream.</para>
+<para>This facilitates external modules, e.g. a GUI or an operational control system, to save a model&apos;s state somewhere as persistent state. </para>
+    </detaileddescription>
+    <location file="Models/Inc/IByteStateConverter.h" line="28" column="1" bodyfile="Models/Inc/IByteStateConverter.h" bodystart="29" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_byte_state_converter_1a54936763e611f820a62bed17ff2df898" prot="public" virt="pure-virtual"><scope>OpenOasis::IByteStateConverter</scope><name>ConvertFromByteStream</name></member>
+      <member refid="class_open_oasis_1_1_i_byte_state_converter_1ab9cfb7748cb56809b42fa123574e4add" prot="public" virt="pure-virtual"><scope>OpenOasis::IByteStateConverter</scope><name>ConvertToByteStream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

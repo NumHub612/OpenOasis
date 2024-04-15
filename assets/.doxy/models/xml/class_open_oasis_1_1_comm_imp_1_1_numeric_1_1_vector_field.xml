@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::VectorField</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::Field&lt; Vector&lt; T, 3 &gt; &gt;</basecompoundref>
+    <includes refid="_vector_field_8h" local="no">VectorField.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>std::size_t</type>
+        <declname>N</declname>
+        <defname>N</defname>
+        <defval>3</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1aa3f5cae57ef946f56f181b163437dd3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::CommImp::Numeric::VectorField&lt; T, N &gt;::~VectorField</definition>
+        <argsstring>()=default</argsstring>
+        <name>~VectorField</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::VectorField::~VectorField</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/VectorField.h" line="23" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1a5adda3cb5a744467382de3b4a5fe42bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::VectorField&lt; T, N &gt;::VectorField</definition>
+        <argsstring>(FieldDomain domain=FieldDomain::CELL)</argsstring>
+        <name>VectorField</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::VectorField::VectorField</qualifiedname>
+        <param>
+          <type>FieldDomain</type>
+          <declname>domain</declname>
+          <defval>FieldDomain::CELL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/VectorField.h" line="25" column="5" bodyfile="Models/CommImp/Numeric/VectorField.h" bodystart="25" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1a4c82a8336d30da94ccd228208bbac144" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::VectorField&lt; T, N &gt;::VectorField</definition>
+        <argsstring>(std::size_t size, const Vector&lt; T, N &gt; &amp;val={}, FieldDomain domain=FieldDomain::CELL)</argsstring>
+        <name>VectorField</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::VectorField::VectorField</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; T, N &gt; &amp;</type>
+          <declname>val</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>FieldDomain</type>
+          <declname>domain</declname>
+          <defval>FieldDomain::CELL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/VectorField.h" line="31" column="5" bodyfile="Models/CommImp/Numeric/VectorField.h" bodystart="31" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref> field with default zero vector in 2D or 3D space. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::Field&lt; T &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::VectorField&lt; T, N &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::Field&lt; T &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::VectorField&lt; T, N &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Numeric/VectorField.h" line="20" column="1" bodyfile="Models/CommImp/Numeric/VectorField.h" bodystart="21" bodyend="39"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a20148bb3cbc2176bd001c564376b0535" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Clean</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a90fde564762bb3dc7f07f3d422d06386" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Clear</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a32d9e1f9c6bb908ad7f77b67e9bef7ce" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Data</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7ba350e1c5074a5fb67b80c708c9db41" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Field</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a27f369b21bf9aaf11b8d3d59b502d62c" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Field</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ae3e09707942f5e8701556a8f2d1dc28f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>ForEach</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9828b8f0ce3480c94aceb21e995444fd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Initialize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac8f9badcc6d94649bd7dad93e050e84e" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>mData</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1afb172be2139f73ba601dd0c7525dcbcd" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>mDefault</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ad3ef81d3f17fd00c43c8cb5b20d6fa4c" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>mDomain</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a720f78f7c2ddc7d4dac5a81225a9f39a" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>mType</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec1ba142f9ecbb822dbdbfa33e1efd66" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9f16cc8fe089c3536ecc1045799bb87c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a4b94eec17c82fc749ad606566dac5c2d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac2f84b381ead69f2c74469d26b0d1e01" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator*=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a92eb5f1dad434f5b4b0a06fac42300cc" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator+</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec83aeca83e53d6a278cce79ee85b0f5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator+=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a5e447ec33ca5bd3403dcf10e3c14d3cb" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator-</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a12741db58d23c8db9f134b343f5fdc61" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator-=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a6d89d83dbe016eedde1f511d57973ba8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac32428cba5d4facc1da808754858396a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>operator=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aa6dbec4eaab23a9219273ea91353b494" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Range</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a96c84634074f9c9d34e458d4aa1527da" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Resize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a1ef6b14a4bc97a4828e19cb0cdef046b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a2d45511475924bb9658c5177fad05124" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a200572db7b652cd63486a619ab11abb5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Size</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a42aec0bfe1445c179d063ad1b28e9c67" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>Type</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1a5adda3cb5a744467382de3b4a5fe42bd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>VectorField</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1a4c82a8336d30da94ccd228208bbac144" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>VectorField</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7e28dae6d68f14dbb41d3282bd2da186" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>~Field</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field_1aa3f5cae57ef946f56f181b163437dd3f" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::VectorField</scope><name>~VectorField</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>File Grid.cpp - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "File Grid.cpp";
+        var mkdocs_page_input_path = "models\\_grid_8cpp_source.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">File Grid.cpp</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="file-gridcpp">File Grid.cpp<a class="headerlink" href="#file-gridcpp" title="Permanent link">&para;</a></h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_6202b98a8704f42b1ea358646461643f/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../dir_47a0bcc12c466f07097ed8db741700fa/"><strong>Spatial</strong></a> <strong>&gt;</strong> <a href="../_grid_8cpp/"><strong>Grid.cpp</strong></a></p>
+<p><a href="../_grid_8cpp/">Go to the documentation of this file</a></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Grid.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GeoCalculator.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;XYGeoTools.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/Exception.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/MapHelper.h&quot;</span>
+
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">OpenOasis</span><span class="o">::</span><span class="nn">CommImp</span><span class="o">::</span><span class="nn">Spatial</span>
+<span class="p">{</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Utils</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+
+<span class="c1">// ------------------------------------------------------------------------------------</span>
+
+<span class="n">Grid</span><span class="o">::</span><span class="n">Grid</span><span class="p">(</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Coordinate</span><span class="o">&gt;</span><span class="w">     </span><span class="o">&amp;</span><span class="n">nodeCoords</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Coordinate</span><span class="o">&gt;</span><span class="w">     </span><span class="o">&amp;</span><span class="n">faceCoords</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Coordinate</span><span class="o">&gt;</span><span class="w">     </span><span class="o">&amp;</span><span class="n">cellCoords</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w">    </span><span class="o">&amp;</span><span class="n">faceNodes</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w">    </span><span class="o">&amp;</span><span class="n">cellFaces</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">patches</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">zones</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel sections</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="cp">#pragma omp section</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">node</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nodeCoords</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">coor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">nodeCoords</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="cp">#pragma omp section</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">face</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">faceCoords</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">centroid</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nodeIndexes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">faceNodes</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">faceCoords</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">            </span><span class="n">faceNodes</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="cp">#pragma omp section</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cell</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cellCoords</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">centroid</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">cellCoords</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">                </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">faceIndexes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cellFaces</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">cellCoords</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">            </span><span class="n">cellFaces</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">mPatches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">patches</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mZones</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">zones</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">mRawNodesNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mRawFacesNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mRawCellsNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">Grid</span><span class="o">::</span><span class="n">Grid</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Grid</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">grid</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">mMesh</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="o">-&gt;</span><span class="n">mMesh</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mRawCellsNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="o">-&gt;</span><span class="n">mRawCellsNum</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mRawFacesNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="o">-&gt;</span><span class="n">mRawFacesNum</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mRawNodesNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="o">-&gt;</span><span class="n">mRawNodesNum</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mPatches</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="o">-&gt;</span><span class="n">mPatches</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mZones</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="o">-&gt;</span><span class="n">mZones</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">Activate</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Complete mesh topological connections.</span>
+<span class="w">    </span><span class="n">CollectCellsSharedNode</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CollectFacesSharedNode</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CollectCellsSharedFace</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CollectCellNeighbors</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CollectCellsInZone</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Sort node counterclockwise.</span>
+<span class="w">    </span><span class="n">SortNodes</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Activate mesh face structures in orderly.</span>
+<span class="w">    </span><span class="n">CalculateFaceDirector</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CalculateFaceNormal</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CalculateFaceArea</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CalculateFacePerimeter</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Activate mesh cell structures.</span>
+<span class="w">    </span><span class="n">CalculateCellSurface</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CalculateCellVolume</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Check mesh validation.</span>
+<span class="w">    </span><span class="n">CheckMesh</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Analysis mesh structures.</span>
+<span class="cp">#pragma omp parallel sections</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="cp">#pragma omp section</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">CalculateCellDistances</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="cp">#pragma omp section</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">CalculateBoundaryCenterDistances</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="cp">#pragma omp section</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">CollectBoundaryFacesAndCells</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="cp">#pragma omp section</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">CalculateFaceIntersections</span><span class="p">();</span>
+<span class="w">            </span><span class="n">CalculateFaceWeights</span><span class="p">();</span>
+<span class="w">            </span><span class="n">CalculateFaceCorrectionVector</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectCellsSharedNode</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawCellsNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nodeIdxs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">GetCellNodeIndexes</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">mMesh</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">nIdx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nodeIdxs</span><span class="p">)</span>
+<span class="w">            </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">nIdx</span><span class="p">].</span><span class="n">cellIndexes</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectFacesSharedNode</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawFacesNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">nIdx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nodeIndexes</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">nIdx</span><span class="p">].</span><span class="n">faceIndexes</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectCellsSharedFace</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawCellsNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fIdx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">faceIndexes</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">fIdx</span><span class="p">].</span><span class="n">cellIndexes</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectCellNeighbors</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawFacesNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cellIndexes</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cells</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="n">neighbors</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cells</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="w">        </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">cells</span><span class="p">[</span><span class="mi">1</span><span class="p">]].</span><span class="n">neighbors</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">SortNodes</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawFacesNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nodeIndexes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCalculator</span><span class="o">::</span><span class="n">SortFaceNodes</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">mMesh</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceDirector</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawFacesNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w">       </span><span class="o">&amp;</span><span class="n">face</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">centroid</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="n">centroid</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cPoint</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fPoint</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cPoint</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fPoint</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cPoint</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fPoint</span><span class="p">.</span><span class="n">z</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">normal</span><span class="p">;</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">face</span><span class="p">.</span><span class="n">cellSides</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">dir</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="n">face</span><span class="p">.</span><span class="n">cellSides</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">-</span><span class="n">dir</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CheckMesh</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateCellDistances</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawCellsNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n1</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">centroid</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">neighbors</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">index1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">});</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mCenterDists</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">index1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">centroid</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">mCenterDists</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CalculateDistance</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">index2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">});</span>
+
+<span class="w">            </span><span class="n">mCenterDists</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mCenterDists</span><span class="p">[</span><span class="n">index1</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateBoundaryCenterDistances</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawCellsNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n1</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">centroid</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">faceIndexes</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">index1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">});</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mBoundaryCenterDists</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">index1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">centroid</span><span class="p">;</span>
+
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CalculateDistance</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">mBoundaryCenterDists</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">index2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">});</span>
+
+<span class="w">            </span><span class="n">mBoundaryCenterDists</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectBoundaryFacesAndCells</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// for (const auto &amp;face : mMesh.faces)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mBoundaryFaces</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mBoundaryCells</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceIntersections</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// only supported on 2d mesh now.</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawCellsNum</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">faceIndexes</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mFaceIntersection</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mFaceIntersection</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">centroid</span><span class="p">;</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">cIdx</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">face</span><span class="p">.</span><span class="n">cellIndexes</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">cIdx</span><span class="p">];</span>
+
+<span class="w">            </span><span class="n">XYLine</span><span class="w"> </span><span class="nf">l1</span><span class="p">(</span><span class="n">cell</span><span class="p">.</span><span class="n">centroid</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">centroid</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">centroid</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">centroid</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">Node</span><span class="w">    </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">face</span><span class="p">.</span><span class="n">nodeIndexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+<span class="w">            </span><span class="n">Node</span><span class="w">    </span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">face</span><span class="p">.</span><span class="n">nodeIndexes</span><span class="p">[</span><span class="mi">1</span><span class="p">]];</span>
+<span class="w">            </span><span class="n">XYPoint</span><span class="w"> </span><span class="nf">p1</span><span class="p">(</span><span class="n">n1</span><span class="p">.</span><span class="n">coor</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span><span class="p">.</span><span class="n">coor</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="w">            </span><span class="n">XYPoint</span><span class="w"> </span><span class="nf">p2</span><span class="p">(</span><span class="n">n2</span><span class="p">.</span><span class="n">coor</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">.</span><span class="n">coor</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="w">            </span><span class="n">XYLine</span><span class="w">  </span><span class="nf">l2</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">point</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">XYGeoTools</span><span class="o">::</span><span class="n">CalculateIntersectionPoint</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="w"> </span><span class="n">l2</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mFaceIntersection</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">FP</span><span class="p">(</span><span class="n">point</span><span class="p">.</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">FP</span><span class="p">(</span><span class="n">point</span><span class="p">.</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">FP</span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">centroid</span><span class="p">.</span><span class="n">z</span><span class="p">)};</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceWeights</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawFacesNum</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cellIdxs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cellIndexes</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cellIdxs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cIdx1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cellIdxs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cIdx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cellIdxs</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fPoint</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">mFaceIntersection</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cPoint1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">cIdx1</span><span class="p">].</span><span class="n">centroid</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cPoint2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">[</span><span class="n">cIdx2</span><span class="p">].</span><span class="n">centroid</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">distCf1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CalculateDistance</span><span class="p">(</span><span class="n">fPoint</span><span class="p">,</span><span class="w"> </span><span class="n">cPoint1</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">distCf2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CalculateDistance</span><span class="p">(</span><span class="n">fPoint</span><span class="p">,</span><span class="w"> </span><span class="n">cPoint2</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">index1</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">cIdx1</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">});</span>
+<span class="w">        </span><span class="n">mCellFaceWeight</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distCf1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">distCf1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">distCf2</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">index2</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">cIdx2</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">});</span>
+<span class="w">        </span><span class="n">mCellFaceWeight</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distCf2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">distCf1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">distCf2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceCorrectionVector</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#pragma omp parallel for schedule(dynamic)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mRawFacesNum</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">centroid</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mFaceIntersection</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">        </span><span class="n">mFaceCorrVecs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">{</span><span class="n">p2</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="n">z</span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetRawNumCells</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mRawCellsNum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetRawNumFaces</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mRawFacesNum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetRawNumNodes</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mRawNodesNum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNumCells</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNumFaces</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNumNodes</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">Cell</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCell</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">cellIndex</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">cellIndex</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">Face</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetFace</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">faceIndex</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">faces</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">faceIndex</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">nodeIndex</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mMesh</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">nodeIndex</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetPatchIds</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MapHelper</span><span class="o">::</span><span class="n">GetKeys</span><span class="p">(</span><span class="n">mPatches</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetZoneIds</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MapHelper</span><span class="o">::</span><span class="n">GetKeys</span><span class="p">(</span><span class="n">mZones</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetPatchFaceIndexes</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">patchId</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mPatches</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">patchId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetZoneCellIndexes</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">zoneId</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="n">NotImplementedException</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryCenterDistances</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mBoundaryCenterDists</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryCenterDistance</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">boundaryFaceIdx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mBoundaryCenterDists</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">cellIdx</span><span class="p">,</span><span class="w"> </span><span class="n">boundaryFaceIdx</span><span class="p">}));</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellCenterDistances</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mCenterDists</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellCenterDistance</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">neighborCellIdx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mCenterDists</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">cellIdx</span><span class="p">,</span><span class="w"> </span><span class="n">neighborCellIdx</span><span class="p">}));</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryFaceIndexes</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mBoundaryFaces</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryCellIndexes</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mBoundaryCells</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellWeightAtFace</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mCellFaceWeight</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellWeightAtFace</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mCellFaceWeight</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">MultiIndex</span><span class="p">({</span><span class="n">cellIdx</span><span class="p">,</span><span class="w"> </span><span class="n">faceIdx</span><span class="p">}));</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetFaceCorrectionVector</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mFaceCorrVecs</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetFaceCorrectionVector</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mFaceCorrVecs</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">faceIdx</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace OpenOasis::CommImp::Spatial</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

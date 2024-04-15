@@ -1,0 +1,629 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::Field</compoundname>
+    <derivedcompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::ScalarField&lt; Utils::real &gt;</derivedcompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::ScalarField&lt; T &gt;</derivedcompoundref>
+    <derivedcompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::VectorField&lt; T, N &gt;</derivedcompoundref>
+    <includes refid="_field_8h" local="no">Field.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ad3ef81d3f17fd00c43c8cb5b20d6fa4c" prot="protected" static="no" mutable="no">
+        <type>FieldDomain</type>
+        <definition>FieldDomain OpenOasis::CommImp::Numeric::Field&lt; T &gt;::mDomain</definition>
+        <argsstring></argsstring>
+        <name>mDomain</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::mDomain</qualifiedname>
+        <initializer>= FieldDomain::NONE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="40" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a720f78f7c2ddc7d4dac5a81225a9f39a" prot="protected" static="no" mutable="no">
+        <type>FieldType</type>
+        <definition>FieldType OpenOasis::CommImp::Numeric::Field&lt; T &gt;::mType</definition>
+        <argsstring></argsstring>
+        <name>mType</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::mType</qualifiedname>
+        <initializer>= FieldType::NONE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="41" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac8f9badcc6d94649bd7dad93e050e84e" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; OpenOasis::CommImp::Numeric::Field&lt; T &gt;::mData</definition>
+        <argsstring></argsstring>
+        <name>mData</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::mData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="43" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1afb172be2139f73ba601dd0c7525dcbcd" prot="protected" static="no" mutable="no">
+        <type>T</type>
+        <definition>T OpenOasis::CommImp::Numeric::Field&lt; T &gt;::mDefault</definition>
+        <argsstring></argsstring>
+        <name>mDefault</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::mDefault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="45" column="7" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7e28dae6d68f14dbb41d3282bd2da186" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::CommImp::Numeric::Field&lt; T &gt;::~Field</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Field</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::~Field</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="48" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7ba350e1c5074a5fb67b80c708c9db41" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Field</definition>
+        <argsstring>()=default</argsstring>
+        <name>Field</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Field</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="50" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a27f369b21bf9aaf11b8d3d59b502d62c" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Field</definition>
+        <argsstring>(std::size_t size, T value)</argsstring>
+        <name>Field</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Field</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="51" column="5" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9828b8f0ce3480c94aceb21e995444fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Initialize</definition>
+        <argsstring>(T value)</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Initialize</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the vector field with specified value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="60" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a96c84634074f9c9d34e458d4aa1527da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Resize</definition>
+        <argsstring>(std::size_t size)</argsstring>
+        <name>Resize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Resize</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Resizes the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New size. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="67" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a20148bb3cbc2176bd001c564376b0535" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Clean</definition>
+        <argsstring>()</argsstring>
+        <name>Clean</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Clean</qualifiedname>
+        <briefdescription>
+<para>Cleans the field data to the default value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="74" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a90fde564762bb3dc7f07f3d422d06386" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Clear</qualifiedname>
+        <briefdescription>
+<para>Clears the field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="80" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ae3e09707942f5e8701556a8f2d1dc28f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callback</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::ForEach</definition>
+        <argsstring>(Callback func)</argsstring>
+        <name>ForEach</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::ForEach</qualifiedname>
+        <param>
+          <type>Callback</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Iterates the field and invoke given <computeroutput>func</computeroutput> for each element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function iterates the field elements and invoke the callback function <computeroutput>func</computeroutput>. The callback function takes field&apos;s element as its input. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="91" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="91" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a200572db7b652cd63486a619ab11abb5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Size</definition>
+        <argsstring>() const</argsstring>
+        <name>Size</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Size</qualifiedname>
+        <briefdescription>
+<para>Returns the field size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="100" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a1ef6b14a4bc97a4828e19cb0cdef046b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::SetAt</definition>
+        <argsstring>(std::size_t i, T value)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::SetAt</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the field data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="106" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a2d45511475924bb9658c5177fad05124" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::SetAt</definition>
+        <argsstring>(std::size_t startIndex, std::size_t endIndex, const Field&lt; T &gt; &amp;other, std::size_t offset=0)</argsstring>
+        <name>SetAt</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::SetAt</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>startIndex</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>endIndex</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Sets the field data from the specified range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>startIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start index of the range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End index of the range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source" kindref="compound">Source</ref> field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index offset of the source field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="116" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="116" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a32d9e1f9c6bb908ad7f77b67e9bef7ce" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; T &gt; &amp;</type>
+        <definition>const std::vector&lt; T &gt; &amp; OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Data</definition>
+        <argsstring>() const</argsstring>
+        <name>Data</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Data</qualifiedname>
+        <briefdescription>
+<para>Returns constant refrence to the field data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="126" column="23" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a42aec0bfe1445c179d063ad1b28e9c67" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>FieldType</type>
+        <definition>FieldType OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Type</definition>
+        <argsstring>() const</argsstring>
+        <name>Type</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="131" column="15" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aa6dbec4eaab23a9219273ea91353b494" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>FieldDomain</type>
+        <definition>FieldDomain OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Range</definition>
+        <argsstring>() const</argsstring>
+        <name>Range</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::Range</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="136" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec1ba142f9ecbb822dbdbfa33e1efd66" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator()</definition>
+        <argsstring>(int i) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator()</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="145" column="13" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="145" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9f16cc8fe089c3536ecc1045799bb87c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator()</definition>
+        <argsstring>(int i)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator()</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="150" column="7" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a6d89d83dbe016eedde1f511d57973ba8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator=</definition>
+        <argsstring>(const Field&lt; T &gt; &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="155" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac32428cba5d4facc1da808754858396a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator=</definition>
+        <argsstring>(const T &amp;value)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator=</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="160" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a92eb5f1dad434f5b4b0a06fac42300cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt;</type>
+        <definition>Field&lt; T &gt; OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator+</definition>
+        <argsstring>(const Field&lt; T &gt; &amp;other) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="165" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="165" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec83aeca83e53d6a278cce79ee85b0f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator+=</definition>
+        <argsstring>(const Field&lt; T &gt; &amp;other)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="178" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="178" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a5e447ec33ca5bd3403dcf10e3c14d3cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt;</type>
+        <definition>Field&lt; T &gt; OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator-</definition>
+        <argsstring>(const Field&lt; T &gt; &amp;other) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="186" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="186" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a12741db58d23c8db9f134b343f5fdc61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator-=</definition>
+        <argsstring>(const Field&lt; T &gt; &amp;other)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="199" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="199" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a4b94eec17c82fc749ad606566dac5c2d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt;</type>
+        <definition>Field&lt; T &gt; OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator*</definition>
+        <argsstring>(double k) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator*</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="207" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="207" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac2f84b381ead69f2c74469d26b0d1e01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::Field&lt; T &gt;::operator*=</definition>
+        <argsstring>(double k)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Field::operator*=</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Field.h" line="215" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="215" bodyend="218"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The abstract field class used to represent numeric field, such as scalar, vector or tensor data. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::Field&lt; T &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field"/>
+      </node>
+      <node id="3">
+        <label>OpenOasis::CommImp::Numeric::ScalarField&lt; T &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OpenOasis::CommImp::Numeric::VectorField&lt; T, N &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::ScalarField&lt; Utils::real &gt;</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Models/CommImp/Numeric/Field.h" line="37" column="1" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="38" bodyend="219"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a20148bb3cbc2176bd001c564376b0535" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Clean</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a90fde564762bb3dc7f07f3d422d06386" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Clear</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a32d9e1f9c6bb908ad7f77b67e9bef7ce" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Data</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7ba350e1c5074a5fb67b80c708c9db41" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Field</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a27f369b21bf9aaf11b8d3d59b502d62c" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Field</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ae3e09707942f5e8701556a8f2d1dc28f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>ForEach</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9828b8f0ce3480c94aceb21e995444fd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Initialize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac8f9badcc6d94649bd7dad93e050e84e" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>mData</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1afb172be2139f73ba601dd0c7525dcbcd" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>mDefault</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ad3ef81d3f17fd00c43c8cb5b20d6fa4c" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>mDomain</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a720f78f7c2ddc7d4dac5a81225a9f39a" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>mType</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec1ba142f9ecbb822dbdbfa33e1efd66" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9f16cc8fe089c3536ecc1045799bb87c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator()</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a4b94eec17c82fc749ad606566dac5c2d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator*</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac2f84b381ead69f2c74469d26b0d1e01" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator*=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a92eb5f1dad434f5b4b0a06fac42300cc" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator+</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec83aeca83e53d6a278cce79ee85b0f5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator+=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a5e447ec33ca5bd3403dcf10e3c14d3cb" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator-</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a12741db58d23c8db9f134b343f5fdc61" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator-=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a6d89d83dbe016eedde1f511d57973ba8" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac32428cba5d4facc1da808754858396a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>operator=</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aa6dbec4eaab23a9219273ea91353b494" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Range</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a96c84634074f9c9d34e458d4aa1527da" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Resize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a1ef6b14a4bc97a4828e19cb0cdef046b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a2d45511475924bb9658c5177fad05124" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>SetAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a200572db7b652cd63486a619ab11abb5" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Size</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a42aec0bfe1445c179d063ad1b28e9c67" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Type</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7e28dae6d68f14dbb41d3282bd2da186" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>~Field</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

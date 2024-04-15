@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Class OpenOasis::CommImp::Spatial::Grid - OpenOasis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Class OpenOasis::CommImp::Spatial::Grid";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OpenOasis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis iAgents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis/">Oasis API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Data Assts</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DataAssts/">Converters</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisTutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OpenOasis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Class OpenOasis::CommImp::Spatial::Grid</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="class-openoasiscommimpspatialgrid">Class OpenOasis::CommImp::Spatial::Grid<a class="headerlink" href="#class-openoasiscommimpspatialgrid" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp_1_1_spatial/"><strong>Spatial</strong></a> <strong>&gt;</strong> <a href="./"><strong>Grid</strong></a></p>
+<p><a href="./"><em><strong>Grid</strong></em></a> <em>encapsulate the mesh data for numerical calculation.</em></p>
+<ul>
+<li><code>#include &lt;Grid.h&gt;</code></li>
+</ul>
+<p>Inherited by the following classes: <a href="../class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid1_d/">OpenOasis::CommImp::Spatial::Grid1D</a>,  <a href="../class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d/">OpenOasis::CommImp::Spatial::Grid2D</a>,  <a href="../class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid3_d/">OpenOasis::CommImp::Spatial::Grid3D</a></p>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-activate"><strong>Activate</strong></a> () <br><em>Activate the mesh to extract topological information needed for various numerical calculations.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">const std::vector&lt; int &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-getboundarycellindexes"><strong>GetBoundaryCellIndexes</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">double</td>
+<td style="text-align: left;"><a href="#function-getboundarycenterdistance"><strong>GetBoundaryCenterDistance</strong></a> (int cellIdx, int boundaryFaceIdx) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const MultiIndexMap&lt; double &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-getboundarycenterdistances"><strong>GetBoundaryCenterDistances</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const std::vector&lt; int &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-getboundaryfaceindexes"><strong>GetBoundaryFaceIndexes</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell/"><strong>Cell</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-getcell"><strong>GetCell</strong></a> (int cellIndex) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">double</td>
+<td style="text-align: left;"><a href="#function-getcellcenterdistance"><strong>GetCellCenterDistance</strong></a> (int cellIdx, int neighborCellIdx) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const MultiIndexMap&lt; double &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-getcellcenterdistances"><strong>GetCellCenterDistances</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const MultiIndexMap&lt; double &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-getcellweightatface-12"><strong>GetCellWeightAtFace</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">double</td>
+<td style="text-align: left;"><a href="#function-getcellweightatface-22"><strong>GetCellWeightAtFace</strong></a> (int cellIdx, int faceIdx) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face/"><strong>Face</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-getface"><strong>GetFace</strong></a> (int faceIndex) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const std::unordered_map&lt; int, <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>Vector</strong></a>&lt; double &gt; &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-getfacecorrectionvector-12"><strong>GetFaceCorrectionVector</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>Vector</strong></a>&lt; double &gt; &amp;</td>
+<td style="text-align: left;"><a href="#function-getfacecorrectionvector-22"><strong>GetFaceCorrectionVector</strong></a> (int faceIdx) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node/"><strong>Node</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-getnode"><strong>GetNode</strong></a> (int nodeIndex) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getnumcells"><strong>GetNumCells</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getnumfaces"><strong>GetNumFaces</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getnumnodes"><strong>GetNumNodes</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#function-getpatchfaceindexes"><strong>GetPatchFaceIndexes</strong></a> (const std::string &amp; patchId) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; std::string &gt;</td>
+<td style="text-align: left;"><a href="#function-getpatchids"><strong>GetPatchIds</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getrawnumcells"><strong>GetRawNumCells</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getrawnumfaces"><strong>GetRawNumFaces</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getrawnumnodes"><strong>GetRawNumNodes</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#function-getzonecellindexes"><strong>GetZoneCellIndexes</strong></a> (const std::string &amp; zoneId) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; std::string &gt;</td>
+<td style="text-align: left;"><a href="#function-getzoneids"><strong>GetZoneIds</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-grid-12"><strong>Grid</strong></a> (const std::shared_ptr&lt; <a href="./"><strong>Grid</strong></a> &gt; &amp; grid) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-grid-22"><strong>Grid</strong></a> (std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a> &gt; &amp; nodeCoords, std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a> &gt; &amp; faceCoords, std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a> &gt; &amp; cellCoords, std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp; faceNodes, std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; &amp; cellFaces, std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp; patches, std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt; &amp; zones) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-refinecell"><strong>RefineCell</strong></a> (int cellIndex) = 0<br><em>Refine the cell at the given index for adaptive grid.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-relaxcell"><strong>RelaxCell</strong></a> (int cellIndex) = 0<br><em>Relax the cell at the given index for adaptive grid.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-type"><strong>Type</strong></a> () const = 0<br><em>Get the grid type.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual</td>
+<td style="text-align: left;"><a href="#function-grid"><strong>~Grid</strong></a> () = default<br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-attributes">Protected Attributes<a class="headerlink" href="#protected-attributes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#variable-mboundarycells"><strong>mBoundaryCells</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">MultiIndexMap&lt; double &gt;</td>
+<td style="text-align: left;"><a href="#variable-mboundarycenterdists"><strong>mBoundaryCenterDists</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::vector&lt; int &gt;</td>
+<td style="text-align: left;"><a href="#variable-mboundaryfaces"><strong>mBoundaryFaces</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">MultiIndexMap&lt; double &gt;</td>
+<td style="text-align: left;"><a href="#variable-mcellfaceweight"><strong>mCellFaceWeight</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">MultiIndexMap&lt; double &gt;</td>
+<td style="text-align: left;"><a href="#variable-mcenterdists"><strong>mCenterDists</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::unordered_map&lt; int, <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>Vector</strong></a>&lt; double &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-mfacecorrvecs"><strong>mFaceCorrVecs</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::unordered_map&lt; int, <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a> &gt;</td>
+<td style="text-align: left;"><a href="#variable-mfaceintersection"><strong>mFaceIntersection</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh/"><strong>Mesh</strong></a></td>
+<td style="text-align: left;"><a href="#variable-mmesh"><strong>mMesh</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-mpatches"><strong>mPatches</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#variable-mrawcellsnum"><strong>mRawCellsNum</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#variable-mrawfacesnum"><strong>mRawFacesNum</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#variable-mrawnodesnum"><strong>mRawNodesNum</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-mzonecells"><strong>mZoneCells</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt;</td>
+<td style="text-align: left;"><a href="#variable-mzones"><strong>mZones</strong></a>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions">Protected Functions<a class="headerlink" href="#protected-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculateboundarycenterdistances"><strong>CalculateBoundaryCenterDistances</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatecelldistances"><strong>CalculateCellDistances</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatecellsurface"><strong>CalculateCellSurface</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatecellvolume"><strong>CalculateCellVolume</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">double</td>
+<td style="text-align: left;"><a href="#function-calculatedistance"><strong>CalculateDistance</strong></a> (const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a> &amp; n1, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate/"><strong>Coordinate</strong></a> &amp; n2) const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatefacearea"><strong>CalculateFaceArea</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatefacecorrectionvector"><strong>CalculateFaceCorrectionVector</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatefacedirector"><strong>CalculateFaceDirector</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatefaceintersections"><strong>CalculateFaceIntersections</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatefacenormal"><strong>CalculateFaceNormal</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatefaceperimeter"><strong>CalculateFacePerimeter</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-calculatefaceweights"><strong>CalculateFaceWeights</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-checkmesh"><strong>CheckMesh</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-collectboundaryfacesandcells"><strong>CollectBoundaryFacesAndCells</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-collectcellneighbors"><strong>CollectCellNeighbors</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-collectcellsinzone"><strong>CollectCellsInZone</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-collectcellssharedface"><strong>CollectCellsSharedFace</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-collectcellssharednode"><strong>CollectCellsSharedNode</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-collectfacessharednode"><strong>CollectFacesSharedNode</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-sortnodes"><strong>SortNodes</strong></a> () <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-activate">function Activate<a class="headerlink" href="#function-activate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">Activate</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-getboundarycellindexes">function GetBoundaryCellIndexes<a class="headerlink" href="#function-getboundarycellindexes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryCellIndexes</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getboundarycenterdistance">function GetBoundaryCenterDistance<a class="headerlink" href="#function-getboundarycenterdistance" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryCenterDistance</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">boundaryFaceIdx</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getboundarycenterdistances">function GetBoundaryCenterDistances<a class="headerlink" href="#function-getboundarycenterdistances" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryCenterDistances</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getboundaryfaceindexes">function GetBoundaryFaceIndexes<a class="headerlink" href="#function-getboundaryfaceindexes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetBoundaryFaceIndexes</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getcell">function GetCell<a class="headerlink" href="#function-getcell" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Cell</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCell</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getcellcenterdistance">function GetCellCenterDistance<a class="headerlink" href="#function-getcellcenterdistance" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellCenterDistance</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">neighborCellIdx</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getcellcenterdistances">function GetCellCenterDistances<a class="headerlink" href="#function-getcellcenterdistances" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellCenterDistances</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getcellweightatface-12">function GetCellWeightAtFace [&frac12;]<a class="headerlink" href="#function-getcellweightatface-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellWeightAtFace</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getcellweightatface-22">function GetCellWeightAtFace [2/2]<a class="headerlink" href="#function-getcellweightatface-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetCellWeightAtFace</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIdx</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getface">function GetFace<a class="headerlink" href="#function-getface" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Face</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetFace</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getfacecorrectionvector-12">function GetFaceCorrectionVector [&frac12;]<a class="headerlink" href="#function-getfacecorrectionvector-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetFaceCorrectionVector</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getfacecorrectionvector-22">function GetFaceCorrectionVector [2/2]<a class="headerlink" href="#function-getfacecorrectionvector-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetFaceCorrectionVector</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIdx</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getnode">function GetNode<a class="headerlink" href="#function-getnode" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNode</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nodeIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getnumcells">function GetNumCells<a class="headerlink" href="#function-getnumcells" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNumCells</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getnumfaces">function GetNumFaces<a class="headerlink" href="#function-getnumfaces" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNumFaces</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getnumnodes">function GetNumNodes<a class="headerlink" href="#function-getnumnodes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetNumNodes</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getpatchfaceindexes">function GetPatchFaceIndexes<a class="headerlink" href="#function-getpatchfaceindexes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetPatchFaceIndexes</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">patchId</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getpatchids">function GetPatchIds<a class="headerlink" href="#function-getpatchids" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetPatchIds</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getrawnumcells">function GetRawNumCells<a class="headerlink" href="#function-getrawnumcells" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetRawNumCells</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getrawnumfaces">function GetRawNumFaces<a class="headerlink" href="#function-getrawnumfaces" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetRawNumFaces</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getrawnumnodes">function GetRawNumNodes<a class="headerlink" href="#function-getrawnumnodes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetRawNumNodes</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getzonecellindexes">function GetZoneCellIndexes<a class="headerlink" href="#function-getzonecellindexes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetZoneCellIndexes</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">zoneId</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-getzoneids">function GetZoneIds<a class="headerlink" href="#function-getzoneids" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">GetZoneIds</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-grid-12">function Grid [&frac12;]<a class="headerlink" href="#function-grid-12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">Grid</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">Grid</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">grid</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-grid-22">function Grid [2/2]<a class="headerlink" href="#function-grid-22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">Grid</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nodeCoords</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">faceCoords</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cellCoords</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">faceNodes</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cellFaces</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">patches</span><span class="p">,</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">zones</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-refinecell">function RefineCell<a class="headerlink" href="#function-refinecell" title="Permanent link">&para;</a></h3>
+<p><em>Refine the cell at the given index for adaptive grid.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">RefineCell</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Note:</strong></p>
+<p>The refining wouldn't change the origin nodes. </p>
+<h3 id="function-relaxcell">function RelaxCell<a class="headerlink" href="#function-relaxcell" title="Permanent link">&para;</a></h3>
+<p><em>Relax the cell at the given index for adaptive grid.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">RelaxCell</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Note:</strong></p>
+<p>The coarsening wouldn't change the origin nodes. </p>
+<h3 id="function-type">function Type<a class="headerlink" href="#function-type" title="Permanent link">&para;</a></h3>
+<p><em>Get the grid type.</em> 
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">Type</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></p>
+<p><strong>Returns:</strong></p>
+<p>Return 1, for 1d grid; 2, for 2d; 3, for 3d; others, for invalid type. </p>
+<h3 id="function-grid">function ~Grid<a class="headerlink" href="#function-grid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::~</span><span class="n">Grid</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span>
+</code></pre></div>
+<h2 id="protected-attributes-documentation">Protected Attributes Documentation<a class="headerlink" href="#protected-attributes-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="variable-mboundarycells">variable mBoundaryCells<a class="headerlink" href="#variable-mboundarycells" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mBoundaryCells</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mboundarycenterdists">variable mBoundaryCenterDists<a class="headerlink" href="#variable-mboundarycenterdists" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mBoundaryCenterDists</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mboundaryfaces">variable mBoundaryFaces<a class="headerlink" href="#variable-mboundaryfaces" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mBoundaryFaces</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mcellfaceweight">variable mCellFaceWeight<a class="headerlink" href="#variable-mcellfaceweight" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mCellFaceWeight</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mcenterdists">variable mCenterDists<a class="headerlink" href="#variable-mcenterdists" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">MultiIndexMap</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mCenterDists</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mfacecorrvecs">variable mFaceCorrVecs<a class="headerlink" href="#variable-mfacecorrvecs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mFaceCorrVecs</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mfaceintersection">variable mFaceIntersection<a class="headerlink" href="#variable-mfaceintersection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Coordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mFaceIntersection</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mmesh">variable mMesh<a class="headerlink" href="#variable-mmesh" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">Mesh</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mMesh</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mpatches">variable mPatches<a class="headerlink" href="#variable-mpatches" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mPatches</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mrawcellsnum">variable mRawCellsNum<a class="headerlink" href="#variable-mrawcellsnum" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mRawCellsNum</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mrawfacesnum">variable mRawFacesNum<a class="headerlink" href="#variable-mrawfacesnum" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mRawFacesNum</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mrawnodesnum">variable mRawNodesNum<a class="headerlink" href="#variable-mrawnodesnum" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mRawNodesNum</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mzonecells">variable mZoneCells<a class="headerlink" href="#variable-mzonecells" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mZoneCells</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-mzones">variable mZones<a class="headerlink" href="#variable-mzones" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">mZones</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="protected-functions-documentation">Protected Functions Documentation<a class="headerlink" href="#protected-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-calculateboundarycenterdistances">function CalculateBoundaryCenterDistances<a class="headerlink" href="#function-calculateboundarycenterdistances" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateBoundaryCenterDistances</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatecelldistances">function CalculateCellDistances<a class="headerlink" href="#function-calculatecelldistances" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateCellDistances</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatecellsurface">function CalculateCellSurface<a class="headerlink" href="#function-calculatecellsurface" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateCellSurface</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatecellvolume">function CalculateCellVolume<a class="headerlink" href="#function-calculatecellvolume" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateCellVolume</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatedistance">function CalculateDistance<a class="headerlink" href="#function-calculatedistance" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateDistance</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">n2</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-calculatefacearea">function CalculateFaceArea<a class="headerlink" href="#function-calculatefacearea" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceArea</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefacecorrectionvector">function CalculateFaceCorrectionVector<a class="headerlink" href="#function-calculatefacecorrectionvector" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceCorrectionVector</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefacedirector">function CalculateFaceDirector<a class="headerlink" href="#function-calculatefacedirector" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceDirector</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefaceintersections">function CalculateFaceIntersections<a class="headerlink" href="#function-calculatefaceintersections" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceIntersections</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefacenormal">function CalculateFaceNormal<a class="headerlink" href="#function-calculatefacenormal" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceNormal</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefaceperimeter">function CalculateFacePerimeter<a class="headerlink" href="#function-calculatefaceperimeter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFacePerimeter</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-calculatefaceweights">function CalculateFaceWeights<a class="headerlink" href="#function-calculatefaceweights" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CalculateFaceWeights</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-checkmesh">function CheckMesh<a class="headerlink" href="#function-checkmesh" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CheckMesh</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+<h3 id="function-collectboundaryfacesandcells">function CollectBoundaryFacesAndCells<a class="headerlink" href="#function-collectboundaryfacesandcells" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectBoundaryFacesAndCells</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-collectcellneighbors">function CollectCellNeighbors<a class="headerlink" href="#function-collectcellneighbors" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectCellNeighbors</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-collectcellsinzone">function CollectCellsInZone<a class="headerlink" href="#function-collectcellsinzone" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectCellsInZone</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-collectcellssharedface">function CollectCellsSharedFace<a class="headerlink" href="#function-collectcellssharedface" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectCellsSharedFace</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-collectcellssharednode">function CollectCellsSharedNode<a class="headerlink" href="#function-collectcellssharednode" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectCellsSharedNode</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-collectfacessharednode">function CollectFacesSharedNode<a class="headerlink" href="#function-collectfacessharednode" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">CollectFacesSharedNode</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="function-sortnodes">function SortNodes<a class="headerlink" href="#function-sortnodes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid</span><span class="o">::</span><span class="n">SortNodes</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+<hr />
+<p>The documentation for this class was generated from the following file <code>Models/CommImp/Spatial/Grid.h</code></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_value_set" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IValueSet</compoundname>
+    <includes refid="_i_value_set_8h" local="no">IValueSet.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a7f6c5577289774d133853b5c7d89bf83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_value_definition" kindref="compound">IValueDefinition</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IValueDefinition &gt; OpenOasis::IValueSet::GetValueDefinition</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetValueDefinition</name>
+        <qualifiedname>OpenOasis::IValueSet::GetValueDefinition</qualifiedname>
+        <briefdescription>
+<para>Definition of the values in the value set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The &quot;IValueDefinition&quot; should never be returned directly; The all implementing classes should return either an <computeroutput><ref refid="class_open_oasis_1_1_i_quality" kindref="compound">IQuality</ref></computeroutput>, an <computeroutput><ref refid="class_open_oasis_1_1_i_quantity" kindref="compound">IQuantity</ref></computeroutput>, or a custom derived value definition interface. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="38" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a22425ebafd249be83495f0ef4375aca7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int OpenOasis::IValueSet::GetNumberOfIndices</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetNumberOfIndices</name>
+        <qualifiedname>OpenOasis::IValueSet::GetNumberOfIndices</qualifiedname>
+        <briefdescription>
+<para>Returns the number of possible indices (dimensions). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>number of indices, zero based. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="42" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a2f442a385b27c6152ef569bd0485f222" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int OpenOasis::IValueSet::GetIndexCount</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;indices) const =0</argsstring>
+        <name>GetIndexCount</name>
+        <qualifiedname>OpenOasis::IValueSet::GetIndexCount</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>indices</declname>
+        </param>
+        <briefdescription>
+<para>Returns the length of the dimension specified. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To get the size of the specified dimension, use zero-length int array as input argument. Length of indice must be a least one smaller than the <computeroutput><ref refid="class_open_oasis_1_1_i_value_set_1a22425ebafd249be83495f0ef4375aca7" kindref="member">GetNumberOfIndices()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices of the dimension to get the size of. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the specified dimension. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="52" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1af6ec749edd7baa719b60fe694b634895" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::any</type>
+        <definition>virtual std::any OpenOasis::IValueSet::GetValue</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;indices) const =0</argsstring>
+        <name>GetValue</name>
+        <qualifiedname>OpenOasis::IValueSet::GetValue</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>indices</declname>
+        </param>
+        <briefdescription>
+<para>Returns the value object specified by the given indices array. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices of each dimension. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value object for the given indices. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of the array of indices is N, so that the index for each dimension is specified. Otherwise throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="59" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a9aa978881c192a16e852ffcf1fd838a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IValueSet::RemoveValue</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;indices)=0</argsstring>
+        <name>RemoveValue</name>
+        <qualifiedname>OpenOasis::IValueSet::RemoveValue</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>indices</declname>
+        </param>
+        <briefdescription>
+<para>Removes the values specified by the given indices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is possible to remove not just a single value item, but also the whole set of values for the given indices.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices of specified dimension. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="67" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a3423e65be94aa92b4da73905d7f67bea" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IValueSet::SetOrAddValue</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;indices, const std::any &amp;value)=0</argsstring>
+        <name>SetOrAddValue</name>
+        <qualifiedname>OpenOasis::IValueSet::SetOrAddValue</qualifiedname>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>indices</declname>
+        </param>
+        <param>
+          <type>const std::any &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets or adds the value object specified by the given indices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indices of each dimension. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value object to be set or added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of the array of indices is N, so that the index for each dimension is specified. Otherwise throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="75" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a1da387942656dc8539d45d5aa2c623fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool OpenOasis::IValueSet::IsValues2D</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsValues2D</name>
+        <qualifiedname>OpenOasis::IValueSet::IsValues2D</qualifiedname>
+        <briefdescription>
+<para>Whether this value set is a specified two-dimensional type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="85" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a15758881e825f9eec7a368055692a276" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::any &gt;</type>
+        <definition>virtual std::vector&lt; std::any &gt; OpenOasis::IValueSet::GetTimeSeriesValuesForElement</definition>
+        <argsstring>(int elementIndex) const =0</argsstring>
+        <name>GetTimeSeriesValuesForElement</name>
+        <qualifiedname>OpenOasis::IValueSet::GetTimeSeriesValuesForElement</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <briefdescription>
+<para>Gets the values, for all times, for the given elementIndex. If the data is spatial independent, <computeroutput>elementIndex</computeroutput> must be specified as 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of element in <computeroutput><ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The timeseries values. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <computeroutput>elementIndex</computeroutput> is out of range, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="95" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1abef75ad9ea445a39287f6204abe50468" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IValueSet::SetTimeSeriesValuesForElement</definition>
+        <argsstring>(int elementIndex, const std::vector&lt; std::any &gt; &amp;values)=0</argsstring>
+        <name>SetTimeSeriesValuesForElement</name>
+        <qualifiedname>OpenOasis::IValueSet::SetTimeSeriesValuesForElement</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>elementIndex</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::any &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Sets the values, for all times, for the given elementIndex. If the data is spatial independent, <computeroutput>elementIndex</computeroutput> must be specified as 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elementIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of element in <computeroutput><ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries values for given element. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <computeroutput>elementIndex</computeroutput> is out of range, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="104" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1ae7c3539914a8e7747b38fa4627678316" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::IValueSet::SetElementValuesForTime</definition>
+        <argsstring>(int timeIndex, const std::vector&lt; std::any &gt; &amp;values)=0</argsstring>
+        <name>SetElementValuesForTime</name>
+        <qualifiedname>OpenOasis::IValueSet::SetElementValuesForTime</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>timeIndex</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::any &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Sets the values, for all elements, for the given timeIndex. If data is time independent, <computeroutput>timeIndex</computeroutput> must be specified as 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of time in <computeroutput><ref refid="class_open_oasis_1_1_i_time_set" kindref="compound">ITimeSet</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element valueset at given time. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>timeIndex</computeroutput> is out of range, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="115" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_value_set_1a15e3267ca676ffcbbb0da089a8dce715" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::any &gt;</type>
+        <definition>virtual std::vector&lt; std::any &gt; OpenOasis::IValueSet::GetElementValuesForTime</definition>
+        <argsstring>(int timeIndex) const =0</argsstring>
+        <name>GetElementValuesForTime</name>
+        <qualifiedname>OpenOasis::IValueSet::GetElementValuesForTime</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>timeIndex</declname>
+        </param>
+        <briefdescription>
+<para>Gets the values, for all elements, for the given timeIndex. If data is time independent, <computeroutput>timeIndex</computeroutput> must be specified as 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of time in <computeroutput><ref refid="class_open_oasis_1_1_i_time_set" kindref="compound">ITimeSet</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Element valueset at given time. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>If</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>timeIndex</computeroutput> is out of range, throw an exception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IValueSet.h" line="124" column="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class represents a general(ordered) multi-dimensional set of values. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The size of each dimension can vary, depending on the indices provided, e.g. In a 2D matrix, each row can have different lengths. For example, assuming the data is stored as a double[][] matrix, then matrix[1].Size need not equal to matrix[2].Size. </para>
+    </detaileddescription>
+    <location file="Models/Inc/IValueSet.h" line="26" column="1" bodyfile="Models/Inc/IValueSet.h" bodystart="27" bodyend="125"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_value_set_1a15e3267ca676ffcbbb0da089a8dce715" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>GetElementValuesForTime</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1a2f442a385b27c6152ef569bd0485f222" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>GetIndexCount</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1a22425ebafd249be83495f0ef4375aca7" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>GetNumberOfIndices</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1a15758881e825f9eec7a368055692a276" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>GetTimeSeriesValuesForElement</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1af6ec749edd7baa719b60fe694b634895" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>GetValue</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1a7f6c5577289774d133853b5c7d89bf83" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>GetValueDefinition</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1a1da387942656dc8539d45d5aa2c623fa" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>IsValues2D</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1a9aa978881c192a16e852ffcf1fd838a8" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>RemoveValue</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1ae7c3539914a8e7747b38fa4627678316" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>SetElementValuesForTime</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1a3423e65be94aa92b4da73905d7f67bea" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>SetOrAddValue</name></member>
+      <member refid="class_open_oasis_1_1_i_value_set_1abef75ad9ea445a39287f6204abe50468" prot="public" virt="pure-virtual"><scope>OpenOasis::IValueSet</scope><name>SetTimeSeriesValuesForElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

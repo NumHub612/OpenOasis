@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::FVM::FvmSolver</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::Solver</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a4ecfdb46d5c97a4586206cd3ce097e26" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Grid&gt; OpenOasis::CommImp::Numeric::FVM::FvmSolver::mGrid</definition>
+        <argsstring></argsstring>
+        <name>mGrid</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::mGrid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="24" column="21" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a0270217cdaebedcbcf5444807d1a590d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref>&lt; real &gt;</type>
+        <definition>Matrix&lt;real&gt; OpenOasis::CommImp::Numeric::FVM::FvmSolver::mCoeffMat</definition>
+        <argsstring></argsstring>
+        <name>mCoeffMat</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::mCoeffMat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="25" column="21" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a945eea7220ec9fdcb4608110992c3241" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; real &gt;</type>
+        <definition>std::vector&lt;real&gt; OpenOasis::CommImp::Numeric::FVM::FvmSolver::mRhs</definition>
+        <argsstring></argsstring>
+        <name>mRhs</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::mRhs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="26" column="21" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a06301317f819992f63bc73f768b92a75" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">Boundary</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;int, std::shared_ptr&lt;Boundary&gt; &gt; OpenOasis::CommImp::Numeric::FVM::FvmSolver::mBoundaries</definition>
+        <argsstring></argsstring>
+        <name>mBoundaries</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::mBoundaries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="28" column="24" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a85c3e3cbdefe986debe8b5e612d64f76" prot="private" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Numeric::FVM::FvmSolver::mCoeffHeat</definition>
+        <argsstring></argsstring>
+        <name>mCoeffHeat</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::mCoeffHeat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="30" column="10" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1ab03548c8f0da41016ffd9d4db407944f" prot="private" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Numeric::FVM::FvmSolver::mInitValue</definition>
+        <argsstring></argsstring>
+        <name>mInitValue</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::mInitValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="31" column="10" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a319e1639fb4e662151b3bff9e30de476" prot="private" static="no" mutable="no">
+        <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarFieldFp</ref></type>
+        <definition>ScalarFieldFp OpenOasis::CommImp::Numeric::FVM::FvmSolver::mTemps</definition>
+        <argsstring></argsstring>
+        <name>mTemps</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::mTemps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="33" column="19" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a5c7aa214d7161620dd697088364bc853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::FVM::FvmSolver::~FvmSolver</definition>
+        <argsstring>()=default</argsstring>
+        <name>~FvmSolver</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::~FvmSolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="36" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a080b9a8fc3394156d373829e4fde6ebf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::FVM::FvmSolver::FvmSolver</definition>
+        <argsstring>(const std::shared_ptr&lt; Grid &gt; &amp;grid)</argsstring>
+        <name>FvmSolver</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::FvmSolver</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> &gt; &amp;</type>
+          <declname>grid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="37" column="5" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.cpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a0bf8e526619abf77591276c56f7f5479" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::FVM::FvmSolver::SetBoundary</definition>
+        <argsstring>(int faceIndex, const std::shared_ptr&lt; Boundary &gt; &amp;bound) override</argsstring>
+        <name>SetBoundary</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::SetBoundary</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a348b2345b05e9ba35df583f0d9786fdb">SetBoundary</reimplements>
+        <param>
+          <type>int</type>
+          <declname>faceIndex</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">Boundary</ref> &gt; &amp;</type>
+          <declname>bound</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="39" column="10" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a378463bcd3612c4a15211ec20676e07c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::FVM::FvmSolver::SetInitialValue</definition>
+        <argsstring>(const std::string &amp;var, const std::variant&lt; real, Vector&lt; real &gt;, Tensor&lt; real &gt; &gt; &amp;value) override</argsstring>
+        <name>SetInitialValue</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::SetInitialValue</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae027d2b890f888f5807d1ea6e2a3c396">SetInitialValue</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>var</declname>
+        </param>
+        <param>
+          <type>const std::variant&lt; real, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; real &gt;, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref>&lt; real &gt; &gt; &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="40" column="10" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.cpp" bodystart="26" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1af45767e1240784055044a15ab5fbcf9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::FVM::FvmSolver::SetCoefficient</definition>
+        <argsstring>(const std::string &amp;var, const std::variant&lt; real, Vector&lt; real &gt;, Tensor&lt; real &gt; &gt; &amp;coeff) override</argsstring>
+        <name>SetCoefficient</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::SetCoefficient</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aeac66a323bf200585eba8f729d476b12">SetCoefficient</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>var</declname>
+        </param>
+        <param>
+          <type>const std::variant&lt; real, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector</ref>&lt; real &gt;, <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor</ref>&lt; real &gt; &gt; &amp;</type>
+          <declname>coeff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="43" column="10" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.cpp" bodystart="37" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a65e12b05b1f7be8862fbcacd5ffe4af8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::FVM::FvmSolver::ParseDiffusionTerm</definition>
+        <argsstring>() override</argsstring>
+        <name>ParseDiffusionTerm</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::ParseDiffusionTerm</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ad83b9b0ae0fae5d76145ca2dd69a0ab7">ParseDiffusionTerm</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="47" column="10" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.cpp" bodystart="48" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a1b6b326242dada7ad83ecde17f07ffa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::FVM::FvmSolver::Solve</definition>
+        <argsstring>() override</argsstring>
+        <name>Solve</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::Solve</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ac5246b3710831198c7e1901774b5fec9">Solve</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="49" column="10" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.cpp" bodystart="72" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a417e1cbe7153e5472a8f52a09745bc5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::optional&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarFieldFp</ref> &gt;</type>
+        <definition>optional&lt; ScalarFieldFp &gt; OpenOasis::CommImp::Numeric::FVM::FvmSolver::GetScalarSolutions</definition>
+        <argsstring>(const std::string &amp;var) const override</argsstring>
+        <name>GetScalarSolutions</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::FvmSolver::GetScalarSolutions</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a10b6799050bcca98a3aa966f0cfaf221">GetScalarSolutions</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>var</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="52" column="5" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.cpp" bodystart="94" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::FVM::FvmSolver</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::Solver</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::FVM::FvmSolver</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::Solver</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver"/>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Numeric/FVM/FvmSolver.h" line="21" column="1" bodyfile="Models/CommImp/Numeric/FVM/FvmSolver.h" bodystart="22" bodyend="53"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a544fef246c6cf41edf2b872dcc013880" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>AfterScheme</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9d8349846efec36de9ff3d67f54ceefb" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>AfterSolve</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a28f0bcd5c64e899071dcf2bfd62aef5f" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>BeforeScheme</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae135886e3f94c8c1f99a7cec3ea54caf" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>BeforeSolve</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a080b9a8fc3394156d373829e4fde6ebf" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>FvmSolver</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9cbf6bc354db51c3d4c8d8fc5a4fe72a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>GetLinearEqs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a417e1cbe7153e5472a8f52a09745bc5b" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>GetScalarSolutions</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a57043ade2003c0e8ef7e359482441440" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>GetTensorSolutions</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aa66414e1786218d2fee586e23e35cdaa" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>GetVectorSolutions</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a06301317f819992f63bc73f768b92a75" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>mBoundaries</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a85c3e3cbdefe986debe8b5e612d64f76" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>mCoeffHeat</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a0270217cdaebedcbcf5444807d1a590d" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>mCoeffMat</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a4ecfdb46d5c97a4586206cd3ce097e26" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>mGrid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1ab03548c8f0da41016ffd9d4db407944f" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>mInitValue</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a945eea7220ec9fdcb4608110992c3241" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>mRhs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a319e1639fb4e662151b3bff9e30de476" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>mTemps</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a87c5b8eb3f2de56f44c961efea4b6094" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>ParseConvectionTerm</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a65e12b05b1f7be8862fbcacd5ffe4af8" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>ParseDiffusionTerm</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a7d1ef2ebe984805ac6a2b37d26d9c7b3" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>ParseSourceTerm</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae7a97e0f8cd71f16d7e0f3f5354c10df" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>ParseTimeDerivativeTerm</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a1c6d6b76ef84d484d9d722cb999f3075" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>Scheme</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a0bf8e526619abf77591276c56f7f5479" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetBoundary</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1af45767e1240784055044a15ab5fbcf9e" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ab6ed4c2b562a8875fdfcaff2f755152b" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Solver::"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a5ffd902f27b3be2d8005b46bae61dea6" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Solver::"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a82db8f8f49f14991f0efa6a046b0c1e8" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Solver::"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a378463bcd3612c4a15211ec20676e07c" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetInitialValue</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1afe01d09ce3f0021ff55667a9d77d8bc6" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Solver::"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetInitialValue</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a74555df964ce184239eba8252e556114" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Solver::"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetInitialValue</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a54349f2c4544472622bab4a90fa2991f" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Solver::"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>SetInitialValue</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a1b6b326242dada7ad83ecde17f07ffa5" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>Solve</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a5c7aa214d7161620dd697088364bc853" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::FvmSolver</scope><name>~FvmSolver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

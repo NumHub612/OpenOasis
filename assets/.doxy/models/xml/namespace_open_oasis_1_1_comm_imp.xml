@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespace_open_oasis_1_1_comm_imp" kind="namespace" language="C++">
+    <compoundname>OpenOasis::CommImp</compoundname>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_i_o">OpenOasis::CommImp::IO</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric">OpenOasis::CommImp::Numeric</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_spatial">OpenOasis::CommImp::Spatial</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_temporal">OpenOasis::CommImp::Temporal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/IO/LinkLoader.cpp" line="15" column="1"/>
+  </compounddef>
+</doxygen>

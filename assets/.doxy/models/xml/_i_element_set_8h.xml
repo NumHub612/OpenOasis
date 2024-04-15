@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_i_element_set_8h" kind="file" language="C++">
+    <compoundname>IElementSet.h</compoundname>
+    <includes refid="_i_spatial_definition_8h" local="yes">ISpatialDefinition.h</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_i_base_exchange_item_8h" local="yes">Models/Inc/IBaseExchangeItem.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>IDescribable.h</label>
+        <link refid="_i_describable_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/Inc/IElementSet.h</label>
+        <link refid="_i_element_set_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ISpatialDefinition.h</label>
+        <link refid="_i_spatial_definition_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>Models/Inc/IAdaptedOutput.h</label>
+        <link refid="_i_adapted_output_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Models/Inc/IAdaptedOutputFactory.h</label>
+        <link refid="_i_adapted_output_factory_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Models/Inc/IBaseExchangeItem.h</label>
+        <link refid="_i_base_exchange_item_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Models/Inc/IElementSet.h</label>
+        <link refid="_i_element_set_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Models/Inc/IInput.h</label>
+        <link refid="_i_input_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Models/Inc/ILinkableComponent.h</label>
+        <link refid="_i_linkable_component_8h_source"/>
+      </node>
+      <node id="4">
+        <label>Models/Inc/IOutput.h</label>
+        <link refid="_i_output_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_open_oasis_1_1_i_element_set" prot="public">OpenOasis::IElementSet</innerclass>
+    <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ISpatialDefinition.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75" refkind="member"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75" kindref="member">ElementType</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>IdBased,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Identifiable<sp/>based</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>Point,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Polyline,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Lines<sp/>/<sp/>Polylines</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Polygon,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Polygons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Polyhedron<sp/><sp/></highlight><highlight class="comment">//<sp/>Polyhedrons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_open_oasis_1_1_i_element_set" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_i_element_set" kindref="compound">IElementSet</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_spatial_definition" kindref="compound">ISpatialDefinition</ref></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51" refid="class_open_oasis_1_1_i_element_set_1a2a2879f6c45320260fc8deb3b2b8512c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespace_open_oasis_1a7848ded93951b84ce5d6020cbf110f75" kindref="member">ElementType</ref><sp/><ref refid="class_open_oasis_1_1_i_element_set_1a2a2879f6c45320260fc8deb3b2b8512c" kindref="member">GetElementType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="class_open_oasis_1_1_i_element_set_1a68a357c33e9017d237ea1fb72634bc95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_element_set_1a68a357c33e9017d237ea1fb72634bc95" kindref="member">GetElementIndex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;elementId)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="class_open_oasis_1_1_i_element_set_1addfb22b03b7aaf1ef3cf4e4a4fc59182" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_open_oasis_1_1_i_element_set_1addfb22b03b7aaf1ef3cf4e4a4fc59182" kindref="member">GetElementId</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_open_oasis_1_1_i_element_set_1a2b60e0f8a139a3a902ceee11ef137766" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_element_set_1a2b60e0f8a139a3a902ceee11ef137766" kindref="member">GetFaceCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementIndex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_open_oasis_1_1_i_element_set_1a58e9188e4d13dc01f7364d148ac56a21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_element_set_1a58e9188e4d13dc01f7364d148ac56a21" kindref="member">GetNodeCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementIndex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_open_oasis_1_1_i_element_set_1a4064e9d823d4e15a1e5c7e4b056adf23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_open_oasis_1_1_i_element_set_1a4064e9d823d4e15a1e5c7e4b056adf23" kindref="member">GetFaceNodeIndices</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>faceIndex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_open_oasis_1_1_i_element_set_1afa6785ed9eaf45db349cf750a01bdf09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_element_set_1afa6785ed9eaf45db349cf750a01bdf09" kindref="member">GetNodeXCoordinate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodeIndex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="class_open_oasis_1_1_i_element_set_1acde51ce6e0f704eb56ead0f906228649" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_element_set_1acde51ce6e0f704eb56ead0f906228649" kindref="member">GetNodeYCoordinate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodeIndex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="class_open_oasis_1_1_i_element_set_1ae97330b2ab6039593bd46b79255316d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_i_element_set_1ae97330b2ab6039593bd46b79255316d8" kindref="member">GetNodeZCoordinate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodeIndex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Models/Inc/IElementSet.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,668 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>OpenOasis::CommImp::Spatial::XYGeoTools</compoundname>
+    <includes refid="_x_y_geo_tools_8h" local="no">XYGeoTools.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aee0c6ed5bb1689a1660d8de2670e0c0f" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double OpenOasis::CommImp::Spatial::XYGeoTools::EPSILON</definition>
+        <argsstring></argsstring>
+        <name>EPSILON</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::EPSILON</qualifiedname>
+        <initializer>= 1.0e-5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="24" column="29" bodyfile="Models/CommImp/Spatial/XYGeoTools.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1afe6b8013352141d1c5565c63e3127e2d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculatePointToPointDistance</definition>
+        <argsstring>(const XYPoint &amp;p1, const XYPoint &amp;p2)</argsstring>
+        <name>CalculatePointToPointDistance</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculatePointToPointDistance</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the distance between two points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="27" column="19" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a73128c8ab1fbe4782021ae7100f8026a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYGeoTools::IsLinesIntersected</definition>
+        <argsstring>(const XYLine &amp;l1, const XYLine &amp;l2)</argsstring>
+        <name>IsLinesIntersected</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::IsLinesIntersected</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>l1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>l2</declname>
+        </param>
+        <briefdescription>
+<para>Checks if two line segments intersects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The lines are setted to intersected if the lines axctually cross or only share a point, and not if the lines are parrallel. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="33" column="17" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="27" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aada15cca9e79b89c2c87ff7c035324b7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref></type>
+        <definition>XYPoint OpenOasis::CommImp::Spatial::XYGeoTools::CalculateIntersectionPoint</definition>
+        <argsstring>(const XYLine &amp;l1, const XYLine &amp;l2)</argsstring>
+        <name>CalculateIntersectionPoint</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateIntersectionPoint</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>l1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>l2</declname>
+        </param>
+        <briefdescription>
+<para>Calculates intersection point between two line segments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="36" column="20" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="78" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a81db3f19a0e0457d9e5152df1b33c814" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref></type>
+        <definition>XYPoint OpenOasis::CommImp::Spatial::XYGeoTools::CalculateMidpoint</definition>
+        <argsstring>(const XYLine &amp;line)</argsstring>
+        <name>CalculateMidpoint</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateMidpoint</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Calculates line segment midpoint. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="39" column="20" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="106" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ad890128a216f608eb0bc69f0723a9967" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculateLineToPointDistance</definition>
+        <argsstring>(const XYLine &amp;line, const XYPoint &amp;point)</argsstring>
+        <name>CalculateLineToPointDistance</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateLineToPointDistance</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the distance between a point and a line segment. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="43" column="5" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="114" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aaf1dc4e16dd5620482cec272fa6beead" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculatePolylineToPointDistance</definition>
+        <argsstring>(const XYPolyline &amp;polyline, const XYPoint &amp;point)</argsstring>
+        <name>CalculatePolylineToPointDistance</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculatePolylineToPointDistance</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref> &amp;</type>
+          <declname>polyline</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the shortest distance between any line segment of the polyline and the point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="48" column="5" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="146" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ae85ab08d6c80c66376f24b7f1242bf8a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYGeoTools::IsPointInLine</definition>
+        <argsstring>(const XYPoint &amp;point, const XYLine &amp;line)</argsstring>
+        <name>IsPointInLine</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::IsPointInLine</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Determines if point is included in a line either in the interior or as one of the end points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="52" column="17" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a6e43df24f3fa94c948970dc1e7e7e37c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculateSharedArea</definition>
+        <argsstring>(const XYPolygon &amp;polygonA, const XYPolygon &amp;polygonB)</argsstring>
+        <name>CalculateSharedArea</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateSharedArea</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygonA</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygonB</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the shared area of two arbitrarily shaped polygons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="56" column="5" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="243" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ab3588acbf80d7eebc7b43a5b9649da3c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYGeoTools::IsPointInPolygon</definition>
+        <argsstring>(const XYPoint &amp;point, const XYPolygon &amp;polygon)</argsstring>
+        <name>IsPointInPolygon</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::IsPointInPolygon</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygon</declname>
+        </param>
+        <briefdescription>
+<para>Determines if a point is inside or outside a polygon. Inside includes on the edge for this method. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="60" column="17" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="183" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a6ec018604a9205255e22a4cba31be0ab" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &gt;</type>
+        <definition>vector&lt; XYPolygon &gt; OpenOasis::CommImp::Spatial::XYGeoTools::GetTriangulations</definition>
+        <argsstring>(const XYPolygon &amp;polygon)</argsstring>
+        <name>GetTriangulations</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::GetTriangulations</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygon</declname>
+        </param>
+        <briefdescription>
+<para>Returns a list of triangles of type <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> describing the triangalation of the polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="64" column="24" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="411" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ae7ac13f258f0aa7a9fdaa7d4e8f9b632" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculateLengthOfLineInsidePolygon</definition>
+        <argsstring>(const XYLine &amp;line, const XYPolygon &amp;polygon)</argsstring>
+        <name>CalculateLengthOfLineInsidePolygon</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateLengthOfLineInsidePolygon</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygon</declname>
+        </param>
+        <briefdescription>
+<para>Calculates length of line inside polygon. Parts of the line that is on the edge of the polygon only counts with half their length. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="69" column="5" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="571" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a2ebc1cd2a2d9be027430a1668375e45b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculateLengthOfPolylineInsidePolygon</definition>
+        <argsstring>(const XYPolyline &amp;polyline, const XYPolygon &amp;polygon)</argsstring>
+        <name>CalculateLengthOfPolylineInsidePolygon</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateLengthOfPolylineInsidePolygon</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polyline" kindref="compound">XYPolyline</ref> &amp;</type>
+          <declname>polyline</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygon</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the length of polyline inside polygon. Lines segments on the edges of polygons are included with half their length. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="73" column="19" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="165" bodyend="176"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a56a1a78070e92f00be4ad6cad8133e7f" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Spatial::XYGeoTools::FindTrianglePoints</definition>
+        <argsstring>(const XYPolygon &amp;polygon)</argsstring>
+        <name>FindTrianglePoints</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::FindTrianglePoints</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygon</declname>
+        </param>
+        <briefdescription>
+<para>Finds a set of three concecutive points that form a triangle, that is not intersected by other parts of the polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Index for the &quot;midlle&quot; point of triangle that forms an ear. The ear is formed by P(i-1), P(i) and P(i+1), where P are points included in the polygon. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="83" column="16" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="441" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a054e47d323dae6e8f1ff23758dc22150" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYGeoTools::IsTriangleIntersected</definition>
+        <argsstring>(const XYPolygon &amp;polygon, int i)</argsstring>
+        <name>IsTriangleIntersected</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::IsTriangleIntersected</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>polygon</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Determines if the triangle formed by P(i-1), P(i) and P(i+1) from Polygon are intersected by any of the other points of the polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Middle index for the three points that forms the triangle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, If the triangle P(i-1), P(i), P(i+1) is intersected by other parts of Polygon; false, otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="91" column="17" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="461" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a97a73ab5bfea3cb27bba4a7e30f29eca" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculateTriangleSharedArea</definition>
+        <argsstring>(const XYPolygon &amp;triangleA, const XYPolygon &amp;triangleB)</argsstring>
+        <name>CalculateTriangleSharedArea</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateTriangleSharedArea</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>triangleA</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>triangleB</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the intersection area of triangle xypolygon a and b. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="95" column="5" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="263" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a1a2d592b6b2090f383af9d4d8f8c0508" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double OpenOasis::CommImp::Spatial::XYGeoTools::CalculateSharedLength</definition>
+        <argsstring>(const XYLine &amp;lineA, const XYLine &amp;lineB)</argsstring>
+        <name>CalculateSharedLength</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::CalculateSharedLength</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>lineA</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>lineB</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the length that two lines overlap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="98" column="19" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="492" bodyend="569"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a40ddd22762d9ab6ef49694a1525aa4b7" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYGeoTools::IntersectionPoint</definition>
+        <argsstring>(const XYLine &amp;LineA, const XYLine &amp;LineB, XYPoint &amp;intersectionPoint)</argsstring>
+        <name>IntersectionPoint</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::IntersectionPoint</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>LineA</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>LineB</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>intersectionPoint</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the lines lineA and lineB shares a point either as a real crossing point or as a shared end point or a end point of the one line being in the other line. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="103" column="17" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="639" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a58a8e17b8dd41a7865ae248cee731966" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::XYGeoTools::IsPointInLineInterior</definition>
+        <argsstring>(const XYPoint &amp;point, const XYLine &amp;line)</argsstring>
+        <name>IsPointInLineInterior</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::IsPointInLineInterior</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_line" kindref="compound">XYLine</ref> &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Determines if a point is included in a lines interior and not an endpoint. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="108" column="17" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="671" bodyend="702"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ab8eac874282aa44c385b541c1e55976a" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Spatial::XYGeoTools::Intersect</definition>
+        <argsstring>(const XYPolygon &amp;triangleA, const XYPolygon &amp;triangleB, XYPoint &amp;p, int &amp;i, int &amp;j, XYPolygon &amp;intersectionPolygon)</argsstring>
+        <name>Intersect</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::Intersect</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>triangleA</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>triangleB</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_point" kindref="compound">XYPoint</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_polygon" kindref="compound">XYPolygon</ref> &amp;</type>
+          <declname>intersectionPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the intersection points of triangle xypolygon a and b. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>triangleA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>triangle. The search is started along triangleA. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>triangleB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>triangle. Intersection with the triangle are sought. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting point for the search.<itemizedlist>
+<listitem><para>p must be part of triangleA. </para>
+</listitem></itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>on input: End index for the first line segment of triangleA.</para>
+</listitem><listitem><para>on output: End index for the last intersected line segment in triangleA. </para>
+</listitem></itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">j</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>on input: -1 if vertices before intersection isn&apos;t to be added.</para>
+</listitem><listitem><para>on output: End index for last intersected line of triangleB. </para>
+</listitem></itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">intersectionPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Polygon eventually describing the intersection area between triangleA and triangleB.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The p, i, j and intersectionPolygon are called by reference and modified in the method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="127" column="17" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="704" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aa4c4b79e7503b44024a88faec68181a4" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Spatial::XYGeoTools::IncrementModula</definition>
+        <argsstring>(int i, int n)</argsstring>
+        <name>IncrementModula</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::IncrementModula</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>The method steps to the next index in a circular list {0, ..., n-1}. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index to increase. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modula value, one larger than largest index. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The increased index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="137" column="16" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="786" bodyend="791"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aefb03da001a48d8afdcbf12e10a62682" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Spatial::XYGeoTools::DecrementModula</definition>
+        <argsstring>(int i, int n)</argsstring>
+        <name>DecrementModula</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::XYGeoTools::DecrementModula</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>The method steps to the previous index in a circular list {0, ..., n-1}. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index to decrease.. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Module value, one larger than largest index. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The decreased index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/XYGeoTools.h" line="145" column="16" bodyfile="Models/CommImp/Spatial/XYGeoTools.cpp" bodystart="793" bodyend="801"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools" kindref="compound">XYGeoTools</ref> class is a collection of general geometry functions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Spatial/XYGeoTools.h" line="21" column="1" bodyfile="Models/CommImp/Spatial/XYGeoTools.h" bodystart="22" bodyend="146"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aada15cca9e79b89c2c87ff7c035324b7" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateIntersectionPoint</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ae7ac13f258f0aa7a9fdaa7d4e8f9b632" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateLengthOfLineInsidePolygon</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a2ebc1cd2a2d9be027430a1668375e45b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateLengthOfPolylineInsidePolygon</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ad890128a216f608eb0bc69f0723a9967" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateLineToPointDistance</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a81db3f19a0e0457d9e5152df1b33c814" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateMidpoint</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1afe6b8013352141d1c5565c63e3127e2d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculatePointToPointDistance</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aaf1dc4e16dd5620482cec272fa6beead" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculatePolylineToPointDistance</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a6e43df24f3fa94c948970dc1e7e7e37c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateSharedArea</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a1a2d592b6b2090f383af9d4d8f8c0508" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateSharedLength</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a97a73ab5bfea3cb27bba4a7e30f29eca" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>CalculateTriangleSharedArea</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aefb03da001a48d8afdcbf12e10a62682" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>DecrementModula</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aee0c6ed5bb1689a1660d8de2670e0c0f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>EPSILON</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a56a1a78070e92f00be4ad6cad8133e7f" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>FindTrianglePoints</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a6ec018604a9205255e22a4cba31be0ab" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>GetTriangulations</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1aa4c4b79e7503b44024a88faec68181a4" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>IncrementModula</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ab8eac874282aa44c385b541c1e55976a" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>Intersect</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a40ddd22762d9ab6ef49694a1525aa4b7" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>IntersectionPoint</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a73128c8ab1fbe4782021ae7100f8026a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>IsLinesIntersected</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ae85ab08d6c80c66376f24b7f1242bf8a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>IsPointInLine</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a58a8e17b8dd41a7865ae248cee731966" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>IsPointInLineInterior</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1ab3588acbf80d7eebc7b43a5b9649da3c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>IsPointInPolygon</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_x_y_geo_tools_1a054e47d323dae6e8f1ff23758dc22150" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::XYGeoTools</scope><name>IsTriangleIntersected</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

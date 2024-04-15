@@ -1,0 +1,648 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::SystHeats::HeatConductionModel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">LinkableComponent</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a252fc1ed727ded6ce5851fee898def74" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::SystHeats::HeatConductionModel::mTaskFile</definition>
+        <argsstring></argsstring>
+        <name>mTaskFile</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mTaskFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="33" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4b14a9fd8322f1647a79e7517e5a244c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::SystHeats::HeatConductionModel::mOutputDir</definition>
+        <argsstring></argsstring>
+        <name>mOutputDir</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mOutputDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="34" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a502883e9b1ae59dc1d9cd9d66db44bd3" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Grid&gt; OpenOasis::SystHeats::HeatConductionModel::mGrid</definition>
+        <argsstring></argsstring>
+        <name>mGrid</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mGrid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="36" column="30" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a2501bed2de64142d9ee23d1f6979a688" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarFieldFp</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;ScalarFieldFp&gt; OpenOasis::SystHeats::HeatConductionModel::mTempValues</definition>
+        <argsstring></argsstring>
+        <name>mTempValues</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mTempValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="37" column="21" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aa082e2959c7a93ecd9936bf68034e0ab" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver" kindref="compound">Solver</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Solver&gt; OpenOasis::SystHeats::HeatConductionModel::mSolver</definition>
+        <argsstring></argsstring>
+        <name>mSolver</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mSolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="38" column="28" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a93fb3fb0bc5515b9488cb973993a9c45" prot="private" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::SystHeats::HeatConductionModel::mT0</definition>
+        <argsstring></argsstring>
+        <name>mT0</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mT0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="40" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4b303c3d04b71001497548507fa91166" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::SystHeats::HeatConductionModel::mT0file</definition>
+        <argsstring></argsstring>
+        <name>mT0file</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mT0file</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="41" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a70f7337ff8305a45449f46ee9c8c4473" prot="private" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::SystHeats::HeatConductionModel::mK</definition>
+        <argsstring></argsstring>
+        <name>mK</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mK</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="43" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1acd1163c028b7fcde0bb97bb8be21b56a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::SystHeats::HeatConductionModel::mStart</definition>
+        <argsstring></argsstring>
+        <name>mStart</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="45" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a33026507fcea9078ea2559878017f37f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::SystHeats::HeatConductionModel::mEnd</definition>
+        <argsstring></argsstring>
+        <name>mEnd</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="45" column="24" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a696c149a03c5daeff20ade22505887a3" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string OpenOasis::SystHeats::HeatConductionModel::mEigenSolver</definition>
+        <argsstring></argsstring>
+        <name>mEigenSolver</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mEigenSolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="47" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1abbaa0fec13476a777622d9053ddffe56" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; OpenOasis::SystHeats::HeatConductionModel::mOutputVars</definition>
+        <argsstring></argsstring>
+        <name>mOutputVars</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mOutputVars</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="49" column="24" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a62cd6932c19466820c64a4c8a27f289b" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::unordered_map&lt; std::string, double &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::unordered_map&lt;std::string, double&gt; &gt; OpenOasis::SystHeats::HeatConductionModel::mPatchBounds</definition>
+        <argsstring></argsstring>
+        <name>mPatchBounds</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mPatchBounds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="53" column="9" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1abb188b20bae1320481128d07ae475e88" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; OpenOasis::SystHeats::HeatConductionModel::mBoundPatches</definition>
+        <argsstring></argsstring>
+        <name>mBoundPatches</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mBoundPatches</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="55" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1afae7351f6a289bb51d3df8dd375f80f4" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, int &gt;</type>
+        <definition>std::unordered_map&lt;std::string, int&gt; OpenOasis::SystHeats::HeatConductionModel::mCellOutputs</definition>
+        <argsstring></argsstring>
+        <name>mCellOutputs</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::mCellOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="57" column="24" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a54ad6e3dc2424fa519605728199e1dfc" prot="private" static="yes" mutable="no">
+        <type>const std::vector&lt; std::string &gt;</type>
+        <definition>const vector&lt; string &gt; OpenOasis::SystHeats::HeatConductionModel::sExchangeableStates</definition>
+        <argsstring></argsstring>
+        <name>sExchangeableStates</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::sExchangeableStates</qualifiedname>
+        <initializer>= {&quot;temp&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="59" column="30" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a719f5abc8be7feaff8aa16fbfa9b6480" prot="private" static="yes" mutable="no">
+        <type>const std::vector&lt; std::string &gt;</type>
+        <definition>const vector&lt; string &gt; OpenOasis::SystHeats::HeatConductionModel::sExchangeableObj</definition>
+        <argsstring></argsstring>
+        <name>sExchangeableObj</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::sExchangeableObj</qualifiedname>
+        <initializer>= {&quot;cell&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="60" column="30" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a3745ea3f404390df69ec7d0bd7d795c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::SystHeats::HeatConductionModel::HeatConductionModel</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;taskFile)</argsstring>
+        <name>HeatConductionModel</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::HeatConductionModel</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>taskFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="63" column="5" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="43" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a7258a1bef2e00ff966189738ff574fd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::SystHeats::HeatConductionModel::~HeatConductionModel</definition>
+        <argsstring>()=default</argsstring>
+        <name>~HeatConductionModel</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::~HeatConductionModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="64" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a5a966995c046052cd92d1eb76b8eb769" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::InitializeArguments</definition>
+        <argsstring>() override</argsstring>
+        <name>InitializeArguments</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::InitializeArguments</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="67" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="55" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a3f614ec155e8d7e80384b014e5b761c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::InitializeSpace</definition>
+        <argsstring>() override</argsstring>
+        <name>InitializeSpace</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::InitializeSpace</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="68" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="194" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4e0afb79084d952b393a6165638823cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::InitializeTime</definition>
+        <argsstring>() override</argsstring>
+        <name>InitializeTime</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::InitializeTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="69" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="218" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a520ab927727b68745d08b9be0e06618b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::InitializeInputs</definition>
+        <argsstring>() override</argsstring>
+        <name>InitializeInputs</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::InitializeInputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="70" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="227" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1adc818f2a9410ebe6cff8b862b80b1331" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::InitializeOutputs</definition>
+        <argsstring>() override</argsstring>
+        <name>InitializeOutputs</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::InitializeOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="71" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="232" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a1ab769d3c2041fbe9e1bdee035a50d70" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>vector&lt; string &gt; OpenOasis::SystHeats::HeatConductionModel::OnValidate</definition>
+        <argsstring>() override</argsstring>
+        <name>OnValidate</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::OnValidate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="73" column="17" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="295" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a35a65c775127b6f28dec66524090e59c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::PrepareInputs</definition>
+        <argsstring>() override</argsstring>
+        <name>PrepareInputs</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::PrepareInputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="75" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="301" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a63769872a17dbfa532947775c190b19b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::PrepareOutputs</definition>
+        <argsstring>() override</argsstring>
+        <name>PrepareOutputs</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::PrepareOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="76" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="306" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aec5c66bb6766773e67a62b9199cb6451" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::PullInputs</definition>
+        <argsstring>() override</argsstring>
+        <name>PullInputs</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::PullInputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="77" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="325" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4bd47d67d1562280048d1dbc44d8dfc3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::ApplyInputData</definition>
+        <argsstring>(const std::shared_ptr&lt; IValueSet &gt; &amp;values) override</argsstring>
+        <name>ApplyInputData</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::ApplyInputData</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_value_set" kindref="compound">IValueSet</ref> &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="79" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="330" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a25c885902456404252191a8e070fc5e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::UpdateOutputs</definition>
+        <argsstring>(const std::vector&lt; std::shared_ptr&lt; IOutput &gt; &gt; &amp;outputs) override</argsstring>
+        <name>UpdateOutputs</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::UpdateOutputs</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref> &gt; &gt; &amp;</type>
+          <declname>outputs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="80" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="335" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a8cb5685a2942fe6e6bdc70e262d31317" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::PerformTimestep</definition>
+        <argsstring>(const std::vector&lt; std::shared_ptr&lt; IOutput &gt; &gt; &amp;outputs) override</argsstring>
+        <name>PerformTimestep</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::PerformTimestep</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref> &gt; &gt; &amp;</type>
+          <declname>outputs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="81" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="346" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aee0620acec2fd3e1bd0d216f1264b935" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::SystHeats::HeatConductionModel::IsIterationConverged</definition>
+        <argsstring>() const override</argsstring>
+        <name>IsIterationConverged</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::IsIterationConverged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="82" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="516" bodyend="519"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aa8cb2fa1cba1d693fd212cffe30abc05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_quantity" kindref="compound">IQuantity</ref> &gt;</type>
+        <definition>shared_ptr&lt; IQuantity &gt; OpenOasis::SystHeats::HeatConductionModel::GetTempQuantity</definition>
+        <argsstring>()</argsstring>
+        <name>GetTempQuantity</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::GetTempQuantity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="85" column="21" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="315" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1ad7f31549069199ac0f90a4a097bfcd12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref> &gt;</type>
+        <definition>shared_ptr&lt; IOutput &gt; OpenOasis::SystHeats::HeatConductionModel::CreateCellOutput</definition>
+        <argsstring>(int idx, const std::string &amp;var)</argsstring>
+        <name>CreateCellOutput</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::CreateCellOutput</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>var</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="87" column="21" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="246" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1ab63bdb6b562fcd3a992fac86a81609f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &gt;</type>
+        <definition>vector&lt; Coordinate &gt; OpenOasis::SystHeats::HeatConductionModel::NodesInCell</definition>
+        <argsstring>(int idx)</argsstring>
+        <name>NodesInCell</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::NodesInCell</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="88" column="18" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="276" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a2afeafaabb25f7674197be13a3af134b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::tuple&lt; std::vector&lt; real &gt;, std::vector&lt; real &gt; &gt;</type>
+        <definition>tuple&lt; vector&lt; real &gt;, vector&lt; real &gt; &gt; OpenOasis::SystHeats::HeatConductionModel::GenerateCoeAndSrcMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>GenerateCoeAndSrcMatrix</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::GenerateCoeAndSrcMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="90" column="16" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="411" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a5f37fba218281774d0c59a2519e2a8b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::tuple&lt; real, real &gt;</type>
+        <definition>tuple&lt; real, real &gt; OpenOasis::SystHeats::HeatConductionModel::CalculateUniformCoef</definition>
+        <argsstring>()</argsstring>
+        <name>CalculateUniformCoef</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::CalculateUniformCoef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="92" column="16" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="475" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a74cf871f1f7a96c3d4342952cfde4e1c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::SystHeats::HeatConductionModel::SaveResult</definition>
+        <argsstring>()</argsstring>
+        <name>SaveResult</name>
+        <qualifiedname>OpenOasis::SystHeats::HeatConductionModel::SaveResult</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="94" column="10" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp" bodystart="502" bodyend="514"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>LinkableComponent</label>
+      </node>
+      <node id="1">
+        <label>OpenOasis::SystHeats::HeatConductionModel</label>
+        <link refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>LinkableComponent</label>
+      </node>
+      <node id="1">
+        <label>OpenOasis::SystHeats::HeatConductionModel</label>
+        <link refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" line="30" column="1" bodyfile="Models/SystHeats/HeatConductionModel/HeatConductionModel.h" bodystart="31" bodyend="95"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4bd47d67d1562280048d1dbc44d8dfc3" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>ApplyInputData</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a5f37fba218281774d0c59a2519e2a8b5" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>CalculateUniformCoef</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1ad7f31549069199ac0f90a4a097bfcd12" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>CreateCellOutput</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a2afeafaabb25f7674197be13a3af134b" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>GenerateCoeAndSrcMatrix</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aa8cb2fa1cba1d693fd212cffe30abc05" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>GetTempQuantity</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a3745ea3f404390df69ec7d0bd7d795c3" prot="public" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>HeatConductionModel</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a5a966995c046052cd92d1eb76b8eb769" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>InitializeArguments</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a520ab927727b68745d08b9be0e06618b" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>InitializeInputs</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1adc818f2a9410ebe6cff8b862b80b1331" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>InitializeOutputs</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a3f614ec155e8d7e80384b014e5b761c0" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>InitializeSpace</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4e0afb79084d952b393a6165638823cf" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>InitializeTime</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aee0620acec2fd3e1bd0d216f1264b935" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>IsIterationConverged</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1abb188b20bae1320481128d07ae475e88" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mBoundPatches</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1afae7351f6a289bb51d3df8dd375f80f4" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mCellOutputs</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a696c149a03c5daeff20ade22505887a3" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mEigenSolver</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a33026507fcea9078ea2559878017f37f" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mEnd</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a502883e9b1ae59dc1d9cd9d66db44bd3" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mGrid</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a70f7337ff8305a45449f46ee9c8c4473" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mK</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4b14a9fd8322f1647a79e7517e5a244c" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mOutputDir</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1abbaa0fec13476a777622d9053ddffe56" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mOutputVars</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a62cd6932c19466820c64a4c8a27f289b" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mPatchBounds</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aa082e2959c7a93ecd9936bf68034e0ab" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mSolver</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1acd1163c028b7fcde0bb97bb8be21b56a" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mStart</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a93fb3fb0bc5515b9488cb973993a9c45" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mT0</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a4b303c3d04b71001497548507fa91166" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mT0file</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a252fc1ed727ded6ce5851fee898def74" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mTaskFile</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a2501bed2de64142d9ee23d1f6979a688" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>mTempValues</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1ab63bdb6b562fcd3a992fac86a81609f3" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>NodesInCell</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a1ab769d3c2041fbe9e1bdee035a50d70" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>OnValidate</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a8cb5685a2942fe6e6bdc70e262d31317" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>PerformTimestep</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a35a65c775127b6f28dec66524090e59c" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>PrepareInputs</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a63769872a17dbfa532947775c190b19b" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>PrepareOutputs</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1aec5c66bb6766773e67a62b9199cb6451" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>PullInputs</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a74cf871f1f7a96c3d4342952cfde4e1c" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>SaveResult</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a719f5abc8be7feaff8aa16fbfa9b6480" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>sExchangeableObj</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a54ad6e3dc2424fa519605728199e1dfc" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>sExchangeableStates</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a25c885902456404252191a8e070fc5e3" prot="private" virt="non-virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>UpdateOutputs</name></member>
+      <member refid="class_open_oasis_1_1_syst_heats_1_1_heat_conduction_model_1a7258a1bef2e00ff966189738ff574fd3" prot="public" virt="virtual"><scope>OpenOasis::SystHeats::HeatConductionModel</scope><name>~HeatConductionModel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

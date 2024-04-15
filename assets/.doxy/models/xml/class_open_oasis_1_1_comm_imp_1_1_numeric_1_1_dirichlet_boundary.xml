@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::DirichletBoundary</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::Boundary</basecompoundref>
+    <includes refid="_dirichlet_boundary_8h" local="no">DirichletBoundary.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a2efe3802dc451f732fe135ab248346e7" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref></type>
+        <definition>BoundaryCondition OpenOasis::CommImp::Numeric::DirichletBoundary::mData</definition>
+        <argsstring></argsstring>
+        <name>mData</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::mData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="22" column="23" bodyfile="Models/CommImp/Numeric/DirichletBoundary.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a684f87778821f6d4bf1b170efc34a2b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::DirichletBoundary::DirichletBoundary</definition>
+        <argsstring>()</argsstring>
+        <name>DirichletBoundary</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::DirichletBoundary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="25" column="5" bodyfile="Models/CommImp/Numeric/DirichletBoundary.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a652c061c7dd2b0c2d761784497bad1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::DirichletBoundary::DirichletBoundary</definition>
+        <argsstring>(real value)</argsstring>
+        <name>DirichletBoundary</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::DirichletBoundary</qualifiedname>
+        <param>
+          <type>real</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="26" column="5" bodyfile="Models/CommImp/Numeric/DirichletBoundary.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a7e7493789ea9080da8e4243d80deee06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::DirichletBoundary::DirichletBoundary</definition>
+        <argsstring>(const DirichletBoundary &amp;other)</argsstring>
+        <name>DirichletBoundary</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::DirichletBoundary</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary" kindref="compound">DirichletBoundary</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="27" column="5" bodyfile="Models/CommImp/Numeric/DirichletBoundary.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1aeb131467c1dd231731fda89b2a8da834" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::DirichletBoundary::SetBoundaryValue</definition>
+        <argsstring>(real value) override</argsstring>
+        <name>SetBoundaryValue</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::SetBoundaryValue</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1aa2a6f24a130ab7704267fbc0de4ed730">SetBoundaryValue</reimplements>
+        <param>
+          <type>real</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="29" column="10" bodyfile="Models/CommImp/Numeric/DirichletBoundary.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a5f72ee899055b2e771b325b62490312a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Numeric::DirichletBoundary::SetBoundaryFlux</definition>
+        <argsstring>(real flux) override</argsstring>
+        <name>SetBoundaryFlux</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::SetBoundaryFlux</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a6939073a97903c16708d39713da468a1">SetBoundaryFlux</reimplements>
+        <param>
+          <type>real</type>
+          <declname>flux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="31" column="10" bodyfile="Models/CommImp/Numeric/DirichletBoundary.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1ae8763d604944271306fcc27a8296be6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>string OpenOasis::CommImp::Numeric::DirichletBoundary::GetType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetType</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::GetType</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a3fd931364c19d1d2399d4d88fcc3ef0a">GetType</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="33" column="17" bodyfile="Models/CommImp/Numeric/DirichletBoundary.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a23de84b6567fd0e253525123859a4d30" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref></type>
+        <definition>BoundaryCondition OpenOasis::CommImp::Numeric::DirichletBoundary::GetBoundaryCondition</definition>
+        <argsstring>() override</argsstring>
+        <name>GetBoundaryCondition</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DirichletBoundary::GetBoundaryCondition</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_1a95d7fc9cb6d47d90a9b3ebd72cfa2894">GetBoundaryCondition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="35" column="23" bodyfile="Models/CommImp/Numeric/DirichletBoundary.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Dirichlet boundary. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::Boundary</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::DirichletBoundary</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>OpenOasis::CommImp::Numeric::Boundary</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::DirichletBoundary</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Numeric/DirichletBoundary.h" line="19" column="1" bodyfile="Models/CommImp/Numeric/DirichletBoundary.h" bodystart="20" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a684f87778821f6d4bf1b170efc34a2b0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>DirichletBoundary</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a652c061c7dd2b0c2d761784497bad1a0" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>DirichletBoundary</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a7e7493789ea9080da8e4243d80deee06" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>DirichletBoundary</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a23de84b6567fd0e253525123859a4d30" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>GetBoundaryCondition</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1ae8763d604944271306fcc27a8296be6d" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>GetType</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a2efe3802dc451f732fe135ab248346e7" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>mData</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1a5f72ee899055b2e771b325b62490312a" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>SetBoundaryFlux</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary_1aeb131467c1dd231731fda89b2a8da834" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::DirichletBoundary</scope><name>SetBoundaryValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::Coordinate</compoundname>
+    <includes refid="_coordinate_8h" local="no">Coordinate.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a577c16c2692352b8fd43fb6f0a4904fb" prot="public" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::Coordinate::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Coordinate::x</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Coordinate.h" line="21" column="10" bodyfile="Models/CommImp/Spatial/Coordinate.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a8a1310d76df3c71213a48009856d45f1" prot="public" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::Coordinate::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Coordinate::y</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Coordinate.h" line="22" column="10" bodyfile="Models/CommImp/Spatial/Coordinate.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a85e71dc896847616efc3b0d5b8659ea7" prot="public" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Spatial::Coordinate::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Coordinate::z</qualifiedname>
+        <initializer>= 0.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Coordinate.h" line="23" column="10" bodyfile="Models/CommImp/Spatial/Coordinate.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a35956ff38627f09d776ff8026d92c117" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::Coordinate::Equals</definition>
+        <argsstring>(real coorX, real coorY, real coorZ) const</argsstring>
+        <name>Equals</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Coordinate::Equals</qualifiedname>
+        <param>
+          <type>real</type>
+          <declname>coorX</declname>
+        </param>
+        <param>
+          <type>real</type>
+          <declname>coorY</declname>
+        </param>
+        <param>
+          <type>real</type>
+          <declname>coorZ</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Coordinate.h" line="25" column="10" bodyfile="Models/CommImp/Spatial/Coordinate.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a4f7d49cb4e097019f1f5490a220e535d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Spatial::Coordinate::Equals</definition>
+        <argsstring>(const Coordinate &amp;coor) const</argsstring>
+        <name>Equals</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Coordinate::Equals</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> &amp;</type>
+          <declname>coor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Coordinate.h" line="26" column="10" bodyfile="Models/CommImp/Spatial/Coordinate.cpp" bodystart="19" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate" kindref="compound">Coordinate</ref> struct contains a (x, y, z) coordinate. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Spatial::Coordinate</label>
+        <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>real</label>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Spatial/Coordinate.h" line="19" column="1" bodyfile="Models/CommImp/Spatial/Coordinate.h" bodystart="20" bodyend="27"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a35956ff38627f09d776ff8026d92c117" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Coordinate</scope><name>Equals</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a4f7d49cb4e097019f1f5490a220e535d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Coordinate</scope><name>Equals</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a577c16c2692352b8fd43fb6f0a4904fb" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Coordinate</scope><name>x</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a8a1310d76df3c71213a48009856d45f1" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Coordinate</scope><name>y</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate_1a85e71dc896847616efc3b0d5b8659ea7" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Coordinate</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

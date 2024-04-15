@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_linkable_component_status_change_event_args" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::LinkableComponentStatusChangeEventArgs</compoundname>
+    <includes refid="_linkable_component_status_change_event_args_8h" local="no">LinkableComponentStatusChangeEventArgs.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1ac480a04dc900d91d62574f859d6ab33f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; ILinkableComponent &gt; OpenOasis::LinkableComponentStatusChangeEventArgs::GetLinkableComponent</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetLinkableComponent</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::GetLinkableComponent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="30" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1aee766c29f24945a98d89e9435fbe9263" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::LinkableComponentStatusChangeEventArgs::SetLinkableComponent</definition>
+        <argsstring>(std::shared_ptr&lt; ILinkableComponent &gt; obj)=0</argsstring>
+        <name>SetLinkableComponent</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::SetLinkableComponent</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref> &gt;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="32" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1a042b26bdc0f06148dd2ca9cfac516ddf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fb" kindref="member">LinkableComponentStatus</ref></type>
+        <definition>virtual LinkableComponentStatus OpenOasis::LinkableComponentStatusChangeEventArgs::GetOldStatus</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetOldStatus</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::GetOldStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="38" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1ab22247d1211986a427d09dedd7268c84" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::LinkableComponentStatusChangeEventArgs::SetOldStatus</definition>
+        <argsstring>(LinkableComponentStatus value)=0</argsstring>
+        <name>SetOldStatus</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::SetOldStatus</qualifiedname>
+        <param>
+          <type><ref refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fb" kindref="member">LinkableComponentStatus</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="40" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1a4309127e6feec5d655d53bfaf34cf0b1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fb" kindref="member">LinkableComponentStatus</ref></type>
+        <definition>virtual LinkableComponentStatus OpenOasis::LinkableComponentStatusChangeEventArgs::GetNewStatus</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetNewStatus</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::GetNewStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="46" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1a3dc4820aef91a99225fc722c00317e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::LinkableComponentStatusChangeEventArgs::SetNewStatus</definition>
+        <argsstring>(LinkableComponentStatus value)=0</argsstring>
+        <name>SetNewStatus</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::SetNewStatus</qualifiedname>
+        <param>
+          <type><ref refid="namespace_open_oasis_1aabfa38f87840be0f60afd9aa6a5284fb" kindref="member">LinkableComponentStatus</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="48" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1a60fc0841bb85318d2399521d4320feb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string OpenOasis::LinkableComponentStatusChangeEventArgs::GetMessages</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetMessages</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::GetMessages</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="54" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_linkable_component_status_change_event_args_1a12f531ea4c047271447c8962377f8490" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::LinkableComponentStatusChangeEventArgs::SetMessages</definition>
+        <argsstring>(const std::string &amp;msg)=0</argsstring>
+        <name>SetMessages</name>
+        <qualifiedname>OpenOasis::LinkableComponentStatusChangeEventArgs::SetMessages</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="56" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class contains the information that will be passed when the <computeroutput><ref refid="class_open_oasis_1_1_i_linkable_component" kindref="compound">ILinkableComponent</ref></computeroutput> fires the <computeroutput>StatusChanged</computeroutput> event. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/LinkableComponentStatusChangeEventArgs.h" line="23" column="1" bodyfile="Models/Inc/LinkableComponentStatusChangeEventArgs.h" bodystart="24" bodyend="57"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1ac480a04dc900d91d62574f859d6ab33f" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>GetLinkableComponent</name></member>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a60fc0841bb85318d2399521d4320feb6" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>GetMessages</name></member>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a4309127e6feec5d655d53bfaf34cf0b1" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>GetNewStatus</name></member>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a042b26bdc0f06148dd2ca9cfac516ddf" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>GetOldStatus</name></member>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1aee766c29f24945a98d89e9435fbe9263" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>SetLinkableComponent</name></member>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a12f531ea4c047271447c8962377f8490" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>SetMessages</name></member>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1a3dc4820aef91a99225fc722c00317e73" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>SetNewStatus</name></member>
+      <member refid="class_open_oasis_1_1_linkable_component_status_change_event_args_1ab22247d1211986a427d09dedd7268c84" prot="public" virt="pure-virtual"><scope>OpenOasis::LinkableComponentStatusChangeEventArgs</scope><name>SetOldStatus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

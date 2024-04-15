@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_adapted_output_factory" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::IAdaptedOutputFactory</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_i_identifiable" prot="public" virt="non-virtual">OpenOasis::IIdentifiable</basecompoundref>
+    <includes refid="_i_adapted_output_factory_8h" local="no">IAdaptedOutputFactory.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_adapted_output_factory_1a59e8fec563b82374d18f1884d84d3c5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; IIdentifiable &gt; &gt; OpenOasis::IAdaptedOutputFactory::GetAvailableAdaptedOutputIds</definition>
+        <argsstring>(const std::shared_ptr&lt; IOutput &gt; &amp;adaptee, const std::shared_ptr&lt; IInput &gt; &amp;target)=0</argsstring>
+        <name>GetAvailableAdaptedOutputIds</name>
+        <qualifiedname>OpenOasis::IAdaptedOutputFactory::GetAvailableAdaptedOutputIds</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref> &gt; &amp;</type>
+          <declname>adaptee</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref> &gt; &amp;</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Gets a list of identifier of the available <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> that can make the adaptee match the target. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the target is null, the identifiers of all <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput>s that can adapt the adaptee are returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>adaptee</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput><ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref></computeroutput> to adapt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput><ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref></computeroutput> to adapt the adaptee to, can be <computeroutput>null</computeroutput>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>List of identifier of the available <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IAdaptedOutputFactory.h" line="31" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_adapted_output_factory_1a7105896e885eb25cd742055113e7b171" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; IAdaptedOutput &gt; OpenOasis::IAdaptedOutputFactory::CreateAdaptedOutput</definition>
+        <argsstring>(const std::shared_ptr&lt; IIdentifiable &gt; &amp;adaptedOutputId, const std::shared_ptr&lt; IOutput &gt; &amp;adaptee, const std::shared_ptr&lt; IInput &gt; &amp;target)=0</argsstring>
+        <name>CreateAdaptedOutput</name>
+        <qualifiedname>OpenOasis::IAdaptedOutputFactory::CreateAdaptedOutput</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref> &gt; &amp;</type>
+          <declname>adaptedOutputId</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref> &gt; &amp;</type>
+          <declname>adaptee</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref> &gt; &amp;</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Creates <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> adapting the adaptee, so that it fits the target. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The adaptedOutputId used must be one of the <computeroutput><ref refid="class_open_oasis_1_1_i_identifiable" kindref="compound">IIdentifiable</ref></computeroutput> instances returned by the <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output_factory_1a59e8fec563b82374d18f1884d84d3c5f" kindref="member">GetAvailableAdaptedOutputIds()</ref></computeroutput> method. The returned <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> will already be registered with this adaptee.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>adaptedOutputId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The identifier of the &apos;<ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref><computeroutput>to create. @param adaptee</computeroutput><ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref><computeroutput>to adapt. @param target</computeroutput><ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref><computeroutput>to adapt the adaptee to, can be</computeroutput>null`.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> item adaptes the adaptee to fit the target item. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/IAdaptedOutputFactory.h" line="47" column="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Factory class for creating instances of <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> items. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>OpenOasis::IAdaptedOutputFactory</label>
+        <link refid="class_open_oasis_1_1_i_adapted_output_factory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::IAdaptedOutputFactory</label>
+        <link refid="class_open_oasis_1_1_i_adapted_output_factory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenOasis::IDescribable</label>
+        <link refid="class_open_oasis_1_1_i_describable"/>
+      </node>
+      <node id="2">
+        <label>OpenOasis::IIdentifiable</label>
+        <link refid="class_open_oasis_1_1_i_identifiable"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/Inc/IAdaptedOutputFactory.h" line="18" column="1" bodyfile="Models/Inc/IAdaptedOutputFactory.h" bodystart="19" bodyend="51"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_adapted_output_factory_1a7105896e885eb25cd742055113e7b171" prot="public" virt="pure-virtual"><scope>OpenOasis::IAdaptedOutputFactory</scope><name>CreateAdaptedOutput</name></member>
+      <member refid="class_open_oasis_1_1_i_adapted_output_factory_1a59e8fec563b82374d18f1884d84d3c5f" prot="public" virt="pure-virtual"><scope>OpenOasis::IAdaptedOutputFactory</scope><name>GetAvailableAdaptedOutputIds</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af4835eca0b321df230259e375046772b" prot="public" virt="pure-virtual"><scope>OpenOasis::IAdaptedOutputFactory</scope><name>GetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1af418ed53621d17a93496091d6d88d695" prot="public" virt="pure-virtual"><scope>OpenOasis::IAdaptedOutputFactory</scope><name>GetDescription</name></member>
+      <member refid="class_open_oasis_1_1_i_identifiable_1a808d8d4b970d54a19fd19857518fe8d0" prot="public" virt="pure-virtual"><scope>OpenOasis::IAdaptedOutputFactory</scope><name>GetId</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a46f97dd01e43b21065edf31baabd9c32" prot="public" virt="pure-virtual"><scope>OpenOasis::IAdaptedOutputFactory</scope><name>SetCaption</name></member>
+      <member refid="class_open_oasis_1_1_i_describable_1a9a3684fef8fa6a15678d5bae1a4319e4" prot="public" virt="pure-virtual"><scope>OpenOasis::IAdaptedOutputFactory</scope><name>SetDescription</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

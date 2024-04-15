@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_f42854fb7a47e961c6b84a97d295c858" kind="dir">
+    <compoundname>Models/Inc/AdditionalControl</compoundname>
+    <innerfile refid="_i_comparable_8h">IComparable.h</innerfile>
+    <innerfile refid="_i_space_extension_8h">ISpaceExtension.h</innerfile>
+    <innerfile refid="_i_time_extension_8h">ITimeExtension.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/AdditionalControl/"/>
+  </compounddef>
+</doxygen>

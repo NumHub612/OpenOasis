@@ -1,0 +1,670 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Temporal::TimeBuffer</compoundname>
+    <includes refid="_time_buffer_8h" local="no">TimeBuffer.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a0f04133d922be923375c02a836daab6d" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Temporal::TimeBuffer::mDoExtrapolate</definition>
+        <argsstring></argsstring>
+        <name>mDoExtrapolate</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::mDoExtrapolate</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="47" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a036e6da6ef5a41849504291bc5809ada" prot="protected" static="no" mutable="no">
+        <type>std::shared_ptr&lt; ValueSet2D &gt;</type>
+        <definition>std::shared_ptr&lt;ValueSet2D&gt; OpenOasis::CommImp::Temporal::TimeBuffer::mValues</definition>
+        <argsstring></argsstring>
+        <name>mValues</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::mValues</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="49" column="21" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a53ca632edcbd3b52f0bfc21011d488b3" prot="protected" static="no" mutable="no">
+        <type>std::shared_ptr&lt; TimeSet &gt;</type>
+        <definition>std::shared_ptr&lt;TimeSet&gt; OpenOasis::CommImp::Temporal::TimeBuffer::mTimes</definition>
+        <argsstring></argsstring>
+        <name>mTimes</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::mTimes</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="51" column="21" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1afd1d8481c48ccbf184ba7b3d6d1a22ee" prot="protected" static="no" mutable="no">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Temporal::TimeBuffer::mRelaxationFactor</definition>
+        <argsstring></argsstring>
+        <name>mRelaxationFactor</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::mRelaxationFactor</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="53" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1af90d72f857e161f7443cbdc72b862c8f" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Temporal::TimeBuffer::mLastBufferSizeMessageCounter</definition>
+        <argsstring></argsstring>
+        <name>mLastBufferSizeMessageCounter</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::mLastBufferSizeMessageCounter</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="55" column="9" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a61437b02ea10d0a594328e1e06acfe5b" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Temporal::TimeBuffer::mDoExtendedDataVerification</definition>
+        <argsstring></argsstring>
+        <name>mDoExtendedDataVerification</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::mDoExtendedDataVerification</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="57" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a1c5fecfada744b8d166f1ba78463a160" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::CommImp::Temporal::TimeBuffer::~TimeBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~TimeBuffer</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::~TimeBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="60" column="13" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="60" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a409a7b879210a6671a9fd2471ed4ae41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Temporal::TimeBuffer::TimeBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>TimeBuffer</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::TimeBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="63" column="5" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1ac968f66287dee047c41a420461bafb76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Temporal::TimeBuffer::TimeBuffer</definition>
+        <argsstring>(const TimeBuffer &amp;TimeBuffer)</argsstring>
+        <name>TimeBuffer</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::TimeBuffer</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer" kindref="compound">TimeBuffer</ref> &amp;</type>
+          <declname>TimeBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="64" column="5" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="25" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1aeb0227fb19023c5f91f71b3bdd6de1a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::SetDoExtrapolate</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetDoExtrapolate</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::SetDoExtrapolate</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="72" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a9b8736a1c521a4437766fe8e2cff9545" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Temporal::TimeBuffer::GetDoExtrapolate</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDoExtrapolate</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetDoExtrapolate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="74" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a96c367fa3bc0eef5feb7a0494eef5537" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::AddValues</definition>
+        <argsstring>(const std::shared_ptr&lt; ITime &gt; &amp;time, const std::vector&lt; real &gt; &amp;values)</argsstring>
+        <name>AddValues</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::AddValues</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &amp;</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; real &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Adds corresponding values for time and values to the <ref refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer" kindref="compound">TimeBuffer</ref>. The AddValues method will internally make a copy of the added times and values. The reason for doing this is that the times and values arguments are reference, and the corresponding values could be changed by the owner of the classes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Description of the time parameter. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valueSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Description of the values parameter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="83" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a8a4fe58ce30ab01258abc4742b09484e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; real &gt;</type>
+        <definition>vector&lt; real &gt; OpenOasis::CommImp::Temporal::TimeBuffer::GetValues</definition>
+        <argsstring>(const std::shared_ptr&lt; ITime &gt; &amp;requestedTime)</argsstring>
+        <name>GetValues</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetValues</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &amp;</type>
+          <declname>requestedTime</declname>
+        </param>
+        <briefdescription>
+<para>Returns the values that corresponds to the requestedTime. The values may be found by interpolation, extrapolation and/or aggregation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="94" column="17" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="158" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3eec2519dd58ace365ddfb66b308f9dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::SetRelaxationFactor</definition>
+        <argsstring>(real value)</argsstring>
+        <name>SetRelaxationFactor</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::SetRelaxationFactor</qualifiedname>
+        <param>
+          <type>real</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="96" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="111" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3da97b4d3d87831d353d3c44e562d7ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>real</type>
+        <definition>real OpenOasis::CommImp::Temporal::TimeBuffer::GetRelaxationFactor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRelaxationFactor</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetRelaxationFactor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="98" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a0b382c46d28bbe6398bf230f058a40e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt;</type>
+        <definition>shared_ptr&lt; ITime &gt; OpenOasis::CommImp::Temporal::TimeBuffer::GetTimeAt</definition>
+        <argsstring>(int timeStep) const</argsstring>
+        <name>GetTimeAt</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetTimeAt</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>timeStep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="100" column="21" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="120" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a18308f86fa38d7ec9087d4f4894c3642" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; real &gt;</type>
+        <definition>vector&lt; real &gt; OpenOasis::CommImp::Temporal::TimeBuffer::GetValuesAt</definition>
+        <argsstring>(int timeStep) const</argsstring>
+        <name>GetValuesAt</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetValuesAt</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>timeStep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="102" column="17" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="142" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a09c1c5af2caf5ab467f6fca140608ad3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; TimeSet &gt;</type>
+        <definition>shared_ptr&lt; TimeSet &gt; OpenOasis::CommImp::Temporal::TimeBuffer::GetTimeSet</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTimeSet</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetTimeSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="104" column="21" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="1025" bodyend="1028"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1ad6aa173a640706a6046648346e68cf9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; ValueSet2D &gt;</type>
+        <definition>shared_ptr&lt; ValueSet2D &gt; OpenOasis::CommImp::Temporal::TimeBuffer::GetValueSet</definition>
+        <argsstring>() const</argsstring>
+        <name>GetValueSet</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetValueSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="106" column="21" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="1030" bodyend="1033"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a9d284c5b099a71cbc64b711cd8a9adfb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Temporal::TimeBuffer::GetDoExtendedDataVerification</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDoExtendedDataVerification</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetDoExtendedDataVerification</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="112" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="1035" bodyend="1038"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a5042359eccebd9b1bc86c45b8a17c806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::SetDoExtendedDataVerification</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetDoExtendedDataVerification</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::SetDoExtendedDataVerification</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="114" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="1040" bodyend="1043"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3e0551b7d2bbb44dad18e5c9c7009ce6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::CheckBuffer</definition>
+        <argsstring>() const</argsstring>
+        <name>CheckBuffer</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::CheckBuffer</qualifiedname>
+        <briefdescription>
+<para>Checks weather the contents of the buffer is valid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="117" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="129" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1acf58a763f6079e11daf1b2d33b94de63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::ClearBefore</definition>
+        <argsstring>(std::shared_ptr&lt; ITime &gt; time)</argsstring>
+        <name>ClearBefore</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::ClearBefore</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt;</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Clears all records in the buffer associated to time that is earlier than the time specified. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="121" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="960" bodyend="977"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a2bd84242ce56428ff67e018a1604e1db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::ClearAfter</definition>
+        <argsstring>(std::shared_ptr&lt; ITime &gt; time)</argsstring>
+        <name>ClearAfter</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::ClearAfter</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt;</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Clears all times and values in the buffer at/or later than the specified time. If the specified time is span, the start time is used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="126" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="943" bodyend="958"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a178121ddbebede0994adc27c3dcfe81c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::Reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="128" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="979" bodyend="988"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1acab95b2ee6f2e16df21cdda0f204e96f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::vector&lt; real &gt; &gt;</type>
+        <definition>vector&lt; vector&lt; real &gt; &gt; OpenOasis::CommImp::Temporal::TimeBuffer::GetAllValues</definition>
+        <argsstring>()</argsstring>
+        <name>GetAllValues</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetAllValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="130" column="17" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="990" bodyend="1004"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a8ae70e7a71efd87f275697e6af4cb29a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::SetOrAddValues</definition>
+        <argsstring>(std::shared_ptr&lt; ITime &gt; time, std::vector&lt; real &gt; values)</argsstring>
+        <name>SetOrAddValues</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::SetOrAddValues</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt;</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; real &gt;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="132" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="1006" bodyend="1023"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a4c2705e88333a0392e44424ece6e7ed7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Temporal::TimeBuffer::GetTimesCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTimesCount</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetTimesCount</qualifiedname>
+        <briefdescription>
+<para>Number of time streps in the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="135" column="9" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="933" bodyend="936"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a38fcd2da7ac6a83e6cbbfd374e09c5af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Temporal::TimeBuffer::GetValuesCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetValuesCount</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::GetValuesCount</qualifiedname>
+        <briefdescription>
+<para>The number of values in the valuesets contained in the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="138" column="9" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="938" bodyend="941"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a1d3847fde7b048753539fbaaa035c9f7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::AddValuesToBuffer</definition>
+        <argsstring>(const std::shared_ptr&lt; ITime &gt; &amp;time, const std::vector&lt; real &gt; &amp;values)</argsstring>
+        <name>AddValuesToBuffer</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::AddValuesToBuffer</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &amp;</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; real &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Adds values to the buffer, check the time is increasing, not overlapping(spans), and has durations matching the TimeSet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="143" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="55" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1afd768981580875bc21854c551eb25364" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpenOasis::CommImp::Temporal::TimeBuffer::Create</definition>
+        <argsstring>()</argsstring>
+        <name>Create</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::Create</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="146" column="10" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="41" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a2f8f295931e33ca102982a389552ffb8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; real &gt;</type>
+        <definition>vector&lt; real &gt; OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeStampsToTimeSpan</definition>
+        <argsstring>(const std::shared_ptr&lt; ITime &gt; &amp;requestedTime)</argsstring>
+        <name>MapFromTimeStampsToTimeSpan</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeStampsToTimeSpan</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &amp;</type>
+          <declname>requestedTime</declname>
+        </param>
+        <briefdescription>
+<para>A ValueSet corresponding to a TimeSpan is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeStamps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="151" column="5" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="570" bodyend="787"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a5ae768c381859210334d7c4ac26814f2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; real &gt;</type>
+        <definition>vector&lt; real &gt; OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeSpansToTimeStamp</definition>
+        <argsstring>(const std::shared_ptr&lt; ITime &gt; &amp;requestedTimeStamp)</argsstring>
+        <name>MapFromTimeSpansToTimeStamp</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeSpansToTimeStamp</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &amp;</type>
+          <declname>requestedTimeStamp</declname>
+        </param>
+        <briefdescription>
+<para>A ValueSet for a time stamp is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeSpans. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="156" column="5" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="790" bodyend="931"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1aa2880e24fd5986dc9fec1a8e46037e73" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; real &gt;</type>
+        <definition>vector&lt; real &gt; OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeSpansToTimeSpan</definition>
+        <argsstring>(const std::shared_ptr&lt; ITime &gt; &amp;requestedTime)</argsstring>
+        <name>MapFromTimeSpansToTimeSpan</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeSpansToTimeSpan</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &amp;</type>
+          <declname>requestedTime</declname>
+        </param>
+        <briefdescription>
+<para>A ValueSet corresponding to a TimeSpan is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeSpans. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="161" column="5" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="308" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a7b54e7ef47571274507a74ddf72b3941" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; real &gt;</type>
+        <definition>vector&lt; real &gt; OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeStampsToTimeStamp</definition>
+        <argsstring>(const std::shared_ptr&lt; ITime &gt; &amp;requestedTimeStamp)</argsstring>
+        <name>MapFromTimeStampsToTimeStamp</name>
+        <qualifiedname>OpenOasis::CommImp::Temporal::TimeBuffer::MapFromTimeStampsToTimeStamp</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &amp;</type>
+          <declname>requestedTimeStamp</declname>
+        </param>
+        <briefdescription>
+<para>A ValueSet corresponding to Time Stamp is calculated using interpolation or extrapolation in corresponding lists of ValueSets and TimeStamps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Temporal/TimeBuffer.h" line="166" column="5" bodyfile="Models/CommImp/Temporal/TimeBuffer.cpp" bodystart="205" bodyend="305"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer" kindref="compound">TimeBuffer</ref> class provides temporal buffering functionality. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>OpenOasis::CommImp::Temporal::TimeBuffer</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mRelaxationFactor</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>real</label>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Temporal/TimeBuffer.h" line="44" column="1" bodyfile="Models/CommImp/Temporal/TimeBuffer.h" bodystart="45" bodyend="167"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a96c367fa3bc0eef5feb7a0494eef5537" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>AddValues</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a1d3847fde7b048753539fbaaa035c9f7" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>AddValuesToBuffer</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3e0551b7d2bbb44dad18e5c9c7009ce6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>CheckBuffer</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a2bd84242ce56428ff67e018a1604e1db" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>ClearAfter</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1acf58a763f6079e11daf1b2d33b94de63" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>ClearBefore</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1afd768981580875bc21854c551eb25364" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>Create</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1acab95b2ee6f2e16df21cdda0f204e96f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetAllValues</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a9d284c5b099a71cbc64b711cd8a9adfb" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetDoExtendedDataVerification</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a9b8736a1c521a4437766fe8e2cff9545" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetDoExtrapolate</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3da97b4d3d87831d353d3c44e562d7ca" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetRelaxationFactor</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a0b382c46d28bbe6398bf230f058a40e2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetTimeAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a4c2705e88333a0392e44424ece6e7ed7" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetTimesCount</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a09c1c5af2caf5ab467f6fca140608ad3" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetTimeSet</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a8a4fe58ce30ab01258abc4742b09484e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetValues</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a18308f86fa38d7ec9087d4f4894c3642" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetValuesAt</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a38fcd2da7ac6a83e6cbbfd374e09c5af" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetValuesCount</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1ad6aa173a640706a6046648346e68cf9d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>GetValueSet</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1aa2880e24fd5986dc9fec1a8e46037e73" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>MapFromTimeSpansToTimeSpan</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a5ae768c381859210334d7c4ac26814f2" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>MapFromTimeSpansToTimeStamp</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a2f8f295931e33ca102982a389552ffb8" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>MapFromTimeStampsToTimeSpan</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a7b54e7ef47571274507a74ddf72b3941" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>MapFromTimeStampsToTimeStamp</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a61437b02ea10d0a594328e1e06acfe5b" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>mDoExtendedDataVerification</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a0f04133d922be923375c02a836daab6d" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>mDoExtrapolate</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1af90d72f857e161f7443cbdc72b862c8f" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>mLastBufferSizeMessageCounter</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1afd1d8481c48ccbf184ba7b3d6d1a22ee" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>mRelaxationFactor</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a53ca632edcbd3b52f0bfc21011d488b3" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>mTimes</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a036e6da6ef5a41849504291bc5809ada" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>mValues</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a178121ddbebede0994adc27c3dcfe81c" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>Reset</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a5042359eccebd9b1bc86c45b8a17c806" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>SetDoExtendedDataVerification</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1aeb0227fb19023c5f91f71b3bdd6de1a6" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>SetDoExtrapolate</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a8ae70e7a71efd87f275697e6af4cb29a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>SetOrAddValues</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a3eec2519dd58ace365ddfb66b308f9dd" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>SetRelaxationFactor</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a409a7b879210a6671a9fd2471ed4ae41" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>TimeBuffer</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1ac968f66287dee047c41a420461bafb76" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>TimeBuffer</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_temporal_1_1_time_buffer_1a1c5fecfada744b8d166f1ba78463a160" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Temporal::TimeBuffer</scope><name>~TimeBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

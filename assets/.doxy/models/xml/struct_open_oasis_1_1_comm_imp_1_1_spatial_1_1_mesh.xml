@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Spatial::Mesh</compoundname>
+    <includes refid="_mesh_structs_8h" local="no">MeshStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1a2310fa60c21b7ac7c3e953159fb19de4" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_node" kindref="compound">Node</ref> &gt;</type>
+        <definition>std::unordered_map&lt;int, Node&gt; OpenOasis::CommImp::Spatial::Mesh::nodes</definition>
+        <argsstring></argsstring>
+        <name>nodes</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Mesh::nodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="98" column="24" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1a821bf77b778348c54d8a05580f536c7f" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_face" kindref="compound">Face</ref> &gt;</type>
+        <definition>std::unordered_map&lt;int, Face&gt; OpenOasis::CommImp::Spatial::Mesh::faces</definition>
+        <argsstring></argsstring>
+        <name>faces</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Mesh::faces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="101" column="24" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1aa89fba578c20e17f87dff12a93d4b3ab" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; int, <ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_cell" kindref="compound">Cell</ref> &gt;</type>
+        <definition>std::unordered_map&lt;int, Cell&gt; OpenOasis::CommImp::Spatial::Mesh::cells</definition>
+        <argsstring></argsstring>
+        <name>cells</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Mesh::cells</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/MeshStructs.h" line="104" column="24" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh" kindref="compound">Mesh</ref> structure. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Spatial/MeshStructs.h" line="95" column="1" bodyfile="Models/CommImp/Spatial/MeshStructs.h" bodystart="96" bodyend="105"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1aa89fba578c20e17f87dff12a93d4b3ab" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Mesh</scope><name>cells</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1a821bf77b778348c54d8a05580f536c7f" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Mesh</scope><name>faces</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh_1a2310fa60c21b7ac7c3e953159fb19de4" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Mesh</scope><name>nodes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

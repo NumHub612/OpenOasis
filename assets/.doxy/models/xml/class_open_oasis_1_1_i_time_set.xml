@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_time_set" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::ITimeSet</compoundname>
+    <includes refid="_i_time_set_8h" local="no">ITimeSet.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_set_1aa9a7ea8753bffb429c0a1e6de71c7165" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt; &gt;</type>
+        <definition>virtual std::vector&lt; std::shared_ptr&lt; ITime &gt; &gt; OpenOasis::ITimeSet::GetTimes</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetTimes</name>
+        <qualifiedname>OpenOasis::ITimeSet::GetTimes</qualifiedname>
+        <briefdescription>
+<para>Time stamps or spans as available in of an output item, or as required by an input item. Times should be ordered. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Specific values:<itemizedlist>
+<listitem><para><computeroutput>TimeSet::GetTimes().size() == 0</computeroutput>, in case of input: time dependent item, but currently no values required.</para>
+</listitem><listitem><para><computeroutput>TimeSet::GetTimes().size() == 0</computeroutput>, in case of output: time dependent item, but no values available yet or required yet. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITimeSet.h" line="33" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_set_1adfbc65273ff97f072d84e5824b68a4fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ITimeSet::RemoveTime</definition>
+        <argsstring>(int index)=0</argsstring>
+        <name>RemoveTime</name>
+        <qualifiedname>OpenOasis::ITimeSet::RemoveTime</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Removes the <computeroutput><ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref></computeroutput> element with specified index. After removing time, the duration must be updated automatically. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITimeSet.h" line="37" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_set_1a2fdca5320e6669453150d69a7f66c731" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void OpenOasis::ITimeSet::AddTime</definition>
+        <argsstring>(std::shared_ptr&lt; ITime &gt; time)=0</argsstring>
+        <name>AddTime</name>
+        <qualifiedname>OpenOasis::ITimeSet::AddTime</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt;</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Adds a <computeroutput><ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref></computeroutput> to this time set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Usually, a timeset item is ordered by timestamp, it means the insertion will trigger interval sorting. After adding time, the duration must be updated automatically. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITimeSet.h" line="44" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_set_1aea3a636b96717b7a5f7430f3da69c135" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool OpenOasis::ITimeSet::HasDurations</definition>
+        <argsstring>() const =0</argsstring>
+        <name>HasDurations</name>
+        <qualifiedname>OpenOasis::ITimeSet::HasDurations</qualifiedname>
+        <briefdescription>
+<para>Whether each <computeroutput><ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref></computeroutput> have duration. In this case,duration value greater than zero is expected for each <computeroutput><ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref></computeroutput> in the <computeroutput><ref refid="class_open_oasis_1_1_i_time_set_1aa9a7ea8753bffb429c0a1e6de71c7165" kindref="member">GetTimes()</ref></computeroutput> list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITimeSet.h" line="49" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_set_1a95cbadb731bf1cde8ea7db2288604f0d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double OpenOasis::ITimeSet::GetOffsetFromUtcInHours</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetOffsetFromUtcInHours</name>
+        <qualifiedname>OpenOasis::ITimeSet::GetOffsetFromUtcInHours</qualifiedname>
+        <briefdescription>
+<para>Time zone offset from UTC, expressed in the number of hours. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Since some of the world&apos;s time zone differ half an hour from their neighbour the value is specified as a double. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITimeSet.h" line="55" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_i_time" kindref="compound">ITime</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; ITime &gt; OpenOasis::ITimeSet::GetTimeHorizon</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetTimeHorizon</name>
+        <qualifiedname>OpenOasis::ITimeSet::GetTimeHorizon</qualifiedname>
+        <briefdescription>
+<para>Gets the time horizon for what timespan it may require/provide values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The providers of this input can assume that the input item never go back further in time than the time horizon&apos;s begin time: <computeroutput><ref refid="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" kindref="member">GetTimeHorizon()</ref>-&gt;GetTimeStamp()</computeroutput>. Also, it will never go further ahead than the time horizon&apos;s end time:: <computeroutput><ref refid="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" kindref="member">GetTimeHorizon()</ref>-&gt;GetTimeStamp() + <ref refid="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" kindref="member">GetTimeHorizon()</ref>-&gt;GetDurationInDays()</computeroutput>.</para>
+<para>For an output item, thus for an adapted output, the time horizon indicates in what time span the item can provide values. Specific values: <computeroutput><ref refid="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" kindref="member">GetTimeHorizon()</ref>-&gt;GetTimeStamp()</computeroutput> == - Infinity: far back in time; <computeroutput><ref refid="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" kindref="member">GetTimeHorizon()</ref>-&gt;GetDurationInDays()</computeroutput> == + Infinity: far in the future. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITimeSet.h" line="69" column="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Set of time stamps or time intervals, used to indicate when an output has and can provide values, and when an input item does or may require values. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/ITimeSet.h" line="22" column="1" bodyfile="Models/Inc/ITimeSet.h" bodystart="23" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_time_set_1a2fdca5320e6669453150d69a7f66c731" prot="public" virt="pure-virtual"><scope>OpenOasis::ITimeSet</scope><name>AddTime</name></member>
+      <member refid="class_open_oasis_1_1_i_time_set_1a95cbadb731bf1cde8ea7db2288604f0d" prot="public" virt="pure-virtual"><scope>OpenOasis::ITimeSet</scope><name>GetOffsetFromUtcInHours</name></member>
+      <member refid="class_open_oasis_1_1_i_time_set_1ac60c9bf9a850a04046424fa298d7c36b" prot="public" virt="pure-virtual"><scope>OpenOasis::ITimeSet</scope><name>GetTimeHorizon</name></member>
+      <member refid="class_open_oasis_1_1_i_time_set_1aa9a7ea8753bffb429c0a1e6de71c7165" prot="public" virt="pure-virtual"><scope>OpenOasis::ITimeSet</scope><name>GetTimes</name></member>
+      <member refid="class_open_oasis_1_1_i_time_set_1aea3a636b96717b7a5f7430f3da69c135" prot="public" virt="pure-virtual"><scope>OpenOasis::ITimeSet</scope><name>HasDurations</name></member>
+      <member refid="class_open_oasis_1_1_i_time_set_1adfbc65273ff97f072d84e5824b68a4fe" prot="public" virt="pure-virtual"><scope>OpenOasis::ITimeSet</scope><name>RemoveTime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_i_time" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>OpenOasis::ITime</compoundname>
+    <includes refid="_i_time_8h" local="no">ITime.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_1ae6c23ac6f919ca9af79a441f2066ca46" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double OpenOasis::ITime::GetTimeStamp</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetTimeStamp</name>
+        <qualifiedname>OpenOasis::ITime::GetTimeStamp</qualifiedname>
+        <briefdescription>
+<para>Time stamp as days since 08:00::00 January 1, 1970. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITime.h" line="20" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_i_time_1a54a06a160cc5fee0b5ef12976955d552" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double OpenOasis::ITime::GetDurationInDays</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetDurationInDays</name>
+        <qualifiedname>OpenOasis::ITime::GetDurationInDays</qualifiedname>
+        <briefdescription>
+<para>Duration in days for time interval. 0 if time is a time stamp. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/Inc/ITime.h" line="23" column="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Time interface to support a time stamp as well as a time interval. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/Inc/ITime.h" line="16" column="1" bodyfile="Models/Inc/ITime.h" bodystart="17" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_i_time_1a54a06a160cc5fee0b5ef12976955d552" prot="public" virt="pure-virtual"><scope>OpenOasis::ITime</scope><name>GetDurationInDays</name></member>
+      <member refid="class_open_oasis_1_1_i_time_1ae6c23ac6f919ca9af79a441f2066ca46" prot="public" virt="pure-virtual"><scope>OpenOasis::ITime</scope><name>GetTimeStamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_598ce1e743ead5e92cc84cac2af27086" kind="dir">
+    <compoundname>Models/SystHeats/HeatConductionModel</compoundname>
+    <innerfile refid="_heat_conduction_model_8cpp">HeatConductionModel.cpp</innerfile>
+    <innerfile refid="_heat_conduction_model_8h">HeatConductionModel.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/SystHeats/HeatConductionModel/"/>
+  </compounddef>
+</doxygen>

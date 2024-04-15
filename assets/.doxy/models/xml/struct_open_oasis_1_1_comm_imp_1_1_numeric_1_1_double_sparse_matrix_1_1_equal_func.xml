@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_equal_func" kind="struct" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::EqualFunc</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_equal_func_1a16085924d0c96599f212a5c6cbe96077" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OpenOasis::CommImp::Numeric::DoubleSparseMatrix::EqualFunc::operator()</definition>
+        <argsstring>(const Index &amp;lhs, const Index &amp;rhs) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::EqualFunc::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index" kindref="compound">Index</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index" kindref="compound">Index</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="386" column="14" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Models/CommImp/Numeric/Matrix.h" line="384" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="385" bodyend="387"/>
+    <listofallmembers>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_equal_func_1a16085924d0c96599f212a5c6cbe96077" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::EqualFunc</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
