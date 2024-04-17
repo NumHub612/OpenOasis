@@ -44,55 +44,33 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="..">intro</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Oasis iAgents</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Spark</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#_2">绿洲星火智能模型框架</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#iAgents.Spark.net">net</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#iAgents.Spark.net.Net">Net</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.net.Net.is_training">is_training</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.net.Net.params">params</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.net.Net.backward">backward</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.net.Net.forward">forward</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#iAgents.Spark.model">model</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#iAgents.Spark.model.Model">Model</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model.Model.is_training">is_training</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model.Model.backward">backward</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model.Model.forward">forward</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model.Model.load">load</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model.Model.save">save</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model.Model.update">update</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Oasis Models</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../models/namespace_open_oasis/">Oasis API</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../models/namespace_open_oasis_1_1_comm_imp_1_1_numeric/">Solvers</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../models/namespace_open_oasis_1_1_syst_heats/">Heats</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">iAgents</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Spark</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">绿洲星火智能模型框架</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.net">net</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.net.Net">Net</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model">model</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iAgents.Spark.model.Model">Model</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -104,7 +82,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../OpenOasisDevTips/">DevTips</a>
+                <li class="toctree-l1"><a class="reference internal" href="../OpenOasisDevTips/">Devs</a>
                 </li>
               </ul>
       </div>
@@ -122,7 +100,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Home</li>
-          <li class="breadcrumb-item">Oasis iAgents</li>
+          <li class="breadcrumb-item">iAgents</li>
       <li class="breadcrumb-item active">Spark</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -191,11 +169,10 @@ setting parameters, and obtaining gradients.</p>
 
 
 
-<h2 id="iAgents.Spark.net.Net" class="doc doc-heading">
-          <code>Net</code>
+<h3 id="iAgents.Spark.net.Net" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">Net</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span></code>
 
-
-<a href="#iAgents.Spark.net.Net" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#iAgents.Spark.net.Net" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
   <div class="doc doc-contents ">
@@ -204,145 +181,6 @@ setting parameters, and obtaining gradients.</p>
       <p>Feed-forward Neural Network class.</p>
 <p>:param layers: a list of <code>Layer</code> objects, in the order they should be connected.</p>
 
-            <details class="quote">
-              <summary>Source code in <code>iAgents\Spark\net.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Net</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Feed-forward Neural Network class.</span>
-
-<span class="sd">    :param layers: a list of `Layer` objects, in the order they should be connected.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layers</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">layers</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_is_training</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">])</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward propagation traverses  all layers sequentially,</span>
-<span class="sd">        with the output of each layer calculated</span>
-<span class="sd">        as the input to the next layer.</span>
-
-<span class="sd">        :param inputs: input tensor to the network.</span>
-<span class="sd">        :return: result tensor of the network.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
-            <span class="n">inputs</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">inputs</span>
-
-    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grad</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StructuredParam</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Back propagation traverses all layers in reverse order,</span>
-<span class="sd">        using the gradient of each layer as input to the next.</span>
-
-<span class="sd">        :param grad: gradient tensor of the network.</span>
-<span class="sd">        :return: structured gradients.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># back propagation</span>
-        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">):</span>
-            <span class="n">grad</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
-
-        <span class="c1"># structured gradients</span>
-        <span class="n">param_grads</span> <span class="o">=</span> <span class="p">[</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">grads</span><span class="p">)</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">]</span>
-        <span class="n">struct_grads</span> <span class="o">=</span> <span class="n">StructuredParam</span><span class="p">(</span><span class="n">param_grads</span><span class="p">)</span>
-
-        <span class="c1"># save the gradients w.r.t the input</span>
-        <span class="n">struct_grads</span><span class="o">.</span><span class="n">wrt_input</span> <span class="o">=</span> <span class="n">grad</span>
-        <span class="k">return</span> <span class="n">struct_grads</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a structured parameter object containing the trainable and non-trainable</span>
-<span class="sd">        parameters of all layers in the network.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">trainable</span> <span class="o">=</span> <span class="p">[</span><span class="n">layer</span><span class="o">.</span><span class="n">params</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">]</span>
-        <span class="n">non_trainable</span> <span class="o">=</span> <span class="p">[</span><span class="n">layer</span><span class="o">.</span><span class="n">nt_params</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">StructuredParam</span><span class="p">(</span><span class="n">trainable</span><span class="p">,</span> <span class="n">non_trainable</span><span class="p">)</span>
-
-    <span class="nd">@params</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">values</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">nt_values</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">nt_values</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">is_training</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Whether the network is in training mode or not.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_training</span>
-
-    <span class="nd">@is_training</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">is_training</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_training</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
-            <span class="n">layer</span><span class="o">.</span><span class="n">is_training</span> <span class="o">=</span> <span class="n">is_training</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_is_training</span> <span class="o">=</span> <span class="n">is_training</span>
-</code></pre></div></td></tr></table></div>
-            </details>
 
   
 
@@ -358,7 +196,7 @@ setting parameters, and obtaining gradients.</p>
 
 
 
-<h3 id="iAgents.Spark.net.Net.is_training" class="doc doc-heading">
+<h4 id="iAgents.Spark.net.Net.is_training" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">is_training</span></code>
   
   <span class="doc doc-labels">
@@ -366,7 +204,7 @@ setting parameters, and obtaining gradients.</p>
       <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
-<a href="#iAgents.Spark.net.Net.is_training" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.net.Net.is_training" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -380,7 +218,7 @@ setting parameters, and obtaining gradients.</p>
 
 
 
-<h3 id="iAgents.Spark.net.Net.params" class="doc doc-heading">
+<h4 id="iAgents.Spark.net.Net.params" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">params</span></code>
   
   <span class="doc doc-labels">
@@ -388,7 +226,7 @@ setting parameters, and obtaining gradients.</p>
       <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
-<a href="#iAgents.Spark.net.Net.params" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.net.Net.params" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -406,10 +244,10 @@ parameters of all layers in the network.</p>
 
 
 
-<h3 id="iAgents.Spark.net.Net.backward" class="doc doc-heading">
+<h4 id="iAgents.Spark.net.Net.backward" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">backward</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span></code>
 
-<a href="#iAgents.Spark.net.Net.backward" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.net.Net.backward" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -419,45 +257,6 @@ using the gradient of each layer as input to the next.</p>
 <p>:param grad: gradient tensor of the network.
 :return: structured gradients.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>iAgents\Spark\net.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grad</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StructuredParam</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Back propagation traverses all layers in reverse order,</span>
-<span class="sd">    using the gradient of each layer as input to the next.</span>
-
-<span class="sd">    :param grad: gradient tensor of the network.</span>
-<span class="sd">    :return: structured gradients.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># back propagation</span>
-    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">):</span>
-        <span class="n">grad</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
-
-    <span class="c1"># structured gradients</span>
-    <span class="n">param_grads</span> <span class="o">=</span> <span class="p">[</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">grads</span><span class="p">)</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">]</span>
-    <span class="n">struct_grads</span> <span class="o">=</span> <span class="n">StructuredParam</span><span class="p">(</span><span class="n">param_grads</span><span class="p">)</span>
-
-    <span class="c1"># save the gradients w.r.t the input</span>
-    <span class="n">struct_grads</span><span class="o">.</span><span class="n">wrt_input</span> <span class="o">=</span> <span class="n">grad</span>
-    <span class="k">return</span> <span class="n">struct_grads</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
@@ -467,10 +266,10 @@ using the gradient of each layer as input to the next.</p>
 
 
 
-<h3 id="iAgents.Spark.net.Net.forward" class="doc doc-heading">
+<h4 id="iAgents.Spark.net.Net.forward" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span></code>
 
-<a href="#iAgents.Spark.net.Net.forward" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.net.Net.forward" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -481,31 +280,6 @@ as the input to the next layer.</p>
 <p>:param inputs: input tensor to the network.
 :return: result tensor of the network.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>iAgents\Spark\net.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Forward propagation traverses  all layers sequentially,</span>
-<span class="sd">    with the output of each layer calculated</span>
-<span class="sd">    as the input to the next layer.</span>
-
-<span class="sd">    :param inputs: input tensor to the network.</span>
-<span class="sd">    :return: result tensor of the network.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
-        <span class="n">inputs</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">inputs</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
@@ -526,7 +300,8 @@ as the input to the next layer.</p>
 
   </div>
 
-</div><ul>
+</div><hr />
+<ul>
 <li><code>model</code> 组件负责整合所有组件，形成整个 <code>pipeline</code>。即：
 <div class="highlight"><pre><span></span><code>net 组件进行前向传播 -&gt; loss 组件计算损失和梯度 -&gt; net 组件将梯度反向传播 -&gt; optimizer 组件将梯度更新到参数
 </code></pre></div>
@@ -559,11 +334,10 @@ to form the entire pipeline.</p>
 
 
 
-<h2 id="iAgents.Spark.model.Model" class="doc doc-heading">
-          <code>Model</code>
+<h3 id="iAgents.Spark.model.Model" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">Model</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span></code>
 
-
-<a href="#iAgents.Spark.model.Model" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#iAgents.Spark.model.Model" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
   <div class="doc doc-contents ">
@@ -574,137 +348,6 @@ to form the entire pipeline.</p>
 :param loss: The loss component.
 :param optimizer: The optimizer component.</p>
 
-            <details class="quote">
-              <summary>Source code in <code>iAgents\Spark\model.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Model</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Model class manage the network, loss function and optimizer.</span>
-
-<span class="sd">    :param net: The network component.</span>
-<span class="sd">    :param loss: The loss component.</span>
-<span class="sd">    :param optimizer: The optimizer component.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">net</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="n">loss</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizer</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Drive forward propagation of net components.</span>
-
-<span class="sd">        :param inputs: The input tensor to the network.</span>
-<span class="sd">        :return: The output of the network.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predictions</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Drive losses component to calculate the losses and gradient,</span>
-<span class="sd">        and then drives the net component</span>
-<span class="sd">        to back propagate the gradients.</span>
-
-<span class="sd">        :param predictions: The predicted values by the network.</span>
-<span class="sd">        :param targets: The target values to be predicted.</span>
-<span class="sd">        :return: The loss and gradients of the network.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
-        <span class="n">grad_from_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
-        <span class="n">struct_grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">grad_from_loss</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">loss</span><span class="p">,</span> <span class="n">struct_grad</span>
-
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grads</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Drive optimizer component to update the net parameters</span>
-<span class="sd">        with the gradients.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">params</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">grads</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the model.&quot;&quot;&quot;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load the model.&quot;&quot;&quot;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">params</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
-        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
-            <span class="n">layer</span><span class="o">.</span><span class="n">is_init</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">is_training</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Whether the model is in training mode.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">is_training</span>
-
-    <span class="nd">@is_training</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">is_training</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_training</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">is_training</span> <span class="o">=</span> <span class="n">is_training</span>
-</code></pre></div></td></tr></table></div>
-            </details>
 
   
 
@@ -720,7 +363,7 @@ to form the entire pipeline.</p>
 
 
 
-<h3 id="iAgents.Spark.model.Model.is_training" class="doc doc-heading">
+<h4 id="iAgents.Spark.model.Model.is_training" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">is_training</span></code>
   
   <span class="doc doc-labels">
@@ -728,7 +371,7 @@ to form the entire pipeline.</p>
       <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
-<a href="#iAgents.Spark.model.Model.is_training" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.model.Model.is_training" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -745,10 +388,10 @@ to form the entire pipeline.</p>
 
 
 
-<h3 id="iAgents.Spark.model.Model.backward" class="doc doc-heading">
+<h4 id="iAgents.Spark.model.Model.backward" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">backward</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span></code>
 
-<a href="#iAgents.Spark.model.Model.backward" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.model.Model.backward" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -760,35 +403,6 @@ to back propagate the gradients.</p>
 :param targets: The target values to be predicted.
 :return: The loss and gradients of the network.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>iAgents\Spark\model.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predictions</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Drive losses component to calculate the losses and gradient,</span>
-<span class="sd">    and then drives the net component</span>
-<span class="sd">    to back propagate the gradients.</span>
-
-<span class="sd">    :param predictions: The predicted values by the network.</span>
-<span class="sd">    :param targets: The target values to be predicted.</span>
-<span class="sd">    :return: The loss and gradients of the network.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
-    <span class="n">grad_from_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
-    <span class="n">struct_grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">grad_from_loss</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">loss</span><span class="p">,</span> <span class="n">struct_grad</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
@@ -798,10 +412,10 @@ to back propagate the gradients.</p>
 
 
 
-<h3 id="iAgents.Spark.model.Model.forward" class="doc doc-heading">
+<h4 id="iAgents.Spark.model.Model.forward" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span></code>
 
-<a href="#iAgents.Spark.model.Model.forward" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.model.Model.forward" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -810,23 +424,6 @@ to back propagate the gradients.</p>
 <p>:param inputs: The input tensor to the network.
 :return: The output of the network.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>iAgents\Spark\model.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Drive forward propagation of net components.</span>
-
-<span class="sd">    :param inputs: The input tensor to the network.</span>
-<span class="sd">    :return: The output of the network.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
@@ -836,35 +433,16 @@ to back propagate the gradients.</p>
 
 
 
-<h3 id="iAgents.Spark.model.Model.load" class="doc doc-heading">
+<h4 id="iAgents.Spark.model.Model.load" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
 
-<a href="#iAgents.Spark.model.Model.load" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.model.Model.load" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
   
       <p>Load the model.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>iAgents\Spark\model.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load the model.&quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
-    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
-        <span class="n">layer</span><span class="o">.</span><span class="n">is_init</span> <span class="o">=</span> <span class="kc">True</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
@@ -874,27 +452,16 @@ to back propagate the gradients.</p>
 
 
 
-<h3 id="iAgents.Spark.model.Model.save" class="doc doc-heading">
+<h4 id="iAgents.Spark.model.Model.save" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
 
-<a href="#iAgents.Spark.model.Model.save" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.model.Model.save" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
   
       <p>Save the model.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>iAgents\Spark\model.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the model.&quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
@@ -904,10 +471,10 @@ to back propagate the gradients.</p>
 
 
 
-<h3 id="iAgents.Spark.model.Model.update" class="doc doc-heading">
+<h4 id="iAgents.Spark.model.Model.update" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">grads</span><span class="p">)</span></code>
 
-<a href="#iAgents.Spark.model.Model.update" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#iAgents.Spark.model.Model.update" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
@@ -915,21 +482,6 @@ to back propagate the gradients.</p>
       <p>Drive optimizer component to update the net parameters
 with the gradients.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>iAgents\Spark\model.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grads</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Drive optimizer component to update the net parameters</span>
-<span class="sd">    with the gradients.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">params</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">grads</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
@@ -976,8 +528,8 @@ with the gradients.</p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="intro"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../models/namespace_open_oasis/" class="btn btn-neutral float-right" title="Oasis API">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../models/namespace_open_oasis_1_1_syst_heats/" class="btn btn-neutral float-left" title="Heats"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../DataAssts/" class="btn btn-neutral float-right" title="Converters">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -1000,10 +552,10 @@ with the gradients.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../models/namespace_open_oasis_1_1_syst_heats/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../models/namespace_open_oasis/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../DataAssts/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
