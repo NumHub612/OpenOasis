@@ -5,15 +5,15 @@ docs_dir: 'Doc'
 nav:
   - Home: 
     - 'intro': README.md 
-    - 'Oasis iAgents': 
-      - 'Spark': iAgents\README.md
-    - 'Oasis Models': 
+    - 'Models': 
       - 'Oasis API': models\namespace_open_oasis.md
       - 'Solvers': models\namespace_open_oasis_1_1_comm_imp_1_1_numeric.md
       - 'Heats': models\namespace_open_oasis_1_1_syst_heats.md 
+    - 'iAgents': 
+      - 'Spark': iAgents\README.md      
     - 'Data Assistants':
       - 'Converters': DataAssts\README.md           
-  - DevTips: OpenOasisDevTips.md
+  - Devs: OpenOasisDevTips.md
 
 
 theme:

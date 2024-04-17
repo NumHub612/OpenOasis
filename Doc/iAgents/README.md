@@ -41,13 +41,20 @@
 - `net` 组件负责管理 `tensor` 在 `layers` 之间的前向和反向传播，同时能提供获取参数、设置参数、获取梯度的接口；
 
 ::: iAgents.Spark.net
+      members: [LstmPredictor]
+      filters:
+        - "!^_[^_]"
+------
 
 - `model` 组件负责整合所有组件，形成整个 `pipeline`。即：
 ```
 net 组件进行前向传播 -> loss 组件计算损失和梯度 -> net 组件将梯度反向传播 -> optimizer 组件将梯度更新到参数
 ```
 ::: iAgents.Spark.model
-
+      members: [LstmPredictor]
+      filters:
+        - "!^_[^_]"
+        
 ------
 
 **组件抽象 - 强化学习部分**
