@@ -374,7 +374,11 @@ public:
     class Index
     {
     public:
-        Index(int row, int column);
+        Index(int row, int column)
+        {
+            mRow = row;
+            mCol = column;
+        }
         Index() = default;
 
         int mRow = 0;
@@ -383,40 +387,104 @@ public:
 
     struct EqualFunc
     {
-        bool operator()(const Index &lhs, const Index &rhs) const;
+        bool operator()(const Index &lhs, const Index &rhs) const
+        {
+            return lhs.mRow == rhs.mRow && lhs.mCol == rhs.mCol;
+        }
     };
 
     struct HashFunc
     {
-        size_t operator()(const Index &key) const;
+        size_t operator()(const Index &key) const
+        {
+            using std::hash;
+            using std::size_t;
+
+            return ((hash<int>()(key.mRow) ^ (hash<int>()(key.mCol) << 1)) >> 1);
+        }
     };
 
     std::unordered_map<Index, Utils::real, HashFunc, EqualFunc> mValues;
 
 public:
-    DoubleSparseMatrix(int rowCount, int columnCount);
+    DoubleSparseMatrix(int rowCount, int columnCount)
+    {
+        SetRowCount(rowCount);
+        SetColumnCount(columnCount);
+    }
 
-    int  GetRowCount() const;
-    void SetRowCount(int value);
-    int  GetColumnCount() const;
-    void SetColumnCount(int value);
+    int GetRowCount() const
+    {
+        return mRowCount;
+    }
+    void SetRowCount(int value)
+    {
+        mRowCount = value;
+    }
+    int GetColumnCount() const
+    {
+        return mColumnCount;
+    }
+    void SetColumnCount(int value)
+    {
+        mColumnCount = value;
+    }
 
-    std::vector<Utils::real> Product(const std::vector<Utils::real> &vector2);
+    std::vector<Utils::real> Product(const std::vector<Utils::real> &vector2)
+    {
+        auto outputValues = std::vector<Utils::real>(mRowCount);
+        Product(outputValues, vector2);
+        return outputValues;
+    }
 
-    void
-    Product(std::vector<Utils::real> &res, const std::vector<Utils::real> &vector2);
+    void Product(std::vector<Utils::real> &res, const std::vector<Utils::real> &vector2)
+    {
+        if (vector2.empty())
+            return;
+
+        for (auto &entry : mValues)
+        {
+            res[entry.first.mRow] += entry.second * vector2[entry.first.mCol];
+        }
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Local methods.
     //
 
-    bool IsCellEmpty(int row, int column);
+    bool IsCellEmpty(int row, int column)
+    {
+        auto index = Index(row, column);
+        return mValues.find(index) == mValues.end();
+    }
 
-    Utils::real operator()(int row, int column);
+    Utils::real operator()(int row, int column)
+    {
+        auto index = Index(row, column);
 
-    Utils::real At(int row, int column);
+        const auto &iterator = mValues.find(index);
+        if (iterator == mValues.end())
+            throw std::runtime_error("Matrxi index out of range");
 
-    void SetValue(int row, int column, Utils::real value);
+        return iterator->second;
+    }
+
+    Utils::real At(int row, int column)
+    {
+        auto index = Index(row, column);
+
+        const auto &iterator = mValues.find(index);
+        if (iterator == mValues.end())
+            throw std::runtime_error("Matrxi index out of range");
+
+        return iterator->second;
+    }
+
+    void SetValue(int row, int column, Utils::real value)
+    {
+        auto index     = Index(row, column);
+        mValues[index] = value;
+    }
 };
 
 }  // namespace OpenOasis::CommImp::Numeric

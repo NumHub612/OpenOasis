@@ -25,6 +25,7 @@ using Utils::real;
 /// @brief Linear equations consisting of coefficient matrix and source term vector.
 using LinearEqs = std::tuple<Matrix<real>, std::vector<real>>;
 
+
 /// @brief Abstract operator class.
 /// @details Each numerical operator can discretize specific equation terms, or say
 /// carry out specific operations on field quantities, and return corresponding
