@@ -39,4 +39,15 @@ public:
     virtual BoundaryCondition GetBoundaryCondition() = 0;
 };
 
+
+/// @brief Commonly used boundaries.
+
+using DirichletBoundary  = Boundary;
+using NeumannBoundary    = Boundary;
+using RobinBoundary      = Boundary;
+using PeriodicBoundary   = Boundary;
+using SymmetryBoundary   = Boundary;
+using RotationalBoundary = Boundary;
+
+
 }  // namespace OpenOasis::CommImp::Numeric

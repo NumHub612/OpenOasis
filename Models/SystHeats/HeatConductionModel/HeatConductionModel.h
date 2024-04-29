@@ -12,7 +12,7 @@
 #include "Models/CommImp/Output.h"
 #include "Models/CommImp/Input.h"
 #include "Models/CommImp/Spatial/Grid.h"
-#include "Models/CommImp/Numeric/ScalarField.h"
+#include "Models/CommImp/Numeric/Field.h"
 #include "Models/CommImp/Numeric/Solver.h"
 
 
@@ -21,7 +21,7 @@ namespace OpenOasis
 namespace SystHeats
 {
 using CommImp::LinkableComponent;
-using CommImp::Numeric::ScalarFieldFp;
+using CommImp::Numeric::ScalarField;
 using CommImp::Numeric::Solver;
 using CommImp::Spatial::Grid;
 using CommImp::Spatial::Coordinate;
@@ -33,9 +33,9 @@ private:
     std::string mTaskFile;
     std::string mOutputDir;
 
-    std::shared_ptr<Grid>          mGrid;
-    std::shared_ptr<ScalarFieldFp> mTempValues;
-    std::shared_ptr<Solver>        mSolver;
+    std::shared_ptr<Grid>              mGrid;
+    std::shared_ptr<ScalarField<real>> mTempValues;
+    std::shared_ptr<Solver>            mSolver;
 
     real        mT0;
     std::string mT0file;

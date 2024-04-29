@@ -9,12 +9,15 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Models/Utils/CommMacros.h"
+#include "Vector.h"
+#include "Tensor.h"
 #include <vector>
 #include <algorithm>
 
 
 namespace OpenOasis::CommImp::Numeric
 {
+/// @brief The field type enum.
 enum class FieldType
 {
     NONE,
@@ -23,6 +26,8 @@ enum class FieldType
     TENSOR
 };
 
+
+/// @brief The field domain enum.
 enum class FieldDomain
 {
     NONE,
@@ -30,6 +35,7 @@ enum class FieldDomain
     FACE,
     CELL
 };
+
 
 /// @brief The abstract field class used to represent numeric field, such as
 /// scalar, vector or tensor data.
@@ -217,5 +223,85 @@ public:
         std::for_each(mData.begin(), mData.end(), [&k](auto &d) { d *= k; });
     }
 };
+
+
+/// @brief Scaler field.
+template <typename T>
+class ScalarField : public Field<T>
+{
+public:
+    static_assert(
+        std::is_arithmetic<T>::value,
+        "ScalarField only can be instantiated with arithmetic types");
+
+    virtual ~ScalarField() = default;
+
+    ScalarField(std::size_t size, T val = 0, FieldDomain domain = FieldDomain::CELL) :
+        Field<T>(size, val)
+    {
+        this->mDomain = domain;
+        this->mType   = FieldType::SCALAR;
+    }
+
+    ScalarField(FieldDomain domain = FieldDomain::CELL)
+    {
+        this->mDomain = domain;
+        this->mType   = FieldType::SCALAR;
+    }
+};
+
+
+/// @brief Vector field.
+template <typename T, std::size_t N = 3>
+class VectorField : public Field<Vector<T, N>>
+{
+public:
+    virtual ~VectorField() = default;
+
+    VectorField(FieldDomain domain = FieldDomain::CELL)
+    {
+        this->mDomain = domain;
+        this->mType   = FieldType::VECTOR;
+    }
+
+    VectorField(
+        std::size_t size, const Vector<T, N> &val = {},
+        FieldDomain domain = FieldDomain::CELL) :
+        Field<Vector<T, N>>(size, val)
+    {
+        this->mDomain = domain;
+        this->mType   = FieldType::VECTOR;
+    }
+};
+
+
+/// @brief Tensor field.
+template <typename T>
+class TensorField : public Field<Tensor<T>>
+{
+public:
+    virtual ~TensorField() = default;
+
+    TensorField(FieldDomain domain = FieldDomain::CELL)
+    {
+        this->mDomain = domain;
+        this->mType   = FieldType::TENSOR;
+    }
+
+    TensorField(
+        std::size_t size, const Tensor<T> &val = {},
+        FieldDomain domain = FieldDomain::CELL) :
+        Field<Tensor<T>>(size, val)
+    {
+        this->mDomain = domain;
+        this->mType   = FieldType::TENSOR;
+    }
+};
+
+
+// Commonly used field types.
+using ScalarFieldFp = ScalarField<Utils::real>;
+using VectorFieldFp = VectorField<Utils::real>;
+using TensorFieldFp = TensorField<Utils::real>;
 
 }  // namespace OpenOasis::CommImp::Numeric

@@ -26,6 +26,7 @@ namespace OpenOasis::CommImp::Numeric
 {
 using Utils::real;
 
+
 enum class SolverStatus
 {
     Created,

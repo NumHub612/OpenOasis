@@ -198,7 +198,7 @@ void HeatConductionModel::InitializeSpace()
 
     // Initialize temperature field.
     auto size   = mGrid->GetNumCells();
-    mTempValues = make_shared<ScalarFieldFp>(size, mT0);
+    mTempValues = make_shared<ScalarField<real>>(size, mT0);
 
     if (mT0file.empty())
         return;
