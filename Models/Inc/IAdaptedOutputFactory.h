@@ -39,7 +39,7 @@ public:
     /// returned by the `GetAvailableAdaptedOutputIds()` method. The returned
     /// `IAdaptedOutput` will already be registered with this adaptee.
     ///
-    /// @param adaptedOutputId The identifier of the 'IAdaptedOutput` to create.
+    /// @param adaptedOutputId The identifier of the `IAdaptedOutput` to create.
     /// @param adaptee `IOutput` to adapt.
     /// @param target `IInput` to adapt the adaptee to, can be `null`.
     ///
