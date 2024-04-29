@@ -4,8 +4,7 @@
  *
  ** ***********************************************************************************/
 #include "TimeAdaptedOutputFactory.h"
-#include "Models/CommImp/DevSupports/TimeExtrapolator.h"
-#include "Models/CommImp/DevSupports/TimeInterpolator.h"
+#include "Models/CommImp/DevSupports/TimeAdaptor.h"
 #include "Models/Utils/VectorHelper.h"
 #include "Models/Utils/Exception.h"
 
@@ -55,8 +54,7 @@ TimeAdaptedOutputFactory::GetAvailableAdaptedOutputIds(
     }
 
     vector<shared_ptr<IIdentifiable>> ids;
-    ids.emplace_back(make_shared<TimeInterpolator>(adaptee));
-    ids.emplace_back(make_shared<TimeExtrapolator>(adaptee));
+    ids.emplace_back(make_shared<TimeAdaptor>(adaptee->GetId()));
 
     for (int i = 0; i < (int)ids.size(); i++)
     {
