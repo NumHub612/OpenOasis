@@ -26,6 +26,7 @@ class Grid
 {
 protected:
     Mesh mMesh;
+    int  mVersion = 0;
 
     // The number of original objects in the mesh before
     // refining or coarsening.
@@ -51,7 +52,7 @@ protected:
     // The distances between cell centroid and boundary face.
     MultiIndexMap<double> mBoundaryCenterDists;
 
-    // The interfacial intersection point with line of cell centers.
+    // The interior intersection point with line of cell centers.
     std::unordered_map<int, Coordinate> mFaceIntersection;
 
     // The weight of each cell at face.
@@ -77,6 +78,9 @@ public:
     // Methods used for mesh operations.
     //
 
+    /// @brief Get the version of the current grid.
+    virtual int Version() const = 0;
+
     /// @brief Get the grid type.
     /// @return Return 1, for 1d grid; 2, for 2d; 3, for 3d; others, for invalid type.
     virtual int Type() const = 0;
@@ -86,11 +90,11 @@ public:
     virtual void Activate();
 
     /// @brief Refine the cell at the given index for adaptive grid.
-    /// @note  The refining wouldn't change the origin nodes.
+    /// @note  This wouldn't change the origin nodes.
     virtual void RefineCell(int cellIndex) = 0;
 
-    /// @brief Relax the cell at the given index for adaptive grid.
-    /// @note  The coarsening wouldn't change the origin nodes.
+    /// @brief Relax the cell at given index for adaptive grid.
+    /// @note  This wouldn't change the origin nodes.
     virtual void RelaxCell(int cellIndex) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////

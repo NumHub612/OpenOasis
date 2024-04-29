@@ -20,20 +20,20 @@ namespace OpenOasis::CommImp::Numeric
 /// @brief The field type enum.
 enum class FieldType
 {
-    NONE,
     SCALAR,
     VECTOR,
-    TENSOR
+    TENSOR,
+    NONE,
 };
 
 
 /// @brief The field domain enum.
 enum class FieldDomain
 {
-    NONE,
     NODE,
     FACE,
-    CELL
+    CELL,
+    NONE,
 };
 
 
@@ -43,12 +43,10 @@ template <typename T>
 class Field
 {
 protected:
-    FieldDomain mDomain = FieldDomain::NONE;
-    FieldType   mType   = FieldType::NONE;
-
+    FieldDomain    mDomain = FieldDomain::NONE;
+    FieldType      mType   = FieldType::NONE;
     std::vector<T> mData;
-
-    T mDefault;
+    T              mDefault;
 
 protected:
     virtual ~Field() = default;
