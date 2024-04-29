@@ -7,7 +7,7 @@
 #include "Models/Utils/Exception.h"
 
 
-namespace OpenOasis::CommImp::Numeric
+namespace OpenOasis::CommImp::Numeric::FVM
 {
 using namespace std;
 using namespace Utils;
@@ -92,4 +92,4 @@ LinearEqs Laplacian::Discretize(
     return LinearEqs(coeffs, rhs);
 }
 
-}  // namespace OpenOasis::CommImp::Numeric
+}  // namespace OpenOasis::CommImp::Numeric::FVM

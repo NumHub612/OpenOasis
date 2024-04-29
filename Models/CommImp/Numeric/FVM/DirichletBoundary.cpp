@@ -6,7 +6,7 @@
 #include "DirichletBoundary.h"
 
 
-namespace OpenOasis::CommImp::Numeric
+namespace OpenOasis::CommImp::Numeric::FVM
 {
 using namespace std;
 using namespace Utils;
@@ -46,4 +46,4 @@ BoundaryCondition DirichletBoundary::GetBoundaryCondition()
     return mData;
 }
 
-}  // namespace OpenOasis::CommImp::Numeric
+}  // namespace OpenOasis::CommImp::Numeric::FVM

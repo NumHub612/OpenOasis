@@ -66,6 +66,8 @@ plugins:
             inherited_members: true
             merge_init_into_class: true
             heading_level: 3  
+            show_signature_annotations: true
+            modernize_annotations: true            
   - mkdoxy:
       projects:
         models: 

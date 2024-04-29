@@ -9,12 +9,12 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Models/CommImp/Spatial/Grid.h"
-#include "Operator.h"
+#include "Models/CommImp/Numeric/Operator.h"
 #include <functional>
 #include <memory>
 
 
-namespace OpenOasis::CommImp::Numeric
+namespace OpenOasis::CommImp::Numeric::FVM
 {
 using Spatial::Grid;
 using Utils::real;
@@ -22,7 +22,7 @@ using Utils::real;
 /// @brief Laplacian operator for the divergence of the gradient of a scalar field.
 /// @details First, calculate the gradient of the scalar field. Then, calculate
 /// the divergence of the gradient.
-class Laplacian : public Operator
+class Laplacian : public LaplacianOperator
 {
 private:
     std::shared_ptr<Grid> mGrid;
@@ -44,4 +44,4 @@ public:
 };
 
 
-}  // namespace OpenOasis::CommImp::Numeric
+}  // namespace OpenOasis::CommImp::Numeric::FVM

@@ -102,4 +102,11 @@ public:
     }
 };
 
+
+using CurlOperator      = Operator;
+using DivOperator       = Operator;
+using GradOperator      = Operator;
+using LaplacianOperator = Operator;
+using DdtOperator       = Operator;
+
 }  // namespace OpenOasis::CommImp::Numeric

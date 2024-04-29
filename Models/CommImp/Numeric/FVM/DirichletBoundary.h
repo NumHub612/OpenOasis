@@ -8,10 +8,10 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Boundary.h"
+#include "Models/CommImp/Numeric/Boundary.h"
 
 
-namespace OpenOasis::CommImp::Numeric
+namespace OpenOasis::CommImp::Numeric::FVM
 {
 using Utils::real;
 
@@ -35,4 +35,4 @@ public:
     BoundaryCondition GetBoundaryCondition() override;
 };
 
-}  // namespace OpenOasis::CommImp::Numeric
+}  // namespace OpenOasis::CommImp::Numeric::FVM

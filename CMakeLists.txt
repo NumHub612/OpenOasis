@@ -47,7 +47,7 @@ endif()
 # -------------------------------------------------------------
 # 输出项目logo
 # -------------------------------------------------------------
-file(STRINGS "${PROJECT_SOURCE_DIR}/Rsrc/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
+file(STRINGS "${PROJECT_SOURCE_DIR}/Doc/assets/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
 message(STATUS "${PROJECT_LOGO}")
 
 file(STRINGS "${PROJECT_SOURCE_DIR}/Models/VERSION.txt" _VERSION)

@@ -25,7 +25,7 @@ class FromGmsh:
         """
         读取面信息。
         """
-        return self.mesh.surfaces
+        return None
 
     def read_cells(self):
         """
@@ -37,7 +37,7 @@ class FromGmsh:
         """
         将 Gmsh4 的 MESH 格式网格文件转换为 VTK 格式。
 
-        Args:
+        Parameters:
             output_dir: 输出目录。
         """
         file = os.path.basename(self.gmsh_file)
@@ -51,7 +51,7 @@ class FromGmsh:
         """
         将 Gmsh4 的 MESH 格式网格文件转换为 OpenOasis 的网格格式。
 
-        Args:
+        Parameters:
             output_dir: 输出目录。
         """
         file = os.path.basename(self.gmsh_file)
@@ -90,7 +90,7 @@ class ToGmsh:
         """
         导出到 Gmsh4 的 MESH 格式文件中。
 
-        Args:
+        Parameters:
             output_dir: 输出目录。
         """
         pass
