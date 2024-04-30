@@ -28,17 +28,14 @@ private:
 public:
     Matrix(int rows, int cols) : mRows(rows), mCols(cols), mData(rows, cols){};
     Matrix(int size) : mRows(size), mCols(size), mData(size, size){};
-
     Matrix(const Matrix &other)
     {
         Set(other);
     }
-
     Matrix(const std::initializer_list<std::initializer_list<T>> &lst)
     {
         Set(lst);
     }
-
     Matrix(const Eigen::SparseMatrix<T> &mat)
     {
         mData = mat;
