@@ -297,7 +297,8 @@ public:
 };
 
 
-// Commonly used field types.
+// Commonly used fields.
+
 using ScalarFieldFp = ScalarField<Utils::real>;
 using VectorFieldFp = VectorField<Utils::real>;
 using TensorFieldFp = TensorField<Utils::real>;
