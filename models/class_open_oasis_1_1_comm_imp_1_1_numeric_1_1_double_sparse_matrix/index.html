@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -199,59 +199,59 @@
 </code></pre></div>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-at">function At<a class="headerlink" href="#function-at" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">At</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">At</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">column</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-doublesparsematrix">function DoubleSparseMatrix<a class="headerlink" href="#function-doublesparsematrix" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rowCount</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">columnCount</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-getcolumncount">function GetColumnCount<a class="headerlink" href="#function-getcolumncount" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">GetColumnCount</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">GetColumnCount</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getrowcount">function GetRowCount<a class="headerlink" href="#function-getrowcount" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">GetRowCount</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">GetRowCount</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 </code></pre></div>
 <h3 id="function-iscellempty">function IsCellEmpty<a class="headerlink" href="#function-iscellempty" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">IsCellEmpty</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">IsCellEmpty</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">column</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-product-12">function Product [&frac12;]<a class="headerlink" href="#function-product-12" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">Product</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">Product</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">vector2</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-product-22">function Product [2/2]<a class="headerlink" href="#function-product-22" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">Product</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">Product</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">res</span><span class="p">,</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">vector2</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-setcolumncount">function SetColumnCount<a class="headerlink" href="#function-setcolumncount" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">SetColumnCount</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">SetColumnCount</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-setrowcount">function SetRowCount<a class="headerlink" href="#function-setrowcount" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">SetRowCount</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">SetRowCount</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-setvalue">function SetValue<a class="headerlink" href="#function-setvalue" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">SetValue</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="n">SetValue</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">column</span><span class="p">,</span>
 <span class="w">    </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="n">value</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-operator">function operator()<a class="headerlink" href="#function-operator" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="k">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DoubleSparseMatrix</span><span class="o">::</span><span class="k">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">column</span>
 <span class="p">)</span><span class="w"> </span>
@@ -289,6 +289,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

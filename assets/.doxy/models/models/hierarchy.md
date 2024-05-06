@@ -11,19 +11,18 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**OpenOasis::CommImp::IO::MeshLoader**](class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader.md) _Default_ `Mesh` _data loader._
 * **class** [**OpenOasis::CommImp::IO::TaskLoader**](class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_task_loader.md) _Loading components task configurations yaml file._ 
 * **class** [**OpenOasis::CommImp::Numeric::Boundary**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary.md) _Abstract boundary class._     
-    * **class** [**OpenOasis::CommImp::Numeric::DirichletBoundary**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary.md) _Dirichlet boundary._ 
+    * **class** [**OpenOasis::CommImp::Numeric::FVM::DirichletBoundary**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_dirichlet_boundary.md) _Dirichlet boundary._ 
 * **class** [**OpenOasis::CommImp::Numeric::DoubleSparseMatrix**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix.md) _Sparse matrix having double elements._ 
 * **class** [**OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Index**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_index.md) 
 * **class** [**OpenOasis::CommImp::Numeric::Solver**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver.md) _Abstract solver class._     
     * **class** [**OpenOasis::CommImp::Numeric::FVM::FvmSolver**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver.md) 
+* **class** [**OpenOasis::CommImp::Numeric::Operator**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator.md) _Abstract operator class._     
+    * **class** [**OpenOasis::CommImp::Numeric::FVM::Laplacian**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian.md) [_**Laplacian**_](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian.md) _operator for the divergence of the gradient of a scalar field._
 * **class** [**OpenOasis::CommImp::Numeric::Field**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field.md) _The abstract field class used to represent numeric field, such as scalar, vector or tensor data._     
     * **class** [**OpenOasis::CommImp::Numeric::ScalarField**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field.md) _Scaler field._ 
     * **class** [**OpenOasis::CommImp::Numeric::ScalarField**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field.md) _Scaler field._ 
-    * **class** [**OpenOasis::CommImp::Numeric::VectorField**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field.md) [_**Vector**_](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector.md) _field with default zero vector in 2D or 3D space._
-* **class** [**OpenOasis::CommImp::Numeric::Operator**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator.md) _Abstract operator class._     
-    * **class** [**OpenOasis::CommImp::Numeric::Laplacian**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian.md) [_**Laplacian**_](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian.md) _operator for the divergence of the gradient of a scalar field._
+    * **class** [**OpenOasis::CommImp::Numeric::VectorField**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field.md) [_**Vector**_](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector.md) _field._
 * **class** [**OpenOasis::CommImp::Numeric::Matrix**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix.md) 
-* **class** [**OpenOasis::CommImp::Numeric::Source**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source.md) 
 * **class** [**OpenOasis::CommImp::Numeric::Tensor**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor.md) 
 * **class** [**OpenOasis::CommImp::Numeric::Vector**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector.md) 
 * **class** [**OpenOasis::CommImp::Spatial::GeoCalculator**](class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator.md) _The_ [_**GeoCalculator**_](class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator.md) _is a collection of general geometry functions._

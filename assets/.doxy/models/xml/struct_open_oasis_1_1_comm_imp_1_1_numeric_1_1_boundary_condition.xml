@@ -4,9 +4,9 @@
     <compoundname>OpenOasis::CommImp::Numeric::BoundaryCondition</compoundname>
     <includes refid="_boundary_8h" local="no">Boundary.h</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a7490ef63feebbcbad4872f765ced47ff" prot="public" static="no" mutable="no">
-        <type>std::string</type>
-        <definition>std::string OpenOasis::CommImp::Numeric::BoundaryCondition::type</definition>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a08cc3d8b841d67d599e5a291006a8ad1" prot="public" static="no" mutable="no">
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ab55a655f579507d97f6b1fd52d92484c" kindref="member">BoundaryType</ref></type>
+        <definition>BoundaryType OpenOasis::CommImp::Numeric::BoundaryCondition::type</definition>
         <argsstring></argsstring>
         <name>type</name>
         <qualifiedname>OpenOasis::CommImp::Numeric::BoundaryCondition::type</qualifiedname>
@@ -16,37 +16,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Boundary.h" line="23" column="17" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="23" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Boundary.h" line="33" column="18" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="33" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a547cc8faa5fbdc7f10957c62784cbb1d" prot="public" static="no" mutable="no">
-        <type>real</type>
-        <definition>real OpenOasis::CommImp::Numeric::BoundaryCondition::value</definition>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1ab2e0f57e30fd3f332d4c182612b66dea" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; real &gt;</type>
+        <definition>std::optional&lt;real&gt; OpenOasis::CommImp::Numeric::BoundaryCondition::value</definition>
         <argsstring></argsstring>
         <name>value</name>
         <qualifiedname>OpenOasis::CommImp::Numeric::BoundaryCondition::value</qualifiedname>
-        <initializer>= NAN</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Boundary.h" line="25" column="10" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="25" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Boundary.h" line="35" column="19" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1aa139f53ca1bf26bb9e54eaf2eb97aa83" prot="public" static="no" mutable="no">
-        <type>real</type>
-        <definition>real OpenOasis::CommImp::Numeric::BoundaryCondition::flux</definition>
+      <memberdef kind="variable" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a5db8d0438ccb739be2cb19432eaf4414" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; real &gt;</type>
+        <definition>std::optional&lt;real&gt; OpenOasis::CommImp::Numeric::BoundaryCondition::flux</definition>
         <argsstring></argsstring>
         <name>flux</name>
         <qualifiedname>OpenOasis::CommImp::Numeric::BoundaryCondition::flux</qualifiedname>
-        <initializer>= NAN</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Boundary.h" line="26" column="10" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="26" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Boundary.h" line="36" column="19" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -54,24 +52,11 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>OpenOasis::CommImp::Numeric::BoundaryCondition</label>
-        <link refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>flux</edgelabel>
-          <edgelabel>value</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>real</label>
-      </node>
-    </collaborationgraph>
-    <location file="Models/CommImp/Numeric/Boundary.h" line="21" column="1" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="22" bodyend="27"/>
+    <location file="Models/CommImp/Numeric/Boundary.h" line="31" column="1" bodyfile="Models/CommImp/Numeric/Boundary.h" bodystart="32" bodyend="37"/>
     <listofallmembers>
-      <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1aa139f53ca1bf26bb9e54eaf2eb97aa83" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::BoundaryCondition</scope><name>flux</name></member>
-      <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a7490ef63feebbcbad4872f765ced47ff" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::BoundaryCondition</scope><name>type</name></member>
-      <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a547cc8faa5fbdc7f10957c62784cbb1d" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::BoundaryCondition</scope><name>value</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a5db8d0438ccb739be2cb19432eaf4414" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::BoundaryCondition</scope><name>flux</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1a08cc3d8b841d67d599e5a291006a8ad1" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::BoundaryCondition</scope><name>type</name></member>
+      <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition_1ab2e0f57e30fd3f332d4c182612b66dea" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::BoundaryCondition</scope><name>value</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

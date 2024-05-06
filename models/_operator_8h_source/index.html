@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -100,9 +100,7 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma once</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/CommConstants.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/Exception.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ScalarField.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;VectorField.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TensorField.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Field.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Boundary.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Matrix.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;variant&gt;</span>
@@ -115,6 +113,7 @@
 <span class="k">using</span><span class="w"> </span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="p">;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="n">LinearEqs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Operator</span>
 <span class="p">{</span>
@@ -184,6 +183,14 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
 
+
+
+<span class="k">using</span><span class="w"> </span><span class="n">CurlOperator</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">DivOperator</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">GradOperator</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">LaplacianOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">DdtOperator</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace OpenOasis::CommImp::Numeric</span>
 </code></pre></div>
               
@@ -217,6 +224,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

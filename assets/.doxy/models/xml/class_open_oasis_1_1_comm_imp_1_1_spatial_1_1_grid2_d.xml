@@ -79,6 +79,22 @@
         </inbodydescription>
         <location file="Models/CommImp/Spatial/Grid2D.h" line="26" column="5"/>
       </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aba9cfe5b2f020a9f31a34c912f8a9654" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int OpenOasis::CommImp::Spatial::Grid2D::Version</definition>
+        <argsstring>() const override</argsstring>
+        <name>Version</name>
+        <qualifiedname>OpenOasis::CommImp::Spatial::Grid2D::Version</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a16f5306eabcabc0253f0da8c44f53fdf">Version</reimplements>
+        <briefdescription>
+<para>Get the version of the current grid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="35" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a3a4dd6a87aff1ae77fc8bfc6132f9943" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>int</type>
         <definition>int OpenOasis::CommImp::Spatial::Grid2D::Type</definition>
@@ -96,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="35" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="30" bodyend="33"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="36" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="35" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aaa082280a7206804af8929c6ca63af39" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -113,13 +129,13 @@
 <para>Refine the cell at the given index for adaptive grid. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>The refining wouldn&apos;t change the origin nodes. </para>
+<para><simplesect kind="note"><para>This wouldn&apos;t change the origin nodes. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="36" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="35" bodyend="38"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="37" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1ae7521a7c5495ded79f658816c0dbf422" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -133,16 +149,16 @@
           <declname>cellIndex</declname>
         </param>
         <briefdescription>
-<para>Relax the cell at the given index for adaptive grid. </para>
+<para>Relax the cell at given index for adaptive grid. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>The coarsening wouldn&apos;t change the origin nodes. </para>
+<para><simplesect kind="note"><para>This wouldn&apos;t change the origin nodes. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="37" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="40" bodyend="43"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="38" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="45" bodyend="48"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -159,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="40" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="45" bodyend="48"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="41" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="50" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a2a3e618fd60799d6eb0893d993f046e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -174,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="41" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="50" bodyend="57"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="42" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="55" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a549b8bd6a3d05a7258d3c7c84d530638" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -189,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="42" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="59" bodyend="66"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="43" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="64" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1ab50aa4681a27d40bd16dcab4e66d7e14" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -204,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="43" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="68" bodyend="75"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="44" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="73" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a7b3e9487486087832a91dfbf4904fdd7" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -219,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="44" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="77" bodyend="84"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="45" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="82" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aaf1c05e84fe73cb1ded5364f00f6327e" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -234,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="45" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="86" bodyend="93"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="46" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="91" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aa56fe59fcc4d1308a06dff52da15775b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -249,7 +265,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Spatial/Grid2D.h" line="46" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="95" bodyend="98"/>
+        <location file="Models/CommImp/Spatial/Grid2D.h" line="47" column="10" bodyfile="Models/CommImp/Spatial/Grid2D.cpp" bodystart="100" bodyend="103"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -296,7 +312,7 @@
         <link refid="struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_mesh"/>
       </node>
     </collaborationgraph>
-    <location file="Models/CommImp/Spatial/Grid2D.h" line="21" column="1" bodyfile="Models/CommImp/Spatial/Grid2D.h" bodystart="22" bodyend="47"/>
+    <location file="Models/CommImp/Spatial/Grid2D.h" line="21" column="1" bodyfile="Models/CommImp/Spatial/Grid2D.h" bodystart="22" bodyend="48"/>
     <listofallmembers>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1abefd67083bcf97ac1032a3a442374acb" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>Activate</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aac080598fdccd4fc32bf9fd95ed79ccc" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>CalculateBoundaryCenterDistances</name></member>
@@ -357,12 +373,14 @@
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a44d1a46774b5686a4dc7e703d3490984" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>mRawCellsNum</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a252ca9b276da70d47b9ea078f2e7cb81" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>mRawFacesNum</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a9adb42fadc86d31eb785c18f6c763338" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>mRawNodesNum</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1adae62d55b89311cd767c18563bdc4444" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>mVersion</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1a6a6efdac1d9cce64335ab87ac6790e64" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>mZoneCells</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1ac16b5aca056cf5704ed45147af8b5ae5" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>mZones</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aaa082280a7206804af8929c6ca63af39" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>RefineCell</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1ae7521a7c5495ded79f658816c0dbf422" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>RelaxCell</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aa9fa3a41cfb4e8c4c8db438cc37da7d0" prot="protected" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>SortNodes</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1a3a4dd6a87aff1ae77fc8bfc6132f9943" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>Type</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1aba9cfe5b2f020a9f31a34c912f8a9654" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>Version</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid_1aa4495be8281d320bf8926ca175eff10b" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>~Grid</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid2_d_1af15c3e9aa35113170d90be0b9eaf5b74" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Spatial::Grid2D</scope><name>~Grid2D</name></member>
     </listofallmembers>

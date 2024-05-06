@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Class OpenOasis::CommImp::Numeric::DirichletBoundary - OpenOasis</title>
+    <title>Class OpenOasis::CommImp::Numeric::FVM::DirichletBoundary - OpenOasis</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Class OpenOasis::CommImp::Numeric::DirichletBoundary";
-        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary.md";
+        var mkdocs_page_name = "Class OpenOasis::CommImp::Numeric::FVM::DirichletBoundary";
+        var mkdocs_page_input_path = "models\\class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_dirichlet_boundary.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -85,7 +85,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Class OpenOasis::CommImp::Numeric::DirichletBoundary</li>
+      <li class="breadcrumb-item active">Class OpenOasis::CommImp::Numeric::FVM::DirichletBoundary</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -94,8 +94,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="class-openoasiscommimpnumericdirichletboundary">Class OpenOasis::CommImp::Numeric::DirichletBoundary<a class="headerlink" href="#class-openoasiscommimpnumericdirichletboundary" title="Permanent link">&para;</a></h1>
-<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/"><strong>Numeric</strong></a> <strong>&gt;</strong> <a href="./"><strong>DirichletBoundary</strong></a></p>
+                <h1 id="class-openoasiscommimpnumericfvmdirichletboundary">Class OpenOasis::CommImp::Numeric::FVM::DirichletBoundary<a class="headerlink" href="#class-openoasiscommimpnumericfvmdirichletboundary" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/"><strong>Numeric</strong></a> <strong>&gt;</strong> <a href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m/"><strong>FVM</strong></a> <strong>&gt;</strong> <a href="./"><strong>DirichletBoundary</strong></a></p>
 <p><em>Dirichlet boundary.</em> </p>
 <ul>
 <li><code>#include &lt;DirichletBoundary.h&gt;</code></li>
@@ -123,19 +123,19 @@
 <td style="text-align: left;"><a href="#function-dirichletboundary-33"><strong>DirichletBoundary</strong></a> (const <a href="./"><strong>DirichletBoundary</strong></a> &amp; other) <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual <a href="../struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition/"><strong>BoundaryCondition</strong></a></td>
+<td style="text-align: right;"><a href="../struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition/"><strong>BoundaryCondition</strong></a></td>
 <td style="text-align: left;"><a href="#function-getboundarycondition"><strong>GetBoundaryCondition</strong></a> () override<br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual std::string</td>
+<td style="text-align: right;">std::string</td>
 <td style="text-align: left;"><a href="#function-gettype"><strong>GetType</strong></a> () override const<br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual void</td>
+<td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-setboundaryflux"><strong>SetBoundaryFlux</strong></a> (real flux) override<br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual void</td>
+<td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-setboundaryvalue"><strong>SetBoundaryValue</strong></a> (real value) override<br></td>
 </tr>
 </tbody>
@@ -151,59 +151,47 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-addboundarycondition"><strong>AddBoundaryCondition</strong></a> (double time, const <a href="../struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition/"><strong>BoundaryCondition</strong></a> &amp; bc) = 0<br></td>
+</tr>
+<tr>
 <td style="text-align: right;">virtual <a href="../struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition/"><strong>BoundaryCondition</strong></a></td>
-<td style="text-align: left;"><a href="#function-getboundarycondition"><strong>GetBoundaryCondition</strong></a> () = 0<br></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual std::string</td>
-<td style="text-align: left;"><a href="#function-gettype"><strong>GetType</strong></a> () const = 0<br></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-setboundaryflux"><strong>SetBoundaryFlux</strong></a> (real flux) = 0<br></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-setboundaryvalue"><strong>SetBoundaryValue</strong></a> (real value) = 0<br></td>
+<td style="text-align: left;"><a href="#function-getboundarycondition"><strong>GetBoundaryCondition</strong></a> (double time) = 0<br></td>
 </tr>
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-dirichletboundary-13">function DirichletBoundary [&#8531;]<a class="headerlink" href="#function-dirichletboundary-13" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-dirichletboundary-23">function DirichletBoundary [&#8532;]<a class="headerlink" href="#function-dirichletboundary-23" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">value</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-dirichletboundary-33">function DirichletBoundary [3/3]<a class="headerlink" href="#function-dirichletboundary-33" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="function-getboundarycondition">function GetBoundaryCondition<a class="headerlink" href="#function-getboundarycondition" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">BoundaryCondition</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">GetBoundaryCondition</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="n">BoundaryCondition</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">GetBoundaryCondition</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div>
-<p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/#function-getboundarycondition"><em>OpenOasis::CommImp::Numeric::Boundary::GetBoundaryCondition</em></a></p>
 <h3 id="function-gettype">function GetType<a class="headerlink" href="#function-gettype" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">GetType</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">GetType</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">const</span>
 </code></pre></div>
-<p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/#function-gettype"><em>OpenOasis::CommImp::Numeric::Boundary::GetType</em></a></p>
 <h3 id="function-setboundaryflux">function SetBoundaryFlux<a class="headerlink" href="#function-setboundaryflux" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">SetBoundaryFlux</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">SetBoundaryFlux</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">flux</span>
 <span class="p">)</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div>
-<p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/#function-setboundaryflux"><em>OpenOasis::CommImp::Numeric::Boundary::SetBoundaryFlux</em></a></p>
 <h3 id="function-setboundaryvalue">function SetBoundaryValue<a class="headerlink" href="#function-setboundaryvalue" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">SetBoundaryValue</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">::</span><span class="n">SetBoundaryValue</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">real</span><span class="w"> </span><span class="n">value</span>
 <span class="p">)</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div>
-<p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/#function-setboundaryvalue"><em>OpenOasis::CommImp::Numeric::Boundary::SetBoundaryValue</em></a></p>
 <hr />
-<p>The documentation for this class was generated from the following file <code>Models/CommImp/Numeric/DirichletBoundary.h</code></p>
+<p>The documentation for this class was generated from the following file <code>Models/CommImp/Numeric/FVM/DirichletBoundary.h</code></p>
               
             </div>
           </div><footer>
@@ -235,6 +223,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

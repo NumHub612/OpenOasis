@@ -16,7 +16,7 @@ _Abstract boundary class._
 
 
 
-Inherited by the following classes: [OpenOasis::CommImp::Numeric::DirichletBoundary](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary.md)
+Inherited by the following classes: [OpenOasis::CommImp::Numeric::FVM::DirichletBoundary](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_dirichlet_boundary.md)
 
 
 
@@ -53,10 +53,8 @@ Inherited by the following classes: [OpenOasis::CommImp::Numeric::DirichletBound
 
 | Type | Name |
 | ---: | :--- |
-| virtual [**BoundaryCondition**](struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition.md) | [**GetBoundaryCondition**](#function-getboundarycondition) () = 0<br> |
-| virtual std::string | [**GetType**](#function-gettype) () const = 0<br> |
-| virtual void | [**SetBoundaryFlux**](#function-setboundaryflux) (real flux) = 0<br> |
-| virtual void | [**SetBoundaryValue**](#function-setboundaryvalue) (real value) = 0<br> |
+| virtual void | [**AddBoundaryCondition**](#function-addboundarycondition) (double time, const [**BoundaryCondition**](struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition.md) & bc) = 0<br> |
+| virtual [**BoundaryCondition**](struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition.md) | [**GetBoundaryCondition**](#function-getboundarycondition) (double time) = 0<br> |
 
 
 
@@ -90,33 +88,12 @@ Inherited by the following classes: [OpenOasis::CommImp::Numeric::DirichletBound
 
 
 
-### function GetBoundaryCondition 
+### function AddBoundaryCondition 
 
 ```C++
-virtual BoundaryCondition OpenOasis::CommImp::Numeric::Boundary::GetBoundaryCondition () = 0
-```
-
-
-
-
-
-
-### function GetType 
-
-```C++
-virtual std::string OpenOasis::CommImp::Numeric::Boundary::GetType () const = 0
-```
-
-
-
-
-
-
-### function SetBoundaryFlux 
-
-```C++
-virtual void OpenOasis::CommImp::Numeric::Boundary::SetBoundaryFlux (
-    real flux
+virtual void OpenOasis::CommImp::Numeric::Boundary::AddBoundaryCondition (
+    double time,
+    const BoundaryCondition & bc
 ) = 0
 ```
 
@@ -125,11 +102,11 @@ virtual void OpenOasis::CommImp::Numeric::Boundary::SetBoundaryFlux (
 
 
 
-### function SetBoundaryValue 
+### function GetBoundaryCondition 
 
 ```C++
-virtual void OpenOasis::CommImp::Numeric::Boundary::SetBoundaryValue (
-    real value
+virtual BoundaryCondition OpenOasis::CommImp::Numeric::Boundary::GetBoundaryCondition (
+    double time
 ) = 0
 ```
 

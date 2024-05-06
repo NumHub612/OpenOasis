@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Models</a>
     <ul class="current">
@@ -62,7 +62,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -76,7 +76,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -141,19 +141,11 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary/"><strong>DirichletBoundary</strong></a> <br><em>Dirichlet boundary.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix/"><strong>DoubleSparseMatrix</strong></a> <br><em>Sparse matrix having double elements.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field/"><strong>Field</strong></a> &lt;typename T&gt;<br><em>The abstract field class used to represent numeric field, such as scalar, vector or tensor data.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian/"><strong>Laplacian</strong></a> <br><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian/"><em><strong>Laplacian</strong></em></a> <em>operator for the divergence of the gradient of a scalar field.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
@@ -173,10 +165,6 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source/"><strong>Source</strong></a> <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor/"><strong>Tensor</strong></a> &lt;typename T&gt;<br></td>
 </tr>
 <tr>
@@ -189,7 +177,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a> &lt;typename T, N&gt;<br><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><em><strong>Vector</strong></em></a> <em>field with default zero vector in 2D or 3D space.</em></td>
+<td style="text-align: left;"><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a> &lt;typename T, N&gt;<br><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><em><strong>Vector</strong></em></a> <em>field.</em></td>
 </tr>
 </tbody>
 </table>
@@ -204,63 +192,63 @@
 <tbody>
 <tr>
 <td style="text-align: right;">enum</td>
-<td style="text-align: left;"><a href="#enum-fielddomain"><strong>FieldDomain</strong></a>  <br></td>
+<td style="text-align: left;"><a href="#enum-boundarytype"><strong>BoundaryType</strong></a>  <br><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/"><em><strong>Boundary</strong></em></a> <em>type enum.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>Operator</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-curloperator"><strong>CurlOperator</strong></a>  <br><em>Commomly used operators.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>Operator</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-ddtoperator"><strong>DdtOperator</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/"><strong>Boundary</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-dirichletboundary"><strong>DirichletBoundary</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>Operator</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-divoperator"><strong>DivOperator</strong></a>  <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">enum</td>
-<td style="text-align: left;"><a href="#enum-fieldtype"><strong>FieldType</strong></a>  <br></td>
+<td style="text-align: left;"><a href="#enum-fielddomain"><strong>FieldDomain</strong></a>  <br><em>The field domain enum.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">enum</td>
+<td style="text-align: left;"><a href="#enum-fieldtype"><strong>FieldType</strong></a>  <br><em>The field type enum.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>Operator</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-gradoperator"><strong>GradOperator</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>Operator</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-laplacianoperator"><strong>LaplacianOperator</strong></a>  <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef std::tuple&lt; <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix/"><strong>Matrix</strong></a>&lt; real &gt;, std::vector&lt; real &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-lineareqs"><strong>LinearEqs</strong></a>  <br><em>Linear equations consisting of coefficient matrix and source term vector.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field/"><strong>ScalarField</strong></a>&lt; double &gt;</td>
-<td style="text-align: left;"><a href="#typedef-scalarfielddbl"><strong>ScalarFieldDbl</strong></a>  <br></td>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/"><strong>Boundary</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-neumannboundary"><strong>NeumannBoundary</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/"><strong>Boundary</strong></a></td>
+<td style="text-align: left;"><a href="#typedef-robinboundary"><strong>RobinBoundary</strong></a>  <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field/"><strong>ScalarField</strong></a>&lt; Utils::real &gt;</td>
 <td style="text-align: left;"><a href="#typedef-scalarfieldfp"><strong>ScalarFieldFp</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field/"><strong>ScalarField</strong></a>&lt; int &gt;</td>
-<td style="text-align: left;"><a href="#typedef-scalarfieldint"><strong>ScalarFieldInt</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">enum</td>
-<td style="text-align: left;"><a href="#enum-solverstatus"><strong>SolverStatus</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field/"><strong>TensorField</strong></a>&lt; double &gt;</td>
-<td style="text-align: left;"><a href="#typedef-tensorfielddbl"><strong>TensorFieldDbl</strong></a>  <br></td>
-</tr>
-<tr>
 <td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field/"><strong>TensorField</strong></a>&lt; Utils::real &gt;</td>
 <td style="text-align: left;"><a href="#typedef-tensorfieldfp"><strong>TensorFieldFp</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field/"><strong>TensorField</strong></a>&lt; int &gt;</td>
-<td style="text-align: left;"><a href="#typedef-tensorfieldint"><strong>TensorFieldInt</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a>&lt; double, 2 &gt;</td>
-<td style="text-align: left;"><a href="#typedef-vectorfielddbl2d"><strong>VectorFieldDbl2D</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a>&lt; double, 3 &gt;</td>
-<td style="text-align: left;"><a href="#typedef-vectorfielddbl3d"><strong>VectorFieldDbl3D</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a>&lt; Utils::real, 3 &gt;</td>
+<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a>&lt; Utils::real &gt;</td>
 <td style="text-align: left;"><a href="#typedef-vectorfieldfp"><strong>VectorFieldFp</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a>&lt; int, 2 &gt;</td>
-<td style="text-align: left;"><a href="#typedef-vectorfieldint2d"><strong>VectorFieldInt2D</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a>&lt; int, 3 &gt;</td>
-<td style="text-align: left;"><a href="#typedef-vectorfieldint3d"><strong>VectorFieldInt3D</strong></a>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -268,103 +256,78 @@
 <p>Copyright (C) 2023, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
 <p>@File : Boundary.h @License : Apache-2.0</p>
 <p>@Desc : Abstract boundary class.</p>
-<p>@File : DirichletBoundary.cpp @Brief : Dirichlet boundary.</p>
-<p>Copyright (C) 2023, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
-<p>@File : DirichletBoundary.h @License : Apache-2.0</p>
-<p>@Desc : Dirichlet boundary.</p>
 <p>Copyright (C) 2023, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
 <p>@File : Field.h @License : Apache-2.0</p>
 <p>@Desc : Abstract field class.</p>
-<p>@File : LaplacianOperator.cpp @Brief : <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian/"><strong>Laplacian</strong></a> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>Operator</strong></a>.</p>
-<p>Copyright (C) 2023, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
-<p>@File : LaplacianOperator.h @License : Apache-2.0</p>
-<p>@Desc : <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian/"><strong>Laplacian</strong></a> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>Operator</strong></a>.</p>
-<p>@File : Matrix.cpp @Brief : To provide matrix interface and a common implementation.</p>
 <p>Copyright (C) 2022, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
 <p>@File : Matrix.h @License : Apache-2.0</p>
 <p>@Desc : Define <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix/"><strong>Matrix</strong></a> template class for numerical calculation.</p>
 <p>Copyright (C) 2023, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
 <p>@File : Operator.h @License : Apache-2.0</p>
 <p>@Desc : Abstract operator class.</p>
-<p>Copyright (C) 2022, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
-<p>@File : ScalarField.h @License : Apache-2.0</p>
-<p>@Desc : <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field/"><strong>ScalarField</strong></a> for the definition and calculation of scalar fields.</p>
 <p>Copyright (C) 2023, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
 <p>@File : Solver.h @License : Apache-2.0</p>
 <p>@Desc : Abstract solver class to provide unified interfaces. <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver/"><strong>Solver</strong></a>'s responsible for parsing the equation expression to be solved, and discretizing the equation items in the computational domain, combining them into a matrix, and solving it.</p>
-<p><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver/"><strong>Solver</strong></a> is also responsible for initializing the relevant field quantities, and providing specific discrete and stepping scheme.</p>
-<p>Copyright (C) 2023, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
-<p>@File : Source.h @License : Apache-2.0</p>
-<p>@Desc : Abstract <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source/"><strong>Source</strong></a> class for definition of source vector.</p>
-<p>Copyright (C) 2022, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
-<p>@File : TensorField.h @License : Apache-2.0</p>
-<p>@Desc : <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field/"><strong>TensorField</strong></a> for the definition and calculation of tensor fields.</p>
-<p>Copyright (C) 2022, The <a href="../namespace_open_oasis/"><strong>OpenOasis</strong></a> Contributors. Join us in the Oasis!</p>
-<p>@File : VectorField.h @License : Apache-2.0</p>
-<p>@Desc : <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorField</strong></a> for the definition and calculation of vector fields. </p>
+<p><a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver/"><strong>Solver</strong></a> is also responsible for initializing the relevant field quantities, and providing specific discrete and stepping scheme. </p>
 <h2 id="public-types-documentation">Public Types Documentation<a class="headerlink" href="#public-types-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="enum-boundarytype">enum BoundaryType<a class="headerlink" href="#enum-boundarytype" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">BoundaryType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ValueBound</span><span class="p">,</span>
+<span class="w">    </span><span class="n">FluxBound</span><span class="p">,</span>
+<span class="w">    </span><span class="n">MixedBound</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="typedef-curloperator">typedef CurlOperator<a class="headerlink" href="#typedef-curloperator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">CurlOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="typedef-ddtoperator">typedef DdtOperator<a class="headerlink" href="#typedef-ddtoperator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DdtOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="typedef-dirichletboundary">typedef DirichletBoundary<a class="headerlink" href="#typedef-dirichletboundary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Boundary</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="typedef-divoperator">typedef DivOperator<a class="headerlink" href="#typedef-divoperator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">DivOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="enum-fielddomain">enum FieldDomain<a class="headerlink" href="#enum-fielddomain" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FieldDomain</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">NONE</span><span class="p">,</span>
 <span class="w">    </span><span class="n">NODE</span><span class="p">,</span>
 <span class="w">    </span><span class="n">FACE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">CELL</span>
+<span class="w">    </span><span class="n">CELL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">NONE</span>
 <span class="p">};</span>
 </code></pre></div>
 <h3 id="enum-fieldtype">enum FieldType<a class="headerlink" href="#enum-fieldtype" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FieldType</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">NONE</span><span class="p">,</span>
 <span class="w">    </span><span class="n">SCALAR</span><span class="p">,</span>
 <span class="w">    </span><span class="n">VECTOR</span><span class="p">,</span>
-<span class="w">    </span><span class="n">TENSOR</span>
+<span class="w">    </span><span class="n">TENSOR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">NONE</span>
 <span class="p">};</span>
+</code></pre></div>
+<h3 id="typedef-gradoperator">typedef GradOperator<a class="headerlink" href="#typedef-gradoperator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">GradOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="typedef-laplacianoperator">typedef LaplacianOperator<a class="headerlink" href="#typedef-laplacianoperator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">LaplacianOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Operator</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="typedef-lineareqs">typedef LinearEqs<a class="headerlink" href="#typedef-lineareqs" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">LinearEqs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="typedef-scalarfielddbl">typedef ScalarFieldDbl<a class="headerlink" href="#typedef-scalarfielddbl" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">ScalarFieldDbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">ScalarField</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<h3 id="typedef-neumannboundary">typedef NeumannBoundary<a class="headerlink" href="#typedef-neumannboundary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">NeumannBoundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Boundary</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="typedef-robinboundary">typedef RobinBoundary<a class="headerlink" href="#typedef-robinboundary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">RobinBoundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">Boundary</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="typedef-scalarfieldfp">typedef ScalarFieldFp<a class="headerlink" href="#typedef-scalarfieldfp" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">ScalarFieldFp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">ScalarField</span><span class="o">&lt;</span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="typedef-scalarfieldint">typedef ScalarFieldInt<a class="headerlink" href="#typedef-scalarfieldint" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">ScalarFieldInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">ScalarField</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="enum-solverstatus">enum SolverStatus<a class="headerlink" href="#enum-solverstatus" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">SolverStatus</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Created</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Initialized</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Parsed</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Discretized</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Updated</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Solved</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Failed</span>
-<span class="p">};</span>
-</code></pre></div>
-<h3 id="typedef-tensorfielddbl">typedef TensorFieldDbl<a class="headerlink" href="#typedef-tensorfielddbl" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">TensorFieldDbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">TensorField</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
 <h3 id="typedef-tensorfieldfp">typedef TensorFieldFp<a class="headerlink" href="#typedef-tensorfieldfp" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">TensorFieldFp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">TensorField</span><span class="o">&lt;</span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="typedef-tensorfieldint">typedef TensorFieldInt<a class="headerlink" href="#typedef-tensorfieldint" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">TensorFieldInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">TensorField</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="typedef-vectorfielddbl2d">typedef VectorFieldDbl2D<a class="headerlink" href="#typedef-vectorfielddbl2d" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">VectorFieldDbl2D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">VectorField</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="typedef-vectorfielddbl3d">typedef VectorFieldDbl3D<a class="headerlink" href="#typedef-vectorfielddbl3d" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">VectorFieldDbl3D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">VectorField</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
 <h3 id="typedef-vectorfieldfp">typedef VectorFieldFp<a class="headerlink" href="#typedef-vectorfieldfp" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">VectorFieldFp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">VectorField</span><span class="o">&lt;</span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="typedef-vectorfieldint2d">typedef VectorFieldInt2D<a class="headerlink" href="#typedef-vectorfieldint2d" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">VectorFieldInt2D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">VectorField</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="typedef-vectorfieldint3d">typedef VectorFieldInt3D<a class="headerlink" href="#typedef-vectorfieldint3d" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">VectorFieldInt3D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">VectorField</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">VectorFieldFp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="n">VectorField</span><span class="o">&lt;</span><span class="n">Utils</span><span class="o">::</span><span class="n">real</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 <hr />
 <p>The documentation for this class was generated from the following file <code>Models/CommImp/Numeric/Boundary.h</code></p>
@@ -407,6 +370,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

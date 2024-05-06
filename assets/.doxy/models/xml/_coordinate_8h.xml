@@ -28,7 +28,7 @@
         <link refid="_fvm_solver_8h_source"/>
       </node>
       <node id="7">
-        <label>Models/CommImp/Numeric/LaplacianOperator.h</label>
+        <label>Models/CommImp/Numeric/FVM/LaplacianOperator.h</label>
         <link refid="_laplacian_operator_8h_source"/>
       </node>
       <node id="1">

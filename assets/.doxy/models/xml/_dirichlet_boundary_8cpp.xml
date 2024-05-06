@@ -5,7 +5,7 @@
     <includes refid="_dirichlet_boundary_8h" local="yes">DirichletBoundary.h</includes>
     <incdepgraph>
       <node id="3">
-        <label>Boundary.h</label>
+        <label>Models/CommImp/Numeric/Boundary.h</label>
         <link refid="_boundary_8h_source"/>
         <childnode refid="4" relation="include">
         </childnode>
@@ -13,9 +13,11 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="1">
-        <label>Models/CommImp/Numeric/DirichletBoundary.cpp</label>
+        <label>Models/CommImp/Numeric/FVM/DirichletBoundary.cpp</label>
         <link refid="_dirichlet_boundary_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -32,6 +34,9 @@
       <node id="6">
         <label>cmath</label>
       </node>
+      <node id="7">
+        <label>optional</label>
+      </node>
       <node id="5">
         <label>string</label>
       </node>
@@ -39,6 +44,7 @@
     <innernamespace refid="namespace_open_oasis">OpenOasis</innernamespace>
     <innernamespace refid="namespace_open_oasis_1_1_comm_imp">OpenOasis::CommImp</innernamespace>
     <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric">OpenOasis::CommImp::Numeric</innernamespace>
+    <innernamespace refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m">OpenOasis::CommImp::Numeric::FVM</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -48,7 +54,7 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;DirichletBoundary.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric" kindref="compound">OpenOasis::CommImp::Numeric</ref></highlight></codeline>
+<codeline lineno="9" refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m" kindref="compound">OpenOasis::CommImp::Numeric::FVM</ref></highlight></codeline>
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Utils;</highlight></codeline>
@@ -63,7 +69,7 @@
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>mData<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;DIRICHLET&quot;</highlight><highlight class="normal">,<sp/>value};</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal">DirichletBoundary::DirichletBoundary(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DirichletBoundary<sp/>&amp;other)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">DirichletBoundary::DirichletBoundary(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_dirichlet_boundary" kindref="compound">DirichletBoundary</ref><sp/>&amp;other)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>mData<sp/>=<sp/>other.mData;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">}</highlight></codeline>
@@ -83,13 +89,13 @@
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Dirichlet&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal">BoundaryCondition<sp/>DirichletBoundary::GetBoundaryCondition()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref><sp/>DirichletBoundary::GetBoundaryCondition()</highlight></codeline>
 <codeline lineno="45"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mData;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis::CommImp::Numeric</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis::CommImp::Numeric::FVM</highlight></codeline>
     </programlisting>
-    <location file="Models/CommImp/Numeric/DirichletBoundary.cpp"/>
+    <location file="Models/CommImp/Numeric/FVM/DirichletBoundary.cpp"/>
   </compounddef>
 </doxygen>

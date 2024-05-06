@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="32" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="32" bodyend="35"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="31" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="31" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a384f839df68e29d698517c44835e1821" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="37" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="37" bodyend="40"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="35" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="35" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a66793f4945a980e94005122d75419209" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="42" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="42" bodyend="47"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="39" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="39" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a02f0a34ca33cdb3df58bc7c9b2818188" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -162,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="71" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="71" bodyend="76"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="68" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="68" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a8bb3b3a0cf646decf757831f24dde774" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="78" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="78" bodyend="99"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="75" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="75" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea2e01157f510c232aef65d5cac06667" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -206,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="101" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="101" bodyend="104"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="98" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="98" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a157379aba161cef3ae32d724a5544a9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -224,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="106" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="106" bodyend="112"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="103" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="103" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7d36608a7af3d9c1c1eaea441deac349" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -253,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="115" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="115" bodyend="124"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="112" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="112" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a020b0ee1e398526d1251f9636994f1f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -282,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="127" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="127" bodyend="136"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="124" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="124" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af1c05aa76bab276262fd76d03f7e28ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -296,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="138" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="138" bodyend="141"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="135" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="135" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7e2dc93be5680678f65d39ec4ad9e223" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="143" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="143" bodyend="146"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="140" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="140" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa36319ec923846700279f07c685841ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -328,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="154" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="154" bodyend="163"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="151" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="151" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a6208f271a5f63e898e91d2d61df29c9c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -346,7 +346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="167" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="167" bodyend="174"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="164" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="164" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa255d9741403f6d394c03b893bc2354a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -371,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="179" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="179" bodyend="188"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="176" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="176" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a87c4a055d370af873a915d63a9bb5108" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Eigen::SparseMatrix&lt; T &gt; &amp;</type>
@@ -385,7 +385,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="190" column="25" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="190" bodyend="193"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="187" column="25" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="187" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a13f4d0e8fbef9262c160cc05aa0b99ab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const Eigen::SparseMatrix&lt; T &gt; &amp;</type>
@@ -399,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="195" column="31" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="195" bodyend="198"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="192" column="31" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="192" bodyend="195"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a49a22466f37970be368a3f7c2232e9f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -413,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="200" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="200" bodyend="203"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="197" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="197" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac56168382db54091610d67607b6bac01" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -427,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="205" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="205" bodyend="208"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="202" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="202" bodyend="205"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a856310840af4cbb798ce66dc990a3e17" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -441,7 +441,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="210" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="210" bodyend="213"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="207" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="207" bodyend="210"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2c0a67c6f8e507d0e3551d7c8ecd7aea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -455,7 +455,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="215" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="215" bodyend="218"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="212" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="212" bodyend="215"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a404bc30725ab34df336ffb6bc67ba7af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -469,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="220" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="220" bodyend="223"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="217" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="217" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ab4db54b7ddf4cc207c8732b3c827761b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -496,7 +496,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="230" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="230" bodyend="234"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="227" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="227" bodyend="231"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7f72031d7cd5c4bfa7a544ac226703c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -515,7 +515,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="237" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="237" bodyend="241"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="234" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="234" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a409f22eceffa744c13f64432404829fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -542,7 +542,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="244" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="244" bodyend="248"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="241" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="241" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2131e5f4ed4a74dd5da9763122471f24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -561,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="251" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="251" bodyend="255"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="248" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="248" bodyend="252"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7736d4a332dbb3e833849f873c53cb05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -580,7 +580,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="258" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="258" bodyend="261"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="255" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="255" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a5f29ec279e56eb6f2cc168a53082d8f4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -599,7 +599,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="264" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="264" bodyend="268"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="261" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="261" bodyend="265"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af803d030ade35d52b666f1a8dd0a47a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -614,7 +614,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="271" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="271" bodyend="274"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="268" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="268" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa23c1c2e416ec92295379c7f09f8938e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -629,7 +629,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="277" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="277" bodyend="280"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="274" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="274" bodyend="277"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a0086fa1f74a945c29d363c050f01fdbd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -644,7 +644,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="283" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="283" bodyend="286"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="280" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="280" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2b727ea46ff8d1df2984c1f4b2db31be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>T &amp;</type>
@@ -666,7 +666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="292" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="292" bodyend="295"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="289" column="7" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="289" bodyend="292"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a921d4ec6207565016551f826a5c8afa6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const T &amp;</type>
@@ -688,7 +688,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="297" column="13" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="297" bodyend="300"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="294" column="13" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="294" bodyend="297"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae4983a21bbe9211348f9f1878fd2ceeb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -706,7 +706,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="302" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="302" bodyend="307"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="299" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="299" bodyend="304"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a80fb776d9ac25115e1a7449c057e3019" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -724,7 +724,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="309" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="309" bodyend="314"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="306" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="306" bodyend="311"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ae059abec989326ee016af59c762f2ed4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -742,7 +742,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="316" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="316" bodyend="321"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="313" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="313" bodyend="318"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af258d8b8d489c49cbed9105b23662ac5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -760,7 +760,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="323" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="323" bodyend="328"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="320" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="320" bodyend="325"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aea022ba70f9668ac9bade4dbb682855f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -778,7 +778,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="330" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="330" bodyend="334"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="327" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="327" bodyend="331"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1aa6559d5b738e8dff8bdd5059f802bb7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -796,7 +796,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="336" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="336" bodyend="340"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="333" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="333" bodyend="337"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ac338817b7230f1351103f551a52393a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -814,7 +814,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="342" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="342" bodyend="346"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="339" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="339" bodyend="343"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a2a6f6c72a9b466f36e509aff6918027d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -832,7 +832,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="348" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="348" bodyend="352"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="345" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="345" bodyend="349"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1af990a6fb46929423cb29fb6044f3f844" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -850,7 +850,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="354" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="354" bodyend="358"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="351" column="12" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="351" bodyend="355"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -875,7 +875,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="54" column="19" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="54" bodyend="57"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="51" column="19" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="51" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1abb656d08acd6fac6fcb881439824cf31" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix" kindref="compound">Matrix</ref></type>
@@ -898,14 +898,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="60" column="19" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="60" bodyend="65"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="57" column="19" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="57" bodyend="62"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Models/CommImp/Numeric/Matrix.h" line="21" column="1" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="22" bodyend="359"/>
+    <location file="Models/CommImp/Numeric/Matrix.h" line="21" column="1" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="22" bodyend="356"/>
     <listofallmembers>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1ab4db54b7ddf4cc207c8732b3c827761b" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Add</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix_1a7f72031d7cd5c4bfa7a544ac226703c2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Matrix</scope><name>Add</name></member>

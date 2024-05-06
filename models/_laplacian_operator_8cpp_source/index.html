@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -95,13 +95,13 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="file-laplacianoperatorcpp">File LaplacianOperator.cpp<a class="headerlink" href="#file-laplacianoperatorcpp" title="Permanent link">&para;</a></h1>
-<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_6202b98a8704f42b1ea358646461643f/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../dir_a0ece07902893bffce0f747cc8ee06c8/"><strong>Numeric</strong></a> <strong>&gt;</strong> <a href="../_laplacian_operator_8cpp/"><strong>LaplacianOperator.cpp</strong></a></p>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_6202b98a8704f42b1ea358646461643f/"><strong>CommImp</strong></a> <strong>&gt;</strong> <a href="../dir_a0ece07902893bffce0f747cc8ee06c8/"><strong>Numeric</strong></a> <strong>&gt;</strong> <a href="../dir_ce9212301f8d93e5246dd812df0f37fe/"><strong>FVM</strong></a> <strong>&gt;</strong> <a href="../_laplacian_operator_8cpp/"><strong>LaplacianOperator.cpp</strong></a></p>
 <p><a href="../_laplacian_operator_8cpp/">Go to the documentation of this file</a></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;LaplacianOperator.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/Exception.h&quot;</span>
 
 
-<span class="k">namespace</span><span class="w"> </span><span class="nn">OpenOasis</span><span class="o">::</span><span class="nn">CommImp</span><span class="o">::</span><span class="nn">Numeric</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">OpenOasis</span><span class="o">::</span><span class="nn">CommImp</span><span class="o">::</span><span class="nn">Numeric</span><span class="o">::</span><span class="nn">FVM</span>
 <span class="p">{</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Utils</span><span class="p">;</span>
@@ -186,7 +186,7 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">LinearEqs</span><span class="p">(</span><span class="n">coeffs</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="p">}</span><span class="w">  </span><span class="c1">// namespace OpenOasis::CommImp::Numeric</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace OpenOasis::CommImp::Numeric::FVM</span>
 </code></pre></div>
               
             </div>
@@ -219,6 +219,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

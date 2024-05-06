@@ -33,6 +33,7 @@ public:
         std::unordered_map<std::string, std::vector<int>> &patches,
         std::unordered_map<std::string, std::vector<int>> &zones);
 
+    int  Version() const override;
     int  Type() const override;
     void RefineCell(int cellIndex) override;
     void RelaxCell(int cellIndex) override;

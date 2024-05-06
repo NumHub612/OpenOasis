@@ -222,7 +222,9 @@ The adaptedOutputId used must be one of the `IIdentifiable` instances returned b
 **Parameters:**
 
 
-* `adaptedOutputId` The identifier of the '[**IAdaptedOutput**](class_open_oasis_1_1_i_adapted_output.md)`to create. @param adaptee`[**IOutput**](class_open_oasis_1_1_i_output.md)`to adapt. @param target`[**IInput**](class_open_oasis_1_1_i_input.md)`to adapt the adaptee to, can be`null`.
+* `adaptedOutputId` The identifier of the `IAdaptedOutput` to create. 
+* `adaptee` `IOutput` to adapt. 
+* `target` `IInput` to adapt the adaptee to, can be `null`.
 
 
 

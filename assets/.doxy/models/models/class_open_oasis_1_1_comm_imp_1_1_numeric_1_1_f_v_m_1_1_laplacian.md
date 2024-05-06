@@ -1,14 +1,14 @@
 
 
-# Class OpenOasis::CommImp::Numeric::Laplacian
+# Class OpenOasis::CommImp::Numeric::FVM::Laplacian
 
 
 
-[**ClassList**](annotated.md) **>** [**OpenOasis**](namespace_open_oasis.md) **>** [**CommImp**](namespace_open_oasis_1_1_comm_imp.md) **>** [**Numeric**](namespace_open_oasis_1_1_comm_imp_1_1_numeric.md) **>** [**Laplacian**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian.md)
+[**ClassList**](annotated.md) **>** [**OpenOasis**](namespace_open_oasis.md) **>** [**CommImp**](namespace_open_oasis_1_1_comm_imp.md) **>** [**Numeric**](namespace_open_oasis_1_1_comm_imp_1_1_numeric.md) **>** [**FVM**](namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m.md) **>** [**Laplacian**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian.md)
 
 
 
-[_**Laplacian**_](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian.md) _operator for the divergence of the gradient of a scalar field._[More...](#detailed-description)
+[_**Laplacian**_](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian.md) _operator for the divergence of the gradient of a scalar field._[More...](#detailed-description)
 
 * `#include <LaplacianOperator.h>`
 
@@ -173,7 +173,7 @@ First, calculate the gradient of the scalar field. Then, calculate the divergenc
 ### function Discretize 
 
 ```C++
-virtual LinearEqs OpenOasis::CommImp::Numeric::Laplacian::Discretize (
+virtual LinearEqs OpenOasis::CommImp::Numeric::FVM::Laplacian::Discretize (
     const ScalarField < real > & phiCellField,
     const ScalarField < real > & phiFaceField
 ) override
@@ -189,7 +189,7 @@ Implements [*OpenOasis::CommImp::Numeric::Operator::Discretize*](class_open_oasi
 ### function Laplacian 
 
 ```C++
-inline OpenOasis::CommImp::Numeric::Laplacian::Laplacian (
+inline OpenOasis::CommImp::Numeric::FVM::Laplacian::Laplacian (
     const std::shared_ptr< Grid > & grid
 ) 
 ```
@@ -202,12 +202,12 @@ inline OpenOasis::CommImp::Numeric::Laplacian::Laplacian (
 ### function ~Laplacian 
 
 ```C++
-virtual OpenOasis::CommImp::Numeric::Laplacian::~Laplacian () = default
+virtual OpenOasis::CommImp::Numeric::FVM::Laplacian::~Laplacian () = default
 ```
 
 
 
 
 ------------------------------
-The documentation for this class was generated from the following file `Models/CommImp/Numeric/LaplacianOperator.h`
+The documentation for this class was generated from the following file `Models/CommImp/Numeric/FVM/LaplacianOperator.h`
 

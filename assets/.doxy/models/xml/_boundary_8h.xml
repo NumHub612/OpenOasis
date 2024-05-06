@@ -5,7 +5,8 @@
     <includes local="yes">Models/Utils/CommConstants.h</includes>
     <includes local="no">string</includes>
     <includes local="no">cmath</includes>
-    <includedby refid="_dirichlet_boundary_8h" local="yes">Models/CommImp/Numeric/DirichletBoundary.h</includedby>
+    <includes local="no">optional</includes>
+    <includedby refid="_dirichlet_boundary_8h" local="yes">Models/CommImp/Numeric/FVM/DirichletBoundary.h</includedby>
     <includedby refid="_operator_8h" local="yes">Models/CommImp/Numeric/Operator.h</includedby>
     <includedby refid="_solver_8h" local="yes">Models/CommImp/Numeric/Solver.h</includedby>
     <incdepgraph>
@@ -18,12 +19,17 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>Models/Utils/CommConstants.h</label>
       </node>
       <node id="4">
         <label>cmath</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
       </node>
       <node id="3">
         <label>string</label>
@@ -41,7 +47,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>Models/CommImp/Numeric/DirichletBoundary.h</label>
+        <label>Models/CommImp/Numeric/FVM/DirichletBoundary.h</label>
         <link refid="_dirichlet_boundary_8h_source"/>
       </node>
       <node id="6">
@@ -49,7 +55,7 @@
         <link refid="_fvm_solver_8h_source"/>
       </node>
       <node id="4">
-        <label>Models/CommImp/Numeric/LaplacianOperator.h</label>
+        <label>Models/CommImp/Numeric/FVM/LaplacianOperator.h</label>
         <link refid="_laplacian_operator_8h_source"/>
       </node>
       <node id="3">
@@ -88,33 +94,46 @@
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/Utils/CommConstants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric" kindref="compound">OpenOasis::CommImp::Numeric</ref></highlight></codeline>
-<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Utils::real;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21" refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref></highlight></codeline>
-<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>type;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>real<sp/>value<sp/>=<sp/>NAN;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>real<sp/>flux<sp/><sp/>=<sp/>NAN;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">Boundary</ref></highlight></codeline>
-<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBoundaryValue(real<sp/>value)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric" kindref="compound">OpenOasis::CommImp::Numeric</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Utils::real;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ab55a655f579507d97f6b1fd52d92484c" refkind="member"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ab55a655f579507d97f6b1fd52d92484c" kindref="member">BoundaryType</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>ValueBound,<sp/><sp/></highlight><highlight class="comment">//<sp/>Dirichlet<sp/>or<sp/>first<sp/>boundary<sp/>condition.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>FluxBound,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Neumann<sp/>or<sp/>second<sp/>boundary<sp/>condition.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>MixedBound,<sp/><sp/></highlight><highlight class="comment">//<sp/>Robin<sp/>boundary<sp/>condition.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ab55a655f579507d97f6b1fd52d92484c" kindref="member">BoundaryType</ref><sp/>type;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBoundaryFlux(real<sp/>flux)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/>GetType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;real&gt;<sp/>value;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;real&gt;<sp/>flux;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref><sp/>GetBoundaryCondition()<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis::CommImp::Numeric</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">Boundary</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddBoundaryCondition(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref><sp/>&amp;bc)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary_condition" kindref="compound">BoundaryCondition</ref><sp/>GetBoundaryCondition(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Commonly<sp/>used<sp/>boundaries.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">DirichletBoundary</ref><sp/>=<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">Boundary</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">NeumannBoundary</ref><sp/><sp/><sp/>=<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">Boundary</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">RobinBoundary</ref><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary" kindref="compound">Boundary</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>OpenOasis::CommImp::Numeric</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="Models/CommImp/Numeric/Boundary.h"/>
   </compounddef>

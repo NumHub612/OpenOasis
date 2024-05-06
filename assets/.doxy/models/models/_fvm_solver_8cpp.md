@@ -11,7 +11,7 @@
 
 
 * `#include "FvmSolver.h"`
-* `#include "Models/CommImp/Numeric/LaplacianOperator.h"`
+* `#include "LaplacianOperator.h"`
 * `#include "Models/Utils/Exception.h"`
 
 

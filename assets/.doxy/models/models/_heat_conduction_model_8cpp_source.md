@@ -21,7 +21,7 @@
 #include "Models/CommImp/IO/MeshLoader.h"
 #include "Models/CommImp/Spatial/Grid2D.h"
 #include "Models/CommImp/Numeric/FVM/FvmSolver.h"
-#include "Models/CommImp/Numeric/DirichletBoundary.h"
+#include "Models/CommImp/Numeric/FVM/DirichletBoundary.h"
 #include "Models/Utils/YamlHandler.h"
 #include "Models/Utils/Exception.h"
 #include "Models/Utils/StringHelper.h"
@@ -204,7 +204,7 @@ void HeatConductionModel::InitializeSpace()
 
     // Initialize temperature field.
     auto size   = mGrid->GetNumCells();
-    mTempValues = make_shared<ScalarFieldFp>(size, mT0);
+    mTempValues = make_shared<ScalarField<real>>(size, mT0);
 
     if (mT0file.empty())
         return;
@@ -356,7 +356,7 @@ void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &out
     {
         real value = FP(b.second);
 
-        const auto &bound = make_shared<DirichletBoundary>(value);
+        const auto &bound = make_shared<FVM::DirichletBoundary>(value);
 
         for (int fIdx : mGrid->GetPatchFaceIndexes(b.first))
         {

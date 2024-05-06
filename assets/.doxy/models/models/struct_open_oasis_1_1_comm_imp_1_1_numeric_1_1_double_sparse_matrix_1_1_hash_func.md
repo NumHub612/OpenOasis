@@ -88,7 +88,7 @@
 ### function operator() 
 
 ```C++
-size_t OpenOasis::CommImp::Numeric::DoubleSparseMatrix::HashFunc::operator() (
+inline size_t OpenOasis::CommImp::Numeric::DoubleSparseMatrix::HashFunc::operator() (
     const Index & key
 ) const
 ```

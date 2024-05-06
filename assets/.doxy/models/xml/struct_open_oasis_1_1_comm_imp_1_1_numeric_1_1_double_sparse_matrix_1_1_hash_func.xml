@@ -3,7 +3,7 @@
   <compounddef id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_hash_func" kind="struct" language="C++" prot="public">
     <compoundname>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::HashFunc</compoundname>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_hash_func_1a6ecb7741388c9f45a6e3da3e49f03a7e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_hash_func_1a6ecb7741388c9f45a6e3da3e49f03a7e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
         <definition>size_t OpenOasis::CommImp::Numeric::DoubleSparseMatrix::HashFunc::operator()</definition>
         <argsstring>(const Index &amp;key) const</argsstring>
@@ -19,14 +19,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="391" column="16" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="20" bodyend="26"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="395" column="16" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="395" bodyend="401"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Models/CommImp/Numeric/Matrix.h" line="389" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="390" bodyend="392"/>
+    <location file="Models/CommImp/Numeric/Matrix.h" line="393" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="394" bodyend="402"/>
     <listofallmembers>
       <member refid="struct_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1_1_hash_func_1a6ecb7741388c9f45a6e3da3e49f03a7e" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::HashFunc</scope><name>operator()</name></member>
     </listofallmembers>

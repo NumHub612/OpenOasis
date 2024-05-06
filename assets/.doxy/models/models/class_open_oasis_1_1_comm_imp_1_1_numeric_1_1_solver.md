@@ -57,14 +57,11 @@ Inherited by the following classes: [OpenOasis::CommImp::Numeric::FVM::FvmSolver
 | virtual void | [**AfterSolve**](#function-aftersolve) () <br> |
 | virtual void | [**BeforeScheme**](#function-beforescheme) () <br> |
 | virtual void | [**BeforeSolve**](#function-beforesolve) () <br> |
+| virtual void | [**DiscretizeEquation**](#function-discretizeequation) () <br> |
 |  std::optional&lt; [**LinearEqs**](namespace_open_oasis_1_1_comm_imp_1_1_numeric.md#typedef-lineareqs) &gt; | [**GetLinearEqs**](#function-getlineareqs) () const<br> |
 | virtual std::optional&lt; [**ScalarFieldFp**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field.md) &gt; | [**GetScalarSolutions**](#function-getscalarsolutions) (const std::string & var) const<br> |
 | virtual std::optional&lt; [**TensorFieldFp**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field.md) &gt; | [**GetTensorSolutions**](#function-gettensorsolutions) (const std::string & var) const<br> |
 | virtual std::optional&lt; [**VectorFieldFp**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field.md) &gt; | [**GetVectorSolutions**](#function-getvectorsolutions) (const std::string & var) const<br> |
-| virtual void | [**ParseConvectionTerm**](#function-parseconvectionterm) () <br> |
-| virtual void | [**ParseDiffusionTerm**](#function-parsediffusionterm) () <br> |
-| virtual void | [**ParseSourceTerm**](#function-parsesourceterm) () <br> |
-| virtual void | [**ParseTimeDerivativeTerm**](#function-parsetimederivativeterm) () <br> |
 | virtual void | [**Scheme**](#function-scheme) () <br> |
 | virtual void | [**SetBoundary**](#function-setboundary) (int faceIndex, const std::shared\_ptr&lt; [**Boundary**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary.md) &gt; & bound) <br> |
 | virtual void | [**SetCoefficient**](#function-setcoefficient-14) (const std::string & var, const std::variant&lt; real, [**Vector**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector.md)&lt; real &gt;, [**Tensor**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor.md)&lt; real &gt; &gt; & coeff) <br> |
@@ -153,6 +150,17 @@ inline virtual void OpenOasis::CommImp::Numeric::Solver::BeforeSolve ()
 
 
 
+### function DiscretizeEquation 
+
+```C++
+inline virtual void OpenOasis::CommImp::Numeric::Solver::DiscretizeEquation () 
+```
+
+
+
+
+
+
 ### function GetLinearEqs 
 
 ```C++
@@ -196,50 +204,6 @@ inline virtual std::optional< TensorFieldFp > OpenOasis::CommImp::Numeric::Solve
 inline virtual std::optional< VectorFieldFp > OpenOasis::CommImp::Numeric::Solver::GetVectorSolutions (
     const std::string & var
 ) const
-```
-
-
-
-
-
-
-### function ParseConvectionTerm 
-
-```C++
-inline virtual void OpenOasis::CommImp::Numeric::Solver::ParseConvectionTerm () 
-```
-
-
-
-
-
-
-### function ParseDiffusionTerm 
-
-```C++
-inline virtual void OpenOasis::CommImp::Numeric::Solver::ParseDiffusionTerm () 
-```
-
-
-
-
-
-
-### function ParseSourceTerm 
-
-```C++
-inline virtual void OpenOasis::CommImp::Numeric::Solver::ParseSourceTerm () 
-```
-
-
-
-
-
-
-### function ParseTimeDerivativeTerm 
-
-```C++
-inline virtual void OpenOasis::CommImp::Numeric::Solver::ParseTimeDerivativeTerm () 
 ```
 
 

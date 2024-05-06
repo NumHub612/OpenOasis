@@ -12,9 +12,7 @@
 #pragma once
 #include "Models/Utils/CommConstants.h"
 #include "Models/Utils/Exception.h"
-#include "ScalarField.h"
-#include "VectorField.h"
-#include "TensorField.h"
+#include "Field.h"
 #include "Boundary.h"
 #include "Matrix.h"
 #include <variant>
@@ -27,6 +25,7 @@ namespace OpenOasis::CommImp::Numeric
 using Utils::real;
 
 using LinearEqs = std::tuple<Matrix<real>, std::vector<real>>;
+
 
 class Operator
 {
@@ -95,6 +94,14 @@ public:
         throw Utils::NotImplementedException();
     }
 };
+
+
+
+using CurlOperator      = Operator;
+using DivOperator       = Operator;
+using GradOperator      = Operator;
+using LaplacianOperator = Operator;
+using DdtOperator       = Operator;
 
 }  // namespace OpenOasis::CommImp::Numeric
 ```

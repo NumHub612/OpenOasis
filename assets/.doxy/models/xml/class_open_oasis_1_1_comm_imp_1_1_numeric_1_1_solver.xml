@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="48" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="48" bodyend="51"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="38" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae027d2b890f888f5807d1ea6e2a3c396" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="53" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="53" bodyend="58"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="43" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="43" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1afe01d09ce3f0021ff55667a9d77d8bc6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="60" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="60" bodyend="63"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="50" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="50" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a74555df964ce184239eba8252e556114" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="65" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="65" bodyend="68"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="55" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="55" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a54349f2c4544472622bab4a90fa2991f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="70" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="70" bodyend="73"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="60" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="60" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aeac66a323bf200585eba8f729d476b12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -138,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="75" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="75" bodyend="80"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="65" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="65" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ab6ed4c2b562a8875fdfcaff2f755152b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="82" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="82" bodyend="85"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="72" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a5ffd902f27b3be2d8005b46bae61dea6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="87" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="87" bodyend="90"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="77" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="77" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a82db8f8f49f14991f0efa6a046b0c1e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -204,64 +204,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="92" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="92" bodyend="95"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="82" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="82" bodyend="85"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae7a97e0f8cd71f16d7e0f3f5354c10df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ab6b7db3a68ebc26c1752dd3a43e8909e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>virtual void OpenOasis::CommImp::Numeric::Solver::ParseTimeDerivativeTerm</definition>
+        <definition>virtual void OpenOasis::CommImp::Numeric::Solver::DiscretizeEquation</definition>
         <argsstring>()</argsstring>
-        <name>ParseTimeDerivativeTerm</name>
-        <qualifiedname>OpenOasis::CommImp::Numeric::Solver::ParseTimeDerivativeTerm</qualifiedname>
+        <name>DiscretizeEquation</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::Solver::DiscretizeEquation</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="101" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="101" bodyend="104"/>
-      </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a87c5b8eb3f2de56f44c961efea4b6094" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
-        <type>void</type>
-        <definition>virtual void OpenOasis::CommImp::Numeric::Solver::ParseConvectionTerm</definition>
-        <argsstring>()</argsstring>
-        <name>ParseConvectionTerm</name>
-        <qualifiedname>OpenOasis::CommImp::Numeric::Solver::ParseConvectionTerm</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="106" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="106" bodyend="109"/>
-      </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ad83b9b0ae0fae5d76145ca2dd69a0ab7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
-        <type>void</type>
-        <definition>virtual void OpenOasis::CommImp::Numeric::Solver::ParseDiffusionTerm</definition>
-        <argsstring>()</argsstring>
-        <name>ParseDiffusionTerm</name>
-        <qualifiedname>OpenOasis::CommImp::Numeric::Solver::ParseDiffusionTerm</qualifiedname>
-        <reimplementedby refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver_1a65e12b05b1f7be8862fbcacd5ffe4af8">ParseDiffusionTerm</reimplementedby>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="111" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="111" bodyend="114"/>
-      </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a7d1ef2ebe984805ac6a2b37d26d9c7b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
-        <type>void</type>
-        <definition>virtual void OpenOasis::CommImp::Numeric::Solver::ParseSourceTerm</definition>
-        <argsstring>()</argsstring>
-        <name>ParseSourceTerm</name>
-        <qualifiedname>OpenOasis::CommImp::Numeric::Solver::ParseSourceTerm</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="116" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="116" bodyend="119"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="91" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="91" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a28f0bcd5c64e899071dcf2bfd62aef5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -275,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="125" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="125" bodyend="128"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="100" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="100" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a1c6d6b76ef84d484d9d722cb999f3075" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -289,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="130" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="130" bodyend="133"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="105" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="105" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a544fef246c6cf41edf2b872dcc013880" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -303,7 +260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="135" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="135" bodyend="138"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="110" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="110" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae135886e3f94c8c1f99a7cec3ea54caf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -317,7 +274,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="144" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="144" bodyend="147"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="119" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="119" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ac5246b3710831198c7e1901774b5fec9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -332,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="149" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="149" bodyend="153"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="124" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="124" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9d8349846efec36de9ff3d67f54ceefb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -346,7 +303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="155" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="155" bodyend="158"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="130" column="18" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="130" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9cbf6bc354db51c3d4c8d8fc5a4fe72a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::optional&lt; <ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ac5a04c703cdd7fc077ab7b5af313a3d0" kindref="member">LinearEqs</ref> &gt;</type>
@@ -360,7 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="164" column="19" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="164" bodyend="167"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="139" column="19" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="139" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a10b6799050bcca98a3aa966f0cfaf221" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>std::optional&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarFieldFp</ref> &gt;</type>
@@ -379,7 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="170" column="5" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="170" bodyend="173"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="145" column="5" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="145" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aa66414e1786218d2fee586e23e35cdaa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>std::optional&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field" kindref="compound">VectorFieldFp</ref> &gt;</type>
@@ -397,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="176" column="5" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="176" bodyend="179"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="151" column="5" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="151" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a57043ade2003c0e8ef7e359482441440" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>std::optional&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field" kindref="compound">TensorFieldFp</ref> &gt;</type>
@@ -415,7 +372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Solver.h" line="182" column="5" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="182" bodyend="185"/>
+        <location file="Models/CommImp/Numeric/Solver.h" line="157" column="5" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="157" bodyend="160"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -435,20 +392,17 @@
         <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver"/>
       </node>
     </inheritancegraph>
-    <location file="Models/CommImp/Numeric/Solver.h" line="41" column="1" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="42" bodyend="186"/>
+    <location file="Models/CommImp/Numeric/Solver.h" line="31" column="1" bodyfile="Models/CommImp/Numeric/Solver.h" bodystart="32" bodyend="161"/>
     <listofallmembers>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a544fef246c6cf41edf2b872dcc013880" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>AfterScheme</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9d8349846efec36de9ff3d67f54ceefb" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>AfterSolve</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a28f0bcd5c64e899071dcf2bfd62aef5f" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>BeforeScheme</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae135886e3f94c8c1f99a7cec3ea54caf" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>BeforeSolve</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ab6b7db3a68ebc26c1752dd3a43e8909e" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>DiscretizeEquation</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a9cbf6bc354db51c3d4c8d8fc5a4fe72a" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>GetLinearEqs</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a10b6799050bcca98a3aa966f0cfaf221" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>GetScalarSolutions</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a57043ade2003c0e8ef7e359482441440" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>GetTensorSolutions</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aa66414e1786218d2fee586e23e35cdaa" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>GetVectorSolutions</name></member>
-      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a87c5b8eb3f2de56f44c961efea4b6094" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>ParseConvectionTerm</name></member>
-      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ad83b9b0ae0fae5d76145ca2dd69a0ab7" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>ParseDiffusionTerm</name></member>
-      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a7d1ef2ebe984805ac6a2b37d26d9c7b3" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>ParseSourceTerm</name></member>
-      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1ae7a97e0f8cd71f16d7e0f3f5354c10df" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>ParseTimeDerivativeTerm</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a1c6d6b76ef84d484d9d722cb999f3075" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>Scheme</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1a348b2345b05e9ba35df583f0d9786fdb" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>SetBoundary</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver_1aeac66a323bf200585eba8f729d476b12" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::Solver</scope><name>SetCoefficient</name></member>

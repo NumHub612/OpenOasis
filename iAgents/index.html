@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">iAgents</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Agents</a>
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Spark</a>
     <ul class="current">
@@ -82,7 +82,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -100,7 +100,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Home</li>
-          <li class="breadcrumb-item">iAgents</li>
+          <li class="breadcrumb-item">Agents</li>
       <li class="breadcrumb-item active">Spark</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -170,7 +170,7 @@ setting parameters, and obtaining gradients.</p>
 
 
 <h3 id="iAgents.Spark.net.Net" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">Net</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">Net</span><span class="p">(</span><span class="n">layers</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span></code>
 
 <a href="#iAgents.Spark.net.Net" class="headerlink" title="Permanent link">&para;</a></h3>
 
@@ -245,7 +245,7 @@ parameters of all layers in the network.</p>
 
 
 <h4 id="iAgents.Spark.net.Net.backward" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">backward</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">backward</span><span class="p">(</span><span class="n">grad</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StructuredParam</span></code>
 
 <a href="#iAgents.Spark.net.Net.backward" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -267,7 +267,7 @@ using the gradient of each layer as input to the next.</p>
 
 
 <h4 id="iAgents.Spark.net.Net.forward" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span></code>
 
 <a href="#iAgents.Spark.net.Net.forward" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -389,7 +389,7 @@ to form the entire pipeline.</p>
 
 
 <h4 id="iAgents.Spark.model.Model.backward" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">backward</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">backward</span><span class="p">(</span><span class="n">predictions</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span></code>
 
 <a href="#iAgents.Spark.model.Model.backward" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -413,7 +413,7 @@ to back propagate the gradients.</p>
 
 
 <h4 id="iAgents.Spark.model.Model.forward" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span></code>
 
 <a href="#iAgents.Spark.model.Model.forward" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -434,7 +434,7 @@ to back propagate the gradients.</p>
 
 
 <h4 id="iAgents.Spark.model.Model.load" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span></code>
 
 <a href="#iAgents.Spark.model.Model.load" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -453,7 +453,7 @@ to back propagate the gradients.</p>
 
 
 <h4 id="iAgents.Spark.model.Model.save" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span></code>
 
 <a href="#iAgents.Spark.model.Model.save" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -472,7 +472,7 @@ to back propagate the gradients.</p>
 
 
 <h4 id="iAgents.Spark.model.Model.update" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">grads</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">grads</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span></code>
 
 <a href="#iAgents.Spark.model.Model.update" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -563,6 +563,9 @@ with the gradients.</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

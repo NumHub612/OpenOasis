@@ -33,6 +33,11 @@ Grid2D::Grid2D(
 Grid2D::Grid2D(const shared_ptr<Grid> &grid) : Grid(grid)
 {}
 
+int Grid2D::Version() const
+{
+    return mVersion;
+}
+
 int Grid2D::Type() const
 {
     return 2;

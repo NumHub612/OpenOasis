@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -120,7 +120,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-relaxcell"><strong>RelaxCell</strong></a> (int cellIndex) override<br><em>Relax the cell at the given index for adaptive grid.</em></td>
+<td style="text-align: left;"><a href="#function-relaxcell"><strong>RelaxCell</strong></a> (int cellIndex) override<br><em>Relax the cell at given index for adaptive grid.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual int</td>
@@ -252,11 +252,15 @@
 </tr>
 <tr>
 <td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-relaxcell"><strong>RelaxCell</strong></a> (int cellIndex) = 0<br><em>Relax the cell at the given index for adaptive grid.</em></td>
+<td style="text-align: left;"><a href="#function-relaxcell"><strong>RelaxCell</strong></a> (int cellIndex) = 0<br><em>Relax the cell at given index for adaptive grid.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual int</td>
 <td style="text-align: left;"><a href="#function-type"><strong>Type</strong></a> () const = 0<br><em>Get the grid type.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual int</td>
+<td style="text-align: left;"><a href="#function-version"><strong>Version</strong></a> () const = 0<br><em>Get the version of the current grid.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual</td>
@@ -321,6 +325,10 @@
 <tr>
 <td style="text-align: right;">int</td>
 <td style="text-align: left;"><a href="#variable-mrawnodesnum"><strong>mRawNodesNum</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#variable-mversion"><strong>mVersion</strong></a>   = = 0<br></td>
 </tr>
 <tr>
 <td style="text-align: right;">std::unordered_map&lt; std::string, std::vector&lt; int &gt; &gt;</td>
@@ -448,16 +456,16 @@
 <span class="p">)</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div></p>
 <p><strong>Note:</strong></p>
-<p>The refining wouldn't change the origin nodes. </p>
+<p>This wouldn't change the origin nodes. </p>
 <p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid/#function-refinecell"><em>OpenOasis::CommImp::Spatial::Grid::RefineCell</em></a></p>
 <h3 id="function-relaxcell">function RelaxCell<a class="headerlink" href="#function-relaxcell" title="Permanent link">&para;</a></h3>
-<p><em>Relax the cell at the given index for adaptive grid.</em> 
+<p><em>Relax the cell at given index for adaptive grid.</em> 
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Spatial</span><span class="o">::</span><span class="n">Grid3D</span><span class="o">::</span><span class="n">RelaxCell</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cellIndex</span>
 <span class="p">)</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div></p>
 <p><strong>Note:</strong></p>
-<p>The coarsening wouldn't change the origin nodes. </p>
+<p>This wouldn't change the origin nodes. </p>
 <p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid/#function-relaxcell"><em>OpenOasis::CommImp::Spatial::Grid::RelaxCell</em></a></p>
 <h3 id="function-type">function Type<a class="headerlink" href="#function-type" title="Permanent link">&para;</a></h3>
 <p><em>Get the grid type.</em> 
@@ -502,6 +510,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

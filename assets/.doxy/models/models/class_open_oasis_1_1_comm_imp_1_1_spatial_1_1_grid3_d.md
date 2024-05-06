@@ -75,7 +75,7 @@ Inherits the following classes: [OpenOasis::CommImp::Spatial::Grid](class_open_o
 |   | [**Grid3D**](#function-grid3d-12) (const std::shared\_ptr&lt; [**Grid**](class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid.md) &gt; & grid) <br> |
 |   | [**Grid3D**](#function-grid3d-22) (std::unordered\_map&lt; int, [**Coordinate**](struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate.md) &gt; & nodeCoords, std::unordered\_map&lt; int, [**Coordinate**](struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate.md) &gt; & faceCoords, std::unordered\_map&lt; int, [**Coordinate**](struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate.md) &gt; & cellCoords, std::unordered\_map&lt; int, std::vector&lt; int &gt; &gt; & faceNodes, std::unordered\_map&lt; int, std::vector&lt; int &gt; &gt; & cellFaces, std::unordered\_map&lt; std::string, std::vector&lt; int &gt; &gt; & patches, std::unordered\_map&lt; std::string, std::vector&lt; int &gt; &gt; & zones) <br> |
 | virtual void | [**RefineCell**](#function-refinecell) (int cellIndex) override<br>_Refine the cell at the given index for adaptive grid._  |
-| virtual void | [**RelaxCell**](#function-relaxcell) (int cellIndex) override<br>_Relax the cell at the given index for adaptive grid._  |
+| virtual void | [**RelaxCell**](#function-relaxcell) (int cellIndex) override<br>_Relax the cell at given index for adaptive grid._  |
 | virtual int | [**Type**](#function-type) () override const<br>_Get the grid type._  |
 | virtual  | [**~Grid3D**](#function-grid3d) () = default<br> |
 
@@ -113,8 +113,9 @@ See [OpenOasis::CommImp::Spatial::Grid](class_open_oasis_1_1_comm_imp_1_1_spatia
 |   | [**Grid**](#function-grid-12) (const std::shared\_ptr&lt; [**Grid**](class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid.md) &gt; & grid) <br> |
 |   | [**Grid**](#function-grid-22) (std::unordered\_map&lt; int, [**Coordinate**](struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate.md) &gt; & nodeCoords, std::unordered\_map&lt; int, [**Coordinate**](struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate.md) &gt; & faceCoords, std::unordered\_map&lt; int, [**Coordinate**](struct_open_oasis_1_1_comm_imp_1_1_spatial_1_1_coordinate.md) &gt; & cellCoords, std::unordered\_map&lt; int, std::vector&lt; int &gt; &gt; & faceNodes, std::unordered\_map&lt; int, std::vector&lt; int &gt; &gt; & cellFaces, std::unordered\_map&lt; std::string, std::vector&lt; int &gt; &gt; & patches, std::unordered\_map&lt; std::string, std::vector&lt; int &gt; &gt; & zones) <br> |
 | virtual void | [**RefineCell**](#function-refinecell) (int cellIndex) = 0<br>_Refine the cell at the given index for adaptive grid._  |
-| virtual void | [**RelaxCell**](#function-relaxcell) (int cellIndex) = 0<br>_Relax the cell at the given index for adaptive grid._  |
+| virtual void | [**RelaxCell**](#function-relaxcell) (int cellIndex) = 0<br>_Relax the cell at given index for adaptive grid._  |
 | virtual int | [**Type**](#function-type) () const = 0<br>_Get the grid type._  |
+| virtual int | [**Version**](#function-version) () const = 0<br>_Get the version of the current grid._  |
 | virtual  | [**~Grid**](#function-grid) () = default<br> |
 
 
@@ -150,6 +151,7 @@ See [OpenOasis::CommImp::Spatial::Grid](class_open_oasis_1_1_comm_imp_1_1_spatia
 |  int | [**mRawCellsNum**](#variable-mrawcellsnum)  <br> |
 |  int | [**mRawFacesNum**](#variable-mrawfacesnum)  <br> |
 |  int | [**mRawNodesNum**](#variable-mrawnodesnum)  <br> |
+|  int | [**mVersion**](#variable-mversion)   = = 0<br> |
 |  std::unordered\_map&lt; std::string, std::vector&lt; int &gt; &gt; | [**mZoneCells**](#variable-mzonecells)  <br> |
 |  std::unordered\_map&lt; std::string, std::vector&lt; int &gt; &gt; | [**mZones**](#variable-mzones)  <br> |
 
@@ -268,7 +270,7 @@ virtual void OpenOasis::CommImp::Spatial::Grid3D::RefineCell (
 
 **Note:**
 
-The refining wouldn't change the origin nodes. 
+This wouldn't change the origin nodes. 
 
 
 
@@ -282,7 +284,7 @@ Implements [*OpenOasis::CommImp::Spatial::Grid::RefineCell*](class_open_oasis_1_
 
 ### function RelaxCell 
 
-_Relax the cell at the given index for adaptive grid._ 
+_Relax the cell at given index for adaptive grid._ 
 ```C++
 virtual void OpenOasis::CommImp::Spatial::Grid3D::RelaxCell (
     int cellIndex
@@ -295,7 +297,7 @@ virtual void OpenOasis::CommImp::Spatial::Grid3D::RelaxCell (
 
 **Note:**
 
-The coarsening wouldn't change the origin nodes. 
+This wouldn't change the origin nodes. 
 
 
 

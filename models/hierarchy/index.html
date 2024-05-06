@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -104,7 +104,7 @@
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_mesh_loader/"><strong>OpenOasis::CommImp::IO::MeshLoader</strong></a> <em>Default</em> <code>Mesh</code> <em>data loader.</em></li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_i_o_1_1_task_loader/"><strong>OpenOasis::CommImp::IO::TaskLoader</strong></a> <em>Loading components task configurations yaml file.</em> </li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary/"><strong>OpenOasis::CommImp::Numeric::Boundary</strong></a> <em>Abstract boundary class.</em>     <ul>
-<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_dirichlet_boundary/"><strong>OpenOasis::CommImp::Numeric::DirichletBoundary</strong></a> <em>Dirichlet boundary.</em> </li>
+<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_dirichlet_boundary/"><strong>OpenOasis::CommImp::Numeric::FVM::DirichletBoundary</strong></a> <em>Dirichlet boundary.</em> </li>
 </ul>
 </li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix/"><strong>OpenOasis::CommImp::Numeric::DoubleSparseMatrix</strong></a> <em>Sparse matrix having double elements.</em> </li>
@@ -113,18 +113,17 @@
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver/"><strong>OpenOasis::CommImp::Numeric::FVM::FvmSolver</strong></a> </li>
 </ul>
 </li>
+<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>OpenOasis::CommImp::Numeric::Operator</strong></a> <em>Abstract operator class.</em>     <ul>
+<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian/"><strong>OpenOasis::CommImp::Numeric::FVM::Laplacian</strong></a> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian/"><em><strong>Laplacian</strong></em></a> <em>operator for the divergence of the gradient of a scalar field.</em></li>
+</ul>
+</li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field/"><strong>OpenOasis::CommImp::Numeric::Field</strong></a> <em>The abstract field class used to represent numeric field, such as scalar, vector or tensor data.</em>     <ul>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field/"><strong>OpenOasis::CommImp::Numeric::ScalarField</strong></a> <em>Scaler field.</em> </li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field/"><strong>OpenOasis::CommImp::Numeric::ScalarField</strong></a> <em>Scaler field.</em> </li>
-<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>OpenOasis::CommImp::Numeric::VectorField</strong></a> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><em><strong>Vector</strong></em></a> <em>field with default zero vector in 2D or 3D space.</em></li>
-</ul>
-</li>
-<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator/"><strong>OpenOasis::CommImp::Numeric::Operator</strong></a> <em>Abstract operator class.</em>     <ul>
-<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian/"><strong>OpenOasis::CommImp::Numeric::Laplacian</strong></a> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian/"><em><strong>Laplacian</strong></em></a> <em>operator for the divergence of the gradient of a scalar field.</em></li>
+<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>OpenOasis::CommImp::Numeric::VectorField</strong></a> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><em><strong>Vector</strong></em></a> <em>field.</em></li>
 </ul>
 </li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_matrix/"><strong>OpenOasis::CommImp::Numeric::Matrix</strong></a> </li>
-<li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source/"><strong>OpenOasis::CommImp::Numeric::Source</strong></a> </li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor/"><strong>OpenOasis::CommImp::Numeric::Tensor</strong></a> </li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector/"><strong>OpenOasis::CommImp::Numeric::Vector</strong></a> </li>
 <li><strong>class</strong> <a href="../class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator/"><strong>OpenOasis::CommImp::Spatial::GeoCalculator</strong></a> <em>The</em> <a href="../class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_geo_calculator/"><em><strong>GeoCalculator</strong></em></a> <em>is a collection of general geometry functions.</em></li>
@@ -221,6 +220,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

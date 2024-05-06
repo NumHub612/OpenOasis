@@ -3,6 +3,11 @@
 
 
 
+## b
+
+* **BoundaryType** ([**OpenOasis::CommImp::Numeric**](namespace_open_oasis_1_1_comm_imp_1_1_numeric.md))
+
+
 ## d
 
 * **DimensionBase** ([**OpenOasis**](namespace_open_oasis.md))
@@ -22,11 +27,6 @@
 ## l
 
 * **LinkableComponentStatus** ([**OpenOasis**](namespace_open_oasis.md))
-
-
-## s
-
-* **SolverStatus** ([**OpenOasis::CommImp::Numeric**](namespace_open_oasis_1_1_comm_imp_1_1_numeric.md))
 
 
 

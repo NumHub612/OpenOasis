@@ -91,6 +91,11 @@ Grid::Grid(const shared_ptr<Grid> &grid)
     mZones       = grid->mZones;
 }
 
+int Grid::Version() const
+{
+    return mVersion;
+}
+
 void Grid::Activate()
 {
     // Complete mesh topological connections.

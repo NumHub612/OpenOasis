@@ -13,31 +13,44 @@
 #include "Models/Utils/CommConstants.h"
 #include <string>
 #include <cmath>
+#include <optional>
 
 
 namespace OpenOasis::CommImp::Numeric
 {
 using Utils::real;
 
+
+enum class BoundaryType
+{
+    ValueBound,  // Dirichlet or first boundary condition.
+    FluxBound,   // Neumann or second boundary condition.
+    MixedBound,  // Robin boundary condition.
+};
+
 struct BoundaryCondition
 {
-    std::string type;
+    BoundaryType type;
 
-    real value = NAN;
-    real flux  = NAN;
+    std::optional<real> value;
+    std::optional<real> flux;
 };
 
 class Boundary
 {
 public:
-    virtual void SetBoundaryValue(real value) = 0;
+    virtual void AddBoundaryCondition(double time, const BoundaryCondition &bc) = 0;
 
-    virtual void SetBoundaryFlux(real flux) = 0;
-
-    virtual std::string GetType() const = 0;
-
-    virtual BoundaryCondition GetBoundaryCondition() = 0;
+    virtual BoundaryCondition GetBoundaryCondition(double time) = 0;
 };
+
+
+// Commonly used boundaries.
+
+using DirichletBoundary = Boundary;
+using NeumannBoundary   = Boundary;
+using RobinBoundary     = Boundary;
+
 
 }  // namespace OpenOasis::CommImp::Numeric
 ```

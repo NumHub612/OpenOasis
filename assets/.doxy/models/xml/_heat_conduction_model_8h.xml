@@ -6,11 +6,11 @@
     <includes local="yes">Models/CommImp/Output.h</includes>
     <includes local="yes">Models/CommImp/Input.h</includes>
     <includes refid="_grid_8h" local="yes">Models/CommImp/Spatial/Grid.h</includes>
-    <includes refid="_scalar_field_8h" local="yes">Models/CommImp/Numeric/ScalarField.h</includes>
+    <includes refid="_field_8h" local="yes">Models/CommImp/Numeric/Field.h</includes>
     <includes refid="_solver_8h" local="yes">Models/CommImp/Numeric/Solver.h</includes>
     <includedby refid="_heat_conduction_model_8cpp" local="yes">Models/SystHeats/HeatConductionModel/HeatConductionModel.cpp</includedby>
     <incdepgraph>
-      <node id="24">
+      <node id="22">
         <label>Boundary.h</label>
         <link refid="_boundary_8h_source"/>
         <childnode refid="8" relation="include">
@@ -19,21 +19,27 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
       </node>
-      <node id="20">
-        <label>Field.h</label>
+      <node id="19">
+        <label>Models/CommImp/Numeric/Field.h</label>
         <link refid="_field_8h_source"/>
         <childnode refid="14" relation="include">
         </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="30">
+      <node id="27">
         <label>Matrix.h</label>
         <link refid="_matrix_8h_source"/>
-        <childnode refid="31" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
@@ -44,58 +50,38 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="25">
         <label>Operator.h</label>
         <link refid="_operator_8h_source"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
         <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="19">
-        <label>Models/CommImp/Numeric/ScalarField.h</label>
-        <link refid="_scalar_field_8h_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
+      <node id="21">
         <label>Models/CommImp/Numeric/Solver.h</label>
         <link refid="_solver_8h_source"/>
+        <childnode refid="22" relation="include">
+        </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>Source.h</label>
-        <link refid="_source_8h_source"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="15">
@@ -106,16 +92,6 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="29">
-        <label>TensorField.h</label>
-        <link refid="_tensor_field_8h_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
       <node id="13">
         <label>Models/CommImp/Numeric/Vector.h</label>
         <link refid="_vector_8h_source"/>
@@ -124,16 +100,6 @@
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>VectorField.h</label>
-        <link refid="_vector_field_8h_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -183,7 +149,7 @@
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -201,16 +167,19 @@
       <node id="14">
         <label>Models/Utils/CommMacros.h</label>
       </node>
-      <node id="27">
+      <node id="26">
         <label>Models/Utils/Exception.h</label>
       </node>
       <node id="16">
         <label>Models/Utils/MultiIndexMapper.h</label>
       </node>
-      <node id="31">
+      <node id="24">
+        <label>Source.h</label>
+      </node>
+      <node id="28">
         <label>ThirdPart/Eigen/Sparse</label>
       </node>
-      <node id="21">
+      <node id="20">
         <label>algorithm</label>
       </node>
       <node id="10">
@@ -222,22 +191,19 @@
       <node id="18">
         <label>memory</label>
       </node>
-      <node id="34">
+      <node id="23">
         <label>optional</label>
       </node>
       <node id="17">
         <label>string</label>
       </node>
-      <node id="33">
+      <node id="30">
         <label>tuple</label>
-      </node>
-      <node id="22">
-        <label>type_traits</label>
       </node>
       <node id="11">
         <label>unordered_map</label>
       </node>
-      <node id="32">
+      <node id="29">
         <label>variant</label>
       </node>
       <node id="9">
@@ -258,7 +224,7 @@
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/CommImp/Output.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/CommImp/Input.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/CommImp/Spatial/Grid.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/CommImp/Numeric/ScalarField.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/CommImp/Numeric/Field.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/CommImp/Numeric/Solver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
@@ -267,7 +233,7 @@
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">SystHeats</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">CommImp::LinkableComponent;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">CommImp::Numeric::ScalarFieldFp;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">CommImp::Numeric::ScalarField;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">CommImp::Numeric::Solver;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">CommImp::Spatial::Grid;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">CommImp::Spatial::Coordinate;</highlight></codeline>
@@ -279,9 +245,9 @@
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>mTaskFile;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>mOutputDir;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Grid&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mGrid;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;ScalarFieldFp&gt;<sp/>mTempValues;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Solver&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mSolver;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Grid&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mGrid;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;ScalarField&lt;real&gt;&gt;<sp/>mTempValues;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Solver&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mSolver;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>real<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mT0;</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>mT0file;</highlight></codeline>

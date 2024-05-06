@@ -16,7 +16,7 @@ _Abstract operator class._ [More...](#detailed-description)
 
 
 
-Inherited by the following classes: [OpenOasis::CommImp::Numeric::Laplacian](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian.md)
+Inherited by the following classes: [OpenOasis::CommImp::Numeric::FVM::Laplacian](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian.md)
 
 
 

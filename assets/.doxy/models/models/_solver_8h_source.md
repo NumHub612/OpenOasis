@@ -21,16 +21,6 @@ namespace OpenOasis::CommImp::Numeric
 {
 using Utils::real;
 
-enum class SolverStatus
-{
-    Created,
-    Initialized,
-    Parsed,
-    Discretized,
-    Updated,
-    Solved,
-    Failed
-};
 
 class Solver
 {
@@ -90,22 +80,7 @@ public:
     // Equation parsing and discretizing.
     //
 
-    virtual void ParseTimeDerivativeTerm()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void ParseConvectionTerm()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void ParseDiffusionTerm()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void ParseSourceTerm()
+    virtual void DiscretizeEquation()
     {
         throw std::runtime_error("Not implemented.");
     }

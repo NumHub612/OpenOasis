@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian" kind="class" language="C++" prot="public">
+    <compoundname>OpenOasis::CommImp::Numeric::FVM::Laplacian</compoundname>
+    <basecompoundref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator" prot="public" virt="non-virtual">OpenOasis::CommImp::Numeric::Operator</basecompoundref>
+    <includes refid="_laplacian_operator_8h" local="no">LaplacianOperator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1ad96ab72e14a3f89573825bafdb5f7742" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Grid&gt; OpenOasis::CommImp::Numeric::FVM::Laplacian::mGrid</definition>
+        <argsstring></argsstring>
+        <name>mGrid</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::Laplacian::mGrid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/LaplacianOperator.h" line="28" column="21" bodyfile="Models/CommImp/Numeric/FVM/LaplacianOperator.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1a11166cfef8daeb9f9d0467d4f7f318e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual OpenOasis::CommImp::Numeric::FVM::Laplacian::~Laplacian</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Laplacian</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::Laplacian::~Laplacian</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/LaplacianOperator.h" line="31" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1af2fedd34959854a8b05954ea22ce1775" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OpenOasis::CommImp::Numeric::FVM::Laplacian::Laplacian</definition>
+        <argsstring>(const std::shared_ptr&lt; Grid &gt; &amp;grid)</argsstring>
+        <name>Laplacian</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::Laplacian::Laplacian</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid" kindref="compound">Grid</ref> &gt; &amp;</type>
+          <declname>grid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/LaplacianOperator.h" line="33" column="5" bodyfile="Models/CommImp/Numeric/FVM/LaplacianOperator.h" bodystart="33" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1ad05a96fe540a180de59f5e92dc662bfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1ac5a04c703cdd7fc077ab7b5af313a3d0" kindref="member">LinearEqs</ref></type>
+        <definition>LinearEqs OpenOasis::CommImp::Numeric::FVM::Laplacian::Discretize</definition>
+        <argsstring>(const ScalarField&lt; real &gt; &amp;phiCellField, const ScalarField&lt; real &gt; &amp;phiFaceField) override</argsstring>
+        <name>Discretize</name>
+        <qualifiedname>OpenOasis::CommImp::Numeric::FVM::Laplacian::Discretize</qualifiedname>
+        <reimplements refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adb2a610af5eff9385b5b346ddaf14d74">Discretize</reimplements>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiCellField</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarField</ref>&lt; real &gt; &amp;</type>
+          <declname>phiFaceField</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Models/CommImp/Numeric/FVM/LaplacianOperator.h" line="41" column="15" bodyfile="Models/CommImp/Numeric/FVM/LaplacianOperator.cpp" bodystart="16" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian" kindref="compound">Laplacian</ref> operator for the divergence of the gradient of a scalar field. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>First, calculate the gradient of the scalar field. Then, calculate the divergence of the gradient. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>LaplacianOperator</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::FVM::Laplacian</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>LaplacianOperator</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator"/>
+      </node>
+      <node id="1">
+        <label>OpenOasis::CommImp::Numeric::FVM::Laplacian</label>
+        <link refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Models/CommImp/Numeric/FVM/LaplacianOperator.h" line="25" column="1" bodyfile="Models/CommImp/Numeric/FVM/LaplacianOperator.h" bodystart="26" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1ad05a96fe540a180de59f5e92dc662bfe" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>Discretize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a54e4c1080538b30a6befe27e9fa7fba8" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Operator::"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>Discretize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1aa233a3df86816b489e42d704e7067357" prot="public" virt="virtual" ambiguityscope="OpenOasis::CommImp::Numeric::Operator::"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>Discretize</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1af2fedd34959854a8b05954ea22ce1775" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>Laplacian</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ac83a04ac747704e8069cd6553fb82d37" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>mboundaries</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1af156a0f2477366dfd5f3465d9a9a3f06" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>mCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1ad96ab72e14a3f89573825bafdb5f7742" prot="private" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>mGrid</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a6acee42b5225a3574315d971413cd6cc" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>mScalarCoeffs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1adde182d73491e15d60f895610952515f" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>mTensorCoeffs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a178b5b06d4f47ca10d97b09f8bdc4ad0" prot="protected" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>mVectorCoeffs</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1afef2e593e89e95899bc84d76b97ea2a1" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>SetBoundaryCondition</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a9209a2cd6a101301c02f18ae09eb5915" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1ae8c32fc86d3edddf38e8c7ffb688bcc9" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0f9e8e15c52ace2fc0392569a90a2d4f" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a127681f5b8a9045276d3d29ec8947552" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>SetCoefficient</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian_1a11166cfef8daeb9f9d0467d4f7f318e0" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>~Laplacian</name></member>
+      <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator_1a0994a06bd735c84e02ea58ff5a8079ab" prot="public" virt="virtual"><scope>OpenOasis::CommImp::Numeric::FVM::Laplacian</scope><name>~Operator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

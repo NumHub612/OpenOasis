@@ -124,7 +124,7 @@ std::unordered_map<Index, Utils::real, HashFunc, EqualFunc> OpenOasis::CommImp::
 ### function At 
 
 ```C++
-Utils::real OpenOasis::CommImp::Numeric::DoubleSparseMatrix::At (
+inline Utils::real OpenOasis::CommImp::Numeric::DoubleSparseMatrix::At (
     int row,
     int column
 ) 
@@ -138,7 +138,7 @@ Utils::real OpenOasis::CommImp::Numeric::DoubleSparseMatrix::At (
 ### function DoubleSparseMatrix 
 
 ```C++
-OpenOasis::CommImp::Numeric::DoubleSparseMatrix::DoubleSparseMatrix (
+inline OpenOasis::CommImp::Numeric::DoubleSparseMatrix::DoubleSparseMatrix (
     int rowCount,
     int columnCount
 ) 
@@ -152,7 +152,7 @@ OpenOasis::CommImp::Numeric::DoubleSparseMatrix::DoubleSparseMatrix (
 ### function GetColumnCount 
 
 ```C++
-int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetColumnCount () const
+inline int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetColumnCount () const
 ```
 
 
@@ -163,7 +163,7 @@ int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetColumnCount () const
 ### function GetRowCount 
 
 ```C++
-int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetRowCount () const
+inline int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetRowCount () const
 ```
 
 
@@ -174,7 +174,7 @@ int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetRowCount () const
 ### function IsCellEmpty 
 
 ```C++
-bool OpenOasis::CommImp::Numeric::DoubleSparseMatrix::IsCellEmpty (
+inline bool OpenOasis::CommImp::Numeric::DoubleSparseMatrix::IsCellEmpty (
     int row,
     int column
 ) 
@@ -188,7 +188,7 @@ bool OpenOasis::CommImp::Numeric::DoubleSparseMatrix::IsCellEmpty (
 ### function Product [1/2]
 
 ```C++
-std::vector< Utils::real > OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Product (
+inline std::vector< Utils::real > OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Product (
     const std::vector< Utils::real > & vector2
 ) 
 ```
@@ -201,7 +201,7 @@ std::vector< Utils::real > OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Prod
 ### function Product [2/2]
 
 ```C++
-void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Product (
+inline void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Product (
     std::vector< Utils::real > & res,
     const std::vector< Utils::real > & vector2
 ) 
@@ -215,7 +215,7 @@ void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Product (
 ### function SetColumnCount 
 
 ```C++
-void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetColumnCount (
+inline void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetColumnCount (
     int value
 ) 
 ```
@@ -228,7 +228,7 @@ void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetColumnCount (
 ### function SetRowCount 
 
 ```C++
-void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetRowCount (
+inline void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetRowCount (
     int value
 ) 
 ```
@@ -241,7 +241,7 @@ void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetRowCount (
 ### function SetValue 
 
 ```C++
-void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetValue (
+inline void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetValue (
     int row,
     int column,
     Utils::real value
@@ -256,7 +256,7 @@ void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetValue (
 ### function operator() 
 
 ```C++
-Utils::real OpenOasis::CommImp::Numeric::DoubleSparseMatrix::operator() (
+inline Utils::real OpenOasis::CommImp::Numeric::DoubleSparseMatrix::operator() (
     int row,
     int column
 ) 

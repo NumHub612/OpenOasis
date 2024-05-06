@@ -74,7 +74,7 @@ Inherits the following classes: [OpenOasis::CommImp::Numeric::Solver](class_open
 | ---: | :--- |
 |   | [**FvmSolver**](#function-fvmsolver) (const std::shared\_ptr&lt; [**Grid**](class_open_oasis_1_1_comm_imp_1_1_spatial_1_1_grid.md) &gt; & grid) <br> |
 | virtual std::optional&lt; [**ScalarFieldFp**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field.md) &gt; | [**GetScalarSolutions**](#function-getscalarsolutions) (const std::string & var) override const<br> |
-| virtual void | [**ParseDiffusionTerm**](#function-parsediffusionterm) () override<br> |
+|  void | [**ParseDiffusionTerm**](#function-parsediffusionterm) () override<br> |
 | virtual void | [**SetBoundary**](#function-setboundary) (int faceIndex, const std::shared\_ptr&lt; [**Boundary**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary.md) &gt; & bound) override<br> |
 | virtual void | [**SetCoefficient**](#function-setcoefficient) (const std::string & var, const std::variant&lt; real, [**Vector**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector.md)&lt; real &gt;, [**Tensor**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor.md)&lt; real &gt; &gt; & coeff) override<br> |
 | virtual void | [**SetInitialValue**](#function-setinitialvalue) (const std::string & var, const std::variant&lt; real, [**Vector**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector.md)&lt; real &gt;, [**Tensor**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor.md)&lt; real &gt; &gt; & value) override<br> |
@@ -92,14 +92,11 @@ See [OpenOasis::CommImp::Numeric::Solver](class_open_oasis_1_1_comm_imp_1_1_nume
 | virtual void | [**AfterSolve**](#function-aftersolve) () <br> |
 | virtual void | [**BeforeScheme**](#function-beforescheme) () <br> |
 | virtual void | [**BeforeSolve**](#function-beforesolve) () <br> |
+| virtual void | [**DiscretizeEquation**](#function-discretizeequation) () <br> |
 |  std::optional&lt; [**LinearEqs**](namespace_open_oasis_1_1_comm_imp_1_1_numeric.md#typedef-lineareqs) &gt; | [**GetLinearEqs**](#function-getlineareqs) () const<br> |
 | virtual std::optional&lt; [**ScalarFieldFp**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field.md) &gt; | [**GetScalarSolutions**](#function-getscalarsolutions) (const std::string & var) const<br> |
 | virtual std::optional&lt; [**TensorFieldFp**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor_field.md) &gt; | [**GetTensorSolutions**](#function-gettensorsolutions) (const std::string & var) const<br> |
 | virtual std::optional&lt; [**VectorFieldFp**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field.md) &gt; | [**GetVectorSolutions**](#function-getvectorsolutions) (const std::string & var) const<br> |
-| virtual void | [**ParseConvectionTerm**](#function-parseconvectionterm) () <br> |
-| virtual void | [**ParseDiffusionTerm**](#function-parsediffusionterm) () <br> |
-| virtual void | [**ParseSourceTerm**](#function-parsesourceterm) () <br> |
-| virtual void | [**ParseTimeDerivativeTerm**](#function-parsetimederivativeterm) () <br> |
 | virtual void | [**Scheme**](#function-scheme) () <br> |
 | virtual void | [**SetBoundary**](#function-setboundary) (int faceIndex, const std::shared\_ptr&lt; [**Boundary**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_boundary.md) &gt; & bound) <br> |
 | virtual void | [**SetCoefficient**](#function-setcoefficient-14) (const std::string & var, const std::variant&lt; real, [**Vector**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector.md)&lt; real &gt;, [**Tensor**](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor.md)&lt; real &gt; &gt; & coeff) <br> |
@@ -201,12 +198,10 @@ Implements [*OpenOasis::CommImp::Numeric::Solver::GetScalarSolutions*](class_ope
 ### function ParseDiffusionTerm 
 
 ```C++
-virtual void OpenOasis::CommImp::Numeric::FVM::FvmSolver::ParseDiffusionTerm () override
+void OpenOasis::CommImp::Numeric::FVM::FvmSolver::ParseDiffusionTerm () override
 ```
 
 
-
-Implements [*OpenOasis::CommImp::Numeric::Solver::ParseDiffusionTerm*](class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver.md#function-parsediffusionterm)
 
 
 

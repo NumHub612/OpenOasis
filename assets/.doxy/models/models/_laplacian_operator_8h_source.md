@@ -2,7 +2,7 @@
 
 # File LaplacianOperator.h
 
-[**File List**](files.md) **>** [**CommImp**](dir_6202b98a8704f42b1ea358646461643f.md) **>** [**Numeric**](dir_a0ece07902893bffce0f747cc8ee06c8.md) **>** [**LaplacianOperator.h**](_laplacian_operator_8h.md)
+[**File List**](files.md) **>** [**CommImp**](dir_6202b98a8704f42b1ea358646461643f.md) **>** [**Numeric**](dir_a0ece07902893bffce0f747cc8ee06c8.md) **>** [**FVM**](dir_ce9212301f8d93e5246dd812df0f37fe.md) **>** [**LaplacianOperator.h**](_laplacian_operator_8h.md)
 
 [Go to the documentation of this file](_laplacian_operator_8h.md)
 
@@ -11,17 +11,17 @@
 
 #pragma once
 #include "Models/CommImp/Spatial/Grid.h"
-#include "Operator.h"
+#include "Models/CommImp/Numeric/Operator.h"
 #include <functional>
 #include <memory>
 
 
-namespace OpenOasis::CommImp::Numeric
+namespace OpenOasis::CommImp::Numeric::FVM
 {
 using Spatial::Grid;
 using Utils::real;
 
-class Laplacian : public Operator
+class Laplacian : public LaplacianOperator
 {
 private:
     std::shared_ptr<Grid> mGrid;
@@ -43,7 +43,7 @@ public:
 };
 
 
-}  // namespace OpenOasis::CommImp::Numeric
+}  // namespace OpenOasis::CommImp::Numeric::FVM
 ```
 
 

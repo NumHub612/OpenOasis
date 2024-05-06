@@ -22,7 +22,7 @@
 * `#include "Models/CommImp/IO/MeshLoader.h"`
 * `#include "Models/CommImp/Spatial/Grid2D.h"`
 * `#include "Models/CommImp/Numeric/FVM/FvmSolver.h"`
-* `#include "Models/CommImp/Numeric/DirichletBoundary.h"`
+* `#include "Models/CommImp/Numeric/FVM/DirichletBoundary.h"`
 * `#include "Models/Utils/YamlHandler.h"`
 * `#include "Models/Utils/Exception.h"`
 * `#include "Models/Utils/StringHelper.h"`

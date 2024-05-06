@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -109,7 +109,7 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/IO/MeshLoader.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Spatial/Grid2D.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Numeric/FVM/FvmSolver.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Numeric/DirichletBoundary.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/CommImp/Numeric/FVM/DirichletBoundary.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/YamlHandler.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/Exception.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Models/Utils/StringHelper.h&quot;</span>
@@ -292,7 +292,7 @@
 
 <span class="w">    </span><span class="c1">// Initialize temperature field.</span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">size</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetNumCells</span><span class="p">();</span>
-<span class="w">    </span><span class="n">mTempValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ScalarFieldFp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">mT0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mTempValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ScalarField</span><span class="o">&lt;</span><span class="n">real</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">mT0</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mT0file</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
@@ -444,7 +444,7 @@
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">real</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FP</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
 
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">DirichletBoundary</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">FVM</span><span class="o">::</span><span class="n">DirichletBoundary</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
 
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fIdx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mGrid</span><span class="o">-&gt;</span><span class="n">GetPatchFaceIndexes</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">first</span><span class="p">))</span>
 <span class="w">        </span><span class="p">{</span>
@@ -645,6 +645,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

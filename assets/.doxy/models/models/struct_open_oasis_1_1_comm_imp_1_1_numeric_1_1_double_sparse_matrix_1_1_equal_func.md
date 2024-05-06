@@ -88,7 +88,7 @@
 ### function operator() 
 
 ```C++
-bool OpenOasis::CommImp::Numeric::DoubleSparseMatrix::EqualFunc::operator() (
+inline bool OpenOasis::CommImp::Numeric::DoubleSparseMatrix::EqualFunc::operator() (
     const Index & lhs,
     const Index & rhs
 ) const

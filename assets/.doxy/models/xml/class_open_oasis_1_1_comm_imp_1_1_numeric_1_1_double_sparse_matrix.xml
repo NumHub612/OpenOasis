@@ -20,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="370" column="9" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="370" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="367" column="9" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="367" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a0a524f4056d56b246111eef7a89d0b25" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="371" column="9" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="371" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="368" column="9" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="368" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -51,11 +51,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="394" column="24" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="394" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="404" column="24" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="404" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a02f0cf323160d97067b347e9c5c25d50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a02f0cf323160d97067b347e9c5c25d50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>OpenOasis::CommImp::Numeric::DoubleSparseMatrix::DoubleSparseMatrix</definition>
         <argsstring>(int rowCount, int columnCount)</argsstring>
@@ -75,9 +75,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="397" column="5" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="33" bodyend="37"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="407" column="5" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="407" bodyend="411"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1acf776532db83d4b2cecd6e62261b8d95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1acf776532db83d4b2cecd6e62261b8d95" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
         <definition>int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetRowCount</definition>
         <argsstring>() const</argsstring>
@@ -89,9 +89,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="399" column="10" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="39" bodyend="42"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="413" column="9" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="413" bodyend="416"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1af1b25bceeb7540650a1858c2507cbf79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1af1b25bceeb7540650a1858c2507cbf79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetRowCount</definition>
         <argsstring>(int value)</argsstring>
@@ -107,9 +107,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="400" column="10" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="44" bodyend="47"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="417" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="417" bodyend="420"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a73b9ed13b2c32985e83a4972a8ac09cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a73b9ed13b2c32985e83a4972a8ac09cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
         <definition>int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::GetColumnCount</definition>
         <argsstring>() const</argsstring>
@@ -121,9 +121,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="401" column="10" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="49" bodyend="52"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="421" column="9" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="421" bodyend="424"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a7dd64e8685bc67eb3eb76a1a1a477136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a7dd64e8685bc67eb3eb76a1a1a477136" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetColumnCount</definition>
         <argsstring>(int value)</argsstring>
@@ -139,9 +139,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="402" column="10" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="54" bodyend="57"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="425" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="425" bodyend="428"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a65fdd76be050a9c7a874cd49ab1e35ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a65fdd76be050a9c7a874cd49ab1e35ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; Utils::real &gt;</type>
         <definition>std::vector&lt; Utils::real &gt; OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Product</definition>
         <argsstring>(const std::vector&lt; Utils::real &gt; &amp;vector2)</argsstring>
@@ -157,9 +157,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="404" column="17"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="430" column="17" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="430" bodyend="435"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a257ef230457bc9af058b808325844837" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a257ef230457bc9af058b808325844837" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Product</definition>
         <argsstring>(std::vector&lt; Utils::real &gt; &amp;res, const std::vector&lt; Utils::real &gt; &amp;vector2)</argsstring>
@@ -179,9 +179,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="407" column="5"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="437" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="437" bodyend="446"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1ae5285c80b351aefbd8d66d648809fc68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1ae5285c80b351aefbd8d66d648809fc68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool OpenOasis::CommImp::Numeric::DoubleSparseMatrix::IsCellEmpty</definition>
         <argsstring>(int row, int column)</argsstring>
@@ -201,9 +201,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="413" column="10" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="59" bodyend="63"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="452" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="452" bodyend="456"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a3139c8c04a6ac3007c2fc1233a52bd8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a3139c8c04a6ac3007c2fc1233a52bd8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Utils::real</type>
         <definition>Utils::real OpenOasis::CommImp::Numeric::DoubleSparseMatrix::operator()</definition>
         <argsstring>(int row, int column)</argsstring>
@@ -223,9 +223,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="415" column="17" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="65" bodyend="74"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="458" column="17" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="458" bodyend="467"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a050caf4a470f3e6d5e4afc821658b3e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a050caf4a470f3e6d5e4afc821658b3e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Utils::real</type>
         <definition>Utils::real OpenOasis::CommImp::Numeric::DoubleSparseMatrix::At</definition>
         <argsstring>(int row, int column)</argsstring>
@@ -245,9 +245,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="417" column="17" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="76" bodyend="85"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="469" column="17" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="469" bodyend="478"/>
       </memberdef>
-      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a54b4b6d05a4445194f17d9de8cef3d93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a54b4b6d05a4445194f17d9de8cef3d93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void OpenOasis::CommImp::Numeric::DoubleSparseMatrix::SetValue</definition>
         <argsstring>(int row, int column, Utils::real value)</argsstring>
@@ -271,7 +271,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Matrix.h" line="419" column="10" bodyfile="Models/CommImp/Numeric/Matrix.cpp" bodystart="87" bodyend="91"/>
+        <location file="Models/CommImp/Numeric/Matrix.h" line="480" column="10" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="480" bodyend="484"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -279,7 +279,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Models/CommImp/Numeric/Matrix.h" line="367" column="1" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="368" bodyend="420"/>
+    <location file="Models/CommImp/Numeric/Matrix.h" line="364" column="1" bodyfile="Models/CommImp/Numeric/Matrix.h" bodystart="365" bodyend="485"/>
     <listofallmembers>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a050caf4a470f3e6d5e4afc821658b3e2" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DoubleSparseMatrix</scope><name>At</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_double_sparse_matrix_1a02f0cf323160d97067b347e9c5c25d50" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::DoubleSparseMatrix</scope><name>DoubleSparseMatrix</name></member>

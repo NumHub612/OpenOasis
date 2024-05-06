@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -176,7 +176,9 @@
 <p>The adaptedOutputId used must be one of the <code>IIdentifiable</code> instances returned by the <code>GetAvailableAdaptedOutputIds()</code> method. The returned <code>IAdaptedOutput</code> will already be registered with this adaptee.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>adaptedOutputId</code> The identifier of the '<a href="../class_open_oasis_1_1_i_adapted_output/"><strong>IAdaptedOutput</strong></a><code>to create. @param adaptee</code><a href="../class_open_oasis_1_1_i_output/"><strong>IOutput</strong></a><code>to adapt. @param target</code><a href="../class_open_oasis_1_1_i_input/"><strong>IInput</strong></a><code>to adapt the adaptee to, can be</code>null`.</li>
+<li><code>adaptedOutputId</code> The identifier of the <code>IAdaptedOutput</code> to create. </li>
+<li><code>adaptee</code> <code>IOutput</code> to adapt. </li>
+<li><code>target</code> <code>IInput</code> to adapt the adaptee to, can be <code>null</code>.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <p>The <code>IAdaptedOutput</code> item adaptes the adaptee to fit the target item. </p>
@@ -228,6 +230,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

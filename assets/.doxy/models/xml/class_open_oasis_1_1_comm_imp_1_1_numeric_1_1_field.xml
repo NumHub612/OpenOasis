@@ -13,7 +13,7 @@
     </templateparamlist>
       <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ad3ef81d3f17fd00c43c8cb5b20d6fa4c" prot="protected" static="no" mutable="no">
-        <type>FieldDomain</type>
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a42c9a2d269b37689edfcd5e61424f0a1" kindref="member">FieldDomain</ref></type>
         <definition>FieldDomain OpenOasis::CommImp::Numeric::Field&lt; T &gt;::mDomain</definition>
         <argsstring></argsstring>
         <name>mDomain</name>
@@ -25,10 +25,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="40" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="40" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="46" column="20" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a720f78f7c2ddc7d4dac5a81225a9f39a" prot="protected" static="no" mutable="no">
-        <type>FieldType</type>
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a541d82253703c787feb6b20f3c8917e8" kindref="member">FieldType</ref></type>
         <definition>FieldType OpenOasis::CommImp::Numeric::Field&lt; T &gt;::mType</definition>
         <argsstring></argsstring>
         <name>mType</name>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="41" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="41" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="47" column="20" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac8f9badcc6d94649bd7dad93e050e84e" prot="protected" static="no" mutable="no">
         <type>std::vector&lt; T &gt;</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="43" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="43" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="48" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1afb172be2139f73ba601dd0c7525dcbcd" prot="protected" static="no" mutable="no">
         <type>T</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="45" column="7" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="45" bodyend="-1"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="49" column="20" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -84,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="48" column="13"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="52" column="13"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a7ba350e1c5074a5fb67b80c708c9db41" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="50" column="5"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="54" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a27f369b21bf9aaf11b8d3d59b502d62c" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="51" column="5" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="51" bodyend="51"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="55" column="5" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="55" bodyend="55"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -151,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="60" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="60" bodyend="63"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="64" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="64" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a96c84634074f9c9d34e458d4aa1527da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="67" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="67" bodyend="71"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="71" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="71" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a20148bb3cbc2176bd001c564376b0535" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="74" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="74" bodyend="77"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="78" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="78" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a90fde564762bb3dc7f07f3d422d06386" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="80" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="80" bodyend="83"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="84" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="84" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ae3e09707942f5e8701556a8f2d1dc28f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -235,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="91" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="91" bodyend="97"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="95" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="95" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a200572db7b652cd63486a619ab11abb5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::size_t</type>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="100" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="100" bodyend="103"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="104" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="104" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a1ef6b14a4bc97a4828e19cb0cdef046b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -273,7 +273,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="106" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="106" bodyend="109"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="110" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="110" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a2d45511475924bb9658c5177fad05124" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -323,7 +323,7 @@
 <parametername>other</parametername>
 </parameternamelist>
 <parameterdescription>
-<para><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_source" kindref="compound">Source</ref> field. </para>
+<para>Source field. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -339,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="116" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="116" bodyend="123"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="120" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="120" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a32d9e1f9c6bb908ad7f77b67e9bef7ce" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const std::vector&lt; T &gt; &amp;</type>
@@ -354,10 +354,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="126" column="23" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="126" bodyend="129"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="130" column="23" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="130" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a42aec0bfe1445c179d063ad1b28e9c67" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>FieldType</type>
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a541d82253703c787feb6b20f3c8917e8" kindref="member">FieldType</ref></type>
         <definition>FieldType OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Type</definition>
         <argsstring>() const</argsstring>
         <name>Type</name>
@@ -368,10 +368,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="131" column="15" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="131" bodyend="134"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="135" column="15" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="135" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aa6dbec4eaab23a9219273ea91353b494" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>FieldDomain</type>
+        <type><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1a42c9a2d269b37689edfcd5e61424f0a1" kindref="member">FieldDomain</ref></type>
         <definition>FieldDomain OpenOasis::CommImp::Numeric::Field&lt; T &gt;::Range</definition>
         <argsstring>() const</argsstring>
         <name>Range</name>
@@ -382,7 +382,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="136" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="136" bodyend="139"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="140" column="17" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="140" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec1ba142f9ecbb822dbdbfa33e1efd66" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const T &amp;</type>
@@ -400,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="145" column="13" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="145" bodyend="148"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="149" column="13" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="149" bodyend="152"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a9f16cc8fe089c3536ecc1045799bb87c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>T &amp;</type>
@@ -418,7 +418,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="150" column="7" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="150" bodyend="153"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="154" column="7" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="154" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a6d89d83dbe016eedde1f511d57973ba8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -436,7 +436,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="155" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="155" bodyend="158"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="159" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="159" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac32428cba5d4facc1da808754858396a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -454,7 +454,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="160" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="160" bodyend="163"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="164" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="164" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a92eb5f1dad434f5b4b0a06fac42300cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt;</type>
@@ -472,7 +472,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="165" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="165" bodyend="176"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="169" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="169" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1aec83aeca83e53d6a278cce79ee85b0f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -490,7 +490,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="178" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="178" bodyend="184"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="182" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="182" bodyend="188"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a5e447ec33ca5bd3403dcf10e3c14d3cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt;</type>
@@ -508,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="186" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="186" bodyend="197"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="190" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="190" bodyend="201"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a12741db58d23c8db9f134b343f5fdc61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -526,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="199" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="199" bodyend="205"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="203" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="203" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a4b94eec17c82fc749ad606566dac5c2d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field" kindref="compound">Field</ref>&lt; T &gt;</type>
@@ -544,7 +544,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="207" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="207" bodyend="213"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="211" column="11" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="211" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1ac2f84b381ead69f2c74469d26b0d1e01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -562,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Models/CommImp/Numeric/Field.h" line="215" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="215" bodyend="218"/>
+        <location file="Models/CommImp/Numeric/Field.h" line="219" column="10" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="219" bodyend="222"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -594,7 +594,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="Models/CommImp/Numeric/Field.h" line="37" column="1" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="38" bodyend="219"/>
+    <location file="Models/CommImp/Numeric/Field.h" line="43" column="1" bodyfile="Models/CommImp/Numeric/Field.h" bodystart="44" bodyend="223"/>
     <listofallmembers>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a20148bb3cbc2176bd001c564376b0535" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Clean</name></member>
       <member refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a90fde564762bb3dc7f07f3d422d06386" prot="public" virt="non-virtual"><scope>OpenOasis::CommImp::Numeric::Field</scope><name>Clear</name></member>

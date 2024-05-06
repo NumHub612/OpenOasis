@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -115,7 +115,7 @@
 <td style="text-align: left;"><a href="#function-getscalarsolutions"><strong>GetScalarSolutions</strong></a> (const std::string &amp; var) override const<br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual void</td>
+<td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-parsediffusionterm"><strong>ParseDiffusionTerm</strong></a> () override<br></td>
 </tr>
 <tr>
@@ -167,6 +167,10 @@
 <td style="text-align: left;"><a href="#function-beforesolve"><strong>BeforeSolve</strong></a> () <br></td>
 </tr>
 <tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="#function-discretizeequation"><strong>DiscretizeEquation</strong></a> () <br></td>
+</tr>
+<tr>
 <td style="text-align: right;">std::optional&lt; <a href="../namespace_open_oasis_1_1_comm_imp_1_1_numeric/#typedef-lineareqs"><strong>LinearEqs</strong></a> &gt;</td>
 <td style="text-align: left;"><a href="#function-getlineareqs"><strong>GetLinearEqs</strong></a> () const<br></td>
 </tr>
@@ -181,22 +185,6 @@
 <tr>
 <td style="text-align: right;">virtual std::optional&lt; <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector_field/"><strong>VectorFieldFp</strong></a> &gt;</td>
 <td style="text-align: left;"><a href="#function-getvectorsolutions"><strong>GetVectorSolutions</strong></a> (const std::string &amp; var) const<br></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-parseconvectionterm"><strong>ParseConvectionTerm</strong></a> () <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-parsediffusionterm"><strong>ParseDiffusionTerm</strong></a> () <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-parsesourceterm"><strong>ParseSourceTerm</strong></a> () <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-parsetimederivativeterm"><strong>ParseTimeDerivativeTerm</strong></a> () <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual void</td>
@@ -257,9 +245,8 @@
 </code></pre></div>
 <p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver/#function-getscalarsolutions"><em>OpenOasis::CommImp::Numeric::Solver::GetScalarSolutions</em></a></p>
 <h3 id="function-parsediffusionterm">function ParseDiffusionTerm<a class="headerlink" href="#function-parsediffusionterm" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">FvmSolver</span><span class="o">::</span><span class="n">ParseDiffusionTerm</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">FvmSolver</span><span class="o">::</span><span class="n">ParseDiffusionTerm</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div>
-<p>Implements <a href="../class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_solver/#function-parsediffusionterm"><em>OpenOasis::CommImp::Numeric::Solver::ParseDiffusionTerm</em></a></p>
 <h3 id="function-setboundary">function SetBoundary<a class="headerlink" href="#function-setboundary" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">OpenOasis</span><span class="o">::</span><span class="n">CommImp</span><span class="o">::</span><span class="n">Numeric</span><span class="o">::</span><span class="n">FVM</span><span class="o">::</span><span class="n">FvmSolver</span><span class="o">::</span><span class="n">SetBoundary</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">faceIndex</span><span class="p">,</span>
@@ -321,6 +308,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

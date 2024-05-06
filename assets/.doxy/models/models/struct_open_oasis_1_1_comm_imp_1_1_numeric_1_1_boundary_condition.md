@@ -36,9 +36,9 @@
 
 | Type | Name |
 | ---: | :--- |
-|  real | [**flux**](#variable-flux)   = = NAN<br> |
-|  std::string | [**type**](#variable-type)  <br> |
-|  real | [**value**](#variable-value)   = = NAN<br> |
+|  std::optional&lt; real &gt; | [**flux**](#variable-flux)  <br> |
+|  [**BoundaryType**](namespace_open_oasis_1_1_comm_imp_1_1_numeric.md#enum-boundarytype) | [**type**](#variable-type)  <br> |
+|  std::optional&lt; real &gt; | [**value**](#variable-value)  <br> |
 
 
 
@@ -91,7 +91,7 @@
 ### variable flux 
 
 ```C++
-real OpenOasis::CommImp::Numeric::BoundaryCondition::flux;
+std::optional<real> OpenOasis::CommImp::Numeric::BoundaryCondition::flux;
 ```
 
 
@@ -102,7 +102,7 @@ real OpenOasis::CommImp::Numeric::BoundaryCondition::flux;
 ### variable type 
 
 ```C++
-std::string OpenOasis::CommImp::Numeric::BoundaryCondition::type;
+BoundaryType OpenOasis::CommImp::Numeric::BoundaryCondition::type;
 ```
 
 
@@ -113,7 +113,7 @@ std::string OpenOasis::CommImp::Numeric::BoundaryCondition::type;
 ### variable value 
 
 ```C++
-real OpenOasis::CommImp::Numeric::BoundaryCondition::value;
+std::optional<real> OpenOasis::CommImp::Numeric::BoundaryCondition::value;
 ```
 
 

@@ -3,7 +3,7 @@
   <compounddef id="_fvm_solver_8cpp" kind="file" language="C++">
     <compoundname>FvmSolver.cpp</compoundname>
     <includes refid="_fvm_solver_8h" local="yes">FvmSolver.h</includes>
-    <includes refid="_laplacian_operator_8h" local="yes">Models/CommImp/Numeric/LaplacianOperator.h</includes>
+    <includes refid="_laplacian_operator_8h" local="yes">LaplacianOperator.h</includes>
     <includes local="yes">Models/Utils/Exception.h</includes>
     <incdepgraph>
       <node id="4">
@@ -15,13 +15,15 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>Models/CommImp/Numeric/FVM/FvmSolver.cpp</label>
         <link refid="_fvm_solver_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -31,43 +33,47 @@
         <link refid="_fvm_solver_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>Field.h</label>
-        <link refid="_field_8h_source"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
-      <node id="33">
-        <label>Models/CommImp/Numeric/LaplacianOperator.h</label>
+      <node id="29">
+        <label>LaplacianOperator.h</label>
         <link refid="_laplacian_operator_8h_source"/>
-        <childnode refid="28" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="22">
-        <label>Matrix.h</label>
-        <link refid="_matrix_8h_source"/>
-        <childnode refid="23" relation="include">
+      <node id="12">
+        <label>Field.h</label>
+        <link refid="_field_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+      </node>
+      <node id="19">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h_source"/>
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -81,29 +87,15 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>ScalarField.h</label>
-        <link refid="_scalar_field_8h_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -111,89 +103,63 @@
         <link refid="_solver_8h_source"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>Source.h</label>
-        <link refid="_source_8h_source"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="15">
         <label>Tensor.h</label>
         <link refid="_tensor_8h_source"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>TensorField.h</label>
-        <link refid="_tensor_field_8h_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="14">
         <label>Vector.h</label>
         <link refid="_vector_8h_source"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>VectorField.h</label>
-        <link refid="_vector_field_8h_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="30">
+      <node id="26">
         <label>Coordinate.h</label>
         <link refid="_coordinate_8h_source"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="28">
+      <node id="24">
         <label>Models/CommImp/Spatial/Grid.h</label>
         <link refid="_grid_8h_source"/>
-        <childnode refid="29" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="29">
+      <node id="25">
         <label>MeshStructs.h</label>
         <link refid="_mesh_structs_8h_source"/>
-        <childnode refid="30" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -201,52 +167,52 @@
       <node id="5">
         <label>Models/Utils/CommConstants.h</label>
       </node>
-      <node id="14">
+      <node id="13">
         <label>Models/Utils/CommMacros.h</label>
       </node>
       <node id="11">
         <label>Models/Utils/Exception.h</label>
       </node>
-      <node id="31">
+      <node id="27">
         <label>Models/Utils/MultiIndexMapper.h</label>
       </node>
-      <node id="23">
-        <label>ThirdPart/Eigen/Sparse</label>
-      </node>
-      <node id="15">
-        <label>algorithm</label>
+      <node id="9">
+        <label>Source.h</label>
       </node>
       <node id="20">
+        <label>ThirdPart/Eigen/Sparse</label>
+      </node>
+      <node id="18">
+        <label>algorithm</label>
+      </node>
+      <node id="16">
         <label>array</label>
       </node>
       <node id="7">
         <label>cmath</label>
       </node>
-      <node id="34">
+      <node id="30">
         <label>functional</label>
       </node>
-      <node id="32">
+      <node id="28">
         <label>memory</label>
       </node>
-      <node id="27">
+      <node id="8">
         <label>optional</label>
       </node>
       <node id="6">
         <label>string</label>
       </node>
-      <node id="26">
+      <node id="23">
         <label>tuple</label>
       </node>
-      <node id="16">
-        <label>type_traits</label>
-      </node>
-      <node id="24">
+      <node id="21">
         <label>unordered_map</label>
       </node>
-      <node id="25">
+      <node id="22">
         <label>variant</label>
       </node>
-      <node id="9">
+      <node id="17">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -261,11 +227,11 @@
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;FvmSolver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/CommImp/Numeric/LaplacianOperator.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;LaplacianOperator.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Models/Utils/Exception.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11" refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m" kindref="compound">OpenOasis::CommImp::Numeric::FVM</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m" kindref="compound">OpenOasis::CommImp::Numeric::FVM</ref></highlight></codeline>
 <codeline lineno="12"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Utils;</highlight></codeline>
@@ -281,7 +247,7 @@
 <codeline lineno="24"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FvmSolver::SetInitialValue(</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;var,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>variant&lt;real,<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector&lt;real&gt;</ref>,<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor&lt;real&gt;</ref>&gt;<sp/>&amp;value)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;var,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>variant&lt;real,<sp/>Vector&lt;real&gt;,<sp/>Tensor&lt;real&gt;&gt;<sp/>&amp;value)</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(var<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;temp&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -292,7 +258,7 @@
 <codeline lineno="35"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FvmSolver::SetCoefficient(</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;var,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>variant&lt;real,<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector&lt;real&gt;</ref>,<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor&lt;real&gt;</ref>&gt;<sp/>&amp;coeff)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;var,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>variant&lt;real,<sp/>Vector&lt;real&gt;,<sp/>Tensor&lt;real&gt;&gt;<sp/>&amp;coeff)</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(var<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;temp&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -304,16 +270,16 @@
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FvmSolver::ParseDiffusionTerm()</highlight></codeline>
 <codeline lineno="49"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_laplacian" kindref="compound">Laplacian</ref><sp/>lap(mGrid);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>Laplacian<sp/>lap(mGrid);</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>lap.SetCoefficient(variant&lt;real,<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_vector" kindref="compound">Vector&lt;real&gt;</ref>,<sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_tensor" kindref="compound">Tensor&lt;real&gt;</ref>&gt;(mCoeffHeat));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>lap.SetCoefficient(variant&lt;real,<sp/>Vector&lt;real&gt;,<sp/>Tensor&lt;real&gt;&gt;(mCoeffHeat));</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;b<sp/>:<sp/>mBoundaries)</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lap.SetBoundaryCondition(b.first,<sp/>b.second-&gt;GetBoundaryCondition());</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_scalar_field" kindref="compound">ScalarField</ref><sp/>tempField(mGrid-&gt;GetNumCells(),<sp/>mInitValue);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>ScalarField<sp/>tempField(mGrid-&gt;GetNumCells(),<sp/>mInitValue);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;eqs<sp/>=<sp/>lap.Discretize(tempField,<sp/>{});</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
@@ -341,7 +307,7 @@
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>runtime_error(</highlight><highlight class="stringliteral">&quot;Solve<sp/>failed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>mTemps.<ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_field_1a96c84634074f9c9d34e458d4aa1527da" kindref="member">Resize</ref>(mGrid-&gt;GetNumCells());</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>mTemps.Resize(mGrid-&gt;GetNumCells());</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>x.cols()<sp/>*<sp/>x.rows();<sp/>++i)</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mTemps(i)<sp/>=<sp/>x[i];</highlight></codeline>

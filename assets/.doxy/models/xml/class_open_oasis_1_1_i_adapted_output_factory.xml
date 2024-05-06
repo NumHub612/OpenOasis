@@ -77,7 +77,23 @@
 <parametername>adaptedOutputId</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The identifier of the &apos;<ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref><computeroutput>to create. @param adaptee</computeroutput><ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref><computeroutput>to adapt. @param target</computeroutput><ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref><computeroutput>to adapt the adaptee to, can be</computeroutput>null`.</para>
+<para>The identifier of the <computeroutput><ref refid="class_open_oasis_1_1_i_adapted_output" kindref="compound">IAdaptedOutput</ref></computeroutput> to create. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>adaptee</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput><ref refid="class_open_oasis_1_1_i_output" kindref="compound">IOutput</ref></computeroutput> to adapt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput><ref refid="class_open_oasis_1_1_i_input" kindref="compound">IInput</ref></computeroutput> to adapt the adaptee to, can be <computeroutput>null</computeroutput>.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>

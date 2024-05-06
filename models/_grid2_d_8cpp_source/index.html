@@ -42,7 +42,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../..">intro</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
     <ul>
@@ -54,7 +54,7 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">iAgents</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../iAgents/">Spark</a>
                 </li>
@@ -68,7 +68,7 @@
                   </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">Devs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../OpenOasisDevTips/">DevTips</a>
                 </li>
               </ul>
       </div>
@@ -120,6 +120,11 @@
 
 <span class="n">Grid2D</span><span class="o">::</span><span class="n">Grid2D</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Grid</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">grid</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Grid</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
 <span class="p">{}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">Grid2D</span><span class="o">::</span><span class="n">Version</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mVersion</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">Grid2D</span><span class="o">::</span><span class="n">Type</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 <span class="p">{</span>
@@ -224,6 +229,9 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {

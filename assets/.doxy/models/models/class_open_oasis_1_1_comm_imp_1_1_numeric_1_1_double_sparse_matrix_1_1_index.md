@@ -119,7 +119,7 @@ int OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Index::mRow;
 ### function Index [1/2]
 
 ```C++
-OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Index::Index (
+inline OpenOasis::CommImp::Numeric::DoubleSparseMatrix::Index::Index (
     int row,
     int column
 ) 

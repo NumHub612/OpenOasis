@@ -2,17 +2,31 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
   <compounddef id="namespace_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m" kind="namespace" language="C++">
     <compoundname>OpenOasis::CommImp::Numeric::FVM</compoundname>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_dirichlet_boundary" prot="public">OpenOasis::CommImp::Numeric::FVM::DirichletBoundary</innerclass>
     <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_fvm_solver" prot="public">OpenOasis::CommImp::Numeric::FVM::FvmSolver</innerclass>
+    <innerclass refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian" prot="public">OpenOasis::CommImp::Numeric::FVM::Laplacian</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
+<para><hruler/>
+ @File : DirichletBoundary.cpp @Brief : Dirichlet boundary.</para>
+<para><hruler/>
+ Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_dirichlet_boundary_8h_source" kindref="compound">DirichletBoundary.h</ref> @License : Apache-2.0</para>
+<para>@Desc : Dirichlet boundary.</para>
 <para><hruler/>
  @File : FvmSolver.cpp @Brief : None</para>
 <para><hruler/>
  Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
 <para>@File : <ref refid="_fvm_solver_8h_source" kindref="compound">FvmSolver.h</ref> @License : Apache-2.0</para>
-<para>@Desc : Discrete scheme based on finite volume method. </para>
+<para>@Desc : Discrete scheme based on finite volume method.</para>
+<para><hruler/>
+ @File : LaplacianOperator.cpp @Brief : <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian" kindref="compound">Laplacian</ref> <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator" kindref="compound">Operator</ref>.</para>
+<para><hruler/>
+ Copyright (C) 2023, The <ref refid="namespace_open_oasis" kindref="compound">OpenOasis</ref> Contributors. Join us in the Oasis!</para>
+<para>@File : <ref refid="_laplacian_operator_8h_source" kindref="compound">LaplacianOperator.h</ref> @License : Apache-2.0</para>
+<para>@Desc : <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_f_v_m_1_1_laplacian" kindref="compound">Laplacian</ref> <ref refid="class_open_oasis_1_1_comm_imp_1_1_numeric_1_1_operator" kindref="compound">Operator</ref>. </para>
     </detaileddescription>
-    <location file="Models/CommImp/Numeric/FVM/FvmSolver.cpp" line="11" column="1"/>
+    <location file="Models/CommImp/Numeric/FVM/DirichletBoundary.cpp" line="9" column="1"/>
   </compounddef>
 </doxygen>
