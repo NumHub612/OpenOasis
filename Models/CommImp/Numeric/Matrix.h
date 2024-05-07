@@ -184,12 +184,30 @@ public:
         return diags;
     }
 
-    Eigen::SparseMatrix<T> &Data()
+    /// @brief Returns transpose matrix.
+    Matrix Transpose() const
+    {
+        return mData.transpose();
+    }
+
+    /// @brief Returns inverse matrix.
+    Matrix Invert() const
+    {
+        return mData.inverse();
+    }
+
+    /// @brief Returns adjoint matrix.
+    Matrix Adjoint() const
+    {
+        return mData.adjoint();
+    }
+
+    Eigen::SparseMatrix<T> &Raw()
     {
         return mData;
     }
 
-    const Eigen::SparseMatrix<T> &Data() const
+    const Eigen::SparseMatrix<T> &Raw() const
     {
         return mData;
     }
@@ -257,29 +275,11 @@ public:
         mData *= s;
     }
 
-    /// @brief Returns this matrix * input matrix @p m.
-    Matrix Mul(const Matrix &m) const
+    /// @brief Multiplies this matrix to matrix @p m .
+    void Mul(const Matrix &m) const
     {
         OO_ASSERT(mCols == m.mRows);
-        return mData * m.mData;
-    }
-
-    /// @brief Returns transpose matrix.
-    Matrix Transpose() const
-    {
-        return mData.transpose();
-    }
-
-    /// @brief Returns inverse matrix.
-    Matrix Invert() const
-    {
-        return mData.inverse();
-    }
-
-    /// @brief Returns adjoint matrix.
-    Matrix Adjoint() const
-    {
-        return mData.adjoint();
+        mData = mData * m.mData;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////

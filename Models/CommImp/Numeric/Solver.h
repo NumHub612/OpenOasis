@@ -96,7 +96,6 @@ public:
     {}
 
     virtual void Solve()
-
     {
         throw std::runtime_error("Not implemented.");
     }
