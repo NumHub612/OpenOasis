@@ -6,6 +6,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Models/CommImp/Spatial/Grid.h"
 #include "Boundary.h"
 #include "Source.h"
 #include "Operator.h"
@@ -15,7 +16,18 @@
 
 namespace OpenOasis::CommImp::Numeric
 {
+using CommImp::Spatial::Grid;
 using Utils::real;
+
+
+/// @brief Solver parameter.
+struct SolverParam
+{
+    std::string name;
+
+    std::variant<std::string, real, int, bool> value;
+};
+
 
 /// @brief Field binding variable.
 struct VariableField
@@ -40,7 +52,17 @@ class Solver
 {
 public:
     ///////////////////////////////////////////////////////////////////////////////////
-    // Configuration and initialization.
+    // Parameter setting and Configuration.
+    //
+
+    virtual void SetGrid(const std::shared_ptr<Grid> &grid) = 0;
+
+    virtual void SetParameter(const SolverParam &param) = 0;
+
+    virtual std::string GetName() = 0;
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Boundary condition and initialization.
     //
 
     virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &boundary)

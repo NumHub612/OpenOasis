@@ -1,12 +1,12 @@
 /** ***********************************************************************************
  *    Copyright (C) 2023, The OpenOasis Contributors. Join us in the Oasis!
  *
- *    @File      :  FvmSolver.h
+ *    @File      :  FvmBoundary.h
  *    @License   :  Apache-2.0
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Models/CommImp/Numeric/Solver.h"
+#include "Models/CommImp/Numeric/Boundary.h"
 #include "Models/Utils/RegisterFactory.h"
 
 
@@ -14,15 +14,22 @@ namespace OpenOasis::CommImp::Numeric::FVM
 {
 using namespace OpenOasis::Utils;
 
-
-/// @brief FVM solver base class.
-class FvmSolver : public Solver
+/// @brief FVM boundary class.
+class FvmBoundary : public Boundary
 {};
 
 
-// Register FVM solver factory.
+// Commonly used boundaries.
 
-class RegisterFactoryFvmSolver;
-RegisterFactory(FvmSolver);
+using DirichletBoundary = FvmBoundary;
+using NeumannBoundary   = FvmBoundary;
+using RobinBoundary     = FvmBoundary;
+
+
+// Register FVM boundary factory.
+
+class RegisterFactoryFvmBoundary;
+RegisterFactory(FvmBoundary);
+
 
 }  // namespace OpenOasis::CommImp::Numeric::FVM

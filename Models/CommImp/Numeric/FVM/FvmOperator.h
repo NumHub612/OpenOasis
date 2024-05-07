@@ -14,8 +14,53 @@ namespace OpenOasis::CommImp::Numeric::FVM
 {
 using namespace OpenOasis::Utils;
 
-/// @brief Register FVM operator factory.
-class RegisterFactoryOperator;
-RegisterFactory(Operator);
+
+/// @brief FVM operator base class.
+class FvmOperator : public Operator
+{
+private:
+    std::unordered_map<int, BoundaryCondition> mBounds;
+    ScalarFieldFp                              mCoeffs;
+    Mesh                                       mMesh;
+
+public:
+    FvmOperator()          = default;
+    virtual ~FvmOperator() = default;
+
+    virtual void
+    SetBoundaryCondition(int faceIndex, const BoundaryCondition &bc) override
+    {
+        mBounds[faceIndex] = bc;
+    }
+
+    virtual void SetParameter(const OperatorParam &param) override
+    {}
+
+    virtual void SetMesh(const Mesh &mesh) override
+    {
+        mMesh = mesh;
+    }
+
+    virtual void SetCoefficient(const ScalarFieldFp &coefficients) override
+    {
+        mCoeffs = coefficients;
+    }
+};
+
+
+// Commomly used operators.
+
+using CurlOperator      = FvmOperator;
+using DivOperator       = FvmOperator;
+using GradOperator      = FvmOperator;
+using LaplacianOperator = FvmOperator;
+using DdtOperator       = FvmOperator;
+
+
+// Register FVM operator factory.
+
+class RegisterFactoryFvmOperator;
+RegisterFactory(FvmOperator);
+
 
 }  // namespace OpenOasis::CommImp::Numeric::FVM

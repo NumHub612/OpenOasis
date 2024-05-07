@@ -43,12 +43,4 @@ public:
     virtual BoundaryCondition GetBoundaryCondition(double time) = 0;
 };
 
-
-// Commonly used boundaries.
-
-using DirichletBoundary = Boundary;
-using NeumannBoundary   = Boundary;
-using RobinBoundary     = Boundary;
-
-
 }  // namespace OpenOasis::CommImp::Numeric

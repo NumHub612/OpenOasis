@@ -4,8 +4,6 @@
  *    @File      :  Matrix.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Define Matrix template class for numerical calculation.
- *
  ** ***********************************************************************************/
 #pragma once
 #include "Models/Utils/CommConstants.h"
