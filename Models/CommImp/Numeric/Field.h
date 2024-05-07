@@ -4,8 +4,6 @@
  *    @File      :  Field.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Abstract field class.
- *
  ** ***********************************************************************************/
 #pragma once
 #include "Models/Utils/CommMacros.h"
@@ -100,19 +98,13 @@ public:
         }
     }
 
-    /// @brief Returns the field size.
-    std::size_t Size() const
-    {
-        return mData.size();
-    }
-
     /// @brief Sets the field data.
     void SetAt(std::size_t i, T value)
     {
         mData.at(i) = value;
     }
 
-    /// @brief Sets the field data from the specified range.
+    /// @brief Sets the field data for the specified range.
     /// @param startIndex Start index of the range.
     /// @param endIndex End index of the range.
     /// @param other Source field.
@@ -126,10 +118,16 @@ public:
             mData.at(i) = other(j++);
     }
 
-    /// @brief Returns constant refrence to the field data.
-    const std::vector<T> &Data() const
+    /// @brief Returns a constant refrence to the raw data.
+    const std::vector<T> &Raw() const
     {
         return mData;
+    }
+
+    /// @brief Returns the field size.
+    std::size_t Size() const
+    {
+        return mData.size();
     }
 
     FieldType Type() const
@@ -137,7 +135,7 @@ public:
         return mType;
     }
 
-    FieldDomain Range() const
+    FieldDomain Domain() const
     {
         return mDomain;
     }

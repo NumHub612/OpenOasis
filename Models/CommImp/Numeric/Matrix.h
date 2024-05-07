@@ -8,11 +8,11 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Models/Utils/CommConstants.h"
 #include "ThirdPart/Eigen/Sparse"
 #include "Vector.h"
 #include <vector>
 #include <unordered_map>
-#include "Models/Utils/CommConstants.h"
 
 
 namespace OpenOasis::CommImp::Numeric

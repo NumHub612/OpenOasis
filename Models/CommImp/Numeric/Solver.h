@@ -4,15 +4,6 @@
  *    @File      :  Solver.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Abstract solver class to provide unified interfaces.
- *    Solver's responsible for parsing the equation expression to be solved, and
- *    discretizing the equation items in the computational domain,
- *    combining them into a matrix, and
- *    solving it.
- *
- *    Solver is also responsible for initializing the relevant field quantities,
- *    and providing specific discrete and stepping scheme.
- *
  ** ***********************************************************************************/
 #pragma once
 #include "Boundary.h"
@@ -26,8 +17,25 @@ namespace OpenOasis::CommImp::Numeric
 {
 using Utils::real;
 
+/// @brief Field binding variable.
+struct VariableField
+{
+    std::string var;
+
+    std::optional<ScalarFieldFp> field;
+    std::optional<VectorFieldFp> field;
+    std::optional<TensorFieldFp> field;
+};
+
 
 /// @brief Abstract solver class.
+/// @details Each solver implementes an algorithm to complete the solution of the
+/// equation. The solver is responsible for parsing the equation expression to be
+/// solved, and discretizing the equation items in the computational domain,
+/// combining them into a matrix, and solving it.
+///
+/// The solver is also responsible for initializing the relevant field quantities,
+/// and providing specific discrete and stepping scheme.
 class Solver
 {
 public:
@@ -35,51 +43,17 @@ public:
     // Configuration and initialization.
     //
 
-    virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &bound)
+    virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &boundary)
     {
         throw std::runtime_error("Not implemented.");
     }
 
-    virtual void SetInitialValue(
-        const std::string                                    &var,
-        const std::variant<real, Vector<real>, Tensor<real>> &value)
+    virtual void SetInitialValue(const VariableField &varField)
     {
         throw std::runtime_error("Not implemented.");
     }
 
-    virtual void SetInitialValue(const std::string &var, const ScalarFieldFp &values)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void SetInitialValue(const std::string &var, const VectorFieldFp &values)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void SetInitialValue(const std::string &var, const TensorFieldFp &values)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void SetCoefficient(
-        const std::string                                    &var,
-        const std::variant<real, Vector<real>, Tensor<real>> &coeff)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void SetCoefficient(const std::string &var, const ScalarFieldFp &coeffs)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void SetCoefficient(const std::string &var, const VectorFieldFp &coeffs)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void SetCoefficient(const std::string &var, const TensorFieldFp &coeffs)
+    virtual void SetCoefficient(const VariableField &coefField)
     {
         throw std::runtime_error("Not implemented.");
     }
@@ -88,7 +62,13 @@ public:
     // Equation parsing and discretizing.
     //
 
-    virtual void DiscretizeEquation()
+    virtual void
+    SetOperator(const std::string &eqItem, const std::shared_ptr<Operator> &op)
+    {
+        throw std::runtime_error("Not implemented.");
+    }
+
+    virtual void Discretize()
     {
         throw std::runtime_error("Not implemented.");
     }
@@ -98,9 +78,7 @@ public:
     //
 
     virtual void BeforeScheme()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    {}
 
     virtual void Scheme()
     {
@@ -108,18 +86,14 @@ public:
     }
 
     virtual void AfterScheme()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    {}
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Matrix solving.
     //
 
     virtual void BeforeSolve()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    {}
 
     virtual void Solve()
 
@@ -128,15 +102,13 @@ public:
     }
 
     virtual void AfterSolve()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    {}
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Solution access.
     //
 
-    std::optional<LinearEqs> GetLinearEqs() const
+    virtual std::optional<LinearEqs> GetLinearEqs() const
     {
         throw std::runtime_error("Not implemented.");
     }

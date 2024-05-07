@@ -4,8 +4,6 @@
  *    @File      :  Boundary.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Abstract boundary class.
- *
  ** ***********************************************************************************/
 #pragma once
 #include "Models/Utils/CommConstants.h"
@@ -40,9 +38,9 @@ struct BoundaryCondition
 class Boundary
 {
 public:
-    virtual void SetBoundaryCondition(const BoundaryCondition &bc) = 0;
+    virtual void AddBoundaryCondition(double time, const BoundaryCondition &bc) = 0;
 
-    virtual BoundaryCondition GetBoundaryCondition() = 0;
+    virtual BoundaryCondition GetBoundaryCondition(double time) = 0;
 };
 
 

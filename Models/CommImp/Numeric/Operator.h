@@ -4,8 +4,6 @@
  *    @File      :  Operator.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Abstract operator class.
- *
  ** ***********************************************************************************/
 #pragma once
 #include "Models/Utils/CommConstants.h"
@@ -32,77 +30,56 @@ using LinearEqs = std::tuple<Matrix<real>, std::vector<real>>;
 /// coefficient matrix and source term vector.
 class Operator
 {
-protected:
-    std::optional<std::variant<real, Vector<real>, Tensor<real>>> mCoefficient;
-
-    std::optional<ScalarField<real>> mScalarCoeffs;
-    std::optional<VectorField<real>> mVectorCoeffs;
-    std::optional<TensorField<real>> mTensorCoeffs;
-
-    std::unordered_map<int, BoundaryCondition> mboundaries;
-
 public:
-    virtual ~Operator() = default;
-
     ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for setting face coefficients.
+    // Methods for setting diffusion coefficients and boundary conditions.
     //
 
-    virtual void
-    SetCoefficient(const std::variant<real, Vector<real>, Tensor<real>> &coeff)
+    virtual void SetBoundaryCondition(int faceIndex, const BoundaryCondition &bound)
     {
-        mCoefficient = coeff;
+        throw std::runtime_error("Not implemented.");
     }
 
-    virtual void SetCoefficient(const ScalarField<real> &coefficients)
+    virtual void SetCoefficient(const ScalarFieldFp &coefficients)
     {
-        mScalarCoeffs = coefficients;
+        throw std::runtime_error("Not implemented.");
     }
 
-    virtual void SetCoefficient(const VectorField<real> &coefficients)
+    virtual void SetCoefficient(const VectorFieldFp &coefficients)
     {
-        mVectorCoeffs = coefficients;
+        throw std::runtime_error("Not implemented.");
     }
 
-    virtual void SetCoefficient(const TensorField<real> &coefficients)
+    virtual void SetCoefficient(const TensorFieldFp &coefficients)
     {
-        mTensorCoeffs = coefficients;
+        throw std::runtime_error("Not implemented.");
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for setting boundary conditions.
+    // Methods for discretizing.
     //
 
-    virtual void SetBoundaryCondition(int faceIndex, const BoundaryCondition &boundary)
+    virtual LinearEqs
+    Discretize(const ScalarFieldFp &phiCellField, const ScalarFieldFp &phiFaceField)
     {
-        mboundaries[faceIndex] = boundary;
+        throw std::runtime_error("Not implemented.");
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for discretizing field.
-    //
-
-    virtual LinearEqs Discretize(
-        const ScalarField<real> &phiCellField, const ScalarField<real> &phiFaceField)
+    virtual LinearEqs
+    Discretize(const VectorFieldFp &phiCellField, const VectorFieldFp &phiFaceField)
     {
-        throw Utils::NotImplementedException();
+        throw std::runtime_error("Not implemented.");
     }
 
-    virtual LinearEqs Discretize(
-        const VectorField<real> &phiCellField, const VectorField<real> &phiFaceField)
+    virtual LinearEqs
+    Discretize(const TensorFieldFp &phiCellField, const TensorFieldFp &phiFaceField)
     {
-        throw Utils::NotImplementedException();
-    }
-
-    virtual LinearEqs Discretize(
-        const TensorField<real> &phiCellField, const TensorField<real> &phiFaceField)
-    {
-        throw Utils::NotImplementedException();
+        throw std::runtime_error("Not implemented.");
     }
 };
 
 
-/// @brief Commomly used operators.
+/// Commomly used operators.
 
 using CurlOperator      = Operator;
 using DivOperator       = Operator;
