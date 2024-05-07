@@ -6,9 +6,9 @@ name: linux
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main, develop ]
+    branches: [ main, dev ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main, dev ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
+      - uses: mpi4py/setup-mpi@v1
       - name: Install GCC-10
         run: |
           sudo apt-get update
@@ -28,8 +28,7 @@ jobs:
           gcc --version
           g++ --version
           ls /usr/bin/gcc*
-        shell: bash
-
+        shell: bash        
       - name: Install Third party library
         run: |
           git clone https://github.com/pybind/pybind11.git
@@ -56,22 +55,10 @@ jobs:
           cd ${{ github.workspace }}/build
           ctest --output-on-failure -C Release -VV
         shell: bash
-
       - name: Valgrind
         run: |
           sudo apt-get install valgrind -y
           cd ${{ github.workspace }}/build
           valgrind --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=1 ./bin/OpenOasis 
         shell: bash
-
-      - name: mkdocs
-        if: github.ref == 'refs/heads/main'
-        run: |
-          cd ${{ github.workspace }}
-          pip install mkdocs
-          pip install mkdocstrings[python]
-          pip install mkdocs-material
-          pip install mkdoxy
-          mkdocs serve --no-livereload
-          mkdocs gh-deploy --clean
-        shell: bash        
+        
