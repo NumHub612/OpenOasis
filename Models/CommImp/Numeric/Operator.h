@@ -6,7 +6,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Models/CommImp/Spatial/MeshStructs.h"
+#include "Models/CommImp/Spatial/Grid.h"
 #include "Models/Utils/CommConstants.h"
 #include "Models/Utils/Exception.h"
 #include "Field.h"
@@ -19,7 +19,7 @@
 
 namespace OpenOasis::CommImp::Numeric
 {
-using CommImp::Spatial::Mesh;
+using CommImp::Spatial::Grid;
 using Utils::real;
 
 
@@ -47,11 +47,11 @@ public:
     // Methods for operator parameters setting.
     //
 
+    virtual void SetGrid(const std::shared_ptr<Grid> &grid) = 0;
+
     virtual void SetParameter(const OperatorParam &param) = 0;
 
     virtual std::string GetName() = 0;
-
-    virtual void SetMesh(const Mesh &mesh) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Setting diffusion coefficients and boundary conditions.

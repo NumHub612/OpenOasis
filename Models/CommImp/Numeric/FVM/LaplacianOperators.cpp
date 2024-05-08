@@ -30,7 +30,13 @@ string Laplacian01::GetName()
 
 LinearEqs Laplacian01::Discretize(
     const ScalarFieldFp &varCellField, const ScalarFieldFp &varFaceField)
-{}
+{
+    auto nCells = mGrid->GetNumCells();
+    auto nFaces = mGrid->GetNumFaces();
+
+    Matrix<real> A(nCells);
+    vector<real> b(nCells);
+}
 
 
 }  // namespace OpenOasis::CommImp::Numeric::FVM

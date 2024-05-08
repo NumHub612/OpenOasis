@@ -18,10 +18,10 @@ using namespace OpenOasis::Utils;
 /// @brief FVM operator base class.
 class FvmOperator : public Operator
 {
-private:
+protected:
     std::unordered_map<int, BoundaryCondition> mBounds;
     ScalarFieldFp                              mCoeffs;
-    Mesh                                       mMesh;
+    std::shared_ptr<Grid>                      mGrid;
 
 public:
     FvmOperator()          = default;
@@ -33,13 +33,13 @@ public:
         mBounds[faceIndex] = bc;
     }
 
+    virtual void SetGrid(const std::shared_ptr<Grid> &grid) override
+    {
+        mGrid = grid;
+    }
+
     virtual void SetParameter(const OperatorParam &param) override
     {}
-
-    virtual void SetMesh(const Mesh &mesh) override
-    {
-        mMesh = mesh;
-    }
 
     virtual void SetCoefficient(const ScalarFieldFp &coefficients) override
     {

@@ -34,9 +34,9 @@ struct VariableField
 {
     std::string var;
 
-    std::optional<ScalarFieldFp> field;
-    std::optional<VectorFieldFp> field;
-    std::optional<TensorFieldFp> field;
+    std::optional<ScalarFieldFp> sField;
+    std::optional<VectorFieldFp> vField;
+    std::optional<TensorFieldFp> tField;
 };
 
 
@@ -65,35 +65,22 @@ public:
     // Boundary condition and initialization.
     //
 
-    virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &boundary)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &bound) = 0;
 
-    virtual void SetInitialValue(const VariableField &varField)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    virtual void SetInitialValue(const VariableField &varField) = 0;
 
-    virtual void SetCoefficient(const VariableField &coefField)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    virtual void SetCoefficient(const VariableField &coefField) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Equation parsing and discretizing.
     //
 
-    virtual void
-    SetOperator(const std::string &eqItem, const std::shared_ptr<Operator> &op)
+    virtual void SetOperator(const std::string &eqItem, const std::string &opName)
     {
         throw std::runtime_error("Not implemented.");
     }
 
-    virtual void Discretize()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    virtual void Discretize() = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Step advancing.
@@ -102,37 +89,16 @@ public:
     virtual void BeforeScheme()
     {}
 
-    virtual void Scheme()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    virtual void Scheme() = 0;
 
     virtual void AfterScheme()
-    {}
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Matrix solving.
-    //
-
-    virtual void BeforeSolve()
-    {}
-
-    virtual void Solve()
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void AfterSolve()
     {}
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Solution access.
     //
 
-    virtual std::optional<LinearEqs> GetLinearEqs() const
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    virtual std::optional<LinearEqs> GetLinearEqs() const = 0;
 
     virtual std::optional<ScalarFieldFp>
     GetScalarSolutions(const std::string &var) const

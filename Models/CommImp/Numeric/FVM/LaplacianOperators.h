@@ -15,17 +15,9 @@
 
 namespace OpenOasis::CommImp::Numeric::FVM
 {
-using Utils::real;
-
-
-/// @brief Laplacian01 operator for .
+/// @brief Laplacian01 operator for scalar field in cell domain.
 class Laplacian01 : public LaplacianOperator
 {
-private:
-    Mesh                                       mMesh;
-    std::unordered_map<int, BoundaryCondition> mBcs;
-    ScalarFieldFp                              mCoeffs;
-
 public:
     Laplacian01()          = default;
     virtual ~Laplacian01() = default;
