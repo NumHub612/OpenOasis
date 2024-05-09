@@ -8,7 +8,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "MeshStructs.h"
+#include "MeshProcessor.h"
 #include "Models/CommImp/Numeric/Vector.h"
 #include "Models/Utils/MultiIndexMapper.h"
 #include <string>
@@ -17,8 +17,8 @@
 
 namespace OpenOasis::CommImp::Spatial
 {
-using Numeric::Vector;
 using Utils::MultiIndexMap;
+using Numeric::Vector;
 
 
 /// @brief Grid encapsulate the mesh data for numerical calculation.
@@ -26,37 +26,35 @@ class Grid
 {
 protected:
     Mesh mMesh;
-    int  mVersion = 0;
 
     // The number of original objects in the mesh before
     // refining or coarsening.
     int mRawNodesNum, mRawCellsNum, mRawFacesNum;
 
     // The boundary cells and faces.
-    std::vector<int> mBoundaryCells;
-    std::vector<int> mBoundaryFaces;
+    std::vector<int> mBoundCells, mBoundFaces;
 
     // The outer or inner boundary patches, each of them
-    // is composed of Face indexes.
+    // is composed of face indexes.
     std::unordered_map<std::string, std::vector<int>> mPatches;
 
-    // The zone enclosed by Face indexes.
+    // The zone enclosed by face indexes.
     std::unordered_map<std::string, std::vector<int>> mZones;
 
-    // The zone composed of Cell indexes.
+    // The zone composed of cell indexes.
     std::unordered_map<std::string, std::vector<int>> mZoneCells;
 
     // The distances between cell centroids.
-    MultiIndexMap<double> mCenterDists;
+    MultiIndexMap<double> mCellCenterDists;
 
     // The distances between cell centroid and boundary face.
     MultiIndexMap<double> mBoundaryCenterDists;
 
     // The interior intersection point with line of cell centers.
-    std::unordered_map<int, Coordinate> mFaceIntersection;
+    std::unordered_map<int, Coordinate> mFaceIntersections;
 
     // The weight of each cell at face.
-    MultiIndexMap<double> mCellFaceWeight;
+    MultiIndexMap<double> mCellWeights;
 
     // The distance between face centroid and intersection.
     std::unordered_map<int, Vector<double>> mFaceCorrVecs;
@@ -75,49 +73,39 @@ public:
 
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Methods used for mesh operations.
+    // Methods used for mesh activation and manipulations.
     //
 
-    /// @brief Get the version of the current grid.
-    virtual int Version() const = 0;
-
-    /// @brief Get the grid type.
-    /// @return Return 1, for 1d grid; 2, for 2d; 3, for 3d; others, for invalid type.
-    virtual int Type() const = 0;
-
-    /// @brief Activate the mesh to extract topological information needed for various
-    /// numerical calculations.
+    /// @brief Activate to have topology and geometry data used for numerical methods.
     virtual void Activate();
 
-    /// @brief Refine the cell at the given index for adaptive grid.
-    /// @note  This wouldn't change the origin nodes.
-    virtual void RefineCell(int cellIndex) = 0;
+    /// @brief Get grid version.
+    virtual int Version() const;
 
-    /// @brief Relax the cell at given index for adaptive grid.
-    /// @note  This wouldn't change the origin nodes.
+    /// @brief Refine the origin cell of a given index @p cellIndex for adaptive grid.
+    /// @return The newly added cells' indexes.
+    /// @note This method would not change the raw nodes, but add new nodes and cells.
+    virtual std::vector<int> RefineCell(int cellIndex) = 0;
+
+    /// @brief Relax the origin cell of a given index @p cellIndex .
+    /// @note This method would not change the raw nodes.
     virtual void RelaxCell(int cellIndex) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for mesh query.
     //
 
-    int GetRawNumCells() const;
-    int GetRawNumFaces() const;
-    int GetRawNumNodes() const;
-
-    int GetNumCells() const;
-    int GetNumFaces() const;
-    int GetNumNodes() const;
-
+    const Mesh &GetMesh() const;
     const Cell &GetCell(int cellIndex) const;
     const Face &GetFace(int faceIndex) const;
     const Node &GetNode(int nodeIndex) const;
 
-    std::vector<std::string> GetPatchIds() const;
-    std::vector<std::string> GetZoneIds() const;
-
-    std::vector<int> GetPatchFaceIndexes(const std::string &patchId) const;
-    std::vector<int> GetZoneCellIndexes(const std::string &zoneId) const;
+    int GetRawNumCells() const;
+    int GetRawNumFaces() const;
+    int GetRawNumNodes() const;
+    int GetNumCells() const;
+    int GetNumFaces() const;
+    int GetNumNodes() const;
 
     const std::vector<int> &GetBoundaryFaceIndexes() const;
 

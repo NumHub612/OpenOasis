@@ -8,7 +8,7 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "MeshStructs.h"
+#include "Mesh.h"
 #include "Models/CommImp/Numeric/Vector.h"
 
 
