@@ -8,7 +8,6 @@
 #pragma once
 #include "Models/CommImp/Spatial/Grid.h"
 #include "Boundary.h"
-#include "Source.h"
 #include "Operator.h"
 #include "Matrix.h"
 #include <optional>
@@ -65,7 +64,7 @@ public:
     // Boundary condition and initialization.
     //
 
-    virtual void SetBoundary(int faceIndex, const std::shared_ptr<Boundary> &bound) = 0;
+    virtual void SetBoundary(int meshIndex, const std::shared_ptr<Boundary> &bound) = 0;
 
     virtual void SetInitialValue(const VariableField &varField) = 0;
 

@@ -57,7 +57,7 @@ public:
     // Setting diffusion coefficients and boundary conditions.
     //
 
-    virtual void SetBoundaryCondition(int faceIndex, const BoundaryCondition &bc) = 0;
+    virtual void SetBoundaryCondition(int meshIndex, const BoundaryCondition &bc) = 0;
 
     virtual void SetCoefficient(const ScalarFieldFp &coefficients)
     {
