@@ -22,9 +22,6 @@ protected:
     int  mVersion = 0;
     Mesh mMesh;
 
-    std::unordered_map<std::string, std::vector<size_t>> mPatchFaces;
-    std::unordered_map<std::string, std::vector<size_t>> mBlockCells;
-
 public:
     virtual ~Grid() = default;
     Grid(const Mesh &mesh);
@@ -45,13 +42,10 @@ public:
     virtual void Activate();
 
     /// @brief Refine the mesh cell of a given index @p cellIndex for adaptive mesh.
-    virtual void RefineCell(size_t cellIndex) = 0;
+    virtual void RefineCell(size_t cellIndex);
 
     /// @brief Relax the mesh cell of a given index @p cellIndex .
-    virtual void RelaxCell(size_t cellIndex) = 0;
-
-    /// @brief Get the mesh raw data.
-    virtual const Mesh &Raw() const;
+    virtual void RelaxCell(size_t cellIndex);
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods used for mesh query.
@@ -59,15 +53,10 @@ public:
 
     int Version() const;
 
-    void AddPatch(const std::string &patchId, const std::vector<size_t> &patchFaces);
-    void AddBlock(const std::string &blockId, const std::vector<size_t> &blockFaces);
-
-    const std::vector<size_t> &GetPatchFaceIndexes(const std::string &patchId) const;
-    const std::vector<size_t> &GetBlockCellIndexes(const std::string &blockId) const;
-
     const Cell &GetCell(size_t cellIndex) const;
     const Face &GetFace(size_t faceIndex) const;
     const Node &GetNode(size_t nodeIndex) const;
+    const Mesh &GetMesh() const;
 
     size_t GetNumCells() const;
     size_t GetNumFaces() const;
@@ -87,11 +76,11 @@ protected:
     virtual void SortNodes();
     virtual void CheckMesh();
 
-    virtual void CalculateFaceNormal()    = 0;
-    virtual void CalculateFaceArea()      = 0;
-    virtual void CalculateFacePerimeter() = 0;
-    virtual void CalculateCellSurface()   = 0;
-    virtual void CalculateCellVolume()    = 0;
+    virtual void CalculateFaceNormal();
+    virtual void CalculateFaceArea();
+    virtual void CalculateFacePerimeter();
+    virtual void CalculateCellSurface();
+    virtual void CalculateCellVolume();
 };
 
 }  // namespace OpenOasis::CommImp::Spatial

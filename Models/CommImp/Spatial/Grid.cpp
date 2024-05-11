@@ -68,9 +68,19 @@ int Grid::Version() const
     return mVersion;
 }
 
-const Mesh &Grid::Raw() const
+const Mesh &Grid::GetMesh() const
 {
     return mMesh;
+}
+
+void Grid::RefineCell(size_t cellIndex)
+{
+    // TODO: Implement refine cell.
+}
+
+void Grid::RelaxCell(size_t cellIndex)
+{
+    // TODO: Implement relax cell.
 }
 
 void Grid::Activate()
@@ -100,6 +110,12 @@ void Grid::Activate()
 
 void Grid::CollectCellsSharedNode()
 {
+#pragma omp parallel for schedule(dynamic)
+    for (auto nIdx = 0; nIdx < GetNumNodes(); nIdx++)
+    {
+        mMesh.nodes[nIdx].cellIndexes.clear();
+    }
+
     for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
     {
         const auto &nodeIdxs = GeoCalculator::GetCellNodeIndexes(cIdx, mMesh);
@@ -110,6 +126,12 @@ void Grid::CollectCellsSharedNode()
 
 void Grid::CollectFacesSharedNode()
 {
+#pragma omp parallel for schedule(dynamic)
+    for (auto nIdx = 0; nIdx < GetNumNodes(); nIdx++)
+    {
+        mMesh.nodes[nIdx].faceIndexes.clear();
+    }
+
     for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
     {
         const auto &nodeIndexes = mMesh.faces[fIdx].nodeIndexes;
@@ -122,6 +144,12 @@ void Grid::CollectFacesSharedNode()
 
 void Grid::CollectCellsSharedFace()
 {
+#pragma omp parallel for schedule(dynamic)
+    for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
+    {
+        mMesh.faces[fIdx].cellIndexes.clear();
+    }
+
     for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
     {
         const auto &faceIndexes = mMesh.cells[cIdx].faceIndexes;
@@ -134,6 +162,12 @@ void Grid::CollectCellsSharedFace()
 
 void Grid::CollectCellNeighbors()
 {
+#pragma omp parallel for schedule(dynamic)
+    for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
+    {
+        mMesh.cells[cIdx].neighbors.clear();
+    }
+
     for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
     {
         const auto &cellIndexes = mMesh.faces[fIdx].cellIndexes;
@@ -162,20 +196,17 @@ void Grid::CollectFaceCellSides()
 #pragma omp parallel for schedule(dynamic)
     for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
     {
-        auto       &face   = mMesh.faces[fIdx];
+        auto &face = mMesh.faces[fIdx];
+        face.cellOwnable.clear();
+
         const auto &fPoint = face.centroid;
         const auto &cPoint = mMesh.cells[face.cellIndexes[0]].centroid;
 
-        double x = cPoint.x - fPoint.x;
-        double y = cPoint.y - fPoint.y;
-        double z = cPoint.z - fPoint.z;
-
-        auto vec = Vector<real, 3>(x, y, z);
+        auto vec = GeoCalculator::ToVector(Node{fPoint}, Node{cPoint});
         auto res = vec * face.normal;
-        auto dir = (res > 0) ? 1 : -1;
+        auto dir = (res < 0) ? 1 : -1;
 
         face.cellOwnable.push_back(dir);
-
         if (face.cellIndexes.size() == 2)
         {
             face.cellOwnable.push_back(-dir);
@@ -183,28 +214,63 @@ void Grid::CollectFaceCellSides()
     }
 }
 
+void Grid::CalculateFaceNormal()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
+    {
+        auto normal = GeoCalculator::CalculateFaceNormal(fIdx, mMesh);
+
+        mMesh.faces[fIdx].normal = normal;
+    }
+}
+
+void Grid::CalculateFaceArea()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
+    {
+        auto area = GeoCalculator::CalculateFaceArea(fIdx, mMesh);
+
+        mMesh.faces[fIdx].area = area;
+    }
+}
+
+void Grid::CalculateFacePerimeter()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
+    {
+        auto perimeter = GeoCalculator::CalculateFacePerimeter(fIdx, mMesh);
+
+        mMesh.faces[fIdx].perimeter = perimeter;
+    }
+}
+
+void Grid::CalculateCellSurface()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
+    {
+        auto surface = GeoCalculator::CalculateCellSurfaceArea(cIdx, mMesh);
+
+        mMesh.cells[cIdx].surface = surface;
+    }
+}
+
+void Grid::CalculateCellVolume()
+{
+#pragma omp parallel for schedule(dynamic)
+    for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
+    {
+        auto volume = GeoCalculator::CalculateCellVolume(cIdx, mMesh);
+
+        mMesh.cells[cIdx].volume = volume;
+    }
+}
+
 void Grid::CheckMesh()
 {}
-
-void Grid::AddPatch(const string &patchId, const vector<size_t> &patchFaces)
-{
-    mPatchFaces[patchId] = patchFaces;
-}
-
-void Grid::AddBlock(const string &blockId, const vector<size_t> &blockFaces)
-{
-    throw NotImplementedException("AddBlock");
-}
-
-const vector<size_t> &Grid::GetPatchFaceIndexes(const string &patchId) const
-{
-    return mPatchFaces.at(patchId);
-}
-
-const vector<size_t> &Grid::GetBlockCellIndexes(const string &blockId) const
-{
-    return mBlockCells.at(blockId);
-}
 
 size_t Grid::GetNumCells() const
 {
