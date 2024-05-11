@@ -8,9 +8,9 @@
  *
  ** ***********************************************************************************/
 #pragma once
+#include "Models/CommImp/Numeric/Vector.h"
 #include "Coordinate.h"
 #include <vector>
-#include <array>
 #include <unordered_map>
 #include <cmath>
 
@@ -21,21 +21,21 @@ namespace CommImp
 {
 namespace Spatial
 {
-/// @brief Mesh node data structure.
+/// @brief The mesh nodes data structure.
 /// (Point type).
 struct Node
 {
     Coordinate coor;  // unit(m).
 
-    // Indexes of mesh faces shared the node.
-    std::vector<int> faceIndexes;
+    // Indexes of mesh faces shared node.
+    std::vector<size_t> faceIndexes;
 
-    // Indexes of mesh cells shared the node.
-    std::vector<int> cellIndexes;
+    // Indexes of mesh cells shared node.
+    std::vector<size_t> cellIndexes;
 };
 
 
-/// @brief Mesh face data structure.
+/// @brief The mesh faces data structure.
 /// Polyline type for 1D or 2D mesh,
 /// Polygon type for 3D mesh.
 struct Face
@@ -49,45 +49,44 @@ struct Face
     real area = NAN;
 
     // Unit normal vector.
-    std::array<real, 3> normal;
+    Numeric::Vector<real> normal;
 
-    // Indexes of mesh nodes on the
-    // face sorted counterclockwise.
-    std::vector<int> nodeIndexes;
+    // Indexes of mesh nodes on the face
+    // sorted counterclockwise.
+    std::vector<size_t> nodeIndexes;
 
-    // Indexes of mesh cells shared
-    // the face.
-    std::vector<int> cellIndexes;
+    // Indexes of mesh cells shared face.
+    std::vector<size_t> cellIndexes;
 
-    // Orientation of cells to face
-    // (Same or opposite to normal)
-    // (Corresponds to cellIndexes)
-    std::vector<int> cellSides;
+    // Orientation of mesh cells to face.
+    // Same or opposite to normal.
+    // Corresponds to cellIndexes.
+    std::vector<int> cellOwnable;
 };
 
 
-/// @brief Mesh cell data structure.
+/// @brief The mesh cells data structure.
 /// Polygon type for 1D and 2D mesh,
 /// Polyhedron type for 3D mesh.
 struct Cell
 {
     Coordinate centroid;
 
+    // Surface area of the cell in (m^2).
+    real surface = NAN;
+
     // Volume of the cell in (m^3).
     real volume = NAN;
 
-    // Surface area in (m^2).
-    real surface = NAN;
+    // Indexes of mesh faces on the cell.
+    std::vector<size_t> faceIndexes;
 
-    // Indexes of faces on the cell.
-    std::vector<int> faceIndexes;
-
-    // Indexes of neighboring cells.
-    std::vector<int> neighbors;
+    // Indexes of neighboring mesh cells.
+    std::vector<size_t> neighbors;
 
     // Indexes of sub-cells
-    // after current cell's refined.
-    std::vector<int> subCells;
+    // after current mesh cell's refined.
+    std::vector<size_t> subCells;
 };
 
 
@@ -95,13 +94,13 @@ struct Cell
 struct Mesh
 {
     // Mesh nodes set.
-    std::unordered_map<int, Node> nodes;
+    std::unordered_map<size_t, Node> nodes;
 
     // Mesh faces set.
-    std::unordered_map<int, Face> faces;
+    std::unordered_map<size_t, Face> faces;
 
     // Mesh cells set.
-    std::unordered_map<int, Cell> cells;
+    std::unordered_map<size_t, Cell> cells;
 };
 
 }  // namespace Spatial

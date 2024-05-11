@@ -4,99 +4,79 @@
  *    @File      :  GeoCalculator.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  A collection of general geometry functions.
- *
  ** ***********************************************************************************/
 #pragma once
 #include "Mesh.h"
-#include "Models/CommImp/Numeric/Vector.h"
 
 
-namespace OpenOasis
-{
-namespace CommImp
-{
-namespace Spatial
+namespace OpenOasis::CommImp::Spatial
 {
 using namespace Numeric;
 using Utils::real;
 
-/// @brief The GeoCalculator is a collection of general geometry functions.
+/// @brief A collection of geometry calculation functions base on the Mesh structure.
 class GeoCalculator final
 {
 public:
-    static constexpr real EPSILON = 1.0e-5;
+    static constexpr real EPSILON = 1.0e-6;
 
-    static std::vector<int> GetCellNodeIndexes(int cellIdx, const Mesh &mesh);
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for node geometry calculations.
+    //
 
-    /// @brief Sortes the specified Nodes counterclockwise.
-    /// @param nodeIdxs The Node indexes.
-    /// @param nodes The Nodes map.
-    /// @return The sorted Node indexes.
-    static std::vector<int> SortNodes(
-        const std::vector<int> &nodeIdxs, const std::unordered_map<int, Node> &nodes);
+    static Vector<real> ToVector(const Node &beg, const Node &end, int foldedAxis = -1);
 
-    static std::vector<int> SortFaceNodes(int faceIndex, const Mesh &mesh);
+    static real CalculateNodesDist(const Node &node0, const Node &node1);
 
-    /// @brief Calculates the centroid.
-    /// @param nodeIdxs Node indexes.
-    /// @param nodes The Nodes map.
-    /// @return Centroid.
-    static Coordinate CalculateCentroid(
-        const std::vector<int> &nodeIdxs, const std::unordered_map<int, Node> &nodes);
+    static std::vector<size_t> CollectBoundaryNodeIndexes(const Mesh &mesh);
 
-    static Coordinate CalculateFaceCentroid(int faceIdx, const Mesh &mesh);
 
-    static Coordinate CalculateCellCentroid(int cellIdx, const Mesh &mesh);
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for face geometry calculations.
+    //
 
-    /// @brief Calculates the plane(2d or 3d) unit normal vector.
-    /// @param nodeIdxs The clock- or counter- clockwise ordered Node indexes.
-    /// @param nodes The Nodes map.
-    /// @return Unit normal vector.
-    static std::array<real, 3> CalculateNormal(
-        const std::vector<int> &nodeIdxs, const std::unordered_map<int, Node> &nodes);
+    /// @brief Sorts the nodes of a face in counterclockwise order.
+    static std::vector<size_t> SortFaceNodes(size_t faceIdx, const Mesh &mesh);
 
-    static std::array<real, 3> CalculateFaceNormal(int faceIdx, const Mesh &mesh);
+    static std::vector<size_t> CollectBoundaryFaceIndexes(const Mesh &mesh);
 
-    /// @brief Calculates the plane(2d or 3d) area.
-    /// @param normal The unit normal vector of the plane.
-    /// @param nodeIdxs The clock- or counter- clockwise ordered Node indexes.
-    /// @param nodes The Node map.
-    /// @return Area of the plane.
-    static real CalculateArea(
-        const Vector<real, 3> &normal, const std::vector<int> &nodeIdxs,
-        const std::unordered_map<int, Node> &nodes);
+    static Coordinate CalculateFaceCentroid(size_t faceIdx, const Mesh &mesh);
 
-    static real CalculateFaceArea(int faceIdx, const Mesh &mesh);
+    static Vector<real> CalculateFaceNormal(size_t faceIdx, const Mesh &mesh);
 
-    /// @brief Calculates the distance between two Nodes.
-    /// @param node0 The endpoint.
-    /// @param node1 The endpoint.
-    /// @return The length.
-    static real CalculateLength(const Node &node0, const Node &node1);
+    /// @brief Calculates the area of a face(for 2d mesh, the perimeter).
+    static real CalculateFaceArea(size_t faceIdx, const Mesh &mesh);
 
-    static real CalculateFacePerimeter(int faceIdx, const Mesh &mesh);
+    static real CalculateFacePerimeter(size_t faceIdx, const Mesh &mesh);
 
-    /// @brief Calculates the volume of a polygon pyramid.
-    /// @param nodeIdxs The Node indexes.
-    /// @param nodes The Node map.
-    /// @return Volume.
-    static real CalculateVolume(
-        const std::vector<int> &nodeIdxs, const std::unordered_map<int, Node> &nodes);
 
-    static real CalculateCellVolume(int cellIdx, const Mesh &mesh);
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Methods for cell geometry calculations.
+    //
+
+    static std::vector<size_t> GetCellNodeIndexes(size_t cellIdx, const Mesh &mesh);
+
+    static std::vector<size_t>
+    CollectBlockCellIndexes(const Mesh &mesh, const std::vector<size_t> &blockFaces);
+
+    static Coordinate CalculateCellCentroid(size_t cellIdx, const Mesh &mesh);
+
+    /// @brief Calculates the volume of a cell(for 2d mesh, the surface area).
+    static real CalculateCellVolume(size_t cellIdx, const Mesh &mesh);
+
+    static real CalculateCellSurfaceArea(size_t cellIdx, const Mesh &mesh);
+
+    static std::vector<size_t> CollectBoundaryCellIndexes(const Mesh &mesh);
+
 
 private:
-    static Vector<real, 3> ToVector(const Node &start, const Node &stop);
+    static Coordinate CalculateCentroid(
+        const std::vector<size_t>              &nodeIdxs,
+        const std::unordered_map<size_t, Node> &nodes);
 
-    static int ChooseFoldedAxis(
-        const std::vector<int> &nodeIdxs, const std::unordered_map<int, Node> &nodes);
+    static bool Is2DMesh(const Mesh &mesh);
 
-    static bool CompareNodeOrder(
-        const Node &node0, const Node &node1, const Coordinate &centroid,
-        int ignoredAxis);
+    static int ChooseFoldedAxis(size_t faceIdx, const Mesh &mesh);
 };
 
-}  // namespace Spatial
-}  // namespace CommImp
-}  // namespace OpenOasis
+}  // namespace OpenOasis::CommImp::Spatial

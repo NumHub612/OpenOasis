@@ -11,6 +11,7 @@
 #include "Models/Utils/CommMacros.h"
 #include "Tensor.h"
 #include <array>
+#include <algorithm>
 
 
 namespace OpenOasis
@@ -133,60 +134,83 @@ public:
 
     T Min() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = std::min(ret, val);
+        return std::min_element(mElement.begin(), mElement.end())->operator*();
+    }
 
-        return ret;
+    size_t MinIndex() const
+    {
+        return std::min_element(mElement.begin(), mElement.end()) - mElement.begin();
     }
 
     /// @brief Return the component of the vector hasing the minimum absolute value.
     T AbsMin() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = (ret * ret < val * val) ? ret : val;
+        return std::min_element(
+                   mElement.begin(),
+                   mElement.end(),
+                   [](T a, T b) { return abs(a) < abs(b); })
+            ->
+            operator*();
+    }
 
-        return ret;
+    size_t AbsMinIndex() const
+    {
+        return std::min_element(
+                   mElement.begin(),
+                   mElement.end(),
+                   [](T a, T b) { return abs(a) < abs(b); })
+               - mElement.begin();
     }
 
     T Max() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = std::max(ret, val);
+        return std::max_element(mElement.begin(), mElement.end())->operator*();
+    }
 
-        return ret;
+    size_t MaxIndex() const
+    {
+        return std::max_element(mElement.begin(), mElement.end()) - mElement.begin();
     }
 
     /// @brief Return the component of the vector hasing the maximum absolute value.
     T AbsMax() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = (ret * ret > val * val) ? ret : val;
-
-        return ret;
+        return std::max_element(
+                   mElement.begin(),
+                   mElement.end(),
+                   [](T a, T b) { return abs(a) < abs(b); })
+            ->
+            operator*();
     }
 
-    /// @brief Return the vector's length(magnitude).
-    T Length() const
+    size_t AbsMaxIndex() const
+    {
+        return std::max_element(
+                   mElement.begin(),
+                   mElement.end(),
+                   [](T a, T b) { return abs(a) < abs(b); })
+               - mElement.begin();
+    }
+
+    T Magnitude() const
     {
         return std::sqrt(Dot(*this));
     }
 
     bool IsEqual(const Vector &other) const
     {
-        if (Size() != other.Size())
-            return false;
+        return std::equal(mElement.begin(), mElement.end(), other.mElement.begin());
+    }
 
-        for (size_t i = 0; i < N; ++i)
-        {
-            if (abs(mElement[i] - other(i)) > T(1e-10))
-                return false;
-        }
+    bool IsZero() const
+    {
+        return IsEqual(Vector());
+    }
 
-        return true;
+    bool IsNan() const
+    {
+        return std::any_of(
+            mElement.begin(), mElement.end(), [](T val) { return std::isnan(val); });
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -195,7 +219,7 @@ public:
 
     void Normalize()
     {
-        T len = Length();
+        T len = Magnitude();
         if (len <= T(0))
             return;
 
@@ -248,11 +272,8 @@ public:
     {
         OO_ASSERT(other.Size() == N);
 
-        T ret = 0;
-        for (size_t i = 0; i < N; ++i)
-            ret += mElement[i] * other(i);
-
-        return ret;
+        return std::inner_product(
+            mElement.begin(), mElement.end(), other.mElement.begin(), T(0));
     }
 
     Vector Cross(const Vector &other) const
@@ -260,12 +281,10 @@ public:
         OO_ASSERT(other.Size() == 3);
         OO_ASSERT(N == 3);
 
-        Vector ret;
-        ret(0) = mElement[1] * other(2) - mElement[2] * other(1);
-        ret(1) = mElement[2] * other(0) - mElement[0] * other(2);
-        ret(2) = mElement[0] * other(1) - mElement[1] * other(0);
-
-        return ret;
+        return Vector(
+            mElement[1] * other(2) - mElement[2] * other(1),
+            mElement[2] * other(0) - mElement[0] * other(2),
+            mElement[0] * other(1) - mElement[1] * other(0));
     }
 
     Tensor<T> Dyadic(const Vector &other) const
