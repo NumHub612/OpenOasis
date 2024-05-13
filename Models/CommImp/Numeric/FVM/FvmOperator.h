@@ -59,7 +59,7 @@ using DdtOperator       = FvmOperator;
 
 // Register FVM operator factory.
 
-class RegisterFactoryFvmOperator;
+class FvmOperatorRegister;
 RegisterFactory(FvmOperator);
 
 

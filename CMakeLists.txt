@@ -51,7 +51,7 @@ endif()
 file(STRINGS "${PROJECT_SOURCE_DIR}/Doc/assets/Logo/logo.txt" PROJECT_LOGO NEWLINE_CONSUME)
 message(STATUS "${PROJECT_LOGO}")
 
-file(STRINGS "${PROJECT_SOURCE_DIR}/Models/VERSION" VERSION)
+file(STRINGS "${PROJECT_SOURCE_DIR}/Models/VERSION.txt" VERSION)
 add_compile_definitions(PROJECT_VERSION="${VERSION}")
 message(STATUS "OasisFlows Version: ${VERSION}")
 

@@ -28,7 +28,7 @@ using RobinBoundary     = FvmBoundary;
 
 // Register FVM boundary factory.
 
-class RegisterFactoryFvmBoundary;
+class FvmBoundaryRegister;
 RegisterFactory(FvmBoundary);
 
 

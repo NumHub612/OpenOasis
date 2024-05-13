@@ -20,7 +20,7 @@ namespace OpenOasis::Utils
 /// @tparam `CLS` The interface class to be registered.
 /// @note Each class can only be registered once.
 #define RegisterFactory(CLS)                                                           \
-    class RegisterFactory##CLS                                                         \
+    class CLS##Register                                                                \
     {                                                                                  \
     public:                                                                            \
         template <typename T, typename = std::enable_if_t<std::is_base_of_v<CLS, T>>>  \
@@ -29,14 +29,14 @@ namespace OpenOasis::Utils
             Register(const std::string &clsName)                                       \
             {                                                                          \
                 auto regFunc = []() { return std::make_shared<T>(); };                 \
-                RegisterFactory##CLS::Get().mRegistry.emplace(clsName, regFunc);       \
+                CLS##Register::Get().mRegistry.emplace(clsName, regFunc);              \
             }                                                                          \
                                                                                        \
             template <typename... Args>                                                \
             Register(const std::string &clsName, Args... args)                         \
             {                                                                          \
                 auto regFunc = [&]() { return std::make_shared<T>(args...); };         \
-                RegisterFactory##CLS::Get().mRegistry.emplace(clsName, regFunc);       \
+                CLS##Register::Get().mRegistry.emplace(clsName, regFunc);              \
             }                                                                          \
         };                                                                             \
                                                                                        \
@@ -49,13 +49,13 @@ namespace OpenOasis::Utils
         }                                                                              \
                                                                                        \
     private:                                                                           \
-        RegisterFactory##CLS(){};                                                      \
-        RegisterFactory##CLS(const RegisterFactory##CLS &) = delete;                   \
-        RegisterFactory##CLS(RegisterFactory##CLS &&)      = delete;                   \
+        CLS##Register(){};                                                             \
+        CLS##Register(const CLS##Register &) = delete;                                 \
+        CLS##Register(CLS##Register &&)      = delete;                                 \
                                                                                        \
-        static RegisterFactory##CLS &Get()                                             \
+        static CLS##Register &Get()                                                    \
         {                                                                              \
-            static RegisterFactory##CLS instance;                                      \
+            static CLS##Register instance;                                             \
             return instance;                                                           \
         }                                                                              \
                                                                                        \
@@ -63,11 +63,11 @@ namespace OpenOasis::Utils
     };                                                                                 \
                                                                                        \
     std::map<std::string, std::function<std::shared_ptr<CLS>()>>                       \
-        RegisterFactory##CLS::mRegistry;
+        CLS##Register::mRegistry;
 
 
 #define REGISTER_CLS_VNAME(T) reg_cls_##T##_
 #define REGISTER_CLS(CLS, T, id, ...)                                                  \
-    static RegisterFactory##CLS::Register<T> REGISTER_CLS_VNAME(T)(id, ##__VA_ARGS__);
+    static CLS##Register::Register<T> REGISTER_CLS_VNAME(T)(id, ##__VA_ARGS__);
 
 }  // namespace OpenOasis::Utils

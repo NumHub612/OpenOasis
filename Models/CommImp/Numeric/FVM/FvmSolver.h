@@ -22,7 +22,7 @@ class FvmSolver : public Solver
 
 // Register FVM solver factory.
 
-class RegisterFactoryFvmSolver;
+class FvmSolverRegister;
 RegisterFactory(FvmSolver);
 
 }  // namespace OpenOasis::CommImp::Numeric::FVM
