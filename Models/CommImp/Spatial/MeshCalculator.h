@@ -1,7 +1,7 @@
 /** ***********************************************************************************
- *    Copyright (C) 2022, The OpenOasis Contributors. Join us in the Oasis!
+ *    Copyright (C) 2024, The OpenOasis Contributors. Join us in the Oasis!
  *
- *    @File      :  GeoCalculator.h
+ *    @File      :  MeshCalculator.h
  *    @License   :  Apache-2.0
  *
  ** ***********************************************************************************/
@@ -12,27 +12,26 @@
 namespace OpenOasis::CommImp::Spatial
 {
 using namespace Numeric;
-using Utils::real;
 
-/// @brief A collection of geometry calculation functions base on the Mesh structure.
-class GeoCalculator final
+/// @brief Collections of mesh geometry functions.
+class MeshCalculator final
 {
 public:
     static constexpr real EPSILON = 1.0e-6;
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for node geometry calculations.
+    // Methods for mesh node geometry calculations.
     //
 
     static Vector<real> ToVector(const Node &beg, const Node &end, int foldedAxis = -1);
 
-    static real CalculateNodesDist(const Node &node0, const Node &node1);
+    static real CalculateNodesDistance(const Node &node0, const Node &node1);
 
     static std::vector<size_t> CollectBoundaryNodeIndexes(const Mesh &mesh);
 
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for face geometry calculations.
+    // Methods for mesh face geometry calculations.
     //
 
     /// @brief Sorts the nodes of a face in counterclockwise order.
@@ -49,9 +48,11 @@ public:
 
     static real CalculateFacePerimeter(size_t faceIdx, const Mesh &mesh);
 
+    static int ChooseFoldedAxis(size_t faceIdx, const Mesh &mesh);
+
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Methods for cell geometry calculations.
+    // Methods for mesh cell geometry calculations.
     //
 
     static std::vector<size_t> GetCellNodeIndexes(size_t cellIdx, const Mesh &mesh);
@@ -75,8 +76,6 @@ private:
         const std::unordered_map<size_t, Node> &nodes);
 
     static bool Is2DMesh(const Mesh &mesh);
-
-    static int ChooseFoldedAxis(size_t faceIdx, const Mesh &mesh);
 };
 
 }  // namespace OpenOasis::CommImp::Spatial

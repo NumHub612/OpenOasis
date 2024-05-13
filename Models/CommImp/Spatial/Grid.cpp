@@ -4,9 +4,7 @@
  *
  ** ***********************************************************************************/
 #include "Grid.h"
-#include "GeoCalculator.h"
-#include "Models/Utils/Exception.h"
-#include "Models/Utils/MapHelper.h"
+#include "MeshCalculator.h"
 
 
 namespace OpenOasis::CommImp::Spatial
@@ -118,7 +116,7 @@ void Grid::CollectCellsSharedNode()
 
     for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
     {
-        const auto &nodeIdxs = GeoCalculator::GetCellNodeIndexes(cIdx, mMesh);
+        const auto &nodeIdxs = MeshCalculator::GetCellNodeIndexes(cIdx, mMesh);
         for (auto nIdx : nodeIdxs)
             mMesh.nodes[nIdx].cellIndexes.push_back(cIdx);
     }
@@ -185,7 +183,7 @@ void Grid::SortNodes()
 #pragma omp parallel for schedule(dynamic)
     for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
     {
-        const auto &nodeIndexes = GeoCalculator::SortFaceNodes(fIdx, mMesh);
+        const auto &nodeIndexes = MeshCalculator::SortFaceNodes(fIdx, mMesh);
 
         mMesh.faces[fIdx].nodeIndexes = nodeIndexes;
     }
@@ -202,7 +200,7 @@ void Grid::CollectFaceCellSides()
         const auto &fPoint = face.centroid;
         const auto &cPoint = mMesh.cells[face.cellIndexes[0]].centroid;
 
-        auto vec = GeoCalculator::ToVector(Node{fPoint}, Node{cPoint});
+        auto vec = MeshCalculator::ToVector(Node{fPoint}, Node{cPoint});
         auto res = vec * face.normal;
         auto dir = (res < 0) ? 1 : -1;
 
@@ -219,7 +217,7 @@ void Grid::CalculateFaceNormal()
 #pragma omp parallel for schedule(dynamic)
     for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
     {
-        auto normal = GeoCalculator::CalculateFaceNormal(fIdx, mMesh);
+        auto normal = MeshCalculator::CalculateFaceNormal(fIdx, mMesh);
 
         mMesh.faces[fIdx].normal = normal;
     }
@@ -230,7 +228,7 @@ void Grid::CalculateFaceArea()
 #pragma omp parallel for schedule(dynamic)
     for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
     {
-        auto area = GeoCalculator::CalculateFaceArea(fIdx, mMesh);
+        auto area = MeshCalculator::CalculateFaceArea(fIdx, mMesh);
 
         mMesh.faces[fIdx].area = area;
     }
@@ -241,7 +239,7 @@ void Grid::CalculateFacePerimeter()
 #pragma omp parallel for schedule(dynamic)
     for (auto fIdx = 0; fIdx < GetNumFaces(); fIdx++)
     {
-        auto perimeter = GeoCalculator::CalculateFacePerimeter(fIdx, mMesh);
+        auto perimeter = MeshCalculator::CalculateFacePerimeter(fIdx, mMesh);
 
         mMesh.faces[fIdx].perimeter = perimeter;
     }
@@ -252,7 +250,7 @@ void Grid::CalculateCellSurface()
 #pragma omp parallel for schedule(dynamic)
     for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
     {
-        auto surface = GeoCalculator::CalculateCellSurfaceArea(cIdx, mMesh);
+        auto surface = MeshCalculator::CalculateCellSurfaceArea(cIdx, mMesh);
 
         mMesh.cells[cIdx].surface = surface;
     }
@@ -263,7 +261,7 @@ void Grid::CalculateCellVolume()
 #pragma omp parallel for schedule(dynamic)
     for (auto cIdx = 0; cIdx < GetNumCells(); cIdx++)
     {
-        auto volume = GeoCalculator::CalculateCellVolume(cIdx, mMesh);
+        auto volume = MeshCalculator::CalculateCellVolume(cIdx, mMesh);
 
         mMesh.cells[cIdx].volume = volume;
     }

@@ -1,9 +1,9 @@
 /** ***********************************************************************************
- *    @File      :  GeoCalculator.cpp
- *    @Brief     :  A collection of general geometry functions.
+ *    @File      :  MeshCalculator.cpp
+ *    @Brief     :  Collections of mesh geometry functions.
  *
  ** ***********************************************************************************/
-#include "GeoCalculator.h"
+#include "MeshCalculator.h"
 #include "Models/Utils/Exception.h"
 #include <set>
 #include <algorithm>
@@ -15,7 +15,7 @@ using namespace Utils;
 using namespace std;
 
 
-Vector<real> GeoCalculator::ToVector(const Node &beg, const Node &end, int foldedAxis)
+Vector<real> MeshCalculator::ToVector(const Node &beg, const Node &end, int foldedAxis)
 {
     const auto &n0 = beg.coor;
     const auto &n1 = end.coor;
@@ -29,13 +29,13 @@ Vector<real> GeoCalculator::ToVector(const Node &beg, const Node &end, int folde
     return vec;
 }
 
-real GeoCalculator::CalculateNodesDist(const Node &node0, const Node &node1)
+real MeshCalculator::CalculateNodesDistance(const Node &node0, const Node &node1)
 {
     const auto &vec = ToVector(node0, node1);
     return vec.Magnitude();
 }
 
-vector<size_t> GeoCalculator::GetCellNodeIndexes(size_t cellIdx, const Mesh &mesh)
+vector<size_t> MeshCalculator::GetCellNodeIndexes(size_t cellIdx, const Mesh &mesh)
 {
     set<size_t> nodeIdxs;
 
@@ -51,7 +51,7 @@ vector<size_t> GeoCalculator::GetCellNodeIndexes(size_t cellIdx, const Mesh &mes
     return idxs;
 }
 
-vector<size_t> GeoCalculator::SortFaceNodes(size_t faceIdx, const Mesh &mesh)
+vector<size_t> MeshCalculator::SortFaceNodes(size_t faceIdx, const Mesh &mesh)
 {
     const auto    &nodeIndexes = mesh.faces.at(faceIdx).nodeIndexes;
     vector<size_t> sortIndexes(nodeIndexes);
@@ -84,17 +84,17 @@ vector<size_t> GeoCalculator::SortFaceNodes(size_t faceIdx, const Mesh &mesh)
     return sortIndexes;
 }
 
-Coordinate GeoCalculator::CalculateFaceCentroid(size_t faceIdx, const Mesh &mesh)
+Coordinate MeshCalculator::CalculateFaceCentroid(size_t faceIdx, const Mesh &mesh)
 {
     return CalculateCentroid(mesh.faces.at(faceIdx).nodeIndexes, mesh.nodes);
 }
 
-Coordinate GeoCalculator::CalculateCellCentroid(size_t cellIdx, const Mesh &mesh)
+Coordinate MeshCalculator::CalculateCellCentroid(size_t cellIdx, const Mesh &mesh)
 {
     return CalculateCentroid(GetCellNodeIndexes(cellIdx, mesh), mesh.nodes);
 }
 
-vector<size_t> GeoCalculator::CollectBoundaryFaceIndexes(const Mesh &mesh)
+vector<size_t> MeshCalculator::CollectBoundaryFaceIndexes(const Mesh &mesh)
 {
     vector<size_t> indexes;
     for (const auto &face : mesh.faces)
@@ -106,7 +106,7 @@ vector<size_t> GeoCalculator::CollectBoundaryFaceIndexes(const Mesh &mesh)
     return indexes;
 }
 
-vector<size_t> GeoCalculator::CollectBoundaryCellIndexes(const Mesh &mesh)
+vector<size_t> MeshCalculator::CollectBoundaryCellIndexes(const Mesh &mesh)
 {
     vector<size_t> indexes;
     for (const auto &cell : mesh.cells)
@@ -119,7 +119,7 @@ vector<size_t> GeoCalculator::CollectBoundaryCellIndexes(const Mesh &mesh)
     }
 }
 
-vector<size_t> GeoCalculator::CollectBoundaryNodeIndexes(const Mesh &mesh)
+vector<size_t> MeshCalculator::CollectBoundaryNodeIndexes(const Mesh &mesh)
 {
     vector<size_t> indexes;
 
@@ -134,13 +134,13 @@ vector<size_t> GeoCalculator::CollectBoundaryNodeIndexes(const Mesh &mesh)
     return indexes;
 }
 
-vector<size_t> GeoCalculator::CollectBlockCellIndexes(
+vector<size_t> MeshCalculator::CollectBlockCellIndexes(
     const Mesh &mesh, const vector<size_t> &blockFaces)
 {
     throw runtime_error("Not implemented yet.");
 }
 
-Vector<real> GeoCalculator::CalculateFaceNormal(size_t faceIdx, const Mesh &mesh)
+Vector<real> MeshCalculator::CalculateFaceNormal(size_t faceIdx, const Mesh &mesh)
 {
     const auto &nodeIdxs = mesh.faces.at(faceIdx).nodeIndexes;
     const auto &nodes    = mesh.nodes;
@@ -166,7 +166,7 @@ Vector<real> GeoCalculator::CalculateFaceNormal(size_t faceIdx, const Mesh &mesh
     }
 }
 
-real GeoCalculator::CalculateFaceArea(size_t faceIdx, const Mesh &mesh)
+real MeshCalculator::CalculateFaceArea(size_t faceIdx, const Mesh &mesh)
 {
     const auto &nodeIdxs = mesh.faces.at(faceIdx).nodeIndexes;
     const auto &nodes    = mesh.nodes;
@@ -210,7 +210,7 @@ real GeoCalculator::CalculateFaceArea(size_t faceIdx, const Mesh &mesh)
     }
 }
 
-real GeoCalculator::CalculateFacePerimeter(size_t faceIdx, const Mesh &mesh)
+real MeshCalculator::CalculateFacePerimeter(size_t faceIdx, const Mesh &mesh)
 {
     const auto &nodeIdxs = mesh.faces.at(faceIdx).nodeIndexes;
     const auto &nodes    = mesh.nodes;
@@ -219,18 +219,18 @@ real GeoCalculator::CalculateFacePerimeter(size_t faceIdx, const Mesh &mesh)
     double len = 0;
     for (size_t i = 0; i < n - 1; i++)
     {
-        len += CalculateNodesDist(nodes.at(nodeIdxs[i]), nodes.at(nodeIdxs[i + 1]));
+        len += CalculateNodesDistance(nodes.at(nodeIdxs[i]), nodes.at(nodeIdxs[i + 1]));
     }
 
     if (!Is2DMesh(mesh))
     {
-        len += CalculateNodesDist(nodes.at(nodeIdxs[n - 1]), nodes.at(nodeIdxs[0]));
+        len += CalculateNodesDistance(nodes.at(nodeIdxs[n - 1]), nodes.at(nodeIdxs[0]));
     }
 
     return len;
 }
 
-real GeoCalculator::CalculateCellVolume(size_t cellIdx, const Mesh &mesh)
+real MeshCalculator::CalculateCellVolume(size_t cellIdx, const Mesh &mesh)
 {
     const auto &nodeIdxs = GetCellNodeIndexes(cellIdx, mesh);
     const auto &nodes    = mesh.nodes;
@@ -260,7 +260,7 @@ real GeoCalculator::CalculateCellVolume(size_t cellIdx, const Mesh &mesh)
     }
 }
 
-real GeoCalculator::CalculateCellSurfaceArea(size_t cellIdx, const Mesh &mesh)
+real MeshCalculator::CalculateCellSurfaceArea(size_t cellIdx, const Mesh &mesh)
 {
     real area = 0.0;
 
@@ -276,7 +276,7 @@ real GeoCalculator::CalculateCellSurfaceArea(size_t cellIdx, const Mesh &mesh)
     return area;
 }
 
-Coordinate GeoCalculator::CalculateCentroid(
+Coordinate MeshCalculator::CalculateCentroid(
     const vector<size_t> &nodeIdxs, const unordered_map<size_t, Node> &nodes)
 {
     if (nodeIdxs.empty())
@@ -294,7 +294,7 @@ Coordinate GeoCalculator::CalculateCentroid(
     return {sumX / num, sumY / num, sumZ / num};
 }
 
-bool GeoCalculator::Is2DMesh(const Mesh &mesh)
+bool MeshCalculator::Is2DMesh(const Mesh &mesh)
 {
     for (const auto &face : mesh.faces)
     {
@@ -307,7 +307,7 @@ bool GeoCalculator::Is2DMesh(const Mesh &mesh)
     return false;
 }
 
-int GeoCalculator::ChooseFoldedAxis(size_t faceIdx, const Mesh &mesh)
+int MeshCalculator::ChooseFoldedAxis(size_t faceIdx, const Mesh &mesh)
 {
     const auto &face = mesh.faces.at(faceIdx);
 
