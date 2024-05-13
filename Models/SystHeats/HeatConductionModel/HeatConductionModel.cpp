@@ -13,9 +13,9 @@
 #include "Models/CommImp/ElementSet.h"
 #include "Models/CommImp/ValueSet2D.h"
 #include "Models/CommImp/IO/MeshLoader.h"
-#include "Models/CommImp/Spatial/Grid2D.h"
+#include "Models/CommImp/Spatial/Grid.h"
 #include "Models/CommImp/Numeric/FVM/FvmSolver.h"
-#include "Models/CommImp/Numeric/FVM/DirichletBoundary.h"
+// #include "Models/CommImp/Numeric/FVM/DirichletBoundary.h"
 #include "Models/Utils/YamlHandler.h"
 #include "Models/Utils/Exception.h"
 #include "Models/Utils/StringHelper.h"
@@ -102,7 +102,7 @@ void HeatConductionModel::InitializeArguments()
     MeshLoader loader(meshDir);
     loader.Load();
 
-    mGrid = make_shared<Grid2D>(
+    mGrid = make_shared<Grid>(
         loader.GetNodeCoordinates(),
         loader.GetFaceCoordinates(),
         loader.GetCellCoordinates(),
@@ -345,33 +345,34 @@ void HeatConductionModel::UpdateOutputs(const vector<shared_ptr<IOutput>> &outpu
 
 void HeatConductionModel::PerformTimestep(const vector<shared_ptr<IOutput>> &outputs)
 {
-    const auto &tempBounds = mPatchBounds["temp"];
-    for (const auto &b : tempBounds)
-    {
-        real value = FP(b.second);
+    // const auto &tempBounds = mPatchBounds["temp"];
+    // for (const auto &b : tempBounds)
+    // {
+    //     real value = FP(b.second);
 
-        const auto &bound = make_shared<FVM::DirichletBoundary>(value);
+    //     const auto &bound = make_shared<FVM::DirichletBoundary>(value);
 
-        for (int fIdx : mGrid->GetPatchFaceIndexes(b.first))
-        {
-            mSolver->SetBoundary(fIdx, bound);
-        }
-    }
+    //     for (int fIdx : mGrid->GetPatchFaceIndexes(b.first))
+    //     {
+    //         mSolver->SetBoundary(fIdx, bound);
+    //     }
+    // }
 
-    mSolver->SetInitialValue(
-        "temp", variant<real, Vector<real>, Tensor<real>>(FP(mT0)));
-    mSolver->SetCoefficient("temp", variant<real, Vector<real>, Tensor<real>>(FP(-mK)));
+    // mSolver->SetInitialValue(
+    //     "temp", variant<real, Vector<real>, Tensor<real>>(FP(mT0)));
+    // mSolver->SetCoefficient("temp", variant<real, Vector<real>,
+    // Tensor<real>>(FP(-mK)));
 
-    mSolver->ParseDiffusionTerm();
+    // mSolver->ParseDiffusionTerm();
 
-    mSolver->Solve();
+    // mSolver->Solve();
 
-    const auto &solution = mSolver->GetScalarSolutions("temp").value();
+    // const auto &solution = mSolver->GetScalarSolutions("temp").value();
 
-    for (int i = 0; i < (int)solution.Size(); i++)
-        mTempValues->SetAt(i, solution(i));
+    // for (int i = 0; i < (int)solution.Size(); i++)
+    //     mTempValues->SetAt(i, solution(i));
 
-    SaveResult();
+    // SaveResult();
 }
 
 
@@ -434,38 +435,38 @@ tuple<vector<real>, vector<real>> HeatConductionModel::GenerateCoeAndSrcMatrix()
             const auto &cells  = face.cellIndexes;
 
             // Face location.
-            bool isEast = (abs(normal[0] - 1.0) < 1.e-9) ? true : false;
-            bool isWest = (abs(normal[0] + 1.0) < 1.e-9) ? true : false;
+            bool isEast = (abs(normal(0) - 1.0) < 1.e-9) ? true : false;
+            bool isWest = (abs(normal(0) + 1.0) < 1.e-9) ? true : false;
             // bool isNorth = (abs(normal[1] - 1.0) < 1.e-9) ? true : false;
             // bool isSouth = (abs(normal[1] + 1.0) < 1.e-9) ? true : false;
             bool isBound = (cells.size() == 1) ? true : false;
 
-            // Boundary conditions.
-            if (isBound)
-            {
-                real boundT = 0;
-                for (const auto &bound : mPatchBounds["temp"])
-                {
-                    const auto &fIdxs = mGrid->GetPatchFaceIndexes(bound.first);
-                    if (find(fIdxs.begin(), fIdxs.end(), j) != fIdxs.end())
-                    {
-                        boundT = bound.second;
-                        break;
-                    }
-                }
+            // // Boundary conditions.
+            // if (isBound)
+            // {
+            //     real boundT = 0;
+            //     for (const auto &bound : mPatchBounds["temp"])
+            //     {
+            //         const auto &fIdxs = mGrid->GetPatchFaceIndexes(bound.first);
+            //         if (find(fIdxs.begin(), fIdxs.end(), j) != fIdxs.end())
+            //         {
+            //             boundT = bound.second;
+            //             break;
+            //         }
+            //     }
 
-                real coe = (isEast || isWest) ? xCoe : yCoe;
+            //     real coe = (isEast || isWest) ? xCoe : yCoe;
 
-                matrix[i * size + i] -= coe;
-                source[i] -= 2. * coe * boundT;
-            }
-            // interial cell.
-            else
-            {
-                int cIdx = (cells[0] == i) ? cells[1] : cells[0];
+            //     matrix[i * size + i] -= coe;
+            //     source[i] -= 2. * coe * boundT;
+            // }
+            // // interial cell.
+            // else
+            // {
+            //     int cIdx = (cells[0] == i) ? cells[1] : cells[0];
 
-                matrix[i * size + cIdx] = (isEast || isWest) ? xCoe : yCoe;
-            }
+            //     matrix[i * size + cIdx] = (isEast || isWest) ? xCoe : yCoe;
+            // }
         }
     }
 
@@ -504,7 +505,7 @@ void HeatConductionModel::SaveResult()
     auto file = FilePathHelper::Combine(mOutputDir, "heat_conduction_result.csv");
 
     CsvWriter writer(file);
-    writer.InsertColumn<Utils::real>(0, "temp", mTempValues->Data());
+    writer.InsertColumn<Utils::real>(0, "temp", mTempValues->Raw());
 
     writer.SetRowLabel(-1, "id");
     for (int i = 0; i < (int)mTempValues->Size(); i++)

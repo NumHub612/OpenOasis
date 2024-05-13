@@ -37,7 +37,7 @@
 #include "Models/Inc/IElementSet.h"
 #include "Models/Inc/IValueSet.h"
 #include "Models/CommImp/Numeric/Matrix.h"
-#include "Models/CommImp/Spatial/XYGeoStructs.h"
+#include "Models/CommImp/Spatial/Geom.h"
 #include <optional>
 
 
@@ -208,16 +208,21 @@ public:
 
     void ValidateIndicies(int row, int column);
 
-    static XYPoint
+    static GeomExtent
+    GenerateExtent(const Point &point, real adjacent = GeomCalculator::EPSILON);
+
+    static GeomExtent GenerateExtent(const Polygon &polygon);
+
+    static Point
     CreateXYPoint(const std::shared_ptr<IElementSet> &elementSet, int index);
 
-    static XYPolygon
+    static Polygon
     CreateFromXYPolygon(const std::shared_ptr<IElementSet> &elementSet, int index);
 
-    static XYPolygon
+    static Polygon
     CreateXYPolygon(const std::shared_ptr<IElementSet> &elementSet, int index);
 
-    static XYPolyline
+    static Polyline
     CreateXYPolyline(const std::shared_ptr<IElementSet> &elementSet, int index);
 };
 

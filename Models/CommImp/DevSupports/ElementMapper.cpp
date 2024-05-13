@@ -9,7 +9,7 @@
 #include "ExtensionMethods.h"
 #include "ElementSetChecker.h"
 #include "ElementSearchTree.h"
-#include "Models/CommImp/Spatial/XYGeoTools.h"
+#include "Models/CommImp/Spatial/GeomCalculator.h"
 #include "Models/CommImp/ValueSet2D.h"
 #include "Models/CommImp/SpaceAdaptedOutputFactory.h"
 #include "Models/Utils/Exception.h"
@@ -198,12 +198,12 @@ void ElementMapper::MapFromPointToPoint(
     {
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPoint toPoint = CreateXYPoint(toElements, i);
+            Point toPoint = CreateXYPoint(toElements, i);
             for (int j = 0; j < mNumberOfFromColumns; j++)
             {
-                XYPoint fromPoint = CreateXYPoint(fromElements, j);
+                Point fromPoint = CreateXYPoint(fromElements, j);
                 mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] =
-                    XYGeoTools::CalculatePointToPointDistance(toPoint, fromPoint);
+                    GeomCalculator::CalculatePointsDistance(toPoint, fromPoint);
             }
         }
 
@@ -312,12 +312,13 @@ void ElementMapper::MapFromPointToPolyline(
     {
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPolyline toPolyline = CreateXYPolyline(toElements, i);
+            Polyline toPolyline = CreateXYPolyline(toElements, i);
             for (int j = 0; j < mNumberOfFromColumns; j++)
             {
-                XYPoint fromPoint = CreateXYPoint(fromElements, j);
+                Point fromPoint = CreateXYPoint(fromElements, j);
                 mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] =
-                    XYGeoTools::CalculatePolylineToPointDistance(toPolyline, fromPoint);
+                    GeomCalculator::CalculatePointToPolylineDistance(
+                        toPolyline, fromPoint);
             }
         }
 
@@ -430,13 +431,13 @@ void ElementMapper::MapFromPointToPolygon(
     {
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPolygon polygon = CreateXYPolygon(toElements, i);
-            int       count   = 0;
-            XYPoint   point;
+            Polygon polygon = CreateXYPolygon(toElements, i);
+            int     count   = 0;
+            Point   point;
             for (int n = 0; n < mNumberOfFromColumns; n++)
             {
                 point = CreateXYPoint(fromElements, n);
-                if (XYGeoTools::IsPointInPolygon(point, polygon))
+                if (GeomCalculator::IsPointInPolygon(point, polygon))
                 {
                     if (mMethod == ElementMapperMethod::Mean)
                     {
@@ -457,7 +458,7 @@ void ElementMapper::MapFromPointToPolygon(
             for (int n = 0; n < mNumberOfFromColumns; n++)
             {
                 point = CreateXYPoint(fromElements, n);
-                if (XYGeoTools::IsPointInPolygon(point, polygon))
+                if (GeomCalculator::IsPointInPolygon(point, polygon))
                 {
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
                         1.0 / count;
@@ -479,12 +480,13 @@ void ElementMapper::MapFromPolylineToPoint(
     {
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPoint toPoint = CreateXYPoint(toElements, i);
+            Point toPoint = CreateXYPoint(toElements, i);
             for (int j = 0; j < mNumberOfFromColumns; j++)
             {
-                XYPolyline fromPolyline = CreateXYPolyline(fromElements, j);
+                Polyline fromPolyline = CreateXYPolyline(fromElements, j);
                 mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] =
-                    XYGeoTools::CalculatePolylineToPointDistance(fromPolyline, toPoint);
+                    GeomCalculator::CalculatePointToPolylineDistance(
+                        fromPolyline, toPoint);
             }
         }
 
@@ -601,16 +603,16 @@ void ElementMapper::MapFromPolylineToPolygon(
         // For each polygon in target.
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPolygon polygon = CreateXYPolygon(toElements, i);
+            Polygon polygon = CreateXYPolygon(toElements, i);
 
             if (mMethod == ElementMapperMethod::WeightedMean)
             {
                 double totalLineLengthInPolygon = 0;
                 for (int n = 0; n < mNumberOfFromColumns; n++)
                 {
-                    XYPolyline Polyline = CreateXYPolyline(fromElements, n);
+                    Polyline Polyline = CreateXYPolyline(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
-                        XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
+                        GeomCalculator::CalculateLengthOfPolylineInsidePolygon(
                             Polyline, polygon);
                     totalLineLengthInPolygon += (*mMappingMatrix)(i, n);
                 }
@@ -629,11 +631,11 @@ void ElementMapper::MapFromPolylineToPolygon(
                 // For each line segment in Polyline
                 for (int n = 0; n < mNumberOfFromColumns; n++)
                 {
-                    XYPolyline Polyline = CreateXYPolyline(fromElements, n);
+                    Polyline Polyline = CreateXYPolyline(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
-                        XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
+                        GeomCalculator::CalculateLengthOfPolylineInsidePolygon(
                             Polyline, polygon)
-                        / Polyline.GetLength();
+                        / GeomCalculator::CalculateLengthOfPolyline(Polyline);
                 }
             }
             else
@@ -677,11 +679,11 @@ void ElementMapper::MapFromPolygonToPoint(
 
         for (int n = 0; n < mNumberOfToRows; n++)
         {
-            XYPoint point = CreateXYPoint(toElements, n);
+            Point point = CreateXYPoint(toElements, n);
             if (useSearchTree)
             {
-                XYExtent toExtent(point, XYGeoTools::EPSILON);
-                fromCandidateElmts = fromSearchTree.FindElements(toExtent);
+                GeomExtent toExtent = GenerateExtent(point);
+                fromCandidateElmts  = fromSearchTree.FindElements(toExtent);
             }
 
             int count = 0;
@@ -689,8 +691,8 @@ void ElementMapper::MapFromPolygonToPoint(
             // Check first for strict inclusion.
             for (auto i : fromCandidateElmts)
             {
-                XYPolygon polygon = CreateXYPolygon(fromElements, i);
-                if (XYGeoTools::IsPointInPolygon(point, polygon))
+                Polygon polygon = CreateXYPolygon(fromElements, i);
+                if (GeomCalculator::IsPointInPolygon(point, polygon))
                 {
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(n, i)] = 1.0;
                     count++;
@@ -702,8 +704,8 @@ void ElementMapper::MapFromPolygonToPoint(
                 // Not strictly inside any polygon, check also edges.
                 for (auto i : fromCandidateElmts)
                 {
-                    XYPolygon polygon = CreateXYPolygon(fromElements, i);
-                    if (XYGeoTools::IsPointInPolygon(point, polygon))
+                    Polygon polygon = CreateXYPolygon(fromElements, i);
+                    if (GeomCalculator::IsPointInPolygon(point, polygon))
                     {
                         mMappingMatrix->mValues[DoubleSparseMatrix::Index(n, i)] = 1.0;
                         count++;
@@ -740,17 +742,17 @@ void ElementMapper::MapFromPolygonToPolyline(
     {
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPolyline Polyline = CreateXYPolyline(toElements, i);
+            Polyline Polyline = CreateXYPolyline(toElements, i);
 
             if (mMethod == ElementMapperMethod::WeightedMean)
             {
                 for (int n = 0; n < mNumberOfFromColumns; n++)
                 {
-                    XYPolygon polygon = CreateXYPolygon(fromElements, n);
+                    Polygon polygon = CreateXYPolygon(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
-                        XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
+                        GeomCalculator::CalculateLengthOfPolylineInsidePolygon(
                             Polyline, polygon)
-                        / Polyline.GetLength();
+                        / GeomCalculator::CalculateLengthOfPolyline(Polyline);
                 }
 
                 double sum = 0;
@@ -769,11 +771,11 @@ void ElementMapper::MapFromPolygonToPolyline(
             {
                 for (int n = 0; n < mNumberOfFromColumns; n++)
                 {
-                    XYPolygon polygon = CreateXYPolygon(fromElements, n);
+                    Polygon polygon = CreateXYPolygon(fromElements, n);
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, n)] =
-                        XYGeoTools::CalculateLengthOfPolylineInsidePolygon(
+                        GeomCalculator::CalculateLengthOfPolylineInsidePolygon(
                             Polyline, polygon)
-                        / Polyline.GetLength();
+                        / GeomCalculator::CalculateLengthOfPolyline(Polyline);
                 }
             }
             else
@@ -812,22 +814,22 @@ void ElementMapper::MapFromPolygonToPolygon(
 
         for (int i = 0; i < mNumberOfToRows; i++)
         {
-            XYPolygon toPolygon = CreateXYPolygon(toElements, i);
+            Polygon toPolygon = CreateXYPolygon(toElements, i);
             if (useSearchTree)
             {
-                XYExtent toExtent(toPolygon);
-                fromCandidateElmts = fromSearchTree.FindElements(toExtent);
+                GeomExtent toExtent = GenerateExtent(toPolygon);
+                fromCandidateElmts  = fromSearchTree.FindElements(toExtent);
             }
 
             for (auto j : fromCandidateElmts)
             {
-                XYPolygon fromPolygon = CreateXYPolygon(fromElements, j);
+                Polygon fromPolygon = CreateXYPolygon(fromElements, j);
                 mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] =
-                    XYGeoTools::CalculateSharedArea(toPolygon, fromPolygon);
+                    GeomCalculator::CalculatePolygonSharedArea(toPolygon, fromPolygon);
                 if (mMethod == ElementMapperMethod::Distribute)
                 {
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] /=
-                        fromPolygon.GetArea();
+                        GeomCalculator::CalculateAreaOfPolygon(fromPolygon);
                 }
             }
 
@@ -853,7 +855,8 @@ void ElementMapper::MapFromPolygonToPolygon(
                 for (auto j : fromCandidateElmts)
                 {
                     mMappingMatrix->mValues[DoubleSparseMatrix::Index(i, j)] =
-                        mMappingMatrix->At(i, j) / toPolygon.GetArea();
+                        mMappingMatrix->At(i, j)
+                        / GeomCalculator::CalculateAreaOfPolygon(toPolygon);
                 }
             }
             else if (mMethod != ElementMapperMethod::Distribute)
@@ -919,56 +922,81 @@ void ElementMapper::ValidateIndicies(int row, int column)
     }
 }
 
-XYPoint
-ElementMapper::CreateXYPoint(const shared_ptr<IElementSet> &elementSet, int index)
+
+GeomExtent ElementMapper::GenerateExtent(const Point &point, real adjacent)
+{
+    adjacent = max(adjacent, GeomCalculator::EPSILON);
+
+    GeomExtent extent;
+    extent.xMin = point.x - adjacent;
+    extent.xMax = point.x + adjacent;
+    extent.yMin = point.y - adjacent;
+    extent.yMax = point.y + adjacent;
+    extent.zMin = point.z - adjacent;
+    extent.zMax = point.z + adjacent;
+    return extent;
+}
+
+GeomExtent ElementMapper::GenerateExtent(const Polygon &polygon)
+{
+    GeomExtent extent;
+    for (auto point : polygon)
+    {
+        GeomCalculator::UpdateExtent(extent, point);
+    }
+
+    return extent;
+}
+
+Point ElementMapper::CreateXYPoint(const shared_ptr<IElementSet> &elementSet, int index)
 {
     if (elementSet->GetElementType() != ElementType::Point)
     {
         throw ArgumentOutOfRangeException(
-            "elementSet cannot create XYPoint, the element type of the element set is not XYPoint");
+            "elementSet cannot create Point, the element type of the element set is not Point");
     }
 
-    return XYPoint(
+    return Point{
         elementSet->GetNodeXCoordinate(index, 0),
-        elementSet->GetNodeYCoordinate(index, 0));
+        elementSet->GetNodeYCoordinate(index, 0)};
 }
 
-XYPolyline
+Polyline
 ElementMapper::CreateXYPolyline(const shared_ptr<IElementSet> &elementSet, int index)
 {
     if (!(elementSet->GetElementType() == ElementType::Polyline))
     {
-        throw runtime_error("Cannot create XYPolyline");
+        throw runtime_error("Cannot create Polyline");
     }
 
-    XYPolyline xyPolyline;
+    Polyline xyPolyline;
     for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
-        XYPoint tempVar(
+        Point tempVar{
             elementSet->GetNodeXCoordinate(index, i),
-            elementSet->GetNodeYCoordinate(index, i));
-        xyPolyline.points.push_back(tempVar);
+            elementSet->GetNodeYCoordinate(index, i)};
+        xyPolyline.push_back(tempVar);
     }
 
     return xyPolyline;
 }
 
-XYPolygon
+Polygon
 ElementMapper::CreateXYPolygon(const shared_ptr<IElementSet> &elementSet, int index)
 {
     if (elementSet->GetElementType() != ElementType::Polygon)
     {
-        throw runtime_error("Cannot create XYPolyline");
+        throw runtime_error("Cannot create Polyline");
     }
 
-    XYPolygon xyPolygon;
+    Polygon xyPolygon;
 
     for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
-        XYPoint tempVar(
+        Point tempVar{
             elementSet->GetNodeXCoordinate(index, i),
-            elementSet->GetNodeYCoordinate(index, i));
-        xyPolygon.points.push_back(tempVar);
+            elementSet->GetNodeYCoordinate(index, i)};
+        xyPolygon.push_back(tempVar);
     }
 
     return xyPolygon;
@@ -979,22 +1007,22 @@ ElementType ElementMapper::GetTargetElementType()
     throw NotImplementedException();
 }
 
-XYPolygon
+Polygon
 ElementMapper::CreateFromXYPolygon(const shared_ptr<IElementSet> &elementSet, int index)
 {
     if (elementSet->GetElementType() != ElementType::Polygon)
     {
-        throw runtime_error("Cannot create XYPolyline");
+        throw runtime_error("Cannot create Polyline");
     }
 
-    XYPolygon xyPolygon;
+    Polygon xyPolygon;
 
     for (int i = 0; i < elementSet->GetNodeCount(index); i++)
     {
-        XYPoint tempVar(
+        Point tempVar{
             elementSet->GetNodeXCoordinate(index, i),
-            elementSet->GetNodeYCoordinate(index, i));
-        xyPolygon.points.push_back(tempVar);
+            elementSet->GetNodeYCoordinate(index, i)};
+        xyPolygon.push_back(tempVar);
     }
 
     return xyPolygon;

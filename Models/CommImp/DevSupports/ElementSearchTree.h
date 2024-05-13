@@ -8,7 +8,8 @@
  *
  ** ***********************************************************************************/
 #pragma once
-#include "Models/CommImp/Spatial/XYGeoStructs.h"
+#include "Models/CommImp/Spatial/Geom.h"
+#include "Models/CommImp/Spatial/GeomCalculator.h"
 #include "Models/Inc/IElementSet.h"
 #include <memory>
 #include <algorithm>
@@ -24,8 +25,8 @@ template <typename T>
 class Leaf
 {
 public:
-    T        mElement;  // Element in the search tree.
-    XYExtent mExtent;   // Element extent.
+    T          mElement;  // Element in the search tree.
+    GeomExtent mExtent;   // Element extent.
 };
 
 
@@ -37,13 +38,13 @@ public:
     int MaxPointsPerNode = 10;  // Max number of points in per node.
 
 private:
-    XYExtent              mExtent;    // Node extent.
+    GeomExtent            mExtent;    // Node extent.
     std::vector<TreeNode> mChildren;  // Children node of current node.
-    std::vector<XYPoint>  mPoints;    // Node points.
+    std::vector<Point>    mPoints;    // Node points.
     std::vector<Leaf<T>>  mElements;  // Node elements.
 
 public:
-    TreeNode(const XYExtent &extent) : mExtent(extent)
+    TreeNode(const GeomExtent &extent) : mExtent(extent)
     {}
 
     bool HasChildren() const
@@ -51,12 +52,12 @@ public:
         return !mChildren.empty();
     }
 
-    bool Add(const XYPoint &point)
+    bool Add(const Point &point)
     {
         bool added = false;
 
         // Check if inside this domain.
-        if (!mExtent.IsContains(point.x, point.y))
+        if (!GeomCalculator::IsPointInside(point, mExtent))
         {
             return false;
         }
@@ -96,7 +97,7 @@ public:
     void Add(Leaf<T> elmtLeaf)
     {
         // If no overlap, do not add it here.
-        if (!mExtent.IsOverlaps(elmtLeaf.mExtent))
+        if (!GeomCalculator::IsExtentOverlap(mExtent, elmtLeaf.mExtent))
         {
             return;
         }
@@ -114,10 +115,10 @@ public:
         }
     }
 
-    void FindElements(const XYExtent &extent, std::vector<T> &elmts)
+    void FindElements(const GeomExtent &extent, std::vector<T> &elmts)
     {
         // If no overlap, just return.
-        if (!mExtent.IsOverlaps(extent))
+        if (!GeomCalculator::IsExtentOverlap(mExtent, extent))
         {
             return;
         }
@@ -134,7 +135,7 @@ public:
         {
             for (auto &elmtLeaf : mElements)
             {
-                if (elmtLeaf.mExtent.IsOverlaps(extent))
+                if (GeomCalculator::IsExtentOverlap(elmtLeaf.mExtent, extent))
                 {
                     // Check if it is already there.
                     if (std::find(begin(elmts), end(elmts), elmtLeaf.mElement)
@@ -197,21 +198,21 @@ private:
     void SubDivide()
     {
         // Create children.
-        mChildren = std::vector<TreeNode>(4, XYExtent());
+        mChildren = std::vector<TreeNode>(4, GeomExtent());
 
         double xMid = 0.5 * (mExtent.xMin + mExtent.xMax);
         double yMid = 0.5 * (mExtent.yMin + mExtent.yMax);
 
-        XYExtent tempVar(xMid, mExtent.xMax, yMid, mExtent.yMax);
+        GeomExtent tempVar(xMid, mExtent.xMax, yMid, mExtent.yMax);
         mChildren[0] = TreeNode(tempVar);
 
-        XYExtent tempVar2(mExtent.xMin, xMid, yMid, mExtent.yMax);
+        GeomExtent tempVar2(mExtent.xMin, xMid, yMid, mExtent.yMax);
         mChildren[1] = TreeNode(tempVar2);
 
-        XYExtent tempVar3(mExtent.xMin, xMid, mExtent.yMin, yMid);
+        GeomExtent tempVar3(mExtent.xMin, xMid, mExtent.yMin, yMid);
         mChildren[2] = TreeNode(tempVar3);
 
-        XYExtent tempVar4(xMid, mExtent.xMax, mExtent.yMin, yMid);
+        GeomExtent tempVar4(xMid, mExtent.xMax, mExtent.yMin, yMid);
         mChildren[3] = TreeNode(tempVar4);
 
         // Add points of this node to the new children.
@@ -246,11 +247,11 @@ private:
     int mNumElmts = 0;
 
 public:
-    ElementSearchTree(const XYExtent &extent) : mHead(extent)
+    ElementSearchTree(const GeomExtent &extent) : mHead(extent)
     {}
 
     /// @brief Adds point to the search tree, thereby building the tree.
-    void Add(const XYPoint &point)
+    void Add(const Point &point)
     {
         if (HasElements())
         {
@@ -265,7 +266,7 @@ public:
     }
 
     /// @brief Adds element to the search tree.
-    void AddElement(T element, const XYExtent &extent)
+    void AddElement(T element, const GeomExtent &extent)
     {
         Leaf<T> leaf  = Leaf<T>();
         leaf.mElement = element;
@@ -279,7 +280,7 @@ public:
     ///
     /// @param extent Extent to look for elements within.
     /// @returns A list of elements with overlapping extents.
-    std::vector<T> FindElements(const XYExtent &extent)
+    std::vector<T> FindElements(const GeomExtent &extent)
     {
         std::vector<T> elmts;
         mHead.FindElements(extent, elmts);
@@ -313,7 +314,7 @@ public:
     BuildSearchTree(const std::shared_ptr<IElementSet> &elmtSet)
     {
         // Calculate start extent.
-        XYExtent extent;
+        GeomExtent extent;
 
         int elementCount = elmtSet->GetElementCount();
         for (int ielmt = 0; ielmt < elementCount; ielmt++)
@@ -336,15 +337,15 @@ public:
             {
                 double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);
                 double y = elmtSet->GetNodeYCoordinate(ielmt, ivert);
-                tree.Add(XYPoint(x, y));
+                tree.Add(Point(x, y));
             }
         }
 
         // Add elements to the search tree.
         for (int ielmt = 0; ielmt < elementCount; ielmt++)
         {
-            int      vertixCount = elmtSet->GetNodeCount(ielmt);
-            XYExtent elmtExtent;
+            int        vertixCount = elmtSet->GetNodeCount(ielmt);
+            GeomExtent elmtExtent;
             for (int ivert = 0; ivert < vertixCount; ivert++)
             {
                 double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);

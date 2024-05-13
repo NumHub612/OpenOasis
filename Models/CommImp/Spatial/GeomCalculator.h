@@ -53,6 +53,8 @@ public:
 
     static real CalculateAreaOfPolygon(const Polygon &polygon);
 
+    static real CalculateLengthOfPolyline(const Polyline &polyline);
+
     static real CalculateLengthOfLine(const Line &line);
 
     static real
@@ -67,6 +69,10 @@ public:
 
     static bool IsPointInPolygon(const Point &point, const Polygon &polygon);
 
+    static bool IsPointInExtent(const Point &point, const GeomExtent &extent);
+
+    static bool IsExtentOverlap(const GeomExtent &e1, const GeomExtent &e2);
+
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Methods for generating geometric objects.
@@ -77,6 +83,10 @@ public:
     static Point GenerateMidpoint(const Line &line);
 
     static std::vector<Polygon> SplitPolygonToTriangles(const Polygon &polygon);
+
+    static void UpdateExtent(GeomExtent &extent, const Point &point);
+
+    static void UpdateExtent(GeomExtent &extent, const GeomExtent &other);
 
 
 protected:

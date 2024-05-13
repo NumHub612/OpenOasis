@@ -309,6 +309,17 @@ real GeomCalculator::CalculateAreaOfPolygon(const Polygon &polygon)
     return abs(area);
 }
 
+real GeomCalculator::CalculateLengthOfPolyline(const Polyline &polyline)
+{
+    real length = 0;
+    for (size_t i = 1; i < polyline.size(); i++)
+    {
+        length += CalculatePointsDistance(polyline.at(i - 1), polyline.at(i));
+    }
+
+    return length;
+}
+
 real GeomCalculator::CalculateLengthOfLine(const Line &line)
 {
     const Point &p1 = line[0], &p2 = line[1];
@@ -960,6 +971,38 @@ size_t GeomCalculator::DecrementModula(size_t i, size_t n)
         i = n - 1;
     }
     return i;
+}
+
+bool GeomCalculator::IsPointInExtent(const Point &point, const GeomExtent &extent)
+{
+    return point.x >= extent.xMin && point.x <= extent.xMax && point.y >= extent.yMin
+           && point.y <= extent.yMax;
+}
+
+bool GeomCalculator::IsExtentOverlap(const GeomExtent &e1, const GeomExtent &e2)
+{
+    return e1.xMax > e2.xMin && e1.xMin < e2.xMax && e1.yMax > e2.yMin
+           && e1.yMin < e2.yMax && e1.zMax > e2.zMin && e1.zMin < e2.zMax;
+}
+
+void GeomCalculator::UpdateExtent(GeomExtent &extent, const Point &point)
+{
+    extent.xMin = min(extent.xMin, point.x);
+    extent.xMax = max(extent.xMax, point.x);
+    extent.yMin = min(extent.yMin, point.y);
+    extent.yMax = max(extent.yMax, point.y);
+    extent.zMin = min(extent.zMin, point.z);
+    extent.zMax = max(extent.zMax, point.z);
+}
+
+void GeomCalculator::UpdateExtent(GeomExtent &extent, const GeomExtent &other)
+{
+    extent.xMin = min(extent.xMin, other.xMin);
+    extent.xMax = max(extent.xMax, other.xMax);
+    extent.yMin = min(extent.yMin, other.yMin);
+    extent.yMax = max(extent.yMax, other.yMax);
+    extent.zMin = min(extent.zMin, other.zMin);
+    extent.zMax = max(extent.zMax, other.zMax);
 }
 
 }  // namespace OpenOasis::CommImp::Spatial
