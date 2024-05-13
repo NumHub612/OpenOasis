@@ -117,6 +117,8 @@ vector<size_t> MeshCalculator::CollectBoundaryCellIndexes(const Mesh &mesh)
         if (faceCount > neighbors)
             indexes.push_back(cell.first);
     }
+
+    return indexes;
 }
 
 vector<size_t> MeshCalculator::CollectBoundaryNodeIndexes(const Mesh &mesh)

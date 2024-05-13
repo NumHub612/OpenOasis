@@ -9,6 +9,7 @@
 #include "Models/CommImp/Dimension.h"
 #include "Models/CommImp/Unit.h"
 #include "Models/CommImp/Quantity.h"
+#include "Models/CommImp/Spatial/GeomCalculator.h"
 #include "Models/Utils/Exception.h"
 #include "Models/Utils/StringHelper.h"
 #include "ThirdPart/MagicEnum/WrapMagicEnum.hpp"
@@ -132,8 +133,8 @@ void SpaceLengthAdaptor::CalculateFactors(const shared_ptr<IElementSet> &element
 
     for (std::size_t i = 0; i < mFactors.size(); i++)
     {
-        XYPolyline element = ElementMapper::CreateXYPolyline(elementSet, i);
-        real       length  = element.GetLength();
+        Polyline element = ElementMapper::CreateXYPolyline(elementSet, i);
+        real     length  = GeomCalculator::CalculateLengthOfPolyline(element);
         if (mLengthExponent == 1)
         {
             mFactors[i] = length;

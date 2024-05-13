@@ -208,8 +208,7 @@ public:
 
     void ValidateIndicies(int row, int column);
 
-    static GeomExtent
-    GenerateExtent(const Point &point, real adjacent = GeomCalculator::EPSILON);
+    static GeomExtent GenerateExtent(const Point &point, real adjacent = 1.e-6);
 
     static GeomExtent GenerateExtent(const Polygon &polygon);
 

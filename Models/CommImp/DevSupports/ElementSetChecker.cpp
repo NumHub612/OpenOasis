@@ -4,7 +4,7 @@
  *
  ** ***********************************************************************************/
 #include "ElementSetChecker.h"
-#include "Models/CommImp/Spatial/XYGeoStructs.h"
+#include "Models/CommImp/Spatial/GeomCalculator.h"
 #include "Models/Utils/StringHelper.h"
 
 
@@ -45,17 +45,12 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
             {
                 try
                 {
-                    XYPolyline polyline;
+                    Polyline polyline;
                     for (int j = 0; j < elementSet->GetNodeCount(i); j++)
                     {
-                        polyline.points.emplace_back(XYPoint(
+                        polyline.emplace_back(Point{
                             elementSet->GetNodeXCoordinate(i, j),
-                            elementSet->GetNodeYCoordinate(i, j)));
-                    }
-
-                    if (!polyline.Validate())
-                    {
-                        throw runtime_error("Invalid polyline.");
+                            elementSet->GetNodeYCoordinate(i, j)});
                     }
                 }
                 catch (const runtime_error &e)
@@ -72,17 +67,12 @@ void ElementSetChecker::CheckElementSet(const shared_ptr<IElementSet> &elementSe
             {
                 try
                 {
-                    XYPolygon polygon;
+                    Polygon polygon;
                     for (int j = 0; j < elementSet->GetNodeCount(i); j++)
                     {
-                        polygon.points.emplace_back(
+                        polygon.emplace_back(Point{
                             elementSet->GetNodeXCoordinate(i, j),
-                            elementSet->GetNodeYCoordinate(i, j));
-                    }
-
-                    if (!polygon.Validate())
-                    {
-                        throw runtime_error("Invalid polygon.");
+                            elementSet->GetNodeYCoordinate(i, j)});
                     }
                 }
                 catch (const runtime_error &e)

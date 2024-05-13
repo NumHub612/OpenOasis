@@ -12,6 +12,7 @@
 #include "Tensor.h"
 #include <array>
 #include <algorithm>
+#include <numeric>
 
 
 namespace OpenOasis
@@ -205,12 +206,6 @@ public:
     bool IsZero() const
     {
         return IsEqual(Vector());
-    }
-
-    bool IsNan() const
-    {
-        return std::any_of(
-            mElement.begin(), mElement.end(), [](T val) { return std::isnan(val); });
     }
 
     ///////////////////////////////////////////////////////////////////////////////////

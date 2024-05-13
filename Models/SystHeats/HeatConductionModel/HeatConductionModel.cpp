@@ -102,16 +102,16 @@ void HeatConductionModel::InitializeArguments()
     MeshLoader loader(meshDir);
     loader.Load();
 
-    mGrid = make_shared<Grid>(
-        loader.GetNodeCoordinates(),
-        loader.GetFaceCoordinates(),
-        loader.GetCellCoordinates(),
-        loader.GetFaceNodes(),
-        loader.GetCellFaces(),
-        loader.GetPatches(),
-        loader.GetZones());
+    // mGrid = make_shared<Grid>(
+    //     loader.GetNodeCoordinates(),
+    //     loader.GetFaceCoordinates(),
+    //     loader.GetCellCoordinates(),
+    //     loader.GetFaceNodes(),
+    //     loader.GetCellFaces(),
+    //     loader.GetPatches(),
+    //     loader.GetZones());
 
-    mSolver = make_shared<FVM::FvmSolver>(mGrid);
+    // mSolver = make_shared<FVM::FvmSolver>(mGrid);
 
     // Equation.
     seg = "EQUATION";

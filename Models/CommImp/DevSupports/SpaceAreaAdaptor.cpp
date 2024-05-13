@@ -10,6 +10,7 @@
 #include "Models/CommImp/Unit.h"
 #include "Models/CommImp/Quantity.h"
 #include "Models/Utils/Exception.h"
+#include "Models/CommImp/Spatial/GeomCalculator.h"
 #include "ThirdPart/MagicEnum/WrapMagicEnum.hpp"
 
 
@@ -129,8 +130,8 @@ void SpaceAreaAdaptor::CalculateFactors(const shared_ptr<IElementSet> &elementSe
 
     for (std::size_t i = 0; i < mFactors.size(); i++)
     {
-        XYPolygon element = ElementMapper::CreateXYPolygon(elementSet, i);
-        real      area    = element.GetArea();
+        Polygon element = ElementMapper::CreateXYPolygon(elementSet, i);
+        real    area    = GeomCalculator::CalculateAreaOfPolygon(element);
         if (mAreaExponent == 1)
         {
             mFactors[i] = area;

@@ -1,5 +1,5 @@
 #include "ThirdPart/Catch2/catch.hpp"
-#include "Models/CommImp/Numeric/VectorField.h"
+#include "Models/CommImp/Numeric/Field.h"
 
 using namespace OpenOasis::CommImp::Numeric;
 using namespace std;

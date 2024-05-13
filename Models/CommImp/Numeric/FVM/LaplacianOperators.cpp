@@ -36,6 +36,8 @@ LinearEqs Laplacian01::Discretize(
 
     Matrix<real> A(nCells);
     vector<real> b(nCells);
+
+    return LinearEqs(A, b);
 }
 
 

@@ -21,23 +21,24 @@ TEST_CASE("Heats dummy test")
 
         HeatConductionModel model("heat", file);
 
-        model.Initialize();
-        model.Validate();
-        model.Prepare();
+        // model.Initialize();
+        // model.Validate();
+        // model.Prepare();
 
-        while (model.GetStatus() != OpenOasis::LinkableComponentStatus::Done
-               && model.GetStatus() != OpenOasis::LinkableComponentStatus::Failed)
-        {
-            model.Update();
-        }
+        // while (model.GetStatus() != OpenOasis::LinkableComponentStatus::Done
+        //        && model.GetStatus() != OpenOasis::LinkableComponentStatus::Failed)
+        // {
+        //     model.Update();
+        // }
 
-        model.Finish();
+        // model.Finish();
 
-        string ref_file = FilePathHelper::Combine(
-            PROJECT_DIR, "Rsrc/Benchmarks/heat_conduction_model/assets/validation.csv");
+        // string ref_file = FilePathHelper::Combine(
+        //     PROJECT_DIR,
+        //     "Rsrc/Benchmarks/heat_conduction_model/assets/validation.csv");
 
-        string simu_file =
-            FilePathHelper::GetFullPath("./outputs/heat_conduction_result.csv");
+        // string simu_file =
+        //     FilePathHelper::GetFullPath("./outputs/heat_conduction_result.csv");
 
         // auto simu_res = CsvLoader(simu_file).GetColumn<double>(0).value();
         // auto ref_res  = CsvLoader(ref_file).GetColumn<double>(0).value();

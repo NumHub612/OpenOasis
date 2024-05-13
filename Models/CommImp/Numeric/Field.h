@@ -7,6 +7,7 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Models/Utils/CommMacros.h"
+#include "Models/Utils/CommConstants.h"
 #include "Vector.h"
 #include "Tensor.h"
 #include <vector>

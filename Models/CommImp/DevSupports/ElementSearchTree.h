@@ -57,7 +57,7 @@ public:
         bool added = false;
 
         // Check if inside this domain.
-        if (!GeomCalculator::IsPointInside(point, mExtent))
+        if (!GeomCalculator::IsPointInExtent(point, mExtent))
         {
             return false;
         }
@@ -203,16 +203,16 @@ private:
         double xMid = 0.5 * (mExtent.xMin + mExtent.xMax);
         double yMid = 0.5 * (mExtent.yMin + mExtent.yMax);
 
-        GeomExtent tempVar(xMid, mExtent.xMax, yMid, mExtent.yMax);
+        GeomExtent tempVar{xMid, mExtent.xMax, yMid, mExtent.yMax};
         mChildren[0] = TreeNode(tempVar);
 
-        GeomExtent tempVar2(mExtent.xMin, xMid, yMid, mExtent.yMax);
+        GeomExtent tempVar2{mExtent.xMin, xMid, yMid, mExtent.yMax};
         mChildren[1] = TreeNode(tempVar2);
 
-        GeomExtent tempVar3(mExtent.xMin, xMid, mExtent.yMin, yMid);
+        GeomExtent tempVar3{mExtent.xMin, xMid, mExtent.yMin, yMid};
         mChildren[2] = TreeNode(tempVar3);
 
-        GeomExtent tempVar4(xMid, mExtent.xMax, mExtent.yMin, yMid);
+        GeomExtent tempVar4{xMid, mExtent.xMax, mExtent.yMin, yMid};
         mChildren[3] = TreeNode(tempVar4);
 
         // Add points of this node to the new children.
@@ -324,7 +324,7 @@ public:
             {
                 double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);
                 double y = elmtSet->GetNodeYCoordinate(ielmt, ivert);
-                extent.Include(x, y);
+                GeomCalculator::UpdateExtent(extent, Point{x, y});
             }
         }
 
@@ -337,7 +337,7 @@ public:
             {
                 double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);
                 double y = elmtSet->GetNodeYCoordinate(ielmt, ivert);
-                tree.Add(Point(x, y));
+                tree.Add(Point{x, y});
             }
         }
 
@@ -350,7 +350,7 @@ public:
             {
                 double x = elmtSet->GetNodeXCoordinate(ielmt, ivert);
                 double y = elmtSet->GetNodeYCoordinate(ielmt, ivert);
-                elmtExtent.Include(x, y);
+                GeomCalculator::UpdateExtent(extent, Point{x, y});
             }
 
             tree.AddElement(ielmt, elmtExtent);

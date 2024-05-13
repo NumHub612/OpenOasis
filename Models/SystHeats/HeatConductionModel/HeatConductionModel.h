@@ -25,6 +25,7 @@ using CommImp::Numeric::ScalarField;
 using CommImp::Numeric::Solver;
 using CommImp::Spatial::Grid;
 using CommImp::Spatial::Coordinate;
+using Utils::real;
 
 
 class HeatConductionModel : public LinkableComponent
