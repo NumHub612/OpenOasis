@@ -123,11 +123,7 @@ public:
 
     T Sum() const
     {
-        T ret = 0;
-        for (T val : mElement)
-            ret += val;
-
-        return ret;
+        return std::accumulate(mElement.begin(), mElement.end(), T(0));
     }
 
     T Avg() const
@@ -137,44 +133,38 @@ public:
 
     T Min() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = std::min(ret, val);
-
-        return ret;
+        return std::min_element(mElement.begin(), mElement.end())->operator*();
     }
 
     /// @brief Return the component of the tensor hasing the minimum absolute value.
     T AbsMin() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = (ret * ret < val * val) ? ret : val;
-
-        return ret;
+        return std::min_element(
+                   mElement.begin(),
+                   mElement.end(),
+                   [](T a, T b) { return abs(a) < abs(b); })
+            ->
+            operator*();
     }
 
     T Max() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = std::max(ret, val);
-
-        return ret;
+        return std::max_element(mElement.begin(), mElement.end())->operator*();
     }
 
     /// @brief Return the component of the tensor hasing the maximum absolute value.
     T AbsMax() const
     {
-        T ret = mElement.front();
-        for (T val : mElement)
-            ret = (ret * ret > val * val) ? ret : val;
-
-        return ret;
+        return std::max_element(
+                   mElement.begin(),
+                   mElement.end(),
+                   [](T a, T b) { return abs(a) > abs(b); })
+            ->
+            operator*();
     }
 
-    /// @brief Return the tensor's length(magnitude).
-    T Length() const
+    /// @brief Return the tensor's magnitude.
+    T Magnitude() const
     {
         return std::sqrt(DDot(*this));
     }
@@ -196,7 +186,7 @@ public:
 
     void Normalize()
     {
-        T len = Length();
+        T len = Magnitude();
         if (len <= T(0))
             return;
 

@@ -19,13 +19,13 @@ template <typename T>
 class Matrix
 {
 private:
-    int                    mRows;
-    int                    mCols;
+    size_t                 mRows;
+    size_t                 mCols;
     Eigen::SparseMatrix<T> mData;
 
 public:
-    Matrix(int rows, int cols) : mRows(rows), mCols(cols), mData(rows, cols){};
-    Matrix(int size) : mRows(size), mCols(size), mData(size, size){};
+    Matrix(size_t rows, size_t cols) : mRows(rows), mCols(cols), mData(rows, cols){};
+    Matrix(size_t size) : mRows(size), mCols(size), mData(size, size){};
     Matrix(const Matrix &other)
     {
         Set(other);
@@ -46,13 +46,13 @@ public:
     //
 
     /// @brief Makes a sparse matrix with zeros.
-    static Matrix Zero(int rows, int cols)
+    static Matrix Zero(size_t rows, size_t cols)
     {
         return Matrix(rows, cols);
     }
 
     /// Makes a sparse matrix with all diagonal elements to 1, and other elements to 0.
-    static Matrix Unit(int rows, int cols)
+    static Matrix Unit(size_t rows, size_t cols)
     {
         Matrix mat(rows, cols);
         mat.SetUnit();
@@ -170,13 +170,13 @@ public:
 
     /// @brief Returns diagonal vector of this matrix.
     /// @warning Should be a square matrix.
-    template <std::size_t N>
+    template <size_t N>
     Vector<T, N> Diagonal() const
     {
         OO_ASSERT(N == mRows);
 
         std::array<T, N> diags;
-        for (std::size_t i = 0; i < N; ++i)
+        for (size_t i = 0; i < N; ++i)
             diags[i] = mData.coeffRef(i, i);
 
         return diags;
@@ -240,7 +240,7 @@ public:
     //
 
     /// @brief Add input scalar @p s to specified element.
-    void Add(std::size_t i, std::size_t j, const T &s)
+    void Add(size_t i, size_t j, const T &s)
     {
         OO_ASSERT((i < mRows) && (j < mCols));
         mData.coeffRef(i, j) += s;
@@ -254,7 +254,7 @@ public:
     }
 
     /// @brief Subtracts scalar @p s to specified element.
-    void Sub(std::size_t i, std::size_t j, const T &s)
+    void Sub(size_t i, size_t j, const T &s)
     {
         OO_ASSERT((i < mRows) && (j < mCols));
         mData.coeffRef(i, j) -= s;

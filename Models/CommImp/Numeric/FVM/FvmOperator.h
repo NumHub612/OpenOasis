@@ -55,6 +55,9 @@ using DivOperator       = FvmOperator;
 using GradOperator      = FvmOperator;
 using LaplacianOperator = FvmOperator;
 using DdtOperator       = FvmOperator;
+using D2dt2Operator     = FvmOperator;
+using SuOperator        = FvmOperator;
+using SpOperator        = FvmOperator;
 
 
 // Register FVM operator factory.

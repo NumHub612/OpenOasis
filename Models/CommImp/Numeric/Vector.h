@@ -121,11 +121,7 @@ public:
 
     T Sum() const
     {
-        T ret = 0;
-        for (T val : mElement)
-            ret += val;
-
-        return ret;
+        return std::accumulate(mElement.begin(), mElement.end(), T(0));
     }
 
     T Avg() const

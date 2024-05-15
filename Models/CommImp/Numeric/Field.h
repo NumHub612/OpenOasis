@@ -45,13 +45,15 @@ protected:
     FieldDomain    mDomain = FieldDomain::NONE;
     FieldType      mType   = FieldType::NONE;
     std::vector<T> mData;
-    T              mDefault;
 
 protected:
     virtual ~Field() = default;
 
     Field() = default;
     Field(std::size_t size, T value) : mData(size, value){};
+    Field(const std::vector<T> &data) : mData(data){};
+    Field(const Field<T> &other) :
+        mData(other.mData), mDomain(other.mDomain), mType(other.mType){};
 
 public:
     ///////////////////////////////////////////////////////////////////////////////////
@@ -73,10 +75,10 @@ public:
         mData.shrink_to_fit();
     }
 
-    /// @brief Cleans the field data to the default value.
+    /// @brief Cleans the field data.
     void Clean()
     {
-        std::fill(mData.begin(), mData.end(), mDefault);
+        std::fill(mData.begin(), mData.end(), T(0));
     }
 
     /// @brief Clears the field.
