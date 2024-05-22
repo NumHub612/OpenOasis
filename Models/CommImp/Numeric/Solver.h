@@ -7,10 +7,9 @@
  ** ***********************************************************************************/
 #pragma once
 #include "Models/CommImp/Spatial/Grid.h"
-#include "Boundary.h"
+#include "Equation.h"
 #include "Operator.h"
-#include "Matrix.h"
-#include <optional>
+#include "Boundary.h"
 
 
 namespace OpenOasis::CommImp::Numeric
@@ -19,24 +18,8 @@ using CommImp::Spatial::Grid;
 using Utils::real;
 
 
-/// @brief Solver parameter.
-struct SolverParam
-{
-    std::string name;
-
-    std::variant<std::string, real, int, bool> value;
-};
-
-
-/// @brief Field binding variable.
-struct VariableField
-{
-    std::string var;
-
-    std::optional<ScalarFieldFp> sField;
-    std::optional<VectorFieldFp> vField;
-    std::optional<TensorFieldFp> tField;
-};
+using SolverParam = Configuration;
+using TaskOption  = Configuration;
 
 
 /// @brief Abstract solver class.
@@ -47,6 +30,9 @@ struct VariableField
 ///
 /// The solver is also responsible for initializing the relevant field quantities,
 /// and providing specific discrete and stepping scheme.
+///
+/// The solver doesn't responsible for any IO operations, but provides a way to
+/// access the solution field quantities.
 class Solver
 {
 public:
@@ -54,9 +40,21 @@ public:
     // Parameter setting and Configuration.
     //
 
+    virtual void AddParameter(const SolverParam &param) = 0;
+
+    virtual bool HasParameter(const std::string &id) const = 0;
+
+    virtual const SolverParam &GetParameter(const std::string &id) const = 0;
+
+    virtual void AddOption(const TaskOption &option) = 0;
+
+    virtual bool HasOption(const std::string &id) const = 0;
+
+    virtual const TaskOption &GetOption(const std::string &id) const = 0;
+
     virtual void SetGrid(const std::shared_ptr<Grid> &grid) = 0;
 
-    virtual void SetParameter(const SolverParam &param) = 0;
+    virtual const std::shared_ptr<Grid> &GetGrid() const = 0;
 
     virtual std::string GetName() = 0;
 
@@ -64,58 +62,37 @@ public:
     // Boundary condition and initialization.
     //
 
-    virtual void SetBoundary(int meshIndex, const std::shared_ptr<Boundary> &bound) = 0;
+    virtual void AddBoundary(int meshIndex, const std::shared_ptr<Boundary> &bound) = 0;
 
-    virtual void SetInitialValue(const VariableField &varField) = 0;
+    virtual void SetInitialValue(const DataField &varField) = 0;
 
-    virtual void SetCoefficient(const VariableField &coefField) = 0;
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // Equation parsing and discretizing.
-    //
-
-    virtual void SetOperator(const std::string &eqItem, const std::string &opName)
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual void Discretize() = 0;
+    virtual void SetCoefficient(const DataField &coefField) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
-    // Step advancing.
+    // Equation parsing and step advancing.
     //
 
-    virtual void BeforeScheme()
-    {}
+    virtual void AddEquation(const std::shared_ptr<Equation> &eq) = 0;
 
-    virtual void Scheme() = 0;
+    virtual void Parse() = 0;
 
-    virtual void AfterScheme()
-    {}
+    virtual void Initialize() = 0;
+
+    virtual real GetSimulatedTime() const = 0;
+
+    virtual real GetTimeStep() const = 0;
+
+    virtual void Step(real dt) = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Solution access.
     //
 
+    virtual std::vector<std::string> GetVariables() const = 0;
+
     virtual std::optional<LinearEqs> GetLinearEqs() const = 0;
 
-    virtual std::optional<ScalarFieldFp>
-    GetScalarSolutions(const std::string &var) const
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual std::optional<VectorFieldFp>
-    GetVectorSolutions(const std::string &var) const
-    {
-        throw std::runtime_error("Not implemented.");
-    }
-
-    virtual std::optional<TensorFieldFp>
-    GetTensorSolutions(const std::string &var) const
-    {
-        throw std::runtime_error("Not implemented.");
-    }
+    virtual std::optional<DataField> GetSolutions(const std::string &var) const = 0;
 };
 
 }  // namespace OpenOasis::CommImp::Numeric

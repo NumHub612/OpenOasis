@@ -9,4 +9,8 @@
 
 
 namespace OpenOasis::CommImp::Numeric
-{}
+{
+class Equation
+{};
+
+}  // namespace OpenOasis::CommImp::Numeric
