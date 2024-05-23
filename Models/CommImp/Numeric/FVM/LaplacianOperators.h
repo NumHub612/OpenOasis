@@ -18,6 +18,9 @@ namespace OpenOasis::CommImp::Numeric::FVM
 /// @brief Laplacian01 operator for scalar field in cell domain.
 class Laplacian01 : public LaplacianOperator
 {
+private:
+    std::shared_ptr<Grid> mGrid;
+
 public:
     Laplacian01()          = default;
     virtual ~Laplacian01() = default;
@@ -28,8 +31,9 @@ public:
 
     virtual std::string GetName() override;
 
-    virtual LinearEqs Discretize(
-        const ScalarFieldFp &varCellField, const ScalarFieldFp &varFaceField) override;
+    virtual void Prepare() override;
+
+    virtual LinearEqs Discretize() override;
 
 private:
 };

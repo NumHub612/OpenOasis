@@ -8,6 +8,8 @@
 #pragma once
 #include "Models/CommImp/Numeric/Operator.h"
 #include "Models/Utils/RegisterFactory.h"
+#include "FvmSolver.h"
+#include <algorithm>
 
 
 namespace OpenOasis::CommImp::Numeric::FVM
@@ -19,31 +21,30 @@ using namespace OpenOasis::Utils;
 class FvmOperator : public Operator
 {
 protected:
-    std::unordered_map<int, BoundaryCondition> mBounds;
-    ScalarFieldFp                              mCoeffs;
-    std::shared_ptr<Grid>                      mGrid;
+    std::vector<OperatorParam> mParams;
+    std::shared_ptr<FvmSolver> mSolver;
 
 public:
     FvmOperator()          = default;
     virtual ~FvmOperator() = default;
 
-    virtual void
-    SetBoundaryCondition(int faceIndex, const BoundaryCondition &bc) override
+    virtual void SetSolver(const std::shared_ptr<Solver> &solver) override
     {
-        mBounds[faceIndex] = bc;
-    }
-
-    virtual void SetGrid(const std::shared_ptr<Grid> &grid) override
-    {
-        mGrid = grid;
+        mSolver = std::dynamic_pointer_cast<FvmSolver>(solver);
+        if (!mSolver)
+        {
+            throw std::runtime_error("FvmOperator::SetSolver: Invalid solver type.");
+        }
     }
 
     virtual void SetParameter(const OperatorParam &param) override
-    {}
-
-    virtual void SetCoefficient(const ScalarFieldFp &coefficients) override
     {
-        mCoeffs = coefficients;
+        if (std::find_if(
+                mParams.begin(),
+                mParams.end(),
+                [&param](const OperatorParam &p) { return p.key == param.key; })
+            == mParams.end())
+            mParams.push_back(param);
     }
 };
 

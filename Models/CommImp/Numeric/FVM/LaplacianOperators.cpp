@@ -28,9 +28,15 @@ string Laplacian01::GetName()
     return LAPLACIAN01;
 }
 
-LinearEqs Laplacian01::Discretize(
-    const ScalarFieldFp &varCellField, const ScalarFieldFp &varFaceField)
+void Laplacian01::Prepare()
 {
+    mGrid = mSolver->GetGrid();
+}
+
+LinearEqs Laplacian01::Discretize()
+{
+    const auto &coeffs = mSolver->GetCoefficient("");
+
     auto nCells = mGrid->GetNumCells();
     auto nFaces = mGrid->GetNumFaces();
 

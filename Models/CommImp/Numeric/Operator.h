@@ -46,6 +46,8 @@ public:
     // Methods for discretizing.
     //
 
+    virtual void Prepare() = 0;
+
     virtual LinearEqs Discretize() = 0;
 };
 

@@ -40,17 +40,17 @@ public:
     // Parameter setting and Configuration.
     //
 
-    virtual void AddParameter(const SolverParam &param) = 0;
+    virtual const SolverParam &GetParameter(const std::string &id) const = 0;
+
+    virtual void SetParameter(const SolverParam &param) = 0;
 
     virtual bool HasParameter(const std::string &id) const = 0;
 
-    virtual const SolverParam &GetParameter(const std::string &id) const = 0;
+    virtual const TaskOption &GetOption(const std::string &id) const = 0;
 
-    virtual void AddOption(const TaskOption &option) = 0;
+    virtual void SetOption(const TaskOption &option) = 0;
 
     virtual bool HasOption(const std::string &id) const = 0;
-
-    virtual const TaskOption &GetOption(const std::string &id) const = 0;
 
     virtual void SetGrid(const std::shared_ptr<Grid> &grid) = 0;
 
@@ -62,11 +62,17 @@ public:
     // Boundary condition and initialization.
     //
 
-    virtual void AddBoundary(int meshIndex, const std::shared_ptr<Boundary> &bound) = 0;
+    virtual void SetBoundary(int meshIndex, const std::shared_ptr<Boundary> &bound) = 0;
+
+    virtual const std::shared_ptr<Boundary> &GetBoundary(int meshIndex) const = 0;
 
     virtual void SetInitialValue(const DataField &varField) = 0;
 
+    virtual const DataField &GetInitialValue(const std::string &var) const = 0;
+
     virtual void SetCoefficient(const DataField &coefField) = 0;
+
+    virtual const DataField &GetCoefficient(const std::string &coef) const = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Equation parsing and step advancing.
@@ -76,13 +82,11 @@ public:
 
     virtual void Parse() = 0;
 
-    virtual void Initialize() = 0;
-
     virtual real GetSimulatedTime() const = 0;
 
     virtual real GetTimeStep() const = 0;
 
-    virtual void Step(real dt) = 0;
+    virtual void Step() = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
     // Solution access.
