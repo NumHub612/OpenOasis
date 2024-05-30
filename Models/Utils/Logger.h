@@ -4,8 +4,6 @@
  *    @File      :  Logger.h
  *    @License   :  Apache-2.0
  *
- *    @Desc      :  Provide logger.
- *
  ** ***********************************************************************************/
 #pragma once
 #include "ThirdPart/spdlog/spdlog.h"
@@ -14,9 +12,7 @@
 
 namespace OpenOasis
 {
-namespace CommImp
-{
-namespace IO
+namespace Utils
 {
 /// @brief To get rotating logger with specified id.
 class Logger
@@ -32,6 +28,5 @@ private:
     static std::unordered_map<std::string, std::shared_ptr<spdlog::logger>> mLoggers;
 };
 
-}  // namespace IO
-}  // namespace CommImp
+}  // namespace Utils
 }  // namespace OpenOasis

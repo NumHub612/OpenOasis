@@ -4,7 +4,7 @@
  *
  ** ***********************************************************************************/
 #include "LinkLoader.h"
-#include "Logger.h"
+#include "Utils/Logger.h"
 #include "Utils/FilePathHelper.h"
 #include "Utils/Exception.h"
 #include "Utils/StringHelper.h"
