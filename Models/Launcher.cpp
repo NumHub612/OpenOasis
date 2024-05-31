@@ -9,8 +9,8 @@
  ** ***********************************************************************************/
 // #include "Models/CommImp/DevSupports/IterationController.h"
 #include "Models/CommImp/LinkableComponent.h"
-#include "Models/CommImp/IO/Logger.h"
 #include "Models/CommImp/IO/LinkLoader.h"
+#include "Models/Utils/Logger.h"
 #include "Models/wrappers/OasisFlows.h"
 #include "Models/Utils/LibraryLoader.h"
 #include "Models/Utils/StringHelper.h"
@@ -60,7 +60,7 @@ int main(int argc, const char *argv[])
 
         spdlog::set_level(spdlog::level::from_str(logLevelStr));
 
-        auto logger = IO::Logger::GetLogger();
+        auto logger = Logger::GetLogger();
         logger->set_level(spdlog::level::from_str(logLevelStr));
     }
 

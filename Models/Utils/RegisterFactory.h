@@ -60,10 +60,7 @@ namespace OpenOasis::Utils
         }                                                                              \
                                                                                        \
         static std::map<std::string, std::function<std::shared_ptr<CLS>()>> mRegistry; \
-    };                                                                                 \
-                                                                                       \
-    std::map<std::string, std::function<std::shared_ptr<CLS>()>>                       \
-        CLS##Register::mRegistry;
+    };
 
 
 #define REGISTER_CLS_VNAME(T) reg_cls_##T##_
