@@ -79,8 +79,7 @@ OpenOasis Project Structure:
 |   +-- Models/               : 模型组件集以及数值求解器集
 |   |   +-- CommImp/          : 接口的通用实现
 |   |   +-- Inc/              : 接口标准
-|   |   +-- SystFluids/       : 流体流动模型集
-|   |   +-- SystHeats/        : 热量流动模型集
+|   |   +-- SystFlows/        : 流体流动模型集
 |   |   +-- Utils/            : 通用功能模块
 |   |   +-- tests/            : 测试集
 |   |   +-- ThirdPart/        : 第三方工具箱
@@ -94,12 +93,50 @@ OpenOasis Project Structure:
 
 在这个项目架构设计中，数值算法内核位于 `Models` 目录下。
 
-`Inc` 目录下存放接口标准，`CommImp` 目录下存放该接口的通用实现方案（SDK）。`SystFluids` 和 `SystHeats` 目录下存放基于通用实现方案的流体流动和热量流动模型（App），`Utils` 目录下存放通用功能模块(不依赖接口标准以及任何外部实现，除了第三方库)。
+`Inc` 目录下存放接口标准，`CommImp` 目录下存放该接口的通用实现方案（SDK）。`SystFlows` 目录下存放基于通用实现方案的流体流动和热量流动模型（App），`Utils` 目录下存放通用功能模块(不依赖接口标准以及任何外部实现，除了第三方库)。
 
 `Launcher.cpp` 是一个模块动态加载器，用于动态加载符合接口标准的模块，并提供统一的接口调用方式。
 
-`CommImp` 中还有次级目录，包括: `DevSupports`(用于拓展接口定义和实现，提供接口对象的辅助函数)，`IO`(用于提供统一的IO接口，不依赖接口标准)，`Numeric`(用于提供给雷数值算法求解器实现，不依赖接口标准)，`Spatial`和`Temporal`(用于提供空间和时间离散的数据定义和处理，不依赖接口标准)。
+`CommImp` 中还有次级目录，包括: `DevSupports`(用于拓展接口定义和实现，提供接口对象的辅助函数)，`IO`(用于提供统一的IO接口，不依赖接口标准)，`Numeric`(用于提供数值算法求解器实现，不依赖接口标准)，`Spatial`和`Temporal`(用于提供空间和时间离散的数据定义和处理，不依赖接口标准)。
 
+```mermaid
+classDiagram
+    class Inc {
+        +Interface Standards
+    }
+    class CommImp {
+        +DevSupports: Development Support for Interface
+        +IO: Unified IO Interface
+        +Numeric: Numerical Algorithm Solver solution
+        +Spatial: Spatial Discretization
+        +Temporal: Temporal Discretization
+    }
+    class SystFlows {
+        +Fluid Dynamics Models
+        +Thermal Dynamics Models
+        +others...
+    }
+    class Utils {
+        +Utility Modules: General Utility Modules
+    }
+    class Launcher {
+        +Dynamic Module Loader: Dynamically loads modules
+    }
+    class ThirdPart {
+        +Third-Party Tools
+    }
+    class Wrappers {
+        +C++/Python Interface Wrapping
+    }
+    Inc <|-- CommImp : Implements
+    Inc -- CommImp: Defines
+    SystFlows o-- CommImp: Uses SDK
+    Launcher o-- SystFlows: Loads Models
+
+    CommImp o-- Utils: Loads Utilities
+    Utils o-- ThirdPart: Utilizes Third-Party Tools
+    SystFlows o-- Wrappers: Utilizes Interface Wrapping
+```
 
 [<i class="fa fa-home"></i>](#绿洲开发小贴士)
 
